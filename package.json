@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
-    "tslint:ci": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
+    "tslint:ci": "tslint -c tslint.json 'src/**/*.ts' -p ./",
     "clean": "rm -rf ./lib",
     "ts_compile": "tsc",
     "build": "run-s clean tslint ts_compile",
