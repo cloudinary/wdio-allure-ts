@@ -1,5 +1,7 @@
 # WebdriverIO + Allure reporter + TypesScript 
 ------------
+[![Build Status](https://travis-ci.org/webdriverio/webdriverio.svg?branch=master)](https://travis-ci.org/cloudinary/wdio-allure-ts)
+
 Util that wraps main browser webdriverio actions to get a cleaner test code with improved stability and reporting
 Targeting E2E UI browser testing with page object model
 
