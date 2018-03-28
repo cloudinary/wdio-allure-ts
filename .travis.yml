@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+- '9'
+install:
+- npm install
+- npm run build
+before_deploy:
+- git diff --exit-code
