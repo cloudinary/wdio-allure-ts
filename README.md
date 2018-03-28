@@ -19,6 +19,4 @@ Common utils for tests (for example getRandomString)
 ### SpecialKeys
 Holds keyboard's special keys
 
-## Related project
-`https://github.com/cloudinary/wdio-allure-ts`
 
