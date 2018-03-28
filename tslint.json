@@ -1,0 +1,17 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-airbnb",
+    "tslint-microsoft-contrib",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "no-console": false,
+    "mocha-no-side-effect-code": false,
+    "max-func-body-length": false,
+    "no-relative-imports": false,
+    "no-unsafe-any": false
+  }
+}
