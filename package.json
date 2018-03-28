@@ -26,11 +26,10 @@
   ],
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
-    "tslint:ci": "tslint -c tslint.json 'src/**/*.ts' -p ./",
     "clean": "rm -rf ./lib",
     "ts_compile": "tsc",
     "build": "run-s clean tslint ts_compile",
-    "test": "run-s clean tslint:ci ts_compile; git diff --exit-code"
+    "test": "run-s build; git diff --exit-code ./lib"
   },
   "dependencies": {
     "chalk": "^2.3.2",
