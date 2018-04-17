@@ -5,6 +5,13 @@ import { Cookie } from "webdriverio";
  */
 export declare namespace BrowserUtils {
     /**
+     * Inject a snippet of JavaScript into the page
+     * for execution in the context of the currently selected frame
+     *
+     * @param script script to execute
+     */
+    function executeScript(script: string): void;
+    /**
      * Upload local file
      * Send full path of the file to input element
      * Element of type input expected to be exist(not necessary visible) on execution
