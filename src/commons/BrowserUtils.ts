@@ -7,6 +7,20 @@ import { Reporter } from "./Reporter";
  */
 export namespace BrowserUtils {
   /**
+   * Inject a snippet of JavaScript into the page
+   * for execution in the context of the currently selected frame
+   *
+   * @param script script to execute
+   */
+  export function executeScript(script: string): void {
+    Reporter.debug(`Executing script: ${script}`);
+    tryBlock(
+      () => browser.execute(script),
+      `Failed to execute script: ${script}`
+    );
+  }
+
+  /**
    * Upload local file
    * Send full path of the file to input element
    * Element of type input expected to be exist(not necessary visible) on execution
