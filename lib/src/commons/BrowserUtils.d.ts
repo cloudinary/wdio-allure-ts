@@ -164,12 +164,19 @@ export declare namespace BrowserUtils {
      */
     function getAttribute(selector: string, attributeName: string): string;
     /**
-     * Get element's attribute value
+     * Check if attribute with given selector contain expected value
      * @param selector element's selector to search for attribute
      * @param attributeName attribute name to search for
-     * @param attributeExpectedValue value in attribute
+     * @param value value in attribute
      */
-    function expectAttributeValue(selector: string, attributeName: string, attributeExpectedValue: string): void;
+    function expectAttributeValue(selector: string, attributeName: string, value: string): void;
+    /**
+     * Check if attribute with given selector NOT contain expected value
+     * @param selector element's selector to search for attribute
+     * @param attributeName attribute name to search for
+     * @param value value NOT in attribute
+     */
+    function expectNoAttributeValue(selector: string, attributeName: string, value: string): void;
     /**
      * Set cookie
      * Requires navigation to domain before setting cookie
