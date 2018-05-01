@@ -424,25 +424,56 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Get element's attribute value
+   * Check if attribute with given selector contain expected value
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
-   * @param attributeExpectedValue value in attribute
+   * @param value value in attribute
    */
   export function expectAttributeValue(
     selector: string,
     attributeName: string,
-    attributeExpectedValue: string
+    value: string
   ): void {
     const attributeValue: string = getAttribute(selector, attributeName);
 
-    if (!attributeValue.includes(attributeExpectedValue)) {
+    if (!isContainWord(attributeValue, value)) {
       throw new Error(
         `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}
-         Expected: '${attributeExpectedValue}' ${EOL}
-                 Actual: '${attributeValue}'`
+         Expected: ${EOL} word '${value}' to be part of ${EOL}
+                 '${attributeValue}'`
       );
     }
+  }
+
+  /**
+   * Check if attribute with given selector NOT contain expected value
+   * @param selector element's selector to search for attribute
+   * @param attributeName attribute name to search for
+   * @param value value NOT in attribute
+   */
+  export function expectNoAttributeValue(
+    selector: string,
+    attributeName: string,
+    value: string
+  ): void {
+    const attributeValue: string = getAttribute(selector, attributeName);
+
+    if (isContainWord(attributeValue, value)) {
+      throw new Error(
+        `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}
+         Expected: ${EOL} word '${value}' NOT to be part of ${EOL}
+                 '${attributeValue}'`
+      );
+    }
+  }
+
+  /**
+   * Check if word is a substring of given text
+   * @param fullText string to search in
+   * @param word word to search
+   */
+  function isContainWord(fullText: string, word: string): boolean {
+    return new RegExp(`\\b"+"${word}"+"\\b`).test(fullText);
   }
 
   /**

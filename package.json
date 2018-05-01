@@ -1,8 +1,7 @@
 {
   "name": "wdio-allure-ts",
   "version": "0.0.1",
-  "description":
-    "WebdriverIO, Allure reporter and TypeScript wrapper for UI E2E testing",
+  "description": "WebdriverIO, Allure reporter and TypeScript wrapper for UI E2E testing",
   "license": "MIT",
   "author": "Felix Zilber <felix@cloudinary.com>",
   "homepage": "http://cloudinary.com",
@@ -32,8 +31,8 @@
     "test": "run-s build; git diff --exit-code ./lib"
   },
   "dependencies": {
-    "chalk": "^2.3.2",
-    "wdio-allure-reporter": "^0.6.0",
+    "chalk": "^2.4.1",
+    "wdio-allure-reporter": "^0.6.1",
     "webdriverio": "^4.12.0"
   },
   "devDependencies": {
@@ -41,9 +40,9 @@
     "npm-run-all": "^4.1.2",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.8.0",
-    "tslint-config-prettier": "^1.10.0",
+    "tslint-config-prettier": "^1.12.0",
     "tslint-eslint-rules": "^5.1.0",
     "tslint-microsoft-contrib": "^5.0.3",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.3"
   }
 }
