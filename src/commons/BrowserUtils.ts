@@ -473,7 +473,15 @@ export namespace BrowserUtils {
    * @param word word to search
    */
   function isContainWord(fullText: string, word: string): boolean {
-    return new RegExp(`\\b"+"${word}"+"\\b`).test(fullText);
+    // escape special characters from user input
+    const wordEscapedChars: string = word.replace(
+      /[-\/\\^$*+?.()|[\]{}]/g,
+      "\\$&"
+    );
+
+    const regexStr: string = `(?<=^|\\s)${wordEscapedChars}(?=\\s|$)`;
+
+    return new RegExp(regexStr).test(fullText);
   }
 
   /**
