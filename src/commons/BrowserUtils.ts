@@ -316,17 +316,18 @@ export namespace BrowserUtils {
    * @param text expected text
    */
   export function expectText(selector: string, text: string): void {
-    Reporter.debug(`Validate toast message text is "${text}"`);
+    Reporter.debug(
+      `Validate element text is '${text}' by selector '${selector}'`
+    );
     isVisible(selector);
     const currText: string = tryBlock(
       () => browser.getText(selector),
-      `Failed to get text from ${selector}`
+      `Failed to get text from element '${selector}'`
     ).replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
 
-    Reporter.debug(`Toast message text is ${currText}`);
     if (currText !== text) {
       throw new Error(
-        `Incorrect text in ${selector}. ${EOL} Expected: ${text} ${EOL} Actual: ${currText}`
+        `Incorrect text in element by selector '${selector}'. ${EOL} Expected: '${text}' ${EOL} Actual: '${currText}'`
       );
     }
   }
