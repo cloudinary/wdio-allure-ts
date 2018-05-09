@@ -168,7 +168,7 @@ export namespace BrowserUtils {
         return currentUrl === expectedUrl;
       },
       30000,
-      `Incorrect URL. Expected ${expectedUrl} while actual: ${browser.getUrl()}`
+      `Url not as expected.${EOL} Expected: '${expectedUrl}' ${EOL} Actual: '${browser.getUrl()}'`
     );
   }
 
