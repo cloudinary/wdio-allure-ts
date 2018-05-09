@@ -47,9 +47,13 @@ export namespace Reporter {
   /**
    * Close step in report
    */
-  export function closeStep(): void {
+  export function closeStep(isFailed?: boolean): void {
     if (!isStepClosed) {
-      sendCustomCommand(customCommand);
+      if (isFailed) {
+        sendCustomCommand(customCommand, "failed");
+      } else {
+        sendCustomCommand(customCommand);
+      }
     }
     isStepClosed = true;
   }
@@ -126,9 +130,16 @@ export namespace Reporter {
    * Adding custom command to allure reporter
    * @param command command to add
    */
-  function sendCustomCommand(command: CustomCommand): void {
+  function sendCustomCommand(
+    command: CustomCommand,
+    stepStatus?: string
+  ): void {
+    let status: string = "passed";
+    if (stepStatus !== undefined) {
+      status = stepStatus;
+    }
     // tslint:disable-next-line:no-unsafe-any
-    createStep(command.title, command.body, command.bodyLabel);
+    createStep(command.title, command.body, command.bodyLabel, status);
   }
 }
 

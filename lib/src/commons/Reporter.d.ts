@@ -8,7 +8,7 @@ export declare namespace Reporter {
     /**
      * Close step in report
      */
-    function closeStep(): void;
+    function closeStep(isFailed?: boolean): void;
     /**
      * Log step message
      * console log with green color text
