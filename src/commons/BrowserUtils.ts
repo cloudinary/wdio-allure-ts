@@ -153,6 +153,18 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Refresh browser's page
+   */
+  export function refreshBrowser(): void {
+    Reporter.debug("Refresh browser page");
+    tryBlock(
+      () => browser.refresh(),
+
+      "Failed to refresh the page"
+    );
+  }
+
+  /**
    * Wait for url to be equal to given url
    * Mainly useful for navigation validation
    * @param url expected current url
