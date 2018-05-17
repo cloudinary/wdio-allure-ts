@@ -65,6 +65,10 @@ export declare namespace BrowserUtils {
      */
     function navigateToUrl(url: string): void;
     /**
+     * Refresh browser's page
+     */
+    function refreshBrowser(): void;
+    /**
      * Wait for url to be equal to given url
      * Mainly useful for navigation validation
      * @param url expected current url
