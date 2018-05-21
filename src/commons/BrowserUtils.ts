@@ -2,6 +2,11 @@ import { EOL } from "os";
 import { Cookie } from "webdriverio";
 import { Reporter } from "./Reporter";
 
+const DEFAULT_TIME_OUT: number =
+  process.env.DEFAULT_TIME_OUT === undefined
+    ? 60000
+    : Number(process.env.DEFAULT_TIME_OUT);
+
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -250,9 +255,11 @@ export namespace BrowserUtils {
     );
     tryBlock(
       () =>
-        browser.waitUntil(() => {
-          return browser.isVisible(notVisibleElementSelector) === false;
-        }),
+        browser.waitForVisible(
+          notVisibleElementSelector,
+          DEFAULT_TIME_OUT,
+          false
+        ),
       `Failed to validate element not visible ${notVisibleElementSelector}`
     );
   }
@@ -265,9 +272,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Validating element not exist ${notExistElementSelector}`);
     tryBlock(
       () =>
-        browser.waitUntil(() => {
-          return browser.isExisting(notExistElementSelector) === false;
-        }),
+        browser.waitForExist(notExistElementSelector, DEFAULT_TIME_OUT, false),
       `Failed to validate element not exist ${notExistElementSelector}`
     );
   }
