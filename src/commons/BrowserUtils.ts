@@ -258,7 +258,7 @@ export namespace BrowserUtils {
         browser.waitForVisible(
           notVisibleElementSelector,
           DEFAULT_TIME_OUT,
-          false
+          true
         ),
       `Failed to validate element not visible ${notVisibleElementSelector}`
     );
