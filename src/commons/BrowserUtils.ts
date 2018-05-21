@@ -332,10 +332,15 @@ export namespace BrowserUtils {
       `Validate element text is '${text}' by selector '${selector}'`
     );
     isVisible(selector);
-    const currText: string = tryBlock(
-      () => browser.getText(selector),
-      `Failed to get text from element '${selector}'`
-    ).replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
+    const foundText: string = getText(selector);
+
+    //Validate text was found
+    if (foundText === undefined) {
+      throw new Error(
+        `Could not find text in element by selector: '${selector}'`
+      );
+    }
+    const currText: string = foundText.replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
 
     if (currText !== text) {
       throw new Error(
