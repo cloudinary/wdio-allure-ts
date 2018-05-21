@@ -345,6 +345,19 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Get text of an element by selector
+   * @param selector element's selector
+   */
+  export function getText(selector: string): string {
+    Reporter.debug(`Get element's text by selector ${selector}`);
+
+    return tryBlock(
+      () => browser.getText(selector),
+      `Failed to get text from element '${selector}'`
+    );
+  }
+
+  /**
    * Validate number of items found by selector as expected
    *
    * @param selector selector of items to count
