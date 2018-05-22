@@ -381,6 +381,10 @@ export namespace BrowserUtils {
     selector: string,
     expectedValue: number
   ): void {
+    if (expectedValue === 0) {
+      notVisible(selector);
+    }
+
     tryBlock(
       () =>
         browser.waitUntil(() => {
