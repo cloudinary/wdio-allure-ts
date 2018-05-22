@@ -227,7 +227,7 @@ export namespace BrowserUtils {
   export function isVisible(selector: string): void {
     Reporter.debug(`Wait for an element to be visible ${selector}`);
     tryBlock(
-      () => browser.waitForVisible(selector),
+      () => browser.waitForVisible(selector,DEFAULT_TIME_OUT),
       `Element not visible ${selector}`
     );
   }
@@ -239,7 +239,7 @@ export namespace BrowserUtils {
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist ${selector}`);
     tryBlock(
-      () => browser.waitForExist(selector),
+      () => browser.waitForExist(selector,DEFAULT_TIME_OUT),
       `Element not exist ${selector}`
     );
   }
@@ -564,8 +564,8 @@ export namespace BrowserUtils {
    *
    */
   function chillOut(): void {
-    Reporter.debug("wait for 300ms");
-    browser.pause(300);
+    Reporter.debug("wait for 3000ms");
+    browser.pause(3000);
   }
 
   /**
