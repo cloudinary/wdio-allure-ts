@@ -7,6 +7,10 @@ const DEFAULT_TIME_OUT: number =
     ? 60000
     : Number(process.env.DEFAULT_TIME_OUT);
 
+const CHILL_OUT_TIME: number =
+  process.env.CHILL_OUT_TIME === undefined
+    ? 3000
+    : Number(process.env.CHILL_OUT_TIME);
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -227,7 +231,7 @@ export namespace BrowserUtils {
   export function isVisible(selector: string): void {
     Reporter.debug(`Wait for an element to be visible ${selector}`);
     tryBlock(
-      () => browser.waitForVisible(selector,DEFAULT_TIME_OUT),
+      () => browser.waitForVisible(selector, DEFAULT_TIME_OUT),
       `Element not visible ${selector}`
     );
   }
@@ -239,7 +243,7 @@ export namespace BrowserUtils {
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist ${selector}`);
     tryBlock(
-      () => browser.waitForExist(selector,DEFAULT_TIME_OUT),
+      () => browser.waitForExist(selector, DEFAULT_TIME_OUT),
       `Element not exist ${selector}`
     );
   }
@@ -564,8 +568,8 @@ export namespace BrowserUtils {
    *
    */
   function chillOut(): void {
-    Reporter.debug("wait for 3000ms");
-    browser.pause(3000);
+    Reporter.debug(`wait for ${CHILL_OUT_TIME}ms`);
+    browser.pause(CHILL_OUT_TIME);
   }
 
   /**
