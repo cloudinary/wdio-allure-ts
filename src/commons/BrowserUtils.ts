@@ -414,7 +414,14 @@ export namespace BrowserUtils {
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          browser.moveToObject(`(${listSelector})[${last}]`);
+          /**
+           * Since FireFox does not support moveToObject
+           * we use JS instead of browser.moveToObject(`(${listSelector})[${last}]`);
+           */
+          const xpath: string = `(${listSelector})[${last}]`;
+          const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
+          executeScript(scrollToJS);
+
           last = browser.elements(listSelector).value.length;
 
           return browser.isVisible(elementSelector);
