@@ -67,15 +67,15 @@ Reporter.error('Error log entry');
 
 **Terminal Output**
 
-![Terminal Output](https://cloudinary-res.cloudinary.com/image/upload/w_700,c_fill,f_auto,q_auto/blog/wdio-allure-ts/terminal_report.png)
+![Terminal Output](https://cloudinary-res.cloudinary.com/image/upload/f_auto,q_auto/blog/wdio-allure-ts/terminal_report.png)
 Note the difference in the highlighted areas between the original report and the one created with `wdio-allure-ts`.
 **Original Report**
 
-![Original Report](https://cloudinary-res.cloudinary.com/image/upload/w_700,c_fill,f_auto,q_auto/blog/wdio-allure-ts/allure_report_origin.png)
+![Original Report](https://cloudinary-res.cloudinary.com/image/upload/f_auto,q_auto/blog/wdio-allure-ts/allure_report_origin.png)
 
 **wdio-allure-ts Report([live report example](https://cloudinary.github.io/wdio-allure-ts-example/allure-report/index.html)):**
 
-![`wdio-allure-ts` Report](https://cloudinary-res.cloudinary.com/image/upload/w_700,c_fill,f_auto,q_auto/blog/wdio-allure-ts/allure_report_updated.png)
+![`wdio-allure-ts` Report](https://cloudinary-res.cloudinary.com/image/upload/f_auto,q_auto/blog/wdio-allure-ts/allure_report_updated.png)
 
 ## Ready to Try?
 
