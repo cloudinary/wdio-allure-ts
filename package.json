@@ -27,7 +27,7 @@
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
     "clean": "rm -rf ./lib",
     "ts_compile": "tsc",
-    "build": "run-s clean tslint ts_compile",
+    "prepare": "run-s clean tslint ts_compile",
     "test": "run-s build; git diff --exit-code ./lib"
   },
   "dependencies": {
