@@ -24,6 +24,10 @@ Common utils for tests such as getRandomString()
 
 Holds keyboard's special keys
 
+### Environment variables
+```PRINT_LOGS_TO_CONSOLE``` - false by default. only enabled in dev configuration, since parallel tests execution will log to same terminal
+```DEFAULT_TIME_OUT``` - timeout for webdriverIO actions. Default value 60 seconds
+
 ## Example With Pure WebdriverIO
 
 Now take a look at an example of an action that, after validating that a particular element is visible, clicks it, logs every step to the Reporter, and throws meaningful errors for failures, if any.
@@ -76,6 +80,8 @@ Note the difference in the highlighted areas between the original report and the
 **wdio-allure-ts Report([live report example](https://cloudinary.github.io/wdio-allure-ts-example/allure-report/index.html)):**
 
 ![`wdio-allure-ts` Report](https://cloudinary-res.cloudinary.com/image/upload/f_auto,q_auto/blog/wdio-allure-ts/allure_report_updated.png)
+
+
 
 ## Ready to Try?
 
