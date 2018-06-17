@@ -276,7 +276,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Validating element not exist ${notExistElementSelector}`);
     tryBlock(
       () =>
-        browser.waitForExist(notExistElementSelector, DEFAULT_TIME_OUT, false),
+        browser.waitForExist(notExistElementSelector, DEFAULT_TIME_OUT, true),
       `Failed to validate element not exist ${notExistElementSelector}`
     );
   }
