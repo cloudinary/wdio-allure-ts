@@ -28,7 +28,7 @@ Holds keyboard's special keys
 
 Now take a look at an example of an action that, after validating that a particular element is visible, clicks it, logs every step to the Reporter, and throws meaningful errors for failures, if any.
 
-```nodeJS
+```javascript
  const selector: string = "someSelector";
  logger(`Click an element with selector: ${selector}`);
  try {
@@ -50,7 +50,7 @@ Now take a look at an example of an action that, after validating that a particu
 
 Example with `wdio-allure-ts`:
 
-```nodeJS
+```javascript
 const selector: string = "someSelector";
 BrowserUtils.click(selector);
 ```
@@ -59,7 +59,7 @@ You can see that wdio-allure-ts offers the same capabilities with much cleaner c
 You can add more report logs with a simple Reporter API for log levels: step, debug, error, info, and warning. The logs are displayed on the terminal and reflected in the report.
 Example:
 
-```nodeJS
+```javascript
 import { Reporter } from 'wdio-allure-ts';
 Reporter.step('Step log entry');
 Reporter.error('Error log entry');
