@@ -487,6 +487,9 @@ export namespace BrowserUtils {
   ): void {
     const attributeValue: string = getAttribute(selector, attributeName);
 
+    Reporter.debug(
+      `Validate element '${selector}' has attribute '${attributeName}' which contains '${value}'`
+    );
     if (!isContainWord(attributeValue, value)) {
       throw new Error(
         `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}
