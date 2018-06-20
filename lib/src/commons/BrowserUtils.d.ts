@@ -1,3 +1,4 @@
+/// <reference types="webdriverio" />
 import { Cookie } from "webdriverio";
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
