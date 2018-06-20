@@ -28,7 +28,7 @@
     "clean": "rm -rf ./lib",
     "ts_compile": "tsc",
     "prepare": "run-s clean tslint ts_compile",
-    "test": "run-s build; git diff --exit-code ./lib"
+    "test": "run-s prepare; git diff --exit-code ./lib"
   },
   "dependencies": {
     "chalk": "^2.4.1",
