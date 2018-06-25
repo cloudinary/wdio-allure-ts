@@ -13,7 +13,10 @@ describe("wdio-allure-ts actions test", () => {
   });
 
   it("navigateToUrl - throw malformed URL exception", () => {
-    expect(() => BrowserUtils.navigateToUrl("cloudinary")).to.throw(Error);
-    // todo add error message validation
+    const malformedUrl: string = "cloudinary";
+    expect(() => BrowserUtils.navigateToUrl(malformedUrl))
+      .to.throw(Error)
+      .with.property("message")
+      .contains(`Failed to navigate to ${malformedUrl}`);
   });
 });
