@@ -1,5 +1,11 @@
 language: node_js
 node_js:
 - '9'
+sudo: required
+addons:
+  firefox: latest
+  chrome: stable
 install:
 - npm install
+before_script:
+- npm run start:sampleApp 
