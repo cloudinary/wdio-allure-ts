@@ -6,3 +6,5 @@ addons:
   chrome: stable
 install:
 - npm install
+before_script:
+- npm run start:sampleApp 
