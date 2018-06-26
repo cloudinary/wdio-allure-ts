@@ -34,6 +34,10 @@ exports.config = {
     }
   ],
 
+  suites: {
+    regression: ["./lib/test/specs/*Spec.js"]
+  },
+
   // ===================
   // Test Configurations
   // ===================

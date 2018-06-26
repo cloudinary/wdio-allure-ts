@@ -29,7 +29,7 @@
     "ts_compile": "tsc",
     "prepare": "run-s clean tslint ts_compile",
     "test": "run-s prepare; git diff --exit-code ./lib",
-    "test:regression": "wdio ./test/wdio.conf.js --spec ./lib/test/specs/ActionsTest.js",
+    "test:regression": "wdio ./test/wdio.conf.js --suite regression",
     "start:sampleApp": "ws --spa ./test/SampleApp/index.html",
     "_grid": "Start selenium grid",
     "grid": "webdriver-manager shutdown; webdriver-manager update; webdriver-manager start"
