@@ -13,14 +13,14 @@ exports.config = {
       chromeOptions: {
         args: ["--headless", "--incognito"]
       }
-    // },
-    // {
-    //   maxInstances: 1,
-    //   browserName: "firefox",
-    //   "moz:firefoxOptions": {
-    //     args: ["--incognito", "--headless"]
-    //   }
-    // }
+      // },
+      // {
+      //   maxInstances: 1,
+      //   browserName: "firefox",
+      //   "moz:firefoxOptions": {
+      //     args: ["--incognito", "--headless"]
+      //   }
+    }
   ],
 
   suites: {
