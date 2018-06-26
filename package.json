@@ -31,7 +31,7 @@
     "test": "run-s test:compilation start:sampleApp test:regression",
     "test:compilation": "run-s prepare; git diff --exit-code ./lib",
     "test:regression": "wdio ./test/wdio.conf.js --suite regression",
-    "start:sampleApp": "ws --spa ./test/SampleApp/index.html > ./ws.log 2>&1"
+    "start:sampleApp": "ws --spa ./test/SampleApp/index.html > ./ws.log 2>&1 &"
   },
   "dependencies": {
     "chalk": "^2.4.1",
