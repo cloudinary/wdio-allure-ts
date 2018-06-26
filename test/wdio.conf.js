@@ -1,18 +1,7 @@
 var fs = require("fs");
 var dotenv = require("dotenv");
 
-var seleniumGridPort = process.env.SELENIUM_GRID_PORT || "4444";
-
 exports.config = {
-  //
-  // =====================
-  // Server Configurations
-  // =====================
-  // Host address of the running Selenium server.
-  host: "localhost",
-  port: seleniumGridPort,
-  path: "/wd/hub",
-
   // =====================
   // Browser Configurations
   // =====================
@@ -56,6 +45,11 @@ exports.config = {
   // Test reporter for stdout.
   // see also: http://webdriver.io/guide/reporters/dot.html
   reporters: ["spec"],
+
+  /**
+   * webdriver service
+   */
+  services: ["selenium-standalone"],
 
   //
   // Options to be passed to Mocha.
