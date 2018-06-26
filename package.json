@@ -28,7 +28,7 @@
     "clean": "rm -rf ./lib",
     "ts_compile": "tsc",
     "prepare": "run-s clean tslint ts_compile",
-    "test": "run-s test:compilation start:sampleApp test:regression",
+    "test": "run-s test:compilation test:regression",
     "test:compilation": "run-s prepare; git diff --exit-code ./lib",
     "test:regression": "wdio ./test/wdio.conf.js --suite regression",
     "start:sampleApp": "ws --spa ./test/SampleApp/index.html > ./ws.log 2>&1 &"
