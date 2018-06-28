@@ -118,6 +118,15 @@ export declare namespace BrowserUtils {
      */
     function switchToFrame(iframeSelector: string): void;
     /**
+     * Switch to other tab by id
+     * @param tabId tab it to switch
+     */
+    function switchTab(tabId: string): void;
+    /**
+     * Get ids of open tabs
+     */
+    function getTabIds(): string[];
+    /**
      * Switch to parent frame
      * Have to call it after switching to some iframe
      * so the focus will be back on main page
