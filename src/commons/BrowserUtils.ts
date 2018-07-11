@@ -533,7 +533,7 @@ export namespace BrowserUtils {
       "\\$&"
     );
 
-    const regexStr: string = `^|\\s${wordEscapedChars}?=\\s|$`;
+    const regexStr: string = `(^|\\s)${wordEscapedChars}(?=\\s|$)`;
 
     return new RegExp(regexStr).test(fullText);
   }
