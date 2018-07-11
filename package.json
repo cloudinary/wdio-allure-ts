@@ -31,19 +31,19 @@
     "test": "run-s test:compilation test:regression",
     "test:compilation": "run-s prepare; git diff --exit-code ./lib",
     "test:regression": "wdio ./test/wdio.conf.js --suite regression",
-    "start:sampleApp": "ws --spa ./test/SampleApp/index.html > ./ws.log 2>&1 &"
+    "start:sampleApp": "ws --spa ./test/sampleApp/index.html"
   },
   "dependencies": {
+    "chai": "^4.1.2",
     "chalk": "^2.4.1",
     "npm": "^6.1.0",
     "wdio-allure-reporter": "^0.6.2",
-    "webdriverio": "^4.13.0",
-    "chai": "^4.1.2"
+    "webdriverio": "^4.13.1"
   },
   "devDependencies": {
     "@types/chai": "^4.1.4",
     "@types/mocha": "^5.2.3",
-    "@types/webdriverio": "^4.10.2",
+    "@types/webdriverio": "^4.10.3",
     "dotenv": "^6.0.0",
     "local-web-server": "^2.5.2",
     "npm-run-all": "^4.1.3",

@@ -305,6 +305,28 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Switch to other tab by id
+   * @param tabId tab it to switch
+   */
+  export function switchTab(tabId: string): void {
+    Reporter.debug(`Switching tab by id: '${tabId}'`);
+
+    tryBlock(
+      () => browser.switchTab(tabId),
+      `Failed switch to tab by id: '${tabId}'`
+    );
+  }
+
+  /**
+   * Get ids of open tabs
+   */
+  export function getTabIds(): string[] {
+    Reporter.debug("Get all ids of all open tabs");
+
+    return tryBlock(() => browser.getTabIds(), "Failed to get tab ids");
+  }
+
+  /**
    * Switch to parent frame
    * Have to call it after switching to some iframe
    * so the focus will be back on main page

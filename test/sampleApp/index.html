@@ -4,14 +4,19 @@
 <body>
 
     <hr>
-
-    <button onclick="myFunction()">Click me</button>
-
+    <button data-test="print-message-btn" onclick="myFunction()">Print message</button>
     <p id="demo"></p>
-
     <script>
         function myFunction() {
             document.getElementById("demo").innerHTML = "Hello World";
+        }
+    </script>
+
+    <hr>
+    <button data-test="open-tab-btn" onclick="myFunction()">Open tab</button>
+    <script>
+        function myFunction() {
+            var myWindow = window.open("", "", "width=200,height=100");
         }
     </script>
 
