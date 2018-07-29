@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <style>
+        .button-print-message {
+            background-color: green;
+            border: red;
+            color: brown;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
 <body>
 
     <hr>
-    <button data-test="print-message-btn" onclick="myFunction()">Print message</button>
+    <button data-test="print-message-btn" class="button-print-message" onclick="myFunction()">Print message</button>
     <p id="demo"></p>
     <script>
         function myFunction() {
