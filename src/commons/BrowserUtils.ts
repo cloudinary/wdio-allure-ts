@@ -1,5 +1,5 @@
 import { EOL } from "os";
-import { Cookie } from "webdriverio";
+import { Cookie, CssProperty } from "webdriverio";
 import { Reporter } from "./Reporter";
 
 const DEFAULT_TIME_OUT: number =
@@ -558,6 +558,25 @@ export namespace BrowserUtils {
     const regexStr: string = `(^|\\s)${wordEscapedChars}(?=\\s|$)`;
 
     return new RegExp(regexStr).test(fullText);
+  }
+
+  /**
+   * Get cssProperty value by it's name and element selector
+   * @param selector element selector
+   * @param cssPropertyName  css property name
+   */
+  export function getCssProperty(
+    selector: string,
+    cssPropertyName: string
+  ): CssProperty {
+    Reporter.debug(
+      `Get css property '${cssPropertyName}' from element by '${selector}'`
+    );
+
+    return tryBlock(
+      () => browser.getCssProperty(selector, cssPropertyName),
+      `Failed to get css Property ${cssPropertyName} from ${selector}`
+    );
   }
 
   /**

@@ -1,4 +1,4 @@
-import { Cookie } from "webdriverio";
+import { Cookie, CssProperty } from "webdriverio";
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -194,6 +194,12 @@ export declare namespace BrowserUtils {
      * @param value value NOT in attribute
      */
     function expectNoAttributeValue(selector: string, attributeName: string, value: string): void;
+    /**
+     * Get cssProperty value by it's name and element selector
+     * @param selector element selector
+     * @param cssPropertyName  css property name
+     */
+    function getCssProperty(selector: string, cssPropertyName: string): CssProperty;
     /**
      * Set cookie
      * Requires navigation to domain before setting cookie
