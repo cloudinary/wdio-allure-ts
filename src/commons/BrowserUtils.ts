@@ -619,6 +619,43 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Accept Alert
+   */
+  export function acceptAlert(): void {
+    Reporter.debug("Accept alert");
+
+    return tryBlock(() => browser.alertAccept(), "Failed to accept alert");
+  }
+
+  /**
+   * Dismiss Alert
+   */
+  export function dismissAlert(): void {
+    Reporter.debug("Accept alert");
+
+    return tryBlock(() => browser.alertDismiss(), "Failed to dismiss alert");
+  }
+
+  /**
+   * Validate alert's text as expected
+   * @param expectedText expected alert's text
+   */
+  export function expectAlertText(expectedText: string): void {
+    Reporter.debug(`Validate alert's text is '${expectedText}'`);
+
+    const actualText: string = tryBlock(
+      () => browser.alertText(),
+      "Failed to get alert's text"
+    );
+
+    if (actualText !== expectedText) {
+      throw new Error(
+        `Incorrect alert's text. ${EOL} Expected: '${expectedText}' ${EOL} Actual: '${actualText}'`
+      );
+    }
+  }
+
+  /**
    * When switching between iframes, without wait it will fail to switch to iframe
    *
    */
