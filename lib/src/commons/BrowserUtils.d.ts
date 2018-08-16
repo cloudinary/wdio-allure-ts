@@ -215,4 +215,17 @@ export declare namespace BrowserUtils {
      * Get current Url
      */
     function getUrl(): string;
+    /**
+     * Accept Alert
+     */
+    function acceptAlert(): void;
+    /**
+     * Dismiss Alert
+     */
+    function dismissAlert(): void;
+    /**
+     * Validate alert's text as expected
+     * @param expectedText expected alert's text
+     */
+    function expectAlertText(expectedText: string): void;
 }
