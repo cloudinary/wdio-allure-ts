@@ -507,18 +507,20 @@ export namespace BrowserUtils {
     attributeName: string,
     value: string
   ): void {
-    const attributeValue: string = getAttribute(selector, attributeName);
-
     Reporter.debug(
       `Validate element '${selector}' has attribute '${attributeName}' which contains '${value}'`
     );
-    if (!isContainWord(attributeValue, value)) {
-      throw new Error(
-        `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}
-         Expected: ${EOL} word '${value}' to be part of ${EOL}
-                 '${attributeValue}'`
-      );
-    }
+    let attributeValue: string = null;
+
+    tryBlock(
+      () =>
+        browser.waitUntil(() => {
+          attributeValue = getAttribute(selector, attributeName);
+
+          return isContainWord(attributeValue, value);
+        }),
+      `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}Expected: ${EOL} word '${value}' to be part of ${EOL}'${attributeValue}'`
+    );
   }
 
   /**
@@ -532,15 +534,17 @@ export namespace BrowserUtils {
     attributeName: string,
     value: string
   ): void {
-    const attributeValue: string = getAttribute(selector, attributeName);
+    let attributeValue: string = null;
 
-    if (isContainWord(attributeValue, value)) {
-      throw new Error(
-        `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}
-         Expected: ${EOL} word '${value}' NOT to be part of ${EOL}
-                 '${attributeValue}'`
-      );
-    }
+    tryBlock(
+      () =>
+        browser.waitUntil(() => {
+          attributeValue = getAttribute(selector, attributeName);
+
+          return !isContainWord(attributeValue, value);
+        }),
+      `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}Expected: ${EOL} word '${value}' NOT to be part of ${EOL}'${attributeValue}'`
+    );
   }
 
   /**
