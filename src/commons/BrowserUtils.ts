@@ -363,14 +363,7 @@ export namespace BrowserUtils {
       `Validate element text is '${text}' by selector '${selector}'`
     );
     isVisible(selector);
-    const foundText: string[] = getText(selector);
-
-    //Check for multiple results
-    if (foundText.length > 1) {
-        throw new Error(
-            `Found multiple results matching text '${text}', for element: '${selector}'`
-        );
-    }
+    const foundText: string = getText(selector);
 
     //Validate text was found
     if (foundText === undefined) {
@@ -387,17 +380,34 @@ export namespace BrowserUtils {
     }
   }
 
+
+
   /**
    * Get text of an element by selector
    * @param selector element's selector
    */
-  export function getText(selector: string): string[] {
+  export function getText(selector: string): string {
     Reporter.debug(`Get element's text by selector ${selector}`);
 
     return tryBlock(
-      () => browser.getText(selector),
+      () => getTextAndVerify(selector),
       `Failed to get text from element '${selector}'`
     );
+  }
+
+
+  function getTextAndVerify(selector: string) : string {
+      // @ts-ignore
+      const stringResults : string[] = browser.getText(selector);
+
+      //Check for multiple results
+      if (stringResults.length > 1) {
+          throw new Error(
+              `Found multiple results matching text for element: '${selector}'`
+          );
+      }
+
+      return stringResults[0];
   }
 
   /**

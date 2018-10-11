@@ -8,13 +8,13 @@ const sampleAppUrl: string = "http://127.0.0.1:8000/";
  * wdio-allure-ts navigateToUrl action test
  */
 describe("GetText of BrowserUtils Tests", () => {
-    it("Validate multiple results ", () => {
+    it("Validate single result ", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        assert.isAbove(browser.getText("//*[@class='button']").length, 1);
+        assert.equal(browser.getText("//*[@class='button-print-message']").length, 1);
     });
 
-    it("Validate multiple results ", () => {
+    it("Validate multiple result ending in err ", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        expect(BrowserUtils.expectText("//*[@class='button']", 'LEARN MORE')).to.throw('Found multiple results matching text');
+        expect(browser.getText("//*[@class='button-print-message-duplicate']")).to.throw('Failed');
     });
 });
