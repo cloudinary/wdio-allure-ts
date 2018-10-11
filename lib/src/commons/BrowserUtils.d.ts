@@ -151,7 +151,7 @@ export declare namespace BrowserUtils {
      * Get text of an element by selector
      * @param selector element's selector
      */
-    function getText(selector: string): string;
+    function getText(selector: string): string[];
     /**
      * Validate number of items found by selector as expected
      *

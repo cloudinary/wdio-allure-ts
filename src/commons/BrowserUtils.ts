@@ -363,7 +363,14 @@ export namespace BrowserUtils {
       `Validate element text is '${text}' by selector '${selector}'`
     );
     isVisible(selector);
-    const foundText: string = getText(selector);
+    const foundText: string[] = getText(selector);
+
+    //Check for multiple results
+    if (foundText.length > 1) {
+        throw new Error(
+            `Found multiple results matching text '${text}', for element: '${selector}'`
+        );
+    }
 
     //Validate text was found
     if (foundText === undefined) {
@@ -371,7 +378,7 @@ export namespace BrowserUtils {
         `Could not find text in element by selector: '${selector}'`
       );
     }
-    const currText: string = foundText.replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
+    const currText: string = foundText[0].replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
 
     if (currText !== text) {
       throw new Error(
@@ -384,7 +391,7 @@ export namespace BrowserUtils {
    * Get text of an element by selector
    * @param selector element's selector
    */
-  export function getText(selector: string): string {
+  export function getText(selector: string): string[] {
     Reporter.debug(`Get element's text by selector ${selector}`);
 
     return tryBlock(
