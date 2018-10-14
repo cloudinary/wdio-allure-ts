@@ -20,7 +20,7 @@ describe("GetText of BrowserUtils Tests", () => {
         expect(() => BrowserUtils.getText("//*[@class='button-print-message-duplicate']"))
             .to.throw(Error)
             .with.property("message")
-            .contains(`Failed`);
+            .contains(`Found multiple results matching text or no results`);
     });
 
     it("Validate no element found ending in err ", () => {
@@ -28,7 +28,7 @@ describe("GetText of BrowserUtils Tests", () => {
         expect(() => BrowserUtils.getText("//*[@class='OMG']"))
             .to.throw(Error)
             .with.property("message")
-            .contains(`Failed`);
+            .contains(`Found multiple results matching text or no results`);
     });
 
 });
