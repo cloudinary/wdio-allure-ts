@@ -10,11 +10,25 @@ const sampleAppUrl: string = "http://127.0.0.1:8000/";
 describe("GetText of BrowserUtils Tests", () => {
     it("Validate single result ", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        assert.equal(browser.getText("//*[@class='button-print-message']").length, 1);
+
+
+        assert.equal(BrowserUtils.getText("//*[@class='button-print-message']"), "Print message");
     });
 
     it("Validate multiple result ending in err ", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        expect(browser.getText("//*[@class='button-print-message-duplicate']")).to.throw('Failed');
+        expect(() => BrowserUtils.getText("//*[@class='button-print-message-duplicate']"))
+            .to.throw(Error)
+            .with.property("message")
+            .contains(`Failed`);
     });
+
+    it("Validate no element found ending in err ", () => {
+        BrowserUtils.navigateToUrl(sampleAppUrl);
+        expect(() => BrowserUtils.getText("//*[@class='OMG']"))
+            .to.throw(Error)
+            .with.property("message")
+            .contains(`Failed`);
+    });
+
 });

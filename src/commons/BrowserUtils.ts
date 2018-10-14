@@ -398,16 +398,16 @@ export namespace BrowserUtils {
 
   function getTextAndVerify(selector: string) : string {
       // @ts-ignore
-      const stringResults : string[] = browser.getText(selector);
+      const stringResults : string = (browser.elements(selector).value.length === 1) ? browser.getText(selector) : null;
 
-      //Check for multiple results
-      if (stringResults.length > 1) {
+      //Check for multiple results or no element found
+      if (stringResults === null) {
           throw new Error(
-              `Found multiple results matching text for element: '${selector}'`
+              `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
           );
       }
 
-      return stringResults[0];
+      return stringResults;
   }
 
   /**
