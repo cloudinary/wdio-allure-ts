@@ -10,22 +10,22 @@ const sampleAppUrl: string = "http://127.0.0.1:8000/";
 describe("ExpectNoAttributeValueSpec of BrowserUtils Tests", () => {
     it("Validate positive result ", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        assert.isTrue(BrowserUtils.expectNoAttributeValue("//form",'method', 'post'));
+        assert.equal(BrowserUtils.getAttribute("//form",'method'), "post");
     });
 
     it("Validate null result ending in err", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        expect(() => BrowserUtils.expectNoAttributeValue("//form", 'method', 'BlaBla'))
+        expect(() => BrowserUtils.getAttribute("//form", 'name'))
             .to.throw(Error)
             .with.property("message")
-            .contains(`Failed`);
+            .contains(`Failed to get name attribute`);
     });
 
     it("Validate incorrect value ending in err", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        expect(() => BrowserUtils.expectNoAttributeValue("//form", 'ONG', 'BlaBla'))
+        expect(() => BrowserUtils.getAttribute("//form", 'ONG'))
             .to.throw(Error)
             .with.property("message")
-            .contains(`Incorrect`);
+            .contains(`Failed to get ONG`);
     });
 });
