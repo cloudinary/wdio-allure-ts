@@ -550,18 +550,26 @@ export namespace BrowserUtils {
     selector: string,
     attributeName: string,
     value: string
-  ): void {
+  ) : boolean {
     let attributeValue: string = null;
 
-    tryBlock(
+      tryBlock(
       () =>
         browser.waitUntil(() => {
           attributeValue = getAttribute(selector, attributeName);
+
+          if(attributeValue === null) {
+                throw new Error(
+                    `Failed to retrieve attribute '${attributeName}', null result.`
+                );
+          }
 
           return !isContainWord(attributeValue, value);
         }),
       `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}Expected: ${EOL} word '${value}' NOT to be part of ${EOL}'${attributeValue}'`
     );
+
+      return !isContainWord(attributeValue, value);
   }
 
   /**

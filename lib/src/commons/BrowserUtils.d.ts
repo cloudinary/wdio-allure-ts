@@ -193,7 +193,7 @@ export declare namespace BrowserUtils {
      * @param attributeName attribute name to search for
      * @param value value NOT in attribute
      */
-    function expectNoAttributeValue(selector: string, attributeName: string, value: string): void;
+    function expectNoAttributeValue(selector: string, attributeName: string, value: string): boolean;
     /**
      * Get cssProperty value by it's name and element selector
      * @param selector element selector
