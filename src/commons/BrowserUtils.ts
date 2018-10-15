@@ -371,7 +371,7 @@ export namespace BrowserUtils {
         `Could not find text in element by selector: '${selector}'`
       );
     }
-    const currText: string = foundText.replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
+    const currText: string = foundText[0].replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
 
     if (currText !== text) {
       throw new Error(
@@ -379,6 +379,8 @@ export namespace BrowserUtils {
       );
     }
   }
+
+
 
   /**
    * Get text of an element by selector
@@ -388,9 +390,24 @@ export namespace BrowserUtils {
     Reporter.debug(`Get element's text by selector ${selector}`);
 
     return tryBlock(
-      () => browser.getText(selector),
+      () => getTextAndVerify(selector),
       `Failed to get text from element '${selector}'`
     );
+  }
+
+
+  function getTextAndVerify(selector: string) : string {
+      // @ts-ignore
+      const stringResults : string = (browser.elements(selector).value.length === 1) ? browser.getText(selector) : null;
+
+      //Check for multiple results or no element found
+      if (stringResults === null) {
+          throw new Error(
+              `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
+          );
+      }
+
+      return stringResults;
   }
 
   /**

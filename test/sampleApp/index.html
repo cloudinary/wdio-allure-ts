@@ -15,6 +15,19 @@
             margin: 4px 2px;
             cursor: pointer;
         }
+
+        .button-print-message-duplicate {
+            background-color: deepskyblue;
+            border: dodgerblue;
+            color: brown;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -22,6 +35,8 @@
 
     <hr>
     <button data-test="print-message-btn" class="button-print-message" onclick="myFunction()">Print message</button>
+    <button data-test="dup-print-message-btn" class="button-print-message-duplicate" onclick="myFunction()">Duplicated message</button>
+    <button data-test="dup-print-message-btn" class="button-print-message-duplicate" onclick="myFunction()">Duplicated message</button>
     <p id="demo"></p>
     <script>
         function myFunction() {
