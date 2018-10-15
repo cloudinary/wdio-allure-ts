@@ -371,7 +371,7 @@ export namespace BrowserUtils {
         `Could not find text in element by selector: '${selector}'`
       );
     }
-    const currText: string = foundText[0].replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
+    const currText: string = foundText.replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
 
     if (currText !== text) {
       throw new Error(
