@@ -1,6 +1,6 @@
-import { EOL } from "os";
-import { Cookie, CssProperty } from "webdriverio";
-import { Reporter } from "./Reporter";
+import { EOL } from 'os';
+import { Cookie, CssProperty } from 'webdriverio';
+import { Reporter } from './Reporter';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined
@@ -54,7 +54,7 @@ export namespace BrowserUtils {
   export function scrollToBottom(): void {
     const bottom: number = getLowestPagePoint();
 
-    Reporter.debug("Scroll to the bottom of the page");
+    Reporter.debug('Scroll to the bottom of the page');
     scrollToPoint(0, bottom);
   }
 
@@ -62,7 +62,7 @@ export namespace BrowserUtils {
    * Scroll to top of the current page
    */
   export function scrollToTop(): void {
-    Reporter.debug("Scroll to the top of the page");
+    Reporter.debug('Scroll to the top of the page');
     scrollToPoint(0, 0);
   }
 
@@ -165,11 +165,11 @@ export namespace BrowserUtils {
    * Refresh browser's page
    */
   export function refreshBrowser(): void {
-    Reporter.debug("Refresh browser page");
+    Reporter.debug('Refresh browser page');
     tryBlock(
       () => browser.refresh(),
 
-      "Failed to refresh the page"
+      'Failed to refresh the page'
     );
   }
 
@@ -206,7 +206,7 @@ export namespace BrowserUtils {
       throw new Error(`Illegal URL: ${url}`);
     }
 
-    return url.replace(/\/+$/, "");
+    return url.replace(/\/+$/, '');
   }
 
   /**
@@ -289,7 +289,7 @@ export namespace BrowserUtils {
    */
   export function switchToFrame(iframeSelector: string): void {
     chillOut();
-    Reporter.debug("Switching to an Iframe");
+    Reporter.debug('Switching to an Iframe');
     isExist(iframeSelector);
 
     Reporter.debug(`Get iframe element ${iframeSelector}`);
@@ -300,7 +300,7 @@ export namespace BrowserUtils {
     );
 
     Reporter.debug(`Switching to Iframe ${iframeSelector}'`);
-    tryBlock(() => browser.frame(frameId), "Failed to switch frame");
+    tryBlock(() => browser.frame(frameId), 'Failed to switch frame');
     chillOut();
   }
 
@@ -321,9 +321,9 @@ export namespace BrowserUtils {
    * Get ids of open tabs
    */
   export function getTabIds(): string[] {
-    Reporter.debug("Get all ids of all open tabs");
+    Reporter.debug('Get all ids of all open tabs');
 
-    return tryBlock(() => browser.getTabIds(), "Failed to get tab ids");
+    return tryBlock(() => browser.getTabIds(), 'Failed to get tab ids');
   }
 
   /**
@@ -332,8 +332,8 @@ export namespace BrowserUtils {
    * so the focus will be back on main page
    */
   export function switchToParentFrame(): void {
-    Reporter.debug("Switching to parent frame");
-    tryBlock(() => browser.frameParent(), "Failed to switch to parent frame");
+    Reporter.debug('Switching to parent frame');
+    tryBlock(() => browser.frameParent(), 'Failed to switch to parent frame');
   }
 
   /**
@@ -371,7 +371,7 @@ export namespace BrowserUtils {
         `Could not find text in element by selector: '${selector}'`
       );
     }
-    const currText: string = foundText.replace(/(\n)/gm, " "); // replace EOL with space, for more readable tests strings;
+    const currText: string = foundText.replace(/(\n)/gm, ' '); // replace EOL with space, for more readable tests strings;
 
     if (currText !== text) {
       throw new Error(
@@ -379,8 +379,6 @@ export namespace BrowserUtils {
       );
     }
   }
-
-
 
   /**
    * Get text of an element by selector
@@ -395,19 +393,21 @@ export namespace BrowserUtils {
     );
   }
 
+  function getTextAndVerify(selector: string): string {
+    // @ts-ignore
+    const stringResults: string =
+      browser.elements(selector).value.length === 1
+        ? browser.getText(selector)
+        : null;
 
-  function getTextAndVerify(selector: string) : string {
-      // @ts-ignore
-      const stringResults : string = (browser.elements(selector).value.length === 1) ? browser.getText(selector) : null;
+    //Check for multiple results or no element found
+    if (stringResults === null) {
+      throw new Error(
+        `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
+      );
+    }
 
-      //Check for multiple results or no element found
-      if (stringResults === null) {
-          throw new Error(
-              `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
-          );
-      }
-
-      return stringResults;
+    return stringResults;
   }
 
   /**
@@ -483,13 +483,13 @@ export namespace BrowserUtils {
     switchToParentFrame(); //if iframe already focused, isExist will fail
     isExist(iframeSelector);
 
-    const cssDisplayProperty: string = "display";
+    const cssDisplayProperty: string = 'display';
     const iframeDisplayProperty: WebdriverIO.CssProperty = tryBlock(
       () => browser.element(iframeSelector).getCssProperty(cssDisplayProperty), //iframe css
       `Failed to get ${cssDisplayProperty} css property from ${iframeSelector}`
     );
 
-    const iframeVisibility: boolean = iframeDisplayProperty.value === "block"; //css display value. block == visible, none == not visible
+    const iframeVisibility: boolean = iframeDisplayProperty.value === 'block'; //css display value. block == visible, none == not visible
 
     if (iframeVisibility !== expectedVisibility) {
       throw new Error(
@@ -573,7 +573,7 @@ export namespace BrowserUtils {
     // escape special characters from user input
     const wordEscapedChars: string = word.replace(
       /[-\/\\^$*+?.()|[\]{}]/g,
-      "\\$&"
+      '\\$&'
     );
 
     const regexStr: string = `(^|\\s)${wordEscapedChars}(?=\\s|$)`;
@@ -632,7 +632,7 @@ export namespace BrowserUtils {
   export function getUrl(): string {
     const currentUrl: string = tryBlock(
       () => browser.getUrl(),
-      "Failed to get current url"
+      'Failed to get current url'
     );
     Reporter.debug(`Get current URL: ${currentUrl}`);
 
@@ -643,18 +643,18 @@ export namespace BrowserUtils {
    * Accept Alert
    */
   export function acceptAlert(): void {
-    Reporter.debug("Accept alert");
+    Reporter.debug('Accept alert');
 
-    return tryBlock(() => browser.alertAccept(), "Failed to accept alert");
+    return tryBlock(() => browser.alertAccept(), 'Failed to accept alert');
   }
 
   /**
    * Dismiss Alert
    */
   export function dismissAlert(): void {
-    Reporter.debug("Accept alert");
+    Reporter.debug('Accept alert');
 
-    return tryBlock(() => browser.alertDismiss(), "Failed to dismiss alert");
+    return tryBlock(() => browser.alertDismiss(), 'Failed to dismiss alert');
   }
 
   /**
