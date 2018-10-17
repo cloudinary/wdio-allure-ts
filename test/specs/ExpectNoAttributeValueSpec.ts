@@ -5,27 +5,25 @@ import { BrowserUtils } from "../../src/commons/BrowserUtils";
 const sampleAppUrl: string = "http://127.0.0.1:8000/";
 
 /**
- * wdio-allure-ts navigateToUrl action test
+ * wdio-allure-ts ExpectNoAttributeValueSpec action test
  */
 describe("ExpectNoAttributeValueSpec of BrowserUtils Tests", () => {
-    it("Validate positive result ", () => {
+    it("Validate negative result (Attribute found not as expected)", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        assert.equal(BrowserUtils.getAttribute("//form",'method'), "post");
+        assert.isFalse(BrowserUtils.expectNoAttributeValue("//form",'method', 'post'));
+    });
+
+    it("Validate positive result (Attribute wasn't found as expected)", () => {
+        BrowserUtils.navigateToUrl(sampleAppUrl);
+        assert.isTrue(BrowserUtils.expectNoAttributeValue("//form",'method', "OhNooo"));
     });
 
     it("Validate null result ending in err", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        expect(() => BrowserUtils.getAttribute("//form", 'name'))
+        expect(() => BrowserUtils.expectNoAttributeValue("//form",'name', "OhNooo") )
             .to.throw(Error)
             .with.property("message")
-            .contains(`Failed to get name attribute`);
+            .contains(`Found multiple results`);
     });
 
-    it("Validate incorrect value ending in err", () => {
-        BrowserUtils.navigateToUrl(sampleAppUrl);
-        expect(() => BrowserUtils.getAttribute("//form", 'ONG'))
-            .to.throw(Error)
-            .with.property("message")
-            .contains(`Failed to get ONG`);
-    });
 });

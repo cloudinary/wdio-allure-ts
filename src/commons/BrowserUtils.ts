@@ -519,6 +519,7 @@ export namespace BrowserUtils {
      * @param attributeName
      */
     function getAttributeAndVerify(selector: string, attributeName: string): string {
+        console.debug(`selector:" '${selector}' , attribute name: " ${attributeName}`)
         // @ts-ignore
         const stringResults: string = (browser.elements(selector).value.length === 1) ? browser.getAttribute(selector, attributeName) : null;
 
@@ -585,17 +586,22 @@ export namespace BrowserUtils {
         return !isContainWord(attributeValue, value);
     }
 
-  /**
-   * Check if word is a substring of given text
-   * @param fullText string to search in
-   * @param word word to search
-   */
-  function isContainWord(fullText: string, word: string): boolean {
-    // escape special characters from user input
-    const wordEscapedChars: string = word.replace(
-      /[-\/\\^$*+?.()|[\]{}]/g,
-      "\\$&"
-    );
+    /**
+     * Check if word is a substring of given text
+     * @param fullText string to search in
+     * @param word word to search
+     */
+    function isContainWord(fullText: string, word: string): boolean {
+        if (fullText === null || word ===null) {
+            throw new Error(
+                `Some of the strings or all are null. fullText: '${fullText}', word: '${word}`
+            );
+        }
+        // escape special characters from user input
+        const wordEscapedChars: string = word.replace(
+            /[-\/\\^$*+?.()|[\]{}]/g,
+            "\\$&"
+        );
 
         const regexStr: string = `(^|\\s)${wordEscapedChars}(?=\\s|$)`;
 
