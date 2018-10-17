@@ -1,4 +1,4 @@
-import { assert, expect } from "chai";
+import { expect } from "chai";
 import { BrowserUtils } from "../../src/commons/BrowserUtils";
 
 // tslint:disable-next-line:no-http-string
@@ -7,23 +7,22 @@ const sampleAppUrl: string = "http://127.0.0.1:8000/";
 /**
  * wdio-allure-ts ExpectNoAttributeValueSpec action test
  */
-describe("ExpectNoAttributeValueSpec of BrowserUtils Tests", () => {
-    it("Validate negative result (Attribute found not as expected)", () => {
+describe("expectNoAttributeValue", () => {
+    it("Doesn't contains value", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        assert.isFalse(BrowserUtils.expectNoAttributeValue("//form",'method', 'post'));
+        expect(() => BrowserUtils.expectNoAttributeValue("//form",'method', "pos"))
+            .to.not.throw(Error)
     });
 
-    it("Validate positive result (Attribute wasn't found as expected)", () => {
+    it("Contains word substring", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        assert.isTrue(BrowserUtils.expectNoAttributeValue("//form",'method', "OhNooo"));
+        expect(() => BrowserUtils.expectNoAttributeValue("//form",'method', "postt"))
+            .to.not.throw(Error)
     });
 
-    it("Validate null result ending in err", () => {
+    it("Exact match error thrown", () => {
         BrowserUtils.navigateToUrl(sampleAppUrl);
-        expect(() => BrowserUtils.expectNoAttributeValue("//form",'name', "OhNooo") )
-            .to.throw(Error)
-            .with.property("message")
-            .contains(`Found multiple results`);
+        expect(() => BrowserUtils.expectNoAttributeValue("//form",'method', "post"))
+            .to.throw(Error);
     });
-
 });

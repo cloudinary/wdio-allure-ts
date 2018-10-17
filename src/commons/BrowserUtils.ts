@@ -519,7 +519,6 @@ export namespace BrowserUtils {
      * @param attributeName
      */
     function getAttributeAndVerify(selector: string, attributeName: string): string {
-        console.debug(`selector:" '${selector}' , attribute name: " ${attributeName}`)
         // @ts-ignore
         const stringResults: string = (browser.elements(selector).value.length === 1) ? browser.getAttribute(selector, attributeName) : null;
 
@@ -561,7 +560,7 @@ export namespace BrowserUtils {
     }
 
     /**
-     * Check if attribute with given selector NOT contain expected value
+     * Check if attribute with given selector NOT contain expected word
      * @param selector element's selector to search for attribute
      * @param attributeName attribute name to search for
      * @param value value NOT in attribute
@@ -570,7 +569,7 @@ export namespace BrowserUtils {
         selector: string,
         attributeName: string,
         value: string
-    ): boolean {
+    ): void {
         let attributeValue: string = null;
 
         tryBlock(
@@ -582,8 +581,6 @@ export namespace BrowserUtils {
                 }),
             `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}Expected: ${EOL} word '${value}' NOT to be part of ${EOL}'${attributeValue}'`
         );
-
-        return !isContainWord(attributeValue, value);
     }
 
     /**

@@ -14,13 +14,13 @@ exports.config = {
         args: ["--headless", "--incognito"]
       }
     },
-    // {
-    //   maxInstances: 1,
-    //   browserName: "firefox",
-    //   "moz:firefoxOptions": {
-    //     args: ["--headless"]
-    //   }
-    // }
+    {
+      maxInstances: 1,
+      browserName: "firefox",
+      "moz:firefoxOptions": {
+        args: ["--headless"]
+      }
+    }
   ],
 
   suites: {
