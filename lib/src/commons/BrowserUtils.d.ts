@@ -1,4 +1,4 @@
-import { Cookie, CssProperty } from "webdriverio";
+import { Cookie, CssProperty } from 'webdriverio';
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */

@@ -1,19 +1,19 @@
-import chalk, { Chalk } from "chalk";
-import { createStep } from "wdio-allure-reporter";
+import chalk, { Chalk } from 'chalk';
+import { createStep } from 'wdio-allure-reporter';
 
 /**
  * Print to standard output
  */
 const printToConsole: boolean =
-  process.env.PRINT_LOGS_TO_CONSOLE === "true" || false;
+  process.env.PRINT_LOGS_TO_CONSOLE === 'true' || false;
 
-const DEBUG: string = "[DEBUG]";
+const DEBUG: string = '[DEBUG]';
 const DEBUG_COLOR: Chalk = chalk.gray;
-const STEP: string = "[STEP]";
+const STEP: string = '[STEP]';
 const STEP_COLOR: Chalk = chalk.green;
-const WARNING: string = "[WARNING]";
+const WARNING: string = '[WARNING]';
 const WARNING_COLOR: Chalk = chalk.yellow;
-const ERROR: string = "[ERROR]";
+const ERROR: string = '[ERROR]';
 const ERROR_COLOR: Chalk = chalk.red;
 
 /**
@@ -50,7 +50,7 @@ export namespace Reporter {
   export function closeStep(isFailed?: boolean): void {
     if (!isStepClosed) {
       if (isFailed) {
-        sendCustomCommand(customCommand, "failed");
+        sendCustomCommand(customCommand, 'failed');
       } else {
         sendCustomCommand(customCommand);
       }
@@ -73,7 +73,7 @@ export namespace Reporter {
     currentStepTitle = `${STEP} - ${msg}`;
     isStepClosed = false;
 
-    customCommand = new CustomCommand(currentStepTitle, "more info", "");
+    customCommand = new CustomCommand(currentStepTitle, 'more info', '');
 
     customCommand.appendToBody(prettyMessage(STEP, msg));
   }
@@ -119,7 +119,7 @@ export namespace Reporter {
     } else {
       customCommand = new CustomCommand(
         `${logType} - ${msg}`,
-        "more info",
+        'more info',
         prettyMessage(logType, msg)
       );
       sendCustomCommand(customCommand);
@@ -134,7 +134,7 @@ export namespace Reporter {
     command: CustomCommand,
     stepStatus?: string
   ): void {
-    let status: string = "passed";
+    let status: string = 'passed';
     if (stepStatus !== undefined) {
       status = stepStatus;
     }
@@ -160,8 +160,8 @@ function prettyMessage(logLevel: string, msg: string): string {
 function getDate(): string {
   return new Date()
     .toISOString() // will return like '2012-11-04T14:51:06.157Z'
-    .replace(/T/, " ") // replace T with a space
-    .replace(/\..+/, ""); // delete the dot and everything after
+    .replace(/T/, ' ') // replace T with a space
+    .replace(/\..+/, ''); // delete the dot and everything after
 }
 
 /**
