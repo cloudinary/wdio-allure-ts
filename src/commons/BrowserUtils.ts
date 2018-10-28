@@ -515,8 +515,8 @@ export namespace BrowserUtils {
 
   /**
    *
-   * @param selector
-   * @param attributeName
+   * @String selector
+   * @String attributeName
    */
   function getAttributeAndVerify(
     selector: string,
