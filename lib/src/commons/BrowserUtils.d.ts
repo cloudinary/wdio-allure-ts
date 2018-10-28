@@ -188,7 +188,7 @@ export declare namespace BrowserUtils {
      */
     function expectAttributeValue(selector: string, attributeName: string, value: string): void;
     /**
-     * Check if attribute with given selector NOT contain expected value
+     * Check if attribute with given selector NOT contain expected word
      * @param selector element's selector to search for attribute
      * @param attributeName attribute name to search for
      * @param value value NOT in attribute

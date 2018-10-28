@@ -32,9 +32,15 @@
 </head>
 
 <body>
+<hr>
+    <form action="/submit" method="post" class="loginForm">
+        <input type="text" name="name" placeholder="username"></input>
+        <input type="text" name="password" placeholder="password"></input>
+        <input type="submit" name="submit" value="submit"></input>
+    </form>
 
     <hr>
-    <button data-test="print-message-btn" class="button-print-message" onclick="myFunction()">Print message</button>
+     <button name="Print Button" data-test="print-message-btn" class="button-print-message" onclick="myFunction()">Print message</button>
     <button data-test="dup-print-message-btn" class="button-print-message-duplicate" onclick="myFunction()">Duplicated message</button>
     <button data-test="dup-print-message-btn" class="button-print-message-duplicate" onclick="myFunction()">Duplicated message</button>
     <p id="demo"></p>

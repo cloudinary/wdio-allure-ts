@@ -508,9 +508,34 @@ export namespace BrowserUtils {
     attributeName: string
   ): string {
     return tryBlock(
-      () => browser.getAttribute(selector, attributeName),
+      () => getAttributeAndVerify(selector, attributeName),
       `Failed to get ${attributeName} attribute from ${selector}`
     );
+  }
+
+  /**
+   *
+   * @String selector
+   * @String attributeName
+   */
+  function getAttributeAndVerify(
+    selector: string,
+    attributeName: string
+  ): string {
+    // @ts-ignore
+    const stringResults: string =
+      browser.elements(selector).value.length === 1
+        ? browser.getAttribute(selector, attributeName)
+        : null;
+
+    //Check for multiple results or no element found
+    if (stringResults === null) {
+      throw new Error(
+        `Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}`
+      );
+    }
+
+    return stringResults;
   }
 
   /**
@@ -541,7 +566,7 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Check if attribute with given selector NOT contain expected value
+   * Check if attribute with given selector NOT contain expected word
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    * @param value value NOT in attribute
@@ -570,6 +595,11 @@ export namespace BrowserUtils {
    * @param word word to search
    */
   function isContainWord(fullText: string, word: string): boolean {
+    if (fullText === null || word === null) {
+      throw new Error(
+        `Some of the strings or all are null. fullText: '${fullText}', word: '${word}`
+      );
+    }
     // escape special characters from user input
     const wordEscapedChars: string = word.replace(
       /[-\/\\^$*+?.()|[\]{}]/g,
