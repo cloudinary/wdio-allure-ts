@@ -15,7 +15,9 @@ const CHILL_OUT_TIME: number =
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
-  /**
+  import Axis = WebdriverIO.Axis;
+
+    /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
    *
