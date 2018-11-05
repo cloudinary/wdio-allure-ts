@@ -707,8 +707,57 @@ export namespace BrowserUtils {
   }
 
   /**
-   * When switching between iframes, without wait it will fail to switch to iframe
    *
+   * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
+   */
+  export function mouseButtonDown(mouseButton?: string): void {
+    //Defaults to the left mouse button if not specified.
+    const selectedMouseButton: string =
+      mouseButton === undefined ? 'LEFT' : mouseButton;
+    Reporter.step(`Click mouse button ${selectedMouseButton}.`);
+    browser.buttonDown(selectedMouseButton);
+  }
+
+  /**
+   * @param selector - element to move to, If not specified or is null, the offset is relative to current position of the mouse.
+   * @param xOffset - X offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
+   * @param yOffset - Y offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
+   */
+  export function moveMouseCursorTo(
+    selector?: string,
+    xOffset?: number,
+    yOffset?: number
+  ): void {
+    Reporter.debug(
+      `Move mouse cursor to element: ${selector} - X: ${xOffset}, Y: ${yOffset}`
+    );
+    browser.moveTo(selector, xOffset, yOffset);
+  }
+  /**
+   * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
+   */
+  export function mouseButtonUp(mouseButton?: string): void {
+    //Defaults to the left mouse button if not specified.
+    const selectedMouseButton: string =
+      mouseButton === undefined ? 'LEFT' : mouseButton;
+    Reporter.step(`Release mouse button ${selectedMouseButton}.`);
+    browser.buttonUp(selectedMouseButton);
+  }
+
+  /**
+   * Determine an element’s location on the page. The point (0, 0) refers to the upper-left corner of the page.
+   * @param selector  - element with requested position offset
+   */
+  export function getElementLocation(
+    selector: string
+  ): { x: number; y: number } {
+    Reporter.debug(`Get Element location- ${selector}`);
+
+    return browser.getLocation(selector);
+  }
+
+  /**
+   * When switching between iframes, without wait it will fail to switch to iframe
    */
   function chillOut(): void {
     Reporter.debug(`wait for ${CHILL_OUT_TIME}ms`);
