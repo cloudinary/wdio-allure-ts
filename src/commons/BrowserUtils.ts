@@ -15,9 +15,7 @@ const CHILL_OUT_TIME: number =
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
-  import Axis = WebdriverIO.Axis;
-
-    /**
+  /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
    *
@@ -710,9 +708,9 @@ export namespace BrowserUtils {
 
   /**
    *
-   * @param mouseButton
+   * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
-  export function mouseButtonDown(mouseButton?: string) : void {
+  export function mouseButtonDown(mouseButton?: string): void {
     //Defaults to the left mouse button if not specified.
     const selectedMouseButton: string =
       mouseButton === undefined ? 'LEFT' : mouseButton;
@@ -720,21 +718,25 @@ export namespace BrowserUtils {
     browser.buttonDown(selectedMouseButton);
   }
 
-    /**
-     *
-     * @param selector - element to move to, If not specified or is null, the offset is relative to current position of the mouse.
-     * @param xOffset - X offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
-     * @param yOffset - Y offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
-     */
-    export function moveMouseCursorTo(selector ?: string, xOffset ?: number, yOffset ?: number) : void {
-        Reporter.debug(`Move mouse cursor to element: ${selector} - X: ${xOffset}, Y: ${yOffset}` );
-        browser.moveTo(selector, xOffset, yOffset);
-    }
   /**
-   *
-   * @param mouseButton
+   * @param selector - element to move to, If not specified or is null, the offset is relative to current position of the mouse.
+   * @param xOffset - X offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
+   * @param yOffset - Y offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
    */
-  export function mouseButtonUp(mouseButton?: string) : void {
+  export function moveMouseCursorTo(
+    selector?: string,
+    xOffset?: number,
+    yOffset?: number
+  ): void {
+    Reporter.debug(
+      `Move mouse cursor to element: ${selector} - X: ${xOffset}, Y: ${yOffset}`
+    );
+    browser.moveTo(selector, xOffset, yOffset);
+  }
+  /**
+   * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
+   */
+  export function mouseButtonUp(mouseButton?: string): void {
     //Defaults to the left mouse button if not specified.
     const selectedMouseButton: string =
       mouseButton === undefined ? 'LEFT' : mouseButton;
@@ -742,15 +744,16 @@ export namespace BrowserUtils {
     browser.buttonUp(selectedMouseButton);
   }
 
-    /**
-     * Determine an element’s location on the page. The point (0, 0) refers to the upper-left corner of the page.
-     * @param selector  - element with requested position offset
-     *
-     */
-  export function getElementLocation(selector : string) : {x:number; y:number} {
-      Reporter.debug( `Get Element location- ${selector}`)
+  /**
+   * Determine an element’s location on the page. The point (0, 0) refers to the upper-left corner of the page.
+   * @param selector  - element with requested position offset
+   */
+  export function getElementLocation(
+    selector: string
+  ): { x: number; y: number } {
+    Reporter.debug(`Get Element location- ${selector}`);
 
-      return browser.getLocation(selector)
+    return browser.getLocation(selector);
   }
 
   /**
