@@ -747,7 +747,7 @@ export namespace BrowserUtils {
      * @param selector  - element with requested position offset
      *
      */
-  export function getElementLocation(selector : string) : {x:number, y:number} {
+  export function getElementLocation(selector : string) : {x:number; y:number} {
       Reporter.debug( `Get Element location- ${selector}`)
 
       return browser.getLocation(selector)
