@@ -236,11 +236,14 @@ export declare namespace BrowserUtils {
      * @param requestedWidth - Width (px)
      * @param requestedHeight - Height (px)
      */
-    function setWindowSize(requestedWidth?: number, requestedHeight?: number): void;
+    function setViewportSize(wSize: {
+        width: number;
+        height: number;
+    }): void;
     /**
      * Get current browser window size returns Size obj {width : number, height : number}
      */
-    function getWindowSize(): Size;
+    function getViewportSize(): Size;
     /**
      *
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}

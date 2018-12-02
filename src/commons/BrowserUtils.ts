@@ -715,27 +715,30 @@ export namespace BrowserUtils {
    * @param requestedWidth - Width (px)
    * @param requestedHeight - Height (px)
    */
-  export function setWindowSize(
-    requestedWidth?: number,
-    requestedHeight?: number
+  export function setViewportSize(
+    wSize:  {width: number; height:number}
   ): void {
-      if(requestedWidth === undefined && requestedHeight === undefined ) {
+      if(wSize.width=== undefined && wSize.height === undefined ) {
           Reporter.debug('No new window size requested, aborting window size action.');
 
           return;
       }
-    const size: Size = getWindowSize();
-    size.width = requestedWidth === undefined ? size.width : requestedWidth;
-    size.height = requestedHeight === undefined ? size.height : requestedHeight;
-    Reporter.debug(`size >> ${JSON.stringify(size)}`);
-    browser.windowHandleSize(size);
+    const size: Size = getViewportSize();
+
+    size.width = wSize.width === undefined ? size.width : wSize.width;
+    size.height = wSize.height === undefined ? size.height : wSize.height;
+    Reporter.debug(`Requested window size >> ${JSON.stringify(size)}`);
+    browser.setViewportSize(size);
   }
 
   /**
    * Get current browser window size returns Size obj {width : number, height : number}
    */
-  export function getWindowSize(): Size {
-    return browser.getViewportSize();
+  export function getViewportSize(): Size {
+      const size : Size  = browser.getViewportSize();
+      Reporter.debug(`Current window size: ${JSON.stringify(size)}`);
+
+      return size;
   }
 
   /**
