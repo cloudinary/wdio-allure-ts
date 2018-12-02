@@ -720,7 +720,7 @@ export namespace BrowserUtils {
     requestedHeight?: number
   ): void {
       if(requestedWidth === undefined && requestedHeight === undefined ) {
-          Reporter.debug("No new window size requested, aborting window size action.");
+          Reporter.debug('No new window size requested, aborting window size action.');
 
           return;
       }
