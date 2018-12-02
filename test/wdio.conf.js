@@ -11,16 +11,16 @@ exports.config = {
       browserName: "chrome",
 
       chromeOptions: {
-        args: ["--headless", "--incognito"]
-      }
-    },
-    {
-      maxInstances: 1,
-      browserName: "firefox",
-      "moz:firefoxOptions": {
-        args: ["--headless"]
-      }
-    }
+        args: [ "--incognito"]
+      },
+     },
+    // {
+    //   maxInstances: 1,
+    //   browserName: "firefox",
+    //   "moz:firefoxOptions": {
+    //     args: ["--headless"]
+    //   }
+    // }
   ],
 
   suites: {

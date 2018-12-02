@@ -15,6 +15,8 @@ const CHILL_OUT_TIME: number =
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
+  import Size = WebdriverIO.Size;
+
   /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
@@ -704,6 +706,36 @@ export namespace BrowserUtils {
         `Incorrect alert's text. ${EOL} Expected: '${expectedText}' ${EOL} Actual: '${actualText}'`
       );
     }
+  }
+
+  /**
+   * Change size of browser window
+   *    If only one parameter is provided the second will stay as is.
+   *    If no parameter provided there will be no change.
+   * @param requestedWidth - Width (px)
+   * @param requestedHeight - Height (px)
+   */
+  export function setWindowSize(
+    requestedWidth?: number,
+    requestedHeight?: number
+  ): void {
+      if(requestedWidth === undefined && requestedHeight === undefined ) {
+          Reporter.debug("No new window size requested, aborting window size action.");
+
+          return;
+      }
+    const size: Size = getWindowSize();
+    size.width = requestedWidth === undefined ? size.width : requestedWidth;
+    size.height = requestedHeight === undefined ? size.height : requestedHeight;
+    Reporter.debug(`size >> ${JSON.stringify(size)}`);
+    browser.windowHandleSize(size);
+  }
+
+  /**
+   * Get current browser window size returns Size obj {width : number, height : number}
+   */
+  export function getWindowSize(): Size {
+    return browser.getViewportSize();
   }
 
   /**
