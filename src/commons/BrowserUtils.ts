@@ -1,7 +1,7 @@
-import {EOL} from 'os';
-import {Cookie, CssProperty} from 'webdriverio';
-import {MouseButton} from "../enums/MouseButton";
-import {Reporter} from './Reporter';
+import { EOL } from 'os';
+import { Cookie, CssProperty } from 'webdriverio';
+import { MouseButton } from '../enums/MouseButton';
+import { Reporter } from './Reporter';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined
@@ -16,9 +16,7 @@ const CHILL_OUT_TIME: number =
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
-  import Axis = WebdriverIO.Axis;
-
-    /**
+  /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
    *
@@ -713,9 +711,10 @@ export namespace BrowserUtils {
    *
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
-  export function pressMouseButton(mouseButton : MouseButton): void {
+  export function pressMouseButton(mouseButton: MouseButton): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: string = mouseButton === undefined ?  MouseButton.LEFT:  mouseButton;
+    const selectedMouseButton: string =
+      mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Click mouse button ${selectedMouseButton}.`);
     browser.buttonDown(selectedMouseButton);
   }
@@ -738,9 +737,10 @@ export namespace BrowserUtils {
   /**
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
-  export function releaseMouseButton(mouseButton : string): void {
+  export function releaseMouseButton(mouseButton: string): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: string = mouseButton === undefined ?  MouseButton.LEFT:  mouseButton
+    const selectedMouseButton: string =
+      mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Release mouse button ${selectedMouseButton}.`);
     browser.buttonUp(selectedMouseButton);
   }
