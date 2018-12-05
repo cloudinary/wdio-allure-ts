@@ -52,7 +52,7 @@ describe('WaitUntilSpec of BrowserUtils Tests', () => {
     );
   });
 
-  it('Validate text not found withing default timeout and default error message shown', () => {
+  it('Validate text not found withintsc default timeout and default error message shown', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
 
     expect(() =>
