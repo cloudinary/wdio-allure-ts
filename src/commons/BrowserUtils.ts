@@ -1,5 +1,6 @@
 import { EOL } from 'os';
 import { Cookie, CssProperty } from 'webdriverio';
+import { MouseButton } from '../enums/MouseButton';
 import { Reporter } from './Reporter';
 
 const DEFAULT_TIME_OUT: number =
@@ -710,18 +711,18 @@ export namespace BrowserUtils {
    *
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
-  export function mouseButtonDown(mouseButton?: string): void {
+  export function pressMouseButton(mouseButton: MouseButton): void {
     //Defaults to the left mouse button if not specified.
     const selectedMouseButton: string =
-      mouseButton === undefined ? 'LEFT' : mouseButton;
+      mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Click mouse button ${selectedMouseButton}.`);
     browser.buttonDown(selectedMouseButton);
   }
 
   /**
    * @param selector - element to move to, If not specified or is null, the offset is relative to current position of the mouse.
-   * @param xOffset - X offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
-   * @param yOffset - Y offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
+   * @param xOffset - X (Pixels) offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
+   * @param yOffset - Y (Pixels) offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
    */
   export function moveMouseCursorTo(
     selector?: string,
@@ -736,16 +737,16 @@ export namespace BrowserUtils {
   /**
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
-  export function mouseButtonUp(mouseButton?: string): void {
+  export function releaseMouseButton(mouseButton: string): void {
     //Defaults to the left mouse button if not specified.
     const selectedMouseButton: string =
-      mouseButton === undefined ? 'LEFT' : mouseButton;
+      mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Release mouse button ${selectedMouseButton}.`);
     browser.buttonUp(selectedMouseButton);
   }
 
   /**
-   * Determine an element’s location on the page. The point (0, 0) refers to the upper-left corner of the page.
+   * Determine an element’s location on the page. The point (0pix, 0pix) refers to the upper-left corner of the page.
    * @param selector  - element with requested position offset
    */
   export function getElementLocation(
