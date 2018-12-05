@@ -212,6 +212,17 @@ export namespace BrowserUtils {
     return url.replace(/\/+$/, '');
   }
 
+    /**
+     *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
+     * @param action - any condition as a function
+     * @param timeout - specified time out if undefined Default time out is used
+     */
+  export function waitUntil(action : Function, timeout ?: number) : boolean {
+        Reporter.debug(`Wait Until ${JSON.stringify(action)}`);
+
+        return browser.waitUntil(action(), timeout !== undefined ? timeout : DEFAULT_TIME_OUT);
+  }
+
   /**
    * Select a value in element
    * Mostly used for drop down item selection from drop down list

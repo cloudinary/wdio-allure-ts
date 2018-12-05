@@ -85,6 +85,12 @@ export declare namespace BrowserUtils {
      */
     function normalizeUrl(url: string): string;
     /**
+     *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
+     * @param action - any condition as a function
+     * @param timeout - specified time out if undefined Default time out is used
+     */
+    function waitUntil(action: Function, timeout?: number): boolean;
+    /**
      * Select a value in element
      * Mostly used for drop down item selection from drop down list
      * @param selector elements selector
