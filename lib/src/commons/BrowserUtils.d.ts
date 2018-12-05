@@ -89,7 +89,7 @@ export declare namespace BrowserUtils {
      * @param action - any condition as a function
      * @param timeout - specified time out if undefined Default time out is used
      */
-    function waitUntil(action: Function, timeout?: number): boolean;
+    function waitUntil(action: Function, errMessage?: string, timeout?: number): any;
     /**
      * Select a value in element
      * Mostly used for drop down item selection from drop down list

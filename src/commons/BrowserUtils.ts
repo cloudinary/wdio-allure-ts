@@ -212,15 +212,21 @@ export namespace BrowserUtils {
     return url.replace(/\/+$/, '');
   }
 
-    /**
-     *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
-     * @param action - any condition as a function
-     * @param timeout - specified time out if undefined Default time out is used
-     */
-  export function waitUntil(action : Function, timeout ?: number) : boolean {
-        Reporter.debug(`Wait Until ${JSON.stringify(action)}`);
+  /**
+   *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
+   * @param action - any condition as a function
+   * @param timeout - specified time out if undefined Default time out is used
+   */
+  export function waitUntil(
+    action: Function,
+    errMessage?: string,
+    timeout: number = DEFAULT_TIME_OUT
+    // tslint:disable-next-line:no-any
+  ): any {
+    Reporter.debug(`Wait Until ${JSON.stringify(action)}`);
 
-        return browser.waitUntil(action(), timeout !== undefined ? timeout : DEFAULT_TIME_OUT);
+    // tslint:disable-next-line:no-unnecessary-callback-wrapper
+    return browser.waitUntil(() => action(), timeout, errMessage);
   }
 
   /**
