@@ -4,6 +4,7 @@ import { MouseButton } from '../enums/MouseButton';
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export declare namespace BrowserUtils {
+    import Size = WebdriverIO.Size;
     /**
      * Inject a snippet of JavaScript into the page
      * for execution in the context of the currently selected frame
@@ -229,6 +230,21 @@ export declare namespace BrowserUtils {
      * @param expectedText expected alert's text
      */
     function expectAlertText(expectedText: string): void;
+    /**
+     * Change size of browser window
+     *    If only one parameter is provided the second will stay as is.
+     *    If no parameter provided there will be no change.
+     * @param requestedWidth - Width (px)
+     * @param requestedHeight - Height (px)
+     */
+    function setViewportSize(wSize: {
+        width: number;
+        height: number;
+    }): void;
+    /**
+     * Get current browser window size returns Size obj {width : number, height : number}
+     */
+    function getViewportSize(): Size;
     /**
      *
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}

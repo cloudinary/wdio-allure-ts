@@ -12,8 +12,8 @@ exports.config = {
 
       chromeOptions: {
         args: ["--headless", "--incognito"]
-      }
-    },
+      },
+     },
     {
       maxInstances: 1,
       browserName: "firefox",
