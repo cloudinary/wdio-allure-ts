@@ -1,4 +1,3 @@
-// tslint:disable-next-line:no-http-string
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 // tslint:disable-next-line:no-http-string
