@@ -88,6 +88,7 @@ export declare namespace BrowserUtils {
      *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
      * @param action - any condition as a function
      * @param timeout - specified time out if undefined Default time out is used
+     * @param errMessage - Custom message for time out
      */
     function waitUntil(action: Function, errMessage?: string, timeout?: number): any;
     /**

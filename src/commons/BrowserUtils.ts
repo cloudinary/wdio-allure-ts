@@ -212,12 +212,12 @@ export namespace BrowserUtils {
     return url.replace(/\/+$/, '');
   }
 
-    /**
-     *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
-     * @param action - any condition as a function
-     * @param timeout - specified time out if undefined Default time out is used
-     * @param errMessage - Custom message for time out
-     */
+  /**
+   *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
+   * @param action - any condition as a function
+   * @param timeout - specified time out if undefined Default time out is used
+   * @param errMessage - Custom message for time out
+   */
   export function waitUntil(
     action: Function,
     errMessage?: string,
@@ -734,14 +734,17 @@ export namespace BrowserUtils {
    * @param requestedWidth - Width (px)
    * @param requestedHeight - Height (px)
    */
-  export function setViewportSize(
-    wSize:  {width: number; height:number}
-  ): void {
-      if(wSize.width=== undefined && wSize.height === undefined ) {
-          Reporter.debug('No new window size requested, aborting window size action.');
+  export function setViewportSize(wSize: {
+    width: number;
+    height: number;
+  }): void {
+    if (wSize.width === undefined && wSize.height === undefined) {
+      Reporter.debug(
+        'No new window size requested, aborting window size action.'
+      );
 
-          return;
-      }
+      return;
+    }
     const size: Size = getViewportSize();
 
     size.width = wSize.width === undefined ? size.width : wSize.width;
@@ -754,10 +757,10 @@ export namespace BrowserUtils {
    * Get current browser window size returns Size obj {width : number, height : number}
    */
   export function getViewportSize(): Size {
-      const size : Size  = browser.getViewportSize();
-      Reporter.debug(`Current window size: ${JSON.stringify(size)}`);
+    const size: Size = browser.getViewportSize();
+    Reporter.debug(`Current window size: ${JSON.stringify(size)}`);
 
-      return size;
+    return size;
   }
 
   /**
