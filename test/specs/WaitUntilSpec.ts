@@ -41,11 +41,11 @@ describe('WaitUntilSpec of BrowserUtils Tests', () => {
 
   it('Validate text found within default timeout ', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
-
+    BrowserUtils.refreshBrowser();
     assert.isTrue(
       BrowserUtils.waitUntil(
         () =>
-          browser.getText("//*[@class='button-print-message']") ===
+          browser.getText(`//*[@class='button-print-message']`) ===
           'Print message'
       )
     );
