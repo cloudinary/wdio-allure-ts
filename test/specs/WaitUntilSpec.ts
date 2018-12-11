@@ -45,13 +45,13 @@ describe('WaitUntilSpec of BrowserUtils Tests', () => {
     assert.isTrue(
       BrowserUtils.waitUntil(
         () =>
-          browser.getText(`//*[@class='button-print-message']`) ===
+          browser.getText("//*[@class='button-print-message']") ===
           'Print message'
       )
     );
   });
 
-  it('Validate text not found withintsc default timeout and default error message shown', () => {
+  it('Validate text not found within default timeout and default error message shown', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
 
     expect(() =>

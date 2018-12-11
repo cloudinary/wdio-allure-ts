@@ -13,14 +13,14 @@ exports.config = {
       chromeOptions: {
         args: ["--incognito"]
       },
-    //  },
-    // {
-    //   maxInstances: 1,
-    //   browserName: "firefox",
-    //   "moz:firefoxOptions": {
-    //     args: ["--headless"]
-    //   }
-     }
+     },
+    {
+      maxInstances: 1,
+      browserName: "firefox",
+      "moz:firefoxOptions": {
+        args: ["--headless"]
+      }
+    }
   ],
 
   suites: {
@@ -66,11 +66,10 @@ exports.config = {
    * @param {Object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  // onPrepare: function(config, capabitsc
-    // lities) {
-  //   /**
-  //    * Load configurations from .env
-  //    */
-  //   dotenv.config();
-  // }
+  onPrepare: function(config, capabilities) {
+    /**
+     * Load configurations from .env
+     */
+    dotenv.config();
+  }
 };
