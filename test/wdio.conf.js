@@ -11,7 +11,7 @@ exports.config = {
       browserName: "chrome",
 
       chromeOptions: {
-        args: ["--incognito"]
+        args: ["--headless", "--incognito"]
       },
      },
     {
