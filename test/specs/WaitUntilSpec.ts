@@ -1,21 +1,20 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
-// tslint:disable-next-line:no-http-string
-const sampleAppUrl: string = 'http://127.0.0.1:8000/';
-const TIMEOUT: number = 3000;
+import { describeCommon } from '../TestHelper';
+
+const TIMEOUT: number = 300;
+const TEXT_ELEMENT_SELECTOR: string = "//*[@data-test='text-field-1']";
+const TEXT_ELEMENT_VALUE: string = 'Cloudinary';
+const INCORRECT_TEXT_ELEMENT_VALUE: string = 'Not Cloudinary';
 
 /**
  * wdio-allure-ts WaitUntil test
  */
-describe('WaitUntilSpec of BrowserUtils Tests', () => {
+describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text found within given timeout ', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-
     assert.isTrue(
       BrowserUtils.waitUntil(
-        () =>
-          browser.getText("//*[@class='button-print-message']") ===
-          'Print message',
+        () => browser.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE,
         'Some Error',
         TIMEOUT
       )
@@ -23,42 +22,36 @@ describe('WaitUntilSpec of BrowserUtils Tests', () => {
   });
 
   it('Validate text not found withing timeout and error message shown ', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-
     expect(() =>
       BrowserUtils.waitUntil(
         () =>
-          browser.getText("//*[@class='button-print-message']") ===
-          'Print messageeeee',
-        `Didn't find 'Print messageeeee' text in given timeout`,
+          browser.getText(TEXT_ELEMENT_SELECTOR) ===
+          INCORRECT_TEXT_ELEMENT_VALUE,
+        `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
         TIMEOUT
       )
     )
       .to.throw(Error)
       .with.property('message')
-      .contains(`Didn't find 'Print messageeeee' text in given timeout`);
+      .contains(
+        `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`
+      );
   });
 
   it('Validate text found within default timeout ', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-
     assert.isTrue(
       BrowserUtils.waitUntil(
-        () =>
-          browser.getText("//*[@class='button-print-message']") ===
-          'Print message'
+        () => browser.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE
       )
     );
   });
 
-  it('Validate text not found withintsc default timeout and default error message shown', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-
+  it('Validate text not found within default timeout and default error message shown', () => {
     expect(() =>
       BrowserUtils.waitUntil(
         () =>
-          browser.getText("//*[@class='button-print-message']") ===
-          'Print messageeeee'
+          browser.getText(TEXT_ELEMENT_SELECTOR) ===
+          INCORRECT_TEXT_ELEMENT_VALUE
       )
     )
       .to.throw(Error)

@@ -1,15 +1,12 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
+import { describeCommon } from '../TestHelper';
 
-// tslint:disable-next-line:no-http-string
-const sampleAppUrl: string = 'http://127.0.0.1:8000/';
 /**
  * wdio-allure-ts navigateToUrl action test
  */
-describe('getCssProperty', () => {
+describeCommon('getCssProperty', () => {
   it('retrieve css property', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-
     assert.equal(
       BrowserUtils.getCssProperty(
         "//*[@data-test='print-message-btn']",
@@ -20,7 +17,6 @@ describe('getCssProperty', () => {
   });
 
   it('incorrect selector of an element', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
     expect(() =>
       BrowserUtils.getCssProperty(
         "//[@data-test='print-message-btn']",
@@ -33,8 +29,6 @@ describe('getCssProperty', () => {
   });
 
   it('null params', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-
     expect(() => JSON.stringify(BrowserUtils.getCssProperty(null, null)))
       .to.throw(Error)
       .with.property('message')
@@ -42,8 +36,6 @@ describe('getCssProperty', () => {
   });
 
   it('incorrect css property', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-
     assert.isNotNull(
       JSON.stringify(
         BrowserUtils.getCssProperty(
