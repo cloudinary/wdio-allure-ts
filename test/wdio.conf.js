@@ -6,9 +6,9 @@ exports.config = {
   // =====================
   // Browser Configurations
   // =====================
+  maxInstances: 1,
   capabilities: [
     {
-      maxInstances: 1,
       browserName: 'chrome',
 
       chromeOptions: {
@@ -16,7 +16,6 @@ exports.config = {
       },
     },
     {
-      maxInstances: 1,
       browserName: 'firefox',
       'moz:firefoxOptions': {
         args: ['--headless'],
@@ -36,10 +35,10 @@ exports.config = {
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
-  connectionRetryTimeout: 10000,
+  // connectionRetryTimeout: 10000,
   //
   // Default request retries count
-  connectionRetryCount: 3,
+  // connectionRetryCount: 3,
 
   framework: 'mocha',
   //
@@ -57,6 +56,6 @@ exports.config = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: 'bdd',
-    timeout: 50000, // test timeout, test will fall after 5 minutes on timeout
+    timeout: 300000, // test timeout, test will fall after 5 minutes on timeout
   },
 };
