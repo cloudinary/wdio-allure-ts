@@ -22,6 +22,7 @@ export function describeCommon(name: string, body: Function): void {
      */
     beforeEach(() => {
       browser.refresh();
+      browser.waitForVisible("//*[@data-test='print-message-btn']");
     });
 
     /**
