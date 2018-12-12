@@ -57,5 +57,6 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 300000, // test timeout, test will fall after 5 minutes on timeout
+    retries: 2,
   },
 };
