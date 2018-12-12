@@ -1,11 +1,11 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
-import { sampleAppUrl } from '../TestHelper';
+import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 /**
  * wdio-allure-ts navigateToUrl action test
  */
-describe('navigateToUrl', () => {
+describeCommon('navigateToUrl', () => {
   it('navigate successfully', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     assert.equal(browser.getUrl(), sampleAppUrl);
