@@ -2,7 +2,7 @@ import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
-const TIMEOUT: number = 300;
+const TIMEOUT: number = 3000;
 const TEXT_ELEMENT_SELECTOR: string = "//*[@data-test='text-field-1']";
 const TEXT_ELEMENT_VALUE: string = 'Cloudinary';
 const INCORRECT_TEXT_ELEMENT_VALUE: string = 'Not Cloudinary';
