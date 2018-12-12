@@ -15,19 +15,6 @@
             margin: 4px 2px;
             cursor: pointer;
         }
-
-        .button-print-message-duplicate {
-            background-color: deepskyblue;
-            border: dodgerblue;
-            color: brown;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -40,20 +27,24 @@
     </form>
 
     <hr>
-     <button name="Print Button" data-test="print-message-btn" class="button-print-message" onclick="myFunction()">Print message</button>
-    <button data-test="dup-print-message-btn" class="button-print-message-duplicate" onclick="myFunction()">Duplicated message</button>
-    <button data-test="dup-print-message-btn" class="button-print-message-duplicate" onclick="myFunction()">Duplicated message</button>
+     <button name="Print Button" data-test="print-message-btn" class="button-print-message" onclick="insertText()">Print message</button>
+    
+    <hr>
+    <div data-test="text-field-1" id="text-field">Cloudinary</div>
+    <div data-test="text-field-2"  id="text-field">Cloudinary</div>
+    
+    <hr>
     <p id="demo"></p>
     <script>
-        function myFunction() {
+        function insertText() {
             document.getElementById("demo").innerHTML = "Hello World";
         }
     </script>
 
     <hr>
-    <button data-test="open-tab-btn" onclick="myFunction()">Open tab</button>
+    <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
     <script>
-        function myFunction() {
+        function openTab() {
             var myWindow = window.open("", "", "width=200,height=100");
         }
     </script>

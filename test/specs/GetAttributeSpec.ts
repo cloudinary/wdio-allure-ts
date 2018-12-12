@@ -1,20 +1,16 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
-
-// tslint:disable-next-line:no-http-string
-const sampleAppUrl: string = 'http://127.0.0.1:8000/';
+import { describeCommon } from '../TestHelper';
 
 /**
  * wdio-allure-ts getAttribute action test
  */
-describe('GetAttributeSpec of BrowserUtils Tests', () => {
+describeCommon('GetAttributeSpec of BrowserUtils Tests', () => {
   it('Validate positive result ', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
     assert.equal(BrowserUtils.getAttribute('//form', 'method'), 'post');
   });
 
   it('Validate null result ending in err', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
     expect(() => BrowserUtils.getAttribute('//form', 'name'))
       .to.throw(Error)
       .with.property('message')
@@ -22,7 +18,6 @@ describe('GetAttributeSpec of BrowserUtils Tests', () => {
   });
 
   it('Validate incorrect value ending in err', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
     expect(() => BrowserUtils.getAttribute('//form', 'ONG'))
       .to.throw(Error)
       .with.property('message')

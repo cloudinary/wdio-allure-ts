@@ -1,12 +1,11 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
+import { describeCommon, sampleAppUrl } from '../TestHelper';
 
-// tslint:disable-next-line:no-http-string
-const sampleAppUrl: string = 'http://127.0.0.1:8000/';
 /**
  * wdio-allure-ts navigateToUrl action test
  */
-describe('navigateToUrl', () => {
+describeCommon('navigateToUrl', () => {
   it('navigate successfully', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     assert.equal(browser.getUrl(), sampleAppUrl);

@@ -1,16 +1,11 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
+import { describeCommon } from '../TestHelper';
 
-// tslint:disable-next-line:no-http-string
-const sampleAppUrl: string = 'http://127.0.0.1:8000/';
 /**
  * wdio-allure-ts tab actions test
  */
-describe('tab actions', () => {
-  before('open sample app', () => {
-    browser.url(sampleAppUrl);
-  });
-
+describeCommon('tab actions', () => {
   it('get tab ids', () => {
     let tabIds: string[] = BrowserUtils.getTabIds();
     assert.equal(tabIds.length, 1, 'Incorrect number of tab ids');
