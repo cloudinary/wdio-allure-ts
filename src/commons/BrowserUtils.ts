@@ -441,6 +441,9 @@ export namespace BrowserUtils {
     selector: string,
     expectedValue: number
   ): void {
+    Reporter.debug(
+      `Validate number of visible elements with selector ${selector} \n is ${expectedValue}`
+    );
     if (expectedValue === 0) {
       notVisible(selector);
     }
