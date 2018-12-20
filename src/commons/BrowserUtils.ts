@@ -355,7 +355,7 @@ export namespace BrowserUtils {
 
     tryBlock(
       () => browser.switchTab(tabId),
-      `Failed switch to tab by id: [${tabId}]`
+      `Failed switch to tab by id: '${tabId}'`
     );
     Reporter.debug(`SUCCESS: Switching tab to [${tabId}]`);
   }
