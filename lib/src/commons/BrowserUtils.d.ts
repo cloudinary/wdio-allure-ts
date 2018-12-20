@@ -178,9 +178,9 @@ export declare namespace BrowserUtils {
      */
     function scrollToElement(elementSelector: string, listSelector: string): void;
     /**
-     * Validate iframe is visible
-     * @param iframeSelector iframe selector
-     * @param isVisible expected visibility status
+     *
+     * @param iframeSelector iFrame selector
+     * @param expectedVisibility expected visibility status
      */
     function isIframeVisible(iframeSelector: string, expectedVisibility: boolean): void;
     /**

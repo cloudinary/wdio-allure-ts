@@ -30,7 +30,7 @@
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'test/**/*.ts'",
     "prepare": "run-s clean prettier tslint ts_compile",
     "test": "run-s test:compilation test:regression",
-    "test:compilation": "run-s prepare; git diff --exit-code ./lib",
+    "test:compilation": "run-s prepare",
     "test:regression": "wdio ./test/wdio.conf.js --suite regression",
     "spec": "tsc; wdio ./test/wdio.conf.js --spec",
     "start:sampleApp": "ws --spa ./test/sampleApp/index.html"
