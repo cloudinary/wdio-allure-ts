@@ -25,7 +25,7 @@ export namespace BrowserUtils {
    * @param script script to execute
    */
   export function executeScript(script: string): void {
-    Reporter.debug(`Executing script: ${script}`);
+    Reporter.debug(`Executing script: [${script}]`);
     tryBlock(
       () => browser.execute(script),
       `Failed to execute script: ${script}`
@@ -42,7 +42,7 @@ export namespace BrowserUtils {
    */
   export function uploadFile(selector: string, fileFullPath: string): void {
     Reporter.debug(
-      `Uploading file. Sending file: ${fileFullPath} to ${selector}`
+      `Uploading file. Sending file: [${fileFullPath}] to [${selector}]`
     );
     isExist(selector); // validate element that receives the file exist
     tryBlock(
@@ -75,7 +75,7 @@ export namespace BrowserUtils {
    * @param y y value
    */
   function scrollToPoint(x: number, y: number): void {
-    Reporter.debug(`Scrolling to point: (${x},${y})`);
+    Reporter.debug(`Scrolling to point: (${x} , ${y})`);
     tryBlock(() => browser.scroll(x, y), `Failed scroll to point (${x},${y})`);
   }
 
@@ -111,7 +111,7 @@ export namespace BrowserUtils {
    * @param  text text to send
    */
   export function sendText(selector: string, text: string): void {
-    Reporter.debug(`Sending text: '${text}' to '${selector}'`);
+    Reporter.debug(`Sending text: [${text}] to [${selector}]`);
     isVisible(selector);
     tryBlock(
       () => browser.addValue(selector, text),
@@ -126,14 +126,17 @@ export namespace BrowserUtils {
    * @param selector element selector
    */
   export function click(selector: string): void {
+    Reporter.debug("");
+    Reporter.debug(`Click an element [${selector}]`);
     isVisible(selector);
 
-    Reporter.debug(`Click an element ${selector}`);
     tryBlock(
       () => browser.click(selector),
 
-      `Failed to click on ${selector}`
+      `Failed to click on [${selector}]`
     );
+    Reporter.debug("SUCCESS: Click.");
+    Reporter.debug("");
   }
 
   /**
@@ -143,13 +146,16 @@ export namespace BrowserUtils {
    * @param selector element selector
    */
   export function doubleClick(selector: string): void {
-    Reporter.debug(`Double click an element ${selector}`);
+    Reporter.debug("");
+    Reporter.debug(`Double click an element [${selector}]`);
     isVisible(selector);
     tryBlock(
       () => browser.doubleClick(selector),
 
       `Failed to double click on ${selector}`
     );
+    Reporter.debug("SUCCESS: Double Click.");
+    Reporter.debug("");
   }
 
   /**
@@ -158,7 +164,7 @@ export namespace BrowserUtils {
    * @param url url for navigation
    */
   export function navigateToUrl(url: string): void {
-    Reporter.debug(`Navigate to ${url}`);
+    Reporter.debug(`Navigate to [${url}]`);
     tryBlock(() => browser.url(url), `Failed to navigate to ${url}`);
 
     expectCurrentUrl(url);
@@ -182,12 +188,14 @@ export namespace BrowserUtils {
    * @param url expected current url
    */
   export function expectCurrentUrl(url: string): void {
+      Reporter.debug(`Raw URL: [${url}]`);
     const expectedUrl: string = normalizeUrl(url);
-    Reporter.debug(`Wait for URL to be , ${expectedUrl}`);
+    Reporter.debug(`Wait for URL to be , [${expectedUrl}]`);
     let currentUrl: string;
     browser.waitUntil(
       (): boolean => {
         currentUrl = normalizeUrl(getUrl());
+        Reporter.debug(`Expected URL: [${expectedUrl}], Actual URL: [${currentUrl}].`);
 
         return currentUrl === expectedUrl;
       },
@@ -208,8 +216,11 @@ export namespace BrowserUtils {
     if (url === null) {
       throw new Error(`Illegal URL: ${url}`);
     }
+    const normalizedURL : string = url.replace(/\/+$/, '');
+    Reporter.debug(`URL Normalized: [${normalizedURL}]`);
 
-    return url.replace(/\/+$/, '');
+    return normalizedURL
+
   }
 
   /**
@@ -224,7 +235,7 @@ export namespace BrowserUtils {
     timeout: number = DEFAULT_TIME_OUT
     // tslint:disable-next-line:no-any
   ): any {
-    Reporter.debug(`Wait Until ${JSON.stringify(action)}`);
+    Reporter.debug(`Wait Until [${JSON.stringify(action)}]`);
 
     // tslint:disable-next-line:no-unnecessary-callback-wrapper
     return browser.waitUntil(() => action(), timeout, errMessage);
@@ -237,12 +248,15 @@ export namespace BrowserUtils {
    * @param value value to select
    */
   export function selectByValue(selector: string, value: string): void {
-    Reporter.debug(`Select by text '${value}' from ${selector}`);
+    Reporter.debug("");
+    Reporter.debug(`Select by text '[${value}]' from [${selector}]`);
     isExist(selector);
     tryBlock(
       () => browser.selectByValue(selector, value),
       `Failed to select ${value} from ${selector}`
     );
+      Reporter.debug(`SUCCESS: [${value}] Selected.`);
+      Reporter.debug("");
   }
 
   /**
@@ -250,11 +264,12 @@ export namespace BrowserUtils {
    * @param selector element selector
    */
   export function isVisible(selector: string): void {
-    Reporter.debug(`Wait for an element to be visible ${selector}`);
+    Reporter.debug(`Wait for an element to be visible [${selector}]`);
     tryBlock(
       () => browser.waitForVisible(selector, DEFAULT_TIME_OUT),
       `Element not visible ${selector}`
     );
+    Reporter.debug("SUCCESS: Element is visible.");
   }
 
   /**
@@ -262,11 +277,12 @@ export namespace BrowserUtils {
    * @param selector element selector
    */
   export function isExist(selector: string): void {
-    Reporter.debug(`Expect an element exist ${selector}`);
+    Reporter.debug(`Expect an element exist [${selector}]`);
     tryBlock(
       () => browser.waitForExist(selector, DEFAULT_TIME_OUT),
       `Element not exist ${selector}`
     );
+      Reporter.debug("SUCCESS: Element exists.");
   }
 
   /**
@@ -276,7 +292,7 @@ export namespace BrowserUtils {
    */
   export function notVisible(notVisibleElementSelector: string): void {
     Reporter.debug(
-      `Validating element not visible ${notVisibleElementSelector}`
+      `Validating element not visible [${notVisibleElementSelector}]`
     );
     tryBlock(
       () =>
@@ -287,6 +303,7 @@ export namespace BrowserUtils {
         ),
       `Failed to validate element not visible ${notVisibleElementSelector}`
     );
+    Reporter.debug("SUCCESS: Element is not visible.");
   }
 
   /**
@@ -294,12 +311,13 @@ export namespace BrowserUtils {
    * @param notExistElementSelector element's selector
    */
   export function notExist(notExistElementSelector: string): void {
-    Reporter.debug(`Validating element not exist ${notExistElementSelector}`);
+    Reporter.debug(`Validating element not exist [${notExistElementSelector}]`);
     tryBlock(
       () =>
         browser.waitForExist(notExistElementSelector, DEFAULT_TIME_OUT, true),
       `Failed to validate element not exist ${notExistElementSelector}`
     );
+      Reporter.debug("SUCCESS: Element not exists.");
   }
 
   /**
@@ -309,20 +327,22 @@ export namespace BrowserUtils {
    * @param iframeSelector selector of frame to switch to
    */
   export function switchToFrame(iframeSelector: string): void {
+      Reporter.debug("");
+      Reporter.debug(`Get iframe element [${iframeSelector}]`);
     chillOut();
-    Reporter.debug('Switching to an Iframe');
+    Reporter.debug('Switching to Iframe');
     isExist(iframeSelector);
-
-    Reporter.debug(`Get iframe element ${iframeSelector}`);
 
     const frameId: WebdriverIO.Element = tryBlock(
       () => browser.element(iframeSelector).value,
       `Failed to get iframeId by ${iframeSelector}`
     );
 
-    Reporter.debug(`Switching to Iframe ${iframeSelector}'`);
+    Reporter.debug(`Switching to Iframe [${iframeSelector}]`);
     tryBlock(() => browser.frame(frameId), 'Failed to switch frame');
     chillOut();
+      Reporter.debug("SUCCESS: Switch to iFrame.");
+      Reporter.debug("");
   }
 
   /**
@@ -330,12 +350,13 @@ export namespace BrowserUtils {
    * @param tabId tab it to switch
    */
   export function switchTab(tabId: string): void {
-    Reporter.debug(`Switching tab by id: '${tabId}'`);
+    Reporter.debug(`Switching tab by id: [${tabId}]`);
 
     tryBlock(
       () => browser.switchTab(tabId),
-      `Failed switch to tab by id: '${tabId}'`
+      `Failed switch to tab by id: [${tabId}]`
     );
+      Reporter.debug(`SUCCESS: Switching tab to [${tabId}]`);
   }
 
   /**
@@ -355,6 +376,7 @@ export namespace BrowserUtils {
   export function switchToParentFrame(): void {
     Reporter.debug('Switching to parent frame');
     tryBlock(() => browser.frameParent(), 'Failed to switch to parent frame');
+      Reporter.debug("SUCCESS: Switch to parent frame");
   }
 
   /**
@@ -364,7 +386,7 @@ export namespace BrowserUtils {
    * @param selector selector of an element to hover
    */
   export function hover(selector: string): void {
-    Reporter.debug(`Hover over an element ${selector}`);
+    Reporter.debug(`Hover over an element [${selector}]`);
     isVisible(selector);
     tryBlock(
       () => browser.moveToObject(selector),
@@ -380,8 +402,9 @@ export namespace BrowserUtils {
    * @param text expected text
    */
   export function expectText(selector: string, text: string): void {
+      Reporter.debug("");
     Reporter.debug(
-      `Validate element text is '${text}' by selector '${selector}'`
+      `Validate element text is [${text}] by selector [${selector}]`
     );
     isVisible(selector);
     const foundText: string = getText(selector);
@@ -399,6 +422,8 @@ export namespace BrowserUtils {
         `Incorrect text in element by selector '${selector}'. ${EOL} Expected: '${text}' ${EOL} Actual: '${currText}'`
       );
     }
+      Reporter.debug(`SUCCESS: Text [${foundText}] as expected.`);
+      Reporter.debug("");
   }
 
   /**
@@ -406,7 +431,7 @@ export namespace BrowserUtils {
    * @param selector element's selector
    */
   export function getText(selector: string): string {
-    Reporter.debug(`Get element's text by selector ${selector}`);
+    Reporter.debug(`Get element's text by selector [${selector}]`);
 
     return tryBlock(
       () => getTextAndVerify(selector),
@@ -415,6 +440,8 @@ export namespace BrowserUtils {
   }
 
   function getTextAndVerify(selector: string): string {
+      Reporter.debug("");
+      Reporter.debug(`Get Text & Verify Not Null, [${selector}]`);
     // @ts-ignore
     const stringResults: string =
       browser.elements(selector).value.length === 1
@@ -427,6 +454,9 @@ export namespace BrowserUtils {
         `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
       );
     }
+
+      Reporter.debug(`SUCCESS: Get Text Result: [${stringResults}]`);
+      Reporter.debug("");
 
     return stringResults;
   }
@@ -441,9 +471,9 @@ export namespace BrowserUtils {
     selector: string,
     expectedValue: number
   ): void {
-    Reporter.debug(
-      `Validate number of visible elements with selector ${selector} \n is ${expectedValue}`
-    );
+
+      Reporter.debug("");
+      Reporter.debug(`Expect Number Of Elements, [${expectedValue}] in [${selector}]`);
     if (expectedValue === 0) {
       notVisible(selector);
     }
@@ -455,6 +485,8 @@ export namespace BrowserUtils {
         }),
       `Found number of elements by ${selector} not equal ${expectedValue}`
     );
+      Reporter.debug("SUCCESS: Expect Number Of Elements.");
+      Reporter.debug("");
   }
 
   /**
@@ -469,11 +501,13 @@ export namespace BrowserUtils {
     elementSelector: string,
     listSelector: string
   ): void {
+      Reporter.debug("");
     Reporter.debug(
-      `Scroll list ${listSelector} until element is visible ${elementSelector}`
+      `Scroll in list [${listSelector}] until element [${elementSelector} ] is visible.`
     );
     isExist(listSelector); // need to verify list is loaded
     let last: number = browser.elements(listSelector).value.length;
+      Reporter.debug(`Last element index: [${last}].`);
     tryBlock(
       () =>
         browser.waitUntil(() => {
@@ -491,6 +525,8 @@ export namespace BrowserUtils {
         }),
       `Failed to scroll to ${elementSelector} in ${listSelector}`
     );
+      Reporter.debug("SUCCESS: Scroll to element.");
+      Reporter.debug("");
   }
 
   /**
@@ -502,7 +538,8 @@ export namespace BrowserUtils {
     iframeSelector: string,
     expectedVisibility: boolean
   ): void {
-    Reporter.debug(`Check iframe visibility is ${isVisible}`);
+      Reporter.debug("");
+    Reporter.debug(`Check iframe visibility is [${isVisible}]`);
 
     switchToParentFrame(); //if iframe already focused, isExist will fail
     isExist(iframeSelector);
@@ -520,6 +557,8 @@ export namespace BrowserUtils {
         `Failed on iframe ${iframeSelector} visibility validation. ${EOL} Expected: ${isVisible}, actual: ${iframeVisibility} ${EOL}`
       );
     }
+      Reporter.debug(`SUCCESS: iFrame visability is [${iframeVisibility}].`);
+      Reporter.debug("");
   }
 
   /**
@@ -546,6 +585,8 @@ export namespace BrowserUtils {
     selector: string,
     attributeName: string
   ): string {
+      Reporter.debug("");
+      Reporter.debug(`Get Attribute [${attributeName}] in element [${selector }] And Verify not null.`);
     // @ts-ignore
     const stringResults: string =
       browser.elements(selector).value.length === 1
@@ -558,6 +599,8 @@ export namespace BrowserUtils {
         `Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}`
       );
     }
+      Reporter.debug(`SUCCESS: Attribute result [${stringResults}].`);
+      Reporter.debug("");
 
     return stringResults;
   }
@@ -573,6 +616,7 @@ export namespace BrowserUtils {
     attributeName: string,
     value: string
   ): void {
+      Reporter.debug("");
     Reporter.debug(
       `Validate element '${selector}' has attribute '${attributeName}' which contains '${value}'`
     );
@@ -587,6 +631,8 @@ export namespace BrowserUtils {
         }),
       `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}Expected: ${EOL} word '${value}' to be part of ${EOL}'${attributeValue}'`
     );
+      Reporter.debug(`SUCCESS: Attribute value as expected.`);
+      Reporter.debug("");
   }
 
   /**
@@ -602,6 +648,10 @@ export namespace BrowserUtils {
   ): void {
     let attributeValue: string = null;
 
+      Reporter.debug("");
+      Reporter.debug(
+        `Validate element '${selector}' doesn't have attribute [${attributeName}] which contains [${value}]`
+      );
     tryBlock(
       () =>
         browser.waitUntil(() => {
@@ -611,6 +661,8 @@ export namespace BrowserUtils {
         }),
       `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}Expected: ${EOL} word '${value}' NOT to be part of ${EOL}'${attributeValue}'`
     );
+      Reporter.debug(`SUCCESS: Attribute value wasn't found as expected.`);
+      Reporter.debug("");
   }
 
   /**
@@ -645,7 +697,7 @@ export namespace BrowserUtils {
     cssPropertyName: string
   ): CssProperty {
     Reporter.debug(
-      `Get css property '${cssPropertyName}' from element by '${selector}'`
+      `Get css property [${cssPropertyName}] from element by [${selector}]`
     );
 
     return tryBlock(
@@ -665,7 +717,7 @@ export namespace BrowserUtils {
    * @param domain domain to set cookie for
    */
   export function setCookie(cookie: Cookie, domain: string = null): void {
-    Reporter.debug(`Setting cookie: ${JSON.stringify(cookie)}`);
+    Reporter.debug(`Setting cookie: [${JSON.stringify(cookie)}]`);
 
     let currentUrl: string = null;
     if (domain !== null) {
@@ -688,7 +740,7 @@ export namespace BrowserUtils {
       () => browser.getUrl(),
       'Failed to get current url'
     );
-    Reporter.debug(`Get current URL: ${currentUrl}`);
+    Reporter.debug(`Get current URL: [${currentUrl}]`);
 
     return currentUrl;
   }
@@ -697,18 +749,20 @@ export namespace BrowserUtils {
    * Accept Alert
    */
   export function acceptAlert(): void {
-    Reporter.debug('Accept alert');
+    Reporter.debug("Accept alert");
 
-    return tryBlock(() => browser.alertAccept(), 'Failed to accept alert');
+    tryBlock(() => browser.alertAccept(), 'Failed to accept alert');
+    Reporter.debug("SUCCESS: Accept alert");
   }
 
   /**
    * Dismiss Alert
    */
   export function dismissAlert(): void {
-    Reporter.debug('Accept alert');
+    Reporter.debug("Dismiss alert");
 
-    return tryBlock(() => browser.alertDismiss(), 'Failed to dismiss alert');
+    tryBlock(() => browser.alertDismiss(), 'Failed to dismiss alert');
+    Reporter.debug("SUCCESS: Dismiss alert");
   }
 
   /**
@@ -716,6 +770,7 @@ export namespace BrowserUtils {
    * @param expectedText expected alert's text
    */
   export function expectAlertText(expectedText: string): void {
+      Reporter.debug("");
     Reporter.debug(`Validate alert's text is '${expectedText}'`);
 
     const actualText: string = tryBlock(
@@ -728,6 +783,8 @@ export namespace BrowserUtils {
         `Incorrect alert's text. ${EOL} Expected: '${expectedText}' ${EOL} Actual: '${actualText}'`
       );
     }
+      Reporter.debug(`SUCCESS: Alert's text. [${EOL}] Expected: [${expectedText}] [${EOL}] Actual: [${actualText}]`);
+      Reporter.debug("");
   }
 
   /**
@@ -741,6 +798,8 @@ export namespace BrowserUtils {
     width: number;
     height: number;
   }): void {
+      Reporter.debug("");
+      Reporter.debug(`Requested ViewPort size [${wSize.width}px X ${wSize.height}px]`);
     if (wSize.width === undefined && wSize.height === undefined) {
       Reporter.debug(
         'No new window size requested, aborting window size action.'
@@ -752,8 +811,10 @@ export namespace BrowserUtils {
 
     size.width = wSize.width === undefined ? size.width : wSize.width;
     size.height = wSize.height === undefined ? size.height : wSize.height;
-    Reporter.debug(`Requested window size >> ${JSON.stringify(size)}`);
+    Reporter.debug(`Requested window size >> [${JSON.stringify(size)}]`);
     browser.setViewportSize(size);
+      Reporter.debug("SUCCESS: Viewport size changed.");
+      Reporter.debug("");
   }
 
   /**
@@ -761,7 +822,7 @@ export namespace BrowserUtils {
    */
   export function getViewportSize(): Size {
     const size: Size = browser.getViewportSize();
-    Reporter.debug(`Current window size: ${JSON.stringify(size)}`);
+    Reporter.debug(`Current window size: [${JSON.stringify(size)}]`);
 
     return size;
   }
@@ -784,15 +845,21 @@ export namespace BrowserUtils {
    * @param yOffset - Y (Pixels) offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
    */
   export function moveMouseCursorTo(
-    selector?: string,
+    selector: string,
     xOffset?: number,
     yOffset?: number
   ): void {
     Reporter.debug(
-      `Move mouse cursor to element: ${selector} - X: ${xOffset}, Y: ${yOffset}`
+      `Move mouse cursor to element: [${selector}] - X: [${xOffset}], Y: [${yOffset}]`
     );
-    browser.moveTo(selector, xOffset, yOffset);
+
+    if(xOffset === undefined || yOffset === undefined ) {
+        browser.moveTo(selector);
+    } else {
+        browser.moveTo(selector, xOffset, yOffset);
+    }
   }
+
   /**
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
@@ -800,7 +867,7 @@ export namespace BrowserUtils {
     //Defaults to the left mouse button if not specified.
     const selectedMouseButton: string =
       mouseButton === undefined ? MouseButton.LEFT : mouseButton;
-    Reporter.step(`Release mouse button ${selectedMouseButton}.`);
+    Reporter.step(`Release mouse button [${selectedMouseButton}].`);
     browser.buttonUp(selectedMouseButton);
   }
 
@@ -811,7 +878,7 @@ export namespace BrowserUtils {
   export function getElementLocation(
     selector: string
   ): { x: number; y: number } {
-    Reporter.debug(`Get Element location- ${selector}`);
+    Reporter.debug(`Get Element location- [${selector}]`);
 
     return browser.getLocation(selector);
   }
