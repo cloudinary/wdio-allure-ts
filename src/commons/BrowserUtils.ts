@@ -198,7 +198,7 @@ export namespace BrowserUtils {
         Reporter.debug(
           `Expected URL: [${expectedUrl}], Actual URL: [${currentUrl}].`
         );
-
+        
         return currentUrl === expectedUrl;
       },
       30000,
