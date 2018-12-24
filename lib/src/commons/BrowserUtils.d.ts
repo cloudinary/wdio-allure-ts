@@ -178,9 +178,9 @@ export declare namespace BrowserUtils {
      */
     function scrollToElement(elementSelector: string, listSelector: string): void;
     /**
-     * Validate iframe is visible
-     * @param iframeSelector iframe selector
-     * @param isVisible expected visibility status
+     *
+     * @param iframeSelector iFrame selector
+     * @param expectedVisibility expected visibility status
      */
     function isIframeVisible(iframeSelector: string, expectedVisibility: boolean): void;
     /**
@@ -262,7 +262,7 @@ export declare namespace BrowserUtils {
      * @param xOffset - X (Pixels) offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
      * @param yOffset - Y (Pixels) offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
      */
-    function moveMouseCursorTo(selector?: string, xOffset?: number, yOffset?: number): void;
+    function moveMouseCursorTo(selector: string, xOffset?: number, yOffset?: number): void;
     /**
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
      */
