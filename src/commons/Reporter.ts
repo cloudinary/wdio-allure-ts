@@ -1,5 +1,5 @@
+import allureReporter from '@wdio/allure-reporter';
 import chalk, { Chalk } from 'chalk';
-import { createStep } from 'wdio-allure-reporter';
 
 /**
  * Print to standard output
@@ -138,8 +138,12 @@ export namespace Reporter {
     if (stepStatus !== undefined) {
       status = stepStatus;
     }
+    const stepContent: Object = {
+      content: command.body,
+      name: command.bodyLabel,
+    };
     // tslint:disable-next-line:no-unsafe-any
-    createStep(command.title, command.body, command.bodyLabel, status);
+    allureReporter.addStep(command.title, stepContent, status);
   }
 }
 
