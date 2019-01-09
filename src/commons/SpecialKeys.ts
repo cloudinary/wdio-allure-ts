@@ -5,4 +5,9 @@
 export enum SpecialKeys {
   Enter = '\uE007',
   Tab = '\uE004',
+  Escape = '\uE00C',
+  ArrowLeft = '\uE012',
+  ArrowRight = '\uE014',
+  ArrowUp = '\uE013',
+  ArrowDown = '\uE015',
 }
