@@ -1,5 +1,7 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
+import getText = BrowserUtils.getText;
+import { SelectorType } from '../../src/enums/SelectorType';
 import { describeCommon } from '../TestHelper';
 
 const TIMEOUT: number = 3000;
@@ -14,7 +16,9 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text found within given timeout ', () => {
     assert.isTrue(
       BrowserUtils.waitUntil(
-        () => browser.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE,
+        () =>
+          getText(SelectorType.XPATH, TEXT_ELEMENT_SELECTOR) ===
+          TEXT_ELEMENT_VALUE,
         'Some Error',
         TIMEOUT
       )
@@ -25,7 +29,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
     expect(() =>
       BrowserUtils.waitUntil(
         () =>
-          browser.getText(TEXT_ELEMENT_SELECTOR) ===
+          getText(SelectorType.XPATH, TEXT_ELEMENT_SELECTOR) ===
           INCORRECT_TEXT_ELEMENT_VALUE,
         `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
         TIMEOUT
@@ -41,7 +45,9 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text found within default timeout ', () => {
     assert.isTrue(
       BrowserUtils.waitUntil(
-        () => browser.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE
+        () =>
+          getText(SelectorType.XPATH, TEXT_ELEMENT_SELECTOR) ===
+          TEXT_ELEMENT_VALUE
       )
     );
   });
@@ -50,12 +56,11 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
     expect(() =>
       BrowserUtils.waitUntil(
         () =>
-          browser.getText(TEXT_ELEMENT_SELECTOR) ===
+          getText(SelectorType.XPATH, TEXT_ELEMENT_SELECTOR) ===
           INCORRECT_TEXT_ELEMENT_VALUE
       )
     )
       .to.throw(Error)
-      .with.property('message')
-      .contains('Promise was rejected with the following reason: timeout');
+      .with.property('message');
   });
 });

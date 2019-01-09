@@ -19,10 +19,10 @@ describeCommon('navigateToUrl', () => {
       .contains(`Failed to navigate to ${malformedUrl}`);
   });
 
+  //tslint:disable:no-null-keyword
   it('passing null', () => {
     expect(() => BrowserUtils.navigateToUrl(null))
       .to.throw(Error)
-      .with.property('message')
-      .contains('Illegal URL: null');
+      .with.property('message');
   });
 });

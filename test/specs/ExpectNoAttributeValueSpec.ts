@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
+import { SelectorType } from '../../src/enums/SelectorType';
 
 /**
  * wdio-allure-ts ExpectNoAttributeValueSpec action test
@@ -8,19 +9,34 @@ import { describeCommon } from '../TestHelper';
 describeCommon('expectNoAttributeValue', () => {
   it("Doesn't contains value", () => {
     expect(() =>
-      BrowserUtils.expectNoAttributeValue('//form', 'method', 'pos')
+      BrowserUtils.expectNoAttributeValue(
+        SelectorType.XPATH,
+        '//form',
+        'method',
+        'pos'
+      )
     ).to.not.throw(Error);
   });
 
   it('Contains word substring', () => {
     expect(() =>
-      BrowserUtils.expectNoAttributeValue('//form', 'method', 'postt')
+      BrowserUtils.expectNoAttributeValue(
+        SelectorType.XPATH,
+        '//form',
+        'method',
+        'postt'
+      )
     ).to.not.throw(Error);
   });
 
   it('Exact match error thrown', () => {
     expect(() =>
-      BrowserUtils.expectNoAttributeValue('//form', 'method', 'post')
+      BrowserUtils.expectNoAttributeValue(
+        SelectorType.XPATH,
+        '//form',
+        'method',
+        'post'
+      )
     ).to.throw(Error);
   });
 });
