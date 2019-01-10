@@ -1,7 +1,6 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
-import { SelectorType } from '../../src/enums/SelectorType';
 
 /**
  * wdio-allure-ts getAttribute action test
@@ -9,14 +8,14 @@ import { SelectorType } from '../../src/enums/SelectorType';
 describeCommon('GetAttributeSpec of BrowserUtils Tests', () => {
   it('Validate positive result ', () => {
     assert.equal(
-      BrowserUtils.getAttribute(SelectorType.XPATH, '//form', 'method'),
+      BrowserUtils.getAttribute('//form', 'method'),
       'post'
     );
   });
 
   it('Validate null result ending in err', () => {
     expect(() =>
-      BrowserUtils.getAttribute(SelectorType.XPATH, '//form', 'name')
+      BrowserUtils.getAttribute('//form', 'name')
     )
       .to.throw(Error)
       .with.property('message')
@@ -24,7 +23,7 @@ describeCommon('GetAttributeSpec of BrowserUtils Tests', () => {
   });
 
   it('Validate incorrect value ending in err', () => {
-    expect(() => BrowserUtils.getAttribute(SelectorType.XPATH, '//form', 'ONG'))
+    expect(() => BrowserUtils.getAttribute('//form', 'ONG'))
       .to.throw(Error)
       .with.property('message')
       .contains(`Failed to get ONG`);

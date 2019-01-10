@@ -52,7 +52,9 @@ export namespace BrowserUtils {
   //     `File with path ${fileFullPath} could not be uploaded to ${selector}`
   //   );
   // }
-
+    /** Test that uses scrolls methods headerScrollTest
+     *
+     */
   // /**
   //  * Scroll to lowest point of the current page
   //  */
@@ -97,9 +99,10 @@ export namespace BrowserUtils {
     );
   }
 
-  // /**
-  //  * Get lowers point of the current page
-  //  */
+  /**
+   * Not in use
+   * Get lowers point of the current page
+   */
   // export function getLowestPagePoint(): number {
   //   return Number(
   //     browser.execute(
@@ -113,7 +116,8 @@ export namespace BrowserUtils {
   //     ).value
   //   );
   // }
-  //
+
+
   // /**
   //  * Get system data tests executed on
   //  * Usefully to add in Reporter before each test
@@ -400,6 +404,7 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Over think method name
    * Get ids of open tabs
    */
   export function getTabIds(): string[] {
@@ -485,7 +490,6 @@ export namespace BrowserUtils {
    * @param text expected text
    */
   export function expectText(
-    selectorType: SelectorType,
     selector: string,
     text: string
   ): void {
@@ -496,7 +500,7 @@ export namespace BrowserUtils {
       `Validate element text is [${text}] by selector [${selector}]`
     );
     isVisible(selector);
-    const foundText: string = getText(selectorType, selector);
+    const foundText: string = getText(selector);
 
     //Validate text was found
     if (foundText === undefined) {
@@ -522,13 +526,12 @@ export namespace BrowserUtils {
    * @param selector element's selector
    */
   export function getText(
-    selectorType: SelectorType,
     selector: string
   ): string {
     Reporter.debug(`Get element's text by selector [${selector}]`);
 
     return tryBlock(
-      () => getTextAndVerify(selectorType, selector),
+      () => getTextAndVerify(selector),
       `Failed to get text from element '${selector}'`
     );
   }
@@ -539,7 +542,6 @@ export namespace BrowserUtils {
    * @param selector - element locator
    */
   function getTextAndVerify(
-    selectorType: SelectorType,
     selector: string
   ): string {
     Reporter.debug(
@@ -549,7 +551,7 @@ export namespace BrowserUtils {
     const element: Element<void> = $(selector);
 
     const stringResults: string =
-      findElements(selectorType, selector).length === 1
+      $$(selector).length === 1
         ? element.getText()
         : undefined;
 
@@ -577,7 +579,6 @@ export namespace BrowserUtils {
    * @param selector - element locator
    */
   export function expectNumberOfElements(
-    selectorType: SelectorType,
     selector: string,
     expectedValue: number
   ): void {
@@ -594,7 +595,7 @@ export namespace BrowserUtils {
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          return findElements(selectorType, selector).length === expectedValue;
+          return $$(selector).length === expectedValue;
         }),
       `Found number of elements by ${selector} not equal ${expectedValue}`
     );
@@ -692,12 +693,11 @@ export namespace BrowserUtils {
    * @param attributeName attribute name to search for
    */
   export function getAttribute(
-    selectorType: SelectorType,
     selector: string,
     attributeName: string
   ): string {
     return tryBlock(
-      () => getAttributeAndVerify(selectorType, selector, attributeName),
+      () => getAttributeAndVerify(selector, attributeName),
       `Failed to get ${attributeName} attribute from ${selector}`
     );
   }
@@ -709,7 +709,6 @@ export namespace BrowserUtils {
    * @param attributeName attribute name to search for
    */
   function getAttributeAndVerify(
-    selectorType: SelectorType,
     selector: string,
     attributeName: string
   ): string {
@@ -723,7 +722,7 @@ export namespace BrowserUtils {
     const element: Element<void> = $(selector);
     // @ts-ignore
     const stringResults: string =
-      findElements(selectorType, selector).length === 1
+      $$(selector).length === 1
         ? element.getAttribute(attributeName)
         : undefined;
 
@@ -748,7 +747,6 @@ export namespace BrowserUtils {
    * @param value value in attribute
    */
   export function expectAttributeValue(
-    selectorType: SelectorType,
     selector: string,
     attributeName: string,
     value: string
@@ -764,7 +762,7 @@ export namespace BrowserUtils {
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          attributeValue = getAttribute(selectorType, selector, attributeName);
+          attributeValue = getAttribute(selector, attributeName);
 
           return isContainWord(attributeValue, value);
         }),
@@ -783,7 +781,6 @@ export namespace BrowserUtils {
    * @param value value NOT in attribute
    */
   export function expectNoAttributeValue(
-    selectorType: SelectorType,
     selector: string,
     attributeName: string,
     value: string
@@ -799,7 +796,7 @@ export namespace BrowserUtils {
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          attributeValue = getAttribute(selectorType, selector, attributeName);
+          attributeValue = getAttribute(selector, attributeName);
 
           return !isContainWord(attributeValue, value);
         }),
@@ -940,7 +937,7 @@ export namespace BrowserUtils {
       '********************************************************************************************'
     );
   }
-
+ // todo : Check if needs to change the method name and also useses in otehr repositories
   /**
    * Change size of browser window
    *    If only one parameter is provided the second will stay as is.
