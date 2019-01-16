@@ -21,7 +21,7 @@ describeCommon('GetText of BrowserUtils Tests', () => {
   });
 
   it('Validate no element found ending in err ', () => {
-    expect(() => getText( "//*[@class='OMG']"))
+    expect(() => getText("//*[@class='OMG']"))
       .to.throw(Error)
       .with.property('message');
   });

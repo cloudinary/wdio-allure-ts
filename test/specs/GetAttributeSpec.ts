@@ -7,16 +7,11 @@ import { describeCommon } from '../TestHelper';
  */
 describeCommon('GetAttributeSpec of BrowserUtils Tests', () => {
   it('Validate positive result ', () => {
-    assert.equal(
-      BrowserUtils.getAttribute('//form', 'method'),
-      'post'
-    );
+    assert.equal(BrowserUtils.getAttribute('//form', 'method'), 'post');
   });
 
   it('Validate null result ending in err', () => {
-    expect(() =>
-      BrowserUtils.getAttribute('//form', 'name')
-    )
+    expect(() => BrowserUtils.getAttribute('//form', 'name'))
       .to.throw(Error)
       .with.property('message')
       .contains(`Failed to get name attribute`);

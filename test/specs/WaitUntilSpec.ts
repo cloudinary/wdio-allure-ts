@@ -15,9 +15,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text found within given timeout ', () => {
     assert.isTrue(
       BrowserUtils.waitUntil(
-        () =>
-          getText(TEXT_ELEMENT_SELECTOR) ===
-          TEXT_ELEMENT_VALUE,
+        () => getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE,
         'Some Error',
         TIMEOUT
       )
@@ -27,9 +25,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text not found withing timeout and error message shown ', () => {
     expect(() =>
       BrowserUtils.waitUntil(
-        () =>
-          getText(TEXT_ELEMENT_SELECTOR) ===
-          INCORRECT_TEXT_ELEMENT_VALUE,
+        () => getText(TEXT_ELEMENT_SELECTOR) === INCORRECT_TEXT_ELEMENT_VALUE,
         `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
         TIMEOUT
       )
@@ -44,9 +40,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text found within default timeout ', () => {
     assert.isTrue(
       BrowserUtils.waitUntil(
-        () =>
-          getText( TEXT_ELEMENT_SELECTOR) ===
-          TEXT_ELEMENT_VALUE
+        () => getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE
       )
     );
   });
@@ -54,9 +48,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text not found within default timeout and default error message shown', () => {
     expect(() =>
       BrowserUtils.waitUntil(
-        () =>
-          getText(TEXT_ELEMENT_SELECTOR) ===
-          INCORRECT_TEXT_ELEMENT_VALUE
+        () => getText(TEXT_ELEMENT_SELECTOR) === INCORRECT_TEXT_ELEMENT_VALUE
       )
     )
       .to.throw(Error)
