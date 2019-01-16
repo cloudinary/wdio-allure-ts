@@ -52,9 +52,9 @@ export namespace BrowserUtils {
   //     `File with path ${fileFullPath} could not be uploaded to ${selector}`
   //   );
   // }
-    /** Test that uses scrolls methods headerScrollTest
-     *
-     */
+  /** Test that uses scrolls methods headerScrollTest
+   *
+   */
   // /**
   //  * Scroll to lowest point of the current page
   //  */
@@ -116,7 +116,6 @@ export namespace BrowserUtils {
   //     ).value
   //   );
   // }
-
 
   // /**
   //  * Get system data tests executed on
@@ -497,10 +496,7 @@ export namespace BrowserUtils {
    * @param selector element selector with text
    * @param text expected text
    */
-  export function expectText(
-    selector: string,
-    text: string
-  ): void {
+  export function expectText(selector: string, text: string): void {
     Reporter.debug(
       '********************************************************************************************'
     );
@@ -533,9 +529,7 @@ export namespace BrowserUtils {
    * Get text of an element by selector
    * @param selector element's selector
    */
-  export function getText(
-    selector: string
-  ): string {
+  export function getText(selector: string): string {
     Reporter.debug(`Get element's text by selector [${selector}]`);
 
     return tryBlock(
@@ -549,9 +543,7 @@ export namespace BrowserUtils {
    * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
-  function getTextAndVerify(
-    selector: string
-  ): string {
+  function getTextAndVerify(selector: string): string {
     Reporter.debug(
       '********************************************************************************************'
     );
@@ -559,9 +551,7 @@ export namespace BrowserUtils {
     const element: Element<void> = $(selector);
 
     const stringResults: string =
-      $$(selector).length === 1
-        ? element.getText()
-        : undefined;
+      $$(selector).length === 1 ? element.getText() : undefined;
 
     //Check for multiple results or no element found
     if (stringResults === null) {
@@ -945,7 +935,7 @@ export namespace BrowserUtils {
       '********************************************************************************************'
     );
   }
- // todo : Check if needs to change the method name and also useses in otehr repositories
+  // todo : Check if needs to change the method name and also useses in otehr repositories
   /**
    * Change size of browser window
    *    If only one parameter is provided the second will stay as is.

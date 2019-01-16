@@ -12,11 +12,18 @@ export declare namespace BrowserUtils {
      * @param script - js script to execute
      */
     function executeScript(script: string): void;
+    /** Test that uses scrolls methods headerScrollTest
+     *
+     */
     /**
      *  This Method will scroll to element into view
      * @param selector - element locator
      */
     function scrollToElement(selector: string): void;
+    /**
+     * Not in use
+     * Get lowers point of the current page
+     */
     /**
      * Add a text to an element located by selector
      * Note: It does not remove already existing text
@@ -119,6 +126,7 @@ export declare namespace BrowserUtils {
      */
     function switchTab(handle: string): void;
     /**
+     * Over think method name
      * Get ids of open tabs
      */
     function getTabIds(): string[];
@@ -158,12 +166,12 @@ export declare namespace BrowserUtils {
      * @param selector element selector with text
      * @param text expected text
      */
-    function expectText(selectorType: SelectorType, selector: string, text: string): void;
+    function expectText(selector: string, text: string): void;
     /**
      * Get text of an element by selector
      * @param selector element's selector
      */
-    function getText(selectorType: SelectorType, selector: string): string;
+    function getText(selector: string): string;
     /**
      * Validate number of items found by selector as expected
      *
@@ -172,7 +180,7 @@ export declare namespace BrowserUtils {
      * @param selectorType - enum type of selector (XPATH, ID, etc')
      * @param selector - element locator
      */
-    function expectNumberOfElements(selectorType: SelectorType, selector: string, expectedValue: number): void;
+    function expectNumberOfElements(selector: string, expectedValue: number): void;
     /**
      *
      * @param iframeSelector iFrame selector
@@ -185,21 +193,21 @@ export declare namespace BrowserUtils {
      * @param selector element's selector to search for attribute
      * @param attributeName attribute name to search for
      */
-    function getAttribute(selectorType: SelectorType, selector: string, attributeName: string): string;
+    function getAttribute(selector: string, attributeName: string): string;
     /**
      * Check if attribute with given selector contain expected value
      * @param selector element's selector to search for attribute
      * @param attributeName attribute name to search for
      * @param value value in attribute
      */
-    function expectAttributeValue(selectorType: SelectorType, selector: string, attributeName: string, value: string): void;
+    function expectAttributeValue(selector: string, attributeName: string, value: string): void;
     /**
      * Check if attribute with given selector NOT contain expected word
      * @param selector element's selector to search for attribute
      * @param attributeName attribute name to search for
      * @param value value NOT in attribute
      */
-    function expectNoAttributeValue(selectorType: SelectorType, selector: string, attributeName: string, value: string): void;
+    function expectNoAttributeValue(selector: string, attributeName: string, value: string): void;
     /**
      * Get cssProperty value by it's name and element selector
      * @param selector element selector
