@@ -66,6 +66,10 @@ export declare namespace BrowserUtils {
      */
     function refreshBrowser(): void;
     /**
+     * Click browser's back button
+     */
+    function backBrowser(): void;
+    /**
      * Wait for url to be equal to given url
      * Mainly useful for navigation validation
      * @param url expected current url
