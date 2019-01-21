@@ -183,6 +183,14 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Click browser's back button
+   */
+  export function backBrowser(): void {
+    Reporter.debug('Click browser back button');
+    tryBlock(() => browser.back(), 'Failed to click browser back button');
+  }
+
+  /**
    * Wait for url to be equal to given url
    * Mainly useful for navigation validation
    * @param url expected current url
