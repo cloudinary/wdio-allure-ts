@@ -233,7 +233,7 @@ export namespace BrowserUtils {
         return currentUrl === expectedUrl;
       },
       30000,
-      `Url not as expected.${EOL} Expected: '${expectedUrl}' ${EOL} Actual: '${browser.getUrl()}'`
+      `Url not as expected.${EOL} Expected: '${expectedUrl}' ${EOL} Actual: '${currentUrl}'`
     );
   }
 
