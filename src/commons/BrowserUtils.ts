@@ -824,7 +824,6 @@ export namespace BrowserUtils {
    * @param expectedText expected alert's text
    */
   export function expectAlertText(expectedText: string): void {
-
     Reporter.debug(`Validate alert's text is '${expectedText}'`);
 
     const actualText: string = tryBlock(
