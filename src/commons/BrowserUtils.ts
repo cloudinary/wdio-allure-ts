@@ -3,6 +3,8 @@ import { Cookie, CSSProperty } from 'webdriverio';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
+import LocationReturn = WebdriverIO.LocationReturn;
+import Element = WebdriverIO.Element;
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined
@@ -17,16 +19,13 @@ const CHILL_OUT_TIME: number =
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
-  import LocationReturn = WebdriverIO.LocationReturn;
-  import Element = WebdriverIO.Element;
-
   /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
    * @param script - js script to execute
    */
   export function executeScript(script: string): void {
-    Reporter.debug(`Executing script: [${script}]`);
+    Reporter.debug(`Executing script: '${script}'`);
     tryBlock(
       () => browser.execute(script),
       `Failed to execute script: ${script}`
