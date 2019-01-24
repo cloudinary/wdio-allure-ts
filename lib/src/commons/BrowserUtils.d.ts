@@ -1,29 +1,27 @@
 import { Cookie, CSSProperty } from 'webdriverio';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
+import LocationReturn = WebdriverIO.LocationReturn;
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export declare namespace BrowserUtils {
-    import LocationReturn = WebdriverIO.LocationReturn;
     /**
      * Inject a snippet of JavaScript into the page
      * for execution in the context of the currently selected frame
      * @param script - js script to execute
      */
     function executeScript(script: string): void;
-    /** Test that uses scrolls methods headerScrollTest
-     *
-     */
     /**
      *  This Method will scroll to element into view
      * @param selector - element locator
      */
-    function scrollToElement(selector: string): void;
+    function scrollIntoView(selector: string): void;
     /**
-     * Not in use
-     * Get lowers point of the current page
+     * Get system data tests executed on
+     * Usefully to add in Reporter before each test
      */
+    function getSystemData(): string;
     /**
      * Add a text to an element located by selector
      * Note: It does not remove already existing text
@@ -181,6 +179,15 @@ export declare namespace BrowserUtils {
      * @param selector - element locator
      */
     function expectNumberOfElements(selector: string, expectedValue: number): void;
+    /**
+     * Scroll to an element in list
+     *
+     * Scroll in loop until the element is visible or fail on time out
+     * Checks for size of list every iteration in case list is lazy loaded
+     * @param elementSelector selector of an element to scroll to
+     * @param listSelector selector of list to scroll
+     */
+    function scrollToElement(selector: string, listSelector: string): void;
     /**
      *
      * @param iframeSelector iFrame selector
