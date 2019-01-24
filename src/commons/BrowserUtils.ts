@@ -32,64 +32,11 @@ export namespace BrowserUtils {
     );
   }
 
-  // /**
-  //  * Upload local file
-  //  * Send full path of the file to input element
-  //  * Element of type input expected to be exist(not necessary visible) on execution
-  //  *
-  //  * @param selector selector of input element that gets the file
-  //  * @param fileFullPath full path of a file to upload
-  //  */
-  // export function uploadFile(selector: string, fileFullPath: string): void {
-  //   Reporter.debug(
-  //     `Uploading file. Sending file: [${fileFullPath}] to [${selector}]`
-  //   );
-  //   isExist(selector); // validate element that receives the file exist
-  //    const element : Element<void>  = $(selector);
-  //     tryBlock(
-  //     () => browser.chooseFile(selector, fileFullPath), //wdio upload file api
-  //     `File with path ${fileFullPath} could not be uploaded to ${selector}`
-  //   );
-  // }
-  /** Test that uses scrolls methods headerScrollTest
-   *
-   */
-  // /**
-  //  * Scroll to lowest point of the current page
-  //  */
-  // @Depricated
-  // export function scrollToBottom(): void {
-  //   const bottom: number = getLowestPagePoint();
-  //
-  //   Reporter.debug('Scroll to the bottom of the page');
-  //   scrollToPoint(0, bottom);
-  // }
-  //
-  // /**
-  //  * Scroll to top of the current page
-  //  */
-  // @Depricated
-  // export function scrollToTop(): void {
-  //   Reporter.debug('Scroll to the top of the page');
-  //   scrollToPoint(0, 0);
-  // }
-
-  // /**
-  //  * Scroll to point by x,y coordinates
-  //  * @param x x value
-  //  * @param y y value
-  //  */
-  // @Depricated
-  // function scrollToPoint(x: number, y: number): void {
-  //   Reporter.debug(`Scrolling to point: (${x} , ${y})`);
-  //   //tryBlock(() => browser.scroll(x, y), `Failed scroll to point (${x},${y})`);
-  // }
-
   /**
    *  This Method will scroll to element into view
    * @param selector - element locator
    */
-  export function scrollToElement(selector: string): void {
+  export function scrollIntoView(selector: string): void {
     Reporter.debug(`Scroll to: [${selector}]`);
     const element: Element<void> = $(selector);
     tryBlock(
@@ -99,30 +46,12 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Not in use
-   * Get lowers point of the current page
+   * Get system data tests executed on
+   * Usefully to add in Reporter before each test
    */
-  // export function getLowestPagePoint(): number {
-  //   return Number(
-  //     browser.execute(
-  //       () =>
-  //         Math.max(
-  //           document.documentElement.scrollHeight,
-  //           document.body.scrollHeight,
-  //           document.documentElement.clientHeight
-  //         ),
-  //       1
-  //     ).value
-  //   );
-  // }
-
-  // /**
-  //  * Get system data tests executed on
-  //  * Usefully to add in Reporter before each test
-  //  */
-  // export function getSystemData(): string {
-  //   return String(browser.execute(() => navigator.appVersion).value);
-  // }
+  export function getSystemData(): string {
+    return String(browser.execute(() => navigator.appVersion));
+  }
 
   /**
    * Add a text to an element located by selector
@@ -540,45 +469,44 @@ export namespace BrowserUtils {
     );
   }
 
-  // /**
-  //  * Scroll to an element in list
-  //  *
-  //  * Scroll in loop until the element is visible or fail on time out
-  //  * Checks for size of list every iteration in case list is lazy loaded
-  //  * @param elementSelector selector of an element to scroll to
-  //  * @param listSelector selector of list to scroll
-  //  */
-  // export function scrollToElement(
-  //   selectorType : SelectorType,
-  //   selector: string,
-  //   listSelector: string
-  // ): void {
-  //   Reporter.debug(
-  //     `Scroll in list [${listSelector}] until element [${selector} ] is visible.`
-  //   );
-  //
-  //   isExist(listSelector); // need to verify list is loaded
-  //   let last: number = browser.elements(listSelector).value.length;
-  //   Reporter.debug(`Last element index: [${last}].`);
-  //   tryBlock(
-  //     () =>
-  //       browser.waitUntil(() => {
-  //         /**
-  //          * Since FireFox does not support moveToObject
-  //          * we use JS instead of browser.moveToObject(`(${listSelector})[${last}]`);
-  //          */
-  //         const xpath: string = `(${listSelector})[${last}]`;
-  //         const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
-  //         executeScript(scrollToJS);
-  //
-  //         last = findElements(selectorType, selector).length ;
-  //         const element : Element<void> = $(selector);
-  //
-  //         return element.isDisplayed();
-  //       }),
-  //     `Failed to scroll to ${selector} in ${listSelector}`
-  //   );
-  // }
+  /**
+   * Scroll to an element in list
+   *
+   * Scroll in loop until the element is visible or fail on time out
+   * Checks for size of list every iteration in case list is lazy loaded
+   * @param elementSelector selector of an element to scroll to
+   * @param listSelector selector of list to scroll
+   */
+  export function scrollToElement(
+    selector: string,
+    listSelector: string
+  ): void {
+    Reporter.debug(
+      `Scroll in list '${listSelector}' until element '${selector}' is visible.`
+    );
+
+    isExist(listSelector); // need to verify list is loaded
+    let last: number = $$(listSelector).length;
+    Reporter.debug(`Last element index: [${last}].`);
+    tryBlock(
+      () =>
+        browser.waitUntil(() => {
+          /**
+           * Since FireFox does not support moveToObject
+           * we use JS instead of browser.moveToObject(`(${listSelector})[${last}]`);
+           */
+          const xpath: string = `(${listSelector})[${last}]`;
+          const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
+          executeScript(scrollToJS);
+
+          last = findElements(SelectorType.XPATH, selector).length;
+          const element: Element<void> = $(selector);
+
+          return element.isDisplayed();
+        }),
+      `Failed to scroll to ${selector} in ${listSelector}`
+    );
+  }
 
   /**
    *
