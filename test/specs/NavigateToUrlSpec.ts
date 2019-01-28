@@ -18,5 +18,4 @@ describeCommon('navigateToUrl', () => {
       .with.property('message')
       .contains('Cannot navigate to invalid URL');
   });
-
 });
