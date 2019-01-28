@@ -440,7 +440,7 @@ export namespace BrowserUtils {
       $$(selector).length === 1 ? element.getText() : undefined;
 
     //Check for multiple results or no element found
-    if (stringResults === null) {
+    if (stringResults === null || stringResults === undefined) {
       throw new Error(
         `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
       );
