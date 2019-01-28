@@ -247,22 +247,10 @@ export declare namespace BrowserUtils {
     function expectAlertText(expectedText: string): void;
     /**
      * Change size of browser window
-     *    If only one parameter is provided the second will stay as is.
-     *    If no parameter provided there will be no change.
-     * @param requestedWidth - Width (px)
-     * @param requestedHeight - Height (px)
+     * @param width - Width (px)
+     * @param height - Height (px)
      */
-    function setViewportSize(wSize: {
-        width: number;
-        height: number;
-    }): void;
-    /**
-     * Get current browser window size returns Size obj {width : number, height : number}
-     */
-    function getViewportSize(): {
-        width: number;
-        height: number;
-    };
+    function setWindowSize(width: number, height: number): void;
     /**
      *
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}

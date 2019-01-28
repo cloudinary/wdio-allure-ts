@@ -756,44 +756,15 @@ export namespace BrowserUtils {
       );
     }
   }
-  // todo : Check if needs to change the method name and also useses in otehr repositories
+
   /**
    * Change size of browser window
-   *    If only one parameter is provided the second will stay as is.
-   *    If no parameter provided there will be no change.
-   * @param requestedWidth - Width (px)
-   * @param requestedHeight - Height (px)
+   * @param width - Width (px)
+   * @param height - Height (px)
    */
-  export function setViewportSize(wSize: {
-    width: number;
-    height: number;
-  }): void {
-    Reporter.debug(
-      `Requested ViewPort size ${wSize.width}px X ${wSize.height}px`
-    );
-    if (wSize.width === undefined && wSize.height === undefined) {
-      Reporter.debug(
-        'No new window size requested, aborting window size action.'
-      );
-
-      return;
-    }
-    const size: { width: number; height: number } = getViewportSize();
-
-    size.width = wSize.width === undefined ? size.width : wSize.width;
-    size.height = wSize.height === undefined ? size.height : wSize.height;
-    browser.setWindowSize(size.width, size.height);
-  }
-
-  /**
-   * Get current browser window size returns Size obj {width : number, height : number}
-   */
-  export function getViewportSize(): { width: number; height: number } {
-    // @ts-ignore
-    const size: { width: number; height: number } = browser.getWindowSize();
-    Reporter.debug(`Get current window size: '${JSON.stringify(size)}'`);
-
-    return size;
+  export function setWindowSize(width: number, height: number): void {
+    Reporter.debug(`Set window size to '${width}X${height}'`);
+    browser.setWindowSize(width, height);
   }
 
   /**
