@@ -576,9 +576,9 @@ export namespace BrowserUtils {
         : undefined;
 
     //Check for multiple results or no element found
-    if (stringResults === null) {
+    if (stringResults === null || stringResults === undefined) {
       throw new Error(
-        `Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}`
+        `Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}'`
       );
     }
 
