@@ -14,15 +14,13 @@ describeCommon('GetText of BrowserUtils Tests', () => {
     );
   });
 
-  it('Validate multiple result ending in err ', () => {
-    expect(() => getText("//*[@class='Cloudinary']"))
+  it('failing on  incorrect selector', () => {
+    const selector: string = "//*[@id='text-field']";
+    expect(() => getText(selector))
       .to.throw(Error)
-      .with.property('message');
-  });
-
-  it('Validate no element found ending in err ', () => {
-    expect(() => getText("//*[@class='OMG']"))
-      .to.throw(Error)
-      .with.property('message');
+      .with.property('message')
+      .contains(
+        `Found multiple results matching text or no results for element: '${selector}' >>>>> 'undefined'`
+      );
   });
 });
