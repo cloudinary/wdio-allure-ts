@@ -12,13 +12,13 @@ exports.config = {
       browserName: 'chrome',
 
       'goog:chromeOptions': {
-        args: ['--incognito'],
+        args: ['--headless', '--incognito'],
       },
     },
     // {
     //   browserName: 'firefox',
     //   'moz:firefoxOptions': {
-    //     args: ['--headless'],
+    //     args: ['--headless', '--private'],
     //   },
     // },
   ],
@@ -31,7 +31,7 @@ exports.config = {
   // Test Configurations
   // ===================
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 10000,
+  waitforTimeout: 3000,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
@@ -51,12 +51,14 @@ exports.config = {
    */
   services: ['selenium-standalone'],
 
+  //Logger level
+  logLevel: 'error',
+
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: 'bdd',
     timeout: 300000, // test timeout, test will fall after 5 minutes on timeout
-    retries: 2,
   },
 };
