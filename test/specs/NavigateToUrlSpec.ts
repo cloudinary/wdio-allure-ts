@@ -19,10 +19,4 @@ describeCommon('navigateToUrl', () => {
       .contains('Cannot navigate to invalid URL');
   });
 
-  //tslint:disable:no-null-keyword
-  it('should fail when url is null', () => {
-    expect(() => BrowserUtils.navigateToUrl(null))
-      .to.throw(Error)
-      .with.property('message');
-  });
 });
