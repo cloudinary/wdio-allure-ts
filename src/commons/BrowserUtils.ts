@@ -239,7 +239,17 @@ export namespace BrowserUtils {
   }
 
   /**
-   *
+   * @param selector - element selector
+   */
+  export function isEnabled(selector: string): boolean {
+    Reporter.debug(`Is element enabled '${selector}'`);
+    isExist(selector);
+    const element: Element<void> = $(selector);
+
+    return element.isEnabled();
+  }
+
+  /**
    * @param selector - element selector
    * @param expectedToBe - if true it waits for element to be disabled (default: false - meaning is element enabled)
    */
@@ -247,7 +257,9 @@ export namespace BrowserUtils {
     selector: string,
     expectedToBe: boolean = false
   ): boolean {
-    Reporter.debug(`Wait for an element to be visible '${selector}'`);
+    Reporter.debug(
+      `Wait for an element to be enabled or disabled '${selector}'`
+    );
     isExist(selector);
     const element: Element<void> = $(selector);
 

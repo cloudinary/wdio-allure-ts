@@ -100,7 +100,10 @@ export declare namespace BrowserUtils {
      */
     function selectByValue(selector: string, value: string): void;
     /**
-     *
+     * @param selector - element selector
+     */
+    function isEnabled(selector: string): boolean;
+    /**
      * @param selector - element selector
      * @param expectedToBe - if true it waits for element to be disabled (default: false - meaning is element enabled)
      */
