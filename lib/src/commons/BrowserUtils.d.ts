@@ -108,12 +108,9 @@ export declare namespace BrowserUtils {
      * Elements/widgets ( like dialogs, status bars and more)
      * located inside an iframe has to be switch to it
      *
-     * via integer query: if you only have one iframe on the page you can switch calling client.frame(0)
-     * via name attribute: give that iframe a name like name="myIframe" then you can switch calling client.frame("myIframe")
-     * via WebElement: query the iframe using the element method and then pass the result to the frame command
-     * @param iframeSelector selector of frame to switch to
+     * @param selector selector of frame to switch to
      */
-    function switchToFrame(iframeSelector: string): void;
+    function switchToFrame(selector: string): void;
     /**
      * Switch to other tab by id
      * @param tabId tab it to switch
