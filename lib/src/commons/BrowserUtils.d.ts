@@ -6,6 +6,7 @@ import LocationReturn = WebdriverIO.LocationReturn;
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export declare namespace BrowserUtils {
+    import SizeReturn = WebdriverIO.SizeReturn;
     /**
      * Inject a snippet of JavaScript into the page
      * for execution in the context of the currently selected frame
@@ -98,6 +99,11 @@ export declare namespace BrowserUtils {
      * @param value value to select
      */
     function selectByValue(selector: string, value: string): void;
+    /**
+     *
+     * @param selector element selector
+     */
+    function isEnabled(selector: string): boolean;
     /**
      * Wait for an element to be visible by given selector
      * @param selector element selector
@@ -254,6 +260,11 @@ export declare namespace BrowserUtils {
      * @param expectedText expected alert's text
      */
     function expectAlertText(expectedText: string): void;
+    /**
+     *
+     * @param selector - element for get size
+     */
+    function getElementSize(selector: string): SizeReturn;
     /**
      * Change size of browser window
      * @param width - Width (px)

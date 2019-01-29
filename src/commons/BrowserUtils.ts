@@ -19,6 +19,8 @@ const CHILL_OUT_TIME: number =
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
+  import SizeReturn = WebdriverIO.SizeReturn;
+
   /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
@@ -235,6 +237,21 @@ export namespace BrowserUtils {
       () => element.selectByAttribute('value', value),
       `Failed to select ${value} from ${selector}`
     );
+  }
+
+  /**
+   *
+   * @param selector element selector
+   */
+  export function isEnabled(selector: string): boolean {
+    Reporter.debug(`Wait for an element to be visible '${selector}'`);
+    const element: Element<void> = $(selector);
+    tryBlock(
+      () => element.waitForEnabled(DEFAULT_TIME_OUT),
+      `Element not visible '${selector}'`
+    );
+
+    return element.isEnabled();
   }
 
   /**
@@ -781,6 +798,17 @@ export namespace BrowserUtils {
         `Incorrect alert's text. ${EOL} Expected: '${expectedText}' ${EOL} Actual: '${actualText}'`
       );
     }
+  }
+
+  /**
+   *
+   * @param selector - element for get size
+   */
+  export function getElementSize(selector: string): SizeReturn {
+    Reporter.debug(`Get Element: '${selector}' size`);
+    const element: Element<void> = $(selector);
+
+    return element.getSize();
   }
 
   /**
