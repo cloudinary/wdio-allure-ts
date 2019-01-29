@@ -108,9 +108,9 @@ export declare namespace BrowserUtils {
      * Elements/widgets ( like dialogs, status bars and more)
      * located inside an iframe has to be switch to it
      *
-     * @param iframeSelector selector of frame to switch to
+     * @param selector selector of frame to switch to
      */
-    function switchToFrame(iframeSelector: string): void;
+    function switchToFrame(selector: string): void;
     /**
      * Switch to other tab by id
      * @param tabId tab it to switch

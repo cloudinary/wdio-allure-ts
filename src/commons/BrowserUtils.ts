@@ -265,16 +265,16 @@ export namespace BrowserUtils {
    * Elements/widgets ( like dialogs, status bars and more)
    * located inside an iframe has to be switch to it
    *
-   * @param iframeSelector selector of frame to switch to
+   * @param selector selector of frame to switch to
    */
-  export function switchToFrame(iframeSelector: string): void {
-    Reporter.debug(`Validate iframe with selector ${iframeSelector} exist`);
+  export function switchToFrame(selector: string): void {
+    Reporter.debug(`Validate iframe with selector ${selector} exist`);
     chillOut();
-    isExist(iframeSelector);
+    isExist(selector);
 
-    Reporter.debug(`Switching to an Iframe by sel '${iframeSelector}'`);
+    Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
     tryBlock(
-      () => browser.switchToFrame($(iframeSelector)),
+      () => browser.switchToFrame($(selector)),
       'Failed to switch frame'
     );
     chillOut();
