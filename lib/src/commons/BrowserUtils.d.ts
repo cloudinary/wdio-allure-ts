@@ -2,11 +2,11 @@ import { Cookie, CSSProperty } from 'webdriverio';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import LocationReturn = WebdriverIO.LocationReturn;
+import SizeReturn = WebdriverIO.SizeReturn;
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export declare namespace BrowserUtils {
-    import SizeReturn = WebdriverIO.SizeReturn;
     /**
      * Inject a snippet of JavaScript into the page
      * for execution in the context of the currently selected frame
@@ -101,9 +101,10 @@ export declare namespace BrowserUtils {
     function selectByValue(selector: string, value: string): void;
     /**
      *
-     * @param selector element selector
+     * @param selector - element selector
+     * @param expectedToBe - if true it waits for element to be disabled (default: false - meaning is element enabled)
      */
-    function isEnabled(selector: string): boolean;
+    function isDisabled(selector: string, expectedToBe?: boolean): boolean;
     /**
      * Wait for an element to be visible by given selector
      * @param selector element selector

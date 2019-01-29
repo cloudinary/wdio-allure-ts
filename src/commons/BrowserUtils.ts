@@ -5,6 +5,7 @@ import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 import LocationReturn = WebdriverIO.LocationReturn;
 import Element = WebdriverIO.Element;
+import SizeReturn = WebdriverIO.SizeReturn;
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined
@@ -19,8 +20,6 @@ const CHILL_OUT_TIME: number =
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
-  import SizeReturn = WebdriverIO.SizeReturn;
-
   /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
@@ -241,17 +240,18 @@ export namespace BrowserUtils {
 
   /**
    *
-   * @param selector element selector
+   * @param selector - element selector
+   * @param expectedToBe - if true it waits for element to be disabled (default: false - meaning is element enabled)
    */
-  export function isEnabled(selector: string): boolean {
+  export function isDisabled(
+    selector: string,
+    expectedToBe: boolean = false
+  ): boolean {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
+    isExist(selector);
     const element: Element<void> = $(selector);
-    tryBlock(
-      () => element.waitForEnabled(DEFAULT_TIME_OUT),
-      `Element not visible '${selector}'`
-    );
 
-    return element.isEnabled();
+    return element.waitForEnabled(DEFAULT_TIME_OUT, expectedToBe);
   }
 
   /**
