@@ -104,11 +104,6 @@ export declare namespace BrowserUtils {
      */
     function isEnabled(selector: string): boolean;
     /**
-     * @param selector - element selector
-     * @param expectedToBe - if true it waits for element to be disabled (default: false - meaning is element enabled)
-     */
-    function isDisabled(selector: string, expectedToBe?: boolean): boolean;
-    /**
      * Wait for an element to be visible by given selector
      * @param selector element selector
      */
