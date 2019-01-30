@@ -265,10 +265,9 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Validating element not visible '${notVisibleElementSelector}'`
     );
-    isExist(notVisibleElementSelector);
-    const element: Element<void> = $(notVisibleElementSelector);
     tryBlock(
-      () => element.waitForDisplayed(DEFAULT_TIME_OUT, true),
+      () =>
+        $(notVisibleElementSelector).waitForDisplayed(DEFAULT_TIME_OUT, true),
       `Failed to validate element not visible '${notVisibleElementSelector}'`
     );
   }
