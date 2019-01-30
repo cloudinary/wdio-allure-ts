@@ -35,6 +35,13 @@ export declare namespace BrowserUtils {
      */
     function setValue(selector: string, value: string | number): void;
     /**
+     * Set value of hidden element
+     * For example: For file uploads, set 'input' element (that can be not visible) with 'filePath' value
+     * @param selector elements selector
+     * @param value text value to set
+     */
+    function setHiddenElementValue(selector: string, value: string): void;
+    /**
      * Click an element located by selector
      *
      * Validate element is visible before clicking on it
