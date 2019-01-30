@@ -137,10 +137,6 @@ export declare namespace BrowserUtils {
      * Switch to parent frame
      * Have to call it after switching to some iframe
      * so the focus will be back on main page
-     *
-     * one of three possible types: null: this represents the top-level browsing context (i.e., not an iframe),
-     * a Number, representing the index of the window object corresponding to a frame,
-     * a string representing an element id. The element must be the frame or iframe to be selected
      */
     function switchToParentFrame(): void;
     /**
