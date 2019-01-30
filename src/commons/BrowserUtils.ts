@@ -243,10 +243,9 @@ export namespace BrowserUtils {
    */
   export function isEnabled(selector: string): boolean {
     Reporter.debug(`Is element enabled '${selector}'`);
-    isExist(selector);
-    const element: Element<void> = $(selector);
+    //isExist(selector);
 
-    return element.isEnabled();
+    return $(selector).isEnabled();
   }
 
   /**
