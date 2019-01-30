@@ -102,7 +102,7 @@ export namespace BrowserUtils {
    * @param selector element selector
    */
   export function click(selector: string): void {
-    Reporter.debug(`Click an element [${selector}]`);
+    Reporter.debug(`Click an element '${selector}'`);
     isVisible(selector);
     const element: Element<void> = $(selector);
     tryBlock(
@@ -135,7 +135,7 @@ export namespace BrowserUtils {
    * @param url url for navigation
    */
   export function navigateToUrl(url: string): void {
-    Reporter.debug(`Navigate to [${url}]`);
+    Reporter.debug(`Navigate to '${url}'`);
     tryBlock(() => browser.url(url), `Failed to navigate to '${url}'`);
 
     expectCurrentUrl(url);
@@ -812,7 +812,7 @@ export namespace BrowserUtils {
     yOffset: number
   ): void {
     Reporter.debug(
-      `Move mouse cursor to element: '${selector}' with offset [${xOffset},${yOffset}]`
+      `Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`
     );
     isExist(selector);
     const element: Element<void> = $(selector);
