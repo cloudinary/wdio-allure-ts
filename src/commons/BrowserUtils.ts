@@ -81,13 +81,28 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Set value of hidden element
+   * For example: For file uploads, set 'input' element (that can be not visible) with 'filePath' value
+   * @param selector elements selector
+   * @param value text value to set
+   */
+  export function setHiddenElementValue(selector: string, value: string): void {
+    Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
+    isExist(selector);
+    tryBlock(
+      () => $(selector).setValue(value),
+      `Failed to set value: '${value}' to '${selector}'`
+    );
+  }
+
+  /**
    * Click an element located by selector
    *
    * Validate element is visible before clicking on it
    * @param selector element selector
    */
   export function click(selector: string): void {
-    Reporter.debug(`Click an element [${selector}]`);
+    Reporter.debug(`Click an element '${selector}'`);
     isVisible(selector);
     const element: Element<void> = $(selector);
     tryBlock(
@@ -120,7 +135,7 @@ export namespace BrowserUtils {
    * @param url url for navigation
    */
   export function navigateToUrl(url: string): void {
-    Reporter.debug(`Navigate to [${url}]`);
+    Reporter.debug(`Navigate to '${url}'`);
     tryBlock(() => browser.url(url), `Failed to navigate to '${url}'`);
 
     expectCurrentUrl(url);
@@ -805,7 +820,7 @@ export namespace BrowserUtils {
     yOffset: number
   ): void {
     Reporter.debug(
-      `Move mouse cursor to element: '${selector}' with offset [${xOffset},${yOffset}]`
+      `Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`
     );
     isExist(selector);
     const element: Element<void> = $(selector);
