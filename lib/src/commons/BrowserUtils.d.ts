@@ -23,12 +23,19 @@ export declare namespace BrowserUtils {
      */
     function getSystemData(): string;
     /**
-     * Add a text to an element located by selector
+     * Add a value to an element located by selector
      * Note: It does not remove already existing text
      * @param selector element selector
-     * @param  text text to send
+     * @param  value value to add
      */
-    function sendText(selector: string, text: string): void;
+    function addValue(selector: string, value: string | number): void;
+    /**
+     * Set a value to an element located by selector
+     * Note: It does not remove already existing text
+     * @param selector element selector
+     * @param  value value to add
+     */
+    function setValue(selector: string, value: string | number): void;
     /**
      * Click an element located by selector
      *

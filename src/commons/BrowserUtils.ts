@@ -54,18 +54,31 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Add a text to an element located by selector
+   * Add a value to an element located by selector
    * Note: It does not remove already existing text
    * @param selector element selector
-   * @param  text text to send
+   * @param  value value to add
    */
-  export function sendText(selector: string, text: string): void {
-    Reporter.debug(`Sending text: [${text}] to [${selector}]`);
+  export function addValue(selector: string, value: string | number): void {
+    Reporter.debug(`Add value: '${value}' to '${selector}'`);
     isVisible(selector);
-    const element: Element<void> = $(selector);
     tryBlock(
-      () => element.addValue(text),
-      `Failed to add text:${text} to ${selector}`
+      () => $(selector).addValue(value),
+      `Failed to add value: '${value}' to '${selector}'`
+    );
+  }
+  /**
+   * Set a value to an element located by selector
+   * Note: It does not remove already existing text
+   * @param selector element selector
+   * @param  value value to add
+   */
+  export function setValue(selector: string, value: string | number): void {
+    Reporter.debug(`Set element '${selector} with value: '${value}'`);
+    isVisible(selector);
+    tryBlock(
+      () => $(selector).setValue(value),
+      `Failed to set value: '${value}' to '${selector}'`
     );
   }
 
