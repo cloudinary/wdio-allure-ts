@@ -55,7 +55,6 @@ export namespace BrowserUtils {
 
   /**
    * Add a value to an element located by selector
-   * Note: It does not remove already existing text
    * @param selector element selector
    * @param  value value to add
    */
@@ -69,7 +68,6 @@ export namespace BrowserUtils {
   }
   /**
    * Set a value to an element located by selector
-   * Note: It does not remove already existing text
    * @param selector element selector
    * @param  value value to add
    */

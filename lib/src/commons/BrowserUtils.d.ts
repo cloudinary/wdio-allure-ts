@@ -24,14 +24,12 @@ export declare namespace BrowserUtils {
     function getSystemData(): string;
     /**
      * Add a value to an element located by selector
-     * Note: It does not remove already existing text
      * @param selector element selector
      * @param  value value to add
      */
     function addValue(selector: string, value: string | number): void;
     /**
      * Set a value to an element located by selector
-     * Note: It does not remove already existing text
      * @param selector element selector
      * @param  value value to add
      */
