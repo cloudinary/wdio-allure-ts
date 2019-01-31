@@ -801,9 +801,8 @@ export namespace BrowserUtils {
   export function getElementSize(selector: string): SizeReturn {
     Reporter.debug(`Get Element: '${selector}' size`);
     isExist(selector);
-    const element: Element<void> = $(selector);
 
-    return element.getSize();
+    return  $(selector).getSize();
   }
 
   /**
