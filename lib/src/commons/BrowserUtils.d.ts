@@ -113,7 +113,7 @@ export declare namespace BrowserUtils {
      *
      * @param selector element selector
      */
-    function notVisible(notVisibleElementSelector: string): void;
+    function notVisible(selector: string): void;
     /**
      * Wait until element not exist in dom
      * @param notExistElementSelector element's selector
