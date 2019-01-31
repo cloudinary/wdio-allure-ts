@@ -9,8 +9,8 @@ import { describeCommon } from '../TestHelper';
 describeCommon('findElement of BrowserUtils Tests', () => {
   it('Check Result contains element key (object)', () => {
     const result: string = BrowserUtils.findElement(
-      SelectorType.XPATH,
-      "//*[@class='button-print-message']"
+        SelectorType.XPATH,
+      "//*[@id='embedded__images']/div/p/img"
     );
     assert.include(JSON.stringify(result), '{"ELEMENT":"');
   });

@@ -15,7 +15,7 @@ describeCommon('GetText of BrowserUtils Tests', () => {
   });
 
   it('failing on  incorrect selector', () => {
-    const selector: string = "//*[@id='text-field']";
+    const selector: string = "//*[@id='incorrect']";
     expect(() => getText(selector))
       .to.throw(Error)
       .with.property('message')

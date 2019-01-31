@@ -2,6 +2,10 @@ import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
+export namespace PageLocator {
+    export const HEADER: string = "//*[@id='top']/header/h1";
+}
+
 /**
  * wdio-allure-ts navigateToUrl action test
  */
@@ -9,23 +13,24 @@ describeCommon('getCssProperty', () => {
   it.only('retrieve css property', () => {
     assert.equal(
       BrowserUtils.getCssProperty(
-        "//*[@data-test='print-message-btn']",
+        PageLocator.HEADER,
         'background-color'
       ).value,
-      'rgba(0,128,0,1)'
+      'rgb(0, 0, 0)'
     );
   });
 
   it('incorrect selector of an element', () => {
     expect(() =>
       BrowserUtils.getCssProperty(
-        "//[@data-test='print-message-btn']",
+        "//*[@id='incorrect']",
         'background-color'
       )
     )
       .to.throw(Error)
       .with.property('message');
   });
+
   //tslint:disable:no-null-keyword
   it('null params', () => {
     expect(() => JSON.stringify(BrowserUtils.getCssProperty(null, null)))
@@ -37,7 +42,7 @@ describeCommon('getCssProperty', () => {
     assert.isNotNull(
       JSON.stringify(
         BrowserUtils.getCssProperty(
-          "//*[@data-test='print-message-btn']",
+          PageLocator.HEADER,
           'bg-color'
         )
       )
