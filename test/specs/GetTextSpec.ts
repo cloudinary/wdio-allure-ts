@@ -8,10 +8,7 @@ import getText = BrowserUtils.getText;
  */
 describeCommon('GetText of BrowserUtils Tests', () => {
   it('Validate single result ', () => {
-    assert.equal(
-      getText("//*[@class='button-print-message']"),
-      'Print message'
-    );
+    assert.equal(getText("//button[@data-test='open-tab-btn']"), 'Open tab');
   });
 
   it('failing on  incorrect selector', () => {

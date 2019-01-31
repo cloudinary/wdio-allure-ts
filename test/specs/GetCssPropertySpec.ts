@@ -3,29 +3,23 @@ import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
 export namespace PageLocator {
-    export const HEADER: string = "//*[@id='top']/header/h1";
+  export const HEADER: string = "//*[@id='top']/header/h1";
 }
 
 /**
  * wdio-allure-ts navigateToUrl action test
  */
 describeCommon('getCssProperty', () => {
-  it.only('retrieve css property', () => {
+  it('retrieve css property', () => {
     assert.equal(
-      BrowserUtils.getCssProperty(
-        PageLocator.HEADER,
-        'background-color'
-      ).value,
-      'rgb(0, 0, 0)'
+      BrowserUtils.getCssProperty(PageLocator.HEADER, 'background-color').value,
+      'rgba(255,255,255,1)'
     );
   });
 
   it('incorrect selector of an element', () => {
     expect(() =>
-      BrowserUtils.getCssProperty(
-        "//*[@id='incorrect']",
-        'background-color'
-      )
+      BrowserUtils.getCssProperty("//*[@id='incorrect']", 'background-color')
     )
       .to.throw(Error)
       .with.property('message');
@@ -41,10 +35,7 @@ describeCommon('getCssProperty', () => {
   it('incorrect css property', () => {
     assert.isNotNull(
       JSON.stringify(
-        BrowserUtils.getCssProperty(
-          PageLocator.HEADER,
-          'bg-color'
-        )
+        BrowserUtils.getCssProperty(PageLocator.HEADER, 'bg-color')
       )
     );
   });

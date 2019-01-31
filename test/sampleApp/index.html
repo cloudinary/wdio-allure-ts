@@ -123,6 +123,9 @@
                     <h5>Heading 5</h5>
                     <h6>Heading 6</h6>
                 </div>
+                <!--Duplication is intended-->
+                <div data-test="text-field-1" id="text-field">Cloudinary</div>
+                <div data-test="text-field-2"  id="text-field">Cloudinary</div>
                 <footer><p><a href="#top">[Top]</a></p></footer>
             </article>
             <article id="text__paragraphs">
@@ -375,6 +378,10 @@
                         <label for="input__text4" class="valid">Valid</label>
                         <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
                     </p>
+                    <p>
+                        <label for="input__text5" class="hidden">Hidden Text Input: </label>
+                        <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
+                    </p>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
                 <fieldset id="forms__select">
@@ -460,6 +467,15 @@
                         <input type="button" value="<input type=button>">
                         <input type="reset" value="<input type=reset>">
                         <input type="submit" value="<input disabled>" disabled>
+
+                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                            Double click
+                        </div>
+                        <script>
+                            function doubleClickEvent() {
+                                document.getElementById('div-double-click').innerHTML="Double Click Event";
+                            }
+                        </script>
                     </p>
                     <p>
                         <button type="submit">&lt;button type=submit&gt;</button>
