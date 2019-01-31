@@ -261,15 +261,16 @@ export namespace BrowserUtils {
    *
    * @param selector element selector
    */
-  export function notVisible(notVisibleElementSelector: string): void {
-    Reporter.debug(
-      `Validating element not visible '${notVisibleElementSelector}'`
-    );
-    tryBlock(
-      () =>
-        $(notVisibleElementSelector).waitForDisplayed(DEFAULT_TIME_OUT, true),
-      `Failed to validate element not visible '${notVisibleElementSelector}'`
-    );
+  export function notVisible(selector: string): void {
+    Reporter.debug(`Validating element not visible '${selector}'`);
+    tryBlock(() => {
+      const element: Element<void> = $(selector);
+      if (element.isExisting()) {
+        Reporter.debug('Element not exists. Will check for visibility');
+        element.waitForDisplayed(DEFAULT_TIME_OUT, true);
+      }
+      Reporter.debug('Element not exists. Will not check for visibility');
+    }, `Failed to validate element not visible '${selector}'`);
   }
 
   /**
