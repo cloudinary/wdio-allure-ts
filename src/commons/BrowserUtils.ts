@@ -247,19 +247,29 @@ export namespace BrowserUtils {
     return $(selector).isEnabled();
   }
 
-  /**
-   * Wait for an element to be visible by given selector
-   * @param selector element selector
-   */
-  export function isVisible(selector: string): void {
+    /**
+     * Indicate if Element is visible (without wait)
+     * @param selector - element selector
+     */
+  export function isVisible(selector: string): boolean {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
     isExist(selector);
-    const element: Element<void> = $(selector);
-    tryBlock(
-      () => element.waitForDisplayed(DEFAULT_TIME_OUT),
-      `Element not visible '${selector}'`
-    );
+
+    return $(selector).isDisplayed();
   }
+
+    /**
+     * Wait for an element to be visible by given selector
+     * @param selector element selector
+     */
+    export function waitToBeVisible(selector: string): void {
+        Reporter.debug(`Wait for an element to be visible '${selector}'`);
+        isExist(selector);
+        tryBlock(
+          () => $(selector).waitForDisplayed(DEFAULT_TIME_OUT),
+          `Element not visible '${selector}'`
+        );
+    }
 
   /**
    * Wait for an element to be exist by given selector
