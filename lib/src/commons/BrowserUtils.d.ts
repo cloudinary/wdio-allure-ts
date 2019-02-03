@@ -104,10 +104,20 @@ export declare namespace BrowserUtils {
      */
     function isEnabled(selector: string): boolean;
     /**
+     *  Wait for element to be enabled
+     * @param selector element selector
+     */
+    function waitForEnabled(selector: string): void;
+    /**
+     * Indicate if Element is visible (without wait)
+     * @param selector - element selector
+     */
+    function isVisible(selector: string): boolean;
+    /**
      * Wait for an element to be visible by given selector
      * @param selector element selector
      */
-    function isVisible(selector: string): void;
+    function waitForDisplay(selector: string): void;
     /**
      * Wait for an element to be exist by given selector
      * @param selector element selector
