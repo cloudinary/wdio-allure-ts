@@ -262,7 +262,7 @@ export namespace BrowserUtils {
      * Wait for an element to be visible by given selector
      * @param selector element selector
      */
-    export function waitToBeVisible(selector: string): void {
+    export function waitForDisplay(selector: string): void {
         Reporter.debug(`Wait for an element to be visible '${selector}'`);
         isExist(selector);
         tryBlock(
