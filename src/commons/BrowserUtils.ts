@@ -38,10 +38,9 @@ export namespace BrowserUtils {
    * @param selector - element locator
    */
   export function scrollIntoView(selector: string): void {
-    Reporter.debug(`Scroll to: [${selector}]`);
-    const element: Element<void> = $(selector);
+    Reporter.debug(`Scroll to: '${selector}'`);
     tryBlock(
-      () => element.scrollIntoView(),
+      () => $(selector).scrollIntoView(),
       `Failed to scroll to element: [${selector}]`
     );
   }
@@ -802,7 +801,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Get Element: '${selector}' size`);
     isExist(selector);
 
-    return  $(selector).getSize();
+    return $(selector).getSize();
   }
 
   /**

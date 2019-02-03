@@ -1,6 +1,6 @@
 import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
-import { describeCommon } from '../TestHelper';
+import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 /**
  * wdio-allure-ts tab actions test
@@ -16,6 +16,7 @@ describeCommon('tab actions', () => {
   });
 
   it('switch to tab', () => {
+    BrowserUtils.navigateToUrl(sampleAppUrl);
     BrowserUtils.click("//button[@data-test='open-tab-btn']");
     const tabIds: string[] = BrowserUtils.getTabIds();
 
