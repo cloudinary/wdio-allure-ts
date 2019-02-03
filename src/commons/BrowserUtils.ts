@@ -5,6 +5,7 @@ import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 import LocationReturn = WebdriverIO.LocationReturn;
 import Element = WebdriverIO.Element;
+import SizeReturn = WebdriverIO.SizeReturn;
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined
@@ -154,6 +155,14 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Click browser's back button
+   */
+  export function backBrowser(): void {
+    Reporter.debug('Click browser back button');
+    tryBlock(() => browser.back(), 'Failed to click browser back button');
+  }
+
+  /**
    * Wait for url to be equal to given url
    * Mainly useful for navigation validation
    * @param url expected current url
@@ -227,6 +236,16 @@ export namespace BrowserUtils {
       () => element.selectByAttribute('value', value),
       `Failed to select ${value} from ${selector}`
     );
+  }
+
+  /**
+   * @param selector - element selector
+   */
+  export function isEnabled(selector: string): boolean {
+    Reporter.debug(`Is element enabled '${selector}'`);
+    isExist(selector);
+
+    return $(selector).isEnabled();
   }
 
   /**
@@ -773,6 +792,17 @@ export namespace BrowserUtils {
         `Incorrect alert's text. ${EOL} Expected: '${expectedText}' ${EOL} Actual: '${actualText}'`
       );
     }
+  }
+
+  /**
+   *
+   * @param selector - element for get size
+   */
+  export function getElementSize(selector: string): SizeReturn {
+    Reporter.debug(`Get Element: '${selector}' size`);
+    isExist(selector);
+
+    return  $(selector).getSize();
   }
 
   /**
