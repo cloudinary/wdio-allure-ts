@@ -802,7 +802,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Get Element: '${selector}' size`);
     isExist(selector);
 
-    return  $(selector).getSize();
+    return $(selector).getSize();
   }
 
   /**
