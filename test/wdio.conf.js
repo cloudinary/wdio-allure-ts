@@ -12,7 +12,7 @@ exports.config = {
       browserName: 'chrome',
 
       'goog:chromeOptions': {
-        args: ['--incognito'],
+        args: ['--headless', '--incognito'],
       },
     },
     // {
