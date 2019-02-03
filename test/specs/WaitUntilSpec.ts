@@ -4,6 +4,7 @@ import getText = BrowserUtils.getText;
 import { describeCommon } from '../TestHelper';
 
 const TIMEOUT: number = 3000;
+const HEADER_TEXT_H1: string = "//*[@id='text']/header/h1";
 const TEXT_ELEMENT_SELECTOR: string = "//*[@data-test='text-field-1']";
 const TEXT_ELEMENT_VALUE: string = 'Cloudinary';
 const INCORRECT_TEXT_ELEMENT_VALUE: string = 'Not Cloudinary';
@@ -23,9 +24,10 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   });
 
   it('Validate text not found withing timeout and error message shown ', () => {
+      $(HEADER_TEXT_H1).scrollIntoView();
     expect(() =>
       BrowserUtils.waitUntil(
-        () => getText(TEXT_ELEMENT_SELECTOR) === INCORRECT_TEXT_ELEMENT_VALUE,
+        () => getText(HEADER_TEXT_H1) === INCORRECT_TEXT_ELEMENT_VALUE,
         `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
         TIMEOUT
       )
