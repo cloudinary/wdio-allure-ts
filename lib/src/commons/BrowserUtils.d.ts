@@ -117,7 +117,7 @@ export declare namespace BrowserUtils {
      * Wait for an element to be visible by given selector
      * @param selector element selector
      */
-    function waitForDisplay(selector: string): void;
+    function waitForDisplayed(selector: string): void;
     /**
      * Wait for an element to be exist by given selector
      * @param selector element selector
