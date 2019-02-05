@@ -264,7 +264,7 @@ export namespace BrowserUtils {
    * Indicate if Element is visible (without wait)
    * @param selector - element selector
    */
-  export function isVisible(selector: string): boolean {
+  export function isDisplayed(selector: string): boolean {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
     isExist(selector);
 
