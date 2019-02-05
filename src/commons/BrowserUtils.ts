@@ -103,7 +103,7 @@ export namespace BrowserUtils {
    */
   export function click(selector: string): void {
     Reporter.debug(`Click an element '${selector}'`);
-    isDisplayed(selector);
+    waitForEnabled(selector);
     const element: Element<void> = $(selector);
     tryBlock(
       () => element.click(),
@@ -275,7 +275,7 @@ export namespace BrowserUtils {
    * Wait for an element to be visible by given selector
    * @param selector element selector
    */
-  export function waitForDisplay(selector: string): void {
+  export function waitForDisplayed(selector: string): void {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
     isExist(selector);
     tryBlock(
