@@ -242,7 +242,6 @@ export namespace BrowserUtils {
    */
   export function isEnabled(selector: string): boolean {
     Reporter.debug(`Is element enabled '${selector}'`);
-    isExist(selector);
 
     return $(selector).isEnabled();
   }
@@ -266,7 +265,6 @@ export namespace BrowserUtils {
    */
   export function isDisplayed(selector: string): boolean {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
-    isExist(selector);
 
     return $(selector).isDisplayed();
   }
