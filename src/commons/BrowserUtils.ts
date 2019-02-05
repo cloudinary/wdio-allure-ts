@@ -60,7 +60,7 @@ export namespace BrowserUtils {
    */
   export function addValue(selector: string, value: string | number): void {
     Reporter.debug(`Add value: '${value}' to '${selector}'`);
-    isVisible(selector);
+    isDisplayed(selector);
     tryBlock(
       () => $(selector).addValue(value),
       `Failed to add value: '${value}' to '${selector}'`
@@ -73,7 +73,7 @@ export namespace BrowserUtils {
    */
   export function setValue(selector: string, value: string | number): void {
     Reporter.debug(`Set element '${selector} with value: '${value}'`);
-    isVisible(selector);
+    isDisplayed(selector);
     tryBlock(
       () => $(selector).setValue(value),
       `Failed to set value: '${value}' to '${selector}'`
@@ -103,7 +103,7 @@ export namespace BrowserUtils {
    */
   export function click(selector: string): void {
     Reporter.debug(`Click an element '${selector}'`);
-    isVisible(selector);
+    isDisplayed(selector);
     const element: Element<void> = $(selector);
     tryBlock(
       () => element.click(),
@@ -120,7 +120,7 @@ export namespace BrowserUtils {
    */
   export function doubleClick(selector: string): void {
     Reporter.debug(`Double click an element '${selector}'`);
-    isVisible(selector);
+    isDisplayed(selector);
     const element: Element<void> = $(selector);
     tryBlock(
       () => element.doubleClick(),
@@ -425,7 +425,7 @@ export namespace BrowserUtils {
    */
   export function hover(selector: string): void {
     Reporter.debug(`Move to an element '${selector}'`);
-    isVisible(selector);
+    isDisplayed(selector);
     const location: LocationReturn = getElementLocation(selector);
     const element: Element<void> = $(selector);
     tryBlock(
@@ -447,7 +447,7 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Validate element text is '${text}' by selector '${selector}'`
     );
-    isVisible(selector);
+    isDisplayed(selector);
     const foundText: string = getText(selector);
 
     //Validate text was found
