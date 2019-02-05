@@ -112,7 +112,7 @@ export declare namespace BrowserUtils {
      * Indicate if Element is visible (without wait)
      * @param selector - element selector
      */
-    function isVisible(selector: string): boolean;
+    function isDisplayed(selector: string): boolean;
     /**
      * Wait for an element to be visible by given selector
      * @param selector element selector

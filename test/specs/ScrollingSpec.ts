@@ -14,7 +14,7 @@ export namespace PageLocator {
  */
 describeCommon('Scroll', () => {
   it('scrollIntoView ', () => {
-    BrowserUtils.isDisplayed(PageLocator.HEADER);
+    BrowserUtils.waitForDisplay(PageLocator.HEADER);
     assert.isFalse($(PageLocator.CAT_IMAGE).isDisplayedInViewport());
     BrowserUtils.scrollIntoView(PageLocator.CAT_IMAGE);
     assert.isTrue($(PageLocator.CAT_IMAGE).isDisplayedInViewport());
