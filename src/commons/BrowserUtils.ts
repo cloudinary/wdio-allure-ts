@@ -120,7 +120,7 @@ export namespace BrowserUtils {
    */
   export function doubleClick(selector: string): void {
     Reporter.debug(`Double click an element '${selector}'`);
-    isDisplayed(selector);
+    waitForEnabled(selector);
     const element: Element<void> = $(selector);
     tryBlock(
       () => element.doubleClick(),
