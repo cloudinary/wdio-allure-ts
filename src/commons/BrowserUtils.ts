@@ -424,9 +424,10 @@ export namespace BrowserUtils {
   export function hover(selector: string): void {
     Reporter.debug(`Move to an element '${selector}'`);
     isDisplayed(selector);
-
+    const location: LocationReturn = getElementLocation(selector);
+    const element: Element<void> = $(selector);
     tryBlock(
-      () => $(selector).moveTo(),
+      () => element.moveTo(location.x, location.y),
       `Failed to hover over '${selector}' at location '${JSON.stringify(
         location
       )}'`
