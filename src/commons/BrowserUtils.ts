@@ -69,7 +69,7 @@ export namespace BrowserUtils {
   /**
    * Set a value to an element located by selector
    * @param selector element selector
-   * @param  value value to add
+   * @param value - value to add
    */
   export function setValue(selector: string, value: string | number): void {
     Reporter.debug(`Set element '${selector} with value: '${value}'`);
@@ -84,9 +84,9 @@ export namespace BrowserUtils {
    * Set value of hidden element
    * For example: For file uploads, set 'input' element (that can be not visible) with 'filePath' value
    * @param selector elements selector
-   * @param value text value to set
+   * @param value text value to set or numeric value
    */
-  export function setHiddenElementValue(selector: string, value: string): void {
+  export function setHiddenElementValue(selector: string, value: string | number): void {
     Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
     isExist(selector);
     tryBlock(
@@ -252,7 +252,7 @@ export namespace BrowserUtils {
    */
   export function waitForEnabled(selector: string): void {
     Reporter.debug(`Wait for an element to be enabled '${selector}'`);
-    isExist(selector);
+    waitForDisplayed(selector);
     tryBlock(
       () => $(selector).waitForEnabled(DEFAULT_TIME_OUT),
       `Element not enabled '${selector}'`
@@ -492,7 +492,6 @@ export namespace BrowserUtils {
 
   /**
    * get text and verify extraction succeeded
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
   function getTextAndVerify(selector: string): string {
@@ -517,7 +516,6 @@ export namespace BrowserUtils {
    *
    * @param selector selector of items to count
    * @param expectedValue expected number of items
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
   export function expectNumberOfElements(
@@ -545,7 +543,7 @@ export namespace BrowserUtils {
    *
    * Scroll in loop until the element is visible or fail on time out
    * Checks for size of list every iteration in case list is lazy loaded
-   * @param elementSelector selector of an element to scroll to
+   * @param selector selector of an element to scroll to
    * @param listSelector selector of list to scroll
    */
   export function scrollToElement(
@@ -611,7 +609,6 @@ export namespace BrowserUtils {
 
   /**
    * Get element's attribute value
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    */
@@ -627,7 +624,6 @@ export namespace BrowserUtils {
 
   /**
    *
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    */
@@ -834,7 +830,7 @@ export namespace BrowserUtils {
    */
   export function getElementSize(selector: string): SizeReturn {
     Reporter.debug(`Get Element: '${selector}' size`);
-    isExist(selector);
+    waitForDisplayed(selector);
 
     return $(selector).getSize();
   }

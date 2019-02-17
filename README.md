@@ -36,7 +36,7 @@ Now take a look at an example of an action that, after validating that a particu
  const selector: string = "someSelector";
  logger(`Click an element with selector: ${selector}`);
  try {
-   logger(`Validate element with selector ${selector} is visible`);
+   logger(`Validate element with selector ${selector} is displayed`);
    browser.isDisplayed(selector);
  } catch (error) {
    throw new Error(`Tried to click not visible element, ${error}`);
