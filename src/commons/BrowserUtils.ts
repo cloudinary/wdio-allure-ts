@@ -570,7 +570,7 @@ export namespace BrowserUtils {
           const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
           executeScript(scrollToJS);
 
-          last = findElements(SelectorType.XPATH, selector).length;
+          last = findElements(SelectorType.XPATH, listSelector).length;
           const element: Element<void> = $(selector);
 
           return element.isDisplayed();
