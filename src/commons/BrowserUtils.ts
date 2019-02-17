@@ -414,14 +414,30 @@ export namespace BrowserUtils {
       'Failed to find elements'
     );
   }
+    /**
+     * Hover over an element by given selector
+     *
+     * Note: Uses moveToObject method that is currently deprecated
+     * @param selector selector of an element to hover
+     */
+    export function hover(selector: string): void {
+        Reporter.debug(`Move to an element '${selector}'`);
+        isDisplayed(selector);
+        tryBlock(
+          () => $(selector).moveTo(),
+          `Failed to hover over '${selector}' at location '${JSON.stringify(
+            location
+          )}'`
+        );
+    }
 
   /**
-   * Hover over an element by given selector
+   * Hover by element location - hover an element by given selector by extracting element location
    *
    * Note: Uses moveToObject method that is currently deprecated
    * @param selector selector of an element to hover
    */
-  export function hover(selector: string): void {
+  export function hoverOverElementLocation(selector: string): void {
     Reporter.debug(`Move to an element '${selector}'`);
     isDisplayed(selector);
     const location: LocationReturn = getElementLocation(selector);
