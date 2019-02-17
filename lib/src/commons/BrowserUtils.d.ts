@@ -178,6 +178,13 @@ export declare namespace BrowserUtils {
      */
     function hover(selector: string): void;
     /**
+     * Hover by element location - hover an element by given selector by extracting element location
+     *
+     * Note: Uses moveToObject method that is currently deprecated
+     * @param selector selector of an element to hover
+     */
+    function hoverOverElementLocation(selector: string): void;
+    /**
      * Validate element text as expected
      * Actual texts EOL replaced with spaces, for better test readability, so you need to path one line string
      * Note: element should be visible, otherwise will return empty string(selenium requirement)
