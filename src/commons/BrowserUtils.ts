@@ -422,12 +422,10 @@ export namespace BrowserUtils {
    */
   export function hover(selector: string): void {
     Reporter.debug(`Move to an element '${selector}'`);
-    isDisplayed(selector);
+    waitForDisplayed(selector);
     tryBlock(
       () => $(selector).moveTo(),
-      `Failed to hover over '${selector}' at location '${JSON.stringify(
-        location
-      )}'`
+      `Failed to hover over '${selector}')`
     );
   }
 
@@ -439,7 +437,7 @@ export namespace BrowserUtils {
    */
   export function hoverOverElementLocation(selector: string): void {
     Reporter.debug(`Move to an element '${selector}'`);
-    isDisplayed(selector);
+    waitForDisplayed(selector);
     const location: LocationReturn = getElementLocation(selector);
     const element: Element<void> = $(selector);
     tryBlock(
