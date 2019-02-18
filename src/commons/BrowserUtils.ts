@@ -483,6 +483,7 @@ export namespace BrowserUtils {
    */
   export function getText(selector: string): string {
     Reporter.debug(`Get element's text by selector '${selector}'`);
+    waitForDisplayed(selector);
 
     return tryBlock(
       () => getTextAndVerify(selector),
