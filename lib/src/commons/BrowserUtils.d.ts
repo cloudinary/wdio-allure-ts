@@ -32,16 +32,16 @@ export declare namespace BrowserUtils {
     /**
      * Set a value to an element located by selector
      * @param selector element selector
-     * @param  value value to add
+     * @param value - value to add
      */
     function setValue(selector: string, value: string | number): void;
     /**
      * Set value of hidden element
      * For example: For file uploads, set 'input' element (that can be not visible) with 'filePath' value
      * @param selector elements selector
-     * @param value text value to set
+     * @param value text value to set or numeric value
      */
-    function setHiddenElementValue(selector: string, value: string): void;
+    function setHiddenElementValue(selector: string, value: string | number): void;
     /**
      * Click an element located by selector
      *
@@ -202,7 +202,6 @@ export declare namespace BrowserUtils {
      *
      * @param selector selector of items to count
      * @param expectedValue expected number of items
-     * @param selectorType - enum type of selector (XPATH, ID, etc')
      * @param selector - element locator
      */
     function expectNumberOfElements(selector: string, expectedValue: number): void;
@@ -211,7 +210,7 @@ export declare namespace BrowserUtils {
      *
      * Scroll in loop until the element is visible or fail on time out
      * Checks for size of list every iteration in case list is lazy loaded
-     * @param elementSelector selector of an element to scroll to
+     * @param selector selector of an element to scroll to
      * @param listSelector selector of list to scroll
      */
     function scrollToElement(selector: string, listSelector: string): void;
@@ -223,7 +222,6 @@ export declare namespace BrowserUtils {
     function isIframeVisible(iframeSelector: string, expectedVisibility: boolean): void;
     /**
      * Get element's attribute value
-     * @param selectorType - enum type of selector (XPATH, ID, etc')
      * @param selector element's selector to search for attribute
      * @param attributeName attribute name to search for
      */

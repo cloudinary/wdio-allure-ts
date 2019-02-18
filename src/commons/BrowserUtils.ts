@@ -86,7 +86,10 @@ export namespace BrowserUtils {
    * @param selector elements selector
    * @param value text value to set or numeric value
    */
-  export function setHiddenElementValue(selector: string, value: string | number): void {
+  export function setHiddenElementValue(
+    selector: string,
+    value: string | number
+  ): void {
     Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
     isExist(selector);
     tryBlock(
@@ -423,10 +426,7 @@ export namespace BrowserUtils {
   export function hover(selector: string): void {
     Reporter.debug(`Move to an element '${selector}'`);
     waitForDisplayed(selector);
-    tryBlock(
-      () => $(selector).moveTo(),
-      `Failed to hover over '${selector}')`
-    );
+    tryBlock(() => $(selector).moveTo(), `Failed to hover over '${selector}')`);
   }
 
   /**

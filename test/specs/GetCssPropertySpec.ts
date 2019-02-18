@@ -11,10 +11,7 @@ export namespace PageLocator {
  */
 describeCommon('getCssProperty', () => {
   it('retrieve css property', () => {
-    assert.equal(
-      BrowserUtils.getCssProperty(PageLocator.HEADER, 'background-color').value,
-      'rgba(255,255,255,1)'
-    );
+      expect(BrowserUtils.getCssProperty(PageLocator.HEADER, 'background-color').value).contains('(255,255,255');
   });
 
   it('incorrect selector of an element', () => {
