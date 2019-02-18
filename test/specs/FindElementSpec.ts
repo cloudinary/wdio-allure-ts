@@ -13,6 +13,5 @@ describeCommon('findElement of BrowserUtils Tests', () => {
       "//*[@id='embedded__images']/div/p/img"
     );
     expect(JSON.stringify(result).toLowerCase()).contains('{"element');
-
   });
 });

@@ -8,17 +8,17 @@ exports.config = {
   // =====================
   maxInstances: 1,
   capabilities: [
-    {
-      browserName: 'chrome',
+      {
+          browserName: 'chrome',
 
-      'goog:chromeOptions': {
-        args: ['--headless', '--incognito'],
+          'goog:chromeOptions': {
+              args: ['--headless', '--incognito'],
+          },
       },
-    },
-    // {
+    //{
     //   browserName: 'firefox',
     //   'moz:firefoxOptions': {
-    //     args: [ '--private'],
+    //     args: ['--headless', '--private'],
     //   },
     // },
   ],

@@ -13,13 +13,10 @@ describeCommon('GetText of BrowserUtils Tests', () => {
     );
   });
 
-  it('failing on  incorrect selector', () => {
-    const selector: string = "//*[@id='incorrect']";
-    expect(() => BrowserUtils.getText(selector))
+  it('Validate multiple result ending in err ', () => {
+    expect(() => BrowserUtils.getText("//*[@id='incorrect']"))
       .to.throw(Error)
       .with.property('message')
-      .contains(
-        `Found multiple results matching text or no results for element: '${selector}' >>>>> 'undefined'`
-      );
+      .contains('Found multiple results');
   });
 });
