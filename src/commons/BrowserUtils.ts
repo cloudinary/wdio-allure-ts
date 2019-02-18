@@ -851,7 +851,7 @@ export namespace BrowserUtils {
    */
   export function pressMouseButton(mouseButton: MouseButton): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: string =
+    const selectedMouseButton: number =
       mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Click mouse button '${selectedMouseButton}'`);
     browser.buttonDown(Number(selectedMouseButton));
@@ -878,9 +878,9 @@ export namespace BrowserUtils {
   /**
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
-  export function releaseMouseButton(mouseButton: string): void {
+  export function releaseMouseButton(mouseButton: number): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: string =
+    const selectedMouseButton: number =
       mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Release mouse button '${selectedMouseButton}'`);
     browser.buttonUp(Number(selectedMouseButton));

@@ -14,6 +14,7 @@ const INCORRECT_TEXT_ELEMENT_VALUE: string = 'Not Cloudinary';
  */
 describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text found within given timeout ', () => {
+      BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
     assert.isTrue(
       BrowserUtils.waitUntil(
         () =>
@@ -42,6 +43,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   });
 
   it('Validate text found within default timeout ', () => {
+      BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
     assert.isTrue(
       BrowserUtils.waitUntil(
         () => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE
@@ -50,6 +52,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   });
 
   it('Validate text not found within default timeout and default error message shown', () => {
+      BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
     expect(() =>
       BrowserUtils.waitUntil(
         () =>
