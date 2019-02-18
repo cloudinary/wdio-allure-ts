@@ -14,9 +14,9 @@ describeCommon('GetText of BrowserUtils Tests', () => {
   });
 
   it('Validate multiple result ending in err ', () => {
-    expect(() => BrowserUtils.getText("//*[@id='incorrect']"))
+    expect(() => BrowserUtils.getText("//*[@class='Cloudinary']"))
       .to.throw(Error)
       .with.property('message')
-      .contains('Found multiple results');
+      .contains('Element not exist');
   });
 });
