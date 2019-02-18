@@ -299,7 +299,7 @@ export declare namespace BrowserUtils {
     /**
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
      */
-    function releaseMouseButton(mouseButton: string): void;
+    function releaseMouseButton(mouseButton: number): void;
     /**
      * Determine an element’s location on the page. The point (0pix, 0pix) refers to the upper-left corner of the page.
      * @param selector  - element with requested position offset
