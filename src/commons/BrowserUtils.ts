@@ -430,25 +430,6 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Hover by element location - hover an element by given selector by extracting element location
-   *
-   * Note: Uses moveToObject method that is currently deprecated
-   * @param selector selector of an element to hover
-   */
-  export function hoverOverElementLocation(selector: string): void {
-    Reporter.debug(`Move to an element '${selector}'`);
-    waitForDisplayed(selector);
-    const location: LocationReturn = getElementLocation(selector);
-    const element: Element<void> = $(selector);
-    tryBlock(
-      () => element.moveTo(location.x, location.y),
-      `Failed to hover over '${selector}' at location '${JSON.stringify(
-        location
-      )}'`
-    );
-  }
-
-  /**
    * Validate element text as expected
    * Actual texts EOL replaced with spaces, for better test readability, so you need to path one line string
    * Note: element should be visible, otherwise will return empty string(selenium requirement)
@@ -855,7 +836,7 @@ export namespace BrowserUtils {
     const selectedMouseButton: number =
       mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Click mouse button '${selectedMouseButton}'`);
-    browser.buttonDown(Number(selectedMouseButton));
+    browser.buttonDown(selectedMouseButton);
   }
 
   /**
@@ -884,7 +865,7 @@ export namespace BrowserUtils {
     const selectedMouseButton: number =
       mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Release mouse button '${selectedMouseButton}'`);
-    browser.buttonUp(Number(selectedMouseButton));
+    browser.buttonUp(selectedMouseButton);
   }
 
   /**
