@@ -409,7 +409,7 @@ export namespace BrowserUtils {
   export function findElements(
     selectorType: SelectorType,
     selector: string
-  ): string {
+  ): string[] {
     Reporter.debug('Switching to parent frame');
 
     return tryBlock(

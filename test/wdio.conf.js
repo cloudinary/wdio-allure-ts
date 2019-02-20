@@ -15,7 +15,7 @@ exports.config = {
               args: ['--headless', '--incognito'],
           },
       },
-    //{
+    // {
     //   browserName: 'firefox',
     //   'moz:firefoxOptions': {
     //     args: ['--headless', '--private'],

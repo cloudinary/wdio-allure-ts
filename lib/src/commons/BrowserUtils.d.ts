@@ -169,7 +169,7 @@ export declare namespace BrowserUtils {
      * @param selectorType - enum type of selector (XPATH, ID, etc')
      * @param selector - element locator
      */
-    function findElements(selectorType: SelectorType, selector: string): string;
+    function findElements(selectorType: SelectorType, selector: string): string[];
     /**
      * Hover over an element by given selector
      *
