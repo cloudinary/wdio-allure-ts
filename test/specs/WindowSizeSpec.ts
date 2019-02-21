@@ -11,7 +11,7 @@ describe('setWindowSize', () => {
     const height: number = 600;
     BrowserUtils.setWindowSize(width, height);
 
-    size = browser.getWindowSize();
+    size = BrowserUtils.getWindowSize();
     assert.equal(size.width, width, 'window width');
     assert.equal(size.height, height, 'window height');
   });

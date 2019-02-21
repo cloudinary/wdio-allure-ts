@@ -278,6 +278,7 @@ export declare namespace BrowserUtils {
      * @param height - Height (px)
      */
     function setWindowSize(width: number, height: number): void;
+    function getWindowSize(): object;
     /**
      *
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}

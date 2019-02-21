@@ -824,7 +824,36 @@ export namespace BrowserUtils {
    */
   export function setWindowSize(width: number, height: number): void {
     Reporter.debug(`Set window size to '${width}X${height}'`);
-    browser.setWindowSize(width, height);
+    switch(browser.capabilities.browserName) {
+        case "chrome": {
+            tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
+            break;
+        }
+
+        case "firefox": {
+            tryBlock(() => browser.setWindowRect(0, 0, width, height), 'FireFox: Failed to resize window');
+            break;
+        }
+
+        default: {
+            throw new TypeError("Unable to execute due to unsupported Browser");
+        }
+    }
+  }
+
+  export function getWindowSize(): object {
+    Reporter.debug("Get window size");
+    if(browser.capabilities.browserName === "chrome") {
+
+        return tryBlock(() => browser.getWindowSize(), 'Chrome: Failed to get window size');
+    }
+
+    if(browser.capabilities.browserName === "firefox") {
+
+        return tryBlock(() => browser.getWindowRect(), 'FireFox: Failed to get window size');
+    }
+
+      throw new TypeError("Unable to execute due to unsupported Browser");
   }
 
   /**
