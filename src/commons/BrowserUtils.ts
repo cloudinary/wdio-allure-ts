@@ -40,10 +40,10 @@ export namespace BrowserUtils {
   export function scrollIntoView(selector: string): void {
     Reporter.debug(`Scroll to: '${selector}'`);
 
-    tryBlock(
-      () => $(selector).scrollIntoView(),
-      `Failed to scroll to element: [${selector}]`
-    );
+    tryBlock(() => {
+      const scrollToJS: string = `document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
+      executeScript(scrollToJS);
+    }, `Failed to scroll to element: [${selector}]`);
   }
 
   /**

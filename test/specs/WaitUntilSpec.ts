@@ -26,7 +26,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   });
 
   it('Validate text not found withing timeout and error message shown ', () => {
-    $(HEADER_TEXT_H1).scrollIntoView();
+    BrowserUtils.scrollIntoView(HEADER_TEXT_H1);
     expect(() =>
       BrowserUtils.waitUntil(
         () =>

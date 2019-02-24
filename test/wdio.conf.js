@@ -15,16 +15,17 @@ exports.config = {
               args: ['--headless', '--incognito'],
           },
       },
-    // {
-    //   browserName: 'firefox',
-    //   'moz:firefoxOptions': {
-    //     args: [ '--private'],
-    //   },
-    // },
+    {
+      browserName: 'firefox',
+      'moz:firefoxOptions': {
+        args: [ '--headless', '--private'],
+      },
+
+    },
   ],
 
   suites: {
-    regression: ['./lib/test/specs/*Spec.js'],
+    regression: ['./lib/test/specs/*Spec.js']
   },
 
   // ===================
