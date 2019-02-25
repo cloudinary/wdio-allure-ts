@@ -25,6 +25,5 @@ describeCommon('Scroll', () => {
       PageLocator.LIST_ITEM_THREE,
       PageLocator.SELECTION_LIST
     );
-    browser.debug();
   });
 });

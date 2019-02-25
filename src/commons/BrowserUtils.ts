@@ -108,9 +108,9 @@ export namespace BrowserUtils {
   export function click(selector: string): void {
     Reporter.debug(`Click an element '${selector}'`);
     waitForEnabled(selector);
-    const element: Element<void> = $(selector);
+
     tryBlock(
-      () => element.click(),
+      () => $(selector).click(),
 
       `Failed to click on '${selector}'`
     );
@@ -125,9 +125,9 @@ export namespace BrowserUtils {
   export function doubleClick(selector: string): void {
     Reporter.debug(`Double click an element '${selector}'`);
     waitForEnabled(selector);
-    const element: Element<void> = $(selector);
+
     tryBlock(
-      () => element.doubleClick(),
+      () => $(selector).doubleClick(),
 
       `Failed to double click on '${selector}'`
     );
@@ -234,9 +234,9 @@ export namespace BrowserUtils {
   export function selectByValue(selector: string, value: string): void {
     Reporter.debug(`Select by text '${value}' from '${selector}'`);
     isExist(selector);
-    const element: Element<void> = $(selector);
+
     tryBlock(
-      () => element.selectByAttribute('value', value),
+      () => $(selector).selectByAttribute('value', value),
       `Failed to select ${value} from ${selector}`
     );
   }
@@ -292,9 +292,9 @@ export namespace BrowserUtils {
    */
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist '${selector}'`);
-    const element: Element<void> = $(selector);
+
     tryBlock(
-      () => element.waitForExist(DEFAULT_TIME_OUT),
+      () => $(selector).waitForExist(DEFAULT_TIME_OUT),
       `Element not exist '${selector}'`
     );
   }
@@ -307,10 +307,9 @@ export namespace BrowserUtils {
   export function notVisible(selector: string): void {
     Reporter.debug(`Validating element not visible '${selector}'`);
     tryBlock(() => {
-      const element: Element<void> = $(selector);
-      if (element.isExisting()) {
+      if ($(selector).isExisting()) {
         Reporter.debug('Element not exists. Will check for visibility');
-        element.waitForDisplayed(DEFAULT_TIME_OUT, true);
+        $(selector).waitForDisplayed(DEFAULT_TIME_OUT, true);
       }
       Reporter.debug('Element not exists. Will not check for visibility');
     }, `Failed to validate element not visible '${selector}'`);
@@ -322,9 +321,9 @@ export namespace BrowserUtils {
    */
   export function notExist(notExistElementSelector: string): void {
     Reporter.debug(`Validating element not exist '${notExistElementSelector}'`);
-    const element: Element<void> = $(notExistElementSelector);
+
     tryBlock(
-      () => element.waitForExist(DEFAULT_TIME_OUT, true),
+      () => $(notExistElementSelector).waitForExist(DEFAULT_TIME_OUT, true),
       `Failed to validate element not exist '${notExistElementSelector}'`
     );
   }
@@ -479,10 +478,9 @@ export namespace BrowserUtils {
    */
   function getTextAndVerify(selector: string): string {
     Reporter.debug(`Get Text & Verify Not Null, '${selector}'`);
-    const element: Element<void> = $(selector);
 
     const stringResults: string =
-      $$(selector).length === 1 ? element.getText() : undefined;
+      $$(selector).length === 1 ? $(selector).getText() : undefined;
 
     //Check for multiple results or no element found
     if (stringResults === null || stringResults === undefined) {
@@ -552,9 +550,8 @@ export namespace BrowserUtils {
           executeScript(scrollToJS);
 
           last = findElements(SelectorType.XPATH, listSelector).length;
-          const element: Element<void> = $(selector);
 
-          return element.isDisplayed();
+          return $(selector).isDisplayed();
         }),
       `Failed to scroll to ${selector} in ${listSelector}`
     );
@@ -573,11 +570,10 @@ export namespace BrowserUtils {
 
     switchToParentFrame(); //if iframe already focused, isExist will fail
     isExist(iframeSelector);
-    const element: Element<void> = $(iframeSelector);
 
     const cssDisplayProperty: string = 'display';
     const iframeDisplayProperty: WebdriverIO.CSSProperty = tryBlock(
-      () => element.getCSSProperty(cssDisplayProperty), //iframe css
+      () => $(iframeSelector).getCSSProperty(cssDisplayProperty), //iframe css
       `Failed to get '${cssDisplayProperty}' css property from '${iframeSelector}'`
     );
 
@@ -618,11 +614,11 @@ export namespace BrowserUtils {
       `Get Attribute '${attributeName}' in element '${selector}' And Verify not null.`
     );
     isExist(selector);
-    const element: Element<void> = $(selector);
+
     // @ts-ignore
     const stringResults: string =
       $$(selector).length === 1
-        ? element.getAttribute(attributeName)
+        ? $(selector).getAttribute(attributeName)
         : undefined;
 
     //Check for multiple results or no element found
@@ -723,10 +719,8 @@ export namespace BrowserUtils {
       `Get css property '${cssPropertyName}' from element by '${selector}'`
     );
 
-    const element: Element<void> = $(selector);
-
     return tryBlock(
-      () => element.getCSSProperty(cssPropertyName),
+      () => $(selector).getCSSProperty(cssPropertyName),
       `Failed to get css Property '${cssPropertyName}' from '${selector}'`
     );
   }
@@ -892,9 +886,9 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`
     );
+
     isExist(selector);
-    const element: Element<void> = $(selector);
-    element.moveTo(xOffset, yOffset);
+    $(selector).moveTo(xOffset, yOffset);
   }
 
   /**
@@ -914,9 +908,8 @@ export namespace BrowserUtils {
    */
   export function getElementLocation(selector: string): LocationReturn {
     Reporter.debug(`Get Element location '${selector}'`);
-    const element: Element<void> = $(selector);
 
-    return element.getLocation();
+    return $(selector).getLocation();
   }
 
   /**
