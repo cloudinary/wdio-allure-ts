@@ -4,7 +4,6 @@ import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 import LocationReturn = WebdriverIO.LocationReturn;
-import Element = WebdriverIO.Element;
 import SizeReturn = WebdriverIO.SizeReturn;
 
 const DEFAULT_TIME_OUT: number =
