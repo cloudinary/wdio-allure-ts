@@ -376,7 +376,9 @@ export namespace BrowserUtils {
    * so the focus will be back on main page
    */
   export function switchToParentFrame(): void {
-    Reporter.debug('Switching to parent frame');
+    Reporter.debug(
+      `Switching to parent frame (${browser.capabilities.browserName})`
+    );
     if (browser.capabilities.browserName === 'chrome') {
       tryBlock(
         () => browser.switchToParentFrame(),
