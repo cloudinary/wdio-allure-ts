@@ -125,11 +125,10 @@ export namespace BrowserUtils {
     Reporter.debug(`Double click an element '${selector}'`);
     waitForEnabled(selector);
 
-    tryBlock(
-      () => $(selector).doubleClick(),
-
-      `Failed to double click on '${selector}'`
-    );
+    tryBlock(() => {
+      const scrollToJS: string = `document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.dblclick()`;
+      executeScript(scrollToJS);
+    }, `Failed to double click an element : [${selector}]`);
   }
 
   /**
