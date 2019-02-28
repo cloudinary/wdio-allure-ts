@@ -379,14 +379,14 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Switching to parent frame (${browser.capabilities.browserName})`
     );
-    if (browser.capabilities.browserName === 'chrome') {
+    if (browser.capabilities.browserName.trim().toLowerCase() === "chrome") {
       tryBlock(
         () => browser.switchToParentFrame(),
         'Chrome: Failed to switch to parent frame'
       );
     }
 
-    if (browser.capabilities.browserName === 'firefox') {
+    if (browser.capabilities.browserName.trim().toLowerCase()  === "firefox") {
       return tryBlock(
         // tslint:disable-next-line:no-null-keyword
         () => browser.switchToFrame(null),
