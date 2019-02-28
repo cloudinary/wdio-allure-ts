@@ -379,22 +379,31 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Switching to parent frame (${browser.capabilities.browserName})`
     );
-    if (browser.capabilities.browserName.trim().toLowerCase() === "chrome") {
-      tryBlock(
-        () => browser.switchToParentFrame(),
-        'Chrome: Failed to switch to parent frame'
-      );
-    }
 
-    if (browser.capabilities.browserName.trim().toLowerCase()  === "firefox") {
-      return tryBlock(
-        // tslint:disable-next-line:no-null-keyword
-        () => browser.switchToFrame(null),
-        'FireFox: Failed to switch to parent frame'
-      );
-    }
+    switch (browser.capabilities.browserName) {
+      case 'chrome': {
+        Reporter.debug('Case chrome');
+        tryBlock(
+          () => browser.switchToParentFrame(),
+          'Chrome: Failed to switch to parent frame'
+        );
+        break;
+      }
 
-    throw new TypeError('Unable to execute due to unsupported Browser');
+      case 'firefox': {
+        Reporter.debug('Case firefox');
+        tryBlock(
+          // tslint:disable-next-line:no-null-keyword
+          () => browser.switchToFrame(null),
+          'FireFox: Failed to switch to parent frame'
+        );
+        break;
+      }
+
+      default: {
+        throw new TypeError('Unable to execute due to unsupported Browser');
+      }
+    }
   }
 
   /**
