@@ -14,12 +14,12 @@ export namespace PageLocator {
  * wdio-allure-ts Click actions on element test
  */
 describeCommon('click', () => {
-  it('addValue ', () => {
+  it('singleClick ', () => {
     BrowserUtils.click(PageLocator.SUBMIT_BUTTON_ONE);
     chai.expect(browser.getUrl()).to.endsWith('/submit');
   });
 
-  it.skip('doubleClick', () => {
+  it('doubleClick', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     BrowserUtils.doubleClick(PageLocator.DOUBLE_CLICK_DIV);
     chai.assert.equal(

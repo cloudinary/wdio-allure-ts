@@ -1,8 +1,9 @@
-import { Cookie, CSSProperty } from 'webdriverio';
-import { MouseButton } from '../enums/MouseButton';
-import { SelectorType } from '../enums/SelectorType';
+/// <reference types="./webdriverio-core" />
 import LocationReturn = WebdriverIO.LocationReturn;
 import SizeReturn = WebdriverIO.SizeReturn;
+import { Cookie, CSSProperty } from '@wdio/sync';
+import { MouseButton } from '../enums/MouseButton';
+import { SelectorType } from '../enums/SelectorType';
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */

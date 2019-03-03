@@ -1,10 +1,10 @@
+import LocationReturn = WebdriverIO.LocationReturn;
+import SizeReturn = WebdriverIO.SizeReturn;
+import { Cookie, CSSProperty } from '@wdio/sync';
 import { EOL } from 'os';
-import { Cookie, CSSProperty } from 'webdriverio';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
-import LocationReturn = WebdriverIO.LocationReturn;
-import SizeReturn = WebdriverIO.SizeReturn;
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined
@@ -125,8 +125,17 @@ export namespace BrowserUtils {
     Reporter.debug(`Double click an element '${selector}'`);
     waitForEnabled(selector);
 
+    const targetElement: string = `var targetElement = document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;`;
+    const clickEvent: string =
+      " var clickEvent  = document.createEvent ('MouseEvents');";
+    const clickEventInit: string =
+      "clickEvent.initEvent ('dblclick', true, true);";
+    const dispatchEvent: string = 'targetElement.dispatchEvent (clickEvent);';
+
+    const script: string = `${targetElement}${clickEvent}${clickEventInit}${dispatchEvent}`;
+
     tryBlock(
-      () => $(selector).doubleClick(),
+      () => browser.execute(script),
 
       `Failed to double click on '${selector}'`
     );
