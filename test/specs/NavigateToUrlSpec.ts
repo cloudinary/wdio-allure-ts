@@ -16,6 +16,6 @@ describeCommon('navigateToUrl', () => {
     expect(() => BrowserUtils.navigateToUrl(malformedUrl))
       .to.throw(Error)
       .with.property('message')
-      .contains('Cannot navigate to invalid URL');
+      .contains('valid URL'); // On FireFox message: "not valid" on Chrome: "invalid"
   });
 });

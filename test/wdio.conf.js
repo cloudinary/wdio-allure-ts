@@ -8,23 +8,24 @@ exports.config = {
   // =====================
   maxInstances: 1,
   capabilities: [
-    {
-      browserName: 'chrome',
+      {
+          browserName: 'chrome',
 
-      'goog:chromeOptions': {
-        args: ['--headless', '--incognito'],
+          'goog:chromeOptions': {
+              args: ['--headless', '--incognito'],
+          },
       },
+    {
+      browserName: 'firefox',
+      'moz:firefoxOptions': {
+        args: [ '--headless', '--private'],
+      },
+
     },
-    // {
-    //   browserName: 'firefox',
-    //   'moz:firefoxOptions': {
-    //     args: ['--headless', '--private'],
-    //   },
-    // },
   ],
 
   suites: {
-    regression: ['./lib/test/specs/*Spec.js'],
+    regression: ['./lib/test/specs/*Spec.js']
   },
 
   // ===================

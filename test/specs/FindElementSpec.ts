@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { SelectorType } from '../../src/enums/SelectorType';
 import { describeCommon } from '../TestHelper';
@@ -12,6 +12,6 @@ describeCommon('findElement of BrowserUtils Tests', () => {
       SelectorType.XPATH,
       "//*[@id='embedded__images']/div/p/img"
     );
-    assert.include(JSON.stringify(result), '{"ELEMENT":"');
+    expect(JSON.stringify(result).toLowerCase()).contains('{"element');
   });
 });

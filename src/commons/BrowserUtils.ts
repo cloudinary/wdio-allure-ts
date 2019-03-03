@@ -4,7 +4,6 @@ import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 import LocationReturn = WebdriverIO.LocationReturn;
-import Element = WebdriverIO.Element;
 import SizeReturn = WebdriverIO.SizeReturn;
 
 const DEFAULT_TIME_OUT: number =
@@ -39,10 +38,11 @@ export namespace BrowserUtils {
    */
   export function scrollIntoView(selector: string): void {
     Reporter.debug(`Scroll to: '${selector}'`);
-    tryBlock(
-      () => $(selector).scrollIntoView(),
-      `Failed to scroll to element: [${selector}]`
-    );
+
+    tryBlock(() => {
+      const scrollToJS: string = `document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
+      executeScript(scrollToJS);
+    }, `Failed to scroll to element: [${selector}]`);
   }
 
   /**
@@ -60,7 +60,7 @@ export namespace BrowserUtils {
    */
   export function addValue(selector: string, value: string | number): void {
     Reporter.debug(`Add value: '${value}' to '${selector}'`);
-    isVisible(selector);
+    isDisplayed(selector);
     tryBlock(
       () => $(selector).addValue(value),
       `Failed to add value: '${value}' to '${selector}'`
@@ -69,11 +69,11 @@ export namespace BrowserUtils {
   /**
    * Set a value to an element located by selector
    * @param selector element selector
-   * @param  value value to add
+   * @param value - value to add
    */
   export function setValue(selector: string, value: string | number): void {
     Reporter.debug(`Set element '${selector} with value: '${value}'`);
-    isVisible(selector);
+    isDisplayed(selector);
     tryBlock(
       () => $(selector).setValue(value),
       `Failed to set value: '${value}' to '${selector}'`
@@ -84,9 +84,12 @@ export namespace BrowserUtils {
    * Set value of hidden element
    * For example: For file uploads, set 'input' element (that can be not visible) with 'filePath' value
    * @param selector elements selector
-   * @param value text value to set
+   * @param value text value to set or numeric value
    */
-  export function setHiddenElementValue(selector: string, value: string): void {
+  export function setHiddenElementValue(
+    selector: string,
+    value: string | number
+  ): void {
     Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
     isExist(selector);
     tryBlock(
@@ -103,10 +106,10 @@ export namespace BrowserUtils {
    */
   export function click(selector: string): void {
     Reporter.debug(`Click an element '${selector}'`);
-    isVisible(selector);
-    const element: Element<void> = $(selector);
+    waitForEnabled(selector);
+
     tryBlock(
-      () => element.click(),
+      () => $(selector).click(),
 
       `Failed to click on '${selector}'`
     );
@@ -120,10 +123,10 @@ export namespace BrowserUtils {
    */
   export function doubleClick(selector: string): void {
     Reporter.debug(`Double click an element '${selector}'`);
-    isVisible(selector);
-    const element: Element<void> = $(selector);
+    waitForEnabled(selector);
+
     tryBlock(
-      () => element.doubleClick(),
+      () => $(selector).doubleClick(),
 
       `Failed to double click on '${selector}'`
     );
@@ -230,9 +233,9 @@ export namespace BrowserUtils {
   export function selectByValue(selector: string, value: string): void {
     Reporter.debug(`Select by text '${value}' from '${selector}'`);
     isExist(selector);
-    const element: Element<void> = $(selector);
+
     tryBlock(
-      () => element.selectByAttribute('value', value),
+      () => $(selector).selectByAttribute('value', value),
       `Failed to select ${value} from ${selector}`
     );
   }
@@ -242,21 +245,42 @@ export namespace BrowserUtils {
    */
   export function isEnabled(selector: string): boolean {
     Reporter.debug(`Is element enabled '${selector}'`);
-    isExist(selector);
 
     return $(selector).isEnabled();
+  }
+
+  /**
+   *  Wait for element to be enabled
+   * @param selector element selector
+   */
+  export function waitForEnabled(selector: string): void {
+    Reporter.debug(`Wait for an element to be enabled '${selector}'`);
+    waitForDisplayed(selector);
+    tryBlock(
+      () => $(selector).waitForEnabled(DEFAULT_TIME_OUT),
+      `Element not enabled '${selector}'`
+    );
+  }
+
+  /**
+   * Indicate if Element is visible (without wait)
+   * @param selector - element selector
+   */
+  export function isDisplayed(selector: string): boolean {
+    Reporter.debug(`Wait for an element to be visible '${selector}'`);
+
+    return $(selector).isDisplayed();
   }
 
   /**
    * Wait for an element to be visible by given selector
    * @param selector element selector
    */
-  export function isVisible(selector: string): void {
+  export function waitForDisplayed(selector: string): void {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
     isExist(selector);
-    const element: Element<void> = $(selector);
     tryBlock(
-      () => element.waitForDisplayed(DEFAULT_TIME_OUT),
+      () => $(selector).waitForDisplayed(DEFAULT_TIME_OUT),
       `Element not visible '${selector}'`
     );
   }
@@ -267,9 +291,9 @@ export namespace BrowserUtils {
    */
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist '${selector}'`);
-    const element: Element<void> = $(selector);
+
     tryBlock(
-      () => element.waitForExist(DEFAULT_TIME_OUT),
+      () => $(selector).waitForExist(DEFAULT_TIME_OUT),
       `Element not exist '${selector}'`
     );
   }
@@ -282,10 +306,9 @@ export namespace BrowserUtils {
   export function notVisible(selector: string): void {
     Reporter.debug(`Validating element not visible '${selector}'`);
     tryBlock(() => {
-      const element: Element<void> = $(selector);
-      if (element.isExisting()) {
+      if ($(selector).isExisting()) {
         Reporter.debug('Element not exists. Will check for visibility');
-        element.waitForDisplayed(DEFAULT_TIME_OUT, true);
+        $(selector).waitForDisplayed(DEFAULT_TIME_OUT, true);
       }
       Reporter.debug('Element not exists. Will not check for visibility');
     }, `Failed to validate element not visible '${selector}'`);
@@ -297,9 +320,9 @@ export namespace BrowserUtils {
    */
   export function notExist(notExistElementSelector: string): void {
     Reporter.debug(`Validating element not exist '${notExistElementSelector}'`);
-    const element: Element<void> = $(notExistElementSelector);
+
     tryBlock(
-      () => element.waitForExist(DEFAULT_TIME_OUT, true),
+      () => $(notExistElementSelector).waitForExist(DEFAULT_TIME_OUT, true),
       `Failed to validate element not exist '${notExistElementSelector}'`
     );
   }
@@ -353,11 +376,34 @@ export namespace BrowserUtils {
    * so the focus will be back on main page
    */
   export function switchToParentFrame(): void {
-    Reporter.debug('Switching to parent frame');
-    tryBlock(
-      () => browser.switchToParentFrame(),
-      'Failed to switch to parent frame'
+    Reporter.debug(
+      `Switching to parent frame (${browser.capabilities.browserName})`
     );
+
+    switch (browser.capabilities.browserName) {
+      case 'chrome': {
+        Reporter.debug('Case chrome');
+        tryBlock(
+          () => browser.switchToParentFrame(),
+          'Chrome: Failed to switch to parent frame'
+        );
+        break;
+      }
+
+      case 'firefox': {
+        Reporter.debug('Case firefox');
+        tryBlock(
+          // tslint:disable-next-line:no-null-keyword
+          () => browser.switchToFrame(null),
+          'FireFox: Failed to switch to parent frame'
+        );
+        break;
+      }
+
+      default: {
+        throw new TypeError('Unable to execute due to unsupported Browser');
+      }
+    }
   }
 
   /**
@@ -385,7 +431,7 @@ export namespace BrowserUtils {
   export function findElements(
     selectorType: SelectorType,
     selector: string
-  ): string {
+  ): string[] {
     Reporter.debug('Switching to parent frame');
 
     return tryBlock(
@@ -393,7 +439,6 @@ export namespace BrowserUtils {
       'Failed to find elements'
     );
   }
-
   /**
    * Hover over an element by given selector
    *
@@ -402,15 +447,8 @@ export namespace BrowserUtils {
    */
   export function hover(selector: string): void {
     Reporter.debug(`Move to an element '${selector}'`);
-    isVisible(selector);
-    const location: LocationReturn = getElementLocation(selector);
-    const element: Element<void> = $(selector);
-    tryBlock(
-      () => element.moveTo(location.x, location.y),
-      `Failed to hover over '${selector}' at location '${JSON.stringify(
-        location
-      )}'`
-    );
+    waitForDisplayed(selector);
+    tryBlock(() => $(selector).moveTo(), `Failed to hover over '${selector}')`);
   }
 
   /**
@@ -424,7 +462,7 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Validate element text is '${text}' by selector '${selector}'`
     );
-    isVisible(selector);
+    isDisplayed(selector);
     const foundText: string = getText(selector);
 
     //Validate text was found
@@ -448,6 +486,7 @@ export namespace BrowserUtils {
    */
   export function getText(selector: string): string {
     Reporter.debug(`Get element's text by selector '${selector}'`);
+    waitForDisplayed(selector);
 
     return tryBlock(
       () => getTextAndVerify(selector),
@@ -457,15 +496,13 @@ export namespace BrowserUtils {
 
   /**
    * get text and verify extraction succeeded
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
   function getTextAndVerify(selector: string): string {
     Reporter.debug(`Get Text & Verify Not Null, '${selector}'`);
-    const element: Element<void> = $(selector);
 
     const stringResults: string =
-      $$(selector).length === 1 ? element.getText() : undefined;
+      $$(selector).length === 1 ? $(selector).getText() : undefined;
 
     //Check for multiple results or no element found
     if (stringResults === null || stringResults === undefined) {
@@ -482,7 +519,6 @@ export namespace BrowserUtils {
    *
    * @param selector selector of items to count
    * @param expectedValue expected number of items
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
   export function expectNumberOfElements(
@@ -510,7 +546,7 @@ export namespace BrowserUtils {
    *
    * Scroll in loop until the element is visible or fail on time out
    * Checks for size of list every iteration in case list is lazy loaded
-   * @param elementSelector selector of an element to scroll to
+   * @param selector selector of an element to scroll to
    * @param listSelector selector of list to scroll
    */
   export function scrollToElement(
@@ -535,10 +571,9 @@ export namespace BrowserUtils {
           const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
           executeScript(scrollToJS);
 
-          last = findElements(SelectorType.XPATH, selector).length;
-          const element: Element<void> = $(selector);
+          last = findElements(SelectorType.XPATH, listSelector).length;
 
-          return element.isDisplayed();
+          return $(selector).isDisplayed();
         }),
       `Failed to scroll to ${selector} in ${listSelector}`
     );
@@ -557,11 +592,10 @@ export namespace BrowserUtils {
 
     switchToParentFrame(); //if iframe already focused, isExist will fail
     isExist(iframeSelector);
-    const element: Element<void> = $(iframeSelector);
 
     const cssDisplayProperty: string = 'display';
     const iframeDisplayProperty: WebdriverIO.CSSProperty = tryBlock(
-      () => element.getCSSProperty(cssDisplayProperty), //iframe css
+      () => $(iframeSelector).getCSSProperty(cssDisplayProperty), //iframe css
       `Failed to get '${cssDisplayProperty}' css property from '${iframeSelector}'`
     );
 
@@ -576,7 +610,6 @@ export namespace BrowserUtils {
 
   /**
    * Get element's attribute value
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    */
@@ -592,7 +625,6 @@ export namespace BrowserUtils {
 
   /**
    *
-   * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    */
@@ -604,11 +636,11 @@ export namespace BrowserUtils {
       `Get Attribute '${attributeName}' in element '${selector}' And Verify not null.`
     );
     isExist(selector);
-    const element: Element<void> = $(selector);
+
     // @ts-ignore
     const stringResults: string =
       $$(selector).length === 1
-        ? element.getAttribute(attributeName)
+        ? $(selector).getAttribute(attributeName)
         : undefined;
 
     //Check for multiple results or no element found
@@ -709,10 +741,8 @@ export namespace BrowserUtils {
       `Get css property '${cssPropertyName}' from element by '${selector}'`
     );
 
-    const element: Element<void> = $(selector);
-
     return tryBlock(
-      () => element.getCSSProperty(cssPropertyName),
+      () => $(selector).getCSSProperty(cssPropertyName),
       `Failed to get css Property '${cssPropertyName}' from '${selector}'`
     );
   }
@@ -799,7 +829,7 @@ export namespace BrowserUtils {
    */
   export function getElementSize(selector: string): SizeReturn {
     Reporter.debug(`Get Element: '${selector}' size`);
-    isExist(selector);
+    waitForDisplayed(selector);
 
     return $(selector).getSize();
   }
@@ -811,7 +841,46 @@ export namespace BrowserUtils {
    */
   export function setWindowSize(width: number, height: number): void {
     Reporter.debug(`Set window size to '${width}X${height}'`);
-    browser.setWindowSize(width, height);
+    switch (browser.capabilities.browserName) {
+      case 'chrome': {
+        tryBlock(
+          () => browser.setWindowSize(width, height),
+          'Chrome: Failed to resize window'
+        );
+        break;
+      }
+
+      case 'firefox': {
+        tryBlock(
+          () => browser.setWindowRect(0, 0, width, height),
+          'FireFox: Failed to resize window'
+        );
+        break;
+      }
+
+      default: {
+        throw new TypeError('Unable to execute due to unsupported Browser');
+      }
+    }
+  }
+
+  export function getWindowSize(): object {
+    Reporter.debug('Get window size');
+    if (browser.capabilities.browserName === 'chrome') {
+      return tryBlock(
+        () => browser.getWindowSize(),
+        'Chrome: Failed to get window size'
+      );
+    }
+
+    if (browser.capabilities.browserName === 'firefox') {
+      return tryBlock(
+        () => browser.getWindowRect(),
+        'FireFox: Failed to get window size'
+      );
+    }
+
+    throw new TypeError('Unable to execute due to unsupported Browser');
   }
 
   /**
@@ -820,10 +889,10 @@ export namespace BrowserUtils {
    */
   export function pressMouseButton(mouseButton: MouseButton): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: string =
+    const selectedMouseButton: number =
       mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Click mouse button '${selectedMouseButton}'`);
-    browser.buttonDown(Number(selectedMouseButton));
+    browser.buttonDown(selectedMouseButton);
   }
 
   /**
@@ -839,20 +908,20 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`
     );
+
     isExist(selector);
-    const element: Element<void> = $(selector);
-    element.moveTo(xOffset, yOffset);
+    $(selector).moveTo(xOffset, yOffset);
   }
 
   /**
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
-  export function releaseMouseButton(mouseButton: string): void {
+  export function releaseMouseButton(mouseButton: number): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: string =
+    const selectedMouseButton: number =
       mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Release mouse button '${selectedMouseButton}'`);
-    browser.buttonUp(Number(selectedMouseButton));
+    browser.buttonUp(selectedMouseButton);
   }
 
   /**
@@ -861,9 +930,8 @@ export namespace BrowserUtils {
    */
   export function getElementLocation(selector: string): LocationReturn {
     Reporter.debug(`Get Element location '${selector}'`);
-    const element: Element<void> = $(selector);
 
-    return element.getLocation();
+    return $(selector).getLocation();
   }
 
   /**

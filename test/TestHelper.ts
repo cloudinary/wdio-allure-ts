@@ -19,7 +19,7 @@ export function describeCommon(name: string, body: Function): void {
      */
     before(() => {
       BrowserUtils.navigateToUrl(sampleAppUrl);
-      BrowserUtils.isVisible("//*[@id='top']");
+      BrowserUtils.isDisplayed("//*[@id='top']");
     });
 
     /**

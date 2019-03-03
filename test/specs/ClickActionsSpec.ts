@@ -19,7 +19,7 @@ describeCommon('click', () => {
     chai.expect(browser.getUrl()).to.endsWith('/submit');
   });
 
-  it('doubleClick', () => {
+  it.skip('doubleClick', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     BrowserUtils.doubleClick(PageLocator.DOUBLE_CLICK_DIV);
     chai.assert.equal(
