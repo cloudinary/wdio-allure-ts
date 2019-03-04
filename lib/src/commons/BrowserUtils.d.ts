@@ -1,7 +1,5 @@
 /// <reference types="./webdriverio-core" />
-import LocationReturn = WebdriverIO.LocationReturn;
-import SizeReturn = WebdriverIO.SizeReturn;
-import { Cookie, CSSProperty } from '@wdio/sync';
+import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 /**
