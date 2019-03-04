@@ -1,6 +1,4 @@
-import LocationReturn = WebdriverIO.LocationReturn;
-import SizeReturn = WebdriverIO.SizeReturn;
-import { Cookie, CSSProperty } from '@wdio/sync';
+import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { EOL } from 'os';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
@@ -603,7 +601,7 @@ export namespace BrowserUtils {
     isExist(iframeSelector);
 
     const cssDisplayProperty: string = 'display';
-    const iframeDisplayProperty: WebdriverIO.CSSProperty = tryBlock(
+    const iframeDisplayProperty: CSSProperty = tryBlock(
       () => $(iframeSelector).getCSSProperty(cssDisplayProperty), //iframe css
       `Failed to get '${cssDisplayProperty}' css property from '${iframeSelector}'`
     );
