@@ -1,4 +1,4 @@
-/// <reference types="./webdriverio-core" />
+/// <reference types="@wdio/sync/webdriverio-core" />
 import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';

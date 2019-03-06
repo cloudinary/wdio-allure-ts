@@ -1,3 +1,5 @@
+/// <reference types="@wdio/sync/webdriverio-core" />
+
 import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { EOL } from 'os';
 import { MouseButton } from '../enums/MouseButton';
