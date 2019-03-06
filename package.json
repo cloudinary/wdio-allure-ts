@@ -26,9 +26,9 @@
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
     "clean": "rm -rf ./lib",
-    "ts_compile": "tsc",
+    "compile": "tsc",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'test/**/*.ts'",
-    "prepare": "run-s clean prettier tslint ts_compile",
+    "prepare": "run-s clean prettier tslint compile",
     "test": "run-s test:compilation test:regression",
     "test:compilation": "run-s prepare; git diff --exit-code ./lib",
     "test:regression": "wdio ./test/wdio.conf.js --suite regression",
