@@ -1,10 +1,3 @@
-/**
- * Reference to webdriverio-core was added as workaround to relative path
- * to this reference in @wdio/sync . Since other projects that imports BrowserUtils
- * will probably have @wdio/sync dependency to, the relative path would not work
- */
-/// <reference types="@wdio/sync/webdriverio-core" />
-
 import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { EOL } from 'os';
 import { MouseButton } from '../enums/MouseButton';
