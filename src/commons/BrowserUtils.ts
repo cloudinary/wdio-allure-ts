@@ -313,11 +313,9 @@ export namespace BrowserUtils {
   export function notVisible(selector: string): void {
     Reporter.debug(`Validating element not visible '${selector}'`);
     tryBlock(() => {
-      if ($(selector).isExisting()) {
-        Reporter.debug('Element not exists. Will check for visibility');
-        $(selector).waitForDisplayed(DEFAULT_TIME_OUT, true);
-      }
-      Reporter.debug('Element not exists. Will not check for visibility');
+      browser.waitUntil(() => {
+        return !$(selector).isDisplayed();
+      }, DEFAULT_TIME_OUT);
     }, `Failed to validate element not visible '${selector}'`);
   }
 
