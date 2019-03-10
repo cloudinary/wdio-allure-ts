@@ -492,6 +492,12 @@
                         <button type="button">&lt;button type=button&gt;</button>
                         <button type="reset">&lt;button type=reset&gt;</button>
                         <button type="button" disabled>&lt;button disabled&gt;</button>
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
+                         <script>	
+                            function openTab() {	
+                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
+                            }	
+                        </script>
                         
                     </p>
                 </fieldset>
