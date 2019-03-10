@@ -65,6 +65,16 @@
         <h1 class="Test-title">HTML5 Test Page</h1>
         <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building CSS systems and frameworks.</p>
     </header>
+    <div>
+        <button data-test="not-visible-btn" style="display: none"></button>
+        <button data-test="visible-btn" ></button>
+        <button data-test="disappearing-btn" id="disappearing-btn" onclick="disappearBtn()">DISAPPEAR ON CLICK</button>
+        <script>
+            function disappearBtn() {
+                    window.setTimeout(()=>{document.getElementById("disappearing-btn").style.display = "none"},5*1000);
+                };
+        </script>
+    </div>
     <nav role="navigation">
         <ul>
             <li>
@@ -482,12 +492,13 @@
                         <button type="button">&lt;button type=button&gt;</button>
                         <button type="reset">&lt;button type=reset&gt;</button>
                         <button type="button" disabled>&lt;button disabled&gt;</button>
-                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
-                        <script>
-                            function openTab() {
-                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");
-                            }
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
+                         <script>	
+                            function openTab() {	
+                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
+                            }	
                         </script>
+                        
                     </p>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
