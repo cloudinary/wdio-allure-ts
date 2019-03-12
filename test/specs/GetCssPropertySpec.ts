@@ -2,46 +2,39 @@ import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
+export namespace PageLocator {
+  export const HEADER: string = "//*[@id='top']/header/h1";
+}
+
 /**
  * wdio-allure-ts navigateToUrl action test
  */
 describeCommon('getCssProperty', () => {
   it('retrieve css property', () => {
-    assert.equal(
-      BrowserUtils.getCssProperty(
-        "//*[@data-test='print-message-btn']",
-        'background-color'
-      ).parsed.hex,
-      '#008000'
-    );
+    expect(
+      BrowserUtils.getCssProperty(PageLocator.HEADER, 'background-color').value
+    ).contains('(255,255,255');
   });
 
   it('incorrect selector of an element', () => {
     expect(() =>
-      BrowserUtils.getCssProperty(
-        "//[@data-test='print-message-btn']",
-        'background-color'
-      )
+      BrowserUtils.getCssProperty("//*[@id='incorrect']", 'background-color')
     )
       .to.throw(Error)
-      .with.property('message')
-      .contains('Failed to get css Property background-color from');
+      .with.property('message');
   });
 
+  //tslint:disable:no-null-keyword
   it('null params', () => {
     expect(() => JSON.stringify(BrowserUtils.getCssProperty(null, null)))
       .to.throw(Error)
-      .with.property('message')
-      .contains('Failed to get css Property null from null');
+      .with.property('message');
   });
 
   it('incorrect css property', () => {
     assert.isNotNull(
       JSON.stringify(
-        BrowserUtils.getCssProperty(
-          "//*[@data-test='print-message-btn']",
-          'bg-color'
-        )
+        BrowserUtils.getCssProperty(PageLocator.HEADER, 'bg-color')
       )
     );
   });

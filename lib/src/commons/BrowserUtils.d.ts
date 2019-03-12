@@ -1,50 +1,46 @@
-import { Cookie, CssProperty } from 'webdriverio';
+/// <reference types="@wdio/sync/webdriverio-core" />
+import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { MouseButton } from '../enums/MouseButton';
+import { SelectorType } from '../enums/SelectorType';
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export declare namespace BrowserUtils {
-    import Size = WebdriverIO.Size;
     /**
      * Inject a snippet of JavaScript into the page
      * for execution in the context of the currently selected frame
-     *
-     * @param script script to execute
+     * @param script - js script to execute
      */
     function executeScript(script: string): void;
     /**
-     * Upload local file
-     * Send full path of the file to input element
-     * Element of type input expected to be exist(not necessary visible) on execution
-     *
-     * @param selector selector of input element that gets the file
-     * @param fileFullPath full path of a file to upload
+     *  This Method will scroll to element into view
+     * @param selector - element locator
      */
-    function uploadFile(selector: string, fileFullPath: string): void;
-    /**
-     * Scroll to lowest point of the current page
-     */
-    function scrollToBottom(): void;
-    /**
-     * Scroll to top of the current page
-     */
-    function scrollToTop(): void;
-    /**
-     * Get lowers point of the current page
-     */
-    function getLowestPagePoint(): number;
+    function scrollIntoView(selector: string): void;
     /**
      * Get system data tests executed on
      * Usefully to add in Reporter before each test
      */
     function getSystemData(): string;
     /**
-     * Add a text to an element located by selector
-     * Note: It does not remove already existing text
+     * Add a value to an element located by selector
      * @param selector element selector
-     * @param  text text to send
+     * @param  value value to add
      */
-    function sendText(selector: string, text: string): void;
+    function addValue(selector: string, value: string | number): void;
+    /**
+     * Set a value to an element located by selector
+     * @param selector element selector
+     * @param value - value to add
+     */
+    function setValue(selector: string, value: string | number): void;
+    /**
+     * Set value of hidden element
+     * For example: For file uploads, set 'input' element (that can be not visible) with 'filePath' value
+     * @param selector elements selector
+     * @param value text value to set or numeric value
+     */
+    function setHiddenElementValue(selector: string, value: string | number): void;
     /**
      * Click an element located by selector
      *
@@ -103,10 +99,24 @@ export declare namespace BrowserUtils {
      */
     function selectByValue(selector: string, value: string): void;
     /**
+     * @param selector - element selector
+     */
+    function isEnabled(selector: string): boolean;
+    /**
+     *  Wait for element to be enabled
+     * @param selector element selector
+     */
+    function waitForEnabled(selector: string): void;
+    /**
+     * Indicate if Element is visible (without wait)
+     * @param selector - element selector
+     */
+    function isDisplayed(selector: string): boolean;
+    /**
      * Wait for an element to be visible by given selector
      * @param selector element selector
      */
-    function isVisible(selector: string): void;
+    function waitForDisplayed(selector: string): void;
     /**
      * Wait for an element to be exist by given selector
      * @param selector element selector
@@ -117,7 +127,7 @@ export declare namespace BrowserUtils {
      *
      * @param selector element selector
      */
-    function notVisible(notVisibleElementSelector: string): void;
+    function notVisible(selector: string): void;
     /**
      * Wait until element not exist in dom
      * @param notExistElementSelector element's selector
@@ -127,15 +137,17 @@ export declare namespace BrowserUtils {
      * Switch to iframe by iframe selector
      * Elements/widgets ( like dialogs, status bars and more)
      * located inside an iframe has to be switch to it
-     * @param iframeSelector selector of frame to switch to
+     *
+     * @param selector selector of frame to switch to
      */
-    function switchToFrame(iframeSelector: string): void;
+    function switchToFrame(selector: string): void;
     /**
      * Switch to other tab by id
      * @param tabId tab it to switch
      */
-    function switchTab(tabId: string): void;
+    function switchTab(handle: string): void;
     /**
+     * Over think method name
      * Get ids of open tabs
      */
     function getTabIds(): string[];
@@ -145,6 +157,18 @@ export declare namespace BrowserUtils {
      * so the focus will be back on main page
      */
     function switchToParentFrame(): void;
+    /**
+     * Search for an element on the page, starting from the document root
+     * @param selectorType - enum type of selector (XPATH, ID, etc')
+     * @param selector - element locator
+     */
+    function findElement(selectorType: SelectorType, selector: string): string;
+    /**
+     * Search for multiple elements on the page, starting from the document root. The located elements will be returned as a WebElement JSON objects
+     * @param selectorType - enum type of selector (XPATH, ID, etc')
+     * @param selector - element locator
+     */
+    function findElements(selectorType: SelectorType, selector: string): string[];
     /**
      * Hover over an element by given selector
      *
@@ -170,6 +194,7 @@ export declare namespace BrowserUtils {
      *
      * @param selector selector of items to count
      * @param expectedValue expected number of items
+     * @param selector - element locator
      */
     function expectNumberOfElements(selector: string, expectedValue: number): void;
     /**
@@ -177,10 +202,10 @@ export declare namespace BrowserUtils {
      *
      * Scroll in loop until the element is visible or fail on time out
      * Checks for size of list every iteration in case list is lazy loaded
-     * @param elementSelector selector of an element to scroll to
+     * @param selector selector of an element to scroll to
      * @param listSelector selector of list to scroll
      */
-    function scrollToElement(elementSelector: string, listSelector: string): void;
+    function scrollToElement(selector: string, listSelector: string): void;
     /**
      *
      * @param iframeSelector iFrame selector
@@ -212,7 +237,7 @@ export declare namespace BrowserUtils {
      * @param selector element selector
      * @param cssPropertyName  css property name
      */
-    function getCssProperty(selector: string, cssPropertyName: string): CssProperty;
+    function getCssProperty(selector: string, cssPropertyName: string): CSSProperty;
     /**
      * Set cookie
      * Requires navigation to domain before setting cookie
@@ -223,17 +248,17 @@ export declare namespace BrowserUtils {
      * @param cookie cookie to set
      * @param domain domain to set cookie for
      */
-    function setCookie(cookie: Cookie, domain?: string): void;
+    function setCookie(cookie: Cookie, domain: string): void;
     /**
      * Get current Url
      */
     function getUrl(): string;
     /**
-     * Accept Alert
+     * Accept Alert popup
      */
     function acceptAlert(): void;
     /**
-     * Dismiss Alert
+     * Dismiss Alert popup
      */
     function dismissAlert(): void;
     /**
@@ -242,20 +267,17 @@ export declare namespace BrowserUtils {
      */
     function expectAlertText(expectedText: string): void;
     /**
-     * Change size of browser window
-     *    If only one parameter is provided the second will stay as is.
-     *    If no parameter provided there will be no change.
-     * @param requestedWidth - Width (px)
-     * @param requestedHeight - Height (px)
+     *
+     * @param selector - element for get size
      */
-    function setViewportSize(wSize: {
-        width: number;
-        height: number;
-    }): void;
+    function getElementSize(selector: string): SizeReturn;
     /**
-     * Get current browser window size returns Size obj {width : number, height : number}
+     * Change size of browser window
+     * @param width - Width (px)
+     * @param height - Height (px)
      */
-    function getViewportSize(): Size;
+    function setWindowSize(width: number, height: number): void;
+    function getWindowSize(): object;
     /**
      *
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
@@ -266,17 +288,14 @@ export declare namespace BrowserUtils {
      * @param xOffset - X (Pixels) offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
      * @param yOffset - Y (Pixels) offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
      */
-    function moveMouseCursorTo(selector: string, xOffset?: number, yOffset?: number): void;
+    function moveMouseCursorTo(selector: string, xOffset: number, yOffset: number): void;
     /**
      * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
      */
-    function releaseMouseButton(mouseButton: string): void;
+    function releaseMouseButton(mouseButton: number): void;
     /**
      * Determine an element’s location on the page. The point (0pix, 0pix) refers to the upper-left corner of the page.
      * @param selector  - element with requested position offset
      */
-    function getElementLocation(selector: string): {
-        x: number;
-        y: number;
-    };
+    function getElementLocation(selector: string): LocationReturn;
 }

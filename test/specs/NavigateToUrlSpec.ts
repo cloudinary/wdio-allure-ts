@@ -11,18 +11,11 @@ describeCommon('navigateToUrl', () => {
     assert.equal(browser.getUrl(), sampleAppUrl);
   });
 
-  it('malformed URL', () => {
+  it('should fail on malformed URL', () => {
     const malformedUrl: string = 'cloudinary';
     expect(() => BrowserUtils.navigateToUrl(malformedUrl))
       .to.throw(Error)
       .with.property('message')
-      .contains(`Failed to navigate to ${malformedUrl}`);
-  });
-
-  it('passing null', () => {
-    expect(() => BrowserUtils.navigateToUrl(null))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Illegal URL: null');
+      .contains('valid URL'); // On FireFox message: "not valid" on Chrome: "invalid"
   });
 });

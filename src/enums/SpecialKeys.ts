@@ -3,11 +3,10 @@
  * will be added more by demand according to https://w3c.github.io/webdriver/webdriver-spec.html#keyboard-actions
  */
 export enum SpecialKeys {
-  Enter = '\uE007',
-  Tab = '\uE004',
-  Escape = '\uE00C',
-  ArrowLeft = '\uE012',
-  ArrowRight = '\uE014',
-  ArrowUp = '\uE013',
-  ArrowDown = '\uE015',
+  ENTER = '\uE007',
+  ARROW_LEFT = '\uE012',
+  ARROW_RIGHT = '\uE014',
+  ARROW_UP = '\uE013',
+  ARROW_DOWN = '\uE015',
+  TAB = '\uE004',
 }

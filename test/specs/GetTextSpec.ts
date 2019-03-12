@@ -8,8 +8,8 @@ import { describeCommon } from '../TestHelper';
 describeCommon('GetText of BrowserUtils Tests', () => {
   it('Validate single result ', () => {
     assert.equal(
-      BrowserUtils.getText("//*[@class='button-print-message']"),
-      'Print message'
+      BrowserUtils.getText("//button[@data-test='open-tab-btn']"),
+      'Open tab'
     );
   });
 
@@ -17,13 +17,6 @@ describeCommon('GetText of BrowserUtils Tests', () => {
     expect(() => BrowserUtils.getText("//*[@class='Cloudinary']"))
       .to.throw(Error)
       .with.property('message')
-      .contains(`Found multiple results matching text or no results`);
-  });
-
-  it('Validate no element found ending in err ', () => {
-    expect(() => BrowserUtils.getText("//*[@class='OMG']"))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Found multiple results matching text or no results`);
+      .contains('Element not exist');
   });
 });
