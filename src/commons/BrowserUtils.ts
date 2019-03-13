@@ -1,5 +1,6 @@
 import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { EOL } from 'os';
+import { SpecialKeys } from '../..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
@@ -935,6 +936,33 @@ export namespace BrowserUtils {
     Reporter.debug(`Get Element location '${selector}'`);
 
     return $(selector).getLocation();
+  }
+
+  /**
+   * Send a sequence of key strokes to the active element
+   * it can be single key or an array of keys
+   * @param keysToSend key or array of keys to send
+   */
+  export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[]): void {
+    Reporter.debug(`Sending Keys ${getKeyNames(keysToSend)}`);
+    browser.keys(sendKeys.toString());
+  }
+
+  /**
+   * Get name of the enum keys
+   * For reporter log propose in order to log what keys were send
+   * @param keysToSend key/keys of SpecialKeys type
+   */
+  function getKeyNames(keysToSend: SpecialKeys | SpecialKeys[]): string {
+    let retVal: string = '';
+    for (const currKey of keysToSend) {
+      const curr: string = Object.keys(SpecialKeys).find(
+        (key: string) => SpecialKeys[key] === currKey
+      );
+      retVal = retVal.concat(`${curr}+`);
+    }
+
+    return retVal.substring(0, retVal.length - 1);
   }
 
   /**

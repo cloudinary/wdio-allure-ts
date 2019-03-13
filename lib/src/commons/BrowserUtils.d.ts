@@ -1,5 +1,6 @@
 /// <reference types="@wdio/sync/webdriverio-core" />
 import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
+import { SpecialKeys } from '../..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 /**
@@ -298,4 +299,10 @@ export declare namespace BrowserUtils {
      * @param selector  - element with requested position offset
      */
     function getElementLocation(selector: string): LocationReturn;
+    /**
+     * Send a sequence of key strokes to the active element
+     * it can be single key or an array of keys
+     * @param keysToSend key or array of keys to send
+     */
+    function sendKeys(keysToSend: SpecialKeys | SpecialKeys[]): void;
 }
