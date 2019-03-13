@@ -437,8 +437,6 @@ export namespace BrowserUtils {
     selectorType: SelectorType,
     selector: string
   ): string[] {
-    Reporter.debug('Switching to parent frame');
-
     return tryBlock(
       () => browser.findElements(selectorType, selector),
       'Failed to find elements'
