@@ -8,5 +8,6 @@ export declare enum SpecialKeys {
     ARROW_RIGHT = "\uE014",
     ARROW_UP = "\uE013",
     ARROW_DOWN = "\uE015",
-    TAB = "\uE004"
+    TAB = "\uE004",
+    ESCAPE = "\uE00C"
 }
