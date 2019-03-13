@@ -945,7 +945,7 @@ export namespace BrowserUtils {
    */
   export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[]): void {
     Reporter.debug(`Sending Keys ${getKeyNames(keysToSend)}`);
-    browser.keys(sendKeys.toString());
+    browser.keys(keysToSend);
   }
 
   /**
