@@ -9,4 +9,5 @@ export enum SpecialKeys {
   ARROW_UP = '\uE013',
   ARROW_DOWN = '\uE015',
   TAB = '\uE004',
+  ESCAPE = '\uE00C',
 }
