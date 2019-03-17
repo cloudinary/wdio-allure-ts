@@ -460,14 +460,14 @@ export namespace BrowserUtils {
    * Actual texts EOL replaced with spaces, for better test readability, so you need to path one line string
    * Note: element should be visible, otherwise will return empty string(selenium requirement)
    * @param selector element selector with text
-   * @param text expected text
+   * @param expectedText expected text
    */
-  export function expectText(selector: string, text: string): void {
+  export function expectText(selector: string, expectedText: string): void {
     Reporter.debug(
-      `Validate element text is '${text}' by selector '${selector}'`
+      `Validate element text is '${expectedText}' by selector '${selector}'`
     );
     isDisplayed(selector);
-    const foundText: string = getText(selector);
+    let foundText: string = getText(selector);
 
     //Validate text was found
     if (foundText === undefined) {
@@ -475,13 +475,22 @@ export namespace BrowserUtils {
         `Could not find text in element by selector: '${selector}'`
       );
     }
-    const currText: string = foundText.replace(/(\n)/gm, ' '); // replace EOL with space, for more readable tests strings;
 
-    if (currText !== text) {
-      throw new Error(
-        `Incorrect text in element by selector '${selector}'. ${EOL} Expected: '${text}' ${EOL} Actual: '${currText}'`
-      );
-    }
+    tryBlock(
+      () =>
+        browser.waitUntil(() => {
+          if (
+            foundText.trim().toLowerCase() === expectedText.trim().toLowerCase()
+          ) {
+            return true;
+          }
+
+          foundText = getText(selector).replace(/(\n)/gm, ' ');
+
+          return false;
+        }),
+      `Expected text in element by selector '${selector}' not found. Expected: [${expectedText}] Actual: [${foundText}]'`
+    );
   }
 
   /**
