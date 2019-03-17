@@ -466,7 +466,7 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Validate element text is '${expectedText}' by selector '${selector}'`
     );
-    isDisplayed(selector);
+    isExist(selector);
     let foundText: string = getText(selector);
 
     //Validate text was found
