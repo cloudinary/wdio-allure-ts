@@ -467,14 +467,7 @@ export namespace BrowserUtils {
       `Validate element text is '${expectedText}' by selector '${selector}'`
     );
     isExist(selector);
-    let foundText: string = getText(selector);
-
-    //Validate text was found
-    if (foundText === undefined) {
-      throw new Error(
-        `Could not find text in element by selector: '${selector}'`
-      );
-    }
+    let foundText: string = getTextAndVerify(selector);
 
     tryBlock(
       () =>
