@@ -466,13 +466,13 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Validate element text is '${expectedText}' by selector '${selector}'`
     );
-      let foundText: string = "";
+    let foundText: string = '';
     isExist(selector);
 
     tryBlock(
       () =>
         browser.waitUntil(() => {
-            foundText= getTextAndVerify(selector);
+          foundText = getTextAndVerify(selector);
 
           if (
             foundText.trim().toLowerCase() === expectedText.trim().toLowerCase()
