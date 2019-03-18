@@ -478,7 +478,7 @@ export namespace BrowserUtils {
             return true;
           }
 
-            foundText = getTextAndVerify(selector).replace(/(\n)/gm, ' ');
+          foundText = getTextAndVerify(selector).replace(/(\n)/gm, ' ');
 
           return false;
         }),
