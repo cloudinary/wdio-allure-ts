@@ -300,7 +300,6 @@ export namespace BrowserUtils {
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist '${selector}'`);
     Reporter.warning(`$(${selector}).waitForExist(DEFAULT_TIME_OUT)`);
-    browser.debug();
     tryBlock(
       () => $(selector).waitForExist(DEFAULT_TIME_OUT),
       `Element not exist '${selector}'`
@@ -467,15 +466,13 @@ export namespace BrowserUtils {
     Reporter.debug(
       `Validate element text is '${expectedText}' by selector '${selector}'`
     );
-    isExist(selector);
+    isDisplayed(selector);
     let foundText: string = getTextAndVerify(selector).replace(/(\n)/gm, ' ');
 
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          if (
-            foundText.trim().toLowerCase() === expectedText.trim().toLowerCase()
-          ) {
+          if (foundText === expectedText) {
             return true;
           }
 
