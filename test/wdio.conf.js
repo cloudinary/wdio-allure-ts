@@ -15,13 +15,13 @@ exports.config = {
               args: [ '--incognito'],
           },
       },
-    // {
-    //   browserName: 'firefox',
-    //   'moz:firefoxOptions': {
-    //     args: [ '--headless', '--private'],
-    //   },
-    //
-    // },
+    {
+      browserName: 'firefox',
+      'moz:firefoxOptions': {
+        args: [ '--headless', '--private'],
+      },
+
+    },
   ],
 
   suites: {
