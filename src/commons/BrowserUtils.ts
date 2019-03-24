@@ -467,20 +467,17 @@ export namespace BrowserUtils {
       `Validate element text is '${expectedText}' by selector '${selector}'`
     );
     isDisplayed(selector);
-    let foundText: string = getTextAndVerify(selector).replace(/(\n)/gm, ' ');
 
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          if (foundText === expectedText) {
+          if ($(selector).getText() === expectedText) {
             return true;
           }
 
-          foundText = getTextAndVerify(selector).replace(/(\n)/gm, ' ');
-
           return false;
         }),
-      `Expected text in element by selector '${selector}' not found. Expected: [${expectedText}] Actual: [${foundText}]'`
+      `Expected text in element by selector '${selector}' not found.`
     );
   }
 
@@ -493,29 +490,9 @@ export namespace BrowserUtils {
     waitForDisplayed(selector);
 
     return tryBlock(
-      () => getTextAndVerify(selector),
+      () => $(selector).getText(),
       `Failed to get text from element '${selector}'`
     );
-  }
-
-  /**
-   * get text and verify extraction succeeded
-   * @param selector - element locator
-   */
-  function getTextAndVerify(selector: string): string {
-    Reporter.debug(`Get Text & Verify Not Null, '${selector}'`);
-
-    const stringResults: string =
-      $$(selector).length === 1 ? $(selector).getText() : undefined;
-
-    //Check for multiple results or no element found
-    if (stringResults === null || stringResults === undefined) {
-      throw new Error(
-        `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
-      );
-    }
-
-    return stringResults;
   }
 
   /**
