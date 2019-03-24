@@ -474,9 +474,9 @@
                     <legend>Action buttons</legend>
                     <p>
                         <input type="submit" value="<input type=submit>">
-                        <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeName()">
+                        <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeValue()">
                         <script>
-                            function changeName() // no ';' here
+                            function changeValue()
                             {
                                 var elem = document.getElementById("change-name-btn");
                                 if (elem.value=="Close Curtain") elem.value = "Open Curtain";
@@ -491,7 +491,7 @@
                         </div>
                         <script>
                             function doubleClickEvent() {
-                                document.getElementById('div-double-click').innerHTML="Double Click Event";
+                              window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 5*1000);
                             }
                         </script>
                     </p>

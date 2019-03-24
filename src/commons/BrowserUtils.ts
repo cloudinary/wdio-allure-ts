@@ -299,7 +299,7 @@ export namespace BrowserUtils {
    */
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist '${selector}'`);
-    Reporter.warning(`$(${selector}).waitForExist(DEFAULT_TIME_OUT)`);
+
     tryBlock(
       () => $(selector).waitForExist(DEFAULT_TIME_OUT),
       `Element not exist '${selector}'`
@@ -472,7 +472,7 @@ export namespace BrowserUtils {
       () =>
         browser.waitUntil(() => {
           if ($(selector).getText() === expectedText) {
-            return true;
+            return $(selector).getText() === expectedText;
           }
 
           return false;
