@@ -471,11 +471,7 @@ export namespace BrowserUtils {
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          if ($(selector).getText() === expectedText) {
-            return $(selector).getText() === expectedText;
-          }
-
-          return false;
+          return $(selector).getText() === expectedText;
         }),
       `Expected text in element by selector '${selector}' not found.`
     );
