@@ -3,7 +3,7 @@ import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
 /**
- * wdio-allure-ts navigateToUrl action test
+ * wdio-allure-ts getText tests
  */
 describeCommon('GetText of BrowserUtils Tests', () => {
   it('Validate single result ', () => {

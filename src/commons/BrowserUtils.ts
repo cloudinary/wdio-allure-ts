@@ -460,28 +460,21 @@ export namespace BrowserUtils {
    * Actual texts EOL replaced with spaces, for better test readability, so you need to path one line string
    * Note: element should be visible, otherwise will return empty string(selenium requirement)
    * @param selector element selector with text
-   * @param text expected text
+   * @param expectedText expected text
    */
-  export function expectText(selector: string, text: string): void {
+  export function expectText(selector: string, expectedText: string): void {
     Reporter.debug(
-      `Validate element text is '${text}' by selector '${selector}'`
+      `Validate element text is '${expectedText}' by selector '${selector}'`
     );
     isDisplayed(selector);
-    const foundText: string = getText(selector);
 
-    //Validate text was found
-    if (foundText === undefined) {
-      throw new Error(
-        `Could not find text in element by selector: '${selector}'`
-      );
-    }
-    const currText: string = foundText.replace(/(\n)/gm, ' '); // replace EOL with space, for more readable tests strings;
-
-    if (currText !== text) {
-      throw new Error(
-        `Incorrect text in element by selector '${selector}'. ${EOL} Expected: '${text}' ${EOL} Actual: '${currText}'`
-      );
-    }
+    tryBlock(
+      () =>
+        browser.waitUntil(() => {
+          return $(selector).getText() === expectedText;
+        }),
+      `Expected text in element by selector '${selector}' not found.`
+    );
   }
 
   /**
@@ -493,29 +486,9 @@ export namespace BrowserUtils {
     waitForDisplayed(selector);
 
     return tryBlock(
-      () => getTextAndVerify(selector),
+      () => $(selector).getText(),
       `Failed to get text from element '${selector}'`
     );
-  }
-
-  /**
-   * get text and verify extraction succeeded
-   * @param selector - element locator
-   */
-  function getTextAndVerify(selector: string): string {
-    Reporter.debug(`Get Text & Verify Not Null, '${selector}'`);
-
-    const stringResults: string =
-      $$(selector).length === 1 ? $(selector).getText() : undefined;
-
-    //Check for multiple results or no element found
-    if (stringResults === null || stringResults === undefined) {
-      throw new Error(
-        `Found multiple results matching text or no results for element: '${selector}' >>>>> '${stringResults}'`
-      );
-    }
-
-    return stringResults;
   }
 
   /**

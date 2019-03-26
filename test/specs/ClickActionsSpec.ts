@@ -22,9 +22,6 @@ describeCommon('click', () => {
   it('doubleClick', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     BrowserUtils.doubleClick(PageLocator.DOUBLE_CLICK_DIV);
-    chai.assert.equal(
-      $(PageLocator.DOUBLE_CLICK_DIV).getText(),
-      'Double Click Event'
-    );
+    BrowserUtils.expectText(PageLocator.DOUBLE_CLICK_DIV, 'Double Click Event');
   });
 });

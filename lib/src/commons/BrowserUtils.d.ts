@@ -182,9 +182,9 @@ export declare namespace BrowserUtils {
      * Actual texts EOL replaced with spaces, for better test readability, so you need to path one line string
      * Note: element should be visible, otherwise will return empty string(selenium requirement)
      * @param selector element selector with text
-     * @param text expected text
+     * @param expectedText expected text
      */
-    function expectText(selector: string, text: string): void;
+    function expectText(selector: string, expectedText: string): void;
     /**
      * Get text of an element by selector
      * @param selector element's selector
