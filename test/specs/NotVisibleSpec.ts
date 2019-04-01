@@ -24,11 +24,13 @@ describeCommon('notVisible', () => {
       BrowserUtils.notVisible(NOT_VISIBLE_ELEMENT_SELECTOR)
     ).to.not.throw(Error);
   });
+
   it('not exist element ', () => {
     expect(() =>
       BrowserUtils.notVisible(NOT_EXIST_ELEMENT_SELECTOR)
     ).to.not.throw(Error);
   });
+
   it('disappearing element', () => {
     expect(() =>
       BrowserUtils.waitForDisplayed(DISAPPEARING_ELEMENT_SELECTOR)
