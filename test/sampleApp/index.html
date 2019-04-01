@@ -486,14 +486,6 @@
                         <input type="reset" value="<input type=reset>">
                         <input type="submit" value="<input disabled>" disabled>
 
-                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
-                            Double click
-                        </div>
-                        <script>
-                            function doubleClickEvent() {
-                              window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
-                            }
-                        </script>
                     </p>
                     <p>
                         <button type="submit">&lt;button type=submit&gt;</button>
@@ -509,6 +501,21 @@
                         </script>
                         
                     </p>
+                </fieldset>
+
+                <fieldset id="expectedTextSpec">
+                    <legend>ExpectedTextSpec</legend>
+                    <p>
+                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                            Double click
+                        </div>
+                        <script>
+                          function doubleClickEvent() {
+                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                          }
+                        </script>
+                    </p>
+
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
             </form>
