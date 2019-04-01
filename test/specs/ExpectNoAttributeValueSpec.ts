@@ -4,6 +4,7 @@ import { describeCommon } from '../TestHelper';
 
 export namespace PageLocator {
   export const EMPTY_DIV: string = '//*[@id="noAttDiv"]';
+  export const BAD_ELEMENT_XPATH: string = '//*[@id="badID"]';
 }
 /**
  * wdio-allure-ts ExpectNoAttributeValueSpec action test
