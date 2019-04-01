@@ -8,15 +8,16 @@ import { describeCommon } from '../TestHelper';
 describeCommon('GetText of BrowserUtils Tests', () => {
   it('Validate single result ', () => {
     assert.equal(
-      BrowserUtils.getText("//button[@data-test='open-tab-btn']"),
+      BrowserUtils.getText("//*[@id='GetTextSection-1']/p[1]/button"),
       'Open tab'
     );
   });
 
-  it('Validate multiple result ending in err ', () => {
-    expect(() => BrowserUtils.getText("//*[@class='Cloudinary']"))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Element not exist');
+  it('Validate multiple result select first one ', () => {
+    assert.equal(BrowserUtils.getText("//*[@id='text-field']"), 'Cloudinary 1');
+  });
+
+  it('Validate element not exist error thrown', () => {
+    expect(() => BrowserUtils.getText("//*[@id='not-Exists']")).to.throw(Error);
   });
 });
