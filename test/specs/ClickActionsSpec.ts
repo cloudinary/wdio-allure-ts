@@ -6,7 +6,7 @@ import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 export namespace PageLocator {
   export const SUBMIT_BUTTON_ONE: string =
-    "//*[@id='forms__action']/p[1]/input[1]";
+    "//*[@id='clickActionSpec']/p[1]/input";
   export const DOUBLE_CLICK_DIV: string = "//*[@id='div-double-click']";
 }
 

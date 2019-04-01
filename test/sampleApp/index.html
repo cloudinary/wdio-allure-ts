@@ -472,29 +472,7 @@
                 <p><a href="#top">[Top]</a></p>
                 <fieldset id="forms__action">
                     <legend>Action buttons</legend>
-                    <p>
-                        <input type="submit" value="<input type=submit>">
-                        <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeValue()">
-                        <script>
-                            function changeValue()
-                            {
-                                var elem = document.getElementById("change-name-btn");
-                                if (elem.value=="Close Curtain") elem.value = "Open Curtain";
-                                else elem.value = "Close Curtain";
-                            }
-                        </script>
-                        <input type="reset" value="<input type=reset>">
-                        <input type="submit" value="<input disabled>" disabled>
 
-                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
-                            Double click
-                        </div>
-                        <script>
-                            function doubleClickEvent() {
-                              window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
-                            }
-                        </script>
-                    </p>
                     <p>
                         <button type="submit">&lt;button type=submit&gt;</button>
                         <button  type="button"  >&lt;button type=button&gt;</button>
@@ -507,9 +485,38 @@
                                 var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
                             }	
                         </script>
-                        
+                        <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeValue()">
+                        <script>
+                          function changeValue()
+                          {
+                            var elem = document.getElementById("change-name-btn");
+                            if (elem.value=="Close Curtain") elem.value = "Open Curtain";
+                            else elem.value = "Close Curtain";
+                          }
+                        </script>
+                        <input type="reset" value="<input type=reset>">
+                        <input type="submit" value="<input disabled>" disabled>
                     </p>
                 </fieldset>
+
+                <fieldset id="clickActionSpec">
+                    <legend>ClickActionSpec</legend>
+                    <p>
+                        <input type="submit" value="Click">
+
+                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                            Double click
+                        </div>
+
+                        <script>
+                          function doubleClickEvent() {
+                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                          }
+                        </script>
+
+                    </p>
+                </fieldset>
+
                 <p><a href="#top">[Top]</a></p>
             </form>
         </section>
