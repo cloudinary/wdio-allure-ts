@@ -1,12 +1,9 @@
-import * as chai from 'chai';
-import chaiString from 'chai-string';
-chai.use(chaiString);
+import { assert } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 export namespace PageLocator {
-  export const SUBMIT_BUTTON_ONE: string =
-    "//*[@id='forms__action']/p[1]/input[1]";
+  export const SUBMIT_BUTTON_ONE: string = "//*[@id='click-button-1']";
   export const DOUBLE_CLICK_DIV: string = "//*[@id='div-double-click']";
 }
 
@@ -16,7 +13,10 @@ export namespace PageLocator {
 describeCommon('click', () => {
   it('singleClick ', () => {
     BrowserUtils.click(PageLocator.SUBMIT_BUTTON_ONE);
-    chai.expect(browser.getUrl()).to.endsWith('/submit');
+    assert.equal(
+      BrowserUtils.getAttribute(PageLocator.SUBMIT_BUTTON_ONE, 'value'),
+      'Button Clicked'
+    );
   });
 
   it('doubleClick', () => {
