@@ -3,28 +3,28 @@ import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { TestUtils } from '../../src/commons/TestUtils';
 import { describeCommon } from '../TestHelper';
 
-const emptyInputSelector: string =
+const EMPTY_INPUT_SELECTOR: string =
   "//*[@id='AddValue']//input[@id='empty_input']";
-const notEmptyInputSelector: string =
+const NOT_EMPTY_INPUT_SELECTOR: string =
   "//*[@id='AddValue']//input[@id='not_empty_input']";
-const disabledInputSelector: string =
+const DISABLED_INPUT_SELECTOR: string =
   "//*[@id='AddValue']//input[@id='disabled_input']";
 describeCommon('addValue', () => {
   it('add value to empty input', () => {
     const randomText: string = TestUtils.randomString(5);
-    BrowserUtils.addValue(emptyInputSelector, randomText);
-    expect($(emptyInputSelector).getValue()).to.be.eq(randomText);
+    BrowserUtils.addValue(EMPTY_INPUT_SELECTOR, randomText);
+    expect($(EMPTY_INPUT_SELECTOR).getValue()).to.be.eq(randomText);
   });
   it('add value to existing input', () => {
     const randomText: string = TestUtils.randomString(5);
-    BrowserUtils.addValue(notEmptyInputSelector, randomText);
-    expect($(notEmptyInputSelector).getValue()).to.be.eq(
+    BrowserUtils.addValue(NOT_EMPTY_INPUT_SELECTOR, randomText);
+    expect($(NOT_EMPTY_INPUT_SELECTOR).getValue()).to.be.eq(
       `Cloudinary${randomText}`
     );
   });
   it('add value to disabled input', () => {
     expect(() =>
-      BrowserUtils.addValue(disabledInputSelector, TestUtils.randomString(5))
+      BrowserUtils.addValue(DISABLED_INPUT_SELECTOR, TestUtils.randomString(5))
     )
       .to.throw(Error)
       .with.property('message')
