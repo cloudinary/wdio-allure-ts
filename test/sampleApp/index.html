@@ -553,11 +553,11 @@
                 <fieldset id="expectedTextSpec">
                     <legend>ExpectedTextSpec</legend>
                     <p>
-                        <div id='div-double-click-txt' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                        <div id='div-double-click-txt' ondblclick="doubleClickEvent_et()" style="border:1px solid black">
                             Double click
                         </div>
                         <script>
-                          function doubleClickEvent() {
+                          function doubleClickEvent_et() {
                             window.setTimeout(()=>{document.getElementById('div-double-click-txt').innerHTML="Double Click Event"}, 2*1000);
                           }
                         </script>
@@ -581,11 +581,11 @@
                         <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
                     </p>
                 </fieldset>
-<fieldset id="WaitUntil">
+                <fieldset id="WaitUntil">
                     <legend>WaitUntilSpec</legend>
                     <section id="WaitUntilSection">
                         <header><h1>Text</h1></header>
-                        <div data-test="text-field-wu" id="text-field">Cloudinary 1</div>
+                        <div data-test="text-field-wu" id="text-field-wu">Cloudinary 1</div>
                     </section>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
