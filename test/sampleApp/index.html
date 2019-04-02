@@ -505,13 +505,25 @@
                         <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
                             Double click
                         </div>
-
                         <script>
-                          function doubleClickEvent() {
-                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
-                          }
+                            function doubleClickEvent() {
+                              window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                            }
                         </script>
+                    </p>
+                    <p>
+                        <button type="submit">&lt;button type=submit&gt;</button>
+                        <button  type="button"  >&lt;button type=button&gt;</button>
 
+                        <button type="reset">&lt;button type=reset&gt;</button>
+                        <button type="button" disabled>&lt;button disabled&gt;</button>
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
+                         <script>	
+                            function openTab() {	
+                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
+                            }	
+                        </script>
+                        
                     </p>
                 </fieldset>
                 <fieldset id="notVisible">
@@ -528,6 +540,28 @@
                             </script>
                         </div>
                     </section>
+                </fieldset>
+  <fieldset id="GetAttribute">
+                    <legend>GetAttributeSpec</legend>
+                    <section id="formsWithoutAttribute">
+                        <div id='wrongAttribDiv' align="center" >
+                            Get Attribute Div
+                        </div>
+                    </section>
+                </fieldset>
+ <fieldset id="expectedTextSpec">
+                    <legend>ExpectedTextSpec</legend>
+                    <p>
+                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                            Double click
+                        </div>
+                        <script>
+                          function doubleClickEvent() {
+                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                          }
+                        </script>
+                    </p>
+
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
             </form>
