@@ -462,19 +462,45 @@
                 <p><a href="#top">[Top]</a></p>
                 <fieldset id="forms__action">
                     <legend>Action buttons</legend>
+
                     <p>
-                        <input type="submit" value="<input type=submit>">
+                        <button type="submit">&lt;button type=submit&gt;</button>
+                        <button  type="button"  >&lt;button type=button&gt;</button>
+
+                        <button type="reset">&lt;button type=reset&gt;</button>
+                        <button type="button" disabled>&lt;button disabled&gt;</button>
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
+                         <script>	
+                            function openTab() {	
+                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
+                            }	
+                        </script>
                         <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeValue()">
                         <script>
-                            function changeValue()
-                            {
-                                var elem = document.getElementById("change-name-btn");
-                                if (elem.value=="Close Curtain") elem.value = "Open Curtain";
-                                else elem.value = "Close Curtain";
-                            }
+                          function changeValue()
+                          {
+                            var elem = document.getElementById("change-name-btn");
+                            if (elem.value=="Close Curtain") elem.value = "Open Curtain";
+                            else elem.value = "Close Curtain";
+                          }
                         </script>
                         <input type="reset" value="<input type=reset>">
                         <input type="submit" value="<input disabled>" disabled>
+                    </p>
+                </fieldset>
+
+                <fieldset id="clickActionSpec">
+                    <legend>ClickActionSpec</legend>
+                    <p>
+                        <input id='click-button-1' type="button" value="Click" onclick="changeClickBtnValue()">
+                        <script>
+                          function changeClickBtnValue()
+                          {
+                            var elem = document.getElementById("click-button-1");
+                            if (elem.value=="Click") elem.value = "Button Clicked";
+                            else elem.value = "Clicked Again";
+                          }
+                        </script>
 
                         <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
                             Double click
@@ -515,7 +541,29 @@
                         </div>
                     </section>
                 </fieldset>
-  		<fieldset id="FindElement">
+  <fieldset id="GetAttribute">
+                    <legend>GetAttributeSpec</legend>
+                    <section id="formsWithoutAttribute">
+                        <div id='wrongAttribDiv' align="center" >
+                            Get Attribute Div
+                        </div>
+                    </section>
+                </fieldset>
+ <fieldset id="expectedTextSpec">
+                    <legend>ExpectedTextSpec</legend>
+                    <p>
+                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                            Double click
+                        </div>
+                        <script>
+                          function doubleClickEvent() {
+                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                          }
+                        </script>
+                    </p>
+
+                </fieldset>
+<fieldset id="FindElement">
                     <legend>FindElementSpec</legend>
                     <header><h1>Find Element content</h1></header>
                     <article id="content_images">

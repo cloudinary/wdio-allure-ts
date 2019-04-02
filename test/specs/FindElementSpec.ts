@@ -28,7 +28,7 @@ describeCommon('findElement of BrowserUtils Tests', () => {
     expect(JSON.stringify(result).toLowerCase()).not.contains('{"element');
   });
 
-  it.only('First Element Returned', () => {
+  it('First Element Returned', () => {
     const result: string = BrowserUtils.findElement(
       SelectorType.XPATH,
       MULTIPAL_ELEMETS_RESULT
