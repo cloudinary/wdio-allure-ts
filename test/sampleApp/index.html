@@ -535,8 +535,8 @@
                               }
                             </script>
                             <!--Duplication is intended-->
-                            <div data-test="text-field-1" id="text-field">Cloudinary 1</div>
-                            <div data-test="text-field-2"  id="text-field">Cloudinary 2</div>
+                            <div data-test="text-field-1" id="text-field_gt-1">Cloudinary 1</div>
+                            <div data-test="text-field-2"  id="text-field_gt-1">Cloudinary 2</div>
                         </p>
 
                     </section>
@@ -558,7 +558,7 @@
                 </fieldset>
                 <fieldset id="GetAttribute">
                     <legend>GetAttributeSpec</legend>
-                    <section id="formsWithoutAttribute">
+                    <section id="formsAttribute">
                         <div id='wrongAttribDiv' align="center" >
                             Get Attribute Div
                         </div>
@@ -567,12 +567,12 @@
                 <fieldset id="expectedTextSpec">
                     <legend>ExpectedTextSpec</legend>
                     <p>
-                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                        <div id='div-double-click-txt' ondblclick="doubleClickEvent_et()" style="border:1px solid black">
                             Double click
                         </div>
                         <script>
-                          function doubleClickEvent() {
-                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                          function doubleClickEvent_et() {
+                            window.setTimeout(()=>{document.getElementById('div-double-click-txt').innerHTML="Double Click Event"}, 2*1000);
                           }
                         </script>
                     </p>
@@ -589,7 +589,15 @@
                     <legend>WaitUntilSpec</legend>
                     <section id="WaitUntilSection">
                         <header><h1>Text</h1></header>
-                        <div data-test="text-field-wu" id="text-field">Cloudinary 1</div>
+                        <div data-test="text-field-wu" id="text-field-wu">Cloudinary 1</div>
+                    </section>
+                </fieldset>
+		        <fieldset id="ExpectNoAttributeValue">
+                    <legend>ExpectNoAttributeValueSpec</legend>
+                    <section id="formsWithoutAttribute">
+                        <div id='noAttDiv' align="center" >
+                            Empty Div
+                        </div>
                     </section>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>

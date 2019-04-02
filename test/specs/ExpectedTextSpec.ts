@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
-const DIV_DOUBLE_CLICK: string = "//*[@id='div-double-click']";
+const DIV_DOUBLE_CLICK: string = "//*[@id='div-double-click-txt']";
 
 /**
  * wdio-allure-ts expectedText tests
