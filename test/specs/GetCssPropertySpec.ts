@@ -3,7 +3,7 @@ import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
 export namespace PageLocator {
-  export const HEADER: string = "//*[@id='top']/header/h1";
+  export const HEADER: string = '//*[@id="headerSection-1"]/h1';
 }
 
 /**

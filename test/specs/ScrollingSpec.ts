@@ -13,11 +13,17 @@ export namespace PageLocator {
  * wdio-allure-ts Scrolling action test
  */
 describeCommon('Scroll', () => {
-  it('scrollIntoView ', () => {
+  it('scrollIntoView to element outside of viewport', () => {
     BrowserUtils.waitForDisplayed(PageLocator.HEADER);
     assert.isFalse($(PageLocator.LAST_TOP_LINK).isDisplayedInViewport());
     BrowserUtils.scrollIntoView(PageLocator.LAST_TOP_LINK);
     assert.isTrue($(PageLocator.LAST_TOP_LINK).isDisplayedInViewport());
+  });
+
+  it('scrollIntoView to element in viewport', () => {
+    BrowserUtils.waitForDisplayed(PageLocator.HEADER);
+    BrowserUtils.scrollIntoView(PageLocator.HEADER);
+    assert.isTrue($(PageLocator.HEADER).isDisplayedInViewport());
   });
 
   it('scrollToElement', () => {
