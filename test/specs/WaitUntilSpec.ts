@@ -4,9 +4,9 @@ import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
 const TIMEOUT: number = 4000;
-const HEADER_TEXT_H1: string = "//*[@id='text']/header/h1";
-const TEXT_ELEMENT_SELECTOR: string = "//*[@data-test='text-field-1']";
-const TEXT_ELEMENT_VALUE: string = 'Cloudinary';
+const HEADER_TEXT_H1: string = "//*[@id='WaitUntilSection']/header/h1";
+const TEXT_ELEMENT_SELECTOR: string = "//*[@data-test='text-field-wu']";
+const TEXT_ELEMENT_VALUE: string = 'Cloudinary 1';
 const INCORRECT_TEXT_ELEMENT_VALUE: string = 'Not Cloudinary';
 
 /**
