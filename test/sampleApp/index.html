@@ -129,9 +129,6 @@
                     <h5>Heading 5</h5>
                     <h6>Heading 6</h6>
                 </div>
-                <!--Duplication is intended-->
-                <div data-test="text-field-1" id="text-field">Cloudinary</div>
-                <div data-test="text-field-2"  id="text-field">Cloudinary</div>
                 <footer><p><a href="#top">[Top]</a></p></footer>
             </article>
             <article id="text__paragraphs">
@@ -468,19 +465,45 @@
                 <p><a href="#top">[Top]</a></p>
                 <fieldset id="forms__action">
                     <legend>Action buttons</legend>
+
                     <p>
-                        <input type="submit" value="<input type=submit>">
+                        <button type="submit">&lt;button type=submit&gt;</button>
+                        <button  type="button"  >&lt;button type=button&gt;</button>
+
+                        <button type="reset">&lt;button type=reset&gt;</button>
+                        <button type="button" disabled>&lt;button disabled&gt;</button>
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
+                         <script>	
+                            function openTab() {	
+                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
+                            }	
+                        </script>
                         <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeValue()">
                         <script>
-                            function changeValue()
-                            {
-                                var elem = document.getElementById("change-name-btn");
-                                if (elem.value=="Close Curtain") elem.value = "Open Curtain";
-                                else elem.value = "Close Curtain";
-                            }
+                          function changeValue()
+                          {
+                            var elem = document.getElementById("change-name-btn");
+                            if (elem.value=="Close Curtain") elem.value = "Open Curtain";
+                            else elem.value = "Close Curtain";
+                          }
                         </script>
                         <input type="reset" value="<input type=reset>">
                         <input type="submit" value="<input disabled>" disabled>
+                    </p>
+                </fieldset>
+
+                <fieldset id="clickActionSpec">
+                    <legend>ClickActionSpec</legend>
+                    <p>
+                        <input id='click-button-1' type="button" value="Click" onclick="changeClickBtnValue()">
+                        <script>
+                          function changeClickBtnValue()
+                          {
+                            var elem = document.getElementById("click-button-1");
+                            if (elem.value=="Click") elem.value = "Button Clicked";
+                            else elem.value = "Clicked Again";
+                          }
+                        </script>
 
                         <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
                             Double click
@@ -497,14 +520,26 @@
 
                         <button type="reset">&lt;button type=reset&gt;</button>
                         <button type="button" disabled>&lt;button disabled&gt;</button>
-                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
-                         <script>	
-                            function openTab() {	
-                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
-                            }	
-                        </script>
+
                         
                     </p>
+                </fieldset>
+                <fieldset id="GetText">
+                    <legend>GetTextSpec</legend>
+                    <section id="GetTextSection-1">
+                        <p>
+                            <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
+                            <script>
+                              function openTab() {
+                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");
+                              }
+                            </script>
+                            <!--Duplication is intended-->
+                            <div data-test="text-field-1" id="text-field">Cloudinary 1</div>
+                            <div data-test="text-field-2"  id="text-field">Cloudinary 2</div>
+                        </p>
+
+                    </section>
                 </fieldset>
                 <fieldset id="notVisible">
                     <legend>NotVisibleSpec</legend>
@@ -521,12 +556,40 @@
                         </div>
                     </section>
                 </fieldset>
-   <fieldset id="GetAttribute">
+                <fieldset id="GetAttribute">
                     <legend>GetAttributeSpec</legend>
                     <section id="formsWithoutAttribute">
                         <div id='wrongAttribDiv' align="center" >
                             Get Attribute Div
                         </div>
+                    </section>
+                </fieldset>
+                <fieldset id="expectedTextSpec">
+                    <legend>ExpectedTextSpec</legend>
+                    <p>
+                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                            Double click
+                        </div>
+                        <script>
+                          function doubleClickEvent() {
+                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                          }
+                        </script>
+                    </p>
+
+                </fieldset>
+                <fieldset id="getCssProperty">
+                    <legend>getCssPropertySpec</legend>
+                    <section id="headerSection-1">
+                        <h1 class="Test-title">Get Css Property Test Header</h1>
+                    </section>
+                </fieldset>
+
+                <fieldset id="WaitUntil">
+                    <legend>WaitUntilSpec</legend>
+                    <section id="WaitUntilSection">
+                        <header><h1>Text</h1></header>
+                        <div data-test="text-field-wu" id="text-field">Cloudinary 1</div>
                     </section>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
