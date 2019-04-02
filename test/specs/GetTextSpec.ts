@@ -14,7 +14,10 @@ describeCommon('GetText of BrowserUtils Tests', () => {
   });
 
   it('Validate multiple result select first one ', () => {
-    assert.equal(BrowserUtils.getText("//*[@id='text-field']"), 'Cloudinary 1');
+    assert.equal(
+      BrowserUtils.getText("//*[@id='text-field_gt-1']"),
+      'Cloudinary 1'
+    );
   });
 
   it('Validate element not exist error thrown', () => {
