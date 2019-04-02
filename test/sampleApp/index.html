@@ -466,12 +466,6 @@
 
                         <button type="reset">&lt;button type=reset&gt;</button>
                         <button type="button" disabled>&lt;button disabled&gt;</button>
-                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
-                         <script>	
-                            function openTab() {	
-                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
-                            }	
-                        </script>
                         <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeValue()">
                         <script>
                           function changeValue()
@@ -550,7 +544,7 @@
                         </div>
                     </section>
                 </fieldset>
-  <fieldset id="GetAttribute">
+                <fieldset id="GetAttribute">
                     <legend>GetAttributeSpec</legend>
                     <section id="formsWithoutAttribute">
                         <div id='wrongAttribDiv' align="center" >
@@ -558,7 +552,7 @@
                         </div>
                     </section>
                 </fieldset>
- <fieldset id="expectedTextSpec">
+                <fieldset id="expectedTextSpec">
                     <legend>ExpectedTextSpec</legend>
                     <p>
                         <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
@@ -572,10 +566,21 @@
                     </p>
 
                 </fieldset>
- <fieldset id="getCssProperty">
+                <fieldset id="getCssProperty">
                     <legend>getCssPropertySpec</legend>
                     <section id="headerSection-1">
                         <h1 class="Test-title">Get Css Property Test Header</h1>
+                    </section>
+                </fieldset>
+                <fieldset id="tabsTests">
+                    <legend>TabsSpec</legend>
+                    <section id="TabsSection-1">
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
+                        <script>
+                          function openTab() {
+                            var myWindow = window.open(this.href, "_blank", "width=200,height=100");
+                          }
+                        </script>
                     </section>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
