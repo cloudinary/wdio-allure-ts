@@ -351,10 +351,6 @@
                 <fieldset id="forms__input">
                     <legend>Input fields</legend>
                     <p>
-                        <label for="input__text">Text Input</label>
-                        <input id="input__text" type="text" placeholder="Text Input">
-                    </p>
-                    <p>
                         <label for="input__password">Password</label>
                         <input id="input__password" type="password" placeholder="Type your Password">
                     </p>
@@ -385,10 +381,6 @@
                     <p>
                         <label for="input__text4" class="valid">Valid</label>
                         <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
-                    </p>
-                    <p>
-                        <label for="input__text5" class="hidden">Hidden Text Input: </label>
-                        <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
                     </p>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
@@ -533,9 +525,9 @@
                     <legend>GetTextSpec</legend>
                     <section id="GetTextSection-1">
                         <p>
-                            <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
+                            <button data-test="open-tab-btn" onclick="openTabBtn()">Open tab</button>
                             <script>
-                              function openTab() {
+                              function openTabBtn() {
                                 var myWindow = window.open(this.href, "_blank", "width=200,height=100");
                               }
                             </script>
@@ -589,7 +581,17 @@
                         <h1 class="Test-title">Get Css Property Test Header</h1>
                     </section>
                 </fieldset>
-
+                <fieldset id="SetValueToElements">
+                    <legend>SetValueToElementsSpec</legend>
+                    <p>
+                        <label for="input__text">Text Input</label>
+                        <input id="input__text" type="text" placeholder="Text Input">
+                    </p>
+                    <p>
+                        <label for="input__text5" class="hidden">Hidden Text Input: </label>
+                        <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
+                    </p>
+                </fieldset>
                 <fieldset id="WaitUntil">
                     <legend>WaitUntilSpec</legend>
                     <section id="WaitUntilSection">
@@ -605,7 +607,7 @@
                         </div>
                     </section>
                 </fieldset>
-<fieldset id="FindElement">
+                <fieldset id="FindElement">
                     <legend>FindElementSpec</legend>
                     <header><h1>Find Element content</h1></header>
                     <article id="content_images">

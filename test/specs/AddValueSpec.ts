@@ -7,8 +7,7 @@ const EMPTY_INPUT_SELECTOR: string =
   "//*[@id='AddValue']//input[@id='empty_input']";
 const NOT_EMPTY_INPUT_SELECTOR: string =
   "//*[@id='AddValue']//input[@id='not_empty_input']";
-const DISABLED_INPUT_SELECTOR: string =
-  "//*[@id='AddValue']//input[@id='disabled_input']";
+const DISABLED_INPUT_SELECTOR: string = "//*[@id='disabled_input']";
 describeCommon('addValue', () => {
   it('add value to empty input', () => {
     const randomText: string = TestUtils.randomString(5);
