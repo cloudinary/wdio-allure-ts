@@ -794,16 +794,17 @@ export namespace BrowserUtils {
   export function expectAlertText(expectedText: string): void {
     Reporter.debug(`Validate alert's text is '${expectedText}'`);
 
-    const actualText: string = tryBlock(
-      () => browser.getAlertText(),
-      "Failed to get alert's text"
+    tryBlock(
+      () =>
+        browser.waitUntil(() => {
+          try {
+            return expectedText === browser.getAlertText();
+          } catch (e) {
+            return false;
+          }
+        }),
+      "Incorrect alert's text or alert not found."
     );
-
-    if (actualText !== expectedText) {
-      throw new Error(
-        `Incorrect alert's text. ${EOL} Expected: '${expectedText}' ${EOL} Actual: '${actualText}'`
-      );
-    }
   }
 
   /**
