@@ -17,7 +17,7 @@ export function describeCommon(name: string, body: Function): void {
     /**
      * Navigate to sampleApp and wait for it to load
      */
-    before(() => {
+    beforeEach(() => {
       BrowserUtils.navigateToUrl(sampleAppUrl);
       BrowserUtils.waitForDisplayed("//*[@id='top']");
     });

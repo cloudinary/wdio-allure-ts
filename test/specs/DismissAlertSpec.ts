@@ -1,4 +1,4 @@
-import { assert, expect } from 'chai';
+import { expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
@@ -13,14 +13,12 @@ describeCommon('dismissAlert', () => {
   it('dismiss existing alert', () => {
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
     BrowserUtils.dismissAlert();
-
-    assert.isFalse(browser.isAlertOpen());
   });
 
   it('no alert', () => {
     expect(() => BrowserUtils.dismissAlert())
       .to.throw(Error)
       .with.property('message')
-      .contains('Alert not found');
+      .contains('Failed to dismiss alert');
   });
 });

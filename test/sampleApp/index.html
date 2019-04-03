@@ -60,36 +60,13 @@
 </style>
 
 <body>
-        <fieldset id="ExpectAlertClosed">
-                <legend>ExpectAlertOpened</legend>
-                <button id="trigger-closing-alert" onclick="triggerClosingAlert()">Trigger Closing Alert</button>
-                <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
-                <script>
-                    function triggerClosingAlert() {
-                        var w = window.open('','','width=100,height=100')
-                        w.document.write('Will close automatically')
-                        w.focus()
-                        setTimeout(() => {w.close();}, 1000) }
-                    
-                        function triggerAlert() {
-                        confirm("What is your decision?");
-                    }    </script>
-            </fieldset>
-        <fieldset id="ExpectAlertOpened">
-                <legend>ExpectAlertOpened</legend>
-                <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
-                <script>
-                    function triggerAlert() {
-                        setTimeout(()=>{confirm("What is your decision?")}, 1000);
-                    }
-                    </script>
-            </fieldset>
+       
     <fieldset id="DismissAlert">
             <legend>DismissAlert</legend>
             <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
             <script>
                 function triggerAlert() {
-                    setTimeout(()=>{confirm("What is your decision?")}, 1000);
+                    confirm("What is your decision?");
                 }
                 </script>
         </fieldset>
@@ -98,7 +75,7 @@
                 <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
                 <script>
                     function triggerAlert() {
-                        setTimeout(()=>{confirm("What is your decision?")}, 1000);
+                        confirm("What is your decision?");
                     }
                     </script>
             </fieldset>
