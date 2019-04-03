@@ -1,4 +1,10 @@
-import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
+import {
+  Cookie,
+  CSSProperty,
+  Element,
+  LocationReturn,
+  SizeReturn,
+} from '@wdio/sync';
 import { EOL } from 'os';
 import { SpecialKeys } from '../..';
 import { MouseButton } from '../enums/MouseButton';
@@ -467,11 +473,11 @@ export namespace BrowserUtils {
       `Validate element text is '${expectedText}' by selector '${selector}'`
     );
     waitForDisplayed(selector);
-
+    const elementWithText: Element = $(selector);
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          return $(selector).getText() === expectedText;
+          return elementWithText.getText() === expectedText;
         }),
       `Expected text in element by selector '${selector}' not found.`
     );

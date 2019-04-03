@@ -66,6 +66,18 @@
         <input id="not_empty_input" type="text" placeholder="Text Input" value="Cloudinary"></br>
         <input id="disabled_input" type="text" placeholder="Text Input" disabled></br>
     </fieldset>
+    <fieldset id="ExpectText">
+        <legend>ExpectText</legend>
+        <div id="static_text" type="text">Cloudinary rules!</div>
+        <div id="dynamic_text" type="text">Cloudinary rules!</div>
+            <button id="update_text" onclick="changeText()">Click me</button></br>
+        <div id="hidden_text" type="text" hidden>Cloudinary rules!</br>
+            <script>
+                function changeText() {
+                    window.setTimeout(()=>{document.getElementById("dynamic_text").innerHTML = "Cloudinary still rules!"}, 2*1000);
+                }
+                </script>
+    </fieldset>
     <fieldset id="IsEnabled">
             <legend>IsEnabled</legend>
             <input id="enabled_input" type="text" placeholder="Text Input"></br>
