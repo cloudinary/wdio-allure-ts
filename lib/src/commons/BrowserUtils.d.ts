@@ -255,6 +255,14 @@ export declare namespace BrowserUtils {
      */
     function getUrl(): string;
     /**
+     * Validate alert opened
+     */
+    function expectAlertOpened(): void;
+    /**
+     * Validate alert closed
+     */
+    function expectAlertClosed(): void;
+    /**
      * Accept Alert popup
      */
     function acceptAlert(): void;

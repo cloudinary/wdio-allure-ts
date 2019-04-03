@@ -770,21 +770,47 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Validate alert opened
+   */
+  export function expectAlertOpened(): void {
+    Reporter.debug('Validate alert opened');
+    tryBlock(
+      () => browser.waitUntil(() => browser.isAlertOpen()),
+      'Alert not found'
+    );
+  }
+
+  /**
+   * Validate alert closed
+   */
+  export function expectAlertClosed(): void {
+    Reporter.debug('Validate alert opened');
+    tryBlock(
+      () => browser.waitUntil(() => !browser.isAlertOpen()),
+      'Alert found'
+    );
+  }
+
+  /**
    * Accept Alert popup
    */
   export function acceptAlert(): void {
     Reporter.debug('Accept alert');
-
+    expectAlertOpened();
     tryBlock(() => browser.acceptAlert(), 'Failed to accept alert');
+    expectAlertClosed();
   }
 
   /**
    * Dismiss Alert popup
    */
   export function dismissAlert(): void {
+    expectAlertOpened();
+
     Reporter.debug('Dismiss alert');
 
     tryBlock(() => browser.dismissAlert(), 'Failed to dismiss alert');
+    expectAlertClosed();
   }
 
   /**
