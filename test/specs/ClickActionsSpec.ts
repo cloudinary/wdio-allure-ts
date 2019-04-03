@@ -2,9 +2,11 @@ import { assert } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
-export namespace PageLocator {
-  export const SUBMIT_BUTTON_ONE: string = "//*[@id='click-button-1']";
-  export const DOUBLE_CLICK_DIV: string = "//*[@id='div-double-click']";
+namespace PageLocator {
+  export const SUBMIT_BUTTON_ONE: string =
+    "//*[@id='clickActionSpec']//*[@id='click-button-1']";
+  export const DOUBLE_CLICK_DIV: string =
+    "//*[@id='clickActionSpec']//*[@id='div-double-click']";
 }
 
 /**
@@ -22,6 +24,7 @@ describeCommon('click', () => {
   it('doubleClick', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     BrowserUtils.doubleClick(PageLocator.DOUBLE_CLICK_DIV);
-    BrowserUtils.expectText(PageLocator.DOUBLE_CLICK_DIV, 'Double Click Event');
+    $(PageLocator.DOUBLE_CLICK_DIV).waitForDisplayed();
+    assert.equal($(PageLocator.DOUBLE_CLICK_DIV).getText(), 'Double click');
   });
 });
