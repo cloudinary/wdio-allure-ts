@@ -83,6 +83,15 @@
             <input id="enabled_input" type="text" placeholder="Text Input"></br>
             <input id="disabled_input" type="text" placeholder="Text Input" disabled></br>
         </fieldset>
+    <fieldset id="ExpectAlertText">
+        <legend>ExpectAlertText</legend>
+        <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+        <script>
+            function triggerAlert() {
+                window.setTimeout(()=>{alert("Hello! I am an alert box!"), 1*1000});
+            }
+            </script>
+    </fieldset>
 <div id="top" class="page" role="document">
     <header role="banner">
         <h1 class="Test-title">HTML5 Test Page</h1>
