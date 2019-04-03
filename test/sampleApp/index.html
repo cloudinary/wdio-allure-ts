@@ -469,12 +469,6 @@
 
                         <button type="reset">&lt;button type=reset&gt;</button>
                         <button type="button" disabled>&lt;button disabled&gt;</button>
-                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>	
-                         <script>	
-                            function openTab() {	
-                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");	
-                            }	
-                        </script>
                         <input id="change-name-btn" type="button" value="Close Curtain" onclick="changeValue()">
                         <script>
                           function changeValue()
@@ -564,7 +558,7 @@
                 <fieldset id="expectedTextSpec">
                     <legend>ExpectedTextSpec</legend>
                     <p>
-                        <div id='div-double-click-txt' ondblclick="doubleClickEvent_et()" style="border:1px solid black">
+                        <div id='div-double-click-txt' ondblclick="doubleClickEvent_et()">
                             Double click
                         </div>
                         <script>
@@ -619,6 +613,17 @@
                     <!--Duplication is intended-->
                     <div data-test="text-field-1" id="multi-text-field">Cloudinary 1</div>
                     <div data-test="text-field-2"  id="multi-text-field">Cloudinary 2</div>
+                </fieldset>
+		<fieldset id="tabsTests">
+                    <legend>TabsSpec</legend>
+                    <section id="TabsSection-1">
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
+                        <script>
+                          function openTab() {
+                            var myWindow = window.open(this.href, "_blank", "width=200,height=100");
+                          }
+                        </script>
+                    </section>
                 </fieldset>
                 <p><a href="#top">[Top]</a></p>
             </form>
