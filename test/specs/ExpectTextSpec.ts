@@ -7,15 +7,15 @@ const DIV_DOUBLE_CLICK: string = "//*[@id='div-double-click-txt']";
 /**
  * wdio-allure-ts expectedText tests
  */
-describeCommon('ExpectedText of BrowserUtils Tests', () => {
-  it('Validate expectedText Change ', () => {
+describeCommon('expectText', () => {
+  it.skip('Validate expectedText Change ', () => {
     BrowserUtils.scrollIntoView(DIV_DOUBLE_CLICK);
     BrowserUtils.expectText(DIV_DOUBLE_CLICK, 'Double click');
     BrowserUtils.doubleClick(DIV_DOUBLE_CLICK);
     BrowserUtils.expectText(DIV_DOUBLE_CLICK, 'Double Click Event');
   });
 
-  it('Validate expectedText fail on case sensitive ', () => {
+  it.skip('Validate expectedText fail on case sensitive ', () => {
     BrowserUtils.scrollIntoView(DIV_DOUBLE_CLICK);
     BrowserUtils.doubleClick(DIV_DOUBLE_CLICK);
 
@@ -27,7 +27,7 @@ describeCommon('ExpectedText of BrowserUtils Tests', () => {
       .contains('waitUntil condition timed out');
   });
 
-  it('Validate expectedText fail on spaces ', () => {
+  it.skip('Validate expectedText fail on spaces ', () => {
     BrowserUtils.scrollIntoView(DIV_DOUBLE_CLICK);
     BrowserUtils.doubleClick(DIV_DOUBLE_CLICK);
 
@@ -39,7 +39,7 @@ describeCommon('ExpectedText of BrowserUtils Tests', () => {
       .contains('waitUntil condition timed out');
   });
 
-  it('Validate expectedText fail on wrong text ', () => {
+  it.skip('Validate expectedText fail on wrong text ', () => {
     BrowserUtils.scrollIntoView(DIV_DOUBLE_CLICK);
     BrowserUtils.doubleClick(DIV_DOUBLE_CLICK);
 
