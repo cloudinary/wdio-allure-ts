@@ -31,8 +31,10 @@
     "prepare": "run-s clean prettier tslint compile",
     "test": "run-s test:compilation test:regression",
     "test:compilation": "npm run prepare && git diff --exit-code ./lib",
-    "test:regression": "wdio ./test/wdio.conf.js --suite regression",
-    "spec": "wdio ./test/wdio.conf.js --spec",
+    "test:regression":"run-s test:regression:chrome test:regression:firefox",
+    "test:regression:chrome": "wdio ./test/wdio.chrome.conf.js --suite regression",
+    "test:regression:firefox": "wdio ./test/wdio.firefox.conf.js --suite regression",
+    "spec": "wdio ./test/wdio.chrome.local.conf.js --spec",
     "start:sampleApp": "ws --spa ./test/sampleApp/index.html"
   },
   "dependencies": {

@@ -2,30 +2,8 @@
 process.env.DEFAULT_TIME_OUT = '10000';
 
 exports.config = {
-  //
-  // =====================
-  // Browser Configurations
-  // =====================
-  maxInstances: 1,
-  capabilities: [
-      // {
-      //     browserName: 'chrome',
-      //
-      //     'goog:chromeOptions': {
-      //         args: [ '--headless', '--incognito'],
-      //     },
-      // },
-    {
-      browserName: 'firefox',
-      'moz:firefoxOptions': {
-        args: [ '--headless', '--private'],
-      },
-
-    },
-  ],
-
   suites: {
-    regression: ['./lib/test/specs/*Spec.js']
+    regression: ['./lib/test/specs/*Spec.js'],
   },
 
   // ===================
@@ -52,14 +30,14 @@ exports.config = {
    */
   services: ['selenium-standalone'],
 
-  //Logger level
-  logLevel: 'error',
+  //Logger level Options: trace | debug | info | warn | error | silent
+  logLevel: 'silent',
 
   //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
-    ui: 'bdd',
+    // ui: 'bdd',
     timeout: 300000, // test timeout, test will fall after 5 minutes on timeout
   },
 };
