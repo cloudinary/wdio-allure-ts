@@ -60,6 +60,17 @@
 </style>
 
 <body>
+    <fieldset id="AddValue">
+        <legend>AddValueSpec</legend>
+        <input id="empty_input" type="text" placeholder="Text Input"></br>
+        <input id="not_empty_input" type="text" placeholder="Text Input" value="Cloudinary"></br>
+        <input id="disabled_input" type="text" placeholder="Text Input" disabled></br>
+    </fieldset>
+    <fieldset id="IsEnabled">
+            <legend>IsEnabled</legend>
+            <input id="enabled_input" type="text" placeholder="Text Input"></br>
+            <input id="disabled_input" type="text" placeholder="Text Input" disabled></br>
+        </fieldset>
 <div id="top" class="page" role="document">
     <header role="banner">
         <h1 class="Test-title">HTML5 Test Page</h1>
@@ -529,8 +540,8 @@
                               }
                             </script>
                             <!--Duplication is intended-->
-                            <div data-test="text-field-1" id="text-field">Cloudinary 1</div>
-                            <div data-test="text-field-2"  id="text-field">Cloudinary 2</div>
+                            <div data-test="text-field-1" id="text-field_gt-1">Cloudinary 1</div>
+                            <div data-test="text-field-2"  id="text-field_gt-1">Cloudinary 2</div>
                         </p>
 
                     </section>
@@ -550,33 +561,62 @@
                         </div>
                     </section>
                 </fieldset>
-  <fieldset id="GetAttribute">
+                <fieldset id="GetAttribute">
                     <legend>GetAttributeSpec</legend>
-                    <section id="formsWithoutAttribute">
+                    <section id="formsAttribute">
                         <div id='wrongAttribDiv' align="center" >
                             Get Attribute Div
                         </div>
                     </section>
                 </fieldset>
- <fieldset id="expectedTextSpec">
+                <fieldset id="expectedTextSpec">
                     <legend>ExpectedTextSpec</legend>
                     <p>
-                        <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+                        <div id='div-double-click-txt' ondblclick="doubleClickEvent_et()" style="border:1px solid black">
                             Double click
                         </div>
                         <script>
-                          function doubleClickEvent() {
-                            window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                          function doubleClickEvent_et() {
+                            window.setTimeout(()=>{document.getElementById('div-double-click-txt').innerHTML="Double Click Event"}, 2*1000);
                           }
                         </script>
                     </p>
 
                 </fieldset>
- <fieldset id="getCssProperty">
+                <fieldset id="getCssProperty">
                     <legend>getCssPropertySpec</legend>
                     <section id="headerSection-1">
                         <h1 class="Test-title">Get Css Property Test Header</h1>
                     </section>
+                </fieldset>
+
+                <fieldset id="WaitUntil">
+                    <legend>WaitUntilSpec</legend>
+                    <section id="WaitUntilSection">
+                        <header><h1>Text</h1></header>
+                        <div data-test="text-field-wu" id="text-field-wu">Cloudinary 1</div>
+                    </section>
+                </fieldset>
+		        <fieldset id="ExpectNoAttributeValue">
+                    <legend>ExpectNoAttributeValueSpec</legend>
+                    <section id="formsWithoutAttribute">
+                        <div id='noAttDiv' align="center" >
+                            Empty Div
+                        </div>
+                    </section>
+                </fieldset>
+<fieldset id="FindElement">
+                    <legend>FindElementSpec</legend>
+                    <header><h1>Find Element content</h1></header>
+                    <article id="content_images">
+                        <div>
+                            <p><img src="http://placekitten.com/480/480" alt="Image alt text"></p>
+                        </div>
+                        <footer><p><a href="#top">[Top]</a></p></footer>
+                    </article>
+                    <!--Duplication is intended-->
+                    <div data-test="text-field-1" id="multi-text-field">Cloudinary 1</div>
+                    <div data-test="text-field-2"  id="multi-text-field">Cloudinary 2</div>
                 </fieldset>
 <fieldset id="scrolling">
                     <legend>ScrollingSpec</legend>
