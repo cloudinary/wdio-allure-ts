@@ -2,6 +2,7 @@ import { assert, expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
+const OPEN_TAB_BUTTON: string = "//button[@data-test='open-tab-btn']";
 /**
  * wdio-allure-ts tab actions test
  */
@@ -9,7 +10,7 @@ describeCommon('tab actions', () => {
   it('get tab ids', () => {
     let tabIds: string[] = BrowserUtils.getTabIds();
     assert.equal(tabIds.length, 1, 'Incorrect number of tab ids');
-    BrowserUtils.click("//button[@data-test='open-tab-btn']");
+    BrowserUtils.click(OPEN_TAB_BUTTON);
 
     tabIds = BrowserUtils.getTabIds();
     assert.equal(tabIds.length, 2, 'Incorrect number of tab ids');
@@ -17,7 +18,7 @@ describeCommon('tab actions', () => {
 
   it('switch to tab', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
-    BrowserUtils.click("//button[@data-test='open-tab-btn']");
+    BrowserUtils.click(OPEN_TAB_BUTTON);
     const tabIds: string[] = BrowserUtils.getTabIds();
 
     BrowserUtils.switchTab(tabIds[1]);
