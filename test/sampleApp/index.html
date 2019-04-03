@@ -60,6 +60,25 @@
 </style>
 
 <body>
+       
+    <fieldset id="DismissAlert">
+            <legend>DismissAlert</legend>
+            <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+            <script>
+                function triggerAlert() {
+                    confirm("What is your decision?");
+                }
+                </script>
+        </fieldset>
+        <fieldset id="AcceptAlert">
+                <legend>AcceptAlert</legend>
+                <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+                <script>
+                    function triggerAlert() {
+                        confirm("What is your decision?");
+                    }
+                    </script>
+            </fieldset>
     <fieldset id="AddValue">
         <legend>AddValueSpec</legend>
         <input id="empty_input" type="text" placeholder="Text Input"></br>
