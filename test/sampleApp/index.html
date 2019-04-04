@@ -57,10 +57,53 @@
     .Test-run--highlightEl > * {
         outline: 1px solid #ADD8E6;
     }
+    #scroll-content > div {
+      background: #c0c0c0;
+      height: 40px;
+      margin-bottom: 5px;
+  }
+#scroll-content
+{
+ height:100px;
+    overflow:auto;
+}
 </style>
 
 <body>
-       
+        <fieldset id="ScrollToElement">
+            <legend>ScrollToElement</legend>
+            <div id="scroll-content">
+                    <div id="div-item">my awesome new div 1</div>
+                </div>
+                    <script>
+                        var index = 2;
+                     document.getElementById("scroll-content").addEventListener("scroll", function (event) {
+     var newDiv = document.createElement("div");
+     newDiv.id = "div-item"
+        newDiv.innerHTML = "my awesome new div " +index;
+        document.getElementById("scroll-content").appendChild(newDiv);
+        index +=1
+});
+
+
+var checkForNewDiv = function () {
+    var lastDiv = document.querySelector("#scroll-content > div:last-child");
+    var maindiv = document.querySelector("#scroll-content");
+    var lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight;
+    var pageOffset = maindiv.offsetTop + maindiv.clientHeight;   
+    if (pageOffset > lastDivOffset - 10) {
+        var newDiv = document.createElement("div");
+        newDiv.id = "div-item"
+        newDiv.innerHTML = "my awesome new div" +index;
+        document.getElementById("scroll-content").appendChild(newDiv);
+        index +=1
+        checkForNewDiv();
+    }
+};
+
+checkForNewDiv();
+                </script>
+            </fieldset> 
     <fieldset id="DismissAlert">
             <legend>DismissAlert</legend>
             <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
