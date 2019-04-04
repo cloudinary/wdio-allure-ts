@@ -119,8 +119,15 @@
                 checkForNewDiv();
             </script>
         </fieldset>
-        <fieldset id="DismissAlert">
-
+        <fieldset id="ExpectAlertText">
+            <legend>ExpectAlertText</legend>
+            <button id="trigger-alert" onclick="trigerAlert()">Trigger Alert</button>
+            <script>
+                function trigerAlert() {
+                    window.setTimeout(()=>{alert("Hello! I am an alert box!"), 1*1000});
+                }
+                </script>
+        </fieldset>
             <fieldset id="DismissAlert">
                 <legend>DismissAlert</legend>
                 <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
