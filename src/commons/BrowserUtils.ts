@@ -774,7 +774,6 @@ export namespace BrowserUtils {
    */
   export function acceptAlert(): void {
     Reporter.debug('Accept alert');
-
     tryBlock(() => browser.acceptAlert(), 'Failed to accept alert');
   }
 
