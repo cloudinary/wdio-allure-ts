@@ -2,8 +2,7 @@ import { expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
-export const EMPTY_DIV: string = '//*[@id="formsWithoutAttribute"]//*[@id="noAttDiv"]';
-export const BAD_ELEMENT_XPATH: string = '//*[@id="badID"]';
+const EMPTY_DIV: string = '//*[@id="formsWithoutAttribute"]//*[@id="noAttDiv"]';
 /**
  * wdio-allure-ts ExpectNoAttributeValueSpec action test
  */
