@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,17 +12,21 @@
         background: #ffffff;
         counter-reset: test-describe;
     }
+    
     .Test-describe:before {
         content: counter(test-describe);
         counter-increment: test-describe;
     }
+    
     .Test-describe {
         counter-reset: test-it;
     }
+    
     .Test-it:before {
         content: counter(test-describe) "." counter(test-it);
         counter-increment: test-it;
     }
+    
     .Test-title {
         font-size: 2em;
         font-family: sans-serif;
@@ -30,6 +35,7 @@
         background: #ffffff;
         color: #000000;
     }
+    
     .Test-describe,
     .Test-it {
         background: #ffffff;
@@ -40,10 +46,12 @@
         margin: 20px 0;
         padding: 0.75em 20px;
     }
+    
     .Test-describe {
         font-size: 1.5em;
         margin: 60px 0 20px;
     }
+    
     .Test-describe:before,
     .Test-it:before {
         color: #999;
@@ -55,81 +63,138 @@
     /**
      * Highlight the bounds of direct children of a test block
      */
+    
     .Test-run--highlightEl > * {
         outline: 1px solid #ADD8E6;
     }
+    
+    #scroll-content > div {
+        background: #c0c0c0;
+        height: 40px;
+        margin-bottom: 5px;
+    }
+    
+    #scroll-content {
+        height: 100px;
+        overflow: auto;
+    }
 </style>
+
 <body>
-<div id="top" class="page" role="document">
-    <header role="banner">
-        <h1 id="header" class="Test-title">Tests Sandbox</h1>
-        <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst testing wdio wrapper.</p>
-    </header>
-        <fieldset id="DismissAlert">
-            <legend>DismissAlert</legend>
-            <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+    <div id="top" class="page" role="document">
+        <header role="banner">
+            <h1 id="header" class="Test-title">Tests Sandbox</h1>
+            <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst testing wdio wrapper.</p>
+        </header>
+        <fieldset id="ScrollToElement">
+            <legend>ScrollToElement</legend>
+            <div id="scroll-content">
+                <div id="div-item">my awesome new div 1</div>
+            </div>
             <script>
-              function triggerAlert() {
-                confirm("What is your decision?");
-              }
+                var index = 2;
+                document.getElementById("scroll-content").addEventListener("scroll", function(event) {
+                    var newDiv = document.createElement("div");
+                    newDiv.id = "div-item"
+                    newDiv.innerHTML = "my awesome new div " + index;
+                    document.getElementById("scroll-content").appendChild(newDiv);
+                    index += 1
+                });
+
+                var checkForNewDiv = function() {
+                    var lastDiv = document.querySelector("#scroll-content > div:last-child");
+                    var maindiv = document.querySelector("#scroll-content");
+                    var lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight;
+                    var pageOffset = maindiv.offsetTop + maindiv.clientHeight;
+                    if (pageOffset > lastDivOffset - 10) {
+                        var newDiv = document.createElement("div");
+                        newDiv.id = "div-item"
+                        newDiv.innerHTML = "my awesome new div" + index;
+                        document.getElementById("scroll-content").appendChild(newDiv);
+                        index += 1
+                        checkForNewDiv();
+                    }
+                };
+
+                checkForNewDiv();
             </script>
         </fieldset>
-        <fieldset id="AcceptAlert">
-            <legend>AcceptAlert</legend>
-            <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
-            <script>
-              function triggerAlert() {
-                confirm("What is your decision?");
-              }
-            </script>
-         </fieldset>
+        <fieldset id="DismissAlert">
+
+            <fieldset id="DismissAlert">
+                <legend>DismissAlert</legend>
+                <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+                <script>
+                    function triggerAlert() {
+                        confirm("What is your decision?");
+                    }
+                </script>
+            </fieldset>
+            <fieldset id="AcceptAlert">
+                <legend>AcceptAlert</legend>
+                <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+                <script>
+                    function triggerAlert() {
+                        confirm("What is your decision?");
+                    }
+                </script>
+            </fieldset>
             <fieldset id="AddValue">
                 <legend>AddValueSpec</legend>
-                <input id="empty_input" type="text" placeholder="Text Input"></br>
-                <input id="not_empty_input" type="text" placeholder="Text Input" value="Cloudinary"></br>
-                <input id="disabled_input" type="text" placeholder="Text Input" disabled></br>
+                <input id="empty_input" type="text" placeholder="Text Input">
+                </br>
+                <input id="not_empty_input" type="text" placeholder="Text Input" value="Cloudinary">
+                </br>
+                <input id="disabled_input" type="text" placeholder="Text Input" disabled>
+                </br>
             </fieldset>
             <fieldset id="ExpectText">
                 <legend>ExpectText</legend>
                 <div id="static_text" type="text">Cloudinary rules!</div>
                 <div id="dynamic_text" type="text">Cloudinary rules!</div>
-                    <button id="update_text" onclick="changeText()">Click me</button></br>
+                <button id="update_text" onclick="changeText()">Click me</button>
+                </br>
                 <div id="hidden_text" type="text" hidden>Cloudinary rules!</div>
                 <script>
                     function changeText() {
-                        window.setTimeout(()=>{document.getElementById("dynamic_text").innerHTML = "Cloudinary still rules!"}, 2*1000);
+                        window.setTimeout(() => {
+                            document.getElementById("dynamic_text").innerHTML = "Cloudinary still rules!"
+                        }, 2 * 1000);
                     }
                 </script>
             </fieldset>
             <fieldset id="IsEnabled">
                 <legend>IsEnabled</legend>
-                <input id="enabled_input" type="text" placeholder="Text Input"></br>
-                <input id="disabled_input" type="text" placeholder="Text Input" disabled></br>
+                <input id="enabled_input" type="text" placeholder="Text Input">
+                </br>
+                <input id="disabled_input" type="text" placeholder="Text Input" disabled>
+                </br>
             </fieldset>
             <fieldset id="clickActionSpec">
                 <legend>ClickActionSpec</legend>
                 <p>
                     <input id='click-button-1' type="button" value="Click" onclick="changeClickBtnValue()">
                     <script>
-                      function changeClickBtnValue()
-                      {
-                        var elem = document.getElementById("click-button-1");
-                        if (elem.value=="Click") elem.value = "Button Clicked";
-                        else elem.value = "Clicked Again";
-                      }
+                        function changeClickBtnValue() {
+                            var elem = document.getElementById("click-button-1");
+                            if (elem.value == "Click") elem.value = "Button Clicked";
+                            else elem.value = "Clicked Again";
+                        }
                     </script>
                     <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
                         Double click
                     </div>
                     <script>
                         function doubleClickEvent() {
-                          window.setTimeout(()=>{document.getElementById('div-double-click').innerHTML="Double Click Event"}, 2*1000);
+                            window.setTimeout(() => {
+                                document.getElementById('div-double-click').innerHTML = "Double Click Event"
+                            }, 2 * 1000);
                         }
                     </script>
                 </p>
                 <p>
                     <button type="submit">&lt;button type=submit&gt;</button>
-                    <button  type="button"  >&lt;button type=button&gt;</button>
+                    <button type="button">&lt;button type=button&gt;</button>
                     <button type="reset">&lt;button type=reset&gt;</button>
                     <button type="button" disabled>&lt;button disabled&gt;</button>
                 </p>
@@ -140,13 +205,13 @@
                     <p>
                         <button data-test="open-tab-btn" onclick="openTabBtn()">Open tab</button>
                         <script>
-                          function openTabBtn() {
-                            var myWindow = window.open(this.href, "_blank", "width=200,height=100");
-                          }
+                            function openTabBtn() {
+                                var myWindow = window.open(this.href, "_blank", "width=200,height=100");
+                            }
                         </script>
                         <!--Duplication is intended-->
                         <div data-test="text-field-1" id="text-field_gt-1">Cloudinary 1</div>
-                        <div data-test="text-field-2"  id="text-field_gt-1">Cloudinary 2</div>
+                        <div data-test="text-field-2" id="text-field_gt-1">Cloudinary 2</div>
                     </p>
                 </section>
             </fieldset>
@@ -155,12 +220,14 @@
                 <section id="NotVisibleSection">
                     <div>
                         <button data-test="not-visible-btn" style="display: none"></button>
-                        <button data-test="visible-btn" ></button>
+                        <button data-test="visible-btn"></button>
                         <button data-test="disappearing-btn" id="disappearing-btn" onclick="disappearBtn()">DISAPPEAR ON CLICK</button>
                         <script>
-                          function disappearBtn() {
-                            window.setTimeout(()=>{document.getElementById("disappearing-btn").style.display = "none"},5*1000);
-                          };
+                            function disappearBtn() {
+                                window.setTimeout(() => {
+                                    document.getElementById("disappearing-btn").style.display = "none"
+                                }, 5 * 1000);
+                            };
                         </script>
                     </div>
                 </section>
@@ -168,7 +235,7 @@
             <fieldset id="GetAttribute">
                 <legend>GetAttributeSpec</legend>
                 <section id="formsAttribute">
-                    <div id='wrongAttribDiv' align="center" >
+                    <div id='wrongAttribDiv' align="center">
                         Get Attribute Div
                     </div>
                 </section>
@@ -180,86 +247,93 @@
                         Double click
                     </div>
                     <script>
-                      function doubleClickEvent_et() {
-                        window.setTimeout(()=>{document.getElementById('div-double-click-txt').innerHTML="Double Click Event"}, 2*1000);
-                      }
+                        function doubleClickEvent_et() {
+                            window.setTimeout(() => {
+                                document.getElementById('div-double-click-txt').innerHTML = "Double Click Event"
+                            }, 2 * 1000);
+                        }
                     </script>
                 </p>
 
-                </fieldset>
-                <fieldset id="getCssProperty">
-                    <legend>getCssPropertySpec</legend>
-                    <section id="headerSection-1">
-                        <h1 class="Test-title">Get Css Property Test Header</h1>
-                    </section>
-                </fieldset>
-                <fieldset id="SetValueToElements">
-                    <legend>SetValueToElementsSpec</legend>
-                    <p>
-                        <label for="input__text">Text Input</label>
-                        <input id="input__text" type="text" placeholder="Text Input">
-                    </p>
-                    <p>
-                        <label for="input__text5" class="hidden">Hidden Text Input: </label>
-                        <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
-                    </p>
-                </fieldset>
-                <fieldset id="WaitUntil">
-                    <legend>WaitUntilSpec</legend>
-                    <section id="WaitUntilSection">
-                        <header><h1>Text</h1></header>
-                        <div data-test="text-field-wu" id="text-field-wu">Cloudinary 1</div>
-                    </section>
-                </fieldset>
-		        <fieldset id="ExpectNoAttributeValue">
-                    <legend>ExpectNoAttributeValueSpec</legend>
-                    <section id="formsWithoutAttribute">
-                        <div id='noAttDiv' align="center" >
-                            Empty Div
-                        </div>
-                    </section>
-                </fieldset>
-                <fieldset id="FindElement">
-                    <legend>FindElementSpec</legend>
-                    <header><h1>Find Element content</h1></header>
-                    <article id="content_images">
-                        <div>
-                            <p><img src="http://placekitten.com/480/480" alt="Image alt text"></p>
-                        </div>
-                        <footer><p><a href="#top">[Top]</a></p></footer>
-                    </article>
-                    <!--Duplication is intended-->
-                    <div data-test="text-field-1" id="multi-text-field">Cloudinary 1</div>
-                    <div data-test="text-field-2"  id="multi-text-field">Cloudinary 2</div>
-                </fieldset>
-		<fieldset id="tabsTests">
-                    <legend>TabsSpec</legend>
-                    <section id="TabsSection-1">
-                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
-                        <script>
-                          function openTab() {
+            </fieldset>
+            <fieldset id="getCssProperty">
+                <legend>getCssPropertySpec</legend>
+                <section id="headerSection-1">
+                    <h1 class="Test-title">Get Css Property Test Header</h1>
+                </section>
+            </fieldset>
+            <fieldset id="SetValueToElements">
+                <legend>SetValueToElementsSpec</legend>
+                <p>
+                    <label for="input__text">Text Input</label>
+                    <input id="input__text" type="text" placeholder="Text Input">
+                </p>
+                <p>
+                    <label for="input__text5" class="hidden">Hidden Text Input: </label>
+                    <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
+                </p>
+            </fieldset>
+            <fieldset id="WaitUntil">
+                <legend>WaitUntilSpec</legend>
+                <section id="WaitUntilSection">
+                    <header>
+                        <h1>Text</h1></header>
+                    <div data-test="text-field-wu" id="text-field-wu">Cloudinary 1</div>
+                </section>
+            </fieldset>
+            <fieldset id="ExpectNoAttributeValue">
+                <legend>ExpectNoAttributeValueSpec</legend>
+                <section id="formsWithoutAttribute">
+                    <div id='noAttDiv' align="center">
+                        Empty Div
+                    </div>
+                </section>
+            </fieldset>
+            <fieldset id="FindElement">
+                <legend>FindElementSpec</legend>
+                <header>
+                    <h1>Find Element content</h1></header>
+                <article id="content_images">
+                    <div>
+                        <p><img src="http://placekitten.com/480/480" alt="Image alt text"></p>
+                    </div>
+                    <footer>
+                        <p><a href="#top">[Top]</a></p>
+                    </footer>
+                </article>
+                <!--Duplication is intended-->
+                <div data-test="text-field-1" id="multi-text-field">Cloudinary 1</div>
+                <div data-test="text-field-2" id="multi-text-field">Cloudinary 2</div>
+            </fieldset>
+            <fieldset id="tabsTests">
+                <legend>TabsSpec</legend>
+                <section id="TabsSection-1">
+                    <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
+                    <script>
+                        function openTab() {
                             var myWindow = window.open(this.href, "_blank", "width=200,height=100");
-                          }
-                        </script>
-                    </section>
-                </fieldset>
-    		 </fieldset>
-		        <fieldset id="scrollingIntoView">
-                    <legend>ScrollingIntoViewSpec</legend>
-                    <section id="scrollingIntoViewSection">
-                        <p>
-                            <label for="select">Scroll elements:</label>
-                            <a id="scrollToElementId" href="#top">[scroll to element]</a></p>
-                        </p>
-                    </section>
-                </fieldset>
-                <p><a href="#top">[Top]</a></p>
-            </form>
+                        }
+                    </script>
+                </section>
+            </fieldset>
+        </fieldset>
+        <fieldset id="scrollingIntoView">
+            <legend>ScrollingIntoViewSpec</legend>
+            <section id="scrollingIntoViewSection">
+                <p>
+                    <label for="select">Scroll elements:</label>
+                    <a id="scrollToElementId" href="#top">[scroll to element]</a></p>
+                </p>
+            </section>
+        </fieldset>
+        <p><a href="#top">[Top]</a></p>
+        </form>
         </section>
-    </main>
-    <footer role="contentinfo">
-        <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
-    </footer>
-</div>
+        </main>
+        <footer role="contentinfo">
+            <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
+        </footer>
+    </div>
 </body>
+
 </html>
