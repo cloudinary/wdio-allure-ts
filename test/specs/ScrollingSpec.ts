@@ -17,5 +17,4 @@ describeCommon('Scroll', () => {
     BrowserUtils.scrollIntoView(PageLocator.CAT_IMAGE);
     assert.isTrue($(PageLocator.CAT_IMAGE).isDisplayedInViewport());
   });
-
 });

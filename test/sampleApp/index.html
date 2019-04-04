@@ -23,13 +23,21 @@
         outline: 1px solid #ADD8E6;
     }
 </style>
-
 <body>
+<div id="top" class="page" role="document">
     <header role="banner">
         <h1 id="header" class="Test-title">Tests Sandbox</h1>
         <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst testing wdio wrapper.</p>
     </header>
-
+            <fieldset id="ExpectAlertText">
+                <legend>ExpectAlertText</legend>
+                <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+                <script>
+                  function triggerAlert() {
+                    window.setTimeout(()=>{alert("Hello! I am an alert box!"), 1*1000});
+                  }
+                </script>
+            </fieldset>
             <fieldset id="AddValue">
                 <legend>AddValueSpec</legend>
                 <input id="empty_input" type="text" placeholder="Text Input"></br>
