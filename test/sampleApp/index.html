@@ -7,6 +7,21 @@
 </head>
 
 <style>
+    .Test {
+        background: #ffffff;
+        counter-reset: test-describe;
+    }
+    .Test-describe:before {
+        content: counter(test-describe);
+        counter-increment: test-describe;
+    }
+    .Test-describe {
+        counter-reset: test-it;
+    }
+    .Test-it:before {
+        content: counter(test-describe) "." counter(test-it);
+        counter-increment: test-it;
+    }
     .Test-title {
         font-size: 2em;
         font-family: sans-serif;
@@ -15,7 +30,28 @@
         background: #ffffff;
         color: #000000;
     }
-
+    .Test-describe,
+    .Test-it {
+        background: #ffffff;
+        border-left: 5px solid #666;
+        color: #666;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin: 20px 0;
+        padding: 0.75em 20px;
+    }
+    .Test-describe {
+        font-size: 1.5em;
+        margin: 60px 0 20px;
+    }
+    .Test-describe:before,
+    .Test-it:before {
+        color: #999;
+        display: inline-block;
+        margin-right: 10px;
+        min-width: 30px;
+        text-transform: uppercase;
+    }
     /**
      * Highlight the bounds of direct children of a test block
      */
@@ -29,15 +65,24 @@
         <h1 id="header" class="Test-title">Tests Sandbox</h1>
         <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst testing wdio wrapper.</p>
     </header>
-            <fieldset id="ExpectAlertText">
-                <legend>ExpectAlertText</legend>
-                <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
-                <script>
-                  function triggerAlert() {
-                    window.setTimeout(()=>{alert("Hello! I am an alert box!"), 1*1000});
-                  }
-                </script>
-            </fieldset>
+        <fieldset id="DismissAlert">
+            <legend>DismissAlert</legend>
+            <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+            <script>
+              function triggerAlert() {
+                confirm("What is your decision?");
+              }
+            </script>
+        </fieldset>
+        <fieldset id="AcceptAlert">
+            <legend>AcceptAlert</legend>
+            <button id="trigger-alert" onclick="triggerAlert()">Trigger Alert</button>
+            <script>
+              function triggerAlert() {
+                confirm("What is your decision?");
+              }
+            </script>
+         </fieldset>
             <fieldset id="AddValue">
                 <legend>AddValueSpec</legend>
                 <input id="empty_input" type="text" placeholder="Text Input"></br>
@@ -141,70 +186,80 @@
                     </script>
                 </p>
 
-            </fieldset>
-            <fieldset id="getCssProperty">
-                <legend>GetCssPropertySpec</legend>
-                <section id="headerSection-1">
-                    <h1 class="Test-title">Get Css Property Test Header</h1>
-                </section>
-            </fieldset>
-            <fieldset id="SetValueToElements">
-                <legend>SetValueToElementsSpec</legend>
-                <p>
-                    <label for="input__text">Text Input</label>
-                    <input id="input__text" type="text" placeholder="Text Input">
-                </p>
-                <p>
-                    <label for="input__text5" class="hidden">Hidden Text Input: </label>
-                    <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
-                </p>
-            </fieldset>
-            <fieldset id="WaitUntil">
-                <legend>WaitUntilSpec</legend>
-                <section id="WaitUntilSection">
-                    <header><h1>Text</h1></header>
-                    <div data-test="text-field-wu" id="text-field-wu">Cloudinary 1</div>
-                </section>
-            </fieldset>
-            <fieldset id="ExpectNoAttributeValue">
-                <legend>ExpectNoAttributeValueSpec</legend>
-                <section id="formsWithoutAttribute">
-                    <div id='noAttDiv' align="center" >
-                        Empty Div
-                    </div>
-                </section>
-            </fieldset>
-            <fieldset id="FindElement">
-                <legend>FindElementSpec</legend>
-                <header><h1>Find Element content</h1></header>
-                <article id="content_images">
-                    <div>
-                        <p><img src="http://placekitten.com/480/480" alt="Image alt text"></p>
-                    </div>
-                    <footer><p><a href="#top">[Top]</a></p></footer>
-                </article>
-                <!--Duplication is intended-->
-                <div data-test="text-field-1" id="multi-text-field">Cloudinary 1</div>
-                <div data-test="text-field-2"  id="multi-text-field">Cloudinary 2</div>
-            </fieldset>
-            <fieldset id="tabsTests">
-                <legend>TabsSpec</legend>
-                <section id="TabsSection-1">
-                    <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
-                    <script>
-                      function openTab() {
-                        var myWindow = window.open(this.href, "_blank", "width=200,height=100");
-                      }
-                    </script>
-                </section>
-            </fieldset>
-            <p><a href="#top">[Top]</a></p>
-        </form>
-    </section>
-</main>
-<footer role="contentinfo">
-    <p>Reference <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
-</footer>
+                </fieldset>
+                <fieldset id="getCssProperty">
+                    <legend>getCssPropertySpec</legend>
+                    <section id="headerSection-1">
+                        <h1 class="Test-title">Get Css Property Test Header</h1>
+                    </section>
+                </fieldset>
+                <fieldset id="SetValueToElements">
+                    <legend>SetValueToElementsSpec</legend>
+                    <p>
+                        <label for="input__text">Text Input</label>
+                        <input id="input__text" type="text" placeholder="Text Input">
+                    </p>
+                    <p>
+                        <label for="input__text5" class="hidden">Hidden Text Input: </label>
+                        <input type="hidden" id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input">
+                    </p>
+                </fieldset>
+                <fieldset id="WaitUntil">
+                    <legend>WaitUntilSpec</legend>
+                    <section id="WaitUntilSection">
+                        <header><h1>Text</h1></header>
+                        <div data-test="text-field-wu" id="text-field-wu">Cloudinary 1</div>
+                    </section>
+                </fieldset>
+		        <fieldset id="ExpectNoAttributeValue">
+                    <legend>ExpectNoAttributeValueSpec</legend>
+                    <section id="formsWithoutAttribute">
+                        <div id='noAttDiv' align="center" >
+                            Empty Div
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset id="FindElement">
+                    <legend>FindElementSpec</legend>
+                    <header><h1>Find Element content</h1></header>
+                    <article id="content_images">
+                        <div>
+                            <p><img src="http://placekitten.com/480/480" alt="Image alt text"></p>
+                        </div>
+                        <footer><p><a href="#top">[Top]</a></p></footer>
+                    </article>
+                    <!--Duplication is intended-->
+                    <div data-test="text-field-1" id="multi-text-field">Cloudinary 1</div>
+                    <div data-test="text-field-2"  id="multi-text-field">Cloudinary 2</div>
+                </fieldset>
+		<fieldset id="tabsTests">
+                    <legend>TabsSpec</legend>
+                    <section id="TabsSection-1">
+                        <button data-test="open-tab-btn" onclick="openTab()">Open tab</button>
+                        <script>
+                          function openTab() {
+                            var myWindow = window.open(this.href, "_blank", "width=200,height=100");
+                          }
+                        </script>
+                    </section>
+                </fieldset>
+    		 </fieldset>
+		        <fieldset id="scrollingIntoView">
+                    <legend>ScrollingIntoViewSpec</legend>
+                    <section id="scrollingIntoViewSection">
+                        <p>
+                            <label for="select">Scroll elements:</label>
+                            <a id="scrollToElementId" href="#top">[scroll to element]</a></p>
+                        </p>
+                    </section>
+                </fieldset>
+                <p><a href="#top">[Top]</a></p>
+            </form>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
+    </footer>
 </div>
 </body>
 </html>

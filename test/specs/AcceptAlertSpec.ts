@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
-const TEST_FIELD_SELECTOR: string = "//*[@id='ExpectAlertText']";
+const TEST_FIELD_SELECTOR: string = "//*[@id='AcceptAlert']";
 const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='trigger-alert']`;
 
 describeCommon('acceptAlert', () => {
