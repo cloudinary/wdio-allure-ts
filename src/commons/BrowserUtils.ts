@@ -360,7 +360,7 @@ export namespace BrowserUtils {
         Reporter.debug('Case chrome');
         tryBlock(
           () => browser.switchToFrame($(selector)),
-          'Failed to switch frame'
+          'Chrome: Failed to switch frame'
         );
         break;
       }
@@ -369,7 +369,7 @@ export namespace BrowserUtils {
         Reporter.debug('Case firefox');
         tryBlock(
           () => browser.switchToFrame(0),
-          'FireFox: Failed to switch to parent frame'
+          'FireFox: Failed to switch to frame'
         );
         break;
       }
