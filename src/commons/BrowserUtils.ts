@@ -352,10 +352,7 @@ export namespace BrowserUtils {
     isExist(selector);
 
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-    tryBlock(
-      () => browser.switchToFrame($(selector)),
-      'Failed to switch frame'
-    );
+    tryBlock(() => browser.switchToFrame(selector), 'Failed to switch frame');
     chillOut();
   }
 
