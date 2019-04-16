@@ -350,9 +350,9 @@ export namespace BrowserUtils {
     Reporter.debug(`Validate iframe with selector ${selector} exist`);
     chillOut();
     isExist(selector);
-
+    const scrollToJS: string = `document.evaluate("${selector}", ${document.getElementsByTagName("iframe")[0]}, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).contentWindow`;
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-    tryBlock(() => browser.switchToFrame(selector), 'Failed to switch frame');
+    executeScript(scrollToJS);
     chillOut();
   }
 
