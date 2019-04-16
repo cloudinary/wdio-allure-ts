@@ -350,10 +350,34 @@ export namespace BrowserUtils {
     Reporter.debug(`Validate iframe with selector ${selector} exist`);
     chillOut();
     isExist(selector);
-    const scrollToJS: string = `document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.contentWindow`;
+
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-    executeScript(scrollToJS);
+
     chillOut();
+
+    switch (browser.capabilities.browserName) {
+      case 'chrome': {
+        Reporter.debug('Case chrome');
+        tryBlock(
+          () => browser.switchToFrame($(selector)),
+          'Failed to switch frame'
+        );
+        break;
+      }
+
+      case 'firefox': {
+        Reporter.debug('Case firefox');
+        tryBlock(
+          () => browser.switchToFrame(0),
+          'FireFox: Failed to switch to parent frame'
+        );
+        break;
+      }
+
+      default: {
+        throw new TypeError('Unable to execute due to unsupported Browser');
+      }
+    }
   }
 
   /**
