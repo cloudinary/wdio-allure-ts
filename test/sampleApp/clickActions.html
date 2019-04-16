@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>External Click Action HTML</title>
+</head>
+<body>
+<fieldset id="clickActionSpec">
+    <legend>ClickActionSpec</legend>
+    <p>
+        <input id='click-button-1' type="button" value="Click" onclick="changeClickBtnValue()">
+        <script>
+          function changeClickBtnValue() {
+            var elem = document.getElementById("click-button-1");
+            if (elem.value == "Click") elem.value = "Button Clicked In Frame";
+            else elem.value = "Button Clicked In Frame Again";
+          }
+        </script>
+    <div id='div-double-click' ondblclick="doubleClickEvent()" style="border:1px solid black">
+        Double click
+    </div>
+    <script>
+      function doubleClickEvent() {
+        window.setTimeout(() => {
+          document.getElementById('div-double-click').innerHTML = "Double Click Event"
+        }, 2 * 1000);
+      }
+    </script>
+    </p>
+    <p>
+        <button type="submit">&lt;button type=submit&gt;</button>
+        <button type="button">&lt;button type=button&gt;</button>
+        <button type="reset">&lt;button type=reset&gt;</button>
+        <button type="button" disabled>&lt;button disabled&gt;</button>
+    </p>
+</fieldset>
+</body>
+</html>
