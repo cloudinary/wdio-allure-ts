@@ -30,7 +30,7 @@
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'test/**/*.ts'",
     "compile": "npm run clean && npm run prettier && npm run tslint && npm run tsc",
     "test": "npm run test:compilation && npm run test:regression",
-    "test:compilation": "npm run prepare && git diff --exit-code ./lib",
+    "test:compilation": "npm run compile && git diff --exit-code ./lib",
     "test:regression": "npm run test:regression:chrome && npm run test:regression:firefox",
     "test:regression:chrome": "wdio ./test/wdio.chrome.conf.js --suite regression",
     "test:regression:firefox": "wdio ./test/wdio.firefox.conf.js --suite regression",
