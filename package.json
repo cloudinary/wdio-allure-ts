@@ -26,15 +26,15 @@
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
     "clean": "rm -rf ./lib",
-    "compile": "tsc",
+    "tsc": "tsc",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'test/**/*.ts'",
-    "prepare": "npm run clean && npm run prettier && npm run tslint && npm run compile",
+    "compile": "npm run clean && npm run prettier && npm run tslint && npm run tsc",
     "test": "npm run test:compilation && npm run test:regression",
     "test:compilation": "npm run prepare && git diff --exit-code ./lib",
     "test:regression": "npm run test:regression:chrome && npm run test:regression:firefox",
     "test:regression:chrome": "wdio ./test/wdio.chrome.conf.js --suite regression",
     "test:regression:firefox": "wdio ./test/wdio.firefox.conf.js --suite regression",
-    "spec": "wdio ./test/wdio.chrome.local.conf.js --spec",
+    "spec": "wdio ./test/wdio.dev.conf.js --spec",
     "start:sampleApp": "ws --spa ./test/sampleApp/index.html"
   },
   "dependencies": {

@@ -352,32 +352,12 @@ export namespace BrowserUtils {
     isExist(selector);
 
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-
     chillOut();
 
-    switch (browser.capabilities.browserName) {
-      case 'chrome': {
-        Reporter.debug('Case chrome');
-        tryBlock(
-          () => browser.switchToFrame($(selector)),
-          'Chrome: Failed to switch frame'
-        );
-        break;
-      }
-
-      case 'firefox': {
-        Reporter.debug('Case firefox');
-        tryBlock(
-          () => browser.switchToFrame(0),
-          'FireFox: Failed to switch to frame'
-        );
-        break;
-      }
-
-      default: {
-        throw new TypeError('Unable to execute due to unsupported Browser');
-      }
-    }
+    tryBlock(
+      () => browser.switchToFrame($(selector)),
+      'Chrome: Failed to switch frame'
+    );
   }
 
   /**
