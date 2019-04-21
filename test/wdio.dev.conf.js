@@ -6,13 +6,23 @@ var wdioConf = require('./wdio.conf.js');
 exports.config = merge(
   wdioConf.config,
   {
+    //max instance of chrome browser instances
+    maxInstances: 1,
+
+    //Use real chrome browser with 1 instance for local testing on dev machine
     capabilities: [
       {
         browserName: 'chrome',
-        maxInstances: 5,
         'goog:chromeOptions': {
-          args: ['--incognito'],
+          args: ['--window-size=1920,1080', '--incognito'],
         },
+      },
+
+      {
+          browserName: 'firefox',
+          'moz:firefoxOptions': {
+              args: ['--height=1920', '--width=1080', '--private'],
+          },
       },
     ],
   },

@@ -348,7 +348,6 @@ export namespace BrowserUtils {
    */
   export function switchToFrame(selector: string): void {
     Reporter.debug(`Validate iframe with selector ${selector} exist`);
-    chillOut();
     isExist(selector);
 
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
