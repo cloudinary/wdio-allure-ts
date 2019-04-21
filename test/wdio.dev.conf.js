@@ -11,12 +11,12 @@ exports.config = merge(
 
     //Use real chrome browser with 1 instance for local testing on dev machine
     capabilities: [
-      // {
-      //   browserName: 'chrome',
-      //   'goog:chromeOptions': {
-      //     args: ['--window-size=1920,1080', '--incognito'],
-      //   },
-      // },
+      {
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          args: ['--window-size=1920,1080', '--incognito'],
+        },
+      },
 
       {
           browserName: 'firefox',

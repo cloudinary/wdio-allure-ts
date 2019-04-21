@@ -11,25 +11,25 @@ const FRAME_DONT_EXISTS: string = "//*[@id='iframeDontExists']";
  * wdio-allure-ts Switch to iFrame actions
  */
 describeCommon('switchToIframe', () => {
-  it('Header Text At Frame 2', () => {
+  it('Switch to iframe, header text at iFrame 2', () => {
     BrowserUtils.notVisible(FRAME_2_HEADER_1);
     BrowserUtils.switchToFrame(FRAME_TWO);
     assert.equal($(FRAME_2_HEADER_1).getText(), 'Frame 2 Heading 1');
   });
 
-  it('Header text at frame 2 not available after switch to frame 1', () => {
+  it('iframe 2 not available after switch to iframe 1', () => {
     BrowserUtils.notVisible(FRAME_2_HEADER_1);
     BrowserUtils.switchToFrame(FRAME_ONE);
     expect(() => $(FRAME_2_HEADER_1).getText()).to.throw(Error);
   });
 
-  it('Header Text OutSide Of Frames Fail After Switch To', () => {
+  it('Outside iframe context not accessible after switch', () => {
     BrowserUtils.waitForDisplayed(TEXT_OUTSIDE_OF_FRAMES);
     BrowserUtils.switchToFrame(FRAME_ONE);
     expect(() => $(TEXT_OUTSIDE_OF_FRAMES).getText()).to.throw(Error);
   });
 
-  it('Switch To Frame Wrong Xpath', () => {
+  it('Incorrect iframe selector', () => {
     expect(() => BrowserUtils.switchToFrame(FRAME_DONT_EXISTS)).to.throw(Error);
   });
 });
