@@ -184,18 +184,11 @@ export namespace BrowserUtils {
    * @param url expected current url
    */
   export function expectCurrentUrl(url: string): void {
-    Reporter.debug(`Raw URL: '${url}'`);
     const expectedUrl: string = normalizeUrl(url);
     Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
-    let currentUrl: string;
     browser.waitUntil(
       (): boolean => {
-        currentUrl = normalizeUrl(getUrl());
-        Reporter.debug(
-          `Expected URL: '${expectedUrl}', Actual URL: '${currentUrl}'`
-        );
-
-        return currentUrl === expectedUrl;
+        return expectedUrl === normalizeUrl(getUrl());
       },
       30000,
       `Url not as expected '${expectedUrl}'`
@@ -214,10 +207,8 @@ export namespace BrowserUtils {
     if (url === null) {
       throw new Error(`Illegal URL: '${url}'`);
     }
-    const normalizedURL: string = url.replace(/\/+$/, '');
-    Reporter.debug(`URL Normalized: '${normalizedURL}'`);
 
-    return normalizedURL;
+    return url.replace(/\/+$/, '');
   }
 
   /**
