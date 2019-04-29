@@ -6,6 +6,11 @@
 
 Util that blends [WebdriverIO](http://webdriver.io/ "WebdriverIO"), [TypeScript](https://www.typescriptlang.org/ "TypeScript") and [Allure Reporter](https://github.com/webdriverio/wdio-allure-reporter "Allure Reporter") in to end-to-end UI testing solution. It wraps the most common WebdriverIO actions, generating intuitive error messages in case of failure, custom logs for the Allure Reporter, more validations for enhanced stability, and last, but not least, IntelliSense.
 
+##Getting Started
+You need to install [Java JDK](https://docs.oracle.com/en/java/javase/12/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A) 8 or above, [NodeJS](https://nodejs.org/en/download/")
+
+Supported browsers [Chrome](https://www.google.com/chrome/") and [Firefox](https://www.mozilla.org/en-US/firefox/new/")
+
 ## Project Structure
 
 ### Reporter
