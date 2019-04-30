@@ -342,6 +342,21 @@
                 <div><iframe id="iframe2" src="test/sampleApp/frame2.html" height="200" width="600" style="border:none;"></iframe></div>
             </article>
         </fieldset>
+        <fieldset id="expectCurrentUrl">
+            <legend>expectCurrentUrlSpec</legend>
+            <section id="expectCurrentUrlSection">
+                <button id="openCloudinaryUrl" onclick="navigateToCloudinary()">Navigate to Cloudinary</button>
+                <script>
+                    function navigateToCloudinary() {
+                        window.setTimeout(() => {
+                                window.location.href = "https://www.cloudinary.com";
+                            },
+                            2 * 1000);
+                    }
+
+                </script>
+            </section>
+        </fieldset>
         <p><a href="#top">[Top]</a></p>
         </form>
         </section>

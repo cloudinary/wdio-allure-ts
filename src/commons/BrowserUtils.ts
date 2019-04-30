@@ -190,7 +190,7 @@ export namespace BrowserUtils {
       (): boolean => {
         return expectedUrl === normalizeUrl(getUrl());
       },
-      30000,
+      DEFAULT_TIME_OUT,
       `Url not as expected '${expectedUrl}'`
     );
   }
