@@ -7,7 +7,7 @@ const ENABLED_INPUT_SELECTOR: string =
   "//*[@id='IsEnabled']//input[@id='enabled_input']";
 const DISABLED_INPUT_SELECTOR: string =
   "//*[@id='IsEnabled']//input[@id='disabled_input']";
-describeCommon('addValue', () => {
+describeCommon('isEnabled', () => {
   it('check enabled element', () => {
     assert.isTrue(BrowserUtils.isEnabled(ENABLED_INPUT_SELECTOR));
   });
