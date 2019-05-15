@@ -5,7 +5,9 @@ import {
   LocationReturn,
   SizeReturn,
 } from '@wdio/sync';
+import admZip, { IZipEntry } from 'adm-zip';
 import { EOL } from 'os';
+import requestPromiseNative from 'request-promise-native';
 import { SpecialKeys } from '../..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
@@ -915,6 +917,76 @@ export namespace BrowserUtils {
   export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[]): void {
     Reporter.debug(`Sending Keys ${getKeyNames(keysToSend)}`);
     browser.keys(keysToSend);
+  }
+
+  /**
+   * Verify zip content, by inspecting the file names in zip
+   * Sends GET request using provided url, and parse the result as zip file
+   * if expectedNumbOfFiles not provided, will only verify that expected file names are in zip
+   * Otherwise will also validate the size is fit
+   * @param linkToZipFile link to zip file
+   * @param listOfFileNames list of files names expected in zip
+   * @param expectedNumOfFiles (optional) expected number of files in zip
+   */
+  export function verifyFilesInZip(
+    linkToZipFile: string,
+    listOfFileNames: string[],
+    expectedNumOfFiles?: number
+  ): void {
+    Reporter.debug('===Verify zip content===');
+
+    const zipFileNames: string[] = zipToBuffer(linkToZipFile);
+
+    if (
+      expectedNumOfFiles !== undefined &&
+      expectedNumOfFiles !== zipFileNames.length
+    ) {
+      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${JSON.stringify(
+        expectedNumOfFiles
+      )}', actual '${JSON.stringify(zipFileNames.length)}'`;
+      Reporter.error(incorrectLengthErrorMessage);
+      throw new Error(incorrectLengthErrorMessage);
+    }
+
+    if (
+      !listOfFileNames.every((fileName: string) =>
+        zipFileNames.includes(fileName)
+      )
+    ) {
+      const incorrectListErrorMessage: string = `Zip content not as expected. Expected [${listOfFileNames.toString()}], actual [${zipFileNames.toString()}]`;
+      Reporter.error(incorrectListErrorMessage);
+      throw new Error(incorrectListErrorMessage);
+    }
+  }
+
+  function zipToBuffer(linkToZipFile: string): string[] {
+    // tslint:disable-next-line: promise-function-async
+    const zipBuffer: Buffer = browser.call(() => {
+      return (
+        requestPromiseNative({
+          method: 'GET',
+          // tslint:disable-next-line: no-null-keyword
+          encoding: null,
+          uri: linkToZipFile,
+        })
+          .then((responseValue: Buffer) => responseValue)
+          // tslint:disable-next-line: typedef
+          .catch(() => {
+            const errorMessage: string = `Failed to get zip file from '${linkToZipFile}'`;
+            Reporter.error(errorMessage);
+            throw new Error(errorMessage);
+          })
+      );
+    });
+    const zip: admZip = new admZip(zipBuffer);
+    const zipEntries: IZipEntry[] = zip.getEntries();
+
+    return zipEntries
+      .filter(
+        (entry: IZipEntry) =>
+          entry.entryName.charAt(entry.entryName.length - 1) !== '/'
+      )
+      .map((entry: IZipEntry) => entry.entryName);
   }
 
   /**
