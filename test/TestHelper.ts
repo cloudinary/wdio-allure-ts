@@ -3,8 +3,6 @@ import { BrowserUtils } from '../src/commons/BrowserUtils';
 /**
  * Holds common methods for tests
  */
-
-// tslint:disable-next-line:no-http-string
 export const sampleAppUrl: string = 'http://127.0.0.1:8000/';
 /**
  * common describe for specs
