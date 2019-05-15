@@ -15,7 +15,7 @@ describeCommon('expectCurrentUrl', () => {
     );
   });
 
-  it('incorrect url', () => {
+  it.skip('incorrect url', () => {
     expect(() => BrowserUtils.expectCurrentUrl(CLOUDINARY_URL))
       .to.throw(Error)
       .with.property('message')
