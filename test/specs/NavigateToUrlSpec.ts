@@ -6,11 +6,11 @@ import { describeCommon, sampleAppUrl } from '../TestHelper';
  * wdio-allure-ts navigateToUrl action test
  */
 describeCommon('navigateToUrl', () => {
-  it('navigate successfully', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-  });
+    it('navigate successfully', () => {
+        BrowserUtils.navigateToUrl(sampleAppUrl);
+    });
 
-  it('should fail on malformed URL', () => {
-    expect(() => BrowserUtils.navigateToUrl('Cloudinary')).to.throw();
-  });
+    it('should fail on malformed URL', () => {
+        expect(() => BrowserUtils.navigateToUrl('Cloudinary')).to.throw();
+    });
 });
