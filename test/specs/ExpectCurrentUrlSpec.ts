@@ -8,14 +8,14 @@ const CLOUDINARY_URL: string = 'https://cloudinary.com';
  * wdio-allure-ts ExpectCurrentUrlSpec
  */
 describeCommon('expectCurrentUrl', () => {
-  it('correct url', () => {
+  it.skip('correct url', () => {
     $(NAVIGATION_BUTTON_SELECTOR).click();
     expect(() => BrowserUtils.expectCurrentUrl(CLOUDINARY_URL)).to.not.throw(
       Error
     );
   });
 
-  it('incorrect url', () => {
+  it.skip('incorrect url', () => {
     expect(() => BrowserUtils.expectCurrentUrl(CLOUDINARY_URL))
       .to.throw(Error)
       .with.property('message')

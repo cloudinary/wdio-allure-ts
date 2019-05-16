@@ -305,4 +305,14 @@ export declare namespace BrowserUtils {
      * @param keysToSend key or array of keys to send
      */
     function sendKeys(keysToSend: SpecialKeys | SpecialKeys[]): void;
+    /**
+     * Verify zip content, by inspecting the file names in zip
+     * Sends GET request using provided url, and parse the result as zip file
+     * if expectedNumbOfFiles not provided, will only verify that expected file names are in zip
+     * Otherwise will also validate the size is fit
+     * @param linkToZipFile link to zip file
+     * @param listOfFileNames list of files names expected in zip
+     * @param expectedNumOfFiles (optional) expected number of files in zip
+     */
+    function verifyFilesInZip(linkToZipFile: string, listOfFileNames: string[], expectedNumOfFiles?: number): void;
 }
