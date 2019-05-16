@@ -12,15 +12,11 @@ const CHANGE_TEXT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id=
  */
 describeCommon('expectText', () => {
   it('correct text', () => {
-    expect(() =>
-      BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary rules!')
-    ).to.not.throw();
+    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary rules!')).to.not.throw();
   });
 
   it('hidden text', () => {
-    expect(() =>
-      BrowserUtils.expectText(HIDDEN_TEXT_SELECTOR, 'Cloudinary rules!')
-    )
+    expect(() => BrowserUtils.expectText(HIDDEN_TEXT_SELECTOR, 'Cloudinary rules!'))
       .to.throw()
       .with.property('message')
       .contains('Element not visible');
@@ -34,27 +30,21 @@ describeCommon('expectText', () => {
   });
 
   it('fail on case sensitive', () => {
-    expect(() =>
-      BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'cloudinary rules!')
-    )
+    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'cloudinary rules!'))
       .to.throw(Error)
       .with.property('message')
       .contains('waitUntil condition timed out');
   });
 
   it('fail on spaces', () => {
-    expect(() =>
-      BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary  rules!')
-    )
+    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary  rules!'))
       .to.throw(Error)
       .with.property('message')
       .contains('waitUntil condition timed out');
   });
 
   it('fail on wrong text', () => {
-    expect(() =>
-      BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary not rules!')
-    )
+    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary not rules!'))
       .to.throw(Error)
       .with.property('message')
       .contains('waitUntil condition timed out');

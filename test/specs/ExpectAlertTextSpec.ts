@@ -11,9 +11,7 @@ describeCommon('expectAlertText', () => {
   });
   it('correct text', () => {
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
-    expect(() =>
-      BrowserUtils.expectAlertText('Hello! I am an alert box!')
-    ).to.not.throw();
+    expect(() => BrowserUtils.expectAlertText('Hello! I am an alert box!')).to.not.throw();
   });
   it('incorrect text', () => {
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();

@@ -10,9 +10,7 @@ const CLOUDINARY_URL: string = 'https://cloudinary.com';
 describeCommon('expectCurrentUrl', () => {
   it.skip('correct url', () => {
     $(NAVIGATION_BUTTON_SELECTOR).click();
-    expect(() => BrowserUtils.expectCurrentUrl(CLOUDINARY_URL)).to.not.throw(
-      Error
-    );
+    expect(() => BrowserUtils.expectCurrentUrl(CLOUDINARY_URL)).to.not.throw(Error);
   });
 
   it.skip('incorrect url', () => {

@@ -3,8 +3,7 @@ import { BrowserUtils } from '../../src/commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
 const HEADER: string = "//*[@id='top']/header/h1";
-const LAST_TOP_LINK: string =
-  "//*[@id='scrollingIntoView']//*[@id='scrollToElementId']";
+const LAST_TOP_LINK: string = "//*[@id='scrollingIntoView']//*[@id='scrollToElementId']";
 
 /**
  * wdio-allure-ts Scrolling Into View test
