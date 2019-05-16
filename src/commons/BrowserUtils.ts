@@ -935,15 +935,15 @@ export namespace BrowserUtils {
   ): void {
     Reporter.debug('===Verify zip content===');
 
-    const zipFileNames: string[] = zipToBuffer(linkToZipFile);
+    const zipFileNames: string[] = zipToFileNames(linkToZipFile);
 
     if (
       expectedNumOfFiles !== undefined &&
       expectedNumOfFiles !== zipFileNames.length
     ) {
-      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${JSON.stringify(
-        expectedNumOfFiles
-      )}', actual '${JSON.stringify(zipFileNames.length)}'`;
+      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${
+        zipFileNames.length
+      }'`;
       Reporter.error(incorrectLengthErrorMessage);
       throw new Error(incorrectLengthErrorMessage);
     }
@@ -959,24 +959,26 @@ export namespace BrowserUtils {
     }
   }
 
-  function zipToBuffer(linkToZipFile: string): string[] {
+  /**
+   * Send get request to the provided link
+   * Parse the response body with zip
+   * and return an array with file names from the zip file
+   */
+  function zipToFileNames(linkToZipFile: string): string[] {
     // tslint:disable-next-line: promise-function-async
     const zipBuffer: Buffer = browser.call(() => {
-      return (
-        requestPromiseNative({
-          method: 'GET',
-          // tslint:disable-next-line: no-null-keyword
-          encoding: null,
-          uri: linkToZipFile,
-        })
-          .then((responseValue: Buffer) => responseValue)
-          // tslint:disable-next-line: typedef
-          .catch(() => {
-            const errorMessage: string = `Failed to get zip file from '${linkToZipFile}'`;
-            Reporter.error(errorMessage);
-            throw new Error(errorMessage);
-          })
-      );
+      return requestPromiseNative({
+        method: 'GET',
+        // tslint:disable-next-line: no-null-keyword
+        encoding: null,
+        uri: linkToZipFile,
+      })
+        .then((responseValue: Buffer) => responseValue)
+        .catch(() => {
+          const errorMessage: string = `Failed to get zip file from '${linkToZipFile}'`;
+          Reporter.error(errorMessage);
+          throw new Error(errorMessage);
+        });
     });
     const zip: admZip = new admZip(zipBuffer);
     const zipEntries: IZipEntry[] = zip.getEntries();
