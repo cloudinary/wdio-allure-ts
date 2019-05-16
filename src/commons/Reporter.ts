@@ -4,8 +4,7 @@ import chalk, { Chalk } from 'chalk';
 /**
  * Print to standard output
  */
-const printToConsole: boolean =
-  process.env.PRINT_LOGS_TO_CONSOLE === 'true' || false;
+const printToConsole: boolean = process.env.PRINT_LOGS_TO_CONSOLE === 'true' || false;
 
 const DEBUG: string = '[DEBUG]';
 const DEBUG_COLOR: Chalk = chalk.gray;
@@ -117,11 +116,7 @@ export namespace Reporter {
     if (!isStepClosed) {
       customCommand.appendToBody(prettyMessage(logType, msg));
     } else {
-      customCommand = new CustomCommand(
-        `${logType} - ${msg}`,
-        'more info',
-        prettyMessage(logType, msg)
-      );
+      customCommand = new CustomCommand(`${logType} - ${msg}`, 'more info', prettyMessage(logType, msg));
       sendCustomCommand(customCommand);
     }
   }
@@ -130,10 +125,7 @@ export namespace Reporter {
    * Adding custom command to allure reporter
    * @param command command to add
    */
-  function sendCustomCommand(
-    command: CustomCommand,
-    stepStatus?: string
-  ): void {
+  function sendCustomCommand(command: CustomCommand, stepStatus?: string): void {
     let status: string = 'passed';
     if (stepStatus !== undefined) {
       status = stepStatus;

@@ -8,8 +8,7 @@ export namespace TestUtils {
    */
   export function randomString(length: number): string {
     let text: string = '';
-    const possible: string =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     text = Array(length)
       .join()

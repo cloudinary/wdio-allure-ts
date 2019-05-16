@@ -17,8 +17,7 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
     BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
     assert.isTrue(
       BrowserUtils.waitUntil(
-        () =>
-          BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE,
+        () => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE,
         'Some Error',
         TIMEOUT
       )
@@ -29,36 +28,25 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
     BrowserUtils.scrollIntoView(HEADER_TEXT_H1);
     expect(() =>
       BrowserUtils.waitUntil(
-        () =>
-          BrowserUtils.getText(HEADER_TEXT_H1) === INCORRECT_TEXT_ELEMENT_VALUE,
+        () => BrowserUtils.getText(HEADER_TEXT_H1) === INCORRECT_TEXT_ELEMENT_VALUE,
         `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
         TIMEOUT
       )
     )
       .to.throw(Error)
       .with.property('message')
-      .contains(
-        `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`
-      );
+      .contains(`Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`);
   });
 
   it('Validate text found within default timeout ', () => {
     BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
-    assert.isTrue(
-      BrowserUtils.waitUntil(
-        () => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE
-      )
-    );
+    assert.isTrue(BrowserUtils.waitUntil(() => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE));
   });
 
   it('Validate text not found within default timeout and default error message shown', () => {
     BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
     expect(() =>
-      BrowserUtils.waitUntil(
-        () =>
-          BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) ===
-          INCORRECT_TEXT_ELEMENT_VALUE
-      )
+      BrowserUtils.waitUntil(() => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === INCORRECT_TEXT_ELEMENT_VALUE)
     )
       .to.throw(Error)
       .with.property('message');

@@ -1,10 +1,4 @@
-import {
-  Cookie,
-  CSSProperty,
-  Element,
-  LocationReturn,
-  SizeReturn,
-} from '@wdio/sync';
+import { Cookie, CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
 import admZip, { IZipEntry } from 'adm-zip';
 import { EOL } from 'os';
 import requestPromiseNative from 'request-promise-native';
@@ -14,14 +8,9 @@ import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 
 const DEFAULT_TIME_OUT: number =
-  process.env.DEFAULT_TIME_OUT === undefined
-    ? 60000
-    : Number(process.env.DEFAULT_TIME_OUT);
+  process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
 
-const CHILL_OUT_TIME: number =
-  process.env.CHILL_OUT_TIME === undefined
-    ? 3000
-    : Number(process.env.CHILL_OUT_TIME);
+const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -33,10 +22,7 @@ export namespace BrowserUtils {
    */
   export function executeScript(script: string): void {
     Reporter.debug(`Executing script: '${script}'`);
-    tryBlock(
-      () => browser.execute(script),
-      `Failed to execute script: ${script}`
-    );
+    tryBlock(() => browser.execute(script), `Failed to execute script: ${script}`);
   }
 
   /**
@@ -68,10 +54,7 @@ export namespace BrowserUtils {
   export function addValue(selector: string, value: string | number): void {
     Reporter.debug(`Add value: '${value}' to '${selector}'`);
     isDisplayed(selector);
-    tryBlock(
-      () => $(selector).addValue(value),
-      `Failed to add value: '${value}' to '${selector}'`
-    );
+    tryBlock(() => $(selector).addValue(value), `Failed to add value: '${value}' to '${selector}'`);
   }
   /**
    * Set a value to an element located by selector
@@ -81,10 +64,7 @@ export namespace BrowserUtils {
   export function setValue(selector: string, value: string | number): void {
     Reporter.debug(`Set element '${selector} with value: '${value}'`);
     isDisplayed(selector);
-    tryBlock(
-      () => $(selector).setValue(value),
-      `Failed to set value: '${value}' to '${selector}'`
-    );
+    tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
   /**
@@ -93,16 +73,10 @@ export namespace BrowserUtils {
    * @param selector elements selector
    * @param value text value to set or numeric value
    */
-  export function setHiddenElementValue(
-    selector: string,
-    value: string | number
-  ): void {
+  export function setHiddenElementValue(selector: string, value: string | number): void {
     Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
     isExist(selector);
-    tryBlock(
-      () => $(selector).setValue(value),
-      `Failed to set value: '${value}' to '${selector}'`
-    );
+    tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
   /**
@@ -133,10 +107,8 @@ export namespace BrowserUtils {
     waitForEnabled(selector);
 
     const targetElement: string = `var targetElement = document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;`;
-    const clickEvent: string =
-      " var clickEvent  = document.createEvent ('MouseEvents');";
-    const clickEventInit: string =
-      "clickEvent.initEvent ('dblclick', true, true);";
+    const clickEvent: string = " var clickEvent  = document.createEvent ('MouseEvents');";
+    const clickEventInit: string = "clickEvent.initEvent ('dblclick', true, true);";
     const dispatchEvent: string = 'targetElement.dispatchEvent (clickEvent);';
 
     const script: string = `${targetElement}${clickEvent}${clickEventInit}${dispatchEvent}`;
@@ -241,10 +213,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Select by text '${value}' from '${selector}'`);
     isExist(selector);
 
-    tryBlock(
-      () => $(selector).selectByAttribute('value', value),
-      `Failed to select ${value} from ${selector}`
-    );
+    tryBlock(() => $(selector).selectByAttribute('value', value), `Failed to select ${value} from ${selector}`);
   }
 
   /**
@@ -263,10 +232,7 @@ export namespace BrowserUtils {
   export function waitForEnabled(selector: string): void {
     Reporter.debug(`Wait for an element to be enabled '${selector}'`);
     waitForDisplayed(selector);
-    tryBlock(
-      () => $(selector).waitForEnabled(DEFAULT_TIME_OUT),
-      `Element not enabled '${selector}'`
-    );
+    tryBlock(() => $(selector).waitForEnabled(DEFAULT_TIME_OUT), `Element not enabled '${selector}'`);
   }
 
   /**
@@ -286,10 +252,7 @@ export namespace BrowserUtils {
   export function waitForDisplayed(selector: string): void {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
     isExist(selector);
-    tryBlock(
-      () => $(selector).waitForDisplayed(DEFAULT_TIME_OUT),
-      `Element not visible '${selector}'`
-    );
+    tryBlock(() => $(selector).waitForDisplayed(DEFAULT_TIME_OUT), `Element not visible '${selector}'`);
   }
 
   /**
@@ -299,10 +262,7 @@ export namespace BrowserUtils {
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist '${selector}'`);
 
-    tryBlock(
-      () => $(selector).waitForExist(DEFAULT_TIME_OUT),
-      `Element not exist '${selector}'`
-    );
+    tryBlock(() => $(selector).waitForExist(DEFAULT_TIME_OUT), `Element not exist '${selector}'`);
   }
 
   /**
@@ -344,10 +304,7 @@ export namespace BrowserUtils {
     isExist(selector);
 
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-    tryBlock(
-      () => browser.switchToFrame($(selector)),
-      'Failed to switch frame'
-    );
+    tryBlock(() => browser.switchToFrame($(selector)), 'Failed to switch frame');
     chillOut();
   }
 
@@ -358,10 +315,7 @@ export namespace BrowserUtils {
   export function switchTab(handle: string): void {
     Reporter.debug(`Switching tab by id: '${handle}'`);
 
-    tryBlock(
-      () => browser.switchToWindow(handle),
-      `Failed switch to tab by id: '${handle}'`
-    );
+    tryBlock(() => browser.switchToWindow(handle), `Failed switch to tab by id: '${handle}'`);
   }
 
   /**
@@ -380,17 +334,12 @@ export namespace BrowserUtils {
    * so the focus will be back on main page
    */
   export function switchToParentFrame(): void {
-    Reporter.debug(
-      `Switching to parent frame (${browser.capabilities.browserName})`
-    );
+    Reporter.debug(`Switching to parent frame (${browser.capabilities.browserName})`);
 
     switch (browser.capabilities.browserName) {
       case 'chrome': {
         Reporter.debug('Case chrome');
-        tryBlock(
-          () => browser.switchToParentFrame(),
-          'Chrome: Failed to switch to parent frame'
-        );
+        tryBlock(() => browser.switchToParentFrame(), 'Chrome: Failed to switch to parent frame');
         break;
       }
 
@@ -415,16 +364,10 @@ export namespace BrowserUtils {
    * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
-  export function findElement(
-    selectorType: SelectorType,
-    selector: string
-  ): string {
+  export function findElement(selectorType: SelectorType, selector: string): string {
     Reporter.debug(`Find element '${selector}' of type '${selectorType}'`);
 
-    return tryBlock(
-      () => browser.findElement(selectorType, selector),
-      'Failed to find element'
-    );
+    return tryBlock(() => browser.findElement(selectorType, selector), 'Failed to find element');
   }
 
   /**
@@ -432,14 +375,8 @@ export namespace BrowserUtils {
    * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
-  export function findElements(
-    selectorType: SelectorType,
-    selector: string
-  ): string[] {
-    return tryBlock(
-      () => browser.findElements(selectorType, selector),
-      'Failed to find elements'
-    );
+  export function findElements(selectorType: SelectorType, selector: string): string[] {
+    return tryBlock(() => browser.findElements(selectorType, selector), 'Failed to find elements');
   }
   /**
    * Hover over an element by given selector
@@ -461,9 +398,7 @@ export namespace BrowserUtils {
    * @param expectedText expected text
    */
   export function expectText(selector: string, expectedText: string): void {
-    Reporter.debug(
-      `Validate element text is '${expectedText}' by selector '${selector}'`
-    );
+    Reporter.debug(`Validate element text is '${expectedText}' by selector '${selector}'`);
     waitForDisplayed(selector);
     const elementWithText: Element = $(selector);
     tryBlock(
@@ -483,10 +418,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Get element's text by selector '${selector}'`);
     waitForDisplayed(selector);
 
-    return tryBlock(
-      () => $(selector).getText(),
-      `Failed to get text from element '${selector}'`
-    );
+    return tryBlock(() => $(selector).getText(), `Failed to get text from element '${selector}'`);
   }
 
   /**
@@ -496,13 +428,8 @@ export namespace BrowserUtils {
    * @param expectedValue expected number of items
    * @param selector - element locator
    */
-  export function expectNumberOfElements(
-    selector: string,
-    expectedValue: number
-  ): void {
-    Reporter.debug(
-      `Expect Number Of Elements, '${expectedValue}' in '${selector}'`
-    );
+  export function expectNumberOfElements(selector: string, expectedValue: number): void {
+    Reporter.debug(`Expect Number Of Elements, '${expectedValue}' in '${selector}'`);
     if (expectedValue === 0) {
       notVisible(selector);
     }
@@ -524,13 +451,8 @@ export namespace BrowserUtils {
    * @param selector selector of an element to scroll to
    * @param listSelector selector of list to scroll
    */
-  export function scrollToElement(
-    selector: string,
-    listSelector: string
-  ): void {
-    Reporter.debug(
-      `Scroll in list '${listSelector}' until element '${selector}' is visible.`
-    );
+  export function scrollToElement(selector: string, listSelector: string): void {
+    Reporter.debug(`Scroll in list '${listSelector}' until element '${selector}' is visible.`);
 
     isExist(listSelector); // need to verify list is loaded
     let last: number = $$(listSelector).length;
@@ -559,10 +481,7 @@ export namespace BrowserUtils {
    * @param iframeSelector iFrame selector
    * @param expectedVisibility expected visibility status
    */
-  export function isIframeVisible(
-    iframeSelector: string,
-    expectedVisibility: boolean
-  ): void {
+  export function isIframeVisible(iframeSelector: string, expectedVisibility: boolean): void {
     Reporter.debug(`Check iframe visibility is '${expectedVisibility}'`);
 
     switchToParentFrame(); //if iframe already focused, isExist will fail
@@ -588,10 +507,7 @@ export namespace BrowserUtils {
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    */
-  export function getAttribute(
-    selector: string,
-    attributeName: string
-  ): string {
+  export function getAttribute(selector: string, attributeName: string): string {
     return tryBlock(
       () => getAttributeAndVerify(selector, attributeName),
       `Failed to get '${attributeName}' attribute from '${selector}'`
@@ -603,20 +519,12 @@ export namespace BrowserUtils {
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    */
-  function getAttributeAndVerify(
-    selector: string,
-    attributeName: string
-  ): string {
-    Reporter.debug(
-      `Get Attribute '${attributeName}' in element '${selector}' And Verify not null.`
-    );
+  function getAttributeAndVerify(selector: string, attributeName: string): string {
+    Reporter.debug(`Get Attribute '${attributeName}' in element '${selector}' And Verify not null.`);
     isExist(selector);
 
     // @ts-ignore
-    const stringResults: string =
-      $$(selector).length === 1
-        ? $(selector).getAttribute(attributeName)
-        : undefined;
+    const stringResults: string = $$(selector).length === 1 ? $(selector).getAttribute(attributeName) : undefined;
 
     //Check for multiple results or no element found
     if (stringResults === null || stringResults === undefined) {
@@ -634,14 +542,8 @@ export namespace BrowserUtils {
    * @param attributeName attribute name to search for
    * @param value value in attribute
    */
-  export function expectAttributeValue(
-    selector: string,
-    attributeName: string,
-    value: string
-  ): void {
-    Reporter.debug(
-      `Validate element '${selector}' has attribute '${attributeName}' which contains '${value}'`
-    );
+  export function expectAttributeValue(selector: string, attributeName: string, value: string): void {
+    Reporter.debug(`Validate element '${selector}' has attribute '${attributeName}' which contains '${value}'`);
     let attributeValue: string;
 
     tryBlock(
@@ -661,11 +563,7 @@ export namespace BrowserUtils {
    * @param attributeName attribute name to search for
    * @param value value NOT in attribute
    */
-  export function expectNoAttributeValue(
-    selector: string,
-    attributeName: string,
-    value: string
-  ): void {
+  export function expectNoAttributeValue(selector: string, attributeName: string, value: string): void {
     let attributeValue: string;
     Reporter.debug(
       `Validate element '${selector}' doesn't have attribute '${attributeName}' which contains '${value}'`
@@ -688,15 +586,10 @@ export namespace BrowserUtils {
    */
   function isContainWord(fullText: string, word: string): boolean {
     if (fullText === null || word === null) {
-      throw new Error(
-        `Some of the strings or all are null. fullText: '${fullText}', word: '${word}`
-      );
+      throw new Error(`Some of the strings or all are null. fullText: '${fullText}', word: '${word}`);
     }
     // escape special characters from user input
-    const wordEscapedChars: string = word.replace(
-      /[-\/\\^$*+?.()|[\]{}]/g,
-      '\\$&'
-    );
+    const wordEscapedChars: string = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 
     const regexStr: string = `(^|\\s)${wordEscapedChars}(?=\\s|$)`;
 
@@ -708,13 +601,8 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param cssPropertyName  css property name
    */
-  export function getCssProperty(
-    selector: string,
-    cssPropertyName: string
-  ): CSSProperty {
-    Reporter.debug(
-      `Get css property '${cssPropertyName}' from element by '${selector}'`
-    );
+  export function getCssProperty(selector: string, cssPropertyName: string): CSSProperty {
+    Reporter.debug(`Get css property '${cssPropertyName}' from element by '${selector}'`);
 
     return tryBlock(
       () => $(selector).getCSSProperty(cssPropertyName),
@@ -752,10 +640,7 @@ export namespace BrowserUtils {
    * Get current Url
    */
   export function getUrl(): string {
-    const currentUrl: string = tryBlock(
-      () => browser.getUrl(),
-      'Failed to get current url'
-    );
+    const currentUrl: string = tryBlock(() => browser.getUrl(), 'Failed to get current url');
     Reporter.debug(`Get current URL: '${currentUrl}'`);
 
     return currentUrl;
@@ -818,18 +703,12 @@ export namespace BrowserUtils {
     Reporter.debug(`Set window size to '${width}X${height}'`);
     switch (browser.capabilities.browserName) {
       case 'chrome': {
-        tryBlock(
-          () => browser.setWindowSize(width, height),
-          'Chrome: Failed to resize window'
-        );
+        tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
         break;
       }
 
       case 'firefox': {
-        tryBlock(
-          () => browser.setWindowRect(0, 0, width, height),
-          'FireFox: Failed to resize window'
-        );
+        tryBlock(() => browser.setWindowRect(0, 0, width, height), 'FireFox: Failed to resize window');
         break;
       }
 
@@ -842,17 +721,11 @@ export namespace BrowserUtils {
   export function getWindowSize(): object {
     Reporter.debug('Get window size');
     if (browser.capabilities.browserName === 'chrome') {
-      return tryBlock(
-        () => browser.getWindowSize(),
-        'Chrome: Failed to get window size'
-      );
+      return tryBlock(() => browser.getWindowSize(), 'Chrome: Failed to get window size');
     }
 
     if (browser.capabilities.browserName === 'firefox') {
-      return tryBlock(
-        () => browser.getWindowRect(),
-        'FireFox: Failed to get window size'
-      );
+      return tryBlock(() => browser.getWindowRect(), 'FireFox: Failed to get window size');
     }
 
     throw new TypeError('Unable to execute due to unsupported Browser');
@@ -864,8 +737,7 @@ export namespace BrowserUtils {
    */
   export function pressMouseButton(mouseButton: MouseButton): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: number =
-      mouseButton === undefined ? MouseButton.LEFT : mouseButton;
+    const selectedMouseButton: number = mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Click mouse button '${selectedMouseButton}'`);
     browser.buttonDown(selectedMouseButton);
   }
@@ -875,14 +747,8 @@ export namespace BrowserUtils {
    * @param xOffset - X (Pixels) offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
    * @param yOffset - Y (Pixels) offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
    */
-  export function moveMouseCursorTo(
-    selector: string,
-    xOffset: number,
-    yOffset: number
-  ): void {
-    Reporter.debug(
-      `Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`
-    );
+  export function moveMouseCursorTo(selector: string, xOffset: number, yOffset: number): void {
+    Reporter.debug(`Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`);
 
     isExist(selector);
     $(selector).moveTo(xOffset, yOffset);
@@ -893,8 +759,7 @@ export namespace BrowserUtils {
    */
   export function releaseMouseButton(mouseButton: number): void {
     //Defaults to the left mouse button if not specified.
-    const selectedMouseButton: number =
-      mouseButton === undefined ? MouseButton.LEFT : mouseButton;
+    const selectedMouseButton: number = mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Release mouse button '${selectedMouseButton}'`);
     browser.buttonUp(selectedMouseButton);
   }
@@ -937,10 +802,7 @@ export namespace BrowserUtils {
 
     const zipFileNames: string[] = zipToFileNames(linkToZipFile);
 
-    if (
-      expectedNumOfFiles !== undefined &&
-      expectedNumOfFiles !== zipFileNames.length
-    ) {
+    if (expectedNumOfFiles !== undefined && expectedNumOfFiles !== zipFileNames.length) {
       const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${
         zipFileNames.length
       }'`;
@@ -948,11 +810,7 @@ export namespace BrowserUtils {
       throw new Error(incorrectLengthErrorMessage);
     }
 
-    if (
-      !listOfFileNames.every((fileName: string) =>
-        zipFileNames.includes(fileName)
-      )
-    ) {
+    if (!listOfFileNames.every((fileName: string) => zipFileNames.includes(fileName))) {
       const incorrectListErrorMessage: string = `Zip content not as expected. Expected [${listOfFileNames.toString()}], actual [${zipFileNames.toString()}]`;
       Reporter.error(incorrectListErrorMessage);
       throw new Error(incorrectListErrorMessage);
@@ -984,10 +842,7 @@ export namespace BrowserUtils {
     const zipEntries: IZipEntry[] = zip.getEntries();
 
     return zipEntries
-      .filter(
-        (entry: IZipEntry) =>
-          entry.entryName.charAt(entry.entryName.length - 1) !== '/'
-      )
+      .filter((entry: IZipEntry) => entry.entryName.charAt(entry.entryName.length - 1) !== '/')
       .map((entry: IZipEntry) => entry.entryName);
   }
 
@@ -999,9 +854,7 @@ export namespace BrowserUtils {
   function getKeyNames(keysToSend: SpecialKeys | SpecialKeys[]): string {
     let retVal: string = '';
     for (const currKey of keysToSend) {
-      const curr: string = Object.keys(SpecialKeys).find(
-        (key: string) => SpecialKeys[key] === currKey
-      );
+      const curr: string = Object.keys(SpecialKeys).find((key: string) => SpecialKeys[key] === currKey);
       retVal = retVal.concat(`${curr}+`);
     }
 

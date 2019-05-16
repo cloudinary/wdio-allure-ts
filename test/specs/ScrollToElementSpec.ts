@@ -23,9 +23,7 @@ describeCommon('scrollToElement', () => {
   it('fail to scroll', () => {
     const elementToScrollSelector: string = `${TEST_FIELD_SELECTOR}//*[@id='div-item' and text()='my awesome new div 100']`;
     assert.isFalse($(elementToScrollSelector).isDisplayed());
-    expect(() =>
-      BrowserUtils.scrollToElement(elementToScrollSelector, LIST_SELECTOR)
-    )
+    expect(() => BrowserUtils.scrollToElement(elementToScrollSelector, LIST_SELECTOR))
       .to.throw(Error)
       .with.property('message')
       .contains('Failed to scroll to');
