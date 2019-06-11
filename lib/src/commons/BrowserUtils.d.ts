@@ -302,9 +302,9 @@ export declare namespace BrowserUtils {
     /**
      * Send a sequence of key strokes to the active element
      * it can be single key or an array of keys
-     * @param keysToSend key or array of keys to send
+     * @param keysToSend key, array of keys or string array (chars) to send
      */
-    function sendKeys(keysToSend: SpecialKeys | SpecialKeys[]): void;
+    function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string): void;
     /**
      * Verify zip content, by inspecting the file names in zip
      * Sends GET request using provided url, and parse the result as zip file
