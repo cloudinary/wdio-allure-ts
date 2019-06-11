@@ -13,26 +13,24 @@ describeCommon('Send Keys', () => {
   it('String array ', () => {
     $(TEXT_INPUT).clearValue();
     $(TEXT_INPUT).click();
-    BrowserUtils.sendKeys(text.split(''));
+    BrowserUtils.sendKeys(text);
     assert.equal($(TEXT_INPUT).getValue(), text);
   });
 
   it('Add text', () => {
     $(TEXT_INPUT).clearValue();
     $(TEXT_INPUT).click();
-    BrowserUtils.sendKeys(text.split(''));
-    $(TEXT_INPUT).click();
-    BrowserUtils.sendKeys(text.split(''));
+    BrowserUtils.sendKeys(text);
+    BrowserUtils.sendKeys(text);
     assert.equal($(TEXT_INPUT).getValue(), `${text}${text}`);
   });
 
   it('Add text after sending enter for new line', () => {
     $(TEXT_INPUT).clearValue();
     $(TEXT_INPUT).click();
-    BrowserUtils.sendKeys(text.split(''));
-    $(TEXT_INPUT).click();
+    BrowserUtils.sendKeys(text);
     BrowserUtils.sendKeys(SpecialKeys.ENTER);
-    BrowserUtils.sendKeys(text.split(''));
+    BrowserUtils.sendKeys(text);
     assert.equal($(TEXT_INPUT).getValue(), `${text}\n${text}`);
   });
 
@@ -40,10 +38,9 @@ describeCommon('Send Keys', () => {
     const specialKeysArray: SpecialKeys[] = [SpecialKeys.ENTER, SpecialKeys.ENTER, SpecialKeys.ENTER];
     $(TEXT_INPUT).clearValue();
     $(TEXT_INPUT).click();
-    BrowserUtils.sendKeys(text.split(''));
-    $(TEXT_INPUT).click();
+    BrowserUtils.sendKeys(text);
     BrowserUtils.sendKeys(specialKeysArray);
-    BrowserUtils.sendKeys(text.split(''));
+    BrowserUtils.sendKeys(text);
     assert.equal($(TEXT_INPUT).getValue(), `${text}\n\n\n${text}`);
   });
 });

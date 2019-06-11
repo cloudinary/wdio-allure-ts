@@ -304,7 +304,7 @@ export declare namespace BrowserUtils {
      * it can be single key or an array of keys
      * @param keysToSend key, array of keys or string array (chars) to send
      */
-    function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string[]): void;
+    function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string): void;
     /**
      * Verify zip content, by inspecting the file names in zip
      * Sends GET request using provided url, and parse the result as zip file
