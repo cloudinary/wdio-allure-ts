@@ -43,4 +43,13 @@ describeCommon('Send Keys', () => {
     BrowserUtils.sendKeys(text);
     assert.equal($(TEXT_INPUT).getValue(), `${text}\n\n\n${text}`);
   });
+
+  it.only('Special Key Emoji', () => {
+    $(TEXT_INPUT).clearValue();
+    $(TEXT_INPUT).click();
+    BrowserUtils.sendKeys(SpecialKeys.EMOJI_HEART);
+    BrowserUtils.sendKeys(SpecialKeys.ENTER);
+    BrowserUtils.sendKeys(SpecialKeys.EMOJI_HEART);
+    assert.equal($(TEXT_INPUT).getValue(), `❤\n❤`);
+  });
 });
