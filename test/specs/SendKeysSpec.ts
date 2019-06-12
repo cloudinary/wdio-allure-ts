@@ -50,6 +50,6 @@ describeCommon('Send Keys', () => {
     BrowserUtils.sendKeys(SpecialKeys.EMOJI_HEART);
     BrowserUtils.sendKeys(SpecialKeys.ENTER);
     BrowserUtils.sendKeys(SpecialKeys.EMOJI_HEART);
-    assert.equal($(TEXT_INPUT).getValue(), `❤\n❤`);
+    assert.equal($(TEXT_INPUT).getValue(), `\u2766\n\u2766`);
   });
 });

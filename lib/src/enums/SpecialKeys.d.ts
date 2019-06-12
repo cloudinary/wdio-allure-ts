@@ -10,6 +10,6 @@ export declare enum SpecialKeys {
     ARROW_DOWN = "\uE015",
     TAB = "\uE004",
     ESCAPE = "\uE00C",
-    EMOJI_HEART = "\u2764",
+    EMOJI_HEART = "\u2766",
     EMOJI_POOP = "\uD83D\uDCA9"
 }

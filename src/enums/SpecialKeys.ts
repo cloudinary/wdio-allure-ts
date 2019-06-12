@@ -10,6 +10,6 @@ export enum SpecialKeys {
   ARROW_DOWN = '\uE015',
   TAB = '\uE004',
   ESCAPE = '\uE00C',
-  EMOJI_HEART = '❤', //In The BMP (basic multilingual plane)
-  EMOJI_POOP = '💩', //Above The BMP bug in chrome prevents us from using it
+  EMOJI_HEART = '\u2766', //In The BMP (basic multilingual plane)
+  EMOJI_POOP = '\uD83D\uDCA9', //Above The BMP bug in chrome prevents us from using it
 }
