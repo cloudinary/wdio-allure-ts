@@ -44,7 +44,7 @@ describeCommon('Send Keys', () => {
     assert.equal($(TEXT_INPUT).getValue(), `${text}\n\n\n${text}`);
   });
 
-  it.only('Special Key Emoji', () => {
+  it('Special Key Emoji', () => {
     $(TEXT_INPUT).clearValue();
     $(TEXT_INPUT).click();
     BrowserUtils.sendKeys(SpecialKeys.EMOJI_HEART);
