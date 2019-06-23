@@ -26,15 +26,15 @@
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
     "clean": "rm -rf ./lib",
-    "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'test/**/*.ts'",
+    "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "compile": "npm run clean && npm run prettier && npm run tslint && tsc",
     "test": "npm run test:compilation && npm run test:regression",
     "test:compilation": "npm run compile && git diff --exit-code ./lib",
     "test:regression": "npm run test:regression:chrome && npm run test:regression:firefox",
-    "test:regression:chrome": "wdio ./test/wdio.chrome.conf.js --suite regression",
-    "test:regression:firefox": "wdio ./test/wdio.firefox.conf.js --suite regression",
-    "spec": "wdio ./test/wdio.dev.conf.js --spec",
-    "start:sampleApp": "ws --spa ./test/sampleApp/index.html"
+    "test:regression:chrome": "wdio src/test/wdio.chrome.conf.js --suite regression",
+    "test:regression:firefox": "wdio src/test/wdio.firefox.conf.js --suite regression",
+    "spec": "wdio src/test/wdio.dev.conf.js --spec",
+    "start:sampleApp": "ws --spa src/test/sampleApp/index.html"
   },
   "dependencies": {
     "@types/adm-zip": "^0.4.32",
@@ -43,7 +43,8 @@
     "@wdio/sync": "^5.7.13",
     "adm-zip": "^0.4.13",
     "chalk": "^2.4.2",
-    "request-promise-native": "^1.0.7"
+    "request-promise-native": "^1.0.7",
+    "chai": "^4.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
@@ -54,7 +55,6 @@
     "@wdio/mocha-framework": "^5.7.14",
     "@wdio/selenium-standalone-service": "^5.7.8",
     "@wdio/spec-reporter": "^5.7.13",
-    "chai": "^4.2.0",
     "chai-string": "1.5.0",
     "local-web-server": "2.6.1",
     "prettier": "1.16.4",
