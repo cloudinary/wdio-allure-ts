@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { BrowserUtils } from '../../commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
-const linkToZip: string = 'http://127.0.0.1:8000/test/resources/archiveWithFiles.zip';
+const linkToZip: string = 'http://127.0.0.1:8000/src/test/resources/archiveWithFiles.zip';
 const fileNamesList: string[] = ['firstFile.txt', 'secondFile.jpeg', 'innerFolder/thirdFile.doc'];
 /**
  * verifyFilesInZip
