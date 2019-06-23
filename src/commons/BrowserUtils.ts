@@ -2,9 +2,9 @@ import { Cookie, CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/
 import admZip, { IZipEntry } from 'adm-zip';
 import { EOL } from 'os';
 import requestPromiseNative from 'request-promise-native';
-import { SpecialKeys } from '../..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
+import { SpecialKeys } from '../index';
 import { Reporter } from './Reporter';
 
 const DEFAULT_TIME_OUT: number =
