@@ -22,8 +22,4 @@ describeCommon('getNumberOfElements', () => {
       .with.property('message')
       .contains('selector needs to be typeof `string` or `function`');
   });
-
-  it('illegal selector', () => {
-    assert.equal(BrowserUtils.getNumberOfElements('//bla'), 0, 'Incorrect number of elements');
-  });
 });
