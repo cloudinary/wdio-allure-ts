@@ -11,5 +11,6 @@ export declare enum SpecialKeys {
     TAB = "\uE004",
     ESCAPE = "\uE00C",
     EMOJI_HEART = "\u2766",
-    EMOJI_POOP = "\uD83D\uDCA9"
+    EMOJI_POOP = "\uD83D\uDCA9",
+    HTML_NON_BREAKING_SPACE = "&nbsp;"
 }
