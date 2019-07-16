@@ -247,9 +247,8 @@ export declare namespace BrowserUtils {
      * Otherwise will first navigate to required domain(should be valid url),
      *  set the cookie and navigate back to page it started from
      * @param cookie cookie to set
-     * @param domain domain to set cookie for
      */
-    function setCookie(cookie: Cookie, domain: string): void;
+    function setCookie(cookie: Cookie): void;
     /**
      * Get current Url
      */
