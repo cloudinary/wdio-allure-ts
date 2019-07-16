@@ -300,6 +300,12 @@ export declare namespace BrowserUtils {
      */
     function getElementLocation(selector: string): LocationReturn;
     /**
+     * Get number of elements in dom by selector
+     *
+     * @param selector - selector of elements to count
+     */
+    function getNumberOfElements(selector: string): number;
+    /**
      * Send a sequence of key strokes to the active element
      * it can be single key or an array of keys
      * @param keysToSend key, array of keys or string array (chars) to send
