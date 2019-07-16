@@ -618,12 +618,20 @@ export namespace BrowserUtils {
    * @param cookie cookie to set
    * @param domain domain to set cookie for
    */
-  export function setCookie(cookie: Cookie, domain?: string): void {
-    if (domain !== null && domain !== undefined) {
-      cookie.domain = domain;
-    }
+  export function setCookie(cookie: Cookie, domain: string): void {
     Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
+
+    let currentUrl: string;
+    if (domain !== null) {
+      currentUrl = getUrl();
+      navigateToUrl(domain);
+    }
+
     browser.setCookies(cookie);
+
+    if (domain !== null) {
+      navigateToUrl(currentUrl);
+    }
   }
 
   /**
