@@ -616,8 +616,12 @@ export namespace BrowserUtils {
    * Otherwise will first navigate to required domain(should be valid url),
    *  set the cookie and navigate back to page it started from
    * @param cookie cookie to set
+   * @param domain domain to set cookie for
    */
-  export function setCookie(cookie: Cookie): void {
+  export function setCookie(cookie: Cookie, domain?: string): void {
+    if (domain !== undefined) {
+      cookie.domain = domain;
+    }
     Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
     browser.setCookies(cookie);
   }

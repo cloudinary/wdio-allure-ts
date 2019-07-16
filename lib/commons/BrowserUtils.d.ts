@@ -91,6 +91,7 @@ export declare namespace BrowserUtils {
      * @param timeout - specified time out if undefined Default time out is used
      * @param errMessage - Custom message for time out
      */
+    // tslint:disable-next-line:no-any
     function waitUntil(action: Function, errMessage?: string, timeout?: number): any;
     /**
      * Select a value in element
@@ -247,8 +248,9 @@ export declare namespace BrowserUtils {
      * Otherwise will first navigate to required domain(should be valid url),
      *  set the cookie and navigate back to page it started from
      * @param cookie cookie to set
+     * @param domain domain to set cookie for
      */
-    function setCookie(cookie: Cookie): void;
+    function setCookie(cookie: Cookie, domain?: string): void;
     /**
      * Get current Url
      */
