@@ -619,7 +619,7 @@ export namespace BrowserUtils {
    * @param domain domain to set cookie for
    */
   export function setCookie(cookie: Cookie, domain?: string): void {
-    if (domain !== undefined) {
+    if (domain !== undefined && domain !== null) {
       cookie.domain = domain;
     }
     Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
