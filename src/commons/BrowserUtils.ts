@@ -10,7 +10,6 @@ import { Reporter } from './Reporter';
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
 
-const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -305,7 +304,6 @@ export namespace BrowserUtils {
 
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
     tryBlock(() => browser.switchToFrame($(selector)), 'Failed to switch frame');
-    chillOut();
   }
 
   /**
@@ -865,14 +863,6 @@ export namespace BrowserUtils {
     }
 
     return retVal.substring(0, retVal.length - 1);
-  }
-
-  /**
-   * When switching between iframes, without wait it will fail to switch to iframe
-   */
-  function chillOut(): void {
-    Reporter.debug(`wait for ${CHILL_OUT_TIME}ms`);
-    browser.pause(CHILL_OUT_TIME);
   }
 
   /**
