@@ -765,6 +765,17 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Get number of elements in dom by selector
+   *
+   * @param selector - selector of elements to count
+   */
+  export function getNumberOfElements(selector: string): number {
+    Reporter.debug(`Get number of elements by selector '${selector}'`);
+
+    return $$(selector).length;
+  }
+
+  /**
    * Send a sequence of key strokes to the active element
    * it can be single key or an array of keys
    * @param keysToSend key, array of keys or string array (chars) to send
