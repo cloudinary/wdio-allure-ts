@@ -1,8 +1,8 @@
 /// <reference types="@wdio/sync/webdriverio-core" />
 import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
+import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
-import { SpecialKeys } from '../index';
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -249,7 +249,7 @@ export declare namespace BrowserUtils {
      * @param cookie cookie to set
      * @param domain domain to set cookie for
      */
-    function setCookie(cookie: Cookie, domain: string): void;
+    function setCookie(cookie: Cookie, domain?: string): void;
     /**
      * Get current Url
      */

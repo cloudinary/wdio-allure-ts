@@ -2,9 +2,9 @@ import { Cookie, CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/
 import admZip, { IZipEntry } from 'adm-zip';
 import { EOL } from 'os';
 import requestPromiseNative from 'request-promise-native';
+import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
-import { SpecialKeys } from '../index';
 import { Reporter } from './Reporter';
 
 const DEFAULT_TIME_OUT: number =
@@ -618,20 +618,12 @@ export namespace BrowserUtils {
    * @param cookie cookie to set
    * @param domain domain to set cookie for
    */
-  export function setCookie(cookie: Cookie, domain: string): void {
+  export function setCookie(cookie: Cookie, domain?: string): void {
+    if (domain !== null && domain !== undefined) {
+      cookie.domain = domain;
+    }
     Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
-
-    let currentUrl: string;
-    if (domain !== null) {
-      currentUrl = getUrl();
-      navigateToUrl(domain);
-    }
-
     browser.setCookies(cookie);
-
-    if (domain !== null) {
-      navigateToUrl(currentUrl);
-    }
   }
 
   /**
