@@ -1,8 +1,8 @@
 /// <reference types="@wdio/sync/webdriverio-core" />
 import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
+import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
-import { SpecialKeys } from '../index';
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
