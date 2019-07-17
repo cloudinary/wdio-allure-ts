@@ -322,6 +322,19 @@
                     </div>
                 </section>
             </fieldset>
+        <fieldset id="NotExist">
+            <legend>NotExist</legend>
+            <button id="existing-button">Click does nothing</button>
+            <button id="not-existing-button" onclick="removeButton()">Click to remove</button>
+            <script>
+                function removeButton() {
+                    setTimeout(() => {
+                        var elem = document.getElementById("not-existing-button");
+                        elem.parentNode.removeChild(elem);
+                    }, 1000);
+                }
+            </script>
+        </fieldset>
             <fieldset id="FindElement">
                 <legend>FindElementSpec</legend>
                 <header>
@@ -376,6 +389,9 @@
             <script type="text/javascript">
                 function enableAfterSec() {
                     setTimeout(() => {
+                        document.getElementById("disabled_button").disabled = false
+
+                    }, 1000); setTimeout(() => {
                         document.getElementById("disabled_button").disabled = false
 
                     }, 1000);
