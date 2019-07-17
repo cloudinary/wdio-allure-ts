@@ -8,14 +8,20 @@ const EMPTY_DIV: string = '//*[@id="formsWithoutAttribute"]//*[@id="noAttDiv"]';
  */
 describeCommon('expectNoAttributeValue', () => {
   it("Doesn't contains value", () => {
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'cent')).to.not.throw(Error);
+    expect(() =>
+      BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCent')
+    ).to.not.throw(Error);
   });
 
   it('Contains word substring', () => {
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'centerrr')).to.not.throw(Error);
+    expect(() =>
+      BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCenterrr')
+    ).to.not.throw(Error);
   });
 
   it('Exact match error thrown', () => {
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'center')).to.throw(Error);
+    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCenter')).to.throw(
+      Error
+    );
   });
 });

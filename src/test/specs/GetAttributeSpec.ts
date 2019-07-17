@@ -9,7 +9,7 @@ const WRONG_ATTRIB_DIV: string = '//*[@id="wrongAttribDiv"]';
  */
 describeCommon('GetAttributeSpec of BrowserUtils Tests', () => {
   it('Validate positive result ', () => {
-    assert.equal(BrowserUtils.getAttribute(WRONG_ATTRIB_DIV, 'align'), 'center');
+    assert.equal(BrowserUtils.getAttribute(WRONG_ATTRIB_DIV, 'data-test'), 'just-a-data-test');
   });
 
   it('should fail on not existing attribute', () => {
