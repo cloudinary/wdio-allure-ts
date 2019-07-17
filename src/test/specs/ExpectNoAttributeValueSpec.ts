@@ -16,16 +16,18 @@ describeCommon('expectNoAttributeValue', () => {
   });
 
   it('Exact match error thrown', () => {
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'center')).to.throw(Error);
+    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'center')).to.throw(Error).to.throw(Error);
   });
 
-  it('Case Element not found.', () => {
+  it('Element not exists', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
-    expect(() => BrowserUtils.expectNoAttributeValue('//NotExist', 'method', 'post')).to.throw(Error);
+    expect(() => BrowserUtils.expectNoAttributeValue('//NotExist', 'method', 'post')).to.throw(Error).with.property('message')
+      .contains("Element not exist");
   });
 
-  it('Case attribute not found', () => {
+  it('Attribute not exists', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
-    expect(() => BrowserUtils.expectNoAttributeValue('//form', 'NotExist', 'post')).to.throw(Error);
+    expect(() => BrowserUtils.expectNoAttributeValue('//form', 'NotExist', 'post')).to.throw(Error).with.property('message')
+      .contains("Element not exist");
   });
 });
