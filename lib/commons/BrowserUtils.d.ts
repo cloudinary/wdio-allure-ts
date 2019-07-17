@@ -249,7 +249,7 @@ export declare namespace BrowserUtils {
      * @param cookie cookie to set
      * @param domain domain to set cookie for
      */
-    function setCookie(cookie: Cookie, domain?: string): void;
+    function setCookie(cookie: Cookie, domain: string): void;
     /**
      * Get current Url
      */
