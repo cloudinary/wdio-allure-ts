@@ -32,11 +32,12 @@ describeCommon('Set Cookie', () => {
     assert.equal(retrievedCookiesArray[0].value, cookie.value, 'Incorrect cookie value');
   });
 
-  it('validate cookie with null domain value', () => {
-    // tslint:disable-next-line:no-null-keyword
+  it('validate cookie with  domain value', () => {
+    const url: string = BrowserUtils.getUrl();
+
     BrowserUtils.setCookie(cookie, 'https://cloudinary.com/');
     retrievedCookiesArray = browser.getCookies([cookie.name]);
-
     assert.equal(retrievedCookiesArray[0].domain, TEST_PAGE_DOMAIN, 'Incorrect cookie domain');
+    BrowserUtils.expectCurrentUrl(url);
   });
 });
