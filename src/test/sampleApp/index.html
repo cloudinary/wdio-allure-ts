@@ -195,6 +195,20 @@
                 <input id="disabled_input" type="text" placeholder="Text Input" disabled>
                 </br>
             </fieldset>
+        <fieldset id="doubleClick">
+            <legend>doubleClick</legend>
+            <button id="doubleClickToEnable" ondblclick="doubleClickEnableAfterSec()">first button</button>
+            <button id="doubleClickWillBeEnabledButton" disabled>second button</button>
+            <button id="doubleClickDisabledButton" disabled>third button</button>
+            <button id="doubleClickHidden" hidden>third button</button>
+            <script type="text/javascript">
+                function doubleClickEnableAfterSec() {
+                    window.setTimeout(() => {
+                        document.getElementById("doubleClickWillBeEnabledButton").disabled = false;
+                    }, 1000);
+                }
+                </script>
+        </fieldset>
             <fieldset id="clickActionSpec">
                 <legend>ClickActionSpec</legend>
                 <p>
