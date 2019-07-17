@@ -3,7 +3,7 @@ import { BrowserUtils } from '../../commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
 const TEST_FIELD_SELECTOR: string = "//*[@id='ExpectAlertText']";
-const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='trigger-alert']`;
+const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='ExpectAlertTextTriggerAlert']`;
 
 describeCommon('expectAlertText', () => {
   beforeEach(() => {
