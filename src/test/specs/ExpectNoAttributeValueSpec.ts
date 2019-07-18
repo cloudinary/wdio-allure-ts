@@ -15,8 +15,9 @@ describeCommon('expectNoAttributeValue', () => {
     expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'centerrr')).to.not.throw(Error);
   });
 
-  it('Exact match error thrown', () => {
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'center')).to.throw(Error).to.throw(Error);
+  it.only('Exact match error thrown', () => {
+    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'center')).to.throw(Error)
+      .with.property('message').contains("Incorrect attribute");
   });
 
   it('Element not exists', () => {
