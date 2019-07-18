@@ -5,7 +5,7 @@ import { describeCommon } from '../TestHelper';
 
 const IMAGE_XPATH: string = "//*[@id='content_images']/div/p/img";
 const BAD_XPATH: string = "//*[@id='bad_path']";
-const MULTIPAL_ELEMETS_RESULT: string = "//*[@id='multi-text-field']";
+const MULTIPART_ELEMENTS_RESULT: string = "//*[@data-test='multi-text-field']";
 /**
  * wdio-allure-ts FindElement & FindElements tests
  */
@@ -23,7 +23,7 @@ describeCommon('findElement of BrowserUtils Tests', () => {
   });
 
   it('First Element Returned', () => {
-    const result: string = BrowserUtils.findElement(SelectorType.XPATH, MULTIPAL_ELEMETS_RESULT);
+    const result: string = BrowserUtils.findElement(SelectorType.XPATH, MULTIPART_ELEMENTS_RESULT);
 
     expect(JSON.stringify(result).toLowerCase()).contains('{"element');
   });

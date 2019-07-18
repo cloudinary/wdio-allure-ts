@@ -3,10 +3,10 @@ import { BrowserUtils } from '../../commons/BrowserUtils';
 import { describeCommon } from '../TestHelper';
 
 const TEST_FIELD_SELECTOR: string = "//*[@id='DismissAlert']";
-const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='trigger-alert']`;
+const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='DismissAlertTriggerAlert']`;
 
 describeCommon('dismissAlert', () => {
-  it.only('dismiss existing alert', () => {
+  it('dismiss existing alert', () => {
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
     BrowserUtils.dismissAlert();
   });
