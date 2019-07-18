@@ -15,11 +15,6 @@ describeCommon('expectNoAttributeValue', () => {
     expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'centerrr')).to.not.throw(Error);
   });
 
-  it.only('Exact match error thrown', () => {
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'align', 'center')).to.throw(Error)
-      .with.property('message').contains("Incorrect attribute");
-  });
-
   it('Element not exists', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     expect(() => BrowserUtils.expectNoAttributeValue('//NotExist', 'method', 'post')).to.throw(Error).with.property('message')
