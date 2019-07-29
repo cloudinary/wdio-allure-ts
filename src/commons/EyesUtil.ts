@@ -24,7 +24,7 @@ export interface IEyesAbstract {
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
-export class EyesUtil implements IEyesAbstract {
+class EyesUtil implements IEyesAbstract {
 
   public eyes: Eyes;
 
@@ -40,7 +40,7 @@ export class EyesUtil implements IEyesAbstract {
    * @param testName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
-  public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox) : EyesUtil {
+   public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox) : EyesUtil {
     Reporter.debug("Open eyes");
     browser.call(() => {
       return this.eyes.open(browser, testName, testDesc, boundingBoxObj === undefined ? {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} : boundingBoxObj);
@@ -113,7 +113,7 @@ export class EyesUtil implements IEyesAbstract {
   }
 }
 
-
+export { EyesUtil }
 
 
 

@@ -13,7 +13,7 @@ export interface IEyesAbstract {
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
-export declare class EyesUtil implements IEyesAbstract {
+declare class EyesUtil implements IEyesAbstract {
     eyes: Eyes;
     constructor(apiKey: string);
     /**
@@ -44,3 +44,4 @@ export declare class EyesUtil implements IEyesAbstract {
      */
     eyeConfiguration(onOff: boolean): EyesUtil;
 }
+export { EyesUtil };
