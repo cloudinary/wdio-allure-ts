@@ -13,8 +13,6 @@ export interface IBoundingBox {
   height: number;
 }
 
-
-
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
