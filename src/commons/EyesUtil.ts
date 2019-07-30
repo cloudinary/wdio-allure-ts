@@ -24,7 +24,7 @@ export interface IEyesAbstract {
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
-class EyesUtil implements IEyesAbstract {
+export class EyesUtil implements IEyesAbstract {
 
   public eyes: Eyes;
 
@@ -113,7 +113,7 @@ class EyesUtil implements IEyesAbstract {
   }
 }
 
-export { EyesUtil }
+
 
 
 
