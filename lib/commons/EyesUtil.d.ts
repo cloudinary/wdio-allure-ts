@@ -3,17 +3,10 @@ export interface IBoundingBox {
     width: number;
     height: number;
 }
-export interface IEyesAbstract {
-    open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil;
-    checkWithIgnores(checkDescription: string, xPaths: string[]): EyesUtil;
-    checkPageLayout(checkDesc: string): void;
-    close(): void;
-    eyeConfiguration(onOff: boolean): EyesUtil;
-}
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
-declare class EyesUtil implements IEyesAbstract {
+export declare class EyesUtil {
     eyes: Eyes;
     constructor(apiKey: string);
     /**
@@ -44,4 +37,3 @@ declare class EyesUtil implements IEyesAbstract {
      */
     eyeConfiguration(onOff: boolean): EyesUtil;
 }
-export { EyesUtil };
