@@ -54,7 +54,7 @@ export namespace BrowserUtils {
    */
   export function addValue(selector: string, value: string | number): void {
     Reporter.debug(`Add value: '${value}' to '${selector}'`);
-    isDisplayed(selector);
+    waitForDisplayed(selector);
     tryBlock(() => $(selector).addValue(value), `Failed to add value: '${value}' to '${selector}'`);
   }
   /**
@@ -64,7 +64,7 @@ export namespace BrowserUtils {
    */
   export function setValue(selector: string, value: string | number): void {
     Reporter.debug(`Set element '${selector} with value: '${value}'`);
-    isDisplayed(selector);
+    waitForDisplayed(selector);
     tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
@@ -241,7 +241,7 @@ export namespace BrowserUtils {
    * @param selector - element selector
    */
   export function isDisplayed(selector: string): boolean {
-    Reporter.debug(`Wait for an element to be visible '${selector}'`);
+    Reporter.debug(`Is element visible by '${selector}'`);
 
     return $(selector).isDisplayed();
   }
