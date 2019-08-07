@@ -7,4 +7,4 @@ import { SpecialKeys } from './enums/SpecialKeys';
 /**
  * Export Utils
  */
-export { BrowserUtils,EyesUtil, Reporter, SpecialKeys, TestUtils };
+export { BrowserUtils, EyesUtil, Reporter, SpecialKeys, TestUtils };

@@ -9,7 +9,7 @@ const SCREEN_WIDTH: number = 1024;
 const SCREEN_HEIGHT: number = 768;
 
 export interface IBoundingBox {
-  width: number ;
+  width: number;
   height: number;
 }
 
@@ -17,10 +17,9 @@ export interface IBoundingBox {
  * Class wraps the Applitools util for UI or Images comparison
  */
 export class EyesUtil {
-
   public eyes: Eyes;
 
-  constructor(apiKey : string) {
+  constructor(apiKey: string) {
     this.eyes = new Eyes();
     this.eyes.setApiKey(apiKey);
     this.eyeConfiguration(false);
@@ -32,13 +31,18 @@ export class EyesUtil {
    * @param testName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
-   public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox) : EyesUtil {
-    Reporter.debug("Open eyes");
+  public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
+    Reporter.debug('Open eyes');
     browser.call(() => {
-      return this.eyes.open(browser, testName, testDesc, boundingBoxObj === undefined ? {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} : boundingBoxObj);
+      return this.eyes.open(
+        browser,
+        testName,
+        testDesc,
+        boundingBoxObj === undefined ? { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } : boundingBoxObj
+      );
     });
 
-    Reporter.debug("Eyes Opened");
+    Reporter.debug('Eyes Opened');
 
     return this;
   }
@@ -48,16 +52,14 @@ export class EyesUtil {
    * @param checkDescription - Test/Step name (unique)
    * @param xPaths - array of By.type objects to ignore in check
    */
-  public checkWithIgnores(checkDescription : string, xPaths : string[]) : EyesUtil {
-
-    let targetWindowObj : Target = Target.window();
+  public checkWithIgnores(checkDescription: string, xPaths: string[]): EyesUtil {
+    let targetWindowObj: Target = Target.window();
 
     xPaths.forEach((elementXpath: string) => {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
     });
 
     browser.call(() => {
-
       return this.eyes.check(checkDescription, targetWindowObj);
     });
 
@@ -68,10 +70,9 @@ export class EyesUtil {
    *  Full Page screenshots including scrolling (very slow)
    * @param checkDesc - Unique Test ID
    */
-  public checkPageLayout(checkDesc: string) : void {
-    Reporter.debug("Take view port screenshots");
+  public checkPageLayout(checkDesc: string): void {
+    Reporter.debug('Take view port screenshots');
     browser.call(() => {
-
       return this.eyes.check(checkDesc, Target.window().layout());
     });
   }
@@ -79,20 +80,20 @@ export class EyesUtil {
   /**
    * Close eye batch
    */
-  public close() : void {
-    Reporter.debug("Close eyes");
+  public close(): void {
+    Reporter.debug('Close eyes');
     browser.call(() => {
       return this.eyes.close();
     });
-    Reporter.debug("Eyes Closed");
+    Reporter.debug('Eyes Closed');
   }
 
   /**
    *  Set basic configuration
    * @param onOff - flag to turn on and off
    */
-  public eyeConfiguration(onOff : boolean) : EyesUtil {
-    Reporter.debug("Configure eyes");
+  public eyeConfiguration(onOff: boolean): EyesUtil {
+    Reporter.debug('Configure eyes');
     browser.call(() => {
       return this.eyes.setHideScrollbars(onOff);
     });
@@ -104,8 +105,3 @@ export class EyesUtil {
     return this;
   }
 }
-
-
-
-
-
