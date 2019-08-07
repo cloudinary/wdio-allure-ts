@@ -27,6 +27,6 @@ describeCommon('addValue', () => {
     expect(() => BrowserUtils.addValue(`//input[@id='${TestUtils.randomString(5)}']`, TestUtils.randomString(5)))
       .to.throw(Error)
       .with.property('message')
-      .contains("element wasn't found");
+      .contains('Element not exist');
   });
 });
