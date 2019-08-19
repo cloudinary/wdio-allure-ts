@@ -96,7 +96,6 @@ export declare namespace BrowserUtils {
      * @param timeout - specified time out if undefined Default time out is used
      * @param errMessage - Custom message for time out
      */
-    // tslint:disable-next-line:no-any
     function waitUntil(action: Function, errMessage?: string, timeout?: number): any;
     /**
      * Select a value in element
