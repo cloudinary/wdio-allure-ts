@@ -30,6 +30,11 @@ export declare namespace BrowserUtils {
      */
     function addValue(selector: string, value: string | number): void;
     /**
+     * Clear a <textarea> or text <input> element’s value
+     * @param selector element selector
+     */
+    function clearValue(selector: string): void;
+    /**
      * Set a value to an element located by selector
      * @param selector element selector
      * @param value - value to add
@@ -91,6 +96,7 @@ export declare namespace BrowserUtils {
      * @param timeout - specified time out if undefined Default time out is used
      * @param errMessage - Custom message for time out
      */
+    // tslint:disable-next-line:no-any
     function waitUntil(action: Function, errMessage?: string, timeout?: number): any;
     /**
      * Select a value in element

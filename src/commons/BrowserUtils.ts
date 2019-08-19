@@ -57,6 +57,17 @@ export namespace BrowserUtils {
     waitForDisplayed(selector);
     tryBlock(() => $(selector).addValue(value), `Failed to add value: '${value}' to '${selector}'`);
   }
+
+  /**
+   * Clear a <textarea> or text <input> element’s value
+   * @param selector element selector
+   */
+  export function clearValue(selector: string): void {
+    Reporter.debug(`Clear text in '${selector}'`);
+    waitForDisplayed(selector);
+    tryBlock(() => $(selector).clearValue(), `Failed to clear value in '${selector}'`);
+  }
+
   /**
    * Set a value to an element located by selector
    * @param selector element selector
