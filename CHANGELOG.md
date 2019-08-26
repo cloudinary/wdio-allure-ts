@@ -8,3 +8,9 @@
 ==================
 
   * Add Applitools support - EyesUtil
+  
+ 1.1.1 / 2019-26-08
+ ==================
+ 
+   * Add clearValue method
+   
