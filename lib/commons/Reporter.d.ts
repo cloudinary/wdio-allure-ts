@@ -33,4 +33,10 @@ export declare namespace Reporter {
      * @param msg text to log
      */
     function error(msg: string): void;
+    /**
+     * Adding Environment to allure report
+     * @param name name of the env
+     * @param value string
+     */
+    function addEnvironment(name: string, value?: string): void;
 }
