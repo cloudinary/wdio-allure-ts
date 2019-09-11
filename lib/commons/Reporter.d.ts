@@ -40,10 +40,10 @@ export declare namespace Reporter {
      */
     function addEnvironment(name: string, value?: string): void;
     /**
-     * Adding feature name
-     * @param featureName name of the feature
+     * Adding issue name
+     * @param value name of the feature
      */
-    function addFeature(featureName: string): void;
+    function addIssue(value: string): void;
     /**
      * Adding description name
      * @param description of the test
