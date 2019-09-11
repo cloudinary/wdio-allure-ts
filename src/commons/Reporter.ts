@@ -117,6 +117,23 @@ export namespace Reporter {
   }
 
   /**
+   * Adding feature name
+   * @param featureName name of the feature
+   */
+  export function addFeature(featureName: string): void {
+    allureReporter.addFeature(featureName);
+  }
+
+  /**
+   * Adding description name
+   * @param description of the test
+   * @param descriptionType type (String, optional) – description type, text by default. Values ['text', 'html','markdown']
+   */
+  export function addDescription(description: string, descriptionType?: string): void {
+    allureReporter.addDescription(description, descriptionType);
+  }
+
+  /**
    * Add log entry for allure reporter
    * @param logType logType
    * @param msg message

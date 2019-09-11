@@ -39,4 +39,15 @@ export declare namespace Reporter {
      * @param value string
      */
     function addEnvironment(name: string, value?: string): void;
+    /**
+     * Adding feature name
+     * @param featureName name of the feature
+     */
+    function addFeature(featureName: string): void;
+    /**
+     * Adding description name
+     * @param description of the test
+     * @param descriptionType type (String, optional) – description type, text by default. Values ['text', 'html','markdown']
+     */
+    function addDescription(description: string, descriptionType?: string): void;
 }
