@@ -43,7 +43,7 @@ export declare namespace Reporter {
      * Adding issue name
      * @param value name of the feature
      */
-    function addIssue(value: string): void;
+    function addTestId(value: string): void;
     /**
      * Adding description name
      * @param description of the test

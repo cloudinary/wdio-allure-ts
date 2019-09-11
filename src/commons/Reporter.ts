@@ -120,8 +120,8 @@ export namespace Reporter {
    * Adding issue name
    * @param value name of the feature
    */
-  export function addIssue(value: string): void {
-    allureReporter.addIssue(value);
+  export function addTestId(value: string): void {
+    allureReporter.addTestId(value);
   }
 
   /**
