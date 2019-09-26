@@ -1,4 +1,5 @@
 //tslint:disable:no-unsafe-any
+import { FileLogHandler } from '@applitools/eyes-sdk-core';
 import { By, Eyes, Target } from '@applitools/eyes-webdriverio';
 import { Reporter } from './Reporter';
 
@@ -31,7 +32,10 @@ export class EyesUtil {
    * @param testName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
-  public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
+  public open(testDesc: string, testName: string, isDebug?: boolean, boundingBoxObj?: IBoundingBox): EyesUtil {
+    Reporter.debug(`Set Debug Mode ${isDebug}`);
+    this.setEyeDebugMode(isDebug);
+
     Reporter.debug('Open eyes');
     browser.call(() => {
       return this.eyes.open(
@@ -101,6 +105,20 @@ export class EyesUtil {
     browser.call(() => {
       return this.eyes.setForceFullPageScreenshot(onOff);
     });
+
+    return this;
+  }
+
+  /**
+   * Set Debug mode
+   * If set to true the eyes.log file will appear under the root folder.
+   */
+  public setEyeDebugMode(isDebug: boolean): EyesUtil {
+    if (isDebug) {
+      browser.call(() => {
+        return this.eyes.setLogHandler(new FileLogHandler(isDebug));
+      });
+    }
 
     return this;
   }
