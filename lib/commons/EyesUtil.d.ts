@@ -37,8 +37,7 @@ export declare class EyesUtil {
      */
     eyeConfiguration(onOff: boolean): EyesUtil;
     /**
-     * Set Debug mode
-     * Set to true the eyes.log file will appear under the root folder.
+     * Set Debug Mode On
      */
     setEyeDebugMode(): EyesUtil;
 }

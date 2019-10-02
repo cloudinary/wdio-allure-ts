@@ -107,8 +107,7 @@ export class EyesUtil {
   }
 
   /**
-   * Set Debug mode
-   * Set to true the eyes.log file will appear under the root folder.
+   * Set Debug Mode On
    */
   public setEyeDebugMode(): EyesUtil {
     browser.call(() => {
