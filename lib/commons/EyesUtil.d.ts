@@ -15,7 +15,7 @@ export declare class EyesUtil {
      * @param testName - Product name
      * @param boundingBoxObj - Bounding box to screenshots
      */
-    open(testDesc: string, testName: string, isDebug?: boolean, boundingBoxObj?: IBoundingBox): EyesUtil;
+    open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil;
     /**
      * Since SDK doesn't support array of elements to ignore this method should bypass that limitation
      * @param checkDescription - Test/Step name (unique)
@@ -38,7 +38,7 @@ export declare class EyesUtil {
     eyeConfiguration(onOff: boolean): EyesUtil;
     /**
      * Set Debug mode
-     * If set to true the eyes.log file will appear under the root folder.
+     * Set to true the eyes.log file will appear under the root folder.
      */
-    setEyeDebugMode(isDebug: boolean): EyesUtil;
+    setEyeDebugMode(): EyesUtil;
 }

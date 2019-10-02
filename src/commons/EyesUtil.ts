@@ -32,10 +32,7 @@ export class EyesUtil {
    * @param testName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
-  public open(testDesc: string, testName: string, isDebug?: boolean, boundingBoxObj?: IBoundingBox): EyesUtil {
-    Reporter.debug(`Set Debug Mode ${isDebug}`);
-    this.setEyeDebugMode(isDebug);
-
+  public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
     Reporter.debug('Open eyes');
     browser.call(() => {
       return this.eyes.open(
@@ -111,14 +108,12 @@ export class EyesUtil {
 
   /**
    * Set Debug mode
-   * If set to true the eyes.log file will appear under the root folder.
+   * Set to true the eyes.log file will appear under the root folder.
    */
-  public setEyeDebugMode(isDebug: boolean): EyesUtil {
-    if (isDebug) {
-      browser.call(() => {
-        return this.eyes.setLogHandler(new FileLogHandler(isDebug));
-      });
-    }
+  public setEyeDebugMode(): EyesUtil {
+    browser.call(() => {
+      return this.eyes.setLogHandler(new FileLogHandler(true));
+    });
 
     return this;
   }
