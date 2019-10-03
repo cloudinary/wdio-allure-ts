@@ -29,6 +29,20 @@ exports.config = {
    * webdriver service
    */
   services: ['selenium-standalone'],
+  seleniumArgs: {
+    drivers : {
+      chrome : {
+        version : "77.0.3865.40"
+      }
+    }
+  },
+  seleniumInstallArgs: {
+    drivers : {
+      chrome : {
+        version : "77.0.3865.40"
+      }
+    }
+  },
 
   //Logger level Options: trace | debug | info | warn | error | silent
   logLevel: 'silent',
