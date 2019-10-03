@@ -36,4 +36,8 @@ export declare class EyesUtil {
      * @param onOff - flag to turn on and off
      */
     eyeConfiguration(onOff: boolean): EyesUtil;
+    /**
+     * Set Debug Mode On
+     */
+    setEyeDebugMode(): EyesUtil;
 }
