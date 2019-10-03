@@ -1,4 +1,5 @@
 //tslint:disable:no-unsafe-any
+import { FileLogHandler } from '@applitools/eyes-sdk-core';
 import { By, Eyes, Target } from '@applitools/eyes-webdriverio';
 import { Reporter } from './Reporter';
 
@@ -100,6 +101,17 @@ export class EyesUtil {
 
     browser.call(() => {
       return this.eyes.setForceFullPageScreenshot(onOff);
+    });
+
+    return this;
+  }
+
+  /**
+   * Set Debug Mode On
+   */
+  public setEyeDebugMode(): EyesUtil {
+    browser.call(() => {
+      return this.eyes.setLogHandler(new FileLogHandler(true));
     });
 
     return this;
