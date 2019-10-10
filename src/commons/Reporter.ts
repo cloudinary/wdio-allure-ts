@@ -108,6 +108,32 @@ export namespace Reporter {
   }
 
   /**
+   * Adding Environment to allure report
+   * @param name name of the env
+   * @param value string
+   */
+  export function addEnvironment(name: string, value?: string): void {
+    allureReporter.addEnvironment(name, value);
+  }
+
+  /**
+   * Adding issue name
+   * @param value name of the feature
+   */
+  export function addTestId(value: string): void {
+    allureReporter.addTestId(value);
+  }
+
+  /**
+   * Adding description name
+   * @param description of the test
+   * @param descriptionType type (String, optional) – description type, text by default. Values ['text', 'html','markdown']
+   */
+  export function addDescription(description: string, descriptionType?: string): void {
+    allureReporter.addDescription(description, descriptionType);
+  }
+
+  /**
    * Add log entry for allure reporter
    * @param logType logType
    * @param msg message
@@ -124,6 +150,7 @@ export namespace Reporter {
   /**
    * Adding custom command to allure reporter
    * @param command command to add
+   * @param stepStatus status of steps
    */
   function sendCustomCommand(command: CustomCommand, stepStatus?: string): void {
     let status: string = 'passed';
