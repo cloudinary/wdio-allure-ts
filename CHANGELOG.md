@@ -19,4 +19,10 @@
     * remove unused chai-string dependency
     
     * update dependencies
+    
+1.1.3 / 2019-10-15
+==================
+   
+- Update npm dependencies 
+- Adding add feature and add description for allure
 
