@@ -63,7 +63,6 @@ export class EyesUtil {
     return browser.call(() => {
       return this.eyes.check(checkDescription, targetWindowObj);
     });
-
   }
 
   /**
