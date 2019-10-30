@@ -3,6 +3,10 @@ export interface IBoundingBox {
     width: number;
     height: number;
 }
+export interface IResult {
+    _asExpected: boolean;
+    _windowId: string;
+}
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
@@ -21,12 +25,12 @@ export declare class EyesUtil {
      * @param checkDescription - Test/Step name (unique)
      * @param xPaths - array of By.type objects to ignore in check
      */
-    checkWithIgnores(checkDescription: string, xPaths: string[]): any;
+    checkWithIgnores(checkDescription: string, xPaths: string[]): boolean;
     /**
      *  Full Page screenshots including scrolling (very slow)
      * @param checkDesc - Unique Test ID
      */
-    checkPageLayout(checkDesc: string): any;
+    checkPageLayout(checkDesc: string): boolean;
     /**
      * Close eye batch
      */

@@ -15,6 +15,10 @@ export interface IBoundingBox {
   height: number;
 }
 
+export interface IResult {
+  _asExpected: boolean;
+  _windowId: string;
+}
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
@@ -54,36 +58,36 @@ export class EyesUtil {
    * @param checkDescription - Test/Step name (unique)
    * @param xPaths - array of By.type objects to ignore in check
    */
-  public checkWithIgnores(checkDescription: string, xPaths: string[]): any {
+  public checkWithIgnores(checkDescription: string, xPaths: string[]): boolean {
     let targetWindowObj: Target = Target.window();
 
     xPaths.forEach((elementXpath: string) => {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
     });
 
-    const result: any = browser.call(() => {
+    let result: IResult = browser.call(() => {
       return this.eyes.check(checkDescription, targetWindowObj);
     });
 
-    Reporter.debug(`TEST RESULT: ${inspect(result)}`);
+    Reporter.debug(`TEST RESULT: ${inspect(result._asExpected)}`);
 
-    return result;
+    return result._asExpected;
   }
 
   /**
    *  Full Page screenshots including scrolling (very slow)
    * @param checkDesc - Unique Test ID
    */
-  public checkPageLayout(checkDesc: string): any {
+  public checkPageLayout(checkDesc: string): boolean {
     Reporter.debug('Take view port screenshots');
 
-    const result: any = browser.call(() => {
+    let result: IResult = browser.call(() => {
       return this.eyes.check(checkDesc, Target.window().layout());
     });
 
-    Reporter.debug(`TEST RESULT: ${inspect(result)}`);
+    Reporter.debug(`TEST RESULT: ${result._asExpected}`);
 
-    return result;
+    return result._asExpected;
   }
 
   /**
