@@ -9,6 +9,7 @@ import { Reporter } from './Reporter';
  */
 const SCREEN_WIDTH: number = 1024;
 const SCREEN_HEIGHT: number = 768;
+const TIMEOUT: number = 4000; // default 2000
 
 export interface IBoundingBox {
   width: number;
@@ -19,6 +20,9 @@ export interface IResult {
   _asExpected: boolean;
   _windowId: string;
 }
+
+let result: IResult = { _asExpected: false, _windowId: undefined };
+
 /**
  * Class wraps the Applitools util for UI or Images comparison
  */
@@ -65,7 +69,7 @@ export class EyesUtil {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
     });
 
-    let result: IResult = browser.call(() => {
+    result = browser.call(() => {
       return this.eyes.check(checkDescription, targetWindowObj);
     });
 
@@ -81,7 +85,7 @@ export class EyesUtil {
   public checkPageLayout(checkDesc: string): boolean {
     Reporter.debug('Take view port screenshots');
 
-    let result: IResult = browser.call(() => {
+    result = browser.call(() => {
       return this.eyes.check(checkDesc, Target.window().layout());
     });
 
@@ -113,6 +117,10 @@ export class EyesUtil {
 
     browser.call(() => {
       return this.eyes.setForceFullPageScreenshot(onOff);
+    });
+
+    browser.call(() => {
+      return this.eyes.setDefaultMatchTimeout(TIMEOUT);
     });
 
     return this;
