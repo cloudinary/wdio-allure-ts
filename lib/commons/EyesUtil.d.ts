@@ -15,20 +15,20 @@ export declare class EyesUtil {
     constructor(apiKey: string);
     /**
      * Opens the eye session
-     * @param testDesc - Run ID
-     * @param testName - Product name
+     * @param testName - Test ID
+     * @param appName - Product name
      * @param boundingBoxObj - Bounding box to screenshots
      */
     open(testName: string, appName: string, boundingBoxObj?: IBoundingBox): EyesUtil;
     /**
      * Since SDK doesn't support array of elements to ignore this method should bypass that limitation
-     * @param checkDescription - Test/Step name (unique)
+     * @param checkDescription - Step name (unique)
      * @param xPaths - array of By.type objects to ignore in check
      */
     checkWithIgnores(checkDescription: string, xPaths: string[]): boolean;
     /**
      *  Full Page screenshots including scrolling (very slow)
-     * @param checkDesc - Unique Test ID
+     * @param checkDesc - Unique Step ID
      */
     checkPageLayout(checkDesc: string): boolean;
     /**

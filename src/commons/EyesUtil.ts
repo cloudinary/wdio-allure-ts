@@ -1,4 +1,4 @@
-//tslint:disable
+//tslint:disable:no-unsafe-any
 import { FileLogHandler } from '@applitools/eyes-sdk-core';
 import { By, Eyes, Target } from '@applitools/eyes-webdriverio';
 import { inspect } from 'util';
@@ -37,8 +37,8 @@ export class EyesUtil {
 
   /**
    * Opens the eye session
-   * @param testDesc - Run ID
-   * @param testName - Product name
+   * @param testName - Test ID
+   * @param appName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
   public open(testName: string, appName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
@@ -59,7 +59,7 @@ export class EyesUtil {
 
   /**
    * Since SDK doesn't support array of elements to ignore this method should bypass that limitation
-   * @param checkDescription - Test/Step name (unique)
+   * @param checkDescription - Step name (unique)
    * @param xPaths - array of By.type objects to ignore in check
    */
   public checkWithIgnores(checkDescription: string, xPaths: string[]): boolean {
@@ -80,7 +80,7 @@ export class EyesUtil {
 
   /**
    *  Full Page screenshots including scrolling (very slow)
-   * @param checkDesc - Unique Test ID
+   * @param checkDesc - Unique Step ID
    */
   public checkPageLayout(checkDesc: string): boolean {
     Reporter.debug('Take view port screenshots');
