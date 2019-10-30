@@ -27,7 +27,7 @@ export declare class EyesUtil {
      *  Full Page screenshots including scrolling (very slow)
      * @param checkDesc - Unique Test ID
      */
-    checkPageLayout(checkDesc: string): TestResult;
+    checkPageLayout(checkDesc: string): boolean;
     /**
      * Close eye batch
      */

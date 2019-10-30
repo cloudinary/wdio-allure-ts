@@ -73,14 +73,11 @@ export class EyesUtil {
    *  Full Page screenshots including scrolling (very slow)
    * @param checkDesc - Unique Test ID
    */
-  public checkPageLayout(checkDesc: string): TestResult {
+  public checkPageLayout(checkDesc: string): boolean {
     Reporter.debug('Take view port screenshots');
 
     return browser.call(() => {
-      const tr: TestResult = this.eyes.check(checkDesc, Target.window().layout()).getResult();
-      Reporter.debug(`TEST RESULT: ${inspect(tr)}`);
-
-      return tr;
+      return this.eyes.check(checkDesc, Target.window().layout()).isPassed();
     });
   }
 
