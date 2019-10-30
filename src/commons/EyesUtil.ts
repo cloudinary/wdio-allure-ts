@@ -61,12 +61,13 @@ export class EyesUtil {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
     });
 
-    browser.call(() => {
-      const result: any = this.eyes.check(checkDescription, targetWindowObj);
-      Reporter.debug(`TEST RESULT: ${inspect(result)}`);
-
-      return result;
+    const result: any = browser.call(() => {
+      return this.eyes.check(checkDescription, targetWindowObj);
     });
+
+    Reporter.debug(`TEST RESULT: ${inspect(result)}`);
+
+    return result;
   }
 
   /**
@@ -76,12 +77,13 @@ export class EyesUtil {
   public checkPageLayout(checkDesc: string): any {
     Reporter.debug('Take view port screenshots');
 
-    return browser.call(() => {
-      const result: any = this.eyes.check(checkDesc, Target.window().layout());
-      Reporter.debug(`TEST RESULT: ${inspect(result)}`);
-
-      return result;
+    const result: any = browser.call(() => {
+      return this.eyes.check(checkDesc, Target.window().layout());
     });
+
+    Reporter.debug(`TEST RESULT: ${inspect(result)}`);
+
+    return result;
   }
 
   /**
