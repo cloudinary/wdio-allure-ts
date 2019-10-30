@@ -41,6 +41,10 @@ export declare class EyesUtil {
      */
     eyeConfiguration(onOff: boolean): EyesUtil;
     /**
+     * Set batch name for run
+     */
+    setbatchName(batchName: string): EyesUtil;
+    /**
      * Set Debug Mode On
      */
     setEyeDebugMode(): EyesUtil;

@@ -129,6 +129,17 @@ export class EyesUtil {
   }
 
   /**
+   * Set batch name for run
+   */
+  public setbatchName(batchName: string): EyesUtil {
+    browser.call(() => {
+      return this.eyes.setBatch(batchName);
+    });
+
+    return this;
+  }
+
+  /**
    * Set Debug Mode On
    */
   public setEyeDebugMode(): EyesUtil {
