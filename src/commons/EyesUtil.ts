@@ -8,7 +8,7 @@ import { Reporter } from './Reporter';
  */
 const SCREEN_WIDTH: number = 1024;
 const SCREEN_HEIGHT: number = 768;
-const TIMEOUT: number = 4000; // default 2000
+const TIMEOUT: number = 5000; // default 2000
 
 export interface IBoundingBox {
   width: number;
