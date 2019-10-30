@@ -1,4 +1,3 @@
-import { TestResult } from '@applitools/eyes-sdk-core';
 import { Eyes } from '@applitools/eyes-webdriverio';
 export interface IBoundingBox {
     width: number;
@@ -22,12 +21,12 @@ export declare class EyesUtil {
      * @param checkDescription - Test/Step name (unique)
      * @param xPaths - array of By.type objects to ignore in check
      */
-    checkWithIgnores(checkDescription: string, xPaths: string[]): TestResult;
+    checkWithIgnores(checkDescription: string, xPaths: string[]): any;
     /**
      *  Full Page screenshots including scrolling (very slow)
      * @param checkDesc - Unique Test ID
      */
-    checkPageLayout(checkDesc: string): boolean;
+    checkPageLayout(checkDesc: string): any;
     /**
      * Close eye batch
      */
