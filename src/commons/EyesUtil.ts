@@ -1,7 +1,6 @@
 //tslint:disable:no-unsafe-any
 import { FileLogHandler } from '@applitools/eyes-sdk-core';
 import { By, Eyes, Target } from '@applitools/eyes-webdriverio';
-import { inspect } from 'util';
 import { Reporter } from './Reporter';
 
 /**
@@ -64,6 +63,7 @@ export class EyesUtil {
    */
   public checkWithIgnores(checkDescription: string, xPaths: string[]): boolean {
     let targetWindowObj: Target = Target.window();
+    targetWindowObj.Target.timeout(TIMEOUT);
 
     xPaths.forEach((elementXpath: string) => {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
@@ -72,8 +72,6 @@ export class EyesUtil {
     result = browser.call(() => {
       return this.eyes.check(checkDescription, targetWindowObj);
     });
-
-    Reporter.debug(`TEST RESULT: ${inspect(result._asExpected)}`);
 
     return result._asExpected;
   }
@@ -88,8 +86,6 @@ export class EyesUtil {
     result = browser.call(() => {
       return this.eyes.check(checkDesc, Target.window(TIMEOUT).layout());
     });
-
-    Reporter.debug(`TEST RESULT: ${result._asExpected}`);
 
     return result._asExpected;
   }
