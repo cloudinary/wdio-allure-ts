@@ -41,13 +41,13 @@ export class EyesUtil {
    * @param testName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
-  public open(applicationName: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
+  public open(testName: string, appName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
     Reporter.debug('Open eyes');
     browser.call(() => {
       return this.eyes.open(
         browser,
+        appName,
         testName,
-        applicationName,
         boundingBoxObj === undefined ? { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } : boundingBoxObj
       );
     });
@@ -95,14 +95,14 @@ export class EyesUtil {
   }
 
   /**
-   * Close eye batch
+   * Close eye test
    */
   public close(): void {
     Reporter.debug('Close eyes');
     browser.call(() => {
       if (this.eyes.getIsOpen()) {
         try {
-          return this.eyes.close();
+          return this.eyes.close(false);
         } finally {
           this.eyes.abortIfNotClosed();
         }
@@ -131,7 +131,7 @@ export class EyesUtil {
   /**
    * Set batch name for run
    */
-  public setbatchName(batchName: string): EyesUtil {
+  public setBatchName(batchName: string): EyesUtil {
     browser.call(() => {
       return this.eyes.setBatch(batchName);
     });

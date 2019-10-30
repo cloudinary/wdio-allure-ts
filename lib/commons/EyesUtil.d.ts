@@ -19,7 +19,7 @@ export declare class EyesUtil {
      * @param testName - Product name
      * @param boundingBoxObj - Bounding box to screenshots
      */
-    open(applicationName: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil;
+    open(testName: string, appName: string, boundingBoxObj?: IBoundingBox): EyesUtil;
     /**
      * Since SDK doesn't support array of elements to ignore this method should bypass that limitation
      * @param checkDescription - Test/Step name (unique)
@@ -32,7 +32,7 @@ export declare class EyesUtil {
      */
     checkPageLayout(checkDesc: string): boolean;
     /**
-     * Close eye batch
+     * Close eye test
      */
     close(): void;
     /**
@@ -43,7 +43,7 @@ export declare class EyesUtil {
     /**
      * Set batch name for run
      */
-    setbatchName(batchName: string): EyesUtil;
+    setBatchName(batchName: string): EyesUtil;
     /**
      * Set Debug Mode On
      */
