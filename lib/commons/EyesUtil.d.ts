@@ -19,7 +19,7 @@ export declare class EyesUtil {
      * @param testName - Product name
      * @param boundingBoxObj - Bounding box to screenshots
      */
-    open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil;
+    open(applicationName: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil;
     /**
      * Since SDK doesn't support array of elements to ignore this method should bypass that limitation
      * @param checkDescription - Test/Step name (unique)
