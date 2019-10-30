@@ -61,11 +61,12 @@ export class EyesUtil {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
     });
 
-    const tr: TestResult = browser.call(() => {
-      return this.eyes.check(checkDescription, targetWindowObj).getResult();
-    });
+    browser.call(() => {
+      const tr: TestResult = this.eyes.check(checkDescription, targetWindowObj).getResult();
+      Reporter.debug(`TEST RESULT: ${inspect(tr)}`);
 
-    Reporter.debug(`TEST RESULT: ${inspect(tr)}`);
+      return tr;
+    });
   }
 
   /**
@@ -76,7 +77,10 @@ export class EyesUtil {
     Reporter.debug('Take view port screenshots');
 
     return browser.call(() => {
-      return this.eyes.check(checkDesc, Target.window().layout()).getResult();
+      const tr: TestResult = this.eyes.check(checkDesc, Target.window().layout()).getResult();
+      Reporter.debug(`TEST RESULT: ${inspect(tr)}`);
+
+      return tr;
     });
   }
 
