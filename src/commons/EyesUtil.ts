@@ -21,7 +21,7 @@ export interface IResult {
   _windowId: string;
 }
 
-let result: IResult = { _asExpected: false, _windowId: undefined };
+let result: IResult;
 
 /**
  * Class wraps the Applitools util for UI or Images comparison
@@ -41,13 +41,13 @@ export class EyesUtil {
    * @param testName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
-  public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
+  public open(applicationName: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
     Reporter.debug('Open eyes');
     browser.call(() => {
       return this.eyes.open(
         browser,
         testName,
-        testDesc,
+        applicationName,
         boundingBoxObj === undefined ? { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } : boundingBoxObj
       );
     });
@@ -100,7 +100,13 @@ export class EyesUtil {
   public close(): void {
     Reporter.debug('Close eyes');
     browser.call(() => {
-      return this.eyes.close();
+      if(this.eyes.getIsOpen()) {
+        try {
+          return this.eyes.close();
+        } finally {
+          this.eyes.abortIfNotClosed();
+        }
+      }
     });
     Reporter.debug('Eyes Closed');
   }
