@@ -86,7 +86,7 @@ export class EyesUtil {
     Reporter.debug('Take view port screenshots');
 
     result = browser.call(() => {
-      return this.eyes.check(checkDesc, Target.window().layout());
+      return this.eyes.check(checkDesc, Target.window(TIMEOUT).layout());
     });
 
     Reporter.debug(`TEST RESULT: ${result._asExpected}`);
@@ -117,10 +117,6 @@ export class EyesUtil {
 
     browser.call(() => {
       return this.eyes.setForceFullPageScreenshot(onOff);
-    });
-
-    browser.call(() => {
-      return this.eyes.setDefaultMatchTimeout(TIMEOUT);
     });
 
     return this;
