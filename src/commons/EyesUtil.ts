@@ -1,6 +1,7 @@
 //tslint:disable:no-unsafe-any
-import { FileLogHandler, ITestResult } from '@applitools/eyes-sdk-core';
+import { FileLogHandler, TestResult } from '@applitools/eyes-sdk-core';
 import { By, Eyes, Target } from '@applitools/eyes-webdriverio';
+import { inspect } from 'util';
 import { Reporter } from './Reporter';
 
 /**
@@ -53,23 +54,25 @@ export class EyesUtil {
    * @param checkDescription - Test/Step name (unique)
    * @param xPaths - array of By.type objects to ignore in check
    */
-  public checkWithIgnores(checkDescription: string, xPaths: string[]): ITestResult {
+  public checkWithIgnores(checkDescription: string, xPaths: string[]): TestResult {
     let targetWindowObj: Target = Target.window();
 
     xPaths.forEach((elementXpath: string) => {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
     });
 
-    return browser.call(() => {
-      return this.eyes.check(checkDescription, targetWindowObj);
+    const tr: TestResult = browser.call(() => {
+      return this.eyes.check(checkDescription, targetWindowObj).getResult();
     });
+
+    Reporter.debug(`TEST RESULT: ${inspect(tr)}`);
   }
 
   /**
    *  Full Page screenshots including scrolling (very slow)
    * @param checkDesc - Unique Test ID
    */
-  public checkPageLayout(checkDesc: string): ITestResult {
+  public checkPageLayout(checkDesc: string): TestResult {
     Reporter.debug('Take view port screenshots');
 
     return browser.call(() => {
