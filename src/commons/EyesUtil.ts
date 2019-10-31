@@ -94,15 +94,17 @@ export class EyesUtil {
    */
   public close(): void {
     Reporter.debug('Close eyes');
-    browser.call(() => {
-      if (this.eyes.getIsOpen()) {
-        try {
+    if (this.eyes.getIsOpen()) {
+      try {
+        browser.call(() => {
           return this.eyes.close(false);
-        } finally {
-          this.eyes.abortIfNotClosed();
-        }
+        });
+      } finally {
+        browser.call(() => {
+          return this.eyes.abortIfNotClosed();
+        });
       }
-    });
+    }
     Reporter.debug('Eyes Closed');
   }
 
