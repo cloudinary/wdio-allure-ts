@@ -1,11 +1,3 @@
-# 1.0.0 / 2019-09-05
-
-- Initial commit
-
-# 1.1.0 / 2019-09-07
-
-- Add Applitools support - EyesUtil
-
 1.1.1 / 2019-26-08
 ==================
 
@@ -25,4 +17,9 @@
    
 - Update npm dependencies 
 - Adding add feature and add description for allure
+
+1.1.4 / 2019-10-31
+==================
+
+- Improved Eyes Utils (#124)
 
