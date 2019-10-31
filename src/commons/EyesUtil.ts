@@ -8,11 +8,19 @@ import { Reporter } from './Reporter';
  */
 const SCREEN_WIDTH: number = 1024;
 const SCREEN_HEIGHT: number = 768;
+const TIMEOUT: number = 5000; // default 2000
 
 export interface IBoundingBox {
   width: number;
   height: number;
 }
+
+export interface IResult {
+  _asExpected: boolean;
+  _windowId: string;
+}
+
+let result: IResult;
 
 /**
  * Class wraps the Applitools util for UI or Images comparison
@@ -28,17 +36,17 @@ export class EyesUtil {
 
   /**
    * Opens the eye session
-   * @param testDesc - Run ID
-   * @param testName - Product name
+   * @param testName - Test ID
+   * @param appName - Product name
    * @param boundingBoxObj - Bounding box to screenshots
    */
-  public open(testDesc: string, testName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
+  public open(testName: string, appName: string, boundingBoxObj?: IBoundingBox): EyesUtil {
     Reporter.debug('Open eyes');
     browser.call(() => {
       return this.eyes.open(
         browser,
+        appName,
         testName,
-        testDesc,
         boundingBoxObj === undefined ? { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } : boundingBoxObj
       );
     });
@@ -50,41 +58,50 @@ export class EyesUtil {
 
   /**
    * Since SDK doesn't support array of elements to ignore this method should bypass that limitation
-   * @param checkDescription - Test/Step name (unique)
+   * @param checkDescription - Step name (unique)
    * @param xPaths - array of By.type objects to ignore in check
    */
-  public checkWithIgnores(checkDescription: string, xPaths: string[]): EyesUtil {
-    let targetWindowObj: Target = Target.window();
+  public checkWithIgnores(checkDescription: string, xPaths: string[]): boolean {
+    let targetWindowObj: Target = Target.window(TIMEOUT);
 
     xPaths.forEach((elementXpath: string) => {
       targetWindowObj = targetWindowObj.ignore(By.xpath(elementXpath));
     });
 
-    browser.call(() => {
+    result = browser.call(() => {
       return this.eyes.check(checkDescription, targetWindowObj);
     });
 
-    return this;
+    return result._asExpected;
   }
 
   /**
    *  Full Page screenshots including scrolling (very slow)
-   * @param checkDesc - Unique Test ID
+   * @param checkDesc - Unique Step ID
    */
-  public checkPageLayout(checkDesc: string): void {
+  public checkPageLayout(checkDesc: string): boolean {
     Reporter.debug('Take view port screenshots');
-    browser.call(() => {
-      return this.eyes.check(checkDesc, Target.window().layout());
+
+    result = browser.call(() => {
+      return this.eyes.check(checkDesc, Target.window(TIMEOUT).layout());
     });
+
+    return result._asExpected;
   }
 
   /**
-   * Close eye batch
+   * Close eye test
    */
   public close(): void {
     Reporter.debug('Close eyes');
     browser.call(() => {
-      return this.eyes.close();
+      if (this.eyes.getIsOpen()) {
+        try {
+          return this.eyes.close(false);
+        } finally {
+          this.eyes.abortIfNotClosed();
+        }
+      }
     });
     Reporter.debug('Eyes Closed');
   }
@@ -101,6 +118,17 @@ export class EyesUtil {
 
     browser.call(() => {
       return this.eyes.setForceFullPageScreenshot(onOff);
+    });
+
+    return this;
+  }
+
+  /**
+   * Set batch name for run
+   */
+  public setBatchName(batchName: string): EyesUtil {
+    browser.call(() => {
+      return this.eyes.setBatch(batchName);
     });
 
     return this;
