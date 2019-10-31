@@ -101,7 +101,9 @@ export class EyesUtil {
           });
 
         } finally {
-          this.eyes.abortIfNotClosed();
+          browser.call(() => {
+            return this.eyes.abortIfNotClosed();
+          });
         }
       }
     Reporter.debug('Eyes Closed');
