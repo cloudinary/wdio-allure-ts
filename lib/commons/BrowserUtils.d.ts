@@ -8,6 +8,14 @@ import { SelectorType } from '../enums/SelectorType';
  */
 export declare namespace BrowserUtils {
     /**
+     * Check element's visualisation
+     * For more information see https://github.com/wswebcreation/wdio-image-comparison-service
+     * @param elementSelector selector of the element to check
+     * @param imageFileName file name to compare with
+     * @param options additional options for checker
+     */
+    function checkElement(elementSelector: string, imageFileName: string, options?: Object): void;
+    /**
      * Inject a snippet of JavaScript into the page
      * for execution in the context of the currently selected frame
      * @param script - js script to execute
