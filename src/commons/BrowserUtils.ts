@@ -17,6 +17,25 @@ const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 :
  */
 export namespace BrowserUtils {
   /**
+   * Check element's visualisation
+   * For more information see https://github.com/wswebcreation/wdio-image-comparison-service
+   * @param elementSelector selector of the element to check
+   * @param imageFileName file name to compare with
+   * @param options additional options for checker
+   */
+  export function checkElement(elementSelector: string, imageFileName: string, options: Object = {}): void {
+    Reporter.step('Compare');
+    waitForDisplayed(elementSelector);
+
+    Reporter.debug(`Compare element '${imageFileName}' with selector '${elementSelector}' and options ${options}`);
+    // @ts-ignore
+    const compareResult: number = browser.checkElement($(elementSelector), imageFileName, options);
+
+    if (compareResult !== 0) {
+      throw new Error(`Found ${compareResult}% difference. See attached images`);
+    }
+  }
+  /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
    * @param script - js script to execute
