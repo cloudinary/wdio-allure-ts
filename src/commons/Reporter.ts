@@ -167,7 +167,6 @@ export namespace Reporter {
       content: command.body,
       name: command.bodyLabel,
     };
-    // tslint:disable-next-line:no-unsafe-any
     allureReporter.addStep(command.title, stepContent, status);
   }
 }
