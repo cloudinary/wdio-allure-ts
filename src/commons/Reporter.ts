@@ -39,6 +39,7 @@ class CustomCommand {
  * until new 'Step' log arrived
  */
 export namespace Reporter {
+  import addAttachment = AllureReporter.addAttachment;
   let isStepClosed: boolean = true;
   let currentStepTitle: string;
   let customCommand: CustomCommand;
@@ -50,6 +51,9 @@ export namespace Reporter {
     if (!isStepClosed) {
       if (isFailed) {
         sendCustomCommand(customCommand, 'failed');
+        browser.takeScreenshot();
+        addAttachment('Page HTML source', `${browser.getPageSource()}`);
+        addAttachment('Browser console logs', `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`);
       } else {
         sendCustomCommand(customCommand);
       }
