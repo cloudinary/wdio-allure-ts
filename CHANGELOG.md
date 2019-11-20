@@ -1,3 +1,9 @@
+
+1.1.6 / 2019-11-20
+==================
+
+- Add to allure screenshot and logs for failed test
+  
 1.1.5 / 2019-11-14
 ==================
 - Add checkElement method for image comparison of elements
