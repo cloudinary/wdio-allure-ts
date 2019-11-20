@@ -50,6 +50,12 @@ export namespace Reporter {
     if (!isStepClosed) {
       if (isFailed) {
         sendCustomCommand(customCommand, 'failed');
+        browser.takeScreenshot();
+        allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
+        allureReporter.addAttachment(
+          'Browser console logs',
+          `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`
+        );
       } else {
         sendCustomCommand(customCommand);
       }
@@ -161,7 +167,6 @@ export namespace Reporter {
       content: command.body,
       name: command.bodyLabel,
     };
-    // tslint:disable-next-line:no-unsafe-any
     allureReporter.addStep(command.title, stepContent, status);
   }
 }
