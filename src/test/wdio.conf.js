@@ -21,9 +21,6 @@ exports.config = {
 
   framework: 'mocha',
   //
-  // Test reporter for stdout.
-  // see also: http://webdriver.io/guide/reporters/dot.html
-  reporters: ['spec'],
 
   /**
    * webdriver service
