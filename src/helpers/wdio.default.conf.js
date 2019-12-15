@@ -1,13 +1,13 @@
-const Reporter = require('../../lib/commons/Reporter');
+const Reporter = require('../../lib/commons/Reporter').Reporter;
 const dotenv = require('dotenv');
 const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 5;
-
+const merge = require('lodash/merge');
 /**
  * Default configurations for wdio-allure-ts based projects
  * For more options see https://webdriver.io/docs/configurationfile.html
  *
  */
-exports.config = {
+const config = {
   // Browser capabilities
   capabilities: [
     {
@@ -24,7 +24,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'info',
+  logLevel: 'trace',
   // Default timeout for all waitFor* commands.
   waitforTimeout: 60000,
   //
@@ -71,6 +71,15 @@ exports.config = {
    */
   onPrepare: function() {
     dotenv.config();
+    console.log('\\\\\\\\\\\\\\\\\\\\\\\\');
+    console.log('USING DEFAULT CONFIGURATIONS');
+    console.log('\\\\\\\\\\\\\\\\\\\\\\\\');
+  },
+
+  afterCommand: function() {
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+    console.log('============default afterCommand============');
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
   },
   /**
    * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
@@ -88,3 +97,5 @@ exports.config = {
     Reporter.closeStep(true);
   },
 };
+
+module.exports = config;
