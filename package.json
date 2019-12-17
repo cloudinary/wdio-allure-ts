@@ -10,6 +10,9 @@
     "url": "https://github.com/cloudinary/wdio-allure-ts"
   },
   "main": "lib/index.js",
+  "bin": {
+    "wdio-cli": "lib/helpers/runner.js"
+  },
   "types": "lib/index.d.ts",
   "keywords": [
     "cloudinary",
@@ -27,19 +30,14 @@
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
     "clean": "rm -rf ./lib",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
-    "compile": "npm run clean && npm run prettier && npm run tslint && tsc",
-    "test": "npm run test:compilation && npm run test:regression",
-    "test:compilation": "npm run compile && git diff --exit-code ./lib",
-    "test:regression": "npm run test:regression:chrome && npm run test:regression:firefox",
-    "test:regression:chrome": "wdio src/test/wdio.chrome.conf.js --suite regression",
-    "test:regression:firefox": "wdio src/test/wdio.firefox.conf.js --suite regression",
-    "spec": "wdio src/test/wdio.dev.conf.js --spec",
+    "compile": "npm run clean && npm run prettier && npm run tslint && tsc && cp -R src/helpers/ lib/helpers",
+    "test": "npm run compile && git diff --exit-code ./lib && wdio src/test/wdio.conf.js --suite regression",
+    "spec": "wdio src/test/wdio.conf.js --spec",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html"
   },
   "dependencies": {
     "@applitools/eyes-sdk-core": "^5.20.6",
     "@applitools/eyes-webdriverio": "^5.8.3",
-    "@types/adm-zip": "^0.4.32",
     "@types/mocha": "^5.2.7",
     "@types/request-promise-native": "^1.0.17",
     "@wdio/allure-reporter": "^5.16.0",
@@ -59,6 +57,7 @@
     "yargs": "^15.0.2"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.4.32",
     "@types/chai": "^4.2.5",
     "@types/node": "^12.12.12",
     "local-web-server": "3.0.7",
