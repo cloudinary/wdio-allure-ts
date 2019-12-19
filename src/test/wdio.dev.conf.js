@@ -17,13 +17,6 @@ exports.config = merge(
           args: ['--window-size=1920,1080', '--incognito'],
         },
       },
-
-      {
-          browserName: 'firefox',
-          'moz:firefoxOptions': {
-              args: ['--height=1920', '--width=1080', '--private'],
-          },
-      },
     ],
   },
   { clone: false }
