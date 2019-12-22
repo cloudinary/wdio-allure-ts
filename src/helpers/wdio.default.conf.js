@@ -6,7 +6,7 @@ const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 5;
  * For more options see https://webdriver.io/docs/configurationfile.html
  *
  */
-exports.config = {
+module.exports = {
   // Browser capabilities
   capabilities: [
     {
