@@ -31,7 +31,8 @@
     "clean": "rm -rf ./lib",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "compile": "npm run clean && npm run prettier && npm run tslint && tsc && cp -R src/helpers/ lib/helpers",
-    "test": "npm run compile && git diff --exit-code ./lib && wdio src/test/wdio.conf.js --suite regression",
+    "setChromeDriverVersion": "./src/scripts/setChromeDriverVersion.sh",
+    "test": "npm run compile && git diff --exit-code ./lib && npm run setChromeDriverVersion && wdio src/test/wdio.conf.js --suite regression",
     "spec": "wdio src/test/wdio.conf.js --spec",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html"
   },
