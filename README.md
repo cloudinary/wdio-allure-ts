@@ -86,6 +86,24 @@ Note the difference in the highlighted areas between the original report and the
 
 ![`wdio-allure-ts` Report](https://cloudinary-res.cloudinary.com/image/upload/f_auto,q_auto/blog/wdio-allure-ts/allure_report_updated.png)
 
+## CLI execution
+Added an option to execute tests with cli.
+
+cmd:
+
+`node  ./lib/helpers/runner.js`
+
+That uses default wdio configuration `wdio.default.conf.js` if no parameters passed.
+
+Additional  available cli inputs:
+
+`--specs "test1.js" "test2.js` - tests path separated by space 
+
+`--config "customConfig.js"` - path to custom config for wdio execution
+
+CLI example:
+
+```node  ./lib/helpers/runner.js  --specs 'specs/TEST1.js' 'specs/TEST2.js' --config 'customConf.js' ```
 
 
 ## Ready to Try?
