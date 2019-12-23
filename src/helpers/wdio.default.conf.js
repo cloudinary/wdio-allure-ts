@@ -6,7 +6,7 @@ const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 5;
  * For more options see https://webdriver.io/docs/configurationfile.html
  *
  */
-module.exports = {
+const config = {
   // Browser capabilities
   capabilities: [
     {
@@ -88,3 +88,4 @@ module.exports = {
     Reporter.closeStep(true);
   },
 };
+module.exports = config;
