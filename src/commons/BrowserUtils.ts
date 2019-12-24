@@ -136,19 +136,7 @@ export namespace BrowserUtils {
   export function doubleClick(selector: string): void {
     Reporter.debug(`Double click an element '${selector}'`);
     waitForEnabled(selector);
-
-    const targetElement: string = `var targetElement = document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;`;
-    const clickEvent: string = " var clickEvent  = document.createEvent ('MouseEvents');";
-    const clickEventInit: string = "clickEvent.initEvent ('dblclick', true, true);";
-    const dispatchEvent: string = 'targetElement.dispatchEvent (clickEvent);';
-
-    const script: string = `${targetElement}${clickEvent}${clickEventInit}${dispatchEvent}`;
-
-    tryBlock(
-      () => browser.execute(script),
-
-      `Failed to double click on '${selector}'`
-    );
+    tryBlock(() => $(selector).doubleClick(), `Failed to doubleClick in '${selector}'`);
   }
 
   /**
