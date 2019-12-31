@@ -146,4 +146,17 @@ export class EyesUtil {
 
     return this;
   }
+
+  /**
+   * checking only element area
+   * @param fileName unique name of file
+   * @param selector for checking
+   */
+  public checkElement(fileName: string, selector: string): boolean {
+    result = browser.call(() => {
+      return this.eyes.checkRegion(selector, fileName);
+    });
+
+    return result._asExpected;
+  }
 }
