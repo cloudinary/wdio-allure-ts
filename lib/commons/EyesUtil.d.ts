@@ -48,4 +48,10 @@ export declare class EyesUtil {
      * Set Debug Mode On
      */
     setEyeDebugMode(): EyesUtil;
+    /**
+     * checking only element area
+     * @param fileName unique name of file
+     * @param selector for checking
+     */
+    checkElement(fileName: string, selector: string): boolean;
 }
