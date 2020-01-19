@@ -147,8 +147,6 @@ export namespace BrowserUtils {
   export function navigateToUrl(url: string): void {
     Reporter.debug(`Navigate to '${url}'`);
     tryBlock(() => browser.url(url), `Failed to navigate to '${url}'`);
-
-    expectCurrentUrl(url);
   }
 
   /**
