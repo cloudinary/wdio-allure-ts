@@ -1,4 +1,12 @@
 
+1.1.7 / 2020-01-20
+==================
+
+-   Remove URL validation from URL navigation method
+-   Delete-escape-meta-characters-method 
+-   Cli and custom configurations
+-   Use wdio double click instead of js script 
+
 1.1.6 / 2019-11-20
 ==================
 
