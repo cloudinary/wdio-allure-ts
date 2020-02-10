@@ -1,5 +1,6 @@
 import { Cookie, CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
 import admZip, { IZipEntry } from 'adm-zip';
+import { assert } from 'chai';
 import { EOL } from 'os';
 import requestPromiseNative from 'request-promise-native';
 import { SpecialKeys } from '..';
@@ -513,7 +514,7 @@ export namespace BrowserUtils {
     const iframeVisibility: boolean = iframeDisplayProperty.value === 'block'; //css display value. block == visible, none == not visible
 
     if (iframeVisibility !== expectedVisibility) {
-      throw new Error(
+      assert.fail(
         `Failed on iframe '${iframeSelector}' visibility validation. ${EOL} Expected: '${expectedVisibility}' ${EOL} Actual: '${iframeVisibility}'`
       );
     }
@@ -545,7 +546,7 @@ export namespace BrowserUtils {
 
     //Check for multiple results or no element found
     if (stringResults === null || stringResults === undefined) {
-      throw new Error(
+      assert.fail(
         `Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}'`
       );
     }
@@ -603,7 +604,7 @@ export namespace BrowserUtils {
    */
   function isContainWord(fullText: string, word: string): boolean {
     if (fullText === null || word === null) {
-      throw new Error(`Some of the strings or all are null. fullText: '${fullText}', word: '${word}`);
+      assert.fail(`Some of the strings or all are null. fullText: '${fullText}', word: '${word}`);
     }
     // escape special characters from user input
     const wordEscapedChars: string = word.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -841,13 +842,13 @@ export namespace BrowserUtils {
         zipFileNames.length
       }'`;
       Reporter.error(incorrectLengthErrorMessage);
-      throw new Error(incorrectLengthErrorMessage);
+      assert.fail(incorrectLengthErrorMessage);
     }
 
     if (!listOfFileNames.every((fileName: string) => zipFileNames.includes(fileName))) {
       const incorrectListErrorMessage: string = `Zip content not as expected. Expected [${listOfFileNames.toString()}], actual [${zipFileNames.toString()}]`;
       Reporter.error(incorrectListErrorMessage);
-      throw new Error(incorrectListErrorMessage);
+      assert.fail(incorrectListErrorMessage);
     }
   }
 
@@ -909,7 +910,7 @@ export namespace BrowserUtils {
    * @param error original error
    */
   function handleError(customErrorMessage: string, error: Error): void {
-    throw new Error(`${customErrorMessage} ${EOL} ${error}`);
+    assert.fail(`${customErrorMessage} ${EOL} ${error}`);
   }
 
   /**
