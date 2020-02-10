@@ -15,7 +15,7 @@ describeCommon('GetAttributeSpec of BrowserUtils Tests', () => {
   it('should fail on not existing attribute', () => {
     const selector: string = WRONG_ATTRIB_DIV;
     const attributeName: string = 'ONG';
-    const errorMessage: string = `Failed to get '${attributeName}' attribute from '${selector}' ${EOL} Error: Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}'`;
+    const errorMessage: string = `Failed to get '${attributeName}' attribute from '${selector}' ${EOL} AssertionError: Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}'`;
 
     expect(() => BrowserUtils.getAttribute(selector, attributeName))
       .to.throw(Error)
