@@ -1,4 +1,11 @@
 
+1.1.9 / 2020-02-11
+==================
+
+  * update wdio config (#135)
+  * replace-error-with-assertion (#134)
+  * adding checking area function for applitools
+
 1.1.8 / 2020-01-27
 ==================
 
