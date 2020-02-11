@@ -1,5 +1,7 @@
 const dotenv = require('dotenv');
+dotenv.config();
 const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 5;
+const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 /**
  * Default configurations for wdio-allure-ts based projects
  * For more options see https://webdriver.io/docs/configurationfile.html
@@ -27,7 +29,7 @@ exports.config = {
   // Level of logging verbosity: trace | debug | info | warn | error | silent
   logLevel: 'silent',
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 3000,
+  waitforTimeout: waitForTimeouts,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
@@ -61,20 +63,5 @@ exports.config = {
   framework: 'mocha',
   mochaOpts: {
     timeout: 300000, // test timeout, test will fall after 5 minutes on timeout
-  },
-  //
-  // =====
-  // Hooks
-  // =====
-  // WebdriverIO provides several hooks you can use to interfere with the test process in order to enhance
-  // it and to build services around it. You can either apply a single function or an array of
-  // methods to it. If one of them returns with a promise, WebdriverIO will wait until that promise got
-  // resolved to continue.
-  /**
-   * Gets executed once before all workers get launched.
-   */
-  onPrepare: function() {
-    process.env.DEFAULT_TIME_OUT = 2000;
-    dotenv.config();
   },
 };
