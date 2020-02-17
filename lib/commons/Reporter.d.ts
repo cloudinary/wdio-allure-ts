@@ -10,6 +10,14 @@ export declare namespace Reporter {
      */
     function closeStep(isFailed?: boolean): void;
     /**
+     * Set current executed test name
+     * usage example:
+     * beforeHook: function(test, context) {
+     *    Reporter.setCurrentTestName(`[${test.parent}] [${test.title}]`);
+     * },
+     */
+    function setCurrentTestName(testName: string): void;
+    /**
      * Log step message
      * console log with green color text
      * @param msg text to log
