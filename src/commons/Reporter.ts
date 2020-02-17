@@ -5,7 +5,10 @@ import chalk, { Chalk } from 'chalk';
  * Print to standard output
  */
 const printToConsole: boolean = process.env.PRINT_LOGS_TO_CONSOLE === 'true' || false;
-
+/**
+ * Current executed test name for report logs
+ */
+let currentTestName: string = '';
 const DEBUG: string = '[DEBUG]';
 const DEBUG_COLOR: Chalk = chalk.gray;
 const STEP: string = '[STEP]';
@@ -61,6 +64,17 @@ export namespace Reporter {
       }
     }
     isStepClosed = true;
+  }
+
+  /**
+   * Set current executed test name
+   * usage example:
+   * beforeHook: function(test, context) {
+   *    Reporter.setCurrentTestName(`[${test.parent}] [${test.title}]`);
+   * },
+   */
+  export function setCurrentTestName(testName: string): void {
+    currentTestName = testName;
   }
 
   /**
@@ -179,7 +193,7 @@ export namespace Reporter {
 function prettyMessage(logLevel: string, msg: string): string {
   const dateString: string = getDate();
 
-  return `${dateString} ${logLevel} ${msg}`;
+  return `${dateString} ${currentTestName} ${logLevel} ${msg}`;
 }
 
 /**
