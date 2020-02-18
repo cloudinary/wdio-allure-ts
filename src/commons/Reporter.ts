@@ -50,18 +50,18 @@ export namespace Reporter {
    * Close step in report
    */
   export function closeStep(isFailed?: boolean): void {
-    if (!isStepClosed) {
-      if (isFailed) {
+    if (isFailed) {
+      browser.takeScreenshot();
+      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
+      allureReporter.addAttachment(
+        'Browser console logs',
+        `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`
+      );
+      if (!isStepClosed) {
         sendCustomCommand(customCommand, 'failed');
-        browser.takeScreenshot();
-        allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
-        allureReporter.addAttachment(
-          'Browser console logs',
-          `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`
-        );
-      } else {
-        sendCustomCommand(customCommand);
       }
+    } else if (!isStepClosed) {
+      sendCustomCommand(customCommand);
     }
     isStepClosed = true;
   }
