@@ -45,6 +45,44 @@ export namespace Reporter {
   let isStepClosed: boolean = true;
   let currentStepTitle: string;
   let customCommand: CustomCommand;
+  const networkActivity: { url: string; status: string; headers: object }[] = [];
+
+  /**
+   * Enable network audits for test run.
+   *
+   * Require adding devtools as a service in wdio.conf.js
+   * See https://webdriver.io/docs/devtools-service.html
+   *
+   * Will log all network logs to networkActivity that can be added to html report
+   * For more readable logs, we only log <url>, <status> and <headers> instead of whole request data
+   *
+   * Since devtools typing are missing ts ignore required in some cases such as browser.cdp(...)
+   *
+   * Example of usage:
+   * In beforeTest hook:
+   *      Reporter.enableNetworkAudits()
+   * In afterTest hook:
+   *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+   *    already integrated in Reporter.closeStep method in case of test failure
+   */
+  export function enableNetworkAudits(): void {
+    if (browser.capabilities.browserName === 'chrome') {
+      // @ts-ignore
+      browser.cdp('Network', 'enable');
+
+      // @ts-ignore
+      // tslint:disable-next-line:no-any
+      browser.on('Network.responseReceived', (params: any) => {
+        if (params.type.toLowerCase() === 'xhr' || params.type.toLowerCase() === 'fetch') {
+          networkActivity.push({
+            url: params.response.url,
+            status: params.response.status,
+            headers: params.response.headers,
+          });
+        }
+      });
+    }
+  }
 
   /**
    * Close step in report
@@ -52,11 +90,14 @@ export namespace Reporter {
   export function closeStep(isFailed?: boolean): void {
     if (isFailed) {
       browser.takeScreenshot();
-      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
       allureReporter.addAttachment(
         'Browser console logs',
         `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`
       );
+      // @ts-ignore
+      allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+
+      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
       if (!isStepClosed) {
         sendCustomCommand(customCommand, 'failed');
       }
