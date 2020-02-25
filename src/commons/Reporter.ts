@@ -49,6 +49,7 @@ export namespace Reporter {
 
   /**
    * Enable network audits for test run.
+   * Will log xhr and fetch responses
    *
    * Require adding devtools as a service in wdio.conf.js
    * See https://webdriver.io/docs/devtools-service.html
@@ -65,7 +66,12 @@ export namespace Reporter {
    *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
    *    already integrated in Reporter.closeStep method in case of test failure
    */
-  export function enableNetworkAudits(): void {
+  export function startNetworkAudit(): void {
+    /**
+     * Insure no junk data left
+     */
+    networkActivity.splice(0, networkActivity.length);
+
     if (browser.capabilities.browserName === 'chrome') {
       // @ts-ignore
       browser.cdp('Network', 'enable');

@@ -7,6 +7,7 @@
 export declare namespace Reporter {
     /**
      * Enable network audits for test run.
+     * Will log xhr and fetch responses
      *
      * Require adding devtools as a service in wdio.conf.js
      * See https://webdriver.io/docs/devtools-service.html
@@ -23,7 +24,7 @@ export declare namespace Reporter {
      *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
      *    already integrated in Reporter.closeStep method in case of test failure
      */
-    function enableNetworkAudits(): void;
+    function startNetworkAudit(): void;
     /**
      * Close step in report
      */
