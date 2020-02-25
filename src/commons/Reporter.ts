@@ -85,6 +85,19 @@ export namespace Reporter {
   }
 
   /**
+   * Add logs to report and clean the data
+   */
+  function attachAndCleanNetworkLogs(): void {
+    // @ts-ignore
+    allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+
+    // @ts-ignore
+    browser.cdp('Network', 'disable');
+
+    networkActivity.splice(0, networkActivity.length);
+  }
+
+  /**
    * Close step in report
    */
   export function closeStep(isFailed?: boolean): void {
@@ -94,8 +107,8 @@ export namespace Reporter {
         'Browser console logs',
         `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`
       );
-      // @ts-ignore
-      allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+
+      attachAndCleanNetworkLogs();
 
       allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
       if (!isStepClosed) {
