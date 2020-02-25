@@ -70,7 +70,7 @@ export namespace Reporter {
     /**
      * Insure no junk data left
      */
-    networkActivity.splice(0, networkActivity.length);
+    clearNetworkActivityArray();
 
     if (browser.capabilities.browserName === 'chrome') {
       // @ts-ignore
@@ -90,6 +90,11 @@ export namespace Reporter {
     }
   }
 
+  function clearNetworkActivityArray(): void {
+    while (networkActivity.length > 0) {
+      networkActivity.pop();
+    }
+  }
   /**
    * Add logs to report and clean the data
    */
@@ -100,7 +105,7 @@ export namespace Reporter {
     // @ts-ignore
     browser.cdp('Network', 'disable');
 
-    networkActivity.splice(0, networkActivity.length);
+    clearNetworkActivityArray();
   }
 
   /**
