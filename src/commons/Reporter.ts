@@ -48,6 +48,14 @@ export namespace Reporter {
   const networkActivity: { url: string; status: string; headers: object }[] = [];
 
   /**
+   * Stop network audit by sending disable options to cdp method
+   */
+  function stopNetworkAudit(): void {
+    // @ts-ignore
+    browser.cdp('Network', 'disable');
+  }
+
+  /**
    * Enable network audits for test run.
    * Will log xhr and fetch responses
    *
@@ -102,8 +110,7 @@ export namespace Reporter {
     // @ts-ignore
     allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
 
-    // @ts-ignore
-    browser.cdp('Network', 'disable');
+    stopNetworkAudit();
 
     clearNetworkActivityArray();
   }
@@ -111,7 +118,7 @@ export namespace Reporter {
   /**
    * Close step in report
    */
-  export function closeStep(isFailed?: boolean): void {
+  export function closeStep(isFailed: boolean = false): void {
     if (isFailed) {
       browser.takeScreenshot();
       allureReporter.addAttachment(
@@ -122,12 +129,9 @@ export namespace Reporter {
       attachAndCleanNetworkLogs();
 
       allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
-      if (!isStepClosed) {
-        sendCustomCommand(customCommand, 'failed');
-      }
-    } else if (!isStepClosed) {
-      sendCustomCommand(customCommand);
     }
+    sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
+
     isStepClosed = true;
   }
 
@@ -237,20 +241,16 @@ export namespace Reporter {
    * @param command command to add
    * @param stepStatus status of steps
    */
-  function sendCustomCommand(command: CustomCommand, stepStatus?: string): void {
-    let status: string = 'passed';
-    if (stepStatus !== undefined) {
-      status = stepStatus;
-    }
+  function sendCustomCommand(command: CustomCommand, stepStatus: string = 'passed'): void {
     const stepContent: Object = {
       content: command.body,
       name: command.bodyLabel,
     };
-    allureReporter.addStep(command.title, stepContent, status);
+    allureReporter.addStep(command.title, stepContent, stepStatus);
   }
 }
 
-/*
+/**
  * Message with type stamp, log type and test name
  * @param logLevel message level info/error/warning/debug
  * @param msg text to log
