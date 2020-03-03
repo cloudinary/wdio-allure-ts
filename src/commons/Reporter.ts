@@ -45,7 +45,8 @@ export namespace Reporter {
   let isStepClosed: boolean = true;
   let currentStepTitle: string;
   let customCommand: CustomCommand;
-  const networkActivity: { url: string; status: string; headers: object }[] = [];
+  // tslint:disable-next-line:prefer-const
+  let networkActivity: { url: string; status: string; headers: object }[] = [];
 
   /**
    * Stop network audit by sending disable options to cdp method
@@ -75,11 +76,6 @@ export namespace Reporter {
    *    already integrated in Reporter.closeStep method in case of test failure
    */
   export function startNetworkAudit(): void {
-    /**
-     * Insure no junk data left
-     */
-    clearNetworkActivityArray();
-
     if (browser.capabilities.browserName === 'chrome') {
       // @ts-ignore
       browser.cdp('Network', 'enable');
@@ -98,21 +94,16 @@ export namespace Reporter {
     }
   }
 
-  function clearNetworkActivityArray(): void {
-    while (networkActivity.length > 0) {
-      networkActivity.pop();
-    }
-  }
   /**
    * Add logs to report and clean the data
    */
   function attachAndCleanNetworkLogs(): void {
+    stopNetworkAudit();
+
     // @ts-ignore
     allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
 
-    stopNetworkAudit();
-
-    clearNetworkActivityArray();
+    networkActivity = [];
   }
 
   /**
