@@ -6,6 +6,11 @@
  */
 export declare namespace Reporter {
     /**
+     * Stop network audit by sending disable options to cdp method
+     * ts-ignore used since it missing types support
+     */
+    function stopNetworkAudit(): void;
+    /**
      * Enable network audits for test run.
      * Will log xhr and fetch responses
      *
@@ -18,7 +23,7 @@ export declare namespace Reporter {
      * Since devtools typing are missing ts ignore required in some cases such as browser.cdp(...)
      *
      * Example of usage:
-     * In beforeTest hook:
+     * In beforeSuite hook:
      *      Reporter.enableNetworkAudits()
      * In afterTest hook:
      *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');

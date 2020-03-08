@@ -50,8 +50,9 @@ export namespace Reporter {
 
   /**
    * Stop network audit by sending disable options to cdp method
+   * ts-ignore used since it missing types support
    */
-  function stopNetworkAudit(): void {
+  export function stopNetworkAudit(): void {
     // @ts-ignore
     browser.cdp('Network', 'disable');
   }
@@ -69,7 +70,7 @@ export namespace Reporter {
    * Since devtools typing are missing ts ignore required in some cases such as browser.cdp(...)
    *
    * Example of usage:
-   * In beforeTest hook:
+   * In beforeSuite hook:
    *      Reporter.enableNetworkAudits()
    * In afterTest hook:
    *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
@@ -98,8 +99,6 @@ export namespace Reporter {
    * Add logs to report and clean the data
    */
   function attachAndCleanNetworkLogs(): void {
-    stopNetworkAudit();
-
     // @ts-ignore
     allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
 
@@ -109,7 +108,7 @@ export namespace Reporter {
   /**
    * Close step in report
    */
-  export function closeStep(isFailed: boolean = false): void {
+  export function closeStep(isFailed?: boolean): void {
     if (isFailed) {
       browser.takeScreenshot();
       allureReporter.addAttachment(
@@ -121,9 +120,10 @@ export namespace Reporter {
 
       allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
     }
-    sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
-
-    isStepClosed = true;
+    if (!isStepClosed) {
+      sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
+      isStepClosed = true;
+    }
   }
 
   /**
@@ -145,9 +145,7 @@ export namespace Reporter {
   export function step(msg: string): void {
     toConsole(msg, STEP, STEP_COLOR);
 
-    if (!isStepClosed) {
-      closeStep();
-    }
+    closeStep();
 
     currentStepTitle = `${STEP} - ${msg}`;
     isStepClosed = false;
@@ -232,12 +230,16 @@ export namespace Reporter {
    * @param command command to add
    * @param stepStatus status of steps
    */
-  function sendCustomCommand(command: CustomCommand, stepStatus: string = 'passed'): void {
+  function sendCustomCommand(command: CustomCommand, stepStatus?: string): void {
+    let status: string = 'passed';
+    if (stepStatus !== undefined) {
+      status = stepStatus;
+    }
     const stepContent: Object = {
       content: command.body,
       name: command.bodyLabel,
     };
-    allureReporter.addStep(command.title, stepContent, stepStatus);
+    allureReporter.addStep(command.title, stepContent, status);
   }
 }
 
