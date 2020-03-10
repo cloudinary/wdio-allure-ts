@@ -6,6 +6,31 @@
  */
 export declare namespace Reporter {
     /**
+     * Stop network audit by sending disable options to cdp method
+     * ts-ignore used since it missing types support
+     */
+    function stopNetworkAudit(): void;
+    /**
+     * Enable network audits for test run.
+     * Will log xhr and fetch responses
+     *
+     * Require adding devtools as a service in wdio.conf.js
+     * See https://webdriver.io/docs/devtools-service.html
+     *
+     * Will log all network logs to networkActivity that can be added to html report
+     * For more readable logs, we only log <url>, <status> and <headers> instead of whole request data
+     *
+     * Since devtools typing are missing ts ignore required in some cases such as browser.cdp(...)
+     *
+     * Example of usage:
+     * In beforeSuite hook:
+     *      Reporter.enableNetworkAudits()
+     * In afterTest hook:
+     *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+     *    already integrated in Reporter.closeStep method in case of test failure
+     */
+    function startNetworkAudit(): void;
+    /**
      * Close step in report
      */
     function closeStep(isFailed?: boolean): void;

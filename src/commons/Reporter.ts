@@ -45,6 +45,65 @@ export namespace Reporter {
   let isStepClosed: boolean = true;
   let currentStepTitle: string;
   let customCommand: CustomCommand;
+  // tslint:disable-next-line:prefer-const
+  let networkActivity: { url: string; status: string; headers: object }[] = [];
+
+  /**
+   * Stop network audit by sending disable options to cdp method
+   * ts-ignore used since it missing types support
+   */
+  export function stopNetworkAudit(): void {
+    // @ts-ignore
+    browser.cdp('Network', 'disable');
+  }
+
+  /**
+   * Enable network audits for test run.
+   * Will log xhr and fetch responses
+   *
+   * Require adding devtools as a service in wdio.conf.js
+   * See https://webdriver.io/docs/devtools-service.html
+   *
+   * Will log all network logs to networkActivity that can be added to html report
+   * For more readable logs, we only log <url>, <status> and <headers> instead of whole request data
+   *
+   * Since devtools typing are missing ts ignore required in some cases such as browser.cdp(...)
+   *
+   * Example of usage:
+   * In beforeSuite hook:
+   *      Reporter.enableNetworkAudits()
+   * In afterTest hook:
+   *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+   *    already integrated in Reporter.closeStep method in case of test failure
+   */
+  export function startNetworkAudit(): void {
+    if (browser.capabilities.browserName === 'chrome') {
+      // @ts-ignore
+      browser.cdp('Network', 'enable');
+
+      // @ts-ignore
+      // tslint:disable-next-line:no-any
+      browser.on('Network.responseReceived', (params: any) => {
+        if (params.type.toLowerCase() === 'xhr' || params.type.toLowerCase() === 'fetch') {
+          networkActivity.push({
+            url: params.response.url,
+            status: params.response.status,
+            headers: params.response.headers,
+          });
+        }
+      });
+    }
+  }
+
+  /**
+   * Add logs to report and clean the data
+   */
+  function attachAndCleanNetworkLogs(): void {
+    // @ts-ignore
+    allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+
+    networkActivity = [];
+  }
 
   /**
    * Close step in report
@@ -52,18 +111,19 @@ export namespace Reporter {
   export function closeStep(isFailed?: boolean): void {
     if (isFailed) {
       browser.takeScreenshot();
-      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
       allureReporter.addAttachment(
         'Browser console logs',
         `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`
       );
-      if (!isStepClosed) {
-        sendCustomCommand(customCommand, 'failed');
-      }
-    } else if (!isStepClosed) {
-      sendCustomCommand(customCommand);
+
+      attachAndCleanNetworkLogs();
+
+      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
     }
-    isStepClosed = true;
+    if (!isStepClosed) {
+      sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
+      isStepClosed = true;
+    }
   }
 
   /**
@@ -85,9 +145,7 @@ export namespace Reporter {
   export function step(msg: string): void {
     toConsole(msg, STEP, STEP_COLOR);
 
-    if (!isStepClosed) {
-      closeStep();
-    }
+    closeStep();
 
     currentStepTitle = `${STEP} - ${msg}`;
     isStepClosed = false;
@@ -185,7 +243,7 @@ export namespace Reporter {
   }
 }
 
-/*
+/**
  * Message with type stamp, log type and test name
  * @param logLevel message level info/error/warning/debug
  * @param msg text to log
