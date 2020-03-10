@@ -1,4 +1,10 @@
 
+1.1.11 / 2020-03-10
+===================
+
+  * Add browser network audits (#138)
+  * add data to report in case of failure even if reporter step closed (#137)
+
 1.1.10 / 2020-02-17
 ===================
 
