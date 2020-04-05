@@ -4,9 +4,10 @@
 export namespace TestUtils {
   /**
    * Returns random string of requested length
-   * @param length length of returned string
+   * if no length passed, length value will be 5
+   * @param length length of returned string (optional)
    */
-  export function randomString(length: number): string {
+  export function randomString(length: number = 5): string {
     const possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     return Array(length)
