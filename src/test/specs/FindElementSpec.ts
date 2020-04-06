@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { SelectorType } from '../../enums/SelectorType';
 import { describeCommon } from '../TestHelper';
 

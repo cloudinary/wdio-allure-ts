@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const HEADER: string = "//*[@id='top']/header/h1";

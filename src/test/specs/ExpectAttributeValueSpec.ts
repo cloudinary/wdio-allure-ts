@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const SELECTOR_WITH_ATTRIBUTE: string = '//button[@id="button_with_attribute_value"]';

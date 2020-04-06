@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const ENABLED_ELEMENT_SELECTOR: string = "//button[@id='click_to_enable_second_button']";

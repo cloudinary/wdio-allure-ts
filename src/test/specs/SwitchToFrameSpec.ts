@@ -1,5 +1,5 @@
 import { assert, expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const FRAME_2_HEADER_1: string = "//*[@id='frame2Header1']";

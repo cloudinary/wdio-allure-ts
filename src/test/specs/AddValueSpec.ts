@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
-import { TestUtils } from '../../commons/TestUtils';
+import { BrowserUtils } from '../..';
+import { TestUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const EMPTY_INPUT_SELECTOR: string = "//*[@id='AddValue']//input[@id='empty_input']";

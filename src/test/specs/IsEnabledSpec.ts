@@ -1,6 +1,6 @@
 import { assert, expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
-import { TestUtils } from '../../commons/TestUtils';
+import { BrowserUtils } from '../..';
+import { TestUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const ENABLED_INPUT_SELECTOR: string = "//*[@id='IsEnabled']//input[@id='enabled_input']";
