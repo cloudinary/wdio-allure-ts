@@ -808,13 +808,8 @@ export namespace BrowserUtils {
    * it can be single key or an array of keys
    * @param keysToSend key, array of keys or string array (chars) to send
    */
-  export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string): void {
-    if (typeof keysToSend !== 'string') {
-      Reporter.debug(`Sending Keys ${getKeyNames(keysToSend)}`);
-    } else {
-      const charsToSend: string[] = keysToSend.split('');
-      Reporter.debug(`Sending Keys ${charsToSend}`);
-    }
+  export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string | string[]): void {
+    Reporter.debug(`Sending Keys ${keysToSend}`);
 
     browser.keys(keysToSend);
   }
@@ -879,21 +874,6 @@ export namespace BrowserUtils {
     return zipEntries
       .filter((entry: IZipEntry) => entry.entryName.charAt(entry.entryName.length - 1) !== '/')
       .map((entry: IZipEntry) => entry.entryName);
-  }
-
-  /**
-   * Get name of the enum keys
-   * For reporter log propose in order to log what keys were send
-   * @param keysToSend key/keys of SpecialKeys type
-   */
-  function getKeyNames(keysToSend: SpecialKeys | SpecialKeys[] | string): string {
-    let retVal: string = '';
-    for (const currKey of keysToSend) {
-      const curr: string = Object.keys(SpecialKeys).find((key: string) => SpecialKeys[key] === currKey);
-      retVal = retVal.concat(`${curr}+`);
-    }
-
-    return retVal.substring(0, retVal.length - 1);
   }
 
   /**
