@@ -1,4 +1,4 @@
-import { Cookie, CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
+import { CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
 import admZip, { IZipEntry } from 'adm-zip';
 import { assert } from 'chai';
 import { EOL } from 'os';
@@ -24,7 +24,7 @@ export namespace BrowserUtils {
    * @param imageFileName file name to compare with
    * @param options additional options for checker
    */
-  export function checkElement(elementSelector: string, imageFileName: string, options: Object = {}): void {
+  export function checkElement(elementSelector: string, imageFileName: string, options: object = {}): void {
     Reporter.step('Compare');
     waitForDisplayed(elementSelector);
 
@@ -182,8 +182,10 @@ export namespace BrowserUtils {
       (): boolean => {
         return expectedUrl === normalizeUrl(getUrl());
       },
-      DEFAULT_TIME_OUT,
-      `Url not as expected '${expectedUrl}'`
+      {
+        timeout: DEFAULT_TIME_OUT,
+        timeoutMsg: `Url not as expected '${expectedUrl}'`,
+      }
     );
   }
 
@@ -206,19 +208,13 @@ export namespace BrowserUtils {
   /**
    *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
    * @param action - any condition as a function
-   * @param timeout - specified time out if undefined Default time out is used
+   * @param actionTimeout - specified time out if undefined Default time out is used
    * @param errMessage - Custom message for time out
    */
-  export function waitUntil(
-    action: Function,
-    errMessage?: string,
-    timeout: number = DEFAULT_TIME_OUT
-    // tslint:disable-next-line:no-any
-  ): any {
+  export function waitUntil(action: () => any, errMessage?: string, actionTimeout: number = DEFAULT_TIME_OUT): any {
     Reporter.debug(`Wait Until '${JSON.stringify(action)}'`);
 
-    // tslint:disable-next-line:no-unnecessary-callback-wrapper
-    return browser.waitUntil(() => action(), timeout, errMessage);
+    return browser.waitUntil(() => action(), { timeout: actionTimeout, timeoutMsg: errMessage });
   }
 
   /**
@@ -250,7 +246,7 @@ export namespace BrowserUtils {
   export function waitForEnabled(selector: string): void {
     Reporter.debug(`Wait for an element to be enabled '${selector}'`);
     waitForDisplayed(selector);
-    tryBlock(() => $(selector).waitForEnabled(DEFAULT_TIME_OUT), `Element not enabled '${selector}'`);
+    tryBlock(() => $(selector).waitForEnabled({ timeout: DEFAULT_TIME_OUT }), `Element not enabled '${selector}'`);
   }
 
   /**
@@ -270,7 +266,7 @@ export namespace BrowserUtils {
   export function waitForDisplayed(selector: string): void {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
     isExist(selector);
-    tryBlock(() => $(selector).waitForDisplayed(DEFAULT_TIME_OUT), `Element not visible '${selector}'`);
+    tryBlock(() => $(selector).waitForDisplayed({ timeout: DEFAULT_TIME_OUT }), `Element not visible '${selector}'`);
   }
 
   /**
@@ -280,7 +276,7 @@ export namespace BrowserUtils {
   export function isExist(selector: string): void {
     Reporter.debug(`Expect an element exist '${selector}'`);
 
-    tryBlock(() => $(selector).waitForExist(DEFAULT_TIME_OUT), `Element not exist '${selector}'`);
+    tryBlock(() => $(selector).waitForExist({ timeout: DEFAULT_TIME_OUT }), `Element not exist '${selector}'`);
   }
 
   /**
@@ -291,9 +287,12 @@ export namespace BrowserUtils {
   export function notVisible(selector: string): void {
     Reporter.debug(`Validating element not visible '${selector}'`);
     tryBlock(() => {
-      browser.waitUntil(() => {
-        return !$(selector).isDisplayed();
-      }, DEFAULT_TIME_OUT);
+      browser.waitUntil(
+        () => {
+          return !$(selector).isDisplayed();
+        },
+        { timeout: DEFAULT_TIME_OUT }
+      );
     }, `Failed to validate element not visible '${selector}'`);
   }
 
@@ -305,7 +304,11 @@ export namespace BrowserUtils {
     Reporter.debug(`Validating element not exist '${notExistElementSelector}'`);
 
     tryBlock(
-      () => $(notExistElementSelector).waitForExist(DEFAULT_TIME_OUT, true),
+      () =>
+        $(notExistElementSelector).waitForExist({
+          timeout: DEFAULT_TIME_OUT,
+          reverse: true,
+        }),
       `Failed to validate element not exist '${notExistElementSelector}'`
     );
   }
@@ -328,7 +331,6 @@ export namespace BrowserUtils {
 
   /**
    * Switch to other tab by id
-   * @param tabId tab it to switch
    */
   export function switchTab(handle: string): void {
     Reporter.debug(`Switching tab by id: '${handle}'`);
@@ -502,16 +504,16 @@ export namespace BrowserUtils {
   export function isIframeVisible(iframeSelector: string, expectedVisibility: boolean): void {
     Reporter.debug(`Check iframe visibility is '${expectedVisibility}'`);
 
-    switchToParentFrame(); //if iframe already focused, isExist will fail
+    switchToParentFrame(); // if iframe already focused, isExist will fail
     isExist(iframeSelector);
 
     const cssDisplayProperty: string = 'display';
     const iframeDisplayProperty: CSSProperty = tryBlock(
-      () => $(iframeSelector).getCSSProperty(cssDisplayProperty), //iframe css
+      () => $(iframeSelector).getCSSProperty(cssDisplayProperty), // iframe css
       `Failed to get '${cssDisplayProperty}' css property from '${iframeSelector}'`
     );
 
-    const iframeVisibility: boolean = iframeDisplayProperty.value === 'block'; //css display value. block == visible, none == not visible
+    const iframeVisibility: boolean = iframeDisplayProperty.value === 'block'; // css display value. block == visible, none == not visible
 
     if (iframeVisibility !== expectedVisibility) {
       assert.fail(
@@ -544,7 +546,7 @@ export namespace BrowserUtils {
     // @ts-ignore
     const stringResults: string = $$(selector).length === 1 ? $(selector).getAttribute(attributeName) : undefined;
 
-    //Check for multiple results or no element found
+    // Check for multiple results or no element found
     if (stringResults === null || stringResults === undefined) {
       assert.fail(
         `Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}'`
@@ -638,7 +640,7 @@ export namespace BrowserUtils {
    * @param cookie cookie to set
    * @param domain domain to set cookie for
    */
-  export function setCookie(cookie: Cookie, domain: string): void {
+  export function setCookie(cookie: any, domain: string): void {
     Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
 
     let currentUrl: string;
@@ -754,7 +756,7 @@ export namespace BrowserUtils {
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
   export function pressMouseButton(mouseButton: MouseButton): void {
-    //Defaults to the left mouse button if not specified.
+    // Defaults to the left mouse button if not specified.
     const selectedMouseButton: number = mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Click mouse button '${selectedMouseButton}'`);
     browser.buttonDown(selectedMouseButton);
@@ -769,14 +771,17 @@ export namespace BrowserUtils {
     Reporter.debug(`Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`);
 
     isExist(selector);
-    $(selector).moveTo(xOffset, yOffset);
+    $(selector).moveTo({
+      xOffset,
+      yOffset,
+    });
   }
 
   /**
    * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
    */
   export function releaseMouseButton(mouseButton: number): void {
-    //Defaults to the left mouse button if not specified.
+    // Defaults to the left mouse button if not specified.
     const selectedMouseButton: number = mouseButton === undefined ? MouseButton.LEFT : mouseButton;
     Reporter.step(`Release mouse button '${selectedMouseButton}'`);
     browser.buttonUp(selectedMouseButton);
@@ -838,9 +843,7 @@ export namespace BrowserUtils {
     const zipFileNames: string[] = zipToFileNames(linkToZipFile);
 
     if (expectedNumOfFiles !== undefined && expectedNumOfFiles !== zipFileNames.length) {
-      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${
-        zipFileNames.length
-      }'`;
+      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${zipFileNames.length}'`;
       Reporter.error(incorrectLengthErrorMessage);
       assert.fail(incorrectLengthErrorMessage);
     }
@@ -858,7 +861,6 @@ export namespace BrowserUtils {
    * and return an array with file names from the zip file
    */
   function zipToFileNames(linkToZipFile: string): string[] {
-    // tslint:disable-next-line: promise-function-async
     const zipBuffer: Buffer = browser.call(() => {
       return requestPromiseNative({
         method: 'GET',
@@ -917,8 +919,7 @@ export namespace BrowserUtils {
    * Action wrapper
    * Wrap all actions with try catch block
    */
-  // tslint:disable-next-line:no-any
-  function tryBlock(action: Function, errorMessage: string): any {
+  function tryBlock(action: () => any, errorMessage: string): any {
     try {
       return action();
     } catch (e) {

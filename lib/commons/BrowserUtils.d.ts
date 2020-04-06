@@ -1,5 +1,5 @@
 /// <reference types="@wdio/sync/webdriverio-core" />
-import { Cookie, CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
+import { CSSProperty, LocationReturn, SizeReturn } from '@wdio/sync';
 import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
@@ -14,7 +14,7 @@ export declare namespace BrowserUtils {
      * @param imageFileName file name to compare with
      * @param options additional options for checker
      */
-    function checkElement(elementSelector: string, imageFileName: string, options?: Object): void;
+    function checkElement(elementSelector: string, imageFileName: string, options?: object): void;
     /**
      * Inject a snippet of JavaScript into the page
      * for execution in the context of the currently selected frame
@@ -101,10 +101,10 @@ export declare namespace BrowserUtils {
     /**
      *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
      * @param action - any condition as a function
-     * @param timeout - specified time out if undefined Default time out is used
+     * @param actionTimeout - specified time out if undefined Default time out is used
      * @param errMessage - Custom message for time out
      */
-    function waitUntil(action: Function, errMessage?: string, timeout?: number): any;
+    function waitUntil(action: () => any, errMessage?: string, actionTimeout?: number): any;
     /**
      * Select a value in element
      * Mostly used for drop down item selection from drop down list
@@ -157,7 +157,6 @@ export declare namespace BrowserUtils {
     function switchToFrame(selector: string): void;
     /**
      * Switch to other tab by id
-     * @param tabId tab it to switch
      */
     function switchTab(handle: string): void;
     /**
@@ -262,7 +261,7 @@ export declare namespace BrowserUtils {
      * @param cookie cookie to set
      * @param domain domain to set cookie for
      */
-    function setCookie(cookie: Cookie, domain: string): void;
+    function setCookie(cookie: any, domain: string): void;
     /**
      * Get current Url
      */

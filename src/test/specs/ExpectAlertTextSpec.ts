@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const TEST_FIELD_SELECTOR: string = "//*[@id='ExpectAlertText']";
@@ -32,6 +32,6 @@ describeCommon('expectAlertText', () => {
       browser.dismissAlert();
     } catch {
       console.log('no alert opened');
-    } //some test does not open alert
+    } // some test does not open alert
   });
 });

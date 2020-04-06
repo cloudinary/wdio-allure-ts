@@ -1,4 +1,3 @@
-import { Cookie } from '@wdio/sync';
 import { assert } from 'chai';
 import { BrowserUtils, TestUtils } from '../..';
 import { describeCommon } from '../TestHelper';
@@ -6,8 +5,8 @@ import { describeCommon } from '../TestHelper';
 /**
  * wdio-allure-ts setCookie tests
  */
-let retrievedCookiesArray: Cookie[];
-let cookie: Cookie;
+let retrievedCookiesArray: any[];
+let cookie: any;
 const TEST_PAGE_DOMAIN: string = '127.0.0.1';
 
 describeCommon('Set Cookie', () => {

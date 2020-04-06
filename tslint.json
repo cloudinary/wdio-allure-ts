@@ -1,12 +1,6 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended",
-    "tslint-config-airbnb",
-    "tslint-microsoft-contrib",
-    "tslint-eslint-rules",
-    "tslint-config-prettier"
-  ],
+  "extends": ["tslint:recommended"],
   "rules": {
     "no-console": false,
     "mocha-no-side-effect-code": false,
@@ -15,6 +9,7 @@
     "no-unsafe-any": false,
     "match-default-export-name": false,
     "no-void-expression": false,
-    "no-http-string": false
+    "no-http-string": false,
+    "no-namespace": false
   }
 }
