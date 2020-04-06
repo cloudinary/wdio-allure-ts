@@ -6,11 +6,6 @@ import { describeCommon } from '../TestHelper';
 const TEXT_INPUT: string = "//*[@id='SendKeys_input__text']";
 const text: string = 'Cloudinary';
 
-
-
-
-
-
 /**
  * wdio-allure-ts sendKeys tests
  */
