@@ -61,9 +61,11 @@
   },
   "devDependencies": {
     "@types/adm-zip": "^0.4.32",
-    "@types/node": "^13.5.0",
-    "@types/mocha": "^5.2.7",
     "@types/chai": "^4.2.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^13.5.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.2",
     "local-web-server": "3.0.7",
     "prettier": "1.16.4",
     "tslint": "5.16.0",
@@ -72,5 +74,16 @@
     "tslint-eslint-rules": "5.4.0",
     "tslint-microsoft-contrib": "6.0.0",
     "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
