@@ -196,7 +196,7 @@ export namespace BrowserUtils {
    * @param url url to remove backslash from
    */
   export function normalizeUrl(url: string): string {
-    if (url === null) {
+    if (url === null || url === undefined) {
       throw new Error(`Illegal URL: '${url}'`);
     }
 
