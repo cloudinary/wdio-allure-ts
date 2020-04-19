@@ -4,7 +4,7 @@ import { describeCommon } from '../TestHelper';
 
 namespace PageLocator {
   export const TEXT_INPUT: string = "//*[@id='input__text']";
-  export const HIDDEN_TEXT_INPUT: string = "//*[@id='input__text5']";
+  export const HIDDEN_TEXT_INPUT: string = "//*[@id='hidden-element']";
 }
 
 /**
