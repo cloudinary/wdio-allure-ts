@@ -413,6 +413,16 @@
         <button id="button_with_attribute_value" type="submit" value="hello world">button with attribute</button>
       </fieldset>
 
+      <fieldset id="BackButtonSpec">
+        <legend>BackButtonSpec</legend>
+        <button data-test="navigate-to-cloudinary" onclick="navigateToCloudinary()">navigateToCloudinary</button>
+        <script>
+          function navigateToCloudinary() {
+            window.location.href = 'https://cloudinary.com/';
+          }
+        </script>
+      </fieldset>
+
       <fieldset id="clearValue">
         <legend>ClearValueSpec</legend>
         <br />
