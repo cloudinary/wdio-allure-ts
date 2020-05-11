@@ -838,9 +838,7 @@ export namespace BrowserUtils {
     const zipFileNames: string[] = zipToFileNames(linkToZipFile);
 
     if (expectedNumOfFiles !== undefined && expectedNumOfFiles !== zipFileNames.length) {
-      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${
-        zipFileNames.length
-      }'`;
+      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${zipFileNames.length}'`;
       Reporter.error(incorrectLengthErrorMessage);
       assert.fail(incorrectLengthErrorMessage);
     }
