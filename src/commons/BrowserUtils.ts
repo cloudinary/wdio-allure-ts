@@ -198,7 +198,7 @@ export namespace BrowserUtils {
    * @param url url to remove backslash from
    */
   export function normalizeUrl(url: string): string {
-    if (url === null) {
+    if (url === null || url === undefined) {
       throw new Error(`Illegal URL: '${url}'`);
     }
 
@@ -838,7 +838,9 @@ export namespace BrowserUtils {
     const zipFileNames: string[] = zipToFileNames(linkToZipFile);
 
     if (expectedNumOfFiles !== undefined && expectedNumOfFiles !== zipFileNames.length) {
-      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${zipFileNames.length}'`;
+      const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${
+        zipFileNames.length
+      }'`;
       Reporter.error(incorrectLengthErrorMessage);
       assert.fail(incorrectLengthErrorMessage);
     }

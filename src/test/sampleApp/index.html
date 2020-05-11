@@ -271,11 +271,6 @@
           <label for="input__text">Text Input</label>
           <input id="input__text" type="text" placeholder="Text Input" />
         </p>
-
-        <p>
-          <label for="input__text5" class="hidden">Hidden Text Input: </label>
-          <input hidden id="input__text5" class="is-hidden" type="text" placeholder="Hidden Text Input" />
-        </p>
       </fieldset>
 
       <fieldset id="SendKeys">
@@ -408,10 +403,24 @@
           }
         </script>
       </fieldset>
-
+      <fieldset id="IsDisplayed">
+        <legend>IsDisplayed</legend>
+        <button id="displayed_button">displayed_button</button>
+        <button id="not_displayed_button" style="display:none;">not_displayed_button</button>
+      </fieldset>
       <fieldset id="expectAttributeValue">
         <legend>expectAttributeValue</legend>
         <button id="button_with_attribute_value" type="submit" value="hello world">button with attribute</button>
+      </fieldset>
+
+      <fieldset id="BackButtonSpec">
+        <legend>BackButtonSpec</legend>
+        <button data-test="navigate-to-cloudinary" onclick="navigateToCloudinary()">navigateToCloudinary</button>
+        <script>
+          function navigateToCloudinary() {
+            window.location.href = 'https://cloudinary.com/';
+          }
+        </script>
       </fieldset>
 
       <fieldset id="clearValue">
@@ -420,8 +429,7 @@
         <label for="clearValue-input_text"></label
         ><input id="clearValue-input_text" type="text" placeholder="Text Input" value="clear text" />
         <br />
-        <label for="clearValue-textarea"></label
-        ><textarea id="clearValue-textarea">clear text area</textarea>
+        <label for="clearValue-textarea"></label><textarea id="clearValue-textarea">clear text area</textarea>
       </fieldset>
 
       <p><a href="#top">[Top]</a></p>
