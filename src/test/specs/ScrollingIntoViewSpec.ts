@@ -9,16 +9,16 @@ const LAST_TOP_LINK: string = "//*[@id='scrollingIntoView']//*[@id='scrollToElem
  * wdio-allure-ts Scrolling Into View test
  */
 describeCommon('ScrollingIntoViewSpec', () => {
-  it('scrollIntoView to element outside of viewport', () => {
-    BrowserUtils.waitForDisplayed(HEADER);
-    assert.isFalse($(LAST_TOP_LINK).isDisplayedInViewport());
-    BrowserUtils.scrollIntoView(LAST_TOP_LINK);
-    assert.isTrue($(LAST_TOP_LINK).isDisplayedInViewport());
-  });
+    it('scrollIntoView to element outside of viewport', () => {
+        BrowserUtils.waitForDisplayed(HEADER);
+        assert.isFalse($(LAST_TOP_LINK).isDisplayedInViewport());
+        BrowserUtils.scrollIntoView(LAST_TOP_LINK);
+        assert.isTrue($(LAST_TOP_LINK).isDisplayedInViewport());
+    });
 
-  it('scrollIntoView to element in viewport', () => {
-    BrowserUtils.waitForDisplayed(HEADER);
-    BrowserUtils.scrollIntoView(HEADER);
-    assert.isTrue($(HEADER).isDisplayedInViewport());
-  });
+    it('scrollIntoView to element in viewport', () => {
+        BrowserUtils.waitForDisplayed(HEADER);
+        BrowserUtils.scrollIntoView(HEADER);
+        assert.isTrue($(HEADER).isDisplayedInViewport());
+    });
 });

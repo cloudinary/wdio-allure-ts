@@ -3,7 +3,7 @@ import { BrowserUtils } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 describeCommon('GetUrlSpec', () => {
-  it('get url', () => {
-    expect(BrowserUtils.getUrl()).to.equal(sampleAppUrl);
-  });
+    it('get url', () => {
+        expect(BrowserUtils.getUrl()).to.equal(sampleAppUrl);
+    });
 });

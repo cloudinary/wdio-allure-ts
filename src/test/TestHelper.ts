@@ -11,18 +11,18 @@ export const sampleAppUrl: string = 'http://127.0.0.1:8000/';
  */
 // tslint:disable-next-line:export-name
 export function describeCommon(name: string, body: Function): void {
-  describe(`${name}`, () => {
-    /**
-     * Navigate to sampleApp and wait for it to load
-     */
-    beforeEach(() => {
-      BrowserUtils.navigateToUrl(sampleAppUrl);
-      BrowserUtils.waitForPageToLoad();
-    });
+    describe(`${name}`, () => {
+        /**
+         * Navigate to sampleApp and wait for it to load
+         */
+        beforeEach(() => {
+            BrowserUtils.navigateToUrl(sampleAppUrl);
+            BrowserUtils.waitForPageToLoad();
+        });
 
-    /**
-     * Test context
-     */
-    body(`${name}`);
-  });
+        /**
+         * Test context
+         */
+        body(`${name}`);
+    });
 }

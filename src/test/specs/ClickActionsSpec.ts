@@ -9,15 +9,15 @@ export const DOUBLE_CLICK_DIV: string = "//*[@id='clickActionSpec']//*[@id='div-
  * wdio-allure-ts Click actions on element test
  */
 describeCommon('click', () => {
-  it('singleClick ', () => {
-    BrowserUtils.click(SUBMIT_BUTTON_ONE);
-    assert.equal(BrowserUtils.getAttribute(SUBMIT_BUTTON_ONE, 'value'), 'Button Clicked');
-  });
+    it('singleClick ', () => {
+        BrowserUtils.click(SUBMIT_BUTTON_ONE);
+        assert.equal(BrowserUtils.getAttribute(SUBMIT_BUTTON_ONE, 'value'), 'Button Clicked');
+    });
 
-  it('doubleClick', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-    BrowserUtils.doubleClick(DOUBLE_CLICK_DIV);
-    $(DOUBLE_CLICK_DIV).waitForDisplayed();
-    assert.equal($(DOUBLE_CLICK_DIV).getText(), 'Double click');
-  });
+    it('doubleClick', () => {
+        BrowserUtils.navigateToUrl(sampleAppUrl);
+        BrowserUtils.doubleClick(DOUBLE_CLICK_DIV);
+        $(DOUBLE_CLICK_DIV).waitForDisplayed();
+        assert.equal($(DOUBLE_CLICK_DIV).getText(), 'Double click');
+    });
 });

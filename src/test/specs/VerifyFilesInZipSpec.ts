@@ -8,22 +8,22 @@ const fileNamesList: string[] = ['firstFile.txt', 'secondFile.jpeg', 'innerFolde
  * verifyFilesInZip
  */
 describeCommon('verifyFilesInZip', () => {
-  it('correct list without size', () => {
-    expect(() => BrowserUtils.verifyFilesInZip(linkToZip, fileNamesList)).to.not.throw(Error);
-  });
-  it('correct list with incorrect size', () => {
-    expect(() => BrowserUtils.verifyFilesInZip(linkToZip, fileNamesList, 5))
-      .to.throw(Error)
-      .with.property('message')
-      .contains("Incorrect number of files. Expected '5', actual '3'");
-  });
-  it('correct list with size', () => {
-    expect(() => BrowserUtils.verifyFilesInZip(linkToZip, fileNamesList, 3)).to.not.throw(Error);
-  });
-  it('incorrect zip link', () => {
-    expect(() => BrowserUtils.verifyFilesInZip('notALink', ['']))
-      .to.throw(Error)
-      .with.property('message')
-      .contains("Failed to get zip file from 'notALink'");
-  });
+    it('correct list without size', () => {
+        expect(() => BrowserUtils.verifyFilesInZip(linkToZip, fileNamesList)).to.not.throw(Error);
+    });
+    it('correct list with incorrect size', () => {
+        expect(() => BrowserUtils.verifyFilesInZip(linkToZip, fileNamesList, 5))
+            .to.throw(Error)
+            .with.property('message')
+            .contains("Incorrect number of files. Expected '5', actual '3'");
+    });
+    it('correct list with size', () => {
+        expect(() => BrowserUtils.verifyFilesInZip(linkToZip, fileNamesList, 3)).to.not.throw(Error);
+    });
+    it('incorrect zip link', () => {
+        expect(() => BrowserUtils.verifyFilesInZip('notALink', ['']))
+            .to.throw(Error)
+            .with.property('message')
+            .contains("Failed to get zip file from 'notALink'");
+    });
 });
