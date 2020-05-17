@@ -555,6 +555,35 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Wait for page to load.
+   * Inject event listener that waits for document.readyState === 'complete'
+   */
+  export function waitForPageToLoad(): void {
+    Reporter.debug('Wait for page to load');
+    tryBlock(() => {
+      // tslint:disable
+      browser.execute(() => {
+        const createDummyElement = () => {
+          setTimeout(() => {
+            const ele = document.createElement('div');
+            ele.setAttribute('id', 'page-is-loaded-automation');
+            Object.assign(ele.style, { position: 'fixed', display: 'none' });
+            document.body.appendChild(ele);
+          }, 500);
+        };
+        if (document.readyState === 'complete') {
+          createDummyElement();
+        } else {
+          window.addEventListener('load', createDummyElement);
+        }
+      });
+      // tslint:enable
+
+      isExist('#page-is-loaded-automation');
+    }, 'Wait for page to load failed');
+  }
+
+  /**
    * Check if attribute with given selector contain expected value
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
