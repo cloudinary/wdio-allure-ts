@@ -82,7 +82,7 @@
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --write",
+      "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
       "git add"
     ]
   }
