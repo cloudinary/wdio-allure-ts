@@ -559,6 +559,7 @@ export namespace BrowserUtils {
    * Inject event listener that waits for document.readyState === 'complete'
    */
   export function waitForPageToLoad(): void {
+    const loadElementPublicId: string = 'page-is-loaded-automation';
     Reporter.debug('Wait for page to load');
     tryBlock(() => {
       // tslint:disable
@@ -566,7 +567,7 @@ export namespace BrowserUtils {
         const createDummyElement = () => {
           setTimeout(() => {
             const ele = document.createElement('div');
-            ele.setAttribute('id', 'page-is-loaded-automation');
+            ele.setAttribute('id', loadElementPublicId);
             Object.assign(ele.style, { position: 'fixed', display: 'none' });
             document.body.appendChild(ele);
           }, 500);
@@ -579,7 +580,7 @@ export namespace BrowserUtils {
       });
       // tslint:enable
 
-      isExist('#page-is-loaded-automation');
+      isExist(`//*[@id='${loadElementPublicId}']`);
     }, 'Wait for page to load failed');
   }
 
