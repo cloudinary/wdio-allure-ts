@@ -10,10 +10,10 @@
     "url": "https://github.com/cloudinary/wdio-allure-ts"
   },
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "bin": {
     "wdio-cli": "lib/helpers/runner.js"
   },
-  "types": "lib/index.d.ts",
   "keywords": [
     "cloudinary",
     "allure",
@@ -30,9 +30,10 @@
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
     "clean": "rm -rf ./lib",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
-    "compile": "npm run clean && npm run prettier && npm run tslint && tsc && cp -R src/helpers/ lib/helpers",
+    "prepare": "npm run clean && npm run prettier && npm run tslint && tsc && cp -R src/helpers/ lib/helpers",
+    "compile": "npm run prettier && npm run tslint && tsc",
     "setChromeDriverVersion": "./src/scripts/setChromeDriverVersion.sh",
-    "test": "npm run compile && git diff --exit-code ./lib && npm run setChromeDriverVersion && wdio src/test/wdio.conf.js --suite regression",
+    "test": "npm run compile && npm run setChromeDriverVersion && wdio src/test/wdio.conf.js --suite regression",
     "spec": "wdio src/test/wdio.conf.js --spec",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html"
   },
