@@ -1,4 +1,15 @@
 
+1.2.4 / 2020-05-18
+==================
+
+  * omit-compiled-js (#157)
+  * back browser spec (#155)
+  * GetUrlSpec (#154)
+  * GetSystemData (#153)
+  * test update (#152)
+  * is displayed spec (#151)
+  * normalize url spec (#150)
+
 1.2.3 / 2020-04-14
 ==================
 
