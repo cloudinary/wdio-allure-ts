@@ -557,31 +557,18 @@ export namespace BrowserUtils {
     /**
      * Wait for page to load.
      * Inject event listener that waits for document.readyState === 'complete'
+     *
+     * @param additionalWaitAfterLoad - Since this will be used mostly for image comparision, additional timeout
+     * added with default value of 1000 milliseconds
      */
-    export function waitForPageToLoad(): void {
-        const loadElementPublicId: string = 'page-is-loaded-automation';
-        Reporter.debug('Wait for page to load');
-        tryBlock(() => {
-            // tslint:disable
-            browser.execute(() => {
-                const createDummyElement = () => {
-                    setTimeout(() => {
-                        const ele = document.createElement('div');
-                        ele.setAttribute('id', loadElementPublicId);
-                        Object.assign(ele.style, { position: 'fixed', display: 'none' });
-                        document.body.appendChild(ele);
-                    }, 500);
-                };
-                if (document.readyState === 'complete') {
-                    createDummyElement();
-                } else {
-                    window.addEventListener('load', createDummyElement);
-                }
-            });
-            // tslint:enable
+    export function waitForPageToLoad(additionalWaitAfterLoad: number = 1000): void {
+        Reporter.debug("Wait for document.readyState === 'complete'");
+        waitUntil(() => {
+            return browser.execute("return document.readyState === 'complete'");
+        }, 'Failed to wait for page to load');
 
-            isExist(`//*[@id='${loadElementPublicId}']`);
-        }, 'Wait for page to load failed');
+        Reporter.debug(`Pause for '${additionalWaitAfterLoad}' milliseconds`);
+        browser.pause(additionalWaitAfterLoad);
     }
 
     /**
