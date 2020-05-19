@@ -584,11 +584,13 @@ export namespace BrowserUtils {
    */
   export function waitForPageToLoad(additionalWaitAfterLoad: number = 1000): void {
     Reporter.debug("Wait for document.readyState === 'complete'");
-    waitUntil(() => {
-      return browser.execute("return document.readyState === 'complete'");
-    }, 'Failed to wait for page to load');
+    browser.waitUntil(
+      () => browser.execute("return document.readyState === 'complete'"),
+      DEFAULT_TIME_OUT,
+      "document.readyState !== 'complete'"
+    );
 
-    Reporter.debug(`Pause for '${additionalWaitAfterLoad}' milliseconds`);
+    Reporter.debug(`Pause for ${additionalWaitAfterLoad} milliseconds`);
     browser.pause(additionalWaitAfterLoad);
   }
 
