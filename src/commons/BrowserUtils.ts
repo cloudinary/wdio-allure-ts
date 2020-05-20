@@ -576,6 +576,25 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Wait for page to load.
+   * Inject event listener that waits for document.readyState === 'complete'
+   *
+   * @param additionalWaitAfterLoad - Since this will be used mostly for image comparision, additional timeout
+   * added with default value of 1000 milliseconds
+   */
+  export function waitForPageToLoad(additionalWaitAfterLoad: number = 1000): void {
+    Reporter.debug("Wait for document.readyState === 'complete'");
+    browser.waitUntil(
+      () => browser.execute("return document.readyState === 'complete'"),
+      DEFAULT_TIME_OUT,
+      "document.readyState !== 'complete'"
+    );
+
+    Reporter.debug(`Pause for ${additionalWaitAfterLoad} milliseconds`);
+    browser.pause(additionalWaitAfterLoad);
+  }
+
+  /**
    * Check if attribute with given selector NOT contain expected word
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
