@@ -81,6 +81,8 @@ export namespace BrowserUtils {
   /**
    * Clear a <textarea> or text <input> element’s value
    * @param selector element selector
+   * Since WDIO has a issue with clear value
+   * we will use this workaround
    */
   export function clearValue(selector: string): void {
     Reporter.debug(`Clear text in '${selector}'`);
