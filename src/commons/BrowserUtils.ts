@@ -85,7 +85,13 @@ export namespace BrowserUtils {
   export function clearValue(selector: string): void {
     Reporter.debug(`Clear text in '${selector}'`);
     waitForDisplayed(selector);
-    tryBlock(() => $(selector).clearValue(), `Failed to clear value in '${selector}'`);
+    tryBlock(() => {
+      const inputElement: WebdriverIO.Element = $(selector);
+      while (inputElement.getValue() !== '') {
+        inputElement.doubleClick();
+        browser.keys('Delete');
+      }
+    }, `Failed to clear value in '${selector}'`);
   }
 
   /**
@@ -328,7 +334,7 @@ export namespace BrowserUtils {
 
   /**
    * Switch to other tab by id
-   * @param tabId tab it to switch
+   * @param handle tab it to switch
    */
   export function switchTab(handle: string): void {
     Reporter.debug(`Switching tab by id: '${handle}'`);
