@@ -100,11 +100,14 @@ export namespace BrowserUtils {
    * Set a value to an element located by selector
    * @param selector element selector
    * @param value - value to add
+   *
+   * Since WDIO has an issue with cleaning value we will use
+   * this workaround
    */
   export function setValue(selector: string, value: string | number): void {
     Reporter.debug(`Set element '${selector} with value: '${value}'`);
-    waitForDisplayed(selector);
-    tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
+    clearValue(selector);
+    tryBlock(() => $(selector).addValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
   /**
