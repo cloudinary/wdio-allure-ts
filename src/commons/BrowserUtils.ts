@@ -90,7 +90,7 @@ export namespace BrowserUtils {
     tryBlock(() => {
       const inputElement: WebdriverIO.Element = $(selector);
       while (inputElement.getValue() !== '') {
-        inputElement.click();
+        inputElement.doubleClick();
         browser.keys('Delete');
       }
     }, `Failed to clear value in '${selector}'`);
