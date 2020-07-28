@@ -17,6 +17,20 @@
     }
 
     /**
+     * HoverButton style
+     */
+    .HoverButton {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    }
+
+    .HoverButton:hover {
+    background-color: #4CAF50;
+    color: white;
+    }
+
+    /**
      * Highlight the bounds of direct children of a test block
      */
 
@@ -431,7 +445,10 @@
         <br />
         <label for="clearValue-textarea"></label><textarea id="clearValue-textarea">clear text area</textarea>
       </fieldset>
-
+      <fieldset id="HoverSpec">
+        <legend>HoverSpec</legend>   
+        <button id="HoverButton" type="button" class="HoverButton">HoverButton</button>
+      </fieldset>
       <p><a href="#top">[Top]</a></p>
     </div>
   </body>
