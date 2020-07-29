@@ -27,13 +27,12 @@
     "examples"
   ],
   "scripts": {
-    "compile": "npm run prettier && npm run tslint",
     "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
-    "prepack": "tsc && cp -R src/helpers/ lib/helpers",
+    "prepack": "npm run tslint && tsc && cp -R src/helpers/ lib/helpers",
     "setChromeDriverVersion": "./src/scripts/setChromeDriverVersion.sh",
-    "test": "npm run setChromeDriverVersion && wdio src/test/wdio.conf.js --suite regression",
-    "spec": "wdio src/test/wdio.conf.js --spec",
+    "test": "DEFAULT_TIME_OUT=3000 npm run setChromeDriverVersion; npm run tslint && wdio src/test/wdio.conf.js --suite regression",
+    "spec": "DEFAULT_TIME_OUT=3000 npm run tslint && wdio src/test/wdio.conf.js --spec",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html"
   },
   "dependencies": {
