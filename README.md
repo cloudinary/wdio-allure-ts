@@ -9,7 +9,12 @@ Util that blends [WebdriverIO](http://webdriver.io/ "WebdriverIO"), [TypeScript]
 ##Getting Started
 You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 8 or above, [NodeJS](https://nodejs.org/en/download)
 
-Supported browsers [Chrome](https://www.google.com/chrome) and [Firefox](https://www.mozilla.org/en-US/firefox/new)
+Supported browsers [Chrome](https://www.google.com/chrome)
+
+####Install and run tests
+```npm install``` install all dependencies
+```npm run start:sampleApp``` spin up the sample app page for testings
+```npm test``` execute all tests
 
 ## Project Structure
 
@@ -27,7 +32,7 @@ Common utils for tests such as getRandomString()
 
 ### SpecialKeys
 
-Holds keyboard's special keys
+Holds keyboard special keys
 
 ### Environment variables
 ```PRINT_LOGS_TO_CONSOLE``` - false by default. only enabled in dev configuration, since parallel tests execution will log to same terminal
