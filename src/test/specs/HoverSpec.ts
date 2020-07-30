@@ -10,6 +10,7 @@ const NOT_EXISITING_ELEMENT_SELECTOR: string = "//*[@class='AndrzejTheKing']";
 
 describeCommon('HoverAction', () => {
   it('hoverTrue', () => {
+    $(HOVER_BUTTON).scrollIntoView();
     BrowserUtils.hover(HOVER_BUTTON);
     assert.equal($(HOVER_BUTTON).getCSSProperty('background-color').parsed.hex, '#4caf50');
   });
