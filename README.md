@@ -13,7 +13,7 @@ Supported browsers [Chrome](https://www.google.com/chrome)
 
 ####Install and run tests
 ```npm install``` install all dependencies
-```npm run start:sampleApp``` spin up the sample app page for testings
+```npm run start:sampleApp``` spin up the sample app page for testing
 ```npm test``` execute all tests
 
 ## Project Structure
