@@ -13,8 +13,17 @@ Supported browsers [Chrome](https://www.google.com/chrome)
 
 ####Install and run tests
 ```npm install``` install all dependencies
+
 ```npm run start:sampleApp``` spin up the sample app page for testing
+
 ```npm test``` execute all tests
+
+```npm run spec <spec name>``` to execute specific spec file 
+
+### Environment variables
+```PRINT_LOGS_TO_CONSOLE``` - false by default. only enabled in dev configuration, since parallel tests execution will log to same terminal
+
+```DEFAULT_TIME_OUT``` - timeout for webdriverIO actions. Default value 60 seconds
 
 ## Project Structure
 
@@ -33,10 +42,6 @@ Common utils for tests such as getRandomString()
 ### SpecialKeys
 
 Holds keyboard special keys
-
-### Environment variables
-```PRINT_LOGS_TO_CONSOLE``` - false by default. only enabled in dev configuration, since parallel tests execution will log to same terminal
-```DEFAULT_TIME_OUT``` - timeout for webdriverIO actions. Default value 60 seconds
 
 ## Example With Pure WebdriverIO
 
