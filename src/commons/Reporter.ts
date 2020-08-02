@@ -1,5 +1,5 @@
 import allureReporter from '@wdio/allure-reporter';
-import chalk, { Chalk } from 'chalk';
+import chalk from 'chalk';
 
 /**
  * Print to standard output
@@ -10,13 +10,13 @@ const printToConsole: boolean = process.env.PRINT_LOGS_TO_CONSOLE === 'true' || 
  */
 let currentTestName: string = '';
 const DEBUG: string = '[DEBUG]';
-const DEBUG_COLOR: Chalk = chalk.gray;
+const DEBUG_COLOR: chalk.Chalk = chalk.gray;
 const STEP: string = '[STEP]';
-const STEP_COLOR: Chalk = chalk.green;
+const STEP_COLOR: chalk.Chalk = chalk.green;
 const WARNING: string = '[WARNING]';
-const WARNING_COLOR: Chalk = chalk.yellow;
+const WARNING_COLOR: chalk.Chalk = chalk.yellow;
 const ERROR: string = '[ERROR]';
-const ERROR_COLOR: Chalk = chalk.red;
+const ERROR_COLOR: chalk.Chalk = chalk.red;
 
 /**
  * Custom command for use with wdio-allure-reporter
@@ -270,7 +270,7 @@ function getDate(): string {
  * @param level message level
  * @param color message color
  */
-function toConsole(msg: string, level: string, color: Chalk): void {
+function toConsole(msg: string, level: string, color: chalk.Chalk): void {
   if (printToConsole) {
     const messageToLog: string = prettyMessage(level, msg);
     console.log(color(messageToLog));

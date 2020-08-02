@@ -27,14 +27,13 @@
     "examples"
   ],
   "scripts": {
-    "tslint": "tslint -c tslint.json 'src/**/*.ts' -p ./ --fix",
-    "clean": "rm -rf ./lib",
+    "tslint": "tslint -c ./tslint.json 'src/**/*.ts' --fix",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
-    "prepare": "npm run clean && npm run prettier && npm run tslint && tsc && cp -R src/helpers/ lib/helpers",
-    "compile": "npm run prettier && npm run tslint && tsc",
+    "prepack": "npm run tslint && tsc && cp -R src/helpers/ lib/helpers",
     "setChromeDriverVersion": "./src/scripts/setChromeDriverVersion.sh",
-    "test": "npm run compile && npm run setChromeDriverVersion && wdio src/test/wdio.conf.js --suite regression",
-    "spec": "wdio src/test/wdio.conf.js --spec",
+    "test": "DEFAULT_TIME_OUT=3000 npm run setChromeDriverVersion; wdio src/test/wdio.conf.js --suite regression",
+    "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
+    "pretest": "npm run tslint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html"
   },
   "dependencies": {
@@ -55,6 +54,8 @@
     "dotenv": "^8.2.0",
     "lodash": "^4.17.15",
     "request-promise-native": "^1.0.8",
+    "ts-node": "^8.10.2",
+    "tsconfig-paths": "^3.9.0",
     "wdio-docker-service": "2.3.1",
     "wdio-image-comparison-service": "1.12.2",
     "webdriverio": "5.18.6",
