@@ -1,4 +1,4 @@
-# WebdriverIO + Allure reporter + TypesScript
+# WebdriverIO + Allure reporter + TypeScript
 
 ---
 
