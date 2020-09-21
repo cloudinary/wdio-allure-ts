@@ -401,6 +401,23 @@
           </div>
         </article>
       </fieldset>
+      <fieldset id="WaitForDisplayed">
+        <legend>WaitForDisplayed</legend>
+        <div id="wait-for-displayed">
+          <button id="add_new_button" onclick='loadButton()'>Add More</button>
+          <p hidden id="hidden_element">This paragraph should be hidden.</p>
+        </div>
+        <script type="text/javascript">
+          function loadButton(){
+            setTimeout(()=>{
+              let button = document.createElement('button');
+              button.id= 'DISPLAYED_ELEMENT';
+              button.innerHTML = 'DISPLAYED_ELEMENT';
+              document.getElementById("wait-for-displayed").appendChild(button);
+            }, 1000)
+          }
+        </script>
+      </fieldset>
       <fieldset id="WaitForEnabled">
         <legend>WaitForEnabled</legend>
         <button id="click_to_enable_second_button" onclick="enableAfterSec()">first button</button>
