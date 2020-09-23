@@ -9,20 +9,23 @@ const NOT_EXISTING_VALUE: string = `${PARENT_SELECTOR}//*[@id='EXISTING_ELEMENT_
 const HIDDEN_VALUE: string = `${PARENT_SELECTOR}//*[@id='EXISTING_ELEMENT_SELECTOR']`;
 const NOT_EXISTING_ELEMENT_SELECTOR: string = `${PARENT_SELECTOR}//*[@id='not-existing-list-of-values']`;
 
+/**
+ * selectByValue
+ */
+
 describeCommon('selectByValue', () => {
   it('select by existing value', () => {
     BrowserUtils.selectByValue(EXISTING_ELEMENT_SELECTOR, EXISTING_VALUE);
   });
 
   it('select by none existing value', () => {
-    BrowserUtils.selectByValue(EXISTING_ELEMENT_SELECTOR, NOT_EXISTING_VALUE);
     expect(() => BrowserUtils.selectByValue(EXISTING_ELEMENT_SELECTOR, NOT_EXISTING_VALUE))
       .to.throw(Error)
       .with.property('message')
       .contains('Failed to select ');
   });
 
-  it.only('select hidden element by value', () => {
+  it('select hidden element by value', () => {
     expect(() => BrowserUtils.selectByValue(NOT_EXISTING_ELEMENT_SELECTOR, HIDDEN_VALUE))
       .to.throw(Error)
       .with.property('message')
