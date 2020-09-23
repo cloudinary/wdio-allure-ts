@@ -143,8 +143,8 @@
         <label for="not_empty_input"></label
         ><input id="not_empty_input" type="text" placeholder="Text Input" value="Cloudinary" />
         <br />
-        <label for="AddValue-disabled_input"></label
-        ><input id="AddValue-disabled_input" type="text" placeholder="Text Input" disabled />
+        <label for="AddValue-disabled_input"></label>
+        <input id="AddValue-disabled_input" type="text" placeholder="Text Input" disabled />
         <br />
       </fieldset>
       <fieldset id="ExpectText">
@@ -416,6 +416,21 @@
               document.getElementById("wait-for-displayed").appendChild(button);
             }, 1000)
           }
+        </script>
+      </fieldset>
+      <fieldset id="selectByValue">
+        <legend>SelectByValue</legend>
+        <div class="dropdown" id="select-by-value">
+          <label>
+            <select id="list-of-values">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+          </label>
+        </div>
+        <script type="text/javascript">
         </script>
       </fieldset>
       <fieldset id="WaitForEnabled">
