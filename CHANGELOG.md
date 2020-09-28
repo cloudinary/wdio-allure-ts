@@ -1,4 +1,15 @@
 
+1.3.0 / 2020-08-02
+==================
+
+  * Use ts node for tests execution (#163)
+
+1.2.6 / 2020-08-02
+==================
+
+  * Add RefreshBrowserSpec
+  * Add HoverSpec
+
 1.2.5 / 2020-05-20
 ==================
 

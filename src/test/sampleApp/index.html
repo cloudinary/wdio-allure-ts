@@ -17,6 +17,20 @@
     }
 
     /**
+     * HoverButton style
+     */
+    .HoverButton {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    }
+
+    .HoverButton:hover {
+    background-color: #4CAF50;
+    color: white;
+    }
+
+    /**
      * Highlight the bounds of direct children of a test block
      */
 
@@ -387,6 +401,44 @@
           </div>
         </article>
       </fieldset>
+      <fieldset id="WaitForDisplayed">
+        <legend>WaitForDisplayed</legend>
+        <div id="wait-for-displayed">
+          <button id="add_new_button" onclick='loadButton()'>Add More</button>
+          <p hidden id="hidden_element">This paragraph should be hidden.</p>
+        </div>
+        <script type="text/javascript">
+          function loadButton(){
+            setTimeout(()=>{
+              let button = document.createElement('button');
+              button.id= 'DISPLAYED_ELEMENT';
+              button.innerHTML = 'DISPLAYED_ELEMENT';
+              document.getElementById("wait-for-displayed").appendChild(button);
+            }, 1000)
+          }
+        </script>
+      </fieldset>
+      <fieldset id="selectByValue">
+        <legend>SelectByValue</legend>
+        <div class="dropdown" id="select-by-value">
+          <label>
+            <select id="list-of-values">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+          </label>
+        </div>
+        <script type="text/javascript">
+        </script>
+      </fieldset>
+      <fieldset id="IsExist">
+        <legend>IsExist</legend>
+        <div id="is-exist">
+          <button id="is-exist-button">Click does nothing</button>
+        </div>
+      </fieldset>
       <fieldset id="WaitForEnabled">
         <legend>WaitForEnabled</legend>
         <button id="click_to_enable_second_button" onclick="enableAfterSec()">first button</button>
@@ -431,7 +483,14 @@
         <br />
         <label for="clearValue-textarea"></label><textarea id="clearValue-textarea">clear text area</textarea>
       </fieldset>
-
+      <fieldset id="HoverSpec">
+        <legend>HoverSpec</legend>   
+        <button id="HoverButton" type="button" class="HoverButton">HoverButton</button>
+      </fieldset>
+      <fieldset id="RefreshBrowserSpec">
+        <legend>RefreshBrowser</legend>   
+        <input id="RefreshBrowserCheckFiled" type="text" placeholder="TextField" />
+      </fieldset>
       <p><a href="#top">[Top]</a></p>
     </div>
   </body>

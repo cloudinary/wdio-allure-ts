@@ -8,8 +8,8 @@ const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
  *
  */
 exports.config = {
-  specs: ['./lib/test/specs/**/*Spec.js'],
-  suites: { regression: ['./lib/test/specs/**/*Spec.js'] },
+  specs: ['./src/test/specs/**/*Spec.ts'],
+  suites: { regression: ['./src/test/specs/**/*Spec.ts'] },
 
   // Browser capabilities
   capabilities: [
@@ -62,6 +62,9 @@ exports.config = {
   // before running any tests.
   framework: 'mocha',
   mochaOpts: {
+    ui: 'bdd',
     timeout: 300000,
+    // TypeScript setup
+    require: 'ts-node/register',
   },
 };

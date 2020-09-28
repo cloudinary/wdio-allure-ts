@@ -1,4 +1,4 @@
-# WebdriverIO + Allure reporter + TypesScript
+# WebdriverIO + Allure reporter + TypeScript
 
 ---
 
@@ -9,7 +9,21 @@ Util that blends [WebdriverIO](http://webdriver.io/ "WebdriverIO"), [TypeScript]
 ##Getting Started
 You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 8 or above, [NodeJS](https://nodejs.org/en/download)
 
-Supported browsers [Chrome](https://www.google.com/chrome) and [Firefox](https://www.mozilla.org/en-US/firefox/new)
+Supported browsers [Chrome](https://www.google.com/chrome)
+
+####Install and run tests
+```npm install``` install all dependencies
+
+```npm run start:sampleApp``` spin up the sample app page for testing
+
+```npm test``` execute all tests
+
+```npm run spec <spec name>``` to execute specific spec file 
+
+### Environment variables
+```PRINT_LOGS_TO_CONSOLE``` - false by default. only enabled in dev configuration, since parallel tests execution will log to same terminal
+
+```DEFAULT_TIME_OUT``` - timeout for webdriverIO actions. Default value 60 seconds
 
 ## Project Structure
 
@@ -27,11 +41,7 @@ Common utils for tests such as getRandomString()
 
 ### SpecialKeys
 
-Holds keyboard's special keys
-
-### Environment variables
-```PRINT_LOGS_TO_CONSOLE``` - false by default. only enabled in dev configuration, since parallel tests execution will log to same terminal
-```DEFAULT_TIME_OUT``` - timeout for webdriverIO actions. Default value 60 seconds
+Holds keyboard special keys
 
 ## Example With Pure WebdriverIO
 
