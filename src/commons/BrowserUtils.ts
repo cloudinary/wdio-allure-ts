@@ -658,7 +658,7 @@ export namespace BrowserUtils {
    * @param cookie cookie to set
    * @param domain domain to set cookie for
    */
-  export function setCookie(cookie: any, domain: string): void {
+  export function setCookie(cookie: WebDriver.Cookie, domain: string): void {
     Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
 
     let currentUrl: string;

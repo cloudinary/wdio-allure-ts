@@ -6,7 +6,7 @@ import { describeCommon } from '../TestHelper';
  * wdio-allure-ts setCookie tests
  */
 let retrievedCookiesArray: any[];
-let cookie: any;
+let cookie: WebDriver.Cookie;
 const TEST_PAGE_DOMAIN: string = '127.0.0.1';
 
 describeCommon('Set Cookie', () => {
