@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 export const SUBMIT_BUTTON_ONE: string = "//*[@id='clickActionSpec']//*[@id='click-button-1']";

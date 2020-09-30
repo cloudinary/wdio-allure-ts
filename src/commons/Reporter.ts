@@ -82,7 +82,6 @@ export namespace Reporter {
       browser.cdp('Network', 'enable');
 
       // @ts-ignore
-      // tslint:disable-next-line:no-any
       browser.on('Network.responseReceived', (params: any) => {
         if (params.type.toLowerCase() === 'xhr' || params.type.toLowerCase() === 'fetch') {
           networkActivity.push({
@@ -235,7 +234,7 @@ export namespace Reporter {
     if (stepStatus !== undefined) {
       status = stepStatus;
     }
-    const stepContent: Object = {
+    const stepContent: object = {
       content: command.body,
       name: command.bodyLabel,
     };

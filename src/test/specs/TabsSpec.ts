@@ -1,5 +1,5 @@
 import { assert, expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 const OPEN_TAB_BUTTON: string = "//button[@data-test='open-tab-btn']";

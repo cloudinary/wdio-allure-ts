@@ -1,6 +1,6 @@
 import { assert } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
-import { SpecialKeys } from '../../enums/SpecialKeys';
+import { BrowserUtils } from '../..';
+import { SpecialKeys } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const TEXT_INPUT: string = "//*[@id='SendKeys_input__text']";

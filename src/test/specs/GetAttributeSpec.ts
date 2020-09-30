@@ -1,6 +1,6 @@
 import { assert, expect } from 'chai';
 import { EOL } from 'os';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const WRONG_ATTRIB_DIV: string = '//*[@id="wrongAttribDiv"]';

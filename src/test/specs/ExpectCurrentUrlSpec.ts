@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 const CLOUDINARY_URL: string = 'https://cloudinary.com';

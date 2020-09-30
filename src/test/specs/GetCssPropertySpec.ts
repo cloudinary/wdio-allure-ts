@@ -1,5 +1,5 @@
 import { assert, expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const HEADER: string = '//*[@id="headerSection-1"]/h1';
@@ -18,7 +18,7 @@ describeCommon('getCssProperty', () => {
       .with.property('message');
   });
 
-  //tslint:disable:no-null-keyword
+  // tslint:disable:no-null-keyword
   it('null params', () => {
     expect(() => JSON.stringify(BrowserUtils.getCssProperty(null, null)))
       .to.throw(Error)

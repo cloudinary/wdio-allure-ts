@@ -1,11 +1,10 @@
 language: node_js
 node_js:
-- '9'
+  - '12'
 sudo: required
 addons:
-  firefox: latest
   chrome: stable
 install:
-- npm install
+  - npm install
 before_script:
-- npm run start:sampleApp &
+  - npm run start:sampleApp &

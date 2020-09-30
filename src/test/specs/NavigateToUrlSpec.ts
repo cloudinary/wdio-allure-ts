@@ -1,4 +1,4 @@
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 /**

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../index';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const VISIBLE_ELEMENT_SELECTOR: string = "//*[@data-test='visible-btn']";

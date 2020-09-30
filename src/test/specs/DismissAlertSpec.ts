@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../../commons/BrowserUtils';
+import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const TEST_FIELD_SELECTOR: string = "//*[@id='DismissAlert']";
