@@ -4,7 +4,7 @@ import { describeCommon } from '../TestHelper';
 
 const ELEMENT: string = '#GetElementLocation';
 
-let location: { x?: number; y?: number } = {};
+let location: { x?: number; y?: number };
 
 /**
  * wdio-allure-ts get element location
