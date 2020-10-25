@@ -19,4 +19,12 @@ export namespace TestUtils {
       )
       .join('');
   }
+
+  /**
+   * Return string that contains only the numbers from the original string.
+   * @param str string to get only numbers from
+   */
+  export function getOnlyNumbersFromString(str: string): string {
+    return str.replace(/[^0-9]/g, '');
+  }
 }
