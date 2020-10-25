@@ -873,14 +873,13 @@ export namespace BrowserUtils {
    *
    * Validate element is visible before drag and drop it
    * @param selector element selector
-   * @param target - destination element selector or object with x and y properties
+   * @param target destination element selector or object with x and y properties
    */
   export function dragAndDrop(selector: string, target: string | WebdriverIO.DragAndDropCoordinate): void {
     Reporter.debug(`Drag and drop element '${selector}' to ${target}.`);
     waitForEnabled(selector);
     tryBlock(
       () => $(selector).dragAndDrop(typeof target === 'string' ? $(target) : target),
-
       `Failed to drag and drop ${selector} to '${target}'`
     );
   }

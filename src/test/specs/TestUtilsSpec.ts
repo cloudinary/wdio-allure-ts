@@ -20,7 +20,7 @@ describe('TestUtilsSpec', () => {
     });
   });
   describe('getOnlyNumbersFromStringTest', () => {
-    it('string begin with numbers and end with letters', () => {
+    it('string contains letters and numbers', () => {
       const str: string = 'abc2de3mnb';
       const expectedNumber = 23;
       assert.equal(Number(TestUtils.getOnlyNumbersFromString(str)), expectedNumber);
