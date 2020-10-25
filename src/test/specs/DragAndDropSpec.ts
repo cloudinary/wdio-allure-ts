@@ -3,7 +3,7 @@ import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const ELEMENT: string = '#draggedThumb';
-const TARGET: string = '#rightThumb';
+const TARGET: string = '#staticThumb';
 
 let beforeDragLocation: WebdriverIO.DragAndDropCoordinate;
 let afterDragLocation: WebdriverIO.DragAndDropCoordinate;
