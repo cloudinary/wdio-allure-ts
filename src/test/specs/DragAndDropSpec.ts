@@ -16,14 +16,17 @@ describeCommon('dragAndDrop', () => {
     beforeDragLocation = BrowserUtils.getElementLocation(ELEMENT);
     BrowserUtils.dragAndDrop(ELEMENT, { x: 5, y: 0 });
     afterDragLocation = BrowserUtils.getElementLocation(ELEMENT);
-    assert.isTrue(afterDragLocation.x > beforeDragLocation.x, 'Element X position');
+    assert.isTrue(afterDragLocation.x > beforeDragLocation.x, 'Element position was not changed');
   });
   it('drag and drop to element', () => {
     const delta: number = 10;
     beforeDragLocation = BrowserUtils.getElementLocation(TARGET);
     BrowserUtils.dragAndDrop(ELEMENT, TARGET);
     afterDragLocation = BrowserUtils.getElementLocation(ELEMENT);
-    assert.isTrue(Math.abs(beforeDragLocation.x - afterDragLocation.x) < delta, 'Element X position');
+    assert.isTrue(
+      Math.abs(beforeDragLocation.x - afterDragLocation.x) < delta,
+      'Element was not dragged toward the target element'
+    );
   });
   it('move to undefined element', () => {
     expect(() => BrowserUtils.dragAndDrop(ELEMENT, ''))
