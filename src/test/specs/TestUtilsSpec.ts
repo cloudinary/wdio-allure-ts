@@ -19,11 +19,11 @@ describe('TestUtilsSpec', () => {
       assert.notEqual(randStr1, randStr2);
     });
   });
-  describe('getOnlyNumbersFromStringTest', () => {
+  describe('extractNumbersFromString', () => {
     it('string contains letters and numbers', () => {
       const str: string = 'abc2de3mnb';
       const expectedNumber = 23;
-      assert.equal(Number(TestUtils.getOnlyNumbersFromString(str)), expectedNumber);
+      assert.equal(Number(TestUtils.extractNumbersFromString(str)), expectedNumber);
     });
   });
 });

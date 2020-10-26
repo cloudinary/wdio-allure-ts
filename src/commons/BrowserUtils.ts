@@ -7,6 +7,7 @@ import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
+import { inspect } from 'util';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
@@ -876,11 +877,17 @@ export namespace BrowserUtils {
    * @param target destination element selector or object with x and y properties
    */
   export function dragAndDrop(selector: string, target: string | WebdriverIO.DragAndDropCoordinate): void {
-    Reporter.debug(`Drag and drop element '${selector}' to ${target}.`);
-    waitForEnabled(selector);
+    Reporter.debug(`Drag and drop element '${selector}' to ${inspect(target)}.`);
+    const isTargetSelector: boolean = typeof target === 'string';
+
+    waitForDisplayed(selector);
+    if (isTargetSelector) {
+      isExist(target as string);
+    }
     tryBlock(
-      () => $(selector).dragAndDrop(typeof target === 'string' ? $(target) : target),
-      `Failed to drag and drop ${selector} to '${target}'`
+      () =>
+        $(selector).dragAndDrop(isTargetSelector ? $(target as string) : (target as WebdriverIO.DragAndDropCoordinate)),
+      `Failed to drag and drop ${selector} to '${inspect(target)}'`
     );
   }
 

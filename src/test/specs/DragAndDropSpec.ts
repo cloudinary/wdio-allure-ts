@@ -4,6 +4,7 @@ import { describeCommon } from '../TestHelper';
 
 const ELEMENT: string = '#draggedThumb';
 const TARGET: string = '#staticThumb';
+const NOT_EXISTING_ELEMENT: string = '//*[@id="NotExistingElement_qweqwe"]';
 
 let beforeDragLocation: WebdriverIO.DragAndDropCoordinate;
 let afterDragLocation: WebdriverIO.DragAndDropCoordinate;
@@ -28,16 +29,22 @@ describeCommon('dragAndDrop', () => {
       'Element was not dragged toward the target element'
     );
   });
-  it('move to undefined element', () => {
-    expect(() => BrowserUtils.dragAndDrop(ELEMENT, ''))
+  it('drag and drop to undefined element', () => {
+    expect(() => BrowserUtils.dragAndDrop(ELEMENT, undefined))
       .to.throw(Error)
       .with.property('message')
       .contains(`Failed to drag and drop ${ELEMENT} to`);
   });
-  it('move to non integer coordinate', () => {
+  it('drag and drop to non integer coordinate', () => {
     expect(() => BrowserUtils.dragAndDrop(ELEMENT, { x: 1.5, y: 1.5 }))
       .to.throw(Error)
       .with.property('message')
       .contains(`Failed to drag and drop ${ELEMENT} to`);
+  });
+  it('drag and drop to non existing element', () => {
+    expect(() => BrowserUtils.dragAndDrop(ELEMENT, NOT_EXISTING_ELEMENT))
+      .to.throw(Error)
+      .with.property('message')
+      .contains('Element not exist');
   });
 });
