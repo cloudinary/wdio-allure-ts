@@ -2,8 +2,8 @@ import { assert, expect } from 'chai';
 import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
-const ELEMENT: string = '#draggedThumb';
-const TARGET: string = '#staticThumb';
+const ELEMENT: string = '#draggedSlider';
+const TARGET: string = '#staticSlider';
 const NOT_EXISTING_ELEMENT: string = '//*[@id="NotExistingElement_qweqwe"]';
 
 let beforeDragLocation: WebdriverIO.DragAndDropCoordinate;

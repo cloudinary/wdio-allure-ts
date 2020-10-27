@@ -70,13 +70,13 @@
       margin: 5px;
     }
 
-    #DragAndDropSpec > #sliderBar > .thumb {
+    #DragAndDropSpec > #sliderBar > .slider {
       width: 10px;
       position: relative;
       cursor: pointer;
     }
 
-    #DragAndDropSpec > #sliderBar > #draggedThumb {
+    #DragAndDropSpec > #sliderBar > #draggedSlider {
       height: 25px;
       border-radius: 3px;
       float: left;
@@ -85,7 +85,7 @@
       background: blue;
     }
 
-    #DragAndDropSpec > #sliderBar > #staticThumb {
+    #DragAndDropSpec > #sliderBar > #staticSlider {
       height: 10px;
       border-radius: 1px;
       float: right;
@@ -136,11 +136,11 @@
       <fieldset id="DragAndDropSpec">
         <legend>DragAndDropSpec</legend>
         <div id="sliderBar">
-          <div id="draggedThumb" class="thumb"></div>
-          <div id="staticThumb" class="thumb"></div>
+          <div id="draggedSlider" class="slider"></div>
+          <div id="staticSlider" class="slider"></div>
         </div>
         <script>
-          let thumb = sliderBar.querySelector('#draggedThumb');
+          let thumb = sliderBar.querySelector('#draggedSlider');
 
           thumb.onmousedown = function(event) {
             event.preventDefault();
