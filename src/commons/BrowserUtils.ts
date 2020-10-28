@@ -7,6 +7,7 @@ import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
+import { inspect } from 'util';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
@@ -866,6 +867,28 @@ export namespace BrowserUtils {
       Reporter.error(incorrectListErrorMessage);
       assert.fail(incorrectListErrorMessage);
     }
+  }
+
+  /**
+   * Drag an item to a destination element or position.
+   *
+   * Validate element is visible before drag and drop it
+   * @param selector element selector
+   * @param target destination element selector or object with x and y properties
+   */
+  export function dragAndDrop(selector: string, target: string | WebdriverIO.DragAndDropCoordinate): void {
+    Reporter.debug(`Drag and drop element '${selector}' to ${inspect(target)}.`);
+    const isTargetSelector: boolean = typeof target === 'string';
+
+    waitForDisplayed(selector);
+    if (isTargetSelector) {
+      isExist(target as string);
+    }
+    tryBlock(
+      () =>
+        $(selector).dragAndDrop(isTargetSelector ? $(target as string) : (target as WebdriverIO.DragAndDropCoordinate)),
+      `Failed to drag and drop ${selector} to '${inspect(target)}'`
+    );
   }
 
   /**
