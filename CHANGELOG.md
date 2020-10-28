@@ -1,4 +1,12 @@
 
+2.0.2 / 2020-10-28
+==================
+
+  * added drag and drop functionality (#174)
+  * remove location object initialization
+  * added spec for getElementLocation
+  * added spec for getElementSize
+
 2.0.1 / 2020-10-01
 ==================
 
