@@ -1,6 +1,8 @@
 /**
  * General utils useful for test
  */
+import path from 'path';
+
 export namespace TestUtils {
   /**
    * Returns random string of requested length
@@ -26,5 +28,16 @@ export namespace TestUtils {
    */
   export function extractNumbersFromString(str: string): string {
     return str.replace(/[^0-9]/g, '');
+  }
+
+  /**
+   * Return object of data by file path
+   * @param pathFile by default the path will take from env file,
+   * but can be override by pathFile
+   */
+  export function getDataFromFile(pathFile?: string): object {
+    const dataFilename = process.env.CONFIG_FILE_PATH || pathFile;
+    const dataFilePath = path.resolve(process.cwd(), dataFilename);
+    return require(dataFilePath);
   }
 }
