@@ -1,7 +1,8 @@
+import path from 'path';
+
 /**
  * General utils useful for test
  */
-import path from 'path';
 
 export namespace TestUtils {
   /**
