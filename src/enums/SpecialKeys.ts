@@ -10,6 +10,7 @@ export enum SpecialKeys {
   ARROW_DOWN = '\uE015',
   TAB = '\uE004',
   ESCAPE = '\uE00C',
+  BACK_SPACE = '\uE003',
   EMOJI_HEART = '\u2766', // In The BMP (basic multilingual plane)
   EMOJI_POOP = '\uD83D\uDCA9', // Above The BMP bug in chrome prevents us from using it
   HTML_NON_BREAKING_SPACE = '&nbsp;',
