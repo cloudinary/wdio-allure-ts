@@ -10,7 +10,7 @@ export namespace GitHooks {
   /**
    * Update automation field on testrail for the last merge tests files
    */
-  export async function updateLastMergedTestsInTestrail(): Promise<void> {
+  export async function setLastMergedTestsAsAutomatedInTestrail(): Promise<void> {
     const filesList: string[] = GitUtils.getLastMergedFiles();
 
     for (const file of filesList) {
