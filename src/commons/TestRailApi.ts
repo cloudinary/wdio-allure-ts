@@ -19,7 +19,7 @@ export class TestRailApi {
   private basicAuth: AxiosBasicCredentials;
 
   public static get Instance(): TestRailApi {
-    if (this.instance === undefined) {
+    if (!this.instance) {
       this.instance = new TestRailApi();
     }
 
