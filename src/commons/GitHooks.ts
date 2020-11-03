@@ -14,8 +14,9 @@ export namespace GitHooks {
     const filesList: string[] = GitUtils.getLastMergedFiles();
 
     for (const file of filesList) {
-      if (isTestFile(file)) {
-        const testID = TestUtils.extractNumbersFromString(path.basename(file));
+      const fileName = path.basename(file);
+      if (isTestFile(fileName)) {
+        const testID = TestUtils.extractNumbersFromString(fileName);
         await TestRailApi.Instance.changeTestAutomationField(testID, AutomationFieldOptions.automated);
       }
     }
@@ -26,13 +27,9 @@ export namespace GitHooks {
  * Check if file is a test file.
  * @return {boolean} true if file name start with C{NUMBER} and ends with Test.ts.
  */
-function isTestFile(fileFullPath) {
+function isTestFile(fileName) {
   const shouldStartWithRegex = /^C\d+/g;
   const shouldEndWith = 'Test.ts';
-  const fileName = path.basename(fileFullPath);
 
-  if (fileName.endsWith(shouldEndWith) && new RegExp(shouldStartWithRegex).test(fileName)) {
-    return true;
-  }
-  return false;
+  return fileName.endsWith(shouldEndWith) && new RegExp(shouldStartWithRegex).test(fileName);
 }
