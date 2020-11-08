@@ -33,12 +33,21 @@ export namespace TestUtils {
 
   /**
    * Return object of data by file path
-   * @param pathFile by default the path will take from env file,
-   * but can be override by pathFile
+   *  path File located in wdio config file,
    */
-  export function getDataFromFile(pathFile?: string): object {
-    const dataFilename = process.env.CONFIG_FILE_PATH || pathFile;
+  export function getDataFromFile(): object {
+    // @ts-ignore
+    const dataFilename = browser.config.configDataFilePath;
     const dataFilePath = path.resolve(process.cwd(), dataFilename);
     return require(dataFilePath);
+  }
+
+  /**
+   * Get data by tag from e2eTestData file
+   * @param dataTag string
+   */
+  export function getData(dataTag: string = process.env.TEST_DATA_TAG): object {
+    const data: object = getDataFromFile();
+    return data && data[dataTag];
   }
 }

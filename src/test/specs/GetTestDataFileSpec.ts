@@ -7,11 +7,10 @@ export const YOUR_ATTRIBUTE = process.env.YOUR_ATTRIBUTE!;
 /**
  * GetTestDataFileSpec
  */
-const FILE_PATH: string = 'src/test/resources/example.json';
 
 describeCommon('GetTestDataFileSpec', () => {
   it('Check get test data from env file', () => {
-    const a: object = TestUtils.getDataFromFile(FILE_PATH);
+    const a: object = TestUtils.getDataFromFile();
     // @ts-ignore
     assert.equal(a.fileName, 'example');
   });
