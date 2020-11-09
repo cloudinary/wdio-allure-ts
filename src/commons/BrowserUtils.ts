@@ -213,8 +213,6 @@ export namespace BrowserUtils {
    * @param errMessage - Custom message for time out
    */
   export function waitUntil(action: () => any, errMessage?: string, actionTimeout: number = DEFAULT_TIME_OUT): any {
-    Reporter.debug(`Wait Until '${JSON.stringify(action)}'`);
-
     return browser.waitUntil(() => action(), { timeout: actionTimeout, timeoutMsg: errMessage });
   }
 
