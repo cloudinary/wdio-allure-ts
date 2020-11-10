@@ -32,22 +32,22 @@ export namespace TestUtils {
   }
 
   /**
-   * Return object of data by file path
-   *  path File located in wdio config file,
+   * Return generic type of data by provided file path
+   * path File located in wdio config file
+   * example of using provided in spec src/test/specs/GetTestDataFileSpec.ts
+   * @param dataTag type of file
+   *  configDataFilePath will take from wdio.config file
    */
-  export function getDataFromFile(): object {
+  export function getData<T>(dataTag: string = process.env.TEST_DATA_TAG): T {
     // @ts-ignore
     const dataFilename = browser.config.configDataFilePath;
     const dataFilePath = path.resolve(process.cwd(), dataFilename);
-    return require(dataFilePath);
-  }
-
-  /**
-   * Get data by tag from e2eTestData file
-   * @param dataTag string
-   */
-  export function getData(dataTag: string = process.env.TEST_DATA_TAG): object {
-    const data: object = getDataFromFile();
+    if (dataFilename === undefined) {
+      throw new Error('Path to data file is incorrect');
+    }
+    console.log(`Getting data from file ${dataFilePath}`);
+    const data: T = require(dataFilePath);
+    console.log(`Received a data from file by provided tag ${JSON.stringify(data[dataTag])}`);
     return data && data[dataTag];
   }
 }
