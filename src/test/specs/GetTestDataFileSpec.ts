@@ -2,16 +2,25 @@ import { describeCommon } from '../TestHelper';
 import { TestUtils } from '../..';
 import { assert } from 'chai';
 
-export const YOUR_ATTRIBUTE = process.env.YOUR_ATTRIBUTE!;
-
 /**
  * GetTestDataFileSpec
  */
 
+interface ITestData {
+  fileName?: string;
+  count?: number;
+}
+
 describeCommon('GetTestDataFileSpec', () => {
   it('Check get test data from env file', () => {
-    const a: object = TestUtils.getDataFromFile();
-    // @ts-ignore
-    assert.equal(a.fileName, 'example');
+    process.env.TEST_DATA_TAG = 'test-user';
+    const data: ITestData = TestUtils.getData();
+    assert.equal(data.fileName, 'example');
+  });
+
+  it('Check incorrect user', () => {
+    process.env.TEST_DATA_TAG = 'incorrect-user';
+    const data: ITestData = TestUtils.getData();
+    assert.equal(data, undefined);
   });
 });
