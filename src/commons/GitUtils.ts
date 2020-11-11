@@ -19,7 +19,7 @@ export namespace GitUtils {
   }
 
   /**
-   * Return list of all tests files from the last merge.
+   * Return list of all tests ids from the last merge.
    */
   export function getLastMergedTestsIds(): string[] {
     const mergedTestsFiles: string[] = getTestsFiles(getLastMergedFiles());
