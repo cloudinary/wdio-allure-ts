@@ -1,4 +1,5 @@
 import path from 'path';
+import { Reporter } from '../index';
 
 /**
  * General utils useful for test
@@ -41,13 +42,18 @@ export namespace TestUtils {
   export function getData<T>(dataTag: string = process.env.TEST_DATA_TAG): T {
     // @ts-ignore
     const dataFilename = browser.config.configDataFilePath;
-    const dataFilePath = path.resolve(process.cwd(), dataFilename);
     if (dataFilename === undefined) {
+      throw new Error(`The parameter configDataFilePath in wdio config file not found`);
+    }
+    const dataFilePath = path.resolve(process.cwd(), dataFilename);
+    if (dataFilePath === undefined) {
       throw new Error('Path to data file is incorrect');
     }
-    console.log(`Getting data from file ${dataFilePath}`);
+    Reporter.debug(`Getting data from file ${dataFilePath}`);
     const data: T = require(dataFilePath);
-    console.log(`Received a data from file by provided tag ${JSON.stringify(data[dataTag])}`);
+    Reporter.debug(
+      `Received a data ${JSON.stringify(data)} from file by provided tag ${JSON.stringify(data[dataTag])}`
+    );
     return data && data[dataTag];
   }
 }
