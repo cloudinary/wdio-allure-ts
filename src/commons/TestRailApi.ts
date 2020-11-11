@@ -73,7 +73,7 @@ export class TestRailApi {
 
 interface IField {
   fieldName: string;
-  fieldOptions: object;
+  fieldOptions: any;
 }
 
 /**
