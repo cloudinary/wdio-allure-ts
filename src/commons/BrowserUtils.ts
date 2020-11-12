@@ -945,4 +945,16 @@ export namespace BrowserUtils {
       handleError(errorMessage, e);
     }
   }
+
+  /**
+   * Click an element located by selector
+   *
+   * Validate element is visible before clicking on it
+   * @param selector element selector
+   */
+  export function rightClick(selector: string): void {
+    Reporter.debug(`Right click mouse button on the element '${selector}'`);
+    waitForEnabled(selector);
+    tryBlock(() => $(selector).click({ button: 'right' }), `Failed to preform right click on '${selector}'`);
+  }
 }
