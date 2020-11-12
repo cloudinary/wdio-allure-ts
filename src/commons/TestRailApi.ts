@@ -30,15 +30,12 @@ export class TestRailApi {
   }
 
   /**
-   *   Change test 'Automation' field
+   *   Updates an existing test case
    *   @param testID test id as appear on testRail site
-   *   @param field test field
-   *   @param option field option number
+   *   @param data fields data to update
    */
-  public changeTestField(testID: string, field: IField, option: number): AxiosPromise {
-    const data: any = {};
+  public updateTestCase(testID: string, data: any): AxiosPromise {
     const fullUrl: string = `${BASE_URL}${ApiMethods.updateCase}${testID}`;
-    data[field.fieldName] = option;
     return this.makeRequest(RequestMethod.POST, fullUrl, data);
   }
 
@@ -55,7 +52,7 @@ export class TestRailApi {
   }
 
   /**
-   * Standard api request
+   * Execute api request
    * @param reqMethod request method
    * @param reqUrl request url
    * @param reqData json data
@@ -71,7 +68,7 @@ export class TestRailApi {
   }
 }
 
-interface IField {
+export interface IField {
   fieldName: string;
   fieldOptions: any;
 }

@@ -1,4 +1,4 @@
-import { TestFields, TestRailApi } from './TestRailApi';
+import { IField, TestFields, TestRailApi } from './TestRailApi';
 import { AxiosPromise } from 'axios';
 
 /**
@@ -6,21 +6,27 @@ import { AxiosPromise } from 'axios';
  */
 export namespace TestRailService {
   /**
-   * Update automation field on testrail for the last merge tests files
+   * Update an array of tests automation field on testrail to automated
    * @param testIDs array of tests Ids
    */
   export async function setTestsAsAutomatedInTestrail(testIDs: string[]): Promise<void> {
     const promiseArray: AxiosPromise[] = [];
 
     for (const testId of testIDs) {
-      promiseArray.push(
-        TestRailApi.Instance.changeTestField(
-          testId,
-          TestFields.Automation,
-          TestFields.Automation.fieldOptions.automated
-        )
-      );
+      promiseArray.push(changeTestField(testId, TestFields.Automation, TestFields.Automation.fieldOptions.automated));
     }
     await Promise.all(promiseArray);
+  }
+
+  /**
+   *   Change test field
+   *   @param testID test id as appear on testRail site
+   *   @param field test field
+   *   @param option field option number
+   */
+  export function changeTestField(testID: string, field: IField, option: number): AxiosPromise {
+    const data: any = {};
+    data[field.fieldName] = option;
+    return TestRailApi.Instance.updateTestCase(testID, data);
   }
 }
