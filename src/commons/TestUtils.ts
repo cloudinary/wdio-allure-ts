@@ -1,6 +1,10 @@
+import path from 'path';
+import { Reporter } from '../index';
+
 /**
  * General utils useful for test
  */
+
 export namespace TestUtils {
   /**
    * Returns random string of requested length
@@ -26,5 +30,30 @@ export namespace TestUtils {
    */
   export function extractNumbersFromString(str: string): string {
     return str.replace(/[^0-9]/g, '');
+  }
+
+  /**
+   * Return generic type of data by provided file path
+   * path File located in wdio config file
+   * example of using provided in spec src/test/specs/GetTestDataFileSpec.ts
+   * @param dataTag type of file
+   *  configDataFilePath will take from wdio.config file
+   */
+  export function getData<T>(dataTag: string = process.env.TEST_DATA_TAG): T {
+    // @ts-ignore
+    const dataFilename = browser.config.configDataFilePath;
+    if (dataFilename === undefined) {
+      throw new Error(`The parameter configDataFilePath in wdio config file not found`);
+    }
+    const dataFilePath = path.resolve(process.cwd(), dataFilename);
+    if (dataFilePath === undefined) {
+      throw new Error('Path to data file is incorrect');
+    }
+    Reporter.debug(`Getting data from file ${dataFilePath}`);
+    const data: T = require(dataFilePath);
+    Reporter.debug(
+      `Received a data ${JSON.stringify(data)} from file by provided tag ${JSON.stringify(data[dataTag])}`
+    );
+    return data && data[dataTag];
   }
 }

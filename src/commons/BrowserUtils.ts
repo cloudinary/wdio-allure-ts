@@ -213,8 +213,6 @@ export namespace BrowserUtils {
    * @param errMessage - Custom message for time out
    */
   export function waitUntil(action: () => any, errMessage?: string, actionTimeout: number = DEFAULT_TIME_OUT): any {
-    Reporter.debug(`Wait Until '${JSON.stringify(action)}'`);
-
     return browser.waitUntil(() => action(), { timeout: actionTimeout, timeoutMsg: errMessage });
   }
 
@@ -946,5 +944,17 @@ export namespace BrowserUtils {
     } catch (e) {
       handleError(errorMessage, e);
     }
+  }
+
+  /**
+   * Click an element located by selector
+   *
+   * Validate element is visible before clicking on it
+   * @param selector element selector
+   */
+  export function rightClick(selector: string): void {
+    Reporter.debug(`Right click mouse button on the element '${selector}'`);
+    waitForEnabled(selector);
+    tryBlock(() => $(selector).click({ button: 'right' }), `Failed to preform right click on '${selector}'`);
   }
 }

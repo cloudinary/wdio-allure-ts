@@ -20,8 +20,8 @@
      * HoverButton style
      */
     .HoverButton {
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
     border: 2px solid #4CAF50;
     }
 
@@ -570,18 +570,32 @@
         <label for="clearValue-textarea"></label><textarea id="clearValue-textarea">clear text area</textarea>
       </fieldset>
       <fieldset id="HoverSpec">
-        <legend>HoverSpec</legend>   
+        <legend>HoverSpec</legend>
         <button id="HoverButton" type="button" class="HoverButton">HoverButton</button>
       </fieldset>
       <fieldset id="RefreshBrowserSpec">
-        <legend>RefreshBrowser</legend>   
+        <legend>RefreshBrowser</legend>
         <input id="RefreshBrowserCheckFiled" type="text" placeholder="TextField" />
       </fieldset>
       <fieldset id="ElementSize">
         <legend>GetElementSize</legend>
         <div id="getElementSize" ></div>
       </fieldset>
-      <p><a href="#top">[Top]</a></p>
+
+      <fieldset id="RightMouseClick">
+        <legend>RightClick</legend>
+        <button id="buttonRightMouseClick">Right Click
+        </button>
+        <script>
+          var rightClickButton = document.getElementById("buttonRightMouseClick");
+          rightClickButton.addEventListener('contextmenu', function(ev) {
+            ev.preventDefault();
+            rightClickButton.innerText = "Button clicked";
+            return false;
+          }, false);
+        </script>
+      </fieldset>
+
     </div>
   </body>
 </html>
