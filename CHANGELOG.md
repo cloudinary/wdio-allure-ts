@@ -1,4 +1,9 @@
 
+2.0.5-beta.0 / 2020-11-15
+=========================
+
+  * APPS-5750 added TestRailService.ts.ts, GitUtils.ts and TestRailApi.ts
+
 2.0.3 / 2020-11-03
 ==================
 
