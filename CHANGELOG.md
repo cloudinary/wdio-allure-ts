@@ -1,4 +1,10 @@
+2.0.4 / 2020-11-15
+==================
 
+  * add RightClick action
+  * add getDataFromFile method
+  
+ 
 2.0.3 / 2020-11-03
 ==================
 
