@@ -250,7 +250,7 @@ export namespace Reporter {
 function prettyMessage(logLevel: string, msg: string): string {
   const dateString: string = getDate();
 
-  return `${dateString} ${currentTestName} ${logLevel} ${msg}`;
+  return `${dateString}${currentTestName !== '' ? ` ${currentTestName} ` : ' '}${logLevel} ${msg}`;
 }
 
 /**
