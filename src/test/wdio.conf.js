@@ -3,13 +3,10 @@ dotenv.config();
 const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 5;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 const seleniumStandaloneArgs = {
-  version: process.env.CHROME_DRIVER_VERSION,
-  args: {
     drivers: {
       chrome: {
         version: process.env.CHROME_DRIVER_VERSION,
       },
-    },
   },
 };
 /**
