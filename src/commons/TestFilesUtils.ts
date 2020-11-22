@@ -51,7 +51,7 @@ export namespace TestFilesUtils {
 }
 
 /**
- * Return List All the Files in folder and sub folder recursively
+ * Return list of all files in folder and sub folder
  * @param folderPath path of folder to get the files from
  */
 function getListOfFilesRecursively(folderPath: string): Set<string> {
@@ -59,8 +59,7 @@ function getListOfFilesRecursively(folderPath: string): Set<string> {
 }
 
 /**
- * getListOfFilesRecursively Helper;
- * Return List All the Files in folder and sub folder recursively
+ * Return list of all files in folder and sub folder recursively
  * @param folderPath path of folder to get the files from
  * @param fileList file list that holds the files result
  */

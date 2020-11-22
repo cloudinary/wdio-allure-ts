@@ -4,7 +4,7 @@ import { GitUtils } from './GitUtils';
 import { TestFilesUtils } from './TestFilesUtils';
 
 /**
- * TestRail service
+ * Utils useful for testrail api
  */
 export namespace TestRailUtil {
   /**
