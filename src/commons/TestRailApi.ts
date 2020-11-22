@@ -1,5 +1,4 @@
-import axios, { AxiosBasicCredentials, AxiosPromise, AxiosRequestConfig } from 'axios';
-import { RequestMethod } from '../enums/RequestMethod';
+import axios, { AxiosBasicCredentials, AxiosPromise, AxiosRequestConfig, Method } from 'axios';
 
 const BASE_URL: string = 'https://cloudinary.testrail.net/index.php?/api/v2/';
 
@@ -34,9 +33,9 @@ export class TestRailApi {
    *   @param testID test id as appear on testRail site
    *   @param data fields data to update
    */
-  public updateTestCase(testID: string, data: any): AxiosPromise {
+  public updateTestCase(testID: string, data: object): AxiosPromise {
     const fullUrl: string = `${BASE_URL}${ApiMethods.updateCase}${testID}`;
-    return this.makeRequest(RequestMethod.POST, fullUrl, data);
+    return this.postRequest(fullUrl, data);
   }
 
   /**
@@ -52,12 +51,21 @@ export class TestRailApi {
   }
 
   /**
+   * Execute post request call
+   * @param url request url
+   * @param data request data
+   */
+  public postRequest(url: string, data?: object): AxiosPromise {
+    return this.callApi('POST', url, data);
+  }
+
+  /**
    * Execute api request
    * @param reqMethod request method
    * @param reqUrl request url
    * @param reqData json data
    */
-  private makeRequest(reqMethod: RequestMethod, reqUrl: string, reqData?: object): AxiosPromise {
+  private callApi(reqMethod: Method, reqUrl: string, reqData?: object): AxiosPromise {
     const requestConfig: AxiosRequestConfig = { method: reqMethod, url: reqUrl, data: reqData, auth: this.basicAuth };
 
     try {
@@ -70,7 +78,11 @@ export class TestRailApi {
 
 export interface IField {
   fieldName: string;
-  fieldOptions: any;
+  fieldOptions: IFieldOptions;
+}
+
+interface IFieldOptions {
+  automated?: number;
 }
 
 /**
@@ -84,7 +96,6 @@ export namespace TestFields {
     fieldName: 'custom_automation',
     fieldOptions: {
       automated: 3,
-      applitoolsCandidate: 4,
     },
   };
 }
