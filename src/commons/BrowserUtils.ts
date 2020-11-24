@@ -679,9 +679,9 @@ export namespace BrowserUtils {
    * retrieve all.
    */
   export function getCookies(names?: string[] | string): WebDriver.Cookie[] {
-    Reporter.debug('Get cookie:');
+    Reporter.debug('Get cookies:');
     const cookie: WebDriver.Cookie[] = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
-    Reporter.debug(`${JSON.stringify(cookie)}`);
+    Reporter.debug(JSON.stringify(cookie));
 
     return cookie;
   }
@@ -691,9 +691,9 @@ export namespace BrowserUtils {
    * By providing a cookie name it just removes the single cookie or more when multiple names are passed.
    */
   export function deleteCookies(names?: string[] | string): void {
-    Reporter.debug('Get cookie:');
+    Reporter.debug('Delete cookies:');
     const cookie: WebDriver.Cookie[] = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
-    Reporter.debug(`${JSON.stringify(cookie)}`);
+    Reporter.debug(JSON.stringify(cookie));
   }
 
   /**
