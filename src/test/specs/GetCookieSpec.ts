@@ -10,20 +10,20 @@ let cookie: WebDriver.Cookie;
 describeCommon('GetCookieSpec', () => {
   beforeEach(() => {
     cookie = { name: TestUtils.randomString(), value: TestUtils.randomString() };
-    browser.setCookies(cookie);
+    BrowserUtils.setCookie(cookie, null);
   });
   it('expect unique cookie', () => {
-    assert.equal(BrowserUtils.getCookie().length, 1, 'Incorrect number of retrieved cookies');
+    assert.equal(BrowserUtils.getCookies().length, 1, 'Incorrect number of retrieved cookies');
   });
 
   it('get cookie by name', () => {
-    assert.equal(BrowserUtils.getCookie()[0].name, cookie.name, 'Incorrect cookie name');
+    assert.equal(BrowserUtils.getCookies()[0].name, cookie.name, 'Incorrect cookie name');
   });
 
   it('get cookie by value', () => {
-    assert.equal(BrowserUtils.getCookie()[0].value, cookie.value, 'Incorrect cookie value');
+    assert.equal(BrowserUtils.getCookies()[0].value, cookie.value, 'Incorrect cookie value');
   });
   afterEach(() => {
-    browser.deleteCookies();
+    BrowserUtils.deleteCookies();
   });
 });
