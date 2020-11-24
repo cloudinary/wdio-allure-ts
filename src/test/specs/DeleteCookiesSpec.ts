@@ -6,7 +6,7 @@ import { describeCommon } from '../TestHelper';
  * wdio-allure-ts deleteCookie tests
  */
 let cookie: WebDriver.Cookie;
-const emptyCookie: WebDriver.Cookie = null;
+const emptyCookie: WebDriver.Cookie = undefined;
 
 describeCommon('DeleteCookieSpec', () => {
   beforeEach(() => {
