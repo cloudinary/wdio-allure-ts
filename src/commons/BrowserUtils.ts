@@ -674,6 +674,27 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Get cookie
+   * You can query a specific cookie by providing the cookie name or
+   * retrieve all.
+   */
+  export function getCookie(names?: string[] | string): WebDriver.Cookie[] {
+    const cookie: WebDriver.Cookie[] = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
+    Reporter.debug(`Get cookie: '${cookie}'`);
+
+    return cookie;
+  }
+
+  /**
+   * Delete cookie
+   * By providing a cookie name it just removes the single cookie or more when multiple names are passed.
+   */
+  export function deleteCookie(names?: string[] | string): void {
+    const cookie: WebDriver.Cookie[] = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
+    Reporter.debug(`Get cookie: '${cookie}'`);
+  }
+
+  /**
    * Get current Url
    */
   export function getUrl(): string {
