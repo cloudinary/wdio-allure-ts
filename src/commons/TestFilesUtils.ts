@@ -27,13 +27,12 @@ export namespace TestFilesUtils {
    */
   export function getTestsFiles(files: Set<string>): Set<string> {
     const testFiles: Set<string> = new Set<string>();
-
-    for (const file of files) {
+    files.forEach((file) => {
       const fileName = path.basename(file);
       if (isTestFile(fileName)) {
         testFiles.add(fileName);
       }
-    }
+    });
     return testFiles;
   }
 
@@ -51,27 +50,22 @@ export namespace TestFilesUtils {
 }
 
 /**
- * Return list of all files in folder and sub folder
- * @param folderPath path of folder to get the files from
- */
-function getListOfFilesRecursively(folderPath: string): Set<string> {
-  return getListOfFilesRecursivelyHelper(folderPath, new Set<string>());
-}
-
-/**
  * Return list of all files in folder and sub folder recursively
  * @param folderPath path of folder to get the files from
  * @param fileList file list that holds the files result
  */
-function getListOfFilesRecursivelyHelper(folderPath: string, fileList: Set<string>): Set<string> {
+function getListOfFilesRecursively(folderPath: string, fileList?: Set<string>): Set<string> {
   const files: string[] = fs.readdirSync(folderPath);
 
+  if (!fileList) {
+    fileList = new Set<string>();
+  }
   for (const file of files) {
     const filepath: string = path.join(folderPath, file);
     const stat: Stats = fs.statSync(filepath);
 
     if (stat.isDirectory()) {
-      fileList = getListOfFilesRecursivelyHelper(filepath, fileList);
+      fileList = getListOfFilesRecursively(filepath, fileList);
     } else {
       fileList.add(path.join(folderPath, '/', file));
     }
