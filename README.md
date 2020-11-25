@@ -52,7 +52,8 @@ Common utils for git like get the last merged files
 Common utils for testrail api like update tests field
 
 ## Example for TestRailUtils
-Update the Automation field for the last merged tests to Automated
+
+//Update the Automation field for the last merged tests to Automated
 
 ```javascript
 try {
