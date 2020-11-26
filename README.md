@@ -43,6 +43,27 @@ Common utils for tests such as getRandomString()
 
 Holds keyboard special keys
 
+### GitUtils
+
+Common utils for git like get the last merged files
+
+### TestRailUtils
+
+Common utils for testrail api like update tests field
+
+## Example for TestRailUtils
+
+//Update the Automation field for the last merged tests to Automated
+
+```javascript
+try {
+        const lastMergedTestsIds = GitUtils.getLastMergedTestsIds();
+        TestRailUtil.setTestsAsAutomatedInTestrail(lastMergedTestsIds);
+    } catch (error) {
+        console.log(error);
+    }
+```
+
 ## Example With Pure WebdriverIO
 
 Now take a look at an example of an action that, after validating that a particular element is visible, clicks it, logs every step to the Reporter, and throws meaningful errors for failures, if any.
