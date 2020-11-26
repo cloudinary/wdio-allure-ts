@@ -1,3 +1,13 @@
+
+2.0.5 / 2020-11-26
+==================
+
+  * added getCookies and DeleteCookies methods with appropriate tests (#182)
+  * add testrail api and git commands utils (#177)
+  * update-selenium-standalone-config (#181)
+  * remove-double-space-in-report-log-entry (#180)
+
+  
 2.0.4 / 2020-11-15
 ==================
 
