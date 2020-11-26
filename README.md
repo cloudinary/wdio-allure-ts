@@ -12,13 +12,13 @@ You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/do
 Supported browsers [Chrome](https://www.google.com/chrome)
 
 ####Install and run tests
-```npm install``` install all dependencies
+```yarn``` install all dependencies
 
-```npm run start:sampleApp``` spin up the sample app page for testing
+```yarn start:sampleApp``` spin up the sample app page for testing
 
-```npm test``` execute all tests
+```yarn test``` execute all tests
 
-```npm run spec <spec name>``` to execute specific spec file 
+```yarn spec <spec name>``` to execute specific spec file 
 
 ### Environment variables
 ```PRINT_LOGS_TO_CONSOLE``` - false by default. only enabled in dev configuration, since parallel tests execution will log to same terminal
