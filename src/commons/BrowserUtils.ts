@@ -42,9 +42,9 @@ export namespace BrowserUtils {
    * for execution in the context of the currently selected frame
    * @param script - js script to execute
    */
-  export function executeScript(script: string): void {
+  export function executeScript(script: string): string {
     Reporter.debug(`Executing script: '${script}'`);
-    tryBlock(() => browser.execute(script), `Failed to execute script: ${script}`);
+    return tryBlock(() => browser.execute(script), `Failed to execute script: ${script}`);
   }
 
   /**
@@ -493,6 +493,19 @@ export namespace BrowserUtils {
         }),
       `Failed to scroll to ${selector} in ${listSelector}`
     );
+  }
+
+  /**
+   * Scrolls the element to a particular place.
+   * @param selector element selector
+   * @param x is the pixel along the horizontal axis of the element.
+   * @param y is the pixel along the vertical axis of the element.
+   * @private
+   */
+  export function scrollTo(selector: string, x: number, y: number): void {
+    waitForDisplayed(selector);
+    const script: string = `(document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).scroll(${x}, ${y})`;
+    executeScript(script);
   }
 
   /**
