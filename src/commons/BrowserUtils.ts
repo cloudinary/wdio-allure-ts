@@ -502,7 +502,7 @@ export namespace BrowserUtils {
    * @param y is the pixel along the vertical axis of the element.
    * @private
    */
-  export function scrollToPixels(selector: string, x: number, y: number): void {
+  export function scrollTo(selector: string, x: number, y: number): void {
     waitForDisplayed(selector);
     const script: string = `(document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).scroll(${x}, ${y})`;
     executeScript(script);
