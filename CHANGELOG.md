@@ -1,4 +1,9 @@
 
+2.0.6 / 2020-12-08
+==================
+
+  * update execute script to return the string result and added scrollTo function (#184)
+
 2.0.5 / 2020-11-26
 ==================
 
