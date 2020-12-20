@@ -474,6 +474,9 @@ export namespace BrowserUtils {
     Reporter.debug(`Scroll in list '${listSelector}' until element '${selector}' is visible.`);
 
     isExist(listSelector); // need to verify list is loaded
+    if (isDisplayed(selector)) {
+      return;
+    }
     let last: number = $$(listSelector).length;
     Reporter.debug(`Last element index: [${last}].`);
     tryBlock(
