@@ -1,4 +1,10 @@
 
+2.1.1 / 2020-12-20
+==================
+
+  * add check for displayed element before scroll in scrollToElement
+  * update dependencies
+
 2.1.0 / 2020-12-17
 ==================
 
