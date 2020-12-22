@@ -341,7 +341,7 @@ export namespace BrowserUtils {
    * Over think method name
    * Get ids of open tabs
    */
-  export function getTabIds(): string[] {
+  export function getTabIds(): Array<string> {
     Reporter.debug('Get all ids of all open tabs');
 
     return tryBlock(() => browser.getWindowHandles(), 'Failed to get tab ids');
@@ -394,7 +394,7 @@ export namespace BrowserUtils {
    * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
-  export function findElements(selectorType: SelectorType, selector: string): string[] {
+  export function findElements(selectorType: SelectorType, selector: string): Array<string> {
     return tryBlock(() => browser.findElements(selectorType, selector), 'Failed to find elements');
   }
   /**
@@ -694,7 +694,7 @@ export namespace BrowserUtils {
    * You can query a specific cookie by providing the cookie name or
    * retrieve all.
    */
-  export function getCookies(names?: string[] | string): WebDriver.Cookie[] {
+  export function getCookies(names?: Array<string> | string): WebDriver.Cookie[] {
     Reporter.debug('Get cookies:');
     const cookie: WebDriver.Cookie[] = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
     Reporter.debug(JSON.stringify(cookie));
@@ -706,7 +706,7 @@ export namespace BrowserUtils {
    * Delete cookie
    * By providing a cookie name it just removes the single cookie or more when multiple names are passed.
    */
-  export function deleteCookies(names?: string[] | string): void {
+  export function deleteCookies(names?: Array<string> | string): void {
     Reporter.debug('Delete cookies:');
     const cookie: WebDriver.Cookie[] = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
     Reporter.debug(JSON.stringify(cookie));
@@ -869,7 +869,7 @@ export namespace BrowserUtils {
    * it can be single key or an array of keys
    * @param keysToSend key, array of keys or string array (chars) to send
    */
-  export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string | string[]): void {
+  export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string | Array<string>): void {
     Reporter.debug(`Sending Keys ${keysToSend}`);
 
     browser.keys(keysToSend);
@@ -886,12 +886,12 @@ export namespace BrowserUtils {
    */
   export function verifyFilesInZip(
     linkToZipFile: string,
-    listOfFileNames: string[],
+    listOfFileNames: Array<string>,
     expectedNumOfFiles?: number
   ): void {
     Reporter.debug('===Verify zip content===');
 
-    const zipFileNames: string[] = zipToFileNames(linkToZipFile);
+    const zipFileNames: Array<string> = zipToFileNames(linkToZipFile);
 
     if (expectedNumOfFiles !== undefined && expectedNumOfFiles !== zipFileNames.length) {
       const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${zipFileNames.length}'`;
@@ -933,7 +933,7 @@ export namespace BrowserUtils {
    * Parse the response body with zip
    * and return an array with file names from the zip file
    */
-  function zipToFileNames(linkToZipFile: string): string[] {
+  function zipToFileNames(linkToZipFile: string): Array<string> {
     const zipBuffer: Buffer = browser.call(() => {
       return requestPromiseNative({
         method: 'GET',

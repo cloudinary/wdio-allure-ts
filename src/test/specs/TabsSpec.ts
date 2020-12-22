@@ -8,7 +8,7 @@ const OPEN_TAB_BUTTON: string = "//button[@data-test='open-tab-btn']";
  */
 describeCommon('tab actions', () => {
   it('get tab ids', () => {
-    let tabIds: string[] = BrowserUtils.getTabIds();
+    let tabIds: Array<string> = BrowserUtils.getTabIds();
     assert.equal(tabIds.length, 1, 'Incorrect number of tab ids');
     BrowserUtils.click(OPEN_TAB_BUTTON);
 
@@ -19,7 +19,7 @@ describeCommon('tab actions', () => {
   it('switch to tab', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
     BrowserUtils.click(OPEN_TAB_BUTTON);
-    const tabIds: string[] = BrowserUtils.getTabIds();
+    const tabIds: Array<string> = BrowserUtils.getTabIds();
 
     BrowserUtils.switchTab(tabIds[1]);
 

@@ -61,7 +61,7 @@ export class EyesUtil {
    * @param checkDescription - Step name (unique)
    * @param xPaths - array of By.type objects to ignore in check
    */
-  public checkWithIgnores(checkDescription: string, xPaths: string[]): boolean {
+  public checkWithIgnores(checkDescription: string, xPaths: Array<string>): boolean {
     let targetWindowObj: Target = Target.window(TIMEOUT);
 
     xPaths.forEach((elementXpath: string) => {
