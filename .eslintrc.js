@@ -7,6 +7,8 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-inferrable-types': 0,
+    '@typescript-eslint/ban-types': 0,
+    '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/array-type': ['error', { default: 'generic' }],
   },
 };

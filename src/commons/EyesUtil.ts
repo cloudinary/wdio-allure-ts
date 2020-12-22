@@ -1,4 +1,3 @@
-// tslint:disable:no-unsafe-any
 import { FileLogHandler } from '@applitools/eyes-sdk-core';
 import { By, Eyes, Target } from '@applitools/eyes-webdriverio';
 import { Reporter } from './Reporter';

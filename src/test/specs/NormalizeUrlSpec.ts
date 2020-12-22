@@ -3,7 +3,6 @@ import { BrowserUtils } from '../..';
 
 describe('NormalizeUrl', () => {
   it('throw if url is null', () => {
-    // tslint:disable-next-line:no-null-keyword
     const url: string = null;
     expect(() => BrowserUtils.normalizeUrl(url))
       .to.throw(Error)

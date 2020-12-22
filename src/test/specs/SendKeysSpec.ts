@@ -40,7 +40,7 @@ describeCommon('SendKeysSpec', () => {
   });
 
   it('Array of Special Keys', () => {
-    const specialKeysArray: SpecialKeys[] = [SpecialKeys.ENTER, SpecialKeys.ENTER, SpecialKeys.ENTER];
+    const specialKeysArray: Array<SpecialKeys> = [SpecialKeys.ENTER, SpecialKeys.ENTER, SpecialKeys.ENTER];
     BrowserUtils.sendKeys(specialKeysArray);
     assert.equal($(TEXT_INPUT).getValue(), '\n\n\n');
   });

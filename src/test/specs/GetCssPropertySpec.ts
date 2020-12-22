@@ -18,7 +18,6 @@ describeCommon('getCssProperty', () => {
       .with.property('message');
   });
 
-  // tslint:disable:no-null-keyword
   it('null params', () => {
     expect(() => JSON.stringify(BrowserUtils.getCssProperty(null, null)))
       .to.throw(Error)

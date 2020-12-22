@@ -45,14 +45,14 @@ export namespace Reporter {
   let isStepClosed: boolean = true;
   let currentStepTitle: string;
   let customCommand: CustomCommand;
-  // tslint:disable-next-line:prefer-const
-  let networkActivity: { url: string; status: string; headers: object }[] = [];
+  let networkActivity: Array<{ url: string; status: string; headers: object }> = [];
 
   /**
    * Stop network audit by sending disable options to cdp method
    * ts-ignore used since it missing types support
    */
   export function stopNetworkAudit(): void {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     browser.cdp('Network', 'disable');
   }
@@ -78,10 +78,11 @@ export namespace Reporter {
    */
   export function startNetworkAudit(): void {
     if (browser.capabilities.browserName === 'chrome') {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       browser.cdp('Network', 'enable');
 
-      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       browser.on('Network.responseReceived', (params: any) => {
         if (params.type.toLowerCase() === 'xhr' || params.type.toLowerCase() === 'fetch') {
           networkActivity.push({
@@ -98,7 +99,6 @@ export namespace Reporter {
    * Add logs to report and clean the data
    */
   function attachAndCleanNetworkLogs(): void {
-    // @ts-ignore
     allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
 
     networkActivity = [];
@@ -234,6 +234,7 @@ export namespace Reporter {
     if (stepStatus !== undefined) {
       status = stepStatus;
     }
+    // eslint-disable-next-line @typescript-eslint/ban-types
     const stepContent: object = {
       content: command.body,
       name: command.bodyLabel,
