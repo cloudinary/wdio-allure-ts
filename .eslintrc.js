@@ -1,8 +1,12 @@
 module.exports = {
+  env: {
+    node: true,
+    mocha: true,
+  },
   parser: '@typescript-eslint/parser',
   extends: ['plugin:@typescript-eslint/recommended', 'prettier/@typescript-eslint', 'plugin:prettier/recommended'],
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 12,
     sourceType: 'module',
   },
   rules: {
