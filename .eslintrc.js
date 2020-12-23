@@ -4,7 +4,12 @@ module.exports = {
     mocha: true,
   },
   parser: '@typescript-eslint/parser',
-  extends: ['plugin:@typescript-eslint/recommended', 'prettier/@typescript-eslint', 'plugin:prettier/recommended'],
+  extends: [
+    'plugin:wdio/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
+  ],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
