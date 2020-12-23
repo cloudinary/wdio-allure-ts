@@ -234,7 +234,6 @@ export namespace Reporter {
     if (stepStatus !== undefined) {
       status = stepStatus;
     }
-    // eslint-disable-next-line @typescript-eslint/ban-types
     const stepContent: object = {
       content: command.body,
       name: command.bodyLabel,
