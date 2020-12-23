@@ -17,10 +17,7 @@ export namespace TestUtils {
     return Array(length)
       .join()
       .split(',')
-      .map(() =>
-        // tslint:disable-next-line:insecure-random
-        possible.charAt(Math.floor(Math.random() * possible.length))
-      )
+      .map(() => possible.charAt(Math.floor(Math.random() * possible.length)))
       .join('');
   }
 
@@ -40,6 +37,7 @@ export namespace TestUtils {
    *  configDataFilePath will take from wdio.config file
    */
   export function getData<T>(dataTag: string = process.env.TEST_DATA_TAG): T {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const dataFilename = browser.config.configDataFilePath;
     if (dataFilename === undefined) {
@@ -50,6 +48,7 @@ export namespace TestUtils {
       throw new Error('Path to data file is incorrect');
     }
     Reporter.debug(`Getting data from file ${dataFilePath}`);
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const data: T = require(dataFilePath);
     Reporter.debug(
       `Received a data ${JSON.stringify(data)} from file by provided tag ${JSON.stringify(data[dataTag])}`

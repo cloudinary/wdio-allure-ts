@@ -55,7 +55,7 @@ export namespace TestFilesUtils {
  * @param fileList file list that holds the files result
  */
 function getListOfFilesRecursively(folderPath: string, fileList?: Set<string>): Set<string> {
-  const files: string[] = fs.readdirSync(folderPath);
+  const files: Array<string> = fs.readdirSync(folderPath);
 
   if (!fileList) {
     fileList = new Set<string>();

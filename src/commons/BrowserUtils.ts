@@ -30,6 +30,7 @@ export namespace BrowserUtils {
     waitForDisplayed(elementSelector);
 
     Reporter.debug(`Compare element '${imageFileName}' with selector '${elementSelector}' and options ${options}`);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const compareResult: number = browser.checkElement($(elementSelector), imageFileName, options);
 
@@ -212,6 +213,7 @@ export namespace BrowserUtils {
    * @param actionTimeout - specified time out if undefined Default time out is used
    * @param errMessage - Custom message for time out
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   export function waitUntil(action: () => any, errMessage?: string, actionTimeout: number = DEFAULT_TIME_OUT): any {
     return browser.waitUntil(() => action(), { timeout: actionTimeout, timeoutMsg: errMessage });
   }
@@ -341,7 +343,7 @@ export namespace BrowserUtils {
    * Over think method name
    * Get ids of open tabs
    */
-  export function getTabIds(): string[] {
+  export function getTabIds(): Array<string> {
     Reporter.debug('Get all ids of all open tabs');
 
     return tryBlock(() => browser.getWindowHandles(), 'Failed to get tab ids');
@@ -364,11 +366,7 @@ export namespace BrowserUtils {
 
       case 'firefox': {
         Reporter.debug('Case firefox');
-        tryBlock(
-          // tslint:disable-next-line:no-null-keyword
-          () => browser.switchToFrame(null),
-          'FireFox: Failed to switch to parent frame'
-        );
+        tryBlock(() => browser.switchToFrame(null), 'FireFox: Failed to switch to parent frame');
         break;
       }
 
@@ -394,7 +392,7 @@ export namespace BrowserUtils {
    * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
-  export function findElements(selectorType: SelectorType, selector: string): string[] {
+  export function findElements(selectorType: SelectorType, selector: string): Array<string> {
     return tryBlock(() => browser.findElements(selectorType, selector), 'Failed to find elements');
   }
   /**
@@ -558,7 +556,6 @@ export namespace BrowserUtils {
     Reporter.debug(`Get Attribute '${attributeName}' in element '${selector}' And Verify not null.`);
     isExist(selector);
 
-    // @ts-ignore
     const stringResults: string = $$(selector).length === 1 ? $(selector).getAttribute(attributeName) : undefined;
 
     // Check for multiple results or no element found
@@ -588,7 +585,7 @@ export namespace BrowserUtils {
 
           return isContainWord(attributeValue, value);
         }),
-      `Incorrect attribute '${attributeName}' value from '${selector}' ${EOL}Expected: word '${value}' to be part of '${attributeValue}'`
+      `Incorrect attribute '${attributeName}' value from '${selector}' ${EOL}Expected: value '${value}' not found`
     );
   }
 
@@ -596,7 +593,7 @@ export namespace BrowserUtils {
    * Wait for page to load.
    * Inject event listener that waits for document.readyState === 'complete'
    *
-   * @param additionalWaitAfterLoad - Since this will be used mostly for image comparision, additional timeout
+   * @param additionalWaitAfterLoad - Since this will be used mostly for image comparison, additional timeout
    * added with default value of 1000 milliseconds
    */
   export function waitForPageToLoad(additionalWaitAfterLoad: number = 1000): void {
@@ -628,7 +625,7 @@ export namespace BrowserUtils {
 
           return !isContainWord(attributeValue, value);
         }),
-      `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}Expected: word '${value}' NOT to be part of '${attributeValue}'`
+      `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}. The Value '${value}'expected to not exist`
     );
   }
 
@@ -694,9 +691,9 @@ export namespace BrowserUtils {
    * You can query a specific cookie by providing the cookie name or
    * retrieve all.
    */
-  export function getCookies(names?: string[] | string): WebDriver.Cookie[] {
+  export function getCookies(names?: Array<string> | string): Array<WebDriver.Cookie> {
     Reporter.debug('Get cookies:');
-    const cookie: WebDriver.Cookie[] = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
+    const cookie: Array<WebDriver.Cookie> = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
     Reporter.debug(JSON.stringify(cookie));
 
     return cookie;
@@ -706,9 +703,9 @@ export namespace BrowserUtils {
    * Delete cookie
    * By providing a cookie name it just removes the single cookie or more when multiple names are passed.
    */
-  export function deleteCookies(names?: string[] | string): void {
+  export function deleteCookies(names?: Array<string> | string): void {
     Reporter.debug('Delete cookies:');
-    const cookie: WebDriver.Cookie[] = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
+    const cookie: Array<WebDriver.Cookie> = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
     Reporter.debug(JSON.stringify(cookie));
   }
 
@@ -869,7 +866,7 @@ export namespace BrowserUtils {
    * it can be single key or an array of keys
    * @param keysToSend key, array of keys or string array (chars) to send
    */
-  export function sendKeys(keysToSend: SpecialKeys | SpecialKeys[] | string | string[]): void {
+  export function sendKeys(keysToSend: SpecialKeys | Array<SpecialKeys> | string | Array<string>): void {
     Reporter.debug(`Sending Keys ${keysToSend}`);
 
     browser.keys(keysToSend);
@@ -886,12 +883,12 @@ export namespace BrowserUtils {
    */
   export function verifyFilesInZip(
     linkToZipFile: string,
-    listOfFileNames: string[],
+    listOfFileNames: Array<string>,
     expectedNumOfFiles?: number
   ): void {
     Reporter.debug('===Verify zip content===');
 
-    const zipFileNames: string[] = zipToFileNames(linkToZipFile);
+    const zipFileNames: Array<string> = zipToFileNames(linkToZipFile);
 
     if (expectedNumOfFiles !== undefined && expectedNumOfFiles !== zipFileNames.length) {
       const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${zipFileNames.length}'`;
@@ -933,11 +930,10 @@ export namespace BrowserUtils {
    * Parse the response body with zip
    * and return an array with file names from the zip file
    */
-  function zipToFileNames(linkToZipFile: string): string[] {
+  function zipToFileNames(linkToZipFile: string): Array<string> {
     const zipBuffer: Buffer = browser.call(() => {
       return requestPromiseNative({
         method: 'GET',
-        // tslint:disable-next-line: no-null-keyword
         encoding: null,
         uri: linkToZipFile,
       })
@@ -949,7 +945,7 @@ export namespace BrowserUtils {
         });
     });
     const zip: admZip = new admZip(zipBuffer);
-    const zipEntries: IZipEntry[] = zip.getEntries();
+    const zipEntries: Array<IZipEntry> = zip.getEntries();
 
     return zipEntries
       .filter((entry: IZipEntry) => entry.entryName.charAt(entry.entryName.length - 1) !== '/')
@@ -977,6 +973,8 @@ export namespace BrowserUtils {
    * Action wrapper
    * Wrap all actions with try catch block
    */
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function tryBlock(action: () => any, errorMessage: string): any {
     try {
       return action();

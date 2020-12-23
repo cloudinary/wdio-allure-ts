@@ -21,7 +21,7 @@ describeCommon('SendKeysSpec', () => {
   });
 
   it('send an array of strings', () => {
-    const strArray: string[] = ['C', 'L', 'O', 'U', 'D', 'I', 'N', 'A', 'R', 'Y'];
+    const strArray: Array<string> = ['C', 'L', 'O', 'U', 'D', 'I', 'N', 'A', 'R', 'Y'];
     BrowserUtils.sendKeys(strArray);
     assert.equal($(TEXT_INPUT).getValue(), strArray.join(''));
   });
@@ -40,7 +40,7 @@ describeCommon('SendKeysSpec', () => {
   });
 
   it('Array of Special Keys', () => {
-    const specialKeysArray: SpecialKeys[] = [SpecialKeys.ENTER, SpecialKeys.ENTER, SpecialKeys.ENTER];
+    const specialKeysArray: Array<SpecialKeys> = [SpecialKeys.ENTER, SpecialKeys.ENTER, SpecialKeys.ENTER];
     BrowserUtils.sendKeys(specialKeysArray);
     assert.equal($(TEXT_INPUT).getValue(), '\n\n\n');
   });

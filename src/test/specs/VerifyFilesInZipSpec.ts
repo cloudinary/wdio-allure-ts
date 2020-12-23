@@ -3,7 +3,7 @@ import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const linkToZip: string = 'http://127.0.0.1:8000/src/test/resources/archiveWithFiles.zip';
-const fileNamesList: string[] = ['firstFile.txt', 'secondFile.jpeg', 'innerFolder/thirdFile.doc'];
+const fileNamesList: Array<string> = ['firstFile.txt', 'secondFile.jpeg', 'innerFolder/thirdFile.doc'];
 /**
  * verifyFilesInZip
  */
