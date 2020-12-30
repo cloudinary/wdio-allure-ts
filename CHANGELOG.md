@@ -1,4 +1,13 @@
 
+2.1.2 / 2020-12-30
+==================
+
+  * update dependence for wdio-docker-service
+  * update-typescript-dependency (#192)
+  * update-ts-node-dependency (#191)
+  * add-wdio-eslint-plugin (#190)
+  * Apps 6301 migrate from tslint to eslint (#189)
+
 2.1.1 / 2020-12-20
 ==================
 
