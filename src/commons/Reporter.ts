@@ -75,6 +75,8 @@ export namespace Reporter {
    * In afterTest hook:
    *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
    *    already integrated in Reporter.closeStep method in case of test failure
+   *
+   * @param ignoreLogsType if true capture all logs type(optional)
    */
   export function startNetworkAudit(ignoreLogsType?: boolean): void {
     if (browser.capabilities.browserName.toLowerCase() === 'chrome') {
