@@ -1,8 +1,8 @@
 import { CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
 import admZip, { IZipEntry } from 'adm-zip';
+import axios, { AxiosResponse } from 'axios';
 import { assert } from 'chai';
 import { EOL } from 'os';
-import requestPromiseNative from 'request-promise-native';
 import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
@@ -931,13 +931,12 @@ export namespace BrowserUtils {
    * and return an array with file names from the zip file
    */
   function zipToFileNames(linkToZipFile: string): Array<string> {
-    const zipBuffer: Buffer = browser.call(() => {
-      return requestPromiseNative({
-        method: 'GET',
-        encoding: null,
-        uri: linkToZipFile,
-      })
-        .then((responseValue: Buffer) => responseValue)
+    const zipBuffer: Buffer = <Buffer>browser.call(async () => {
+      return await axios
+        .get(linkToZipFile, { responseType: 'arraybuffer' })
+        .then((response: AxiosResponse) => {
+          return response.data;
+        })
         .catch(() => {
           const errorMessage: string = `Failed to get zip file from '${linkToZipFile}'`;
           Reporter.error(errorMessage);
