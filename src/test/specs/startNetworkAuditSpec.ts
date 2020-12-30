@@ -1,6 +1,6 @@
 import { Reporter } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
-import { BrowserUtils } from '../../../lib';
+import { BrowserUtils } from '../..';
 
 interface NetworkLog {
   url: string;
