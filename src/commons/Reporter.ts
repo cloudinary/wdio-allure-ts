@@ -76,15 +76,17 @@ export namespace Reporter {
    *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
    *    already integrated in Reporter.closeStep method in case of test failure
    */
-  export function startNetworkAudit(): void {
-    if (browser.capabilities.browserName === 'chrome') {
+  export function startNetworkAudit(ignoreLogsType?: boolean): void {
+    if (browser.capabilities.browserName.toLowerCase() === 'chrome') {
+      const logsTypeToCapture: string[] = ['xhr', 'fetch'];
+
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       browser.cdp('Network', 'enable');
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       browser.on('Network.responseReceived', (params: any) => {
-        if (params.type.toLowerCase() === 'xhr' || params.type.toLowerCase() === 'fetch') {
+        if (ignoreLogsType || logsTypeToCapture.includes(params.type.toLowerCase())) {
           networkActivity.push({
             url: params.response.url,
             status: params.response.status,
@@ -93,6 +95,13 @@ export namespace Reporter {
         }
       });
     }
+  }
+
+  /**
+   * Return network logs
+   */
+  export function getNetworkActivity(): Array<{ url: string; status: string; headers: object }> {
+    return networkActivity;
   }
 
   /**
