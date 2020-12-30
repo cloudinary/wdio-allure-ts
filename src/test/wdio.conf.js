@@ -51,6 +51,7 @@ exports.config = {
   // commands. Instead, they hook themselves up into the test process.
   services: [
     [
+      'devtools',
       'selenium-standalone',
       {
         installArgs: seleniumStandaloneArgs,

@@ -79,8 +79,8 @@ export namespace Reporter {
    * @param ignoreLogsType if true capture all logs type(optional)
    */
   export function startNetworkAudit(ignoreLogsType?: boolean): void {
-    if (browser.capabilities.browserName.toLowerCase() === 'chrome') {
-      const logsTypeToCapture: string[] = ['xhr', 'fetch'];
+    if (browser.capabilities.browserName.toLowerCase().includes('chrome')) {
+      const logsTypeToCapture: Array<string> = ['xhr', 'fetch'];
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
