@@ -50,8 +50,8 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: [
-    [
-      'devtools',
+      ['devtools'],
+      [
       'selenium-standalone',
       {
         installArgs: seleniumStandaloneArgs,
