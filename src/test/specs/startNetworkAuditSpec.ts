@@ -12,7 +12,7 @@ interface NetworkLog {
 describeCommon('startNetworkAudit', () => {
   it('successfully start and read network audit', () => {
     const expectedLog: NetworkLog = { url: 'http://placekitten.com/480/480', status: 200 };
-    const networkLogs: NetworkLog[] = [];
+    const networkLogs: Array<NetworkLog> = [];
 
     browser.on('Network.responseReceived', (params: any) => {
       networkLogs.push({
