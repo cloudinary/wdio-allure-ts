@@ -27,7 +27,7 @@
     "examples"
   ],
   "scripts": {
-    "lint": "eslint --fix './src/**/*.ts'",
+    "lint": "eslint './src/**/*.ts'",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers",
     "setChromeDriverVersion": "./src/scripts/setChromeDriverVersion.sh",
@@ -39,7 +39,6 @@
   "dependencies": {
     "@applitools/eyes-sdk-core": "11.0.2",
     "@applitools/eyes-webdriverio": "5.12.0",
-    "@types/request-promise-native": "^1.0.17",
     "@wdio/allure-reporter": "^6.10.6",
     "@wdio/cli": "^6.10.11",
     "@wdio/devtools-service": "^6.10.11",
@@ -54,7 +53,6 @@
     "chalk": "4.1.0",
     "dotenv": "^8.2.0",
     "lodash": "^4.17.19",
-    "request-promise-native": "^1.0.8",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
     "wdio-docker-service": "^3.1.0",
