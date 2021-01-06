@@ -1,4 +1,11 @@
 
+2.1.3 / 2021-01-06
+==================
+
+  * bump-axios-version (#197)
+  * remove-request-promise-native-dependency (#194)
+  * added test for startNetworkAudit
+
 2.1.2 / 2020-12-30
 ==================
 
