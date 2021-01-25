@@ -15,6 +15,15 @@ export namespace GitUtils {
     const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(getLastMergedFiles());
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
+
+  /**
+   * Return list of all tests ids that merged by hours.
+   * @param hours - hours to count back
+   */
+  export function getMergedTestsIdsByLastHours(hours: number): Set<String> {
+    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(getLastMergedFilesByHours(hours));
+    return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
+  }
 }
 
 /**
@@ -22,5 +31,15 @@ export namespace GitUtils {
  */
 function getLastMergedFiles(): Set<string> {
   const mergedFiles: string = execSync(LAST_MERGED_FILES_LIST_SCRIPT, { timeout: DEFAULT_TIMOUT }).toString();
+  return new Set<string>(mergedFiles.split(/[\r\n]+/));
+}
+
+/**
+ * Return list of all files that mered from hours ago
+ * @param hours - hours to count back
+ */
+function getLastMergedFilesByHours(hours: number): Set<string> {
+  const script: string = `git log --since="${hours} hours ago" --name-only --pretty="format:"`;
+  const mergedFiles: string = execSync(script, { timeout: DEFAULT_TIMOUT }).toString();
   return new Set<string>(mergedFiles.split(/[\r\n]+/));
 }
