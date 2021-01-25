@@ -13,7 +13,11 @@ export namespace TestRailUtil {
    */
   export function setTestsAsAutomatedInTestrail(testIDs: Set<string>): void {
     for (const testId of testIDs) {
-      changeTestField(testId, TestFields.Automation, TestFields.Automation.fieldOptions.automated);
+      changeTestField(testId, TestFields.Automation, TestFields.Automation.fieldOptions.automated).catch(function (
+        error
+      ) {
+        console.log(`Failed update test id ${testId}, with error ${error.message}`);
+      });
     }
   }
 
