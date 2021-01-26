@@ -18,6 +18,8 @@ const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 :
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
+  import WaitForOptions = WebdriverIO.WaitForOptions;
+
   /**
    * Check element's visualisation
    * For more information see https://github.com/wswebcreation/wdio-image-comparison-service
@@ -123,6 +125,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Click an element '${selector}'`);
     waitForEnabled(selector);
 
+    waitForClickable(selector);
     tryBlock(
       () => $(selector).click(),
 
@@ -139,6 +142,7 @@ export namespace BrowserUtils {
   export function doubleClick(selector: string): void {
     Reporter.debug(`Double click an element '${selector}'`);
     waitForEnabled(selector);
+    waitForClickable(selector);
     tryBlock(() => $(selector).doubleClick(), `Failed to doubleClick in '${selector}'`);
   }
 
@@ -991,6 +995,14 @@ export namespace BrowserUtils {
   export function rightClick(selector: string): void {
     Reporter.debug(`Right click mouse button on the element '${selector}'`);
     waitForEnabled(selector);
+
+    waitForClickable(selector);
+
     tryBlock(() => $(selector).click({ button: 'right' }), `Failed to preform right click on '${selector}'`);
+  }
+
+  export function waitForClickable(selector: string, options?: WaitForOptions): void {
+    Reporter.debug('Wait for element to be clickable');
+    tryBlock(() => $(selector).waitForClickable(options), 'Timeout waiting for element to be clickable');
   }
 }
