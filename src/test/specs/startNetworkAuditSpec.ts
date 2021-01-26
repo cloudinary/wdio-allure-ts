@@ -14,6 +14,7 @@ describeCommon('startNetworkAudit', () => {
     const expectedLog: NetworkLog = { url: 'http://placekitten.com/480/480', status: 200 };
     const networkLogs: Array<NetworkLog> = [];
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     browser.on('Network.responseReceived', (params: any) => {
       networkLogs.push({
         url: params.response.url,
