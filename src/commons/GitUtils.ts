@@ -9,25 +9,27 @@ export enum TimeUnits {
   WEEKS = 'weeks',
 }
 
-export interface IMergedTime {
-  time: number;
-  timeUnits: TimeUnits;
-}
-
 /**
  * Manage git commands
  */
 export namespace GitUtils {
   /**
-   * Return list of all tests ids from the last merge or from specific time.
-   * @param mergedTime - (Optional) IMergedTime object, time - time to count back, timeUnits - can be hours, days, weeks.
+   * Return list of all tests ids from the last merge.
    */
-  export function getMergedTestsIds(mergedTime?: IMergedTime): Set<string> {
-    let gitScriptParams: string = '-m -1';
-    if (mergedTime) {
-      gitScriptParams = `--since="${mergedTime.time} ${mergedTime.timeUnits} ago"`;
-    }
-    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(executeGitScript(gitScriptParams));
+  export function getLastMergedTestsIds(): Set<string> {
+    const params: string = '-m -1';
+    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(executeGitScript(params));
+    return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
+  }
+
+  /**
+   * Return list of all tests ids that merged by time.
+   * @param time - time to count back.
+   * @param timeUnits - can be hours day's etc.
+   */
+  export function getMergedTestsIdsByTime(time: number, timeUnits: TimeUnits): Set<string> {
+    const params: string = `--since="${time} ${timeUnits} ago"`;
+    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(executeGitScript(params));
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
 }

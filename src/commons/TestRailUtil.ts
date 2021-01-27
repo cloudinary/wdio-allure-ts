@@ -21,7 +21,7 @@ export namespace TestRailUtil {
    * Update an array of tests automation field on testrail from last merge
    */
   export function setTestsAsAutomatedInTestrailFromLastMerge(): void {
-    const testIDs = GitUtils.getMergedTestsIds();
+    const testIDs = GitUtils.getLastMergedTestsIds();
     setTestsAsAutomatedInTestrail(testIDs);
   }
 
