@@ -1,3 +1,4 @@
+import WaitForOptions = WebdriverIO.WaitForOptions;
 import { CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
 import admZip, { IZipEntry } from 'adm-zip';
 import axios, { AxiosResponse } from 'axios';
@@ -18,8 +19,6 @@ const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 :
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
-  import WaitForOptions = WebdriverIO.WaitForOptions;
-
   /**
    * Check element's visualisation
    * For more information see https://github.com/wswebcreation/wdio-image-comparison-service
@@ -1001,8 +1000,18 @@ export namespace BrowserUtils {
     tryBlock(() => $(selector).click({ button: 'right' }), `Failed to preform right click on '${selector}'`);
   }
 
+  /**
+   * Wait for element to be clickable
+   * Will fail if the element not clickable after provided amount of time
+   *
+   * @param selector - selector of the element to validate
+   * @param options - WaitForOptions that can be overridden
+   */
   export function waitForClickable(selector: string, options?: WaitForOptions): void {
-    Reporter.debug('Wait for element to be clickable');
-    tryBlock(() => $(selector).waitForClickable(options), 'Timeout waiting for element to be clickable');
+    Reporter.debug(`Wait for the element '${selector}' to be clickable`);
+    tryBlock(
+      () => $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
+      `Timeout waiting for element '${selector}' to be clickable`
+    );
   }
 }
