@@ -3,6 +3,12 @@ import { TestFilesUtils } from './TestFilesUtils';
 
 const DEFAULT_TIMOUT: number = 15000;
 
+export enum TimeUnits {
+  HOURS = 'hours',
+  DAYS = 'days',
+  WEEKS = 'weeks',
+}
+
 /**
  * Manage git commands
  */
@@ -17,11 +23,12 @@ export namespace GitUtils {
   }
 
   /**
-   * Return list of all tests ids that merged by hours.
-   * @param hours - hours to count back
+   * Return list of all tests ids that merged by time.
+   * @param time - time to count back.
+   * @param timeUnits - can be hours day's etc.
    */
-  export function getMergedTestsIdsByLastHours(hours: number): Set<string> {
-    const params: string = `--since="${hours} hours ago"`;
+  export function getMergedTestsIdsByTime(time: number, timeUnits: TimeUnits): Set<string> {
+    const params: string = `--since="${time} ${timeUnits} ago"`;
     const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(executeGitScript(params));
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
