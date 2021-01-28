@@ -1,3 +1,4 @@
+import WaitForOptions = WebdriverIO.WaitForOptions;
 import { CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
 import admZip, { IZipEntry } from 'adm-zip';
 import axios, { AxiosResponse } from 'axios';
@@ -123,6 +124,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Click an element '${selector}'`);
     waitForEnabled(selector);
 
+    waitForClickable(selector);
     tryBlock(
       () => $(selector).click(),
 
@@ -139,6 +141,7 @@ export namespace BrowserUtils {
   export function doubleClick(selector: string): void {
     Reporter.debug(`Double click an element '${selector}'`);
     waitForEnabled(selector);
+    waitForClickable(selector);
     tryBlock(() => $(selector).doubleClick(), `Failed to doubleClick in '${selector}'`);
   }
 
@@ -991,6 +994,24 @@ export namespace BrowserUtils {
   export function rightClick(selector: string): void {
     Reporter.debug(`Right click mouse button on the element '${selector}'`);
     waitForEnabled(selector);
+
+    waitForClickable(selector);
+
     tryBlock(() => $(selector).click({ button: 'right' }), `Failed to preform right click on '${selector}'`);
+  }
+
+  /**
+   * Wait for element to be clickable
+   * Will fail if the element not clickable after provided amount of time
+   *
+   * @param selector - selector of the element to validate
+   * @param options - WaitForOptions that can be overridden
+   */
+  export function waitForClickable(selector: string, options?: WaitForOptions): void {
+    Reporter.debug(`Wait for the element '${selector}' to be clickable`);
+    tryBlock(
+      () => $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
+      `Timeout waiting for element '${selector}' to be clickable`
+    );
   }
 }

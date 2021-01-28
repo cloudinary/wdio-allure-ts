@@ -559,6 +559,12 @@
         <button id="button_with_attribute_value" type="submit" value="hello world">button with attribute</button>
       </fieldset>
 
+      <fieldset id="waitForClickable">
+        <legend>waitForClickable</legend>
+        <button id="not_clickable_button" style="pointer-events:none">not clickable</button>
+        <button id="clickable_button">clickable</button>
+      </fieldset>
+
       <fieldset id="BackButtonSpec">
         <legend>BackButtonSpec</legend>
         <button data-test="navigate-to-cloudinary" onclick="navigateToCloudinary()">navigateToCloudinary</button>
@@ -583,7 +589,7 @@
       </fieldset>
       <fieldset id="RefreshBrowserSpec">
         <legend>RefreshBrowser</legend>
-        <input id="RefreshBrowserCheckFiled" type="text" placeholder="TextField" />
+        <label for="RefreshBrowserCheckFiled"></label><input id="RefreshBrowserCheckFiled" type="text" placeholder="TextField" />
       </fieldset>
       <fieldset id="ElementSize">
         <legend>GetElementSize</legend>
@@ -595,7 +601,7 @@
         <button id="buttonRightMouseClick">Right Click
         </button>
         <script>
-          var rightClickButton = document.getElementById("buttonRightMouseClick");
+          let rightClickButton = document.getElementById("buttonRightMouseClick");
           rightClickButton.addEventListener('contextmenu', function(ev) {
             ev.preventDefault();
             rightClickButton.innerText = "Button clicked";
