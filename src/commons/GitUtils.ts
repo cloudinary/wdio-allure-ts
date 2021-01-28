@@ -1,8 +1,6 @@
 import { execSync } from 'child_process';
 import { TestFilesUtils } from './TestFilesUtils';
 
-const DEFAULT_TIMOUT: number = 15000;
-
 export enum TimeUnits {
   HOURS = 'hours',
   DAYS = 'days',
@@ -40,6 +38,6 @@ export namespace GitUtils {
  */
 function executeGitScript(params: string): Set<string> {
   const script: string = `git log ${params} --name-only --pretty="format:"`;
-  const res: string = execSync(script, { timeout: DEFAULT_TIMOUT }).toString();
+  const res: string = execSync(script, { timeout: 30000 }).toString();
   return new Set<string>(res.split(/[\r\n]+/));
 }
