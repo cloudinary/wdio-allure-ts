@@ -1,4 +1,25 @@
 
+2.1.4 / 2021-01-28
+==================
+
+  * git-utils-add-get-files-by-hours
+  * add-wait-for-clickable-function (#201)
+  * no-explicit-any-will-throw-error (#202)
+
+2.1.3 / 2021-01-28
+==================
+
+  * Merge pull request #199 from cloudinary/git-utils-add-get-files-by-hours
+  * Add get last merged files and tests ids by hours to git utils
+  * add-wait-for-clickable-function (#201)
+  * Add get last merged files and tests ids by hours to git utils
+  * Add get last merged files and tests ids by hours to git utils
+  * Merge remote-tracking branch 'origin/master' into git-utils-add-get-files-by-hours
+  * Add get last merged files and tests ids by hours to git utils
+  * no-explicit-any-will-throw-error (#202)
+  * Add get last merged files and tests ids by hours to git utils
+  * Add get last merged files and tests ids by hours to git utils
+
 2.1.3 / 2021-01-06
 ==================
 
