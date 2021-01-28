@@ -1,8 +1,11 @@
 import { execSync } from 'child_process';
 import { TestFilesUtils } from './TestFilesUtils';
 
-const DEFAULT_TIMOUT: number = 5000;
-const LAST_MERGED_FILES_LIST_SCRIPT: string = 'git log -m -1 --name-only --pretty="format:"';
+export enum TimeUnits {
+  HOURS = 'hours',
+  DAYS = 'days',
+  WEEKS = 'weeks',
+}
 
 /**
  * Manage git commands
@@ -12,15 +15,29 @@ export namespace GitUtils {
    * Return list of all tests ids from the last merge.
    */
   export function getLastMergedTestsIds(): Set<string> {
-    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(getLastMergedFiles());
+    const params: string = '-m -1';
+    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(executeGitScript(params));
+    return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
+  }
+
+  /**
+   * Return list of all tests ids that merged by time.
+   * @param time - time to count back.
+   * @param timeUnits - can be hours day's etc.
+   */
+  export function getMergedTestsIdsByTime(time: number, timeUnits: TimeUnits): Set<string> {
+    const params: string = `--since="${time} ${timeUnits} ago"`;
+    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(executeGitScript(params));
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
 }
 
 /**
- * Return list of all files from the last merge.
+ * Execute git command script
+ * @param params - command parameters
  */
-function getLastMergedFiles(): Set<string> {
-  const mergedFiles: string = execSync(LAST_MERGED_FILES_LIST_SCRIPT, { timeout: DEFAULT_TIMOUT }).toString();
-  return new Set<string>(mergedFiles.split(/[\r\n]+/));
+function executeGitScript(params: string): Set<string> {
+  const script: string = `git log ${params} --name-only --pretty="format:"`;
+  const res: string = execSync(script, { timeout: 30000 }).toString();
+  return new Set<string>(res.split(/[\r\n]+/));
 }
