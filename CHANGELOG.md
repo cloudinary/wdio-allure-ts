@@ -1,4 +1,9 @@
 
+2.1.5 / 2021-02-01
+==================
+
+  * Add get last merged files and tests ids by hours to git utils
+
 2.1.4 / 2021-01-28
 ==================
 
