@@ -21,7 +21,7 @@ describeCommon('addValue', () => {
     expect(() => BrowserUtils.addValue(DISABLED_INPUT_SELECTOR, TestUtils.randomString(5)))
       .to.throw(Error)
       .with.property('message')
-      .contains('Failed to add value');
+      .contains('still not enabled');
   });
   it('add value to not existing input', () => {
     expect(() => BrowserUtils.addValue(`//input[@id='${TestUtils.randomString(5)}']`, TestUtils.randomString(5)))

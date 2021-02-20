@@ -77,7 +77,7 @@ export namespace BrowserUtils {
    */
   export function addValue(selector: string, value: string | number): void {
     Reporter.debug(`Add value: '${value}' to '${selector}'`);
-    waitForDisplayed(selector);
+    waitForEnabled(selector);
     tryBlock(() => $(selector).addValue(value), `Failed to add value: '${value}' to '${selector}'`);
   }
 
@@ -98,7 +98,7 @@ export namespace BrowserUtils {
    */
   export function setValue(selector: string, value: string | number): void {
     Reporter.debug(`Set element '${selector} with value: '${value}'`);
-    waitForDisplayed(selector);
+    waitForEnabled(selector);
     tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
