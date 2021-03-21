@@ -136,6 +136,27 @@ CLI example:
 
 ```node  ./lib/helpers/runner.js  --specs 'specs/TEST1.js' 'specs/TEST2.js' --config 'customConf.js' ```
 
+## How to write commit message
+
+We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+For commit message, please use a template:
+``` 
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+We use several types:
+
+`fix:` a commit of the type fix patches a bug in your codebase 
+
+`feat:` a commit of the type feat introduces a new feature to the codebase 
+
+`test:` a commit of the type test introduces a new test or correcting existing tests 
+
+`docs:` a commit of the type docs introduces adding/fixing documentation
+
 
 ## Ready to Try?
 
