@@ -61,6 +61,8 @@
     "yargs": "15.4.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
     "@types/adm-zip": "^0.4.33",
     "@types/chai": "^4.2.7",
     "@types/mocha": "^8.0.0",
@@ -79,7 +81,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './commitlint.config.js'"
     }
   },
   "lint-staged": {
