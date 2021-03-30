@@ -149,14 +149,18 @@ For commit message, please use a template:
 ```
 We use several types:
 
-`fix:` a commit of the type fix patches a bug in your codebase 
+`fix:` a commit of the type fix patches a bug in your codebase (this correlates with `PATCH` in semantic versioning) 
 
-`feat:` a commit of the type feat introduces a new feature to the codebase 
+`feat:` a commit of the type feat introduces a new feature to the codebase (this correlates with `MINOR` in semantic versioning) 
 
-`test:` a commit of the type test introduces a new test or correcting existing tests 
+`test:` a commit of the type test introduces a new test or correcting existing tests (this correlates with `MINOR` in semantic versioning) 
 
-`docs:` a commit of the type docs introduces adding/fixing documentation
+`docs:` commit of the type docs introduces adding/fixing documentation (this correlates with `MINOR` in semantic versioning)
 
+`BREAKING CHANGE:` a commit that has a footer BREAKING CHANGE:, or appends a `!` after the type/scope, 
+                   introduces a breaking API change (correlating with `MAJOR` in Semantic Versioning). 
+
+A BREAKING CHANGE can be part of commits of any type.
 
 ## Ready to Try?
 
