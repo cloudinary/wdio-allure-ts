@@ -11,6 +11,72 @@ You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/do
 
 Supported browsers [Chrome](https://www.google.com/chrome)
 
+
+##Setup
+###Install this package together with helper packages
+```
+npm i -D wdio-allure-ts typescript start-server-and-test chai http-server
+```
+###Install wget that is used to fetch latest ChromeDriver
+```
+brew install wget
+```
+###Add example test
+See [TestHelper](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/TestHelper.ts) used in the example below
+```typescript
+// specs/example_test.spec.ts
+import { expect } from 'chai';
+import { describeCommon } from '../TestHelper'; 
+import {BrowserUtils} from "wdio-allure-ts";
+
+const {click, getAttribute, isDisplayed, waitForDisplayed, waitUntil} = BrowserUtils;
+const getImgSrc = ()=>getAttribute('#myimage', 'src');
+
+describeCommon('Test Example', () => {
+  beforeEach(() => {
+    // runs before each test in the block
+    click('#displayImage'); //for example
+    waitForDisplayed('#myimage'); //for example
+  });
+
+  it('Should display the image', () => {
+    expect(isDisplayed('#myimage')).to.equal(true);
+  });
+
+  it('Image should have some src eventually', () => {
+    const testImgSrc = ()=>getImgSrc()==='https://res.cloudinary.com/demo/image/upload/sample';
+    waitUntil(testImgSrc, "Error message for failing test", 2000);
+  });
+});
+```
+
+###Add tsconfig.json
+```json
+{
+  "include": ["specs/**/*.ts"]
+}
+```
+
+###Add scripts to package.json
+* ```start-server-and-test``` will serve the test app, wait max of defined timeout for the test app to be available at http://127.0.0.1:8000, and then run the test script.
+* See [wdio.conf.js](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/wdio.conf.js) for example configuration of [WebdriverIO](https://webdriver.io/)
+* See [setChromeDriverVersion](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/scripts/setChromeDriverVersion.sh) script used in the 'test' script below.
+```json
+{
+  "scripts": {
+    "test": "npm run setChromeDriverVersion && tsc && wdio ./wdio.conf.js",
+    "serve": "http-server",
+    "start-server-and-test:mytest": "WAIT_ON_TIMEOUT=600000 start-server-and-test serve http://127.0.0.1:8000 test"
+  }
+}
+```
+
+###Run tests
+```
+npm run start-server-and-test:mytest
+```
+
+##Development
 ####Install and run tests
 ```yarn``` install all dependencies
 
