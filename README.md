@@ -6,22 +6,22 @@
 
 Util that blends [WebdriverIO](http://webdriver.io/ "WebdriverIO"), [TypeScript](https://www.typescriptlang.org/ "TypeScript") and [Allure Reporter](https://github.com/webdriverio/wdio-allure-reporter "Allure Reporter") in to end-to-end UI testing solution. It wraps the most common WebdriverIO actions, generating intuitive error messages in case of failure, custom logs for the Allure Reporter, more validations for enhanced stability, and last, but not least, IntelliSense.
 
-##Getting Started
+## Getting Started
 You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 8 or above, [NodeJS](https://nodejs.org/en/download)
 
 Supported browsers [Chrome](https://www.google.com/chrome)
 
 
-##Setup
-###Install this package together with helper packages
+## Setup  
+### Install this package together with helper packages
 ```
 npm i -D wdio-allure-ts typescript start-server-and-test chai http-server
 ```
-###Install wget that is used to fetch latest ChromeDriver
+### Install wget that is used to fetch latest ChromeDriver
 ```
 brew install wget
 ```
-###Add example test
+### Add example test
 See [TestHelper](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/TestHelper.ts) used in the example below
 ```typescript
 // specs/example_test.spec.ts
@@ -50,14 +50,14 @@ describeCommon('Test Example', () => {
 });
 ```
 
-###Add tsconfig.json
+### Add tsconfig.json
 ```json
 {
   "include": ["specs/**/*.ts"]
 }
 ```
 
-###Add scripts to package.json
+### Add scripts to package.json
 * ```start-server-and-test``` will serve the test app, wait max of defined timeout for the test app to be available at http://127.0.0.1:8000, and then run the test script.
 * See [wdio.conf.js](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/wdio.conf.js) for example configuration of [WebdriverIO](https://webdriver.io/)
 * See [setChromeDriverVersion](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/scripts/setChromeDriverVersion.sh) script used in the 'test' script below.
@@ -71,13 +71,13 @@ describeCommon('Test Example', () => {
 }
 ```
 
-###Run tests
+### Run tests
 ```
 npm run start-server-and-test:mytest
 ```
 
-##Development
-####Install and run tests
+## Development
+#### Install and run tests
 ```yarn``` install all dependencies
 
 ```yarn start:sampleApp``` spin up the sample app page for testing
