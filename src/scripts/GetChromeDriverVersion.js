@@ -2,7 +2,7 @@
 const request = require('sync-request');
 
 /*
-Getting chrome version driver from google repo
+Getting chrome version driver from google
 */
 const getChromeDriverVersion = () => {
   const res = request('GET', 'https://chromedriver.storage.googleapis.com/LATEST_RELEASE');
