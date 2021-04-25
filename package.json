@@ -30,7 +30,7 @@
     "lint": "eslint './src/**/*.ts'",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
-    "setChromeDriverVersion": "node src/scripts/SetVersionDriverToDotEnv.js",
+    "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
     "test": "DEFAULT_TIME_OUT=3000 yarn setChromeDriverVersion; wdio src/test/wdio.conf.js --suite regression",
     "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
     "pretest": "yarn lint",
