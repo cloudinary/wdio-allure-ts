@@ -15,8 +15,8 @@ const chromeDriverVersion = 'CHROME_DRIVER_VERSION';
   }
   const file = fs.readFileSync(envPath, 'utf-8');
   if (file.includes(chromeDriverVersion)) {
-    const replacedVersion = file.replace(/[^CHROME_DRIVER_VERSION=]+/, driverVersion);
-    fs.writeFileSync(envPath, replacedVersion);
+    const replacedVersion = file.replace(/^CHROME_DRIVER_VERSION=.*$/m, `${chromeDriverVersion}=${driverVersion}`);
+     fs.writeFileSync(envPath, replacedVersion);
     return;
   }
   fs.appendFileSync(envPath, `${chromeDriverVersion}=${driverVersion}`);
