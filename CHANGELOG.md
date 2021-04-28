@@ -1,4 +1,14 @@
 
+2.1.6 / 2021-04-28
+==================
+
+  * feat: change script for set driver to env file
+  * Add a setup section to README.md
+  * docs: add explanation about version (#206)
+  * docs: add conventional commits docs to README.md
+  * feat: adding conventional commits to repo
+  * validate-enabled-on-value-change (#204)
+
 2.1.5 / 2021-02-01
 ==================
 
