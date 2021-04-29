@@ -39,19 +39,15 @@ jobs:
         - name: install packages 
           run: yarn install
           
+        - name: start server
+          run:  yarn start:sampleApp &
+          
   run_tests:
         name: server up
         runs-on: ubuntu-latest
         needs: create_set_up
-        
+        env: ${{ secrets.WDIO_TOKEN }}        
 
-        
-        steps:
- 
-            
-          - name: start server
-            run:  yarn start:sampleApp &
-            working-directory: ../
+        steps:            
           - name: test
             run: yarn test
-            working-directory: ../
