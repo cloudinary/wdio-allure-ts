@@ -31,6 +31,7 @@ jobs:
         - name: access repo
           uses: ./
           with:
+             branch: git-actions-new
              token: ${{ secrets.WDIO_TOKEN }}
         - name: Setup Node.js environment
           uses: actions/setup-node@v2.1.5
