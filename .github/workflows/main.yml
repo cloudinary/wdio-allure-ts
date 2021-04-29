@@ -37,11 +37,15 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@4fa655aad48f56911cad16db9252399a9e592848
         
-      - name: install packages
+      - name: install packages 
         run: yarn install
+        
       - name: server up
+        uses: install packages
         run:  yarn start:sampleApp &
+        
       - name: test
+        uses: install packages
         run: yarn test
           
         
