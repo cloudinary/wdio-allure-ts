@@ -37,16 +37,12 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@4fa655aad48f56911cad16db9252399a9e592848
         
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install # will run `yarn install` command
-          
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: yarn start:sampleApp &
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: yarn test
+      - name: install packages
+        run: yarn install
+      - name: server up
+        run:  yarn start:sampleApp &
+      - name: test
+        run: yarn test
           
         
       
