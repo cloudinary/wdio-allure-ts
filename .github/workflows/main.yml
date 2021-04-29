@@ -46,7 +46,7 @@ jobs:
         
         steps:
           - name: Display the path
-            run: echo $PATH
+            run: ls
             shell: bash
             
           - name: start server
