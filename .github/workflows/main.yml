@@ -25,9 +25,6 @@ jobs:
 
       # Steps represent a sequence of tasks that will be executed as part of the job
       steps:
-        - uses: actions/labeler@v2
-          with:
-             repo-token: ${{ secrets.WDIO_TOKEN }}
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - name: checkout
           uses: actions/checkout@v2
