@@ -1,36 +1,37 @@
+# This is a basic workflow to help you get started with Actions
+
 name: CI_wdio_allure_ts
 
+# Controls when the action will run.
 on:
+  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [master]
+    branches: [ master ]
   pull_request:
-    branches: [master]
+    branches: [ master ]
   schedule:
-    - cron: '30 5,17 * * *'
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '30 5,17 * * *'
 
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  wdio-allure-ts-CI:
-    runs-on: ubuntu-latest
+  create_set_up:
+      # This workflow contains a single job called "build"
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
 
-    steps:
-      - id: Checkout repo
-        uses: actions/checkout@v2
-        
-      - id: Setup node 12
-        uses: actions/setup-node@v2
+
+
+      steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: '12'
-          
-      - id: Install Node
-        run: npm install
+          node-version: '14'
+      - run: npm install
 
-      - id: Install deps
-        run: yarn install
-
-      - id: Start server
-      - run: yarn start:sampleApp &
-
-      - id: Run tests
+      - run: yarn install
       - run: yarn test
+      - run: yarn start:sampleApp
