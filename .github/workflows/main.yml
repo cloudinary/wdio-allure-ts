@@ -28,10 +28,7 @@ jobs:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - name: checkout
           uses: actions/checkout@v2
-        - name: access repo
-          uses: ./.github/actions/main
-          with:
-             token: ${{ secrets.WDIO_TOKEN }}
+        
         - name: Setup Node.js environment
           uses: actions/setup-node@v2.1.5
           with:
