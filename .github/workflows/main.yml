@@ -24,15 +24,19 @@ jobs:
       runs-on: ubuntu-latest
       
       
+     
       steps:
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.5
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-         node-version: 12.x
+          node-version: '14'
+      - run: npm install
+         
       - uses: actions/checkout@v2
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install # will run `yarn install` command
+          
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: start:sampleApp &
