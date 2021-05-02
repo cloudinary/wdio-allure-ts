@@ -17,18 +17,20 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        
       - name: Setup node 12
         uses: actions/setup-node@v2
         with:
           node-version: '12'
-      - name: Install Node
+          
+      - id: Install Node
         run: npm install
 
-      - name: Install deps
+      - id: Install deps
         run: yarn install
 
-      - name: Start server
+      - id: Start server
       - run: yarn start:sampleApp &
 
-      - name: Run tests
+      - id: Run tests
       - run: yarn test
