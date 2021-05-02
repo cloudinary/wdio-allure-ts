@@ -33,4 +33,4 @@ jobs:
       - run: yarn install
 
       - run: yarn start:sampleApp &
-      - run: env.PRINT_LOGS_TO_CONSOLE=true yarn test
+      - run: PRINT_LOGS_TO_CONSOLE=true yarn test
