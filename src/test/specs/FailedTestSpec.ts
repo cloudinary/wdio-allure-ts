@@ -1,6 +1,6 @@
 import { describeCommon } from '../TestHelper';
 
-describeCommon('Failed Test', () => {
+describeCommon('FailedTest', () => {
   it('Test error message', () => {
     throw new Error('TEST ERROR MESSAGE----->');
   });
