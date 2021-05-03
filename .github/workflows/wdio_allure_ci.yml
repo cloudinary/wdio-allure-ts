@@ -27,18 +27,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Notify slack
-        # Don't attempt to send Slack notifications on fork PRs which don't have access to secrets
-        if: env.SLACK_BOT_NOTIFICATION
-        id: slack
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_NOTIFICATION }}
-        uses: ./
-        with:
-          channel_id: CB9QT2NNR
-          status: STARTED
-          color: warning
-      
 
       - name: Install packages
         run: yarn install
@@ -48,23 +36,3 @@ jobs:
 
       - name: Run tests
         run: yarn test
-
-      - name: Notify slack success
-        if: success()
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_NOTIFICATION }}
-        uses: voxmedia/github-action-slack-notify-build@v1
-        with:
-          channel: wdio-allure-ts-ci
-          status: SUCCESS
-          color: good
-
-      - name: Notify slack fail
-        if: failure()
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_NOTIFICATION }}
-        uses: voxmedia/github-action-slack-notify-build@v1
-        with:
-          channel: wdio-allure-ts-ci
-          status: FAILED
-          color: danger
