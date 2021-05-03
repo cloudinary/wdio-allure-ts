@@ -942,6 +942,14 @@
     "@types/fs-extra" "^9.0.1"
     fs-extra "^9.0.0"
 
+"@wdio/reporter@^6.11.0":
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/@wdio/reporter/-/reporter-6.11.0.tgz#edeb255df708509ea8428029273d4d65426ea2d5"
+  integrity sha512-SStNZZUI0bXI+omyIU6ql4Rh+Dews1dz1GlowHDrBxwKMPyAwytgYokXLn3zr+E3tkHDiRyJjQxfDetBWBGmtg==
+  dependencies:
+    "@types/cucumber" "^6.0.1"
+    fs-extra "^9.0.0"
+
 "@wdio/runner@6.10.13":
   version "6.10.13"
   resolved "https://registry.yarnpkg.com/@wdio/runner/-/runner-6.10.13.tgz#db1d236f44314d1005d5ffc49ff7f90df912389f"
@@ -1374,6 +1382,13 @@ axe-core@3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
+
+axios-retry@^3.1.9:
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/axios-retry/-/axios-retry-3.1.9.tgz#6c30fc9aeb4519aebaec758b90ef56fa03fe72e8"
+  integrity sha512-NFCoNIHq8lYkJa6ku4m+V1837TP6lCa7n79Iuf8/AqATAHYB0ISaAS1eyIenDOfHOLtym34W65Sjke2xjg2fsA==
+  dependencies:
+    is-retry-allowed "^1.1.0"
 
 axios@0.19.2:
   version "0.19.2"
@@ -3722,6 +3737,11 @@ is-regexp@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
   integrity sha1-/S2INUXEa6xaYz57mgnof6LLUGk=
 
+is-retry-allowed@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.2.0.tgz#d778488bd0a4666a3be8a1482b9f2baafedea8b4"
+  integrity sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==
+
 is-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-2.0.0.tgz#bde9c32680d6fae04129d6ac9d921ce7815f78e3"
@@ -5749,6 +5769,15 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
+reportportal-js-client@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/reportportal-js-client/-/reportportal-js-client-2.1.1.tgz#9263549c261adb20ce1fd8b7cc57d3407703c97c"
+  integrity sha512-dScxUN1DUjKabG7mWdDsXEVkASR2K8S6OtKqWp6MyPGU92PaFIlxzuwKxv3ZDaTYW38mEYmox4SGowmk75cx0A==
+  dependencies:
+    axios "^0.21.1"
+    axios-retry "^3.1.9"
+    uniqid "^5.2.0"
+
 request-promise-core@1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/request-promise-core/-/request-promise-core-1.1.4.tgz#3eedd4223208d419867b78ce815167d10593a22f"
@@ -6825,6 +6854,11 @@ underscore@^1.9.1:
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.12.0.tgz#4814940551fc80587cef7840d1ebb0f16453be97"
   integrity sha512-21rQzss/XPMjolTiIezSu3JAjgagXKROtNrYFEOWK109qY1Uv2tVjPTZ1ci2HgvQDA16gHYSthQIJfB+XId/rQ==
 
+uniqid@^5.2.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/uniqid/-/uniqid-5.3.0.tgz#4545f8e9c9a5830ef804e512cca6a9331e9761bf"
+  integrity sha512-Jq8EzvAT8/CcLu8tzoSiylnzPkNhJJKpnMT964Dj1jI4pG4sKYP9aFVByNTp8KzMvYlW1Um63PCDqtOoujNzrA==
+
 unique-string@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/unique-string/-/unique-string-2.0.0.tgz#39c6451f81afb2749de2b233e3f7c5e8843bd89d"
@@ -6918,6 +6952,11 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
+validator@^13.1.17:
+  version "13.6.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-13.6.0.tgz#1e71899c14cdc7b2068463cb24c1cc16f6ec7059"
+  integrity sha512-gVgKbdbHgtxpRyR8K0O6oFZPhhB5tT1jeEHZR0Znr9Svg03U0+r9DXWMrnRAB+HtCStDQKlaIZm42tVsVjqtjg==
+
 vary@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -6968,6 +7007,24 @@ wdio-image-comparison-service@^2.0.0:
   integrity sha512-LEUK9no+lnZno7EHSvLM1NVDmDHVBi/eoirr+WKiJfFF7rUFKKX6NnGTjbx26sykwo6potV6krM+VPpsYd7+1w==
   dependencies:
     webdriver-image-comparison "0.16.0"
+
+wdio-reportportal-reporter@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/wdio-reportportal-reporter/-/wdio-reportportal-reporter-6.4.0.tgz#36b3b11a273ae54a359af0f5f08ef88717ce7ea3"
+  integrity sha512-1TW8Lhb0DJBJo+AUtZXLaUx4HHiVlmmz0sUs81nKXYjosPsSwvft/DZMbAvwJb/ZnOXopsGum9W+B4TaQjvXhQ==
+  dependencies:
+    "@wdio/logger" "^6.10.10"
+    "@wdio/reporter" "^6.11.0"
+    json-stringify-safe "~5.0.1"
+    reportportal-js-client "^2.1.1"
+    validator "^13.1.17"
+
+wdio-reportportal-service@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/wdio-reportportal-service/-/wdio-reportportal-service-6.4.0.tgz#009a4dedd8f2d718905ee2b78cb50d20ceea6800"
+  integrity sha512-HDiMhB91c7smhBHqkAH+5LoHhj2p8kHNUmTGnJXdhBoZdyCXm5Ia3psJlmHlitXuMLGR7kmsp2Xil8/tpqy0kw==
+  dependencies:
+    reportportal-js-client "^2.1.1"
 
 webdriver-image-comparison@0.16.0:
   version "0.16.0"
