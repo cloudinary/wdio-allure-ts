@@ -39,3 +39,23 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Notify slack success
+        if: success()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_NOTIFICATION }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: wdio-allure-ts-ci
+          status: SUCCESS
+          color: good
+
+      - name: Notify slack fail
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_NOTIFICATION }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: wdio-allure-ts-ci
+          status: FAILED
+          color: danger
