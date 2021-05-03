@@ -15,18 +15,18 @@ const seleniumStandaloneArgs = {
  *
  */
 exports.config = {
-  specs: ['./src/test/specs/**/*Spec.ts'],
-  suites: { regression: ['./src/test/specs/**/*Spec.ts'] },
+  specs: ["./src/test/specs/**/*Spec.ts"],
+  suites: { regression: ["./src/test/gitActions/**/*Spec.ts"] },
 
   // Browser capabilities
   capabilities: [
     {
-      browserName: 'chrome',
+      browserName: "chrome",
       maxInstances: maxChromeInstances,
-      'goog:chromeOptions': {
-        args: ['--window-size=1920,1080', '--headless', '--incognito'],
-      },
-    },
+      "goog:chromeOptions": {
+        args: ["--window-size=1920,1080", "--headless", "--incognito"]
+      }
+    }
   ],
   // ===================
   // Test Configurations
