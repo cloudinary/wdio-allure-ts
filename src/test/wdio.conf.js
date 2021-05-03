@@ -16,7 +16,7 @@ const seleniumStandaloneArgs = {
  */
 exports.config = {
   specs: ["./src/test/specs/**/*Spec.ts"],
-  suites: { regression: ["./src/test/gitActions/**/*Spec.ts"] },
+  suites: { regression: ["./src/test/specs/**/*Spec.ts"] },
 
   // Browser capabilities
   capabilities: [
