@@ -57,6 +57,6 @@ export namespace ReportPortal {
   }
 
   function sendLog(level: LEVEL, message: string): void {
-    ReportPortalReporter.sendLog(level, message);
+    ReportPortalReporter.sendLog(level, ` [${level}] - ${message}`);
   }
 }
