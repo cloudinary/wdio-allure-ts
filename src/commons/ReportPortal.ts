@@ -34,29 +34,47 @@ export namespace ReportPortal {
     networkActivity: Array<object>
   ): void {
     if (isFailed) {
-      ReportPortalReporter.sendFile(LEVEL.ERROR, 'screenshot', fs.readFileSync(screenshotFilePath));
+      ReportPortalReporter.sendFileToTest(
+        test,
+        LEVEL.ERROR,
+        'screenshot',
+        fs.readFileSync(screenshotFilePath),
+        'image/png',
+        'Screenshot'
+      );
 
       ReportPortalReporter.sendFileToTest(
         test,
         LEVEL.ERROR,
         'browser logs',
         Buffer.from(JSON.stringify(browserLogs)),
-        'application/json'
+        'application/json',
+        'Browser console logs'
       );
 
-      ReportPortalReporter.sendFileToTest(test, LEVEL.ERROR, 'Page source', Buffer.from(pageSource), 'text/html');
+      ReportPortalReporter.sendFileToTest(
+        test,
+        LEVEL.ERROR,
+        'Page source',
+        Buffer.from(pageSource),
+        'text/html',
+        'HTML page source'
+      );
 
       ReportPortalReporter.sendFileToTest(
         test,
         LEVEL.ERROR,
         'Network Logs',
         Buffer.from(JSON.stringify(networkActivity)),
-        'application/json'
+        'application/json',
+        'Browser network logs'
       );
     }
   }
 
   function sendLog(level: LEVEL, message: string): void {
+    //pause for 2 ms to insure log order
+    browser.pause(1);
     ReportPortalReporter.sendLog(level, ` [${level}] - ${message}`);
   }
 }
