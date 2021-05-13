@@ -27,6 +27,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
+          
+      - uses: browser-actions/setup-chrome@latest
 
       - name: Install packages
         run: yarn install
