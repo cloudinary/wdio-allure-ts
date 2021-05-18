@@ -4,20 +4,22 @@ import { Reporter } from '../index';
 /**
  * General utils useful for test
  */
-
 export namespace TestUtils {
   /**
    * Returns random string of requested length
    * if no length passed, length value will be 5
    * @param length length of returned string (optional)
+   * @param lettersOnly should random string contains letter only (optional)
    */
-  export function randomString(length: number = 5): string {
-    const possible: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  export function randomString(length: number = 5, lettersOnly: boolean = false): string {
+    const letters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const numbers: string = '0123456789';
+    const allowedChars: string = lettersOnly ? letters : `${letters}${numbers}`;
 
     return Array(length)
       .join()
       .split(',')
-      .map(() => possible.charAt(Math.floor(Math.random() * possible.length)))
+      .map(() => allowedChars.charAt(Math.floor(Math.random() * allowedChars.length)))
       .join('');
   }
 
