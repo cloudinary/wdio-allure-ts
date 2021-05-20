@@ -185,6 +185,15 @@ export namespace Reporter {
   }
 
   /**
+   * Adding a custom label to test
+   * @param name name of the label
+   * @param value value of the label
+   */
+  export function addLabel(name: string, value: string) {
+    allureReporter.addLabel(name, value);
+  }
+
+  /**
    * Adding Environment to allure report
    * @param name name of the env
    * @param value string
