@@ -1,4 +1,12 @@
 
+2.1.7 / 2021-05-23
+==================
+
+  * Fix missing return type on function (#216)
+  * feat: add functionality for adding label to test
+  * feat: more options for random string generator function (#214)
+  * Create slack_notify.yml
+
 2.1.6 / 2021-04-28
 ==================
 
