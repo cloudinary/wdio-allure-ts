@@ -189,7 +189,7 @@ export namespace Reporter {
    * @param name name of the label
    * @param value value of the label
    */
-  export function addLabel(name: string, value: string) {
+  export function addLabel(name: string, value: string): void {
     allureReporter.addLabel(name, value);
   }
 
