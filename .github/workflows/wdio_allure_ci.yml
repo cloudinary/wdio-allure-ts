@@ -29,9 +29,8 @@ jobs:
           node-version: 12
           
       - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
         with:
-         chrome-version: stable
+          chrome-version: stable
 
       - name: Install packages
         run: yarn install
