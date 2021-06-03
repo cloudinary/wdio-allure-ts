@@ -18,6 +18,10 @@ describe('TestUtilsSpec', () => {
       const randStr2: string = TestUtils.randomString();
       assert.notEqual(randStr1, randStr2);
     });
+    it('letters only', () => {
+      const randStr = TestUtils.randomString(5, true);
+      assert.isTrue(!/\d/.test(randStr));
+    });
   });
   describe('extractNumbersFromString', () => {
     it('string contains letters and numbers', () => {
