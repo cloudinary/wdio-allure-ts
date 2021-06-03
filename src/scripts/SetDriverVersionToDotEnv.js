@@ -1,10 +1,10 @@
-const { getChromeDriverVersion } = require('./GetChromeDriverVersion');
-const { join } = require('path');
-const fs = require('fs');
+const { join } = require("path");
+const fs = require("fs");
+const { getChromeDriverVersion } = require("./GetChromeDriverVersion");
 
-const envPath = join(process.cwd(), '.env');
+const envPath = join(process.cwd(), ".env");
 const driverVersion = getChromeDriverVersion();
-const chromeDriverVersion = 'CHROME_DRIVER_VERSION';
+const chromeDriverVersion = "CHROME_DRIVER_VERSION";
 /**
  * Function updates env file with latest version of chromeDriver
  */
@@ -16,7 +16,7 @@ const chromeDriverVersion = 'CHROME_DRIVER_VERSION';
   const file = fs.readFileSync(envPath, 'utf-8');
   if (file.includes(chromeDriverVersion)) {
     const replacedVersion = file.replace(/^CHROME_DRIVER_VERSION=.*$/m, `${chromeDriverVersion}=${driverVersion}`);
-     fs.writeFileSync(envPath, replacedVersion);
+    fs.writeFileSync(envPath, replacedVersion);
     return;
   }
   fs.appendFileSync(envPath, `${chromeDriverVersion}=${driverVersion}`);
