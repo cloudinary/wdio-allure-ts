@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI_wdio_allure_ts
 
 # Controls when the action will run.
@@ -10,13 +8,12 @@ on:
   pull_request:
     branches: [master]
 
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  create_set_up:
+  ci-pr-merge:
     # This workflow contains a single job called "build"
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -27,7 +24,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-          
 
       - name: Install packages
         run: yarn install
