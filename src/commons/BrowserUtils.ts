@@ -611,22 +611,24 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Check if attribute with given selector NOT contain expected word
+   * Check if attribute with given selector NOT contain expected word or doesn't exist
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    * @param value value NOT in attribute
    */
   export function expectNoAttributeValue(selector: string, attributeName: string, value: string): void {
-    let attributeValue: string;
     Reporter.debug(
       `Validate element '${selector}' doesn't have attribute '${attributeName}' which contains '${value}'`
     );
+    let attributeValue: string;
+    isExist(selector);
+
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          attributeValue = getAttribute(selector, attributeName);
+          attributeValue = $(selector).getAttribute(attributeName);
 
-          return !isContainWord(attributeValue, value);
+          return attributeValue === null || !isContainWord(attributeValue, value);
         }),
       `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}. The Value '${value}'expected to not exist`
     );
