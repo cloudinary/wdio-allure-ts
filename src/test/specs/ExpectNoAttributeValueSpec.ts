@@ -36,9 +36,6 @@ describeCommon('expectNoAttributeValue', () => {
 
   it('Attribute not exists', () => {
     BrowserUtils.navigateToUrl(sampleAppUrl);
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'NotExist', 'post'))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Incorrect attribute');
+    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'NotExist', 'post')).to.not.throw(Error);
   });
 });
