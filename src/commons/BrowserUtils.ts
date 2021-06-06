@@ -431,6 +431,19 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Get the value of a <textarea>, <select> or text <input> found by given selector.
+   * If multiple elements are found via the given selector,
+   * an array of values is returned instead. For input with checkbox or radio type use isSelected.
+   * @param selector element's selector
+   */
+  export function getValue(selector: string): string {
+    Reporter.debug(`Get element's value by selector '${selector}'`);
+    waitForDisplayed(selector);
+
+    return tryBlock(() => $(selector).getValue(), `Failed to get value from element '${selector}'`);
+  }
+
+  /**
    * Get text of an element by selector
    * @param selector element's selector
    */
@@ -569,6 +582,26 @@ export namespace BrowserUtils {
     }
 
     return stringResults;
+  }
+
+  /**
+   * Check if value of given selector is as expected
+   * @param selector element's selector to search for attribute
+   * @param value expected value
+   */
+  export function expectValue(selector: string, value: string): void {
+    Reporter.debug(`Validate element '${selector}' has value of '${value}'`);
+    let currValue: string;
+
+    tryBlock(
+      () =>
+        browser.waitUntil(() => {
+          currValue = getValue(selector);
+
+          return currValue.trim() === value;
+        }),
+      `Incorrect value '${currValue}' from '${selector}' ${EOL}Expected: value '${value}' not found`
+    );
   }
 
   /**
