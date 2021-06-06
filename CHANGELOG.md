@@ -1,4 +1,14 @@
 
+2.1.8 / 2021-06-06
+==================
+
+  * feat: add wdio getValue functionality (#219)
+  * fix: rename job name (#217)
+  * GitHubActions (#210)
+  * Bump underscore from 1.12.0 to 1.13.1 (#211)
+  * Bump ua-parser-js from 0.7.23 to 0.7.28 (#212)
+  * Bump lodash from 4.17.20 to 4.17.21 (#213)
+
 2.1.7 / 2021-05-23
 ==================
 
