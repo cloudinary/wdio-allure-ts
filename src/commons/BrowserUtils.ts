@@ -586,7 +586,7 @@ export namespace BrowserUtils {
 
   /**
    * Check if value of given selector is as expected
-   * @param selector element's selector to search for attribute
+   * @param selector element's selector to check the value
    * @param value expected value
    */
   export function expectValue(selector: string, value: string): void {
