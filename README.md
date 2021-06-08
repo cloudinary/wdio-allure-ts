@@ -15,26 +15,39 @@ You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/do
 
 Supported browsers [Chrome](https://www.google.com/chrome)
 
+## Setup
 
-## Setup  
 ### Install this package together with helper packages
+
 ```
 npm i -D wdio-allure-ts typescript start-server-and-test chai http-server
 ```
-### Install wget that is used to fetch latest ChromeDriver
+
+### Getting Chromedriver version
+
 ```
-brew install wget
+node src/scripts/GetChromeDriverVersion.js
 ```
+
+### Setting last Chromedriver version to .env file
+
+```
+yarn setChromeDriverVersion
+```
+
 ### Add example test
-See [TestHelper](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/TestHelper.ts) used in the example below
+
+See [TestHelper](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/TestHelper.ts)
+used in the example below
+
 ```typescript
 // specs/example_test.spec.ts
 import { expect } from 'chai';
-import { describeCommon } from '../TestHelper'; 
-import {BrowserUtils} from "wdio-allure-ts";
+import { describeCommon } from '../TestHelper';
+import { BrowserUtils } from "wdio-allure-ts";
 
-const {click, getAttribute, isDisplayed, waitForDisplayed, waitUntil} = BrowserUtils;
-const getImgSrc = ()=>getAttribute('#myimage', 'src');
+const { click, getAttribute, isDisplayed, waitForDisplayed, waitUntil } = BrowserUtils;
+const getImgSrc = () => getAttribute('#myimage', 'src');
 
 describeCommon('Test Example', () => {
   beforeEach(() => {
