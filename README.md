@@ -2,9 +2,13 @@
 
 ---
 
-[![Build Status](https://travis-ci.org/cloudinary/wdio-allure-ts.svg?branch=master)](https://travis-ci.org/cloudinary/wdio-allure-ts)
+![Build status](https://github.com/cloudinary/wdio-allure-ts/.github/workflows/workflowswdio_allure_ci.yml/badge.svg?branch=master)
 
-Util that blends [WebdriverIO](http://webdriver.io/ "WebdriverIO"), [TypeScript](https://www.typescriptlang.org/ "TypeScript") and [Allure Reporter](https://github.com/webdriverio/wdio-allure-reporter "Allure Reporter") in to end-to-end UI testing solution. It wraps the most common WebdriverIO actions, generating intuitive error messages in case of failure, custom logs for the Allure Reporter, more validations for enhanced stability, and last, but not least, IntelliSense.
+Util that blends [WebdriverIO](http://webdriver.io/ "WebdriverIO")
+, [TypeScript](https://www.typescriptlang.org/ "TypeScript")
+and [Allure Reporter](https://github.com/webdriverio/wdio-allure-reporter "Allure Reporter") in to end-to-end UI testing
+solution. It wraps the most common WebdriverIO actions, generating intuitive error messages in case of failure, custom
+logs for the Allure Reporter, more validations for enhanced stability, and last, but not least, IntelliSense.
 
 ## Getting Started
 You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 8 or above, [NodeJS](https://nodejs.org/en/download)
