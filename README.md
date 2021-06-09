@@ -27,7 +27,7 @@ npm i -D wdio-allure-ts typescript start-server-and-test chai http-server
 ### Getting Chromedriver version
 
 ```
-node src/scripts/GetChromeDriverVersion.js
+node lib/scripts/GetChromeDriverVersion.js
 ```
 
 ### Setting last Chromedriver version to .env file
