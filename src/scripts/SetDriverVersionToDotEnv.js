@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { join } = require("path");
 const fs = require("fs");
 const { getChromeDriverVersion } = require("./GetChromeDriverVersion");
