@@ -9,8 +9,8 @@ async function execShellCommand(cmd) {
     exec(cmd, { maxBuffer: 1024 * 500 }, (error, stdout, stderr) => {
       if (error) {
         throw new Error(JSON.stringify(error));
-      } else if (stdout) {
-      } else {
+      }
+      if (stderr) {
         throw new Error(JSON.stringify(stderr));
       }
       resolve(stdout);
