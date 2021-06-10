@@ -58,15 +58,21 @@ describeCommon('Test Example', () => {
 ```
 
 ### Add scripts to package.json
-* ```start-server-and-test``` will serve the test app, wait max of defined timeout for the test app to be available at http://127.0.0.1:8000, and then run the test script.
-* See [wdio.conf.js](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/wdio.conf.js) for example configuration of [WebdriverIO](https://webdriver.io/)
+* ```start-server-and-test``` will serve the test app, wait max of defined timeout for the test app to be available
+  at http://127.0.0.1:8000, and then run the test script.
+* ```setChromeDriverVersion``` will add the last version of Chromedriver to .env file
+*
+See [wdio.conf.js](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/wdio.conf.js)
+for example configuration of [WebdriverIO](https://webdriver.io/)
 * See [setChromeDriverVersion](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/scripts/setChromeDriverVersion.sh) script used in the 'test' script below.
+
 ```json
 {
   "scripts": {
     "test": "npm run setChromeDriverVersion && tsc && wdio ./wdio.conf.js",
     "serve": "http-server",
-    "start-server-and-test:mytest": "WAIT_ON_TIMEOUT=600000 start-server-and-test serve http://127.0.0.1:8000 test"
+    "start-server-and-test:mytest": "WAIT_ON_TIMEOUT=600000 start-server-and-test serve http://127.0.0.1:8000 test",
+    "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js"
   }
 }
 ```
