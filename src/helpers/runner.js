@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { getSeleniumArgs } = require('./seleniumArgs');
 const { getOptionsFromCli } = require('./wdioCli');
 const Launcher = require('@wdio/cli').default;

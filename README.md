@@ -83,11 +83,9 @@ describeCommon('Test Example', () => {
 - `start-server-and-test` will serve the test app, wait max of defined timeout for the test app to be available
   at http://127.0.0.1:8000, and then run the test script.
 -
+
 See [wdio.conf.js](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/wdio.conf.js)
 for example configuration of [WebdriverIO](https://webdriver.io/)
--
-See [setChromeDriverVersion](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/scripts/setChromeDriverVersion.sh)
-script used in the 'test' script below.
 
 ```json
 {
@@ -123,6 +121,8 @@ npm run start-server-and-test:mytest
 to same terminal
 
 `DEFAULT_TIME_OUT` - timeout for webdriverIO actions. Default value 60 seconds
+
+`CHROME_DRIVER_VERSION`- version of chromedriver
 
 ## Project Structure
 
