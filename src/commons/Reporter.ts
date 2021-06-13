@@ -99,9 +99,30 @@ export namespace Reporter {
    * Add logs to report and clean the data
    */
   function attachAndCleanNetworkLogs(): void {
-    allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+    /**
+     * Log only error request for cleaner report
+     */
+    const errorRequests = networkActivity.filter((logEntry) => {
+      return Number(logEntry.status) >= 400;
+    });
+
+    allureReporter.addAttachment('Network Logs', errorRequests, 'application/json');
 
     networkActivity = [];
+  }
+
+  function addConsoleLogs(): void {
+    const browserLogs = browser.getLogs('browser');
+    /**
+     * Log only error logs - level == SEVERE
+     */
+    const filteredBrowserLogs = browserLogs.filter((logEntry) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      return logEntry.level == 'SEVERE';
+    });
+
+    allureReporter.addAttachment('Browser console logs', `${JSON.stringify(filteredBrowserLogs, undefined, 2)}`);
   }
 
   /**
@@ -110,10 +131,8 @@ export namespace Reporter {
   export function closeStep(isFailed?: boolean): void {
     if (isFailed) {
       browser.takeScreenshot();
-      allureReporter.addAttachment(
-        'Browser console logs',
-        `${JSON.stringify(browser.getLogs('browser'), undefined, 2)}`
-      );
+
+      addConsoleLogs();
 
       attachAndCleanNetworkLogs();
 
