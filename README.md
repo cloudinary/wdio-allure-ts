@@ -2,8 +2,18 @@
 
 ---
 
-![Build status](https://github.com/cloudinary/wdio-allure-ts/actions/workflows/wdio_allure_ci.yml/badge.svg?branch=master)
-![Version](https://img.shields.io/github/package-json/v/cloudinary/wdio-allure-ts?style=plastic)
+<p align="center">
+    <a href="https://github.com/cloudinary/wdio-allure-ts/blob/master/.github/workflows/test.yml">
+        <img alt="Build Status" src="https://github.com/cloudinary/wdio-allure-ts/actions/workflows/wdio_allure_ci.yml/badge.svg?branch=master">
+    </a>
+    <a href="https://github.com/webdriverio/cloudinary/wdio-allure-ts/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
+        <img alt="Open issues" src="http://isitmaintained.com/badge/open/cloudinary/wdio-allure-ts.svg">
+    </a>
+    <a href="https://img.shields.io/github/package-json/v/cloudinary/wdio-allure-ts?style=plastic">
+        <img alt="Version" src="https://img.shields.io/github/package-json/v/cloudinary/wdio-allure-ts?style=plastic">
+    </a>
+
+</p>
 
 Util that blends [WebdriverIO](http://webdriver.io/ 'WebdriverIO')
 , [TypeScript](https://www.typescriptlang.org/ 'TypeScript')
@@ -12,7 +22,9 @@ solution. It wraps the most common WebdriverIO actions, generating intuitive err
 logs for the Allure Reporter, more validations for enhanced stability, and last, but not least, IntelliSense.
 
 ## Getting Started
-You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 8 or above, [NodeJS](https://nodejs.org/en/download)
+
+You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 8 or
+above, [NodeJS](https://nodejs.org/en/download)
 
 Supported browsers [Chrome](https://www.google.com/chrome)
 
