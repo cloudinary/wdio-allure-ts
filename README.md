@@ -12,7 +12,6 @@ solution. It wraps the most common WebdriverIO actions, generating intuitive err
 logs for the Allure Reporter, more validations for enhanced stability, and last, but not least, IntelliSense.
 
 ## Getting Started
-
 You need to install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) 8 or above, [NodeJS](https://nodejs.org/en/download)
 
 Supported browsers [Chrome](https://www.google.com/chrome)
