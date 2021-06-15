@@ -1,3 +1,48 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.4.0](https://github.com/cloudinary/wdio-allure-ts/compare/v2.3.0...v2.4.0) (2021-06-15)
+
+### Features
+
+*
+cleaner-report-logs ([#227](https://github.com/cloudinary/wdio-allure-ts/issues/227)) ([271835b](https://github.com/cloudinary/wdio-allure-ts/commit/271835beadacbd3a3b9971a9264c56e2a5a3acd1))
+
+## [2.3.0](https://github.com/cloudinary/wdio-allure-ts/compare/v2.2.2...v2.3.0) (2021-06-15)
+
+### Features
+
+* add standard
+  version ([b5a512c](https://github.com/cloudinary/wdio-allure-ts/commit/b5a512cfd88994e115d480d1ad0e52e3841bcf58))
+
+### [2.2.2](https://github.com/cloudinary/wdio-allure-ts/compare/v2.2.1...v2.2.2) (2021-06-10)
+
+### [2.2.1](https://github.com/cloudinary/wdio-allure-ts/compare/v2.2.0...v2.2.1) (2021-06-10)
+
+## 2.2.0 (2021-06-10)
+
+### Features
+
+* add conventional commits to repo ([b57e3ce](https://github.com/cloudinary/wdio-allure-ts/commit/b57e3ce4d6e0c5fc984825f8264e9b01b9e03052))
+* add functionality for adding label to test ([46465d9](https://github.com/cloudinary/wdio-allure-ts/commit/46465d92910d13379049a55ecfd13151319b32e8))
+* add wdio getValue functionality ([#219](https://github.com/cloudinary/wdio-allure-ts/issues/219)) ([4c4e50a](https://github.com/cloudinary/wdio-allure-ts/commit/4c4e50a9c432ed61a5640fafd2e8e954ffd465b1))
+* adding conventional commits to repo ([736d294](https://github.com/cloudinary/wdio-allure-ts/commit/736d2947f9bcccb36fa74945b4f4b542f8de5948))
+* change script for chrome driver ([#209](https://github.com/cloudinary/wdio-allure-ts/issues/209)) ([2fc56e7](https://github.com/cloudinary/wdio-allure-ts/commit/2fc56e75735778addf561145ce712d9fb5c9518a))
+* change script for set driver to env file ([a1b03a0](https://github.com/cloudinary/wdio-allure-ts/commit/a1b03a0ae5180d8be7f9c0444b9d1b3812d82fbb))
+* getting latest chrome driver version ([92bb741](https://github.com/cloudinary/wdio-allure-ts/commit/92bb741ab4487c8996b185fb54664285a6aa95ed))
+* more options for random string generator function ([#214](https://github.com/cloudinary/wdio-allure-ts/issues/214)) ([ee1028e](https://github.com/cloudinary/wdio-allure-ts/commit/ee1028ec707ac22a0326ce16754651bd60d30346))
+* Update Readme ([#221](https://github.com/cloudinary/wdio-allure-ts/issues/221)) ([c2e36e3](https://github.com/cloudinary/wdio-allure-ts/commit/c2e36e3b6b0b3536d84229f91710cd99890b42b4))
+* Version 2.1.6 ([dacb38d](https://github.com/cloudinary/wdio-allure-ts/commit/dacb38d81f3d100a5cc203dba5ceb286ea1676b2))
+* Version 2.1.7 ([fa2370b](https://github.com/cloudinary/wdio-allure-ts/commit/fa2370b0a8ddaa146ddd4187cd7e34ee59110531))
+* Version 2.1.8 ([b8cf10c](https://github.com/cloudinary/wdio-allure-ts/commit/b8cf10cc98951347d02815c3515920acdda38413))
+
+
+### Bug Fixes
+
+* rename job name ([#217](https://github.com/cloudinary/wdio-allure-ts/issues/217)) ([21b8df5](https://github.com/cloudinary/wdio-allure-ts/commit/21b8df5c4697861e8a2f7c2ee0dab3995cd80aa6))
+
 
 2.1.8 / 2021-06-06
 ==================
@@ -241,6 +286,3 @@
 
     * update dependencies
     
-
-
-
