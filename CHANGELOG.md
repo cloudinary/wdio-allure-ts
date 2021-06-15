@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/cloudinary/wdio-allure-ts/compare/v2.3.0...v2.4.0) (2021-06-15)
+
+
+### Features
+
+* cleaner-report-logs ([#227](https://github.com/cloudinary/wdio-allure-ts/issues/227)) ([271835b](https://github.com/cloudinary/wdio-allure-ts/commit/271835beadacbd3a3b9971a9264c56e2a5a3acd1))
+
 ## [2.3.0](https://github.com/cloudinary/wdio-allure-ts/compare/v2.2.2...v2.3.0) (2021-06-15)
 
 
