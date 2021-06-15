@@ -9,10 +9,7 @@
     <a href="https://github.com/webdriverio/cloudinary/wdio-allure-ts/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
         <img alt="Open issues" src="http://isitmaintained.com/badge/open/cloudinary/wdio-allure-ts.svg">
     </a>
-    <a href="https://img.shields.io/github/package-json/v/cloudinary/wdio-allure-ts?style=plastic">
-        <img alt="Version" src="https://img.shields.io/github/package-json/v/cloudinary/wdio-allure-ts?style=plastic">
-    </a>
-
+   <img alt="Version" src="https://img.shields.io/npm/v/wdio-allure-ts">
 </p>
 
 Util that blends [WebdriverIO](http://webdriver.io/ 'WebdriverIO')
