@@ -3,6 +3,7 @@
 ---
 
 ![Build status](https://github.com/cloudinary/wdio-allure-ts/actions/workflows/wdio_allure_ci.yml/badge.svg?branch=master)
+![Version](https://img.shields.io/github/package-json/v/cloudinary/wdio-allure-ts?style=plastic)
 
 Util that blends [WebdriverIO](http://webdriver.io/ 'WebdriverIO')
 , [TypeScript](https://www.typescriptlang.org/ 'TypeScript')
