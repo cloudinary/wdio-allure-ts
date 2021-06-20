@@ -7,6 +7,8 @@ import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 import { inspect } from 'util';
+import * as fs from 'fs';
+import path from 'path';
 import { DragAndDropCoordinate, ParsedCSSValue, WaitForOptions } from 'webdriverio';
 import { Size } from 'webdriverio/build/commands/element/getSize';
 import { Location } from 'webdriverio/build/commands/element/getLocation';
@@ -18,9 +20,43 @@ const DEFAULT_TIME_OUT: number =
 const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
 
 /**
+ * Checking for image-comparison service
+ * and getting config
+ *    *if we are not running on a mobile device this will always start with "desktop"
+ *    webdriver-image-comparison/lib/helpers/utils.ts#getAndCreatePath
+
+ */
+const getSnapshotsConfig = (): IComparisonPath => {
+  const imageComparisonConfig = browser?.config?.services?.find((service) => service[0] === 'image-comparison')?.[1];
+
+  if (!imageComparisonConfig) {
+    throw new Error('cannot get image-comparison service config, make sure you added it to the wdio config file');
+  }
+
+  const { baselineFolder, screenshotPath } = imageComparisonConfig;
+
+  // if we are not running on a mobile device this will always start with "desktop" (webdriver-image-comparison/lib/helpers/utils.ts#getAndCreatePath)
+  const instance = `desktop_${browser.capabilities.browserName}`;
+
+  return {
+    baselinePath: path.join(baselineFolder, instance),
+    actualPath: path.join(screenshotPath, 'actual', instance),
+    diffPath: path.join(screenshotPath, 'diff', instance),
+  };
+};
+
+export interface IComparisonPath {
+  baselinePath: string;
+  actualPath: string;
+  diffPath: string;
+}
+
+/**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
+  import addAttachment = AllureReporter.addAttachment;
+
   /**
    * Check element's visualisation
    * For more information see https://github.com/wswebcreation/wdio-image-comparison-service
@@ -1047,5 +1083,28 @@ export namespace BrowserUtils {
       () => $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
       `Timeout waiting for element '${selector}' to be clickable`
     );
+  }
+
+  /**
+   * Comparing image by providing selector of element
+   * @param filename filename of image
+   * @param selector selector for an element
+   * @param options https://github.com/wswebcreation/wdio-image-comparison-service/blob/main/docs/OPTIONS.md#plugin-options
+   */
+  export function compareWithSnapshot(filename: string, selector: string, options: object = {}): void {
+    BrowserUtils.waitForDisplayed(selector);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const compareResult: number = browser.checkElement($(selector), filename, options);
+
+    if (compareResult !== 0) {
+      const { diffPath, actualPath, baselinePath }: IComparisonPath = getSnapshotsConfig();
+      addAttachment('Base line', fs.readFileSync(path.join(baselinePath, filename + '.png')), 'image/png');
+      addAttachment('Actual image', fs.readFileSync(path.join(actualPath, filename + '.png')), 'image/png');
+      addAttachment('Diff image', fs.readFileSync(path.join(diffPath, filename + '.png')), 'image/png');
+
+      throw new Error(`Found ${compareResult}% difference. See attached images`);
+    }
+    return;
   }
 }
