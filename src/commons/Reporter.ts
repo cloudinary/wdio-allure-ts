@@ -1,4 +1,4 @@
-import allureReporter from '@wdio/allure-reporter';
+import allureReporter, { Status } from '@wdio/allure-reporter';
 import chalk from 'chalk';
 
 /**
@@ -77,9 +77,7 @@ export namespace Reporter {
    *    already integrated in Reporter.closeStep method in case of test failure
    */
   export function startNetworkAudit(): void {
-    if (browser.capabilities.browserName === 'chrome') {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+    if (browser.capabilities['browserName'] === 'chrome') {
       browser.cdp('Network', 'enable');
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -122,7 +120,11 @@ export namespace Reporter {
       return logEntry.level == 'SEVERE';
     });
 
-    allureReporter.addAttachment('Browser console logs', `${JSON.stringify(filteredBrowserLogs, undefined, 2)}`);
+    allureReporter.addAttachment(
+      'Browser console logs',
+      `${JSON.stringify(filteredBrowserLogs, undefined, 2)}`,
+      'text'
+    );
   }
 
   /**
@@ -136,7 +138,7 @@ export namespace Reporter {
 
       attachAndCleanNetworkLogs();
 
-      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`);
+      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`, 'text');
     }
     if (!isStepClosed) {
       sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
@@ -257,8 +259,8 @@ export namespace Reporter {
    * @param command command to add
    * @param stepStatus status of steps
    */
-  function sendCustomCommand(command: CustomCommand, stepStatus?: string): void {
-    let status: string = 'passed';
+  function sendCustomCommand(command: CustomCommand, stepStatus?: Status): void {
+    let status: Status = 'passed';
     if (stepStatus !== undefined) {
       status = stepStatus;
     }

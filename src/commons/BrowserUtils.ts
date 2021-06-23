@@ -1,5 +1,3 @@
-import WaitForOptions = WebdriverIO.WaitForOptions;
-import { CSSProperty, Element, LocationReturn, SizeReturn } from '@wdio/sync';
 import admZip, { IZipEntry } from 'adm-zip';
 import axios, { AxiosResponse } from 'axios';
 import { assert } from 'chai';
@@ -9,11 +7,17 @@ import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 import { inspect } from 'util';
+import { DragAndDropCoordinate, ParsedCSSValue, WaitForOptions } from 'webdriverio';
+import { Size } from 'webdriverio/build/commands/element/getSize';
+import { Location } from 'webdriverio/build/commands/element/getLocation';
+import { Cookie } from '@wdio/protocols/build/types';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
 
 const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
+
+const BROWSER_NAME: string = browser.capabilities['browserName'];
 
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
@@ -358,9 +362,9 @@ export namespace BrowserUtils {
    * so the focus will be back on main page
    */
   export function switchToParentFrame(): void {
-    Reporter.debug(`Switching to parent frame (${browser.capabilities.browserName})`);
+    Reporter.debug(`Switching to parent frame (${BROWSER_NAME})`);
 
-    switch (browser.capabilities.browserName) {
+    switch (BROWSER_NAME) {
       case 'chrome': {
         Reporter.debug('Case chrome');
         tryBlock(() => browser.switchToParentFrame(), 'Chrome: Failed to switch to parent frame');
@@ -420,7 +424,7 @@ export namespace BrowserUtils {
   export function expectText(selector: string, expectedText: string): void {
     Reporter.debug(`Validate element text is '${expectedText}' by selector '${selector}'`);
     waitForDisplayed(selector);
-    const elementWithText: Element = $(selector);
+    const elementWithText: WebdriverIO.Element = $(selector);
     tryBlock(
       () =>
         browser.waitUntil(() => {
@@ -537,7 +541,7 @@ export namespace BrowserUtils {
     isExist(iframeSelector);
 
     const cssDisplayProperty: string = 'display';
-    const iframeDisplayProperty: CSSProperty = tryBlock(
+    const iframeDisplayProperty: ParsedCSSValue = tryBlock(
       () => $(iframeSelector).getCSSProperty(cssDisplayProperty), // iframe css
       `Failed to get '${cssDisplayProperty}' css property from '${iframeSelector}'`
     );
@@ -687,7 +691,7 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param cssPropertyName  css property name
    */
-  export function getCssProperty(selector: string, cssPropertyName: string): CSSProperty {
+  export function getCssProperty(selector: string, cssPropertyName: string): ParsedCSSValue {
     Reporter.debug(`Get css property '${cssPropertyName}' from element by '${selector}'`);
 
     return tryBlock(
@@ -706,7 +710,7 @@ export namespace BrowserUtils {
    * @param cookie cookie to set
    * @param domain domain to set cookie for
    */
-  export function setCookie(cookie: WebDriver.Cookie, domain: string): void {
+  export function setCookie(cookie: Cookie, domain: string): void {
     Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
 
     let currentUrl: string;
@@ -727,9 +731,9 @@ export namespace BrowserUtils {
    * You can query a specific cookie by providing the cookie name or
    * retrieve all.
    */
-  export function getCookies(names?: Array<string> | string): Array<WebDriver.Cookie> {
+  export function getCookies(names?: Array<string> | string): Array<Cookie> {
     Reporter.debug('Get cookies:');
-    const cookie: Array<WebDriver.Cookie> = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
+    const cookie: Array<Cookie> = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
     Reporter.debug(JSON.stringify(cookie));
 
     return cookie;
@@ -741,7 +745,7 @@ export namespace BrowserUtils {
    */
   export function deleteCookies(names?: Array<string> | string): void {
     Reporter.debug('Delete cookies:');
-    const cookie: Array<WebDriver.Cookie> = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
+    const cookie: Array<Cookie> = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
     Reporter.debug(JSON.stringify(cookie));
   }
 
@@ -796,7 +800,7 @@ export namespace BrowserUtils {
    *
    * @param selector - element for get size
    */
-  export function getElementSize(selector: string): SizeReturn {
+  export function getElementSize(selector: string): Size {
     Reporter.debug(`Get Element: '${selector}' size`);
     waitForDisplayed(selector);
 
@@ -810,7 +814,7 @@ export namespace BrowserUtils {
    */
   export function setWindowSize(width: number, height: number): void {
     Reporter.debug(`Set window size to '${width}X${height}'`);
-    switch (browser.capabilities.browserName) {
+    switch (BROWSER_NAME) {
       case 'chrome': {
         tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
         break;
@@ -829,11 +833,11 @@ export namespace BrowserUtils {
 
   export function getWindowSize(): object {
     Reporter.debug('Get window size');
-    if (browser.capabilities.browserName === 'chrome') {
+    if (BROWSER_NAME === 'chrome') {
       return tryBlock(() => browser.getWindowSize(), 'Chrome: Failed to get window size');
     }
 
-    if (browser.capabilities.browserName === 'firefox') {
+    if (BROWSER_NAME === 'firefox') {
       return tryBlock(() => browser.getWindowRect(), 'FireFox: Failed to get window size');
     }
 
@@ -880,7 +884,7 @@ export namespace BrowserUtils {
    * Determine an element’s location on the page. The point (0pix, 0pix) refers to the upper-left corner of the page.
    * @param selector  - element with requested position offset
    */
-  export function getElementLocation(selector: string): LocationReturn {
+  export function getElementLocation(selector: string): Location {
     Reporter.debug(`Get Element location '${selector}'`);
 
     return $(selector).getLocation();
@@ -946,7 +950,7 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param target destination element selector or object with x and y properties
    */
-  export function dragAndDrop(selector: string, target: string | WebdriverIO.DragAndDropCoordinate): void {
+  export function dragAndDrop(selector: string, target: string | DragAndDropCoordinate): void {
     Reporter.debug(`Drag and drop element '${selector}' to ${inspect(target)}.`);
     const isTargetSelector: boolean = typeof target === 'string';
 
@@ -955,8 +959,7 @@ export namespace BrowserUtils {
       isExist(target as string);
     }
     tryBlock(
-      () =>
-        $(selector).dragAndDrop(isTargetSelector ? $(target as string) : (target as WebdriverIO.DragAndDropCoordinate)),
+      () => $(selector).dragAndDrop(isTargetSelector ? $(target as string) : (target as DragAndDropCoordinate)),
       `Failed to drag and drop ${selector} to '${inspect(target)}'`
     );
   }
