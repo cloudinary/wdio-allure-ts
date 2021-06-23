@@ -3,7 +3,7 @@
 ---
 
 <p align="center">
-    <a href="https://github.com/cloudinary/wdio-allure-ts/actions/workflows/ci-pr-merge.yml">
+    <a href="https://github.com/cloudinary/wdio-allure-ts/actions/workflows/ci-pr-merge.yml?query=branch%3Amaster+event%3Apush">
         <img alt="Build Status" src="https://img.shields.io/github/workflow/status/cloudinary/wdio-allure-ts/ci-pr-merge/master">
     </a>
     <a href="https://github.com/webdriverio/cloudinary/wdio-allure-ts/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
