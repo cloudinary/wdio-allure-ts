@@ -3,9 +3,7 @@
 ---
 
 <p align="center">
-    <a href="https://github.com/cloudinary/wdio-allure-ts/blob/master/.github/workflows/test.yml">
-        <img alt="Build Status" src="https://github.com/cloudinary/wdio-allure-ts/actions/workflows/ci-pr-merge.yml/badge.svg?branch=master">
-    </a>
+    <img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/cloudinary/wdio-allure-ts/ci-pr-merge/master">
     <a href="https://github.com/webdriverio/cloudinary/wdio-allure-ts/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc">
         <img alt="Open issues" src="http://isitmaintained.com/badge/open/cloudinary/wdio-allure-ts.svg">
     </a>
