@@ -123,7 +123,7 @@ export namespace Reporter {
     allureReporter.addAttachment(
       'Browser console logs',
       `${JSON.stringify(filteredBrowserLogs, undefined, 2)}`,
-      'text'
+      'text/plain'
     );
   }
 
@@ -138,7 +138,7 @@ export namespace Reporter {
 
       attachAndCleanNetworkLogs();
 
-      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`, 'text');
+      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`, 'text/html');
     }
     if (!isStepClosed) {
       sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
