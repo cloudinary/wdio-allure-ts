@@ -17,8 +17,6 @@ const DEFAULT_TIME_OUT: number =
 
 const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
 
-const BROWSER_NAME: string = browser.capabilities['browserName'];
-
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -362,9 +360,9 @@ export namespace BrowserUtils {
    * so the focus will be back on main page
    */
   export function switchToParentFrame(): void {
-    Reporter.debug(`Switching to parent frame (${BROWSER_NAME})`);
+    Reporter.debug(`Switching to parent frame (${browser.capabilities['browserName']})`);
 
-    switch (BROWSER_NAME) {
+    switch (browser.capabilities['browserName']) {
       case 'chrome': {
         Reporter.debug('Case chrome');
         tryBlock(() => browser.switchToParentFrame(), 'Chrome: Failed to switch to parent frame');
@@ -814,7 +812,7 @@ export namespace BrowserUtils {
    */
   export function setWindowSize(width: number, height: number): void {
     Reporter.debug(`Set window size to '${width}X${height}'`);
-    switch (BROWSER_NAME) {
+    switch (browser.capabilities['browserName']) {
       case 'chrome': {
         tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
         break;
@@ -833,11 +831,11 @@ export namespace BrowserUtils {
 
   export function getWindowSize(): object {
     Reporter.debug('Get window size');
-    if (BROWSER_NAME === 'chrome') {
+    if (browser.capabilities['browserName'] === 'chrome') {
       return tryBlock(() => browser.getWindowSize(), 'Chrome: Failed to get window size');
     }
 
-    if (BROWSER_NAME === 'firefox') {
+    if (browser.capabilities['browserName'] === 'firefox') {
       return tryBlock(() => browser.getWindowRect(), 'FireFox: Failed to get window size');
     }
 
