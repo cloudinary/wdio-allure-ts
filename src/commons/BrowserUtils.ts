@@ -20,32 +20,6 @@ const DEFAULT_TIME_OUT: number =
 
 const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
 
-/**
- * Checking for image-comparison service
- * and getting config
- *    *if we are not running on a mobile device this will always start with "desktop"
- *    webdriver-image-comparison/lib/helpers/utils.ts#getAndCreatePath
-
- */
-const getSnapshotsConfig = (): IComparisonPath => {
-  const imageComparisonConfig = browser?.config?.services?.find((service) => service[0] === 'image-comparison')?.[1];
-
-  if (!imageComparisonConfig) {
-    throw new Error('cannot get image-comparison service config, make sure you added it to the wdio config file');
-  }
-
-  const { baselineFolder, screenshotPath } = imageComparisonConfig;
-
-  // if we are not running on a mobile device this will always start with "desktop" (webdriver-image-comparison/lib/helpers/utils.ts#getAndCreatePath)
-  const instance = `desktop_${browser.capabilities.browserName}`;
-
-  return {
-    baselinePath: path.join(baselineFolder, instance),
-    actualPath: path.join(screenshotPath, 'actual', instance),
-    diffPath: path.join(screenshotPath, 'diff', instance),
-  };
-};
-
 export interface IComparisonPath {
   baselinePath: string;
   actualPath: string;
@@ -1085,6 +1059,24 @@ export namespace BrowserUtils {
       () => $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
       `Timeout waiting for element '${selector}' to be clickable`
     );
+  }
+
+  /**
+   * Checking for image-comparison service and getting config
+   */
+  function getSnapshotsConfig(): IComparisonPath {
+    const imageComparisonConfig = browser?.config?.services?.find((service) => service[0] === 'image-comparison')?.[1];
+    if (!imageComparisonConfig) {
+      throw new Error('cannot get image-comparison service config, make sure you added it to the wdio config file');
+    }
+    const { baselineFolder, screenshotPath } = imageComparisonConfig;
+    const instance = `desktop_${browser.capabilities.browserName}`;
+
+    return {
+      baselinePath: path.join(baselineFolder, instance),
+      actualPath: path.join(screenshotPath, 'actual', instance),
+      diffPath: path.join(screenshotPath, 'diff', instance),
+    };
   }
 
   /**
