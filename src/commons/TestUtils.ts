@@ -32,6 +32,18 @@ export namespace TestUtils {
   }
 
   /**
+   * Check if number of minutes passed from given time till current time
+   * @param countDate date to count from
+   * @param numOfMinutes number of minutes to count
+   * @private
+   */
+  export function isTimePassed(countDate: Date, numOfMinutes: number): boolean {
+    const timeInMs = numOfMinutes * 60 * 1000; /* ms */
+
+    return new Date().valueOf() - countDate.valueOf() > timeInMs;
+  }
+
+  /**
    * Return generic type of data by provided file path
    * path File located in wdio config file
    * example of using provided in spec src/test/specs/GetTestDataFileSpec.ts
