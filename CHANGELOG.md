@@ -1,3 +1,13 @@
+
+2.5.0 / 2021-06-28
+==================
+
+  * feat: add isTimePassed function to TestUtils.ts (#234)
+  * docs: fix ci badge (#232)
+  * Bump glob-parent from 5.1.1 to 5.1.2 (#222)
+  * Bump hosted-git-info from 2.8.8 to 2.8.9 (#223)
+  * Bump normalize-url from 4.5.0 to 4.5.1 (#224)
+  * Bump y18n from 3.2.1 to 3.2.2 (#225)
 # Changelog
 
 All notable changes to this project will be documented in this file.
