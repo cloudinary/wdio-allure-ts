@@ -30,4 +30,15 @@ describe('TestUtilsSpec', () => {
       assert.equal(Number(TestUtils.extractNumbersFromString(str)), expectedNumber);
     });
   });
+  describe('isTimePassed', () => {
+    it('expect to return true', () => {
+      const expectedDate = new Date(2000, 1);
+      assert.isTrue(TestUtils.isTimePassed(expectedDate, 5));
+    });
+
+    it('expect to return false', () => {
+      const expectedDate = new Date(3000, 1);
+      assert.isNotTrue(TestUtils.isTimePassed(expectedDate, 5));
+    });
+  });
 });
