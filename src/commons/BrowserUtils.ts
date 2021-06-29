@@ -14,6 +14,9 @@ import { DragAndDropCoordinate, ParsedCSSValue, WaitForOptions } from 'webdriver
 import { Size } from 'webdriverio/build/commands/element/getSize';
 import { Location } from 'webdriverio/build/commands/element/getLocation';
 import { Cookie } from '@wdio/protocols/build/types';
+import * as fs from 'fs';
+import path from 'path';
+import allureReporter from '@wdio/allure-reporter';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
