@@ -1,17 +1,27 @@
-
-2.5.0 / 2021-06-28
-==================
-
-  * feat: add isTimePassed function to TestUtils.ts (#234)
-  * docs: fix ci badge (#232)
-  * Bump glob-parent from 5.1.1 to 5.1.2 (#222)
-  * Bump hosted-git-info from 2.8.8 to 2.8.9 (#223)
-  * Bump normalize-url from 4.5.0 to 4.5.1 (#224)
-  * Bump y18n from 3.2.1 to 3.2.2 (#225)
 # Changelog
 
-All notable changes to this project will be documented in this file.
-See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [3.0.0](https://github.com/cloudinary/wdio-allure-ts/compare/v2.2.1...v3.0.0) (2021-06-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade wdio version from v6 to v7
+* upgrade wdio version from v6 to v7
+* upgrade wdio version from v6 to v7
+
+### Features
+
+* add isTimePassed function to TestUtils.ts ([#234](https://github.com/cloudinary/wdio-allure-ts/issues/234)) ([9e26afc](https://github.com/cloudinary/wdio-allure-ts/commit/9e26afc3da7e1f9386d13010ea5359b1f83cd7f3))
+* cleaner-report-logs ([#227](https://github.com/cloudinary/wdio-allure-ts/issues/227)) ([271835b](https://github.com/cloudinary/wdio-allure-ts/commit/271835beadacbd3a3b9971a9264c56e2a5a3acd1))
+* upgrade wdio version ([878f030](https://github.com/cloudinary/wdio-allure-ts/commit/878f03028bb6da805027e18370416c7c601699df))
+* upgrade wdio version ([e1ea0ad](https://github.com/cloudinary/wdio-allure-ts/commit/e1ea0adea124992f27575eb3f014914d0098c72a))
+* upgrade wdio version ([48a57a9](https://github.com/cloudinary/wdio-allure-ts/commit/48a57a9fb6430913421d42862f164be9ef9afe38))
+* upgrade wdio version from v6 to v7 ([5389204](https://github.com/cloudinary/wdio-allure-ts/commit/53892046da155275eba010682cfcc9ae202d86ef))
+* upgrade wdio version from v6 to v7 ([fbcd6b4](https://github.com/cloudinary/wdio-allure-ts/commit/fbcd6b455ce106b04e226b25e62fd43d2721bfc7))
+* upgrade wdio version from v6 to v7 ([681666a](https://github.com/cloudinary/wdio-allure-ts/commit/681666a5559558799c84100aa5b1a197e6ec2064))
+* Version 2.5.0 ([d9ee5f5](https://github.com/cloudinary/wdio-allure-ts/commit/d9ee5f54b5f8240be8a795dc23dc57843307bf8c))
 
 ## [2.4.0](https://github.com/cloudinary/wdio-allure-ts/compare/v2.3.0...v2.4.0) (2021-06-15)
 
