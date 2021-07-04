@@ -7,9 +7,6 @@ import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
 import { inspect } from 'util';
-import * as fs from 'fs';
-import path from 'path';
-import allureReporter from '@wdio/allure-reporter';
 import { DragAndDropCoordinate, ParsedCSSValue, WaitForOptions } from 'webdriverio';
 import { Size } from 'webdriverio/build/commands/element/getSize';
 import { Location } from 'webdriverio/build/commands/element/getLocation';
@@ -17,6 +14,7 @@ import { Cookie } from '@wdio/protocols/build/types';
 import * as fs from 'fs';
 import path from 'path';
 import allureReporter from '@wdio/allure-reporter';
+import { Result, WdioCheckElementMethodOptions } from 'wdio-image-comparison-service';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
@@ -1068,12 +1066,14 @@ export namespace BrowserUtils {
    * Checking for image-comparison service and getting config
    */
   function getSnapshotsConfig(): IComparisonPath {
-    const imageComparisonConfig = browser?.config?.services?.find((service) => service[0] === 'image-comparison')?.[1];
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const imageComparisonConfig = browser.config.services.find((service) => service[0] === 'image-comparison')?.[1];
     if (!imageComparisonConfig) {
       throw new Error('cannot get image-comparison service config, make sure you added it to the wdio config file');
     }
     const { baselineFolder, screenshotPath } = imageComparisonConfig;
-    const instance = `desktop_${browser.capabilities.browserName}`;
+    const instance = `desktop_${browser.capabilities['browserName']}`;
 
     return {
       baselinePath: path.join(baselineFolder, instance),
@@ -1088,11 +1088,13 @@ export namespace BrowserUtils {
    * @param selector selector for an element
    * @param options https://github.com/wswebcreation/wdio-image-comparison-service/blob/main/docs/OPTIONS.md#plugin-options
    */
-  export function compareWithSnapshot(filename: string, selector: string, options: object = {}): void {
+  export function compareWithSnapshot(
+    filename: string,
+    selector: string,
+    options?: WdioCheckElementMethodOptions
+  ): void {
     this.waitForDisplayed(selector);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const compareResult: number = browser.checkElement($(selector), filename, options);
+    const compareResult: Result = browser.checkElement($(selector), filename, options);
 
     if (compareResult !== 0) {
       const { diffPath, actualPath, baselinePath }: IComparisonPath = getSnapshotsConfig();
