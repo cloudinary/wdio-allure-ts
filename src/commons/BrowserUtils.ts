@@ -11,11 +11,21 @@ import { DragAndDropCoordinate, ParsedCSSValue, WaitForOptions } from 'webdriver
 import { Size } from 'webdriverio/build/commands/element/getSize';
 import { Location } from 'webdriverio/build/commands/element/getLocation';
 import { Cookie } from '@wdio/protocols/build/types';
+import * as fs from 'fs';
+import path from 'path';
+import allureReporter from '@wdio/allure-reporter';
+import { Result, WdioCheckElementMethodOptions } from 'wdio-image-comparison-service';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
 
 const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
+
+export interface IComparisonPath {
+  baselinePath: string;
+  actualPath: string;
+  diffPath: string;
+}
 
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
@@ -41,6 +51,7 @@ export namespace BrowserUtils {
       throw new Error(`Found ${compareResult}% difference. See attached images`);
     }
   }
+
   /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
@@ -230,7 +241,8 @@ export namespace BrowserUtils {
    * @param value value to select
    */
   export function selectByValue(selector: string, value: string): void {
-    Reporter.debug(`Select by text '${value}' from '${selector}'`);
+    Reporter.debug(`Select by text '${value}'
+                    from '${selector}'`);
     isExist(selector);
 
     tryBlock(() => $(selector).selectByAttribute('value', value), `Failed to select ${value} from ${selector}`);
@@ -400,6 +412,7 @@ export namespace BrowserUtils {
   export function findElements(selectorType: SelectorType, selector: string): Array<string> {
     return tryBlock(() => browser.findElements(selectorType, selector), 'Failed to find elements');
   }
+
   /**
    * Hover over an element by given selector
    *
@@ -1047,5 +1060,58 @@ export namespace BrowserUtils {
       () => $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
       `Timeout waiting for element '${selector}' to be clickable`
     );
+  }
+
+  /**
+   * Checking for image-comparison service and getting config
+   */
+  function getSnapshotsConfig(): IComparisonPath {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const imageComparisonConfig = browser.config.services.find((service) => service[0] === 'image-comparison')?.[1];
+    if (!imageComparisonConfig) {
+      throw new Error('cannot get image-comparison service config, make sure you added it to the wdio config file');
+    }
+    const { baselineFolder, screenshotPath } = imageComparisonConfig;
+    const instance = `desktop_${browser.capabilities['browserName']}`;
+
+    return {
+      baselinePath: path.join(baselineFolder, instance),
+      actualPath: path.join(screenshotPath, 'actual', instance),
+      diffPath: path.join(screenshotPath, 'diff', instance),
+    };
+  }
+
+  /**
+   * Comparing image by providing selector of element
+   * @param filename filename of image
+   * @param selector selector for an element
+   * @param options https://github.com/wswebcreation/wdio-image-comparison-service/blob/main/docs/OPTIONS.md#plugin-options
+   */
+  export function compareWithSnapshot(
+    filename: string,
+    selector: string,
+    options?: WdioCheckElementMethodOptions
+  ): void {
+    this.waitForDisplayed(selector);
+    const compareResult: Result = browser.checkElement($(selector), filename, options);
+
+    if (compareResult !== 0) {
+      const { diffPath, actualPath, baselinePath }: IComparisonPath = getSnapshotsConfig();
+      allureReporter.addAttachment(
+        'Base line',
+        fs.readFileSync(path.join(baselinePath, filename + '.png')),
+        'image/png'
+      );
+      allureReporter.addAttachment(
+        'Actual image',
+        fs.readFileSync(path.join(actualPath, filename + '.png')),
+        'image/png'
+      );
+      allureReporter.addAttachment('Diff image', fs.readFileSync(path.join(diffPath, filename + '.png')), 'image/png');
+
+      throw new Error(`Found ${compareResult}% difference. See attached images`);
+    }
+    return;
   }
 }
