@@ -33,10 +33,10 @@ jobs:
       - name: Run tests
         run: yarn test
 
-  publish_package:
+  release_package:
     needs: master_tests
 
-    name: Publishing package
+    name: Release package
     runs-on: ubuntu-latest
 
     steps:
