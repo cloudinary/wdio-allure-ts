@@ -48,10 +48,10 @@ jobs:
         run: yarn install
 
       - name: Release new package
-        run: standard-version --dry-run
+        run: standard-version
 
       - name: push changes
-        run: git push --follow-tags origin HEAD
+        run: git push --follow-tags origin APPS-9798-add-publish-job
 
       - uses: JS-DevTools/npm-publish@v1
         with:
