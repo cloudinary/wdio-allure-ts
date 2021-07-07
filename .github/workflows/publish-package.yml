@@ -48,7 +48,7 @@ jobs:
           yarn release
 
       - name: push changes
-        run: git push --follow-tags origin APPS-9798-add-publish-job
+        run: git push --follow-tags origin HEAD
 
       - uses: JS-DevTools/npm-publish@v1
         with:
