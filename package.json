@@ -36,7 +36,7 @@
     "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
     "pretest": "yarn lint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
-    "release": "standard-version --dry-run"
+    "release": "standard-version release -- --prerelease alpha"
   },
   "dependencies": {
     "@applitools/eyes-sdk-core": "11.0.2",

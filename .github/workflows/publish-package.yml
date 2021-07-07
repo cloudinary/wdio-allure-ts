@@ -40,10 +40,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WDIO_TOKEN }}
 
       - name: Install packages
         run: yarn install
 
       - name: Release new package
         run: standard-version --dry-run
+
+      - name: push changes
+        run: git push --follow-tags origin HEAD
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+
+      - if: steps.publish.outputs.type != 'none'
+        run: |
+          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
