@@ -49,6 +49,8 @@ jobs:
 
       - name: Release new package
         run: yarn release
+        with:
+          token: ${{ secrets.WDIO_TOKEN }}
 
       - name: push changes
         run: git push --follow-tags origin APPS-9798-add-publish-job
