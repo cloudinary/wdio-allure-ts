@@ -2,25 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 3.0.11 (2021-07-07)
-
-### 3.0.10 (2021-07-07)
-
-### 3.0.9 (2021-07-07)
-
-### 3.0.8 (2021-07-07)
-
-### 3.0.7 (2021-07-07)
-
-### 3.0.6 (2021-07-07)
-
-### 3.0.5 (2021-07-07)
-
-### 3.0.4 (2021-07-07)
-
-### 3.0.3 (2021-07-07)
-
-### 3.0.2 (2021-07-07)
 
 ### [3.0.1](https://github.com/cloudinary/wdio-allure-ts/compare/v3.0.0...v3.0.1) (2021-07-01)
 
