@@ -48,7 +48,7 @@ jobs:
         run: yarn install
 
       - name: Release new package
-        run: standard-version
+        run: yarn release
 
       - name: push changes
         run: git push --follow-tags origin APPS-9798-add-publish-job
