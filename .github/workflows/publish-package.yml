@@ -1,24 +1,20 @@
 name: publish-package
-
-# Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   master_tests:
     name: Run e2e tests
-    # This workflow contains a single job called "build"
-    # The type of runner that the job will run on
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WDIO_TOKEN }}
       - name: Use Node.js v12.x
         uses: actions/setup-node@v1
         with:
@@ -33,6 +29,14 @@ jobs:
       - name: Run tests
         run: yarn test
 
+      - uses: sonots/slack-notice-action@v3
+        with:
+          status: ${{ job.status }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_NOTIFICATION }}
+          if: failure()
+
   release_package:
     needs: master_tests
 
@@ -40,5 +44,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Release new package
-        run: standard-version --dry-run
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.WDIO_TOKEN }}
+
+      - name: Install packages
+        run: yarn install
+
+      - name: run standart version
+        run: |
+          git config user.name ${{ secrets.USERNAME }}
+          git config user.email "${{ secrets.MAIL }}"
+          yarn release
+
+      - name: push changes
+        run: git push --follow-tags origin master
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+
+      - uses: sonots/slack-notice-action@v3
+        with:
+          status: ${{ job.status }}
+          text_on_success: 'New version wdio-allure-ts published successfully'
+          text_on_fail: 'Publish failed, please check'
+        env:
+          GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_NOTIFICATION }}
+        if: always()
