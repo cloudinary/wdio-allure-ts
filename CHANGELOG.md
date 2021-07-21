@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 3.0.22 (2021-07-21)
+
+
+### Bug Fixes
+
+* fix problem with publishing job ([#239](https://github.com/cloudinary/wdio-allure-ts/issues/239)) ([5767bef](https://github.com/cloudinary/wdio-allure-ts/commit/5767bef21ec2ca4a7ca3077345146d3e21ecd51c))
+
 ### 3.0.21 (2021-07-20)
 
 ### 3.0.20 (2021-07-20)
