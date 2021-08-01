@@ -1,10 +1,14 @@
 import path from 'path';
 import { Reporter } from '../index';
 
+declare let global: unknown;
 /**
  * General utils useful for test
  */
+
 export namespace TestUtils {
+  let mockDataSuffix = 0;
+
   /**
    * Returns random string of requested length
    * if no length passed, length value will be 5
@@ -12,6 +16,14 @@ export namespace TestUtils {
    * @param lettersOnly should random string contains letter only (optional)
    */
   export function randomString(length: number = 5, lettersOnly: boolean = false): string {
+    const mockFileName: string = global['_mockFileName'];
+    if (mockFileName) {
+      const mockDataPrefix = mockFileName.substring(0, length - 1).toLowerCase();
+      const val = `${mockDataPrefix}${mockDataSuffix}`;
+      mockDataSuffix++;
+      return val;
+    }
+
     const letters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     const numbers: string = '0123456789';
     const allowedChars: string = lettersOnly ? letters : `${letters}${numbers}`;
@@ -21,6 +33,10 @@ export namespace TestUtils {
       .split(',')
       .map(() => allowedChars.charAt(Math.floor(Math.random() * allowedChars.length)))
       .join('');
+  }
+
+  export function clearMockDataSuffix(): void {
+    mockDataSuffix = 0;
   }
 
   /**
