@@ -97,15 +97,7 @@ export namespace Reporter {
    * Add logs to report and clean the data
    */
   function attachAndCleanNetworkLogs(): void {
-    /**
-     * Log only error request for cleaner report
-     */
-    const errorRequests = networkActivity.filter((logEntry) => {
-      return Number(logEntry.status) >= 400;
-    });
-
-    allureReporter.addAttachment('Network Logs', errorRequests, 'application/json');
-
+    allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
     networkActivity = [];
   }
 
