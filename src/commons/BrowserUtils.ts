@@ -19,8 +19,6 @@ import { Result, WdioCheckElementMethodOptions } from 'wdio-image-comparison-ser
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
 
-const CHILL_OUT_TIME: number = process.env.CHILL_OUT_TIME === undefined ? 3000 : Number(process.env.CHILL_OUT_TIME);
-
 export interface IComparisonPath {
   baselinePath: string;
   actualPath: string;
@@ -344,7 +342,6 @@ export namespace BrowserUtils {
 
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
     tryBlock(() => browser.switchToFrame($(selector)), 'Failed to switch frame');
-    chillOut();
   }
 
   /**
@@ -999,14 +996,6 @@ export namespace BrowserUtils {
     return zipEntries
       .filter((entry: IZipEntry) => entry.entryName.charAt(entry.entryName.length - 1) !== '/')
       .map((entry: IZipEntry) => entry.entryName);
-  }
-
-  /**
-   * When switching between iframes, without wait it will fail to switch to iframe
-   */
-  function chillOut(): void {
-    Reporter.debug(`wait for ${CHILL_OUT_TIME}ms`);
-    browser.pause(CHILL_OUT_TIME);
   }
 
   /**
