@@ -2,10 +2,10 @@ import { BrowserUtils } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 /**
- * wdio-allure-ts navigateToUrl action test
+ * wdio-allure-ts url action test
  */
-describeCommon('navigateToUrl', () => {
+describeCommon('url', () => {
   it('navigate successfully', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
+    BrowserUtils.url(sampleAppUrl);
   });
 });

@@ -15,20 +15,17 @@ const NOT_EXISTING_ELEMENT_SELECTOR: string = `${PARENT_SELECTOR}//*[@id='not-ex
 
 describeCommon('selectByValue', () => {
   it('select by existing value', () => {
-    BrowserUtils.selectByValue(EXISTING_ELEMENT_SELECTOR, EXISTING_VALUE);
+    BrowserUtils.selectByAttribute(EXISTING_ELEMENT_SELECTOR, 'value', EXISTING_VALUE);
   });
 
   it('select by none existing value', () => {
-    expect(() => BrowserUtils.selectByValue(EXISTING_ELEMENT_SELECTOR, NOT_EXISTING_VALUE))
+    expect(() => BrowserUtils.selectByAttribute(EXISTING_ELEMENT_SELECTOR, 'value', NOT_EXISTING_VALUE))
       .to.throw(Error)
       .with.property('message')
       .contains('Failed to select ');
   });
 
   it('select hidden element by value', () => {
-    expect(() => BrowserUtils.selectByValue(NOT_EXISTING_ELEMENT_SELECTOR, HIDDEN_VALUE))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Element not exist');
+    expect(() => BrowserUtils.selectByAttribute(NOT_EXISTING_ELEMENT_SELECTOR, 'value', HIDDEN_VALUE)).to.throw(Error);
   });
 });

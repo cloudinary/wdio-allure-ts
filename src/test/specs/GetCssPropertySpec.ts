@@ -5,7 +5,7 @@ import { describeCommon } from '../TestHelper';
 const HEADER: string = '//*[@id="headerSection-1"]/h1';
 
 /**
- * wdio-allure-ts navigateToUrl action test
+ * wdio-allure-ts url action test
  */
 describeCommon('getCssProperty', () => {
   it('retrieve css property', () => {

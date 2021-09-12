@@ -22,7 +22,7 @@ describeCommon('startNetworkAudit', () => {
       });
     });
 
-    BrowserUtils.navigateToUrl(sampleAppUrl);
+    BrowserUtils.url(sampleAppUrl);
 
     BrowserUtils.waitUntil(
       () => {

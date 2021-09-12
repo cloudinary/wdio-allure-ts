@@ -10,7 +10,7 @@ let cookie: WebDriver.Cookie;
 describeCommon('GetCookieSpec', () => {
   beforeEach(() => {
     cookie = { name: TestUtils.randomString(), value: TestUtils.randomString() };
-    BrowserUtils.setCookie(cookie, null);
+    BrowserUtils.setCookies(cookie, null);
   });
   it('expect unique cookie', () => {
     assert.equal(BrowserUtils.getCookies().length, 1, 'Incorrect number of retrieved cookies');

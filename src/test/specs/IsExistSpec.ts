@@ -7,18 +7,15 @@ const EXISTING_ELEMENT_SELECTOR: string = `${PARENT_SELECTOR}//*[@id='is-exist-b
 const NOT_EXISTING_ELEMENT_SELECTOR: string = `${PARENT_SELECTOR}//*[@id='not-existing-button']`;
 
 /**
- * isExist
+ * waitForExist
  */
 
-describeCommon('isExist', () => {
+describeCommon('waitForExist', () => {
   it('existing element', () => {
-    BrowserUtils.isExist(EXISTING_ELEMENT_SELECTOR);
+    BrowserUtils.waitForExist(EXISTING_ELEMENT_SELECTOR);
   });
 
   it('not existing element', () => {
-    expect(() => BrowserUtils.isExist(NOT_EXISTING_ELEMENT_SELECTOR))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Element not exist');
+    expect(() => BrowserUtils.waitForExist(NOT_EXISTING_ELEMENT_SELECTOR)).to.throw(Error);
   });
 });

@@ -20,10 +20,10 @@ describeCommon('ScrollTo', () => {
 
 function getVerticalPosition(): number {
   const script: string = `return document.getElementById('${TEST_DIV_ID}').scrollTop`;
-  return Number(BrowserUtils.executeScript(script));
+  return Number(BrowserUtils.execute(script));
 }
 
 function getHorizontalPosition(): number {
   const script: string = `return document.getElementById('${TEST_DIV_ID}').scrollLeft`;
-  return Number(BrowserUtils.executeScript(script));
+  return Number(BrowserUtils.execute(script));
 }
