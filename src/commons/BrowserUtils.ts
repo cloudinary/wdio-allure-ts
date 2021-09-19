@@ -299,7 +299,7 @@ export namespace BrowserUtils {
    */
   export function waitForDisplayed(selector: string, options?: WaitForOptions): void {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
-    if (!options || !options.reverse) {
+    if (options?.reverse) {
       waitForExist(selector, options);
     }
     tryBlock(
@@ -322,9 +322,8 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Switch to iframe by iframe selector
-   * Elements/widgets ( like dialogs, status bars and more)
-   * located inside an iframe has to be switch to it
+   * Change focus to another frame on the page. If the frame id is null,
+   * the server should switch to the page's default content.
    *
    * @param selector selector of frame to switch to
    */
@@ -339,6 +338,8 @@ export namespace BrowserUtils {
   /**
    * The Switch To Window command is used to select the current top-level browsing context for the current session,
    * i.e. the one that will be used for processing commands.
+   *
+   * @param handle a string representing a window handle, should be one of the strings that was returned in a call to getWindowHandles
    */
   export function switchToWindow(handle: string): void {
     Reporter.debug(`Switching window by id: '${handle}'`);
@@ -651,22 +652,10 @@ export namespace BrowserUtils {
    * Otherwise will first navigate to required domain(should be valid url),
    *  set the cookie and navigate back to page it started from
    * @param cookie cookie to set
-   * @param domain domain to set cookie for
    */
-  export function setCookies(cookie: Cookie | Array<Cookie>, domain: string): void {
+  export function setCookies(cookie: Cookie | Array<Cookie>): void {
     Reporter.debug(`Setting cookies: '${JSON.stringify(cookie)}'`);
-
-    let currentUrl: string;
-    if (domain !== null) {
-      currentUrl = getUrl();
-      url(domain);
-    }
-
     browser.setCookies(cookie);
-
-    if (domain !== null) {
-      url(currentUrl);
-    }
   }
 
   /**
