@@ -14,11 +14,14 @@ describeCommon('waitForDisplayed - reverse: true', () => {
     expect(() => BrowserUtils.waitForDisplayed(VISIBLE_ELEMENT_SELECTOR, { reverse: true }))
       .to.throw(Error)
       .with.property('message')
-      .contains(' still displayed');
+      .contains(' still existing');
   });
 
-  it('notDisplayed element ', () => {
-    expect(() => BrowserUtils.waitForDisplayed(NOT_VISIBLE_ELEMENT_SELECTOR, { reverse: true })).to.not.throw(Error);
+  it('notDisplayed but exist element ', () => {
+    expect(() => BrowserUtils.waitForDisplayed(NOT_VISIBLE_ELEMENT_SELECTOR, { reverse: true }))
+      .to.throw(Error)
+      .with.property('message')
+      .contains('still existing');
   });
 
   it('not exist element ', () => {
