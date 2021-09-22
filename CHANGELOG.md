@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 4.0.0 (2021-09-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* update BrowserUtils API to match the wdio api
+
+### Bug Fixes
+
+* update-api-to-match-wdio ([#243](https://github.com/cloudinary/wdio-allure-ts/issues/243)) ([e594ee7](https://github.com/cloudinary/wdio-allure-ts/commit/e594ee72c5d6d4d7164412d0d5ef999bdb2898cc))
+
 ### 3.0.23 (2021-08-03)
 
 ### 3.0.22 (2021-07-21)
