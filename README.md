@@ -81,9 +81,7 @@ describeCommon('Test Example', () => {
 
 ```json
 {
-  "include": [
-    "specs/**/*.ts"
-  ]
+  "include": ["specs/**/*.ts"]
 }
 ```
 
