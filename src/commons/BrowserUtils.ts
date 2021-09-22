@@ -1,20 +1,27 @@
+import allureReporter from '@wdio/allure-reporter';
+import { Cookie } from '@wdio/protocols/build/types';
 import admZip, { IZipEntry } from 'adm-zip';
 import axios, { AxiosResponse } from 'axios';
 import { assert } from 'chai';
+import * as fs from 'fs';
 import { EOL } from 'os';
+import path from 'path';
+import { inspect } from 'util';
+import { Result, WdioCheckElementMethodOptions } from 'wdio-image-comparison-service';
+import {
+  ClickOptions,
+  DragAndDropCoordinate,
+  MoveToOptions,
+  ParsedCSSValue,
+  WaitForOptions,
+  WaitUntilOptions,
+} from 'webdriverio';
+import { Location } from 'webdriverio/build/commands/element/getLocation';
+import { Size } from 'webdriverio/build/commands/element/getSize';
 import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
-import { inspect } from 'util';
-import { DragAndDropCoordinate, ParsedCSSValue, WaitForOptions } from 'webdriverio';
-import { Size } from 'webdriverio/build/commands/element/getSize';
-import { Location } from 'webdriverio/build/commands/element/getLocation';
-import { Cookie } from '@wdio/protocols/build/types';
-import * as fs from 'fs';
-import path from 'path';
-import allureReporter from '@wdio/allure-reporter';
-import { Result, WdioCheckElementMethodOptions } from 'wdio-image-comparison-service';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
@@ -53,9 +60,9 @@ export namespace BrowserUtils {
   /**
    * Inject a snippet of JavaScript into the page
    * for execution in the context of the currently selected frame
-   * @param script - js script to execute
+   * @param script - js script to execute in string format
    */
-  export function executeScript(script: string): string {
+  export function execute(script: string): string {
     Reporter.debug(`Executing script: '${script}'`);
     return tryBlock(() => browser.execute(script), `Failed to execute script: ${script}`);
   }
@@ -69,16 +76,8 @@ export namespace BrowserUtils {
 
     tryBlock(() => {
       const scrollToJS: string = `document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
-      executeScript(scrollToJS);
+      execute(scrollToJS);
     }, `Failed to scroll to element: [${selector}]`);
-  }
-
-  /**
-   * Get system data tests executed on
-   * Usefully to add in Reporter before each test
-   */
-  export function getSystemData(): string {
-    return String(browser.execute(() => navigator.appVersion));
   }
 
   /**
@@ -121,23 +120,31 @@ export namespace BrowserUtils {
    */
   export function setHiddenElementValue(selector: string, value: string | number): void {
     Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
-    isExist(selector);
+    waitForExist(selector);
     tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
   /**
-   * Click an element located by selector
+   * Click on an element.
+   *
+   * Note: This issues a WebDriver click command for the selected element, which generally scrolls to and then clicks the selected element.
+   * However, if you have fixed-position elements (such as a fixed header or footer) that cover up the selected element after it is scrolled within the viewport,
+   * the click will be issued at the given coordinates, but will be received by your fixed (overlaying) element. In these cased the following error is thrown:
+   * Element is not clickable at point (x, x). Other element would receive the click: ..."
+   * To work around this, try to find the overlaying element and remove it via execute command so it doesn't interfere the click.
+   * You also can try to scroll to the element yourself using scroll with an offset appropriate for your scenario.
    *
    * Validate element is visible before clicking on it
    * @param selector element selector
+   * @param options { button, x, y } are optional. button can be one of [0, "left", 1, "middle", 2, "right"]
    */
-  export function click(selector: string): void {
+  export function click(selector: string, options?: ClickOptions): void {
     Reporter.debug(`Click an element '${selector}'`);
     waitForEnabled(selector);
 
     waitForClickable(selector);
     tryBlock(
-      () => $(selector).click(),
+      () => $(selector).click(options),
 
       `Failed to click on '${selector}'`
     );
@@ -161,7 +168,7 @@ export namespace BrowserUtils {
    * to insure the navigation actually happened
    * @param url url for navigation
    */
-  export function navigateToUrl(url: string): void {
+  export function url(url: string): void {
     Reporter.debug(`Navigate to '${url}'`);
     tryBlock(() => browser.url(url), `Failed to navigate to '${url}'`);
   }
@@ -169,7 +176,7 @@ export namespace BrowserUtils {
   /**
    * Refresh browser's page
    */
-  export function refreshBrowser(): void {
+  export function refresh(): void {
     Reporter.debug('Refresh browser page');
     tryBlock(
       () => browser.refresh(),
@@ -181,7 +188,7 @@ export namespace BrowserUtils {
   /**
    * Click browser's back button
    */
-  export function backBrowser(): void {
+  export function back(): void {
     Reporter.debug('Click browser back button');
     tryBlock(() => browser.back(), 'Failed to click browser back button');
   }
@@ -191,7 +198,7 @@ export namespace BrowserUtils {
    * Mainly useful for navigation validation
    * @param url expected current url
    */
-  export function expectCurrentUrl(url: string): void {
+  export function waitForUrl(url: string): void {
     const expectedUrl: string = normalizeUrl(url);
     Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
     browser.waitUntil(
@@ -223,30 +230,33 @@ export namespace BrowserUtils {
 
   /**
    *  Wait Until - Will Return true in case condition met within the timeout or false if condition isn't met or not met within the timeout
-   * @param action - any condition as a function
-   * @param actionTimeout - specified time out if undefined Default time out is used
-   * @param errMessage - Custom message for time out
+   * @param condition condition to wait on
+   * @param options WaitForOptions options (optional) { timeout, timeoutMsg, interval }
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export function waitUntil(action: () => any, errMessage?: string, actionTimeout: number = DEFAULT_TIME_OUT): any {
-    return browser.waitUntil(() => action(), { timeout: actionTimeout, timeoutMsg: errMessage });
+  export function waitUntil(condition: () => any, options?: WaitUntilOptions): any {
+    return browser.waitUntil(() => condition(), { ...{ timeout: DEFAULT_TIME_OUT }, ...options });
   }
 
   /**
-   * Select a value in element
-   * Mostly used for drop down item selection from drop down list
+   * Select option with a specific value
    * @param selector elements selector
-   * @param value value to select
+   * @param attribute attribute of option element to get selected
+   * @param value value of option element to get selected
    */
-  export function selectByValue(selector: string, value: string): void {
-    Reporter.debug(`Select by text '${value}'
+  export function selectByAttribute(selector: string, attribute: string, value: string | number): void {
+    Reporter.debug(`Select by value '${value}' of attribute '${attribute}'
                     from '${selector}'`);
-    isExist(selector);
+    waitForExist(selector);
 
-    tryBlock(() => $(selector).selectByAttribute('value', value), `Failed to select ${value} from ${selector}`);
+    tryBlock(
+      () => $(selector).selectByAttribute(attribute, value),
+      `Failed to select value ${value} of attribute ${attribute} from ${selector}`
+    );
   }
 
   /**
+   * Return true or false if the selected DOM-element is enabled
    * @param selector - element selector
    */
   export function isEnabled(selector: string): boolean {
@@ -258,15 +268,22 @@ export namespace BrowserUtils {
   /**
    *  Wait for element to be enabled
    * @param selector element selector
+   * @param options WaitForOptions options (optional) { timeout, reverse, timeoutMsg, interval }
    */
-  export function waitForEnabled(selector: string): void {
+  export function waitForEnabled(selector: string, options?: WaitForOptions): void {
     Reporter.debug(`Wait for an element to be enabled '${selector}'`);
-    waitForDisplayed(selector);
-    tryBlock(() => $(selector).waitForEnabled({ timeout: DEFAULT_TIME_OUT }), `Element not enabled '${selector}'`);
+    waitForDisplayed(selector, options);
+    /**
+     * If no options passed or options does not include timout, default timeout will be used
+     */
+    tryBlock(
+      () => $(selector).waitForEnabled({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+      `Element not enabled '${selector}'`
+    );
   }
 
   /**
-   * Indicate if Element is visible (without wait)
+   * Return true if the selected DOM-element is displayed
    * @param selector - element selector
    */
   export function isDisplayed(selector: string): boolean {
@@ -278,116 +295,76 @@ export namespace BrowserUtils {
   /**
    * Wait for an element to be visible by given selector
    * @param selector element selector
+   * @param options WaitForOptions options (optional) { timeout, reverse, timeoutMsg, interval }
    */
-  export function waitForDisplayed(selector: string): void {
+  export function waitForDisplayed(selector: string, options?: WaitForOptions): void {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
-    isExist(selector);
-    tryBlock(() => $(selector).waitForDisplayed({ timeout: DEFAULT_TIME_OUT }), `Element not visible '${selector}'`);
+    if (options?.reverse) {
+      waitForExist(selector, options);
+    }
+    tryBlock(
+      () => $(selector).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+      `Element not visible '${selector}'`
+    );
   }
 
   /**
    * Wait for an element to be exist by given selector
    * @param selector element selector
+   * @param options WaitForOptions options (optional) { timeout, reverse, timeoutMsg, interval }
    */
-  export function isExist(selector: string): void {
+  export function waitForExist(selector: string, options?: WaitForOptions): void {
     Reporter.debug(`Expect an element exist '${selector}'`);
-
-    tryBlock(() => $(selector).waitForExist({ timeout: DEFAULT_TIME_OUT }), `Element not exist '${selector}'`);
-  }
-
-  /**
-   * Wait for an element to be not visible by given selector
-   *
-   * @param selector element selector
-   */
-  export function notVisible(selector: string): void {
-    Reporter.debug(`Validating element not visible '${selector}'`);
-    tryBlock(() => {
-      browser.waitUntil(
-        () => {
-          return !$(selector).isDisplayed();
-        },
-        { timeout: DEFAULT_TIME_OUT }
-      );
-    }, `Failed to validate element not visible '${selector}'`);
-  }
-
-  /**
-   * Wait until element not exist in dom
-   * @param notExistElementSelector element's selector
-   */
-  export function notExist(notExistElementSelector: string): void {
-    Reporter.debug(`Validating element not exist '${notExistElementSelector}'`);
-
     tryBlock(
-      () =>
-        $(notExistElementSelector).waitForExist({
-          timeout: DEFAULT_TIME_OUT,
-          reverse: true,
-        }),
-      `Failed to validate element not exist '${notExistElementSelector}'`
+      () => $(selector).waitForExist({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+      `Wait for exist '${selector}' with options ${JSON.stringify(options)} failed`
     );
   }
 
   /**
-   * Switch to iframe by iframe selector
-   * Elements/widgets ( like dialogs, status bars and more)
-   * located inside an iframe has to be switch to it
+   * Change focus to another frame on the page. If the frame id is null,
+   * the server should switch to the page's default content.
    *
    * @param selector selector of frame to switch to
    */
   export function switchToFrame(selector: string): void {
     Reporter.debug(`Validate iframe with selector ${selector} exist`);
-    isExist(selector);
+    waitForExist(selector);
 
     Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
     tryBlock(() => browser.switchToFrame($(selector)), 'Failed to switch frame');
   }
 
   /**
-   * Switch to other tab by id
+   * The Switch To Window command is used to select the current top-level browsing context for the current session,
+   * i.e. the one that will be used for processing commands.
+   *
+   * @param handle a string representing a window handle, should be one of the strings that was returned in a call to getWindowHandles
    */
-  export function switchTab(handle: string): void {
-    Reporter.debug(`Switching tab by id: '${handle}'`);
+  export function switchToWindow(handle: string): void {
+    Reporter.debug(`Switching window by id: '${handle}'`);
 
-    tryBlock(() => browser.switchToWindow(handle), `Failed switch to tab by id: '${handle}'`);
+    tryBlock(() => browser.switchToWindow(handle), `Failed switch to window by id: '${handle}'`);
   }
 
   /**
-   * Over think method name
-   * Get ids of open tabs
+   * The Get Window Handles command returns a list of window handles for every open top-level browsing context.
+   * The order in which the window handles are returned is arbitrary.
    */
-  export function getTabIds(): Array<string> {
+  export function getWindowHandles(): Array<string> {
     Reporter.debug('Get all ids of all open tabs');
 
-    return tryBlock(() => browser.getWindowHandles(), 'Failed to get tab ids');
+    return tryBlock(() => browser.getWindowHandles(), 'Failed to get window handles');
   }
 
   /**
-   * Switch to parent frame
-   * Have to call it after switching to some iframe
-   * so the focus will be back on main page
+   * Change focus to the parent context.
+   * If the current context is the top level browsing context, the context remains unchanged.
    */
   export function switchToParentFrame(): void {
-    Reporter.debug(`Switching to parent frame (${browser.capabilities['browserName']})`);
+    Reporter.debug(`Switching to parent frame`);
 
-    switch (browser.capabilities['browserName']) {
-      case 'chrome': {
-        Reporter.debug('Case chrome');
-        tryBlock(() => browser.switchToParentFrame(), 'Chrome: Failed to switch to parent frame');
-        break;
-      }
-
-      case 'firefox': {
-        Reporter.debug('Case firefox');
-        tryBlock(() => browser.switchToFrame(null), 'FireFox: Failed to switch to parent frame');
-        break;
-      }
-
-      default: {
-        throw new TypeError('Unable to execute due to unsupported Browser');
-      }
-    }
+    tryBlock(() => browser.switchToParentFrame(), 'Failed to switch to parent frame');
   }
 
   /**
@@ -411,26 +388,14 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Hover over an element by given selector
-   *
-   * Note: Uses moveToObject method that is currently deprecated
-   * @param selector selector of an element to hover
-   */
-  export function hover(selector: string): void {
-    Reporter.debug(`Move to an element '${selector}'`);
-    waitForDisplayed(selector);
-    tryBlock(() => $(selector).moveTo(), `Failed to hover over '${selector}')`);
-  }
-
-  /**
-   * Validate element text as expected
+   * Wait for text of an element
    * Actual texts EOL replaced with spaces, for better test readability, so you need to path one line string
    * Note: element should be visible, otherwise will return empty string(selenium requirement)
    * @param selector element selector with text
    * @param expectedText expected text
    */
-  export function expectText(selector: string, expectedText: string): void {
-    Reporter.debug(`Validate element text is '${expectedText}' by selector '${selector}'`);
+  export function waitForText(selector: string, expectedText: string): void {
+    Reporter.debug(`Wait for text '${expectedText}' of element by selector '${selector}'`);
     waitForDisplayed(selector);
     const elementWithText: WebdriverIO.Element = $(selector);
     tryBlock(
@@ -456,7 +421,9 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Get text of an element by selector
+   * Get the text content from a DOM-element.
+   * Make sure the element you want to request the text from is interactable
+   * otherwise you will get an empty string as return value.
    * @param selector element's selector
    */
   export function getText(selector: string): string {
@@ -467,39 +434,39 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Validate number of items found by selector as expected
+   * Wait for number of elements found by selector to equal expected number
+   * In case of expectedNumber is 0, validates no elements with given selector displayed
    *
    * @param selector selector of items to count
-   * @param expectedValue expected number of items
-   * @param selector - element locator
+   * @param expectedNumber expected number of items
    */
-  export function expectNumberOfElements(selector: string, expectedValue: number): void {
-    Reporter.debug(`Expect Number Of Elements, '${expectedValue}' in '${selector}'`);
-    if (expectedValue === 0) {
-      notVisible(selector);
+  export function waitForNumberOfElements(selector: string, expectedNumber: number): void {
+    Reporter.debug(`Wait for number '${expectedNumber}' of elements by selector '${selector}'`);
+    if (expectedNumber === 0) {
+      waitForDisplayed(selector, { reverse: true });
     }
 
     tryBlock(
       () =>
         browser.waitUntil(() => {
-          return $$(selector).length === expectedValue;
+          return findElements(SelectorType.XPATH, selector).length === expectedNumber;
         }),
-      `Found number of elements by '${selector}' not equal '${expectedValue}'`
+      `Found number of elements by '${selector}' not equal '${expectedNumber}'`
     );
   }
 
   /**
-   * Scroll to an element in list
+   * Scroll to an item in list
    *
    * Scroll in loop until the element is visible or fail on time out
    * Checks for size of list every iteration in case list is lazy loaded
    * @param selector selector of an element to scroll to
    * @param listSelector selector of list to scroll
    */
-  export function scrollToElement(selector: string, listSelector: string): void {
+  export function scrollToItemInList(selector: string, listSelector: string): void {
     Reporter.debug(`Scroll in list '${listSelector}' until element '${selector}' is visible.`);
 
-    isExist(listSelector); // need to verify list is loaded
+    waitForExist(listSelector); // need to verify list is loaded
     if (isDisplayed(selector)) {
       return;
     }
@@ -514,9 +481,9 @@ export namespace BrowserUtils {
            */
           const xpath: string = `(${listSelector})[${last}]`;
           const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
-          executeScript(scrollToJS);
+          execute(scrollToJS);
 
-          last = findElements(SelectorType.XPATH, listSelector).length;
+          last = getNumberOfElements(listSelector);
 
           return $(selector).isDisplayed();
         }),
@@ -534,7 +501,7 @@ export namespace BrowserUtils {
   export function scrollTo(selector: string, x: number, y: number): void {
     waitForDisplayed(selector);
     const script: string = `(document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).scroll(${x}, ${y})`;
-    executeScript(script);
+    execute(script);
   }
 
   /**
@@ -546,7 +513,7 @@ export namespace BrowserUtils {
     Reporter.debug(`Check iframe visibility is '${expectedVisibility}'`);
 
     switchToParentFrame(); // if iframe already focused, isExist will fail
-    isExist(iframeSelector);
+    waitForExist(iframeSelector);
 
     const cssDisplayProperty: string = 'display';
     const iframeDisplayProperty: ParsedCSSValue = tryBlock(
@@ -564,44 +531,24 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Get element's attribute value
+   * Get an attribute from a DOM-element based on the attribute name.
    * @param selector element's selector to search for attribute
-   * @param attributeName attribute name to search for
+   * @param attributeName requested attribute name
    */
   export function getAttribute(selector: string, attributeName: string): string {
+    waitForExist(selector);
     return tryBlock(
-      () => getAttributeAndVerify(selector, attributeName),
+      () => $(selector).getAttribute(attributeName),
       `Failed to get '${attributeName}' attribute from '${selector}'`
     );
   }
 
   /**
-   *
-   * @param selector element's selector to search for attribute
-   * @param attributeName attribute name to search for
-   */
-  function getAttributeAndVerify(selector: string, attributeName: string): string {
-    Reporter.debug(`Get Attribute '${attributeName}' in element '${selector}' And Verify not null.`);
-    isExist(selector);
-
-    const stringResults: string = $$(selector).length === 1 ? $(selector).getAttribute(attributeName) : undefined;
-
-    // Check for multiple results or no element found
-    if (stringResults === null || stringResults === undefined) {
-      assert.fail(
-        `Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}'`
-      );
-    }
-
-    return stringResults;
-  }
-
-  /**
-   * Check if value of given selector is as expected
+   * Wait for value of element to be as requested
    * @param selector element's selector to check the value
    * @param value expected value
    */
-  export function expectValue(selector: string, value: string): void {
+  export function waitForValue(selector: string, value: string): void {
     Reporter.debug(`Validate element '${selector}' has value of '${value}'`);
     let currValue: string;
 
@@ -617,13 +564,21 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Check if attribute with given selector contain expected value
+   * Wait for attribute to contain requested value
    * @param selector element's selector to search for attribute
    * @param attributeName attribute name to search for
    * @param value value in attribute
+   * @param revert indicate either the requested value should or should not be contained
    */
-  export function expectAttributeValue(selector: string, attributeName: string, value: string): void {
-    Reporter.debug(`Validate element '${selector}' has attribute '${attributeName}' which contains '${value}'`);
+  export function waitForAttributeValue(
+    selector: string,
+    attributeName: string,
+    value: string,
+    revert: boolean = false
+  ): void {
+    Reporter.debug(
+      `Validate element '${selector}' has ${revert ? 'not ' : ''}attribute '${attributeName}' that contains '${value}'`
+    );
     let attributeValue: string;
 
     tryBlock(
@@ -631,9 +586,9 @@ export namespace BrowserUtils {
         browser.waitUntil(() => {
           attributeValue = getAttribute(selector, attributeName);
 
-          return isContainWord(attributeValue, value);
+          return revert != isContainWord(attributeValue, value);
         }),
-      `Incorrect attribute '${attributeName}' value from '${selector}' ${EOL}Expected: value '${value}' not found`
+      `Incorrect attribute '${attributeName}' value from '${selector}'`
     );
   }
 
@@ -656,28 +611,6 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Check if attribute with given selector NOT contain expected word
-   * @param selector element's selector to search for attribute
-   * @param attributeName attribute name to search for
-   * @param value value NOT in attribute
-   */
-  export function expectNoAttributeValue(selector: string, attributeName: string, value: string): void {
-    let attributeValue: string;
-    Reporter.debug(
-      `Validate element '${selector}' doesn't have attribute '${attributeName}' which contains '${value}'`
-    );
-    tryBlock(
-      () =>
-        browser.waitUntil(() => {
-          attributeValue = getAttribute(selector, attributeName);
-
-          return !isContainWord(attributeValue, value);
-        }),
-      `Incorrect attribute '${attributeName}' value from ${selector} ${EOL}. The Value '${value}'expected to not exist`
-    );
-  }
-
-  /**
    * Check if word is a substring of given text
    * @param fullText string to search in
    * @param word word to search
@@ -695,7 +628,9 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Get cssProperty value by it's name and element selector
+   * Get a css property from a DOM-element selected by given selector.
+   * The return value is formatted to be testable.
+   * Colors gets parsed via rgb2hex and all other properties get parsed via css-value.
    * @param selector element selector
    * @param cssPropertyName  css property name
    */
@@ -709,47 +644,37 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Set cookie
-   * Requires navigation to domain before setting cookie
+   * Sets one or more cookies for the current page.
+   * Make sure you are on the page that should receive the cookie.
+   * You can't set a cookie for an arbitrary page without being on that page.
    *
    * If no domain provided, will set cookie for current domain
    * Otherwise will first navigate to required domain(should be valid url),
    *  set the cookie and navigate back to page it started from
    * @param cookie cookie to set
-   * @param domain domain to set cookie for
    */
-  export function setCookie(cookie: Cookie, domain: string): void {
-    Reporter.debug(`Setting cookie: '${JSON.stringify(cookie)}'`);
-
-    let currentUrl: string;
-    if (domain !== null) {
-      currentUrl = getUrl();
-      navigateToUrl(domain);
-    }
-
+  export function setCookies(cookie: Cookie | Array<Cookie>): void {
+    Reporter.debug(`Setting cookies: '${JSON.stringify(cookie)}'`);
     browser.setCookies(cookie);
-
-    if (domain !== null) {
-      navigateToUrl(currentUrl);
-    }
   }
 
   /**
-   * Get cookie
+   * Retrieve a cookie visible to the current page
    * You can query a specific cookie by providing the cookie name or
    * retrieve all.
    */
   export function getCookies(names?: Array<string> | string): Array<Cookie> {
     Reporter.debug('Get cookies:');
-    const cookie: Array<Cookie> = tryBlock(() => browser.getCookies(names), 'Failed to get cookie');
-    Reporter.debug(JSON.stringify(cookie));
+    const cookies: Array<Cookie> = tryBlock(() => browser.getCookies(names), 'Failed to get cookies');
+    Reporter.debug(JSON.stringify(cookies));
 
-    return cookie;
+    return cookies;
   }
 
   /**
-   * Delete cookie
-   * By providing a cookie name it just removes the single cookie or more when multiple names are passed.
+   * Delete cookies visible to the current page.
+   * By providing a cookie name it just removes the single cookie or more when multiple names are passed
+   * @param names names of cookies to be deleted (optional)
    */
   export function deleteCookies(names?: Array<string> | string): void {
     Reporter.debug('Delete cookies:');
@@ -758,7 +683,7 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Get current Url
+   * The Get Current URL command returns the URL of the current top-level browsing context.
    */
   export function getUrl(): string {
     const currentUrl: string = tryBlock(() => browser.getUrl(), 'Failed to get current url');
@@ -785,10 +710,10 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Validate alert's text as expected
-   * @param expectedText expected alert's text
+   * Wait for alert's text to equal requested text
+   * @param expectedText requested alert's text
    */
-  export function expectAlertText(expectedText: string): void {
+  export function waitForAlertText(expectedText: string): void {
     Reporter.debug(`Validate alert's text is '${expectedText}'`);
 
     tryBlock(
@@ -805,10 +730,10 @@ export namespace BrowserUtils {
   }
 
   /**
-   *
-   * @param selector - element for get size
+   * Get the width and height for an DOM-element.
+   * @param selector requested element selector
    */
-  export function getElementSize(selector: string): Size {
+  export function getSize(selector: string): Size {
     Reporter.debug(`Get Element: '${selector}' size`);
     waitForDisplayed(selector);
 
@@ -816,84 +741,67 @@ export namespace BrowserUtils {
   }
 
   /**
-   * Change size of browser window
+   * Resizes browser window outer size according to provided width and height.
    * @param width - Width (px)
    * @param height - Height (px)
    */
   export function setWindowSize(width: number, height: number): void {
     Reporter.debug(`Set window size to '${width}X${height}'`);
-    switch (browser.capabilities['browserName']) {
-      case 'chrome': {
-        tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
-        break;
-      }
-
-      case 'firefox': {
-        tryBlock(() => browser.setWindowRect(0, 0, width, height), 'FireFox: Failed to resize window');
-        break;
-      }
-
-      default: {
-        throw new TypeError('Unable to execute due to unsupported Browser');
-      }
-    }
+    tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
   }
 
+  /**
+   * Returns browser window size.
+   * output example `{ width: 1280, height: 767 }`
+   */
   export function getWindowSize(): object {
     Reporter.debug('Get window size');
-    if (browser.capabilities['browserName'] === 'chrome') {
-      return tryBlock(() => browser.getWindowSize(), 'Chrome: Failed to get window size');
-    }
-
-    if (browser.capabilities['browserName'] === 'firefox') {
-      return tryBlock(() => browser.getWindowRect(), 'FireFox: Failed to get window size');
-    }
-
-    throw new TypeError('Unable to execute due to unsupported Browser');
+    return tryBlock(() => browser.getWindowSize(), 'Failed to get window size');
   }
 
   /**
-   *
-   * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
+   * Click and hold the left mouse button (at the coordinates set by the last moveto command).
+   * Note that the next mouse-related command that should follow is buttonup.
+   * Any other mouse command (such as click or another call to buttondown) will yield undefined behaviour
+   * @param mouseButton -  which button, enum: LEFT = 0, MIDDLE = 1 , RIGHT = 2, defaults to the left mouse button if not specified
    */
-  export function pressMouseButton(mouseButton: MouseButton): void {
-    // Defaults to the left mouse button if not specified.
-    const selectedMouseButton: number = mouseButton === undefined ? MouseButton.LEFT : mouseButton;
-    Reporter.step(`Click mouse button '${selectedMouseButton}'`);
-    browser.buttonDown(selectedMouseButton);
+  export function buttonDown(mouseButton?: MouseButton): void {
+    Reporter.step(`Click mouse button down '${mouseButton ? MouseButton.LEFT : mouseButton}'`);
+    browser.buttonDown(mouseButton);
   }
 
   /**
-   * @param selector - element to move to, If not specified or is null, the offset is relative to current position of the mouse.
-   * @param xOffset - X (Pixels) offset to move to, relative to the top-left corner of the element If not specified, the mouse will move to the middle of the element.
-   * @param yOffset - Y (Pixels) offset to move to, relative to the top-left corner of the element. If not specified, the mouse will move to the middle of the element.
+   * Move the mouse by an offset of the specified element.
+   * If no element is specified, the move is relative to the current mouse cursor.
+   * If an element is provided but no offset, the mouse will be moved to the center of the element.
+   * If the element is not visible, it will be scrolled into view
+   * @param selector element to move to, If not specified or is null, the offset is relative to current position of the mouse.
+   * @param options moveTo command options. options example {xOffset: 5, yOffset: 6}
    */
-  export function moveMouseCursorTo(selector: string, xOffset: number, yOffset: number): void {
-    Reporter.debug(`Move mouse cursor to element: '${selector}' with offset '${xOffset},${yOffset}'`);
+  export function moveTo(selector: string, options?: MoveToOptions): void {
+    Reporter.debug(`Move mouse cursor to element: '${selector}' with offset '${JSON.stringify(options)}'`);
 
-    isExist(selector);
-    $(selector).moveTo({
-      xOffset,
-      yOffset,
-    });
+    waitForExist(selector);
+    $(selector).moveTo(options);
   }
 
   /**
-   * @param mouseButton -  {LEFT = 0, MIDDLE = 1 , RIGHT = 2}
+   * Releases the mouse button previously held (where the mouse is currently at).
+   * Must be called once for every buttondown command issued.
+   * See the note in click and buttondown about implications of out-of-order commands.
+   * @param mouseButton enum: LEFT = 0, MIDDLE = 1, RIGHT = 2, defaults to the left mouse button if not specified
    */
-  export function releaseMouseButton(mouseButton: number): void {
-    // Defaults to the left mouse button if not specified.
-    const selectedMouseButton: number = mouseButton === undefined ? MouseButton.LEFT : mouseButton;
-    Reporter.step(`Release mouse button '${selectedMouseButton}'`);
-    browser.buttonUp(selectedMouseButton);
+  export function buttonUp(mouseButton: number): void {
+    Reporter.step(`Release mouse button '${mouseButton ? MouseButton.LEFT : mouseButton}'`);
+    browser.buttonUp(mouseButton);
   }
 
   /**
    * Determine an element’s location on the page. The point (0pix, 0pix) refers to the upper-left corner of the page.
-   * @param selector  - element with requested position offset
+   * @param selector element with requested position offset
    */
-  export function getElementLocation(selector: string): Location {
-    Reporter.debug(`Get Element location '${selector}'`);
+  export function getLocation(selector: string): Location {
+    Reporter.debug(`Get element's location '${selector}'`);
 
     return $(selector).getLocation();
   }
@@ -906,15 +814,17 @@ export namespace BrowserUtils {
   export function getNumberOfElements(selector: string): number {
     Reporter.debug(`Get number of elements by selector '${selector}'`);
 
-    return $$(selector).length;
+    return findElements(SelectorType.XPATH, selector).length;
   }
 
   /**
-   * Send a sequence of key strokes to the active element
+   * Send a sequence of key strokes to the active element.
+   * You can also use characters like "Left arrow" or "Back space".
+   * WebdriverIO will take care of translating them into unicode characters.
    * it can be single key or an array of keys
    * @param keysToSend key, array of keys or string array (chars) to send
    */
-  export function sendKeys(keysToSend: SpecialKeys | Array<SpecialKeys> | string | Array<string>): void {
+  export function keys(keysToSend: SpecialKeys | Array<SpecialKeys> | string | Array<string>): void {
     Reporter.debug(`Sending Keys ${keysToSend}`);
 
     browser.keys(keysToSend);
@@ -964,7 +874,7 @@ export namespace BrowserUtils {
 
     waitForDisplayed(selector);
     if (isTargetSelector) {
-      isExist(target as string);
+      waitForExist(target as string);
     }
     tryBlock(
       () => $(selector).dragAndDrop(isTargetSelector ? $(target as string) : (target as DragAndDropCoordinate)),
@@ -1019,21 +929,6 @@ export namespace BrowserUtils {
     } catch (e) {
       handleError(errorMessage, e);
     }
-  }
-
-  /**
-   * Click an element located by selector
-   *
-   * Validate element is visible before clicking on it
-   * @param selector element selector
-   */
-  export function rightClick(selector: string): void {
-    Reporter.debug(`Right click mouse button on the element '${selector}'`);
-    waitForEnabled(selector);
-
-    waitForClickable(selector);
-
-    tryBlock(() => $(selector).click({ button: 'right' }), `Failed to preform right click on '${selector}'`);
   }
 
   /**

@@ -5,24 +5,24 @@ import { describeCommon } from '../TestHelper';
 const TEST_FIELD_SELECTOR: string = "//*[@id='ExpectAlertText']";
 const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='ExpectAlertTextTriggerAlert']`;
 
-describeCommon('expectAlertText', () => {
+describeCommon('waitForAlertText', () => {
   beforeEach(() => {
     browser.refresh();
   });
   it('correct text', () => {
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
-    expect(() => BrowserUtils.expectAlertText('Hello! I am an alert box!')).to.not.throw();
+    expect(() => BrowserUtils.waitForAlertText('Hello! I am an alert box!')).to.not.throw();
   });
   it('incorrect text', () => {
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
-    expect(() => BrowserUtils.expectAlertText('Hello! I am not alert box!'))
+    expect(() => BrowserUtils.waitForAlertText('Hello! I am not alert box!'))
       .to.throw(Error)
       .with.property('message')
       .contains("Incorrect alert's text or alert not found.");
   });
 
   it('no alert', () => {
-    expect(() => BrowserUtils.expectAlertText('Hello! I am an alert box!'))
+    expect(() => BrowserUtils.waitForAlertText('Hello! I am an alert box!'))
       .to.throw(Error)
       .with.property('message')
       .contains("Incorrect alert's text or alert not found.");

@@ -24,9 +24,8 @@ describeCommon('addValue', () => {
       .contains('still not enabled');
   });
   it('add value to not existing input', () => {
-    expect(() => BrowserUtils.addValue(`//input[@id='${TestUtils.randomString(5)}']`, TestUtils.randomString(5)))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Element not exist');
+    expect(() =>
+      BrowserUtils.addValue(`//input[@id='${TestUtils.randomString(5)}']`, TestUtils.randomString(5))
+    ).to.throw(Error);
   });
 });

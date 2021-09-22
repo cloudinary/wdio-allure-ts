@@ -17,9 +17,6 @@ describeCommon('getNumberOfElements', () => {
   });
 
   it('undefined selector value', () => {
-    expect(() => BrowserUtils.getNumberOfElements(undefined))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('selector needs to be typeof `string` or `function`');
+    expect(() => BrowserUtils.getNumberOfElements(undefined)).to.throw(Error);
   });
 });

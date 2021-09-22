@@ -27,7 +27,7 @@ describeCommon('doubleClick', () => {
       .contains(`Element not visible '${hiddenElementSelector}'`);
   });
 
-  it('double click disabled element', () => {
+  it.only('double click disabled element', () => {
     const disableElementSelector: string = "//button[@id='doubleClickDisabledButton']";
     expect(() => BrowserUtils.doubleClick(disableElementSelector))
       .to.throw(Error)

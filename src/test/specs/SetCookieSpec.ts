@@ -1,3 +1,4 @@
+import { Cookie } from '@wdio/protocols/build/types';
 import { assert } from 'chai';
 import { BrowserUtils, TestUtils } from '../..';
 import { describeCommon } from '../TestHelper';
@@ -5,15 +6,15 @@ import { describeCommon } from '../TestHelper';
 /**
  * wdio-allure-ts setCookie tests
  */
-let retrievedCookiesArray: Array<WebDriver.Cookie>;
-let cookie: WebDriver.Cookie;
+let retrievedCookiesArray: Array<Cookie>;
+let cookie: Cookie;
 const TEST_PAGE_DOMAIN: string = '127.0.0.1';
 
-describeCommon('Set Cookie', () => {
+describeCommon('setCookies', () => {
   beforeEach(() => {
     cookie = { name: TestUtils.randomString(5), value: TestUtils.randomString(5) };
 
-    BrowserUtils.setCookie(cookie, null);
+    BrowserUtils.setCookies(cookie, null);
 
     retrievedCookiesArray = browser.getCookies([cookie.name]);
   });
@@ -33,9 +34,9 @@ describeCommon('Set Cookie', () => {
   it('validate cookie with  domain value', () => {
     const url: string = BrowserUtils.getUrl();
 
-    BrowserUtils.setCookie(cookie, 'https://cloudinary.com/');
+    BrowserUtils.setCookies(cookie, 'https://cloudinary.com/');
     retrievedCookiesArray = browser.getCookies([cookie.name]);
     assert.equal(retrievedCookiesArray[0].domain, TEST_PAGE_DOMAIN, 'Incorrect cookie domain');
-    BrowserUtils.expectCurrentUrl(url);
+    BrowserUtils.waitForUrl(url);
   });
 });

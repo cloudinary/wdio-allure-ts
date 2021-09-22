@@ -9,34 +9,31 @@ const EMPTY_DIV: string = '//*[@id="formsWithoutAttribute"]//*[@id="noAttDiv"]';
 describeCommon('expectNoAttributeValue', () => {
   it("Doesn't contains value", () => {
     expect(() =>
-      BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCent')
+      BrowserUtils.waitForAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCent', true)
     ).to.not.throw(Error);
   });
 
   it('Contains word substring', () => {
     expect(() =>
-      BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCenterrr')
+      BrowserUtils.waitForAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCenterrr', true)
     ).to.not.throw(Error);
   });
 
   it('Exact match error thrown', () => {
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCenter'))
+    expect(() => BrowserUtils.waitForAttributeValue(EMPTY_DIV, 'data-test', 'expectNoAttributeValueCenter', true))
       .to.throw(Error)
       .with.property('message')
       .contains('Incorrect attribute');
   });
 
   it('Element not exists', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-    expect(() => BrowserUtils.expectNoAttributeValue('//NotExist', 'method', 'post'))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Element not exist');
+    BrowserUtils.url(sampleAppUrl);
+    expect(() => BrowserUtils.waitForAttributeValue('//NotExist', 'method', 'post', true)).to.throw(Error);
   });
 
   it('Attribute not exists', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
-    expect(() => BrowserUtils.expectNoAttributeValue(EMPTY_DIV, 'NotExist', 'post'))
+    BrowserUtils.url(sampleAppUrl);
+    expect(() => BrowserUtils.waitForAttributeValue(EMPTY_DIV, 'NotExist', 'post', true))
       .to.throw(Error)
       .with.property('message')
       .contains('Incorrect attribute');

@@ -7,28 +7,31 @@ const NOT_VISIBLE_ELEMENT_SELECTOR: string = "//*[@data-test='not-visible-btn']"
 const NOT_EXIST_ELEMENT_SELECTOR: string = "//*[@data-test='no-such-element']";
 const DISAPPEARING_ELEMENT_SELECTOR: string = "//*[@data-test='disappearing-btn']";
 /**
- * wdio-allure-ts notVisible action test
+ * wdio-allure-ts waitForDisplayed - reverse - true action test
  */
-describeCommon('notVisible', () => {
-  it('visible element', () => {
-    expect(() => BrowserUtils.notVisible(VISIBLE_ELEMENT_SELECTOR))
+describeCommon('waitForDisplayed - reverse: true', () => {
+  it('displayed element', () => {
+    expect(() => BrowserUtils.waitForDisplayed(VISIBLE_ELEMENT_SELECTOR, { reverse: true }))
       .to.throw(Error)
       .with.property('message')
-      .contains('Failed to validate element not visible');
+      .contains(' still existing');
   });
 
-  it('notVisible element ', () => {
-    expect(() => BrowserUtils.notVisible(NOT_VISIBLE_ELEMENT_SELECTOR)).to.not.throw(Error);
+  it('notDisplayed but exist element ', () => {
+    expect(() => BrowserUtils.waitForDisplayed(NOT_VISIBLE_ELEMENT_SELECTOR, { reverse: true }))
+      .to.throw(Error)
+      .with.property('message')
+      .contains('still existing');
   });
 
   it('not exist element ', () => {
-    expect(() => BrowserUtils.notVisible(NOT_EXIST_ELEMENT_SELECTOR)).to.not.throw(Error);
+    expect(() => BrowserUtils.waitForDisplayed(NOT_EXIST_ELEMENT_SELECTOR, { reverse: true })).to.not.throw(Error);
   });
 
   it('disappearing element', () => {
     expect(() => BrowserUtils.waitForDisplayed(DISAPPEARING_ELEMENT_SELECTOR)).to.not.throw(Error);
     $(DISAPPEARING_ELEMENT_SELECTOR).click();
 
-    expect(() => BrowserUtils.notVisible(DISAPPEARING_ELEMENT_SELECTOR)).to.not.throw(Error);
+    expect(() => BrowserUtils.waitForDisplayed(DISAPPEARING_ELEMENT_SELECTOR, { reverse: true })).to.not.throw(Error);
   });
 });

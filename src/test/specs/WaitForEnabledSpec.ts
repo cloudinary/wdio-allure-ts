@@ -17,9 +17,6 @@ describeCommon('waitForEnabled', () => {
       .contains(`Element not enabled`);
   });
   it('element not exists', () => {
-    expect(() => BrowserUtils.waitForEnabled(NOT_EXISTS_ELEMENT_SELECTOR))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Element not exist`);
+    expect(() => BrowserUtils.waitForEnabled(NOT_EXISTS_ELEMENT_SELECTOR)).to.throw(Error);
   });
 });

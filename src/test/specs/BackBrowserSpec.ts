@@ -4,10 +4,10 @@ import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 const navigationButton: string = "//button[@data-test='navigate-to-cloudinary']";
 
-describeCommon('BackBrowserSpec', () => {
+describeCommon('BackSpec', () => {
   it('back browser', () => {
     $(navigationButton).click();
-    BrowserUtils.backBrowser();
+    BrowserUtils.back();
 
     expect(browser.getUrl()).to.equal(sampleAppUrl);
   });

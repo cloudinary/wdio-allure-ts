@@ -16,22 +16,20 @@ describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
   it('Validate text found within given timeout ', () => {
     BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
     assert.isTrue(
-      BrowserUtils.waitUntil(
-        () => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE,
-        'Some Error',
-        TIMEOUT
-      )
+      BrowserUtils.waitUntil(() => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE, {
+        timeout: TIMEOUT,
+        timeoutMsg: 'Some Error',
+      })
     );
   });
 
   it('Validate text not found withing timeout and error message shown ', () => {
     BrowserUtils.scrollIntoView(HEADER_TEXT_H1);
     expect(() =>
-      BrowserUtils.waitUntil(
-        () => BrowserUtils.getText(HEADER_TEXT_H1) === INCORRECT_TEXT_ELEMENT_VALUE,
-        `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
-        TIMEOUT
-      )
+      BrowserUtils.waitUntil(() => BrowserUtils.getText(HEADER_TEXT_H1) === INCORRECT_TEXT_ELEMENT_VALUE, {
+        timeoutMsg: `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
+        timeout: TIMEOUT,
+      })
     )
       .to.throw(Error)
       .with.property('message')

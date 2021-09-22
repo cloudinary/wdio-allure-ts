@@ -338,7 +338,8 @@
             <script>
               function disappearBtn() {
                 window.setTimeout(() => {
-                  document.getElementById('disappearing-btn').style.display = 'none';
+                  const buttonToRemove = document.getElementById("disappearing-btn");
+                  buttonToRemove.remove();
                 }, 1000);
               }
             </script>

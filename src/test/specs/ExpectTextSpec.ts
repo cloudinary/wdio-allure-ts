@@ -8,15 +8,15 @@ const DYNAMIC_TEXT_SELECTOR: string = `${TEST_FIELD_SELECTOR}//*[@id='dynamic_te
 const HIDDEN_TEXT_SELECTOR: string = `${TEST_FIELD_SELECTOR}//*[@id='hidden_text']`;
 const CHANGE_TEXT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='update_text']`;
 /**
- * wdio-allure-ts expectedText tests
+ * wdio-allure-ts waitForText tests
  */
-describeCommon('expectText', () => {
+describeCommon('waitForText', () => {
   it('correct text', () => {
-    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary rules!')).to.not.throw();
+    expect(() => BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'Cloudinary rules!')).to.not.throw();
   });
 
   it('hidden text', () => {
-    expect(() => BrowserUtils.expectText(HIDDEN_TEXT_SELECTOR, 'Cloudinary rules!'))
+    expect(() => BrowserUtils.waitForText(HIDDEN_TEXT_SELECTOR, 'Cloudinary rules!'))
       .to.throw()
       .with.property('message')
       .contains('Element not visible');
@@ -26,25 +26,25 @@ describeCommon('expectText', () => {
     $(CHANGE_TEXT_BUTTON_SELECTOR).waitForDisplayed();
 
     $(CHANGE_TEXT_BUTTON_SELECTOR).click();
-    BrowserUtils.expectText(DYNAMIC_TEXT_SELECTOR, 'Cloudinary still rules!');
+    BrowserUtils.waitForText(DYNAMIC_TEXT_SELECTOR, 'Cloudinary still rules!');
   });
 
   it('fail on case sensitive', () => {
-    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'cloudinary rules!'))
+    expect(() => BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'cloudinary rules!'))
       .to.throw(Error)
       .with.property('message')
       .contains('waitUntil condition timed out');
   });
 
   it('fail on spaces', () => {
-    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary  rules!'))
+    expect(() => BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'Cloudinary  rules!'))
       .to.throw(Error)
       .with.property('message')
       .contains('waitUntil condition timed out');
   });
 
   it('fail on wrong text', () => {
-    expect(() => BrowserUtils.expectText(STATIC_TEXT_SELECTOR, 'Cloudinary not rules!'))
+    expect(() => BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'Cloudinary not rules!'))
       .to.throw(Error)
       .with.property('message')
       .contains('waitUntil condition timed out');

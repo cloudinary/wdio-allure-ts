@@ -1,5 +1,4 @@
 import { assert, expect } from 'chai';
-import { EOL } from 'os';
 import { BrowserUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
@@ -15,11 +14,8 @@ describeCommon('GetAttributeSpec of BrowserUtils Tests', () => {
   it('should fail on not existing attribute', () => {
     const selector: string = WRONG_ATTRIB_DIV;
     const attributeName: string = 'ONG';
-    const errorMessage: string = `Failed to get '${attributeName}' attribute from '${selector}' ${EOL} AssertionError: Found multiple results matching requested attribute '${attributeName}' or no results for element: '${selector}'`;
 
-    expect(() => BrowserUtils.getAttribute(selector, attributeName))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(errorMessage);
+    const attr = BrowserUtils.getAttribute(selector, attributeName);
+    expect(attr).to.equal(null);
   });
 });
