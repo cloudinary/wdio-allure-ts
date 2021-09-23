@@ -33,12 +33,6 @@ Supported browsers [Chrome](https://www.google.com/chrome)
 npm i -D wdio-allure-ts typescript start-server-and-test chai http-server
 ```
 
-### Getting Chromedriver version
-
-```
-node lib/scripts/GetChromeDriverVersion.js
-```
-
 ### Setting last Chromedriver version to .env file
 
 ```
@@ -47,9 +41,9 @@ yarn setChromeDriverVersion
 
 ### Add example test
 
-See [TestHelper](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/TestHelper.ts)
-used in the example below
+See [Examples](https://github.com/cloudinary/wdio-allure-ts/tree/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/specs)
 
+or use your own
 ```typescript
 // specs/example_test.spec.ts
 import { expect } from 'chai';
@@ -85,31 +79,6 @@ describeCommon('Test Example', () => {
 }
 ```
 
-### Add scripts to package.json
-
-- `start-server-and-test` will serve the test app, wait max of defined timeout for the test app to be available
-  at http://127.0.0.1:8000, and then run the test script.
--
-
-See [wdio.conf.js](https://github.com/cloudinary/wdio-allure-ts/blob/237b6871b8a94506b5ed22a2da16fd43db79d153/src/test/wdio.conf.js)
-for example configuration of [WebdriverIO](https://webdriver.io/)
-
-```json
-{
-  "scripts": {
-    "test": "npm run setChromeDriverVersion && tsc && wdio ./wdio.conf.js",
-    "serve": "http-server",
-    "start-server-and-test:mytest": "WAIT_ON_TIMEOUT=600000 start-server-and-test serve http://127.0.0.1:8000 test"
-  }
-}
-```
-
-### Run tests
-
-```
-npm run start-server-and-test:mytest
-```
-
 ## Development
 
 #### Install and run tests
@@ -118,9 +87,9 @@ npm run start-server-and-test:mytest
 
 `yarn start:sampleApp` spin up the sample app page for testing
 
-`yarn test` execute all tests
+`yarn test` executes all tests
 
-`yarn spec <spec name>` to execute specific spec file
+`yarn spec <spec name>`  executes specific spec file
 
 ### Environment variables
 
@@ -156,6 +125,10 @@ Common utils for git like get the last merged files
 ### TestRailUtils
 
 Common utils for testrail api like update tests field
+
+### TestFilesUtils
+
+Common utils for managing test files
 
 ## Example for TestRailUtils
 
@@ -241,6 +214,13 @@ CLI example:
 
 `node ./lib/helpers/runner.js --specs 'specs/TEST1.js' 'specs/TEST2.js' --config 'customConf.js'`
 
+## Services
+
+In our package we're using following services:
+
+[Devtools](https://webdriver.io/docs/devtools-service/)
+[selenium-standalone](https://webdriver.io/docs/selenium-standalone-service/)
+
 ## How to write commit message
 
 We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
@@ -257,21 +237,36 @@ For commit message, please use a template:
 We use several types:
 
 `fix:` a commit of the type fix patches a bug in your codebase (this correlates with `PATCH` in semantic versioning)
+`fix: correct minor typos in code`
 
 `feat:` a commit of the type feat introduces a new feature to the codebase (this correlates with `MINOR` in semantic
 versioning)
+`feat: add new random function`
 
 `test:` a commit of the type test introduces a new test or correcting existing tests (this correlates with `MINOR` in
 semantic versioning)
+`test: add new test for random function`
 
 `docs:` commit of the type docs introduces adding/fixing documentation (this correlates with `MINOR` in semantic
 versioning)
+`docs: correct spelling in README`
 
 `BREAKING CHANGE:` a commit that has a footer BREAKING CHANGE:, or appends a `!` after the type/scope, introduces a
 breaking API change (correlating with `MAJOR` in Semantic Versioning).
 
-A BREAKING CHANGE can be part of commits of any type.
+Commit message with description and breaking change footer
+
+``` 
+feat: bump WDIO version to 7
+BREAKING CHANGE: bumping new WDIO version to 7
+```
+
+or Commit message with ! to draw attention to breaking change
+`feat!: bump WDIO version`
+
+Note: A BREAKING CHANGE can be part of commits of any type.
 
 ## Ready to Try?
 
-Check out a [sample project](https://github.com/cloudinary/wdio-allure-ts-example) with a quick introduction to our framework and its usage on a real-world application
+Check out a [sample project](https://github.com/cloudinary/wdio-allure-ts-example) with a quick introduction to our
+framework and its usage on a real-world application
