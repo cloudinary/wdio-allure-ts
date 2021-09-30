@@ -28,7 +28,7 @@ jobs:
         run: yarn start:sampleApp &
 
       - name: Run tests
-        run: yarn test
+        run: PRINT_LOGS_TO_CONSOLE=true yarn test
 
       - uses: sonots/slack-notice-action@v3
         with:
