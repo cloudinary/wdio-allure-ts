@@ -32,11 +32,13 @@
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
-    "test": "DEFAULT_TIME_OUT=3000 yarn setChromeDriverVersion; wdio src/test/wdio.conf.js --suite regression",
+    "test": "DEFAULT_TIME_OUT=3000 yarn setChromeDriverVersion; cleanSeleniumPort; wdio src/test/wdio.conf.js --suite regression",
     "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
     "pretest": "yarn lint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
-    "release": "standard-version"
+    "release": "standard-version",
+    "_cleanSeleniumPort": "free port 4444 for selenium selenium standalone service",
+    "cleanSeleniumPort": "npx kill-port 4444"
   },
   "dependencies": {
     "@applitools/eyes-sdk-core": "11.0.2",
