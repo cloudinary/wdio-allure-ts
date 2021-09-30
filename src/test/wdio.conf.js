@@ -25,7 +25,7 @@ exports.config = {
       browserName: 'chrome',
       maxInstances: maxChromeInstances,
       'goog:chromeOptions': {
-        args: ['--window-size=1920,1080', '--headless', '--incognito'],
+        args: ["--window-size=1920,1080", "--headless", "--incognito"]
       },
     },
   ],
@@ -35,7 +35,7 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'silent',
+  logLevel: "debug",
   // Default timeout for all waitFor* commands.
   waitforTimeout: waitForTimeouts,
   //
@@ -43,7 +43,7 @@ exports.config = {
   // if Selenium Grid doesn't send response
   connectionRetryTimeout: 10000,
 
-  configDataFilePath: 'src/test/resources/example.json',
+  configDataFilePath: "src/test/resources/example.json",
   //
   //
   // Test runner services
