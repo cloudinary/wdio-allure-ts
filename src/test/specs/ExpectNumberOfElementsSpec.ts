@@ -24,7 +24,7 @@ describeCommon('waitForNumberOfElements', () => {
     expect(() => BrowserUtils.waitForNumberOfElements(`${SELECTION_BOX}${LIST_ITEM}`, 0))
       .to.throw(Error)
       .with.property('message')
-      .contains(`still existing`);
+      .contains(`still displayed `);
   });
 
   it("Expect number of elements, element doesn't exists", () => {
