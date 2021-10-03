@@ -299,9 +299,6 @@ export namespace BrowserUtils {
    */
   export function waitForDisplayed(selector: string, options?: WaitForOptions): void {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
-    if (options?.reverse) {
-      waitForExist(selector, options);
-    }
     tryBlock(
       () => $(selector).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Element not visible '${selector}'`
