@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 4.0.4 (2021-10-03)
+
+
+### Bug Fixes
+
+* remove waitForExist from waitForDisplayed implementation ([#251](https://github.com/cloudinary/wdio-allure-ts/issues/251)) ([b36deb9](https://github.com/cloudinary/wdio-allure-ts/commit/b36deb960c6d54952ae29549a5b7568adb216034))
+
 ### 4.0.3 (2021-09-30)
 
 ### 4.0.2 (2021-09-30)
