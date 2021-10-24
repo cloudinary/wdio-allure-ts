@@ -8,34 +8,3 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  ci-pr-merge:
-    # This workflow contains a single job called "build"
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js v12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-
-      - name: Install packages
-        run: yarn install
-
-      - name: Run server
-        run: yarn start:sampleApp &
-
-      - name: Run tests
-        run: yarn test
-
-      - uses: sonots/slack-notice-action@v3
-        with:
-          status: ${{ job.status }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_NOTIFICATION }}
-        if: always()
