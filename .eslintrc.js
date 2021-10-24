@@ -22,4 +22,5 @@ module.exports = {
     '@typescript-eslint/array-type': ['error', { default: 'generic' }],
     '@typescript-eslint/no-explicit-any': ['error'],
   },
+  
 };
