@@ -23,14 +23,7 @@ jobs:
         with:
           node-version: 12
 
-      - name: Install packages
-        run: yarn install
 
-      - name: Run server
-        run: yarn start:sampleApp &
-
-      - name: Run tests
-        run: yarn test
 
       - uses: sonots/slack-notice-action@v3
         with:
