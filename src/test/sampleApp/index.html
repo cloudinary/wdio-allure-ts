@@ -338,7 +338,8 @@
             <script>
               function disappearBtn() {
                 window.setTimeout(() => {
-                  document.getElementById('disappearing-btn').style.display = 'none';
+                  const buttonToRemove = document.getElementById("disappearing-btn");
+                  buttonToRemove.remove();
                 }, 1000);
               }
             </script>
@@ -616,6 +617,17 @@
             Lorem ipsumLoremipsumLoremipsumipsumLoremipsumLoremipsum
             dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
           </div>
+      </fieldset>
+
+      <fieldset id="getValue">
+        <legend>GetValueSpec</legend>
+        <br />
+        <label for="getValue-input">Input Element</label> <br />
+        <input id="getValue-input" type="text" placeholder="Text Input" value="get value input element"/>
+        <br />
+        <label for="getValue-textarea">Text Area Element</label> <br />
+        <textarea id="getValue-textarea">get value text area</textarea>
+        <br />
       </fieldset>
 
     </div>

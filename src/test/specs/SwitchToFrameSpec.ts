@@ -12,13 +12,13 @@ const FRAME_DONT_EXISTS: string = "//*[@id='iframeDontExists']";
  */
 describeCommon('switchToIframe', () => {
   it('Switch to iframe, header text at iFrame 2', () => {
-    BrowserUtils.notVisible(FRAME_2_HEADER_1);
+    BrowserUtils.waitForDisplayed(FRAME_2_HEADER_1, { reverse: true });
     BrowserUtils.switchToFrame(FRAME_TWO);
     assert.equal($(FRAME_2_HEADER_1).getText(), 'Frame 2 Heading 1');
   });
 
   it('iframe 2 not available after switch to iframe 1', () => {
-    BrowserUtils.notVisible(FRAME_2_HEADER_1);
+    BrowserUtils.waitForDisplayed(FRAME_2_HEADER_1, { reverse: true });
     BrowserUtils.switchToFrame(FRAME_ONE);
     expect(() => $(FRAME_2_HEADER_1).getText()).to.throw(Error);
   });

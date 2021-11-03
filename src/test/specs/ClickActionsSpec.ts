@@ -15,7 +15,7 @@ describeCommon('click', () => {
   });
 
   it('doubleClick', () => {
-    BrowserUtils.navigateToUrl(sampleAppUrl);
+    BrowserUtils.url(sampleAppUrl);
     BrowserUtils.doubleClick(DOUBLE_CLICK_DIV);
     $(DOUBLE_CLICK_DIV).waitForDisplayed();
     assert.equal($(DOUBLE_CLICK_DIV).getText(), 'Double click');

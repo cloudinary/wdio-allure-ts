@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': 0,
     '@typescript-eslint/ban-types': 0,
     '@typescript-eslint/no-namespace': 0,
+    '@typescript-eslint/explicit-module-boundary-types': ['error'],
     '@typescript-eslint/array-type': ['error', { default: 'generic' }],
     '@typescript-eslint/no-explicit-any': ['error'],
   },

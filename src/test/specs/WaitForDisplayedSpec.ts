@@ -17,16 +17,10 @@ describeCommon('waitForDisplayed', () => {
   });
 
   it('not existing element', () => {
-    expect(() => BrowserUtils.waitForDisplayed(NOT_EXISTING_ELEMENT_SELECTOR))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('Element not exist ');
+    expect(() => BrowserUtils.waitForDisplayed(NOT_EXISTING_ELEMENT_SELECTOR)).to.throw(Error);
   });
 
   it('hidden element', () => {
-    expect(() => BrowserUtils.waitForDisplayed(HIDDEN_ELEMENT_SELECTOR))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Element not visible '${HIDDEN_ELEMENT_SELECTOR}'`);
+    expect(() => BrowserUtils.waitForDisplayed(HIDDEN_ELEMENT_SELECTOR)).to.throw(Error);
   });
 });

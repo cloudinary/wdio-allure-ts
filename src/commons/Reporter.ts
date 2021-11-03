@@ -45,9 +45,7 @@ export namespace Reporter {
    *    already integrated in Reporter.closeStep method in case of test failure
    */
   export function startNetworkAudit(): void {
-    if (browser.capabilities.browserName === 'chrome') {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+    if (browser.capabilities['browserName'] === 'chrome') {
       browser.cdp('Network', 'enable');
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -9,7 +9,7 @@ const RIGHT_CLICK_BUTTON_SELECTOR: string = "//*[@id='buttonRightMouseClick']";
  */
 describeCommon('RightClickSpec', () => {
   it('RightClick ', () => {
-    BrowserUtils.rightClick(RIGHT_CLICK_BUTTON_SELECTOR);
+    BrowserUtils.click(RIGHT_CLICK_BUTTON_SELECTOR, { button: 'right' });
     assert.equal(BrowserUtils.getText(RIGHT_CLICK_BUTTON_SELECTOR), 'Button clicked');
   });
 });

@@ -1,12 +1,13 @@
 const dotenv = require('dotenv');
 dotenv.config();
-const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 5;
+
+const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 const seleniumStandaloneArgs = {
-    drivers: {
-      chrome: {
-        version: process.env.CHROME_DRIVER_VERSION,
-      },
+  drivers: {
+    chrome: {
+      version: process.env.CHROME_DRIVER_VERSION,
+    },
   },
 };
 /**
@@ -50,8 +51,8 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: [
-      ['devtools'],
-      [
+    ['devtools'],
+    [
       'selenium-standalone',
       {
         installArgs: seleniumStandaloneArgs,
@@ -69,7 +70,5 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 300000,
-    // TypeScript setup
-    require: 'ts-node/register',
   },
 };
