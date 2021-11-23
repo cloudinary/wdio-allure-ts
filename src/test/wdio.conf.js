@@ -3,6 +3,13 @@ dotenv.config();
 
 const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
+const seleniumStandaloneArgs = {
+  drivers: {
+    chrome: {
+      version: process.env.CHROME_DRIVER_VERSION,
+    },
+  },
+};
 /**
  * Default configurations for wdio-allure-ts based projects
  * For more options see https://webdriver.io/docs/configurationfile.html
@@ -43,7 +50,16 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: [['devtools'], ['selenium-standalone', { drivers: { chrome: true } }]], // Framework you want to run your specs with.
+  services: [
+    ['devtools'],
+    [
+      'selenium-standalone',
+      {
+        installArgs: seleniumStandaloneArgs,
+        args: seleniumStandaloneArgs,
+      },
+    ],
+  ], // Framework you want to run your specs with.
 
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: http://webdriver.io/guide/testrunner/frameworks.html
