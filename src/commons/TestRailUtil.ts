@@ -12,7 +12,7 @@ export namespace TestRailUtil {
    * @param testIDs array of tests Ids
    */
   export function setTestsAsAutomatedInTestrail(testIDs: Set<string>): void {
-    console.log(`About to update ${testIDs} on testrail`);
+    console.log(`About to update ${Array.from(testIDs.values())} on testrail`);
     for (const testId of testIDs) {
       changeTestField(testId, TestFields.Automation, TestFields.Automation.fieldOptions.automated).then((res) => {
         console.log(`Finished update test C${testId} with status ${res.status}`);

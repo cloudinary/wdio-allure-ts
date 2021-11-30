@@ -39,9 +39,12 @@ export namespace GitUtils {
  * @param params - command parameters
  */
 function executeGitScript(params: string): Set<string> {
+  const currGitUrlScript = 'git config --get remote.origin.url';
+  console.log(`Executing git command in: ${execSync(currGitUrlScript, { timeout: 30000 }).toString()}`);
   console.log(`Executing git command with ${params} param`);
   const script: string = `git log ${params} --name-only --pretty="format:"`;
+  console.log(`Executing: ${script}`);
   const res: string = execSync(script, { timeout: 30000 }).toString();
-  console.log(`Git command res: ${res}`);
+  console.log(`Git command res: ${res ? res : 'No result returned!!!'}`);
   return new Set<string>(res.split(/[\r\n]+/));
 }
