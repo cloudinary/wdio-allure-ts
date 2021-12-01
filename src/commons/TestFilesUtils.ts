@@ -12,7 +12,7 @@ export namespace TestFilesUtils {
    * @return list of testIds
    */
   export function extractTestIdFromFiles(files: Set<string>): Set<string> {
-    console.log(`Extracting tests id's from files ${files}`);
+    console.log(`Extracting tests id's from files ${Array.from(files.values())}`);
     const idsSet: Set<string> = new Set<string>();
 
     for (const file of files) {
@@ -28,7 +28,7 @@ export namespace TestFilesUtils {
    * @return array of test filenames
    */
   export function getTestsFiles(files: Set<string>): Set<string> {
-    console.log(`Getting tests files from ${files}`);
+    console.log(`Getting tests files from ${Array.from(files.values())}`);
     const testFiles: Set<string> = new Set<string>();
     files.forEach((file) => {
       const fileName = path.basename(file);
@@ -36,7 +36,7 @@ export namespace TestFilesUtils {
         testFiles.add(fileName);
       }
     });
-    console.log(`Tests files ${testFiles}`);
+    console.log(`Tests files ${Array.from(testFiles.values())}`);
     return testFiles;
   }
 
