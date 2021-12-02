@@ -18,7 +18,7 @@ export namespace TestFilesUtils {
     for (const file of files) {
       idsSet.add(TestUtils.extractNumbersFromString(file));
     }
-    console.log(`Found ${idsSet.size} tests ${idsSet.size === 0 ? '' : idsSet}`);
+    console.log(`Found ${idsSet.size} tests ${idsSet.size === 0 ? '' : Array.from(idsSet.values())}`);
     return idsSet;
   }
 

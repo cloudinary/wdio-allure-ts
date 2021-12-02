@@ -1,12 +1,6 @@
 import { execSync } from 'child_process';
 import { TestFilesUtils } from './TestFilesUtils';
 
-export enum TimeUnits {
-  HOURS = 'hours',
-  DAYS = 'days',
-  WEEKS = 'weeks',
-}
-
 /**
  * Manage git commands
  */
@@ -22,13 +16,12 @@ export namespace GitUtils {
   }
 
   /**
-   * Return list of all tests ids that merged by time.
-   * @param time - time to count back.
-   * @param timeUnits - can be hours day's etc.
+   * Return list of all tests ids that merged to master from specific date.
+   * @param date - date to count back.
    */
-  export function getMergedTestsIdsByTime(time: number, timeUnits: TimeUnits): Set<string> {
-    console.log(`Getting tests id's from last ${time} : ${timeUnits}`);
-    const params: string = `--since="${time} ${timeUnits} ago"`;
+  export function getMergedTestsIdsFromDate(date: Date): Set<string> {
+    console.log(`Getting tests id's from date ${date}`);
+    const params: string = `-p master@{${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}}..master@{now}`;
     const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(executeGitScript(params));
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
