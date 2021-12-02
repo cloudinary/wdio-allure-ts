@@ -1,4 +1,4 @@
-const {GitUtils, TimeUnits} = require('../commons/GitUtils');
+const { GitUtils } = require('../commons/GitUtils');
 const { TestRailUtil } = require('../commons/TestRailUtil');
 
 /**
@@ -8,11 +8,11 @@ const { TestRailUtil } = require('../commons/TestRailUtil');
  * and finally we're making an api cal for testRail to update all the tests to be automated
  */
 (() => {
-    const lastHoursMergedTestsIds = GitUtils.getMergedTestsIdsByTime(24, TimeUnits.HOURS);
-    console.log(`Updating ${lastHoursMergedTestsIds.size} tests...`);
-    console.log(lastHoursMergedTestsIds);
+  const yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+  const lastHoursMergedTestsIds = GitUtils.getMergedTestsIdsFromDate(yesterday);
+  console.log(`Updating ${lastHoursMergedTestsIds.size} tests...`);
+  console.log(lastHoursMergedTestsIds);
 
-    TestRailUtil.setTestsAsAutomatedInTestrail(lastHoursMergedTestsIds);
-    console.log("Update tests finished successfully!!!");
+  TestRailUtil.setTestsAsAutomatedInTestrail(lastHoursMergedTestsIds);
+  console.log('Update tests finished successfully!!!');
 })();
-

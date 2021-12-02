@@ -34,7 +34,7 @@ export class TestRailApi {
    *   @param data fields data to update
    */
   public updateTestCase(testID: string, data: object): AxiosPromise {
-    console.log(`update ${testID} with ${data}`);
+    console.log(`update ${testID} with ${JSON.stringify(data)}`);
     const fullUrl: string = `${BASE_URL}${ApiMethods.updateCase}${testID}`;
     return this.postRequest(fullUrl, data);
   }

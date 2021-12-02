@@ -15,7 +15,7 @@ export namespace TestRailUtil {
     console.log(`About to update ${Array.from(testIDs.values())} on testrail`);
     for (const testId of testIDs) {
       changeTestField(testId, TestFields.Automation, TestFields.Automation.fieldOptions.automated).then((res) => {
-        console.log(`Finished update test C${testId} with status ${res.status}`);
+        console.log(`Finished update test C${testId} with status code: ${res.status}`);
       });
     }
   }
@@ -46,7 +46,7 @@ export namespace TestRailUtil {
    *   @param option field option number
    */
   export function changeTestField(testID: string, field: IField, option: number): AxiosPromise {
-    console.log(`Change test ${testID} ${field} field to ${option} option`);
+    console.log(`Change test ${testID} ${field.fieldName} field to ${option} option`);
     const data: Map<IField, number> = new Map<IField, number>();
     data[field.fieldName] = option;
     return TestRailApi.Instance.updateTestCase(testID, data);
