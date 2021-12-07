@@ -6,27 +6,14 @@ import { TestFilesUtils } from './TestFilesUtils';
  */
 export namespace GitUtils {
   /**
-   * Return list of all tests ids from the last merge.
-   */
-  export function getLastMergedTestsIds(): Set<string> {
-    console.log(`Getting last merged tests id's`);
-    const params: string = '-m -1';
-    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(
-      new Set<string>(executeGitScript(params).split(/[\r\n]+/))
-    );
-    return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
-  }
-
-  /**
    * Return list of all tests ids that merged to master by days to count back.
    * @param sinceDay - days to count back
    */
   export function getMergedTestsIdsSinceDay(sinceDay: number): Set<string> {
     console.log(`Getting tests id's since ${sinceDay} days ago`);
     const params: string = `whatchanged --since=@{${sinceDay}.days.ago} -p -m --first-parent --pretty=format: --name-only`;
-    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(
-      new Set<string>(executeGitScript(params).split(/[\r\n]+/))
-    );
+    const filesSinceDay = executeGitScript(params).split(/[\r\n]+/);
+    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(new Set<string>(filesSinceDay));
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
 }
