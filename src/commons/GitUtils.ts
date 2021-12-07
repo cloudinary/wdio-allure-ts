@@ -30,5 +30,5 @@ function executeGitScript(params: string): string {
   console.log(`Executing: ${script}`);
   const res: string = execSync(script, { timeout: 30000 }).toString();
   console.log(`Git command res: ${res ? res : 'No result!!!'}`);
-  return res ? res : '';
+  return res ? res : undefined;
 }
