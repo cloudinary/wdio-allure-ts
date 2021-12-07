@@ -1,6 +1,5 @@
 import { IField, TestFields, TestRailApi } from './TestRailApi';
 import { AxiosPromise } from 'axios';
-import { GitUtils } from './GitUtils';
 import { TestFilesUtils } from './TestFilesUtils';
 
 /**
@@ -18,15 +17,6 @@ export namespace TestRailUtil {
         console.log(`Finished update test C${testId} with status code: ${res.status}`);
       });
     }
-  }
-
-  /**
-   * Update an array of tests automation field on testrail from last merge
-   */
-  export function setTestsAsAutomatedInTestrailFromLastMerge(): void {
-    console.log(`Setting tests as 'Automated' from last merge`);
-    const testIDs = GitUtils.getLastMergedTestsIds();
-    setTestsAsAutomatedInTestrail(testIDs);
   }
 
   /**
