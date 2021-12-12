@@ -12,11 +12,13 @@ export namespace TestFilesUtils {
    * @return list of testIds
    */
   export function extractTestIdFromFiles(files: Set<string>): Set<string> {
+    console.log(`Extracting tests id's from files ${Array.from(files.values())}`);
     const idsSet: Set<string> = new Set<string>();
 
     for (const file of files) {
       idsSet.add(TestUtils.extractNumbersFromString(file));
     }
+    console.log(`Found ${idsSet.size} tests ${idsSet.size === 0 ? '' : Array.from(idsSet.values())}`);
     return idsSet;
   }
 
@@ -26,6 +28,7 @@ export namespace TestFilesUtils {
    * @return array of test filenames
    */
   export function getTestsFiles(files: Set<string>): Set<string> {
+    console.log(`Getting tests files from ${Array.from(files.values())}`);
     const testFiles: Set<string> = new Set<string>();
     files.forEach((file) => {
       const fileName = path.basename(file);
@@ -33,6 +36,7 @@ export namespace TestFilesUtils {
         testFiles.add(fileName);
       }
     });
+    console.log(`Tests files ${Array.from(testFiles.values())}`);
     return testFiles;
   }
 
@@ -42,6 +46,7 @@ export namespace TestFilesUtils {
    * @return list of testIds
    */
   export function getTestIdsFromFolder(folderPath?: string): Set<string> {
+    console.log(`Getting tests id's from ${folderPath}`);
     const filesInPath = getListOfFilesRecursively(!folderPath ? __dirname : folderPath);
     const testFilesInPath = getTestsFiles(filesInPath);
 
@@ -79,6 +84,7 @@ function getListOfFilesRecursively(folderPath: string, fileList?: Set<string>): 
  * @return {boolean} true if file name start with C{NUMBER} and ends with Test.ts.
  */
 function isTestFile(fileName) {
+  console.log(`Checking if ${fileName} is a test file`);
   const shouldStartWithRegex = /^C\d+/g;
   const shouldEndWith = 'Test.ts';
 

@@ -34,6 +34,7 @@ export class TestRailApi {
    *   @param data fields data to update
    */
   public updateTestCase(testID: string, data: object): AxiosPromise {
+    console.log(`update ${testID} with ${JSON.stringify(data)}`);
     const fullUrl: string = `${BASE_URL}${ApiMethods.updateCase}${testID}`;
     return this.postRequest(fullUrl, data);
   }
@@ -67,7 +68,7 @@ export class TestRailApi {
    */
   private callApi(reqMethod: Method, reqUrl: string, reqData?: object): AxiosPromise {
     const requestConfig: AxiosRequestConfig = { method: reqMethod, url: reqUrl, data: reqData, auth: this.basicAuth };
-
+    console.log(`TestRail call: ${JSON.stringify(requestConfig)}`);
     try {
       return axios(requestConfig);
     } catch (error) {
