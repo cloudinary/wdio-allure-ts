@@ -1,4 +1,5 @@
 import allureReporter from '@wdio/allure-reporter';
+import { Status } from '@wdio/allure-reporter/build/types';
 
 /**
  * Custom command for use with wdio-allure-reporter
@@ -59,7 +60,7 @@ export namespace AllureReporter {
         'application/json'
       );
 
-      allureReporter.addAttachment('Page HTML source', pageSource);
+      allureReporter.addAttachment('Page HTML source', pageSource, 'html');
 
       allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
     }
@@ -140,8 +141,8 @@ export namespace AllureReporter {
    * @param command command to add
    * @param stepStatus status of steps
    */
-  function sendCustomCommand(command: CustomCommand, stepStatus?: string): void {
-    let status: string = 'passed';
+  function sendCustomCommand(command: CustomCommand, stepStatus?: Status): void {
+    let status: Status = 'passed';
     if (stepStatus !== undefined) {
       status = stepStatus;
     }
