@@ -1,5 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+require('dotenv').config();
 const { GitUtils } = require('../commons/GitUtils');
 const { TestRailUtil } = require('../commons/TestRailUtil');
+
+//if there is no DAYS_TO_COUNT_BACK env variable it's set to 1 day back
+const DAYS_TO_COUNT_BACK = Number(process.env.DAYS_TO_COUNT_BACK) || 1;
 
 /**
  * Find tests files that was merged in the last 24 hours and update them on testRail.
@@ -8,10 +13,10 @@ const { TestRailUtil } = require('../commons/TestRailUtil');
  * and finally we're making an api cal for testRail to update all the tests to be automated
  */
 (() => {
-  const lastHoursMergedTestsIds = GitUtils.getMergedTestsIdsSinceDay(1);
-  console.log(`Updating ${lastHoursMergedTestsIds.size} tests...`);
-  console.log(lastHoursMergedTestsIds);
+  const testsToUpdate = GitUtils.getMergedTestsIdsSinceDay(DAYS_TO_COUNT_BACK);
+  console.log(`Updating ${testsToUpdate.size} tests...`);
+  console.log(testsToUpdate);
 
-  TestRailUtil.setTestsAsAutomatedInTestrail(lastHoursMergedTestsIds);
+  TestRailUtil.setTestsAsAutomatedInTestrail(testsToUpdate);
   console.log('Update tests finished successfully!!!');
 })();
