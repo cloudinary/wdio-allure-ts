@@ -1,4 +1,3 @@
-import * as fs from 'fs';
 import path from 'path';
 import { AllureReporter } from './AllureReport';
 import { ConsoleReport } from './ConsoleReport';
@@ -65,17 +64,20 @@ export namespace Reporter {
    * Close step in report
    */
   // eslint-disable-next-line
-  export function closeStep(isFailed: boolean, test: any): void {
-    const screenshotFilePath = path.join(__dirname, 'screenshot.png');
+  export function closeStep(isFailed: boolean, test?: any): void {
+    const screenshotFilePath = path.join(__dirname, `${test.title.trim()}.png`);
     browser.saveScreenshot(screenshotFilePath);
 
     const pageSource = browser.getPageSource();
 
     const browserLogs = browser.getLogs('browser');
     AllureReporter.closeStep(isFailed, browserLogs, pageSource, networkActivity);
-    ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
 
-    fs.unlinkSync(screenshotFilePath);
+    if (test && test !== undefined) {
+      ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
+    }
+
+    //fs.unlinkSync(screenshotFilePath);
   }
 
   /**
