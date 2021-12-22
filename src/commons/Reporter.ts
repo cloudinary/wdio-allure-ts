@@ -2,6 +2,7 @@ import path from 'path';
 import { AllureReporter } from './AllureReport';
 import { ConsoleReport } from './ConsoleReport';
 import { ReportPortal } from './ReportPortal';
+import { TestUtils } from '../index';
 
 /**
  * Log to standard system out and allure report
@@ -65,7 +66,7 @@ export namespace Reporter {
    */
   // eslint-disable-next-line
   export function closeStep(isFailed: boolean, test?: any): void {
-    const screenshotFilePath = path.join(__dirname, `${test.title.trim()}.png`);
+    const screenshotFilePath = path.join(__dirname, `${TestUtils.randomString(10)}.png`);
     browser.saveScreenshot(screenshotFilePath);
 
     const pageSource = browser.getPageSource();
