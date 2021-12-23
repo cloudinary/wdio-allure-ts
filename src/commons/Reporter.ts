@@ -74,11 +74,9 @@ export namespace Reporter {
     const browserLogs = browser.getLogs('browser');
     AllureReporter.closeStep(isFailed, browserLogs, pageSource, networkActivity);
 
-    if (test && test !== undefined) {
+    if (test) {
       ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
     }
-
-    //fs.unlinkSync(screenshotFilePath);
   }
 
   /**
