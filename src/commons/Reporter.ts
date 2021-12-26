@@ -1,5 +1,6 @@
 import allureReporter, { Status } from '@wdio/allure-reporter';
 import chalk from 'chalk';
+import path from 'path';
 
 /**
  * Print to standard output
@@ -240,6 +241,13 @@ export namespace Reporter {
     allureReporter.addDescription(description, descriptionType);
   }
 
+  /**
+   * Adding screenshot for report
+   * @param name of the screenshot, that will appear in the report
+   */
+  export function addScreenshot(name: string = 'screenshot'): void {
+    allureReporter.addAttachment(name, browser.saveScreenshot(path.join(__dirname, `${name}.png`)), 'image/png');
+  }
   /**
    * Add log entry for allure reporter
    * @param logType logType
