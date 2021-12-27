@@ -1,4 +1,4 @@
-import { BrowserUtils } from '..';
+import { BrowserUtils, Reporter } from '..';
 
 /**
  * Holds common methods for tests
@@ -16,7 +16,9 @@ export function describeCommon(name: string, body: () => any): void {
      * Navigate to sampleApp and wait for it to load
      */
     beforeEach(() => {
+      Reporter.step('Navigate to sample app');
       BrowserUtils.url(sampleAppUrl);
+      Reporter.step('Wait for sample app to load');
       BrowserUtils.waitForDisplayed("//*[@id='top']");
     });
 

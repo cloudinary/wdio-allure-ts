@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../..';
+import { BrowserUtils, Reporter } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 const CLOUDINARY_URL: string = 'https://cloudinary.com';
@@ -8,10 +8,12 @@ const CLOUDINARY_URL: string = 'https://cloudinary.com';
  */
 describeCommon('waitForUrl', () => {
   it('correct url', () => {
+    Reporter.step('Wait for url');
     expect(() => BrowserUtils.waitForUrl(sampleAppUrl)).to.not.throw(Error);
   });
 
   it('incorrect url', () => {
+    Reporter.step('Wait for incorrect url throws an error');
     expect(() => BrowserUtils.waitForUrl(CLOUDINARY_URL))
       .to.throw(Error)
       .with.property('message')
