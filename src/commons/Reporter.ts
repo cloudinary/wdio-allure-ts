@@ -136,9 +136,10 @@ export namespace Reporter {
 
   /**
    * Adding screenshot for report
+   * Currently only implemented for allure reporter
    * @param name of the screenshot, that will appear in the report
    */
   export function addScreenshot(name: string = 'screenshot'): void {
-    allureReporter.addAttachment(name, browser.saveScreenshot(path.join(__dirname, `${name}.png`)), 'image/png');
+    AllureReporter.addScreenshot(name);
   }
 }

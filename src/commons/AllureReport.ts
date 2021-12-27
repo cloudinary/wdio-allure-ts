@@ -1,5 +1,6 @@
 import allureReporter from '@wdio/allure-reporter';
 import { Status } from '@wdio/allure-reporter/build/types';
+import path from 'path';
 
 /**
  * Custom command for use with wdio-allure-reporter
@@ -183,5 +184,13 @@ export namespace AllureReporter {
       .toISOString() // will return like '2012-11-04T14:51:06.157Z'
       .replace(/T/, ' ') // replace T with a space
       .replace(/\..+/, ''); // delete the dot and everything after
+  }
+
+  /**
+   * Adding screenshot to report
+   * @param name of the screenshot, that will appear in the report
+   */
+  export function addScreenshot(name: string = 'screenshot'): void {
+    allureReporter.addAttachment(name, browser.saveScreenshot(path.join(__dirname, `${name}.png`)), 'image/png');
   }
 }
