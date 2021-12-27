@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 5.1.0 (2021-12-26)
+
+
+### Features
+
+* add screenshot to report ([#267](https://github.com/cloudinary/wdio-allure-ts/issues/267)) ([2b6444f](https://github.com/cloudinary/wdio-allure-ts/commit/2b6444f624109a2df8f636a14621b3f15bbfd599))
+
 ### 5.0.1 (2021-12-21)
 
 ## 5.0.0 (2021-12-20)

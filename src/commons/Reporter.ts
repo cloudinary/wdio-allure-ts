@@ -133,4 +133,12 @@ export namespace Reporter {
     AllureReporter.addLogEntry('[ERROR]', msg);
     ReportPortal.error(msg);
   }
+
+  /**
+   * Adding screenshot for report
+   * @param name of the screenshot, that will appear in the report
+   */
+  export function addScreenshot(name: string = 'screenshot'): void {
+    allureReporter.addAttachment(name, browser.saveScreenshot(path.join(__dirname, `${name}.png`)), 'image/png');
+  }
 }
