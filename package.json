@@ -36,7 +36,8 @@
     "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
     "pretest": "yarn lint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
-    "release": "standard-version"
+    "release": "standard-version",
+    "report" : "allure generate && allure open"
   },
   "dependencies": {
     "@wdio/allure-reporter": "^7.7.3",

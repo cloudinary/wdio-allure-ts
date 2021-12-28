@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../..';
+import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const PARENT_SELECTOR: string = "//*[@id='is-exist']";
@@ -12,10 +12,12 @@ const NOT_EXISTING_ELEMENT_SELECTOR: string = `${PARENT_SELECTOR}//*[@id='not-ex
 
 describeCommon('waitForExist', () => {
   it('existing element', () => {
+    Reporter.step('Wait for exist of existing element');
     BrowserUtils.waitForExist(EXISTING_ELEMENT_SELECTOR);
   });
 
   it('not existing element', () => {
+    Reporter.step('Wait for exist of not existing element');
     expect(() => BrowserUtils.waitForExist(NOT_EXISTING_ELEMENT_SELECTOR)).to.throw(Error);
   });
 });
