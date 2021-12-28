@@ -1,0 +1,166 @@
+{
+  "uid" : "e44fdb129e2045c5",
+  "name" : "get value of text area",
+  "fullName" : "getValue.get value of text area",
+  "historyId" : "148f4a4b9edd2c025aa91d05de8c63fb",
+  "time" : {
+    "start" : 1640690942142,
+    "stop" : 1640690942252,
+    "duration" : 110
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getValue",
+      "time" : {
+        "start" : 1640690942142,
+        "stop" : 1640690942222,
+        "duration" : 80
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640690942201,
+          "stop" : 1640690942201,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1e1c4f63b2c74a73",
+          "name" : "more info",
+          "source" : "1e1c4f63b2c74a73.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640690942222,
+        "stop" : 1640690942222,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "38835c094eebccce",
+        "name" : "more info",
+        "source" : "38835c094eebccce.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate getValue returned value text area",
+      "time" : {
+        "start" : 1640690942251,
+        "stop" : 1640690942252,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "db28822293213edf",
+        "name" : "more info",
+        "source" : "db28822293213edf.txt",
+        "type" : "text/plain",
+        "size" : 71
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-26"
+  }, {
+    "name" : "suite",
+    "value" : "getValue"
+  }, {
+    "name" : "testClass",
+    "value" : "getValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "get value of text area"
+  }, {
+    "name" : "package",
+    "value" : "getValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "d4d455e677c1b733",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/174//#testresult/d4d455e677c1b733",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690405754,
+          "stop" : 1640690405854,
+          "duration" : 100
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "e44fdb129e2045c5.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}
