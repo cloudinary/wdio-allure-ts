@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { BrowserUtils } from '../..';
+import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const ELEMENT: string = '#GetElementLocation';
@@ -14,6 +14,7 @@ describeCommon('getLocation', () => {
     const expectedX: number = 22;
     const expectedY: number = 8;
 
+    Reporter.step('validate get location returned value');
     location = BrowserUtils.getLocation(ELEMENT);
     assert.equal(location.x, expectedX, 'Element X position');
     assert.equal(location.y, expectedY, 'Element Y position');
