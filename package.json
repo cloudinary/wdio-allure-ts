@@ -1,6 +1,6 @@
 {
   "name": "wdio-allure-ts",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "description": "UI E2E testing util",
   "license": "MIT",
   "author": "Cloudinary <info@cloudinary.com>",
@@ -37,7 +37,7 @@
     "pretest": "yarn lint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
     "release": "standard-version",
-    "report" : "allure generate && allure open"
+    "report": "allure generate && allure open"
   },
   "dependencies": {
     "@wdio/allure-reporter": "^7.7.3",
