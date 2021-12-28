@@ -1,0 +1,226 @@
+{
+  "uid" : "7bcba5e74c53fea",
+  "name" : "incorrect url",
+  "fullName" : "waitForUrl.incorrect url",
+  "historyId" : "d6a6a03c948382f35ed747500e1715b7",
+  "time" : {
+    "start" : 1640698991295,
+    "stop" : 1640698995683,
+    "duration" : 4388
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForUrl",
+      "time" : {
+        "start" : 1640698991295,
+        "stop" : 1640698991960,
+        "duration" : 665
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640698991891,
+          "stop" : 1640698991891,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ff02f5054a27b7fc",
+          "name" : "more info",
+          "source" : "ff02f5054a27b7fc.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640698991960,
+        "stop" : 1640698991961,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "31fa91ea66fadea4",
+        "name" : "more info",
+        "source" : "31fa91ea66fadea4.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for incorrect url throws an error",
+      "time" : {
+        "start" : 1640698995682,
+        "stop" : 1640698995682,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8b2a26ca3301b26c",
+        "name" : "more info",
+        "source" : "8b2a26ca3301b26c.txt",
+        "type" : "text/plain",
+        "size" : 568
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "fd7aa250ee8b5017",
+      "name" : "Screenshot",
+      "source" : "fd7aa250ee8b5017.png",
+      "type" : "image/png",
+      "size" : 80654
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-12"
+  }, {
+    "name" : "suite",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "testMethod",
+    "value" : "incorrect url"
+  }, {
+    "name" : "package",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 8,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "fea78f5e91db1397",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/181//#testresult/fea78f5e91db1397",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640698402323,
+          "stop" : 1640698405903,
+          "duration" : 3580
+        }
+      }, {
+        "uid" : "b41eca2a98cf6a00",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/180//#testresult/b41eca2a98cf6a00",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640698148877,
+          "stop" : 1640698152843,
+          "duration" : 3966
+        }
+      }, {
+        "uid" : "f3337c9937cfd2b5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/178//#testresult/f3337c9937cfd2b5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640696381652,
+          "stop" : 1640696442145,
+          "duration" : 60493
+        }
+      }, {
+        "uid" : "834b437e5863d747",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/177//#testresult/834b437e5863d747",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640695271248,
+          "stop" : 1640695331730,
+          "duration" : 60482
+        }
+      }, {
+        "uid" : "6049f7b02feafaaf",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/176//#testresult/6049f7b02feafaaf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640694130813,
+          "stop" : 1640694191463,
+          "duration" : 60650
+        }
+      }, {
+        "uid" : "f5b235f52cd6b5c4",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/175//#testresult/f5b235f52cd6b5c4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690917692,
+          "stop" : 1640690978191,
+          "duration" : 60499
+        }
+      }, {
+        "uid" : "f999101ba84698d4",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/174//#testresult/f999101ba84698d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690381753,
+          "stop" : 1640690442325,
+          "duration" : 60572
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "7bcba5e74c53fea.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}
