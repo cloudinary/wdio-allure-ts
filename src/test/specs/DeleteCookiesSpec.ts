@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { BrowserUtils, TestUtils } from '../..';
+import { BrowserUtils, Reporter, TestUtils } from '../..';
 import { describeCommon } from '../TestHelper';
 
 /**
@@ -7,15 +7,14 @@ import { describeCommon } from '../TestHelper';
  */
 describeCommon('DeleteCookieSpec', () => {
   beforeEach(() => {
-    BrowserUtils.setCookies({ name: TestUtils.randomString(), value: TestUtils.randomString() }, null);
+    Reporter.step('Set cookie for tests');
+    BrowserUtils.setCookies({ name: TestUtils.randomString(), value: TestUtils.randomString() });
   });
   it('expect empty cookie', () => {
+    Reporter.step('Delete cookies');
     BrowserUtils.deleteCookies();
-    assert.equal(BrowserUtils.getCookies().length, 0, 'Incorrect number of retrieved cookies');
-  });
 
-  it('delete all cookie', () => {
-    BrowserUtils.deleteCookies();
-    assert.equal(BrowserUtils.getCookies()[0], undefined, 'Cookie has not been removed');
+    Reporter.step('Validate no cookies');
+    assert.equal(BrowserUtils.getCookies().length, 0, 'Incorrect number of retrieved cookies');
   });
 });

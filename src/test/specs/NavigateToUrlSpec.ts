@@ -1,4 +1,4 @@
-import { BrowserUtils } from '../..';
+import { BrowserUtils, Reporter } from '../..';
 import { describeCommon, sampleAppUrl } from '../TestHelper';
 
 /**
@@ -6,6 +6,7 @@ import { describeCommon, sampleAppUrl } from '../TestHelper';
  */
 describeCommon('url', () => {
   it('navigate successfully', () => {
+    Reporter.step('Navigate to sample app');
     BrowserUtils.url(sampleAppUrl);
   });
 });

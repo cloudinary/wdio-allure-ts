@@ -1,6 +1,6 @@
 {
   "name": "wdio-allure-ts",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "description": "UI E2E testing util",
   "license": "MIT",
   "author": "Cloudinary <info@cloudinary.com>",
@@ -32,11 +32,12 @@
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
-    "test": "DEFAULT_TIME_OUT=3000 yarn setChromeDriverVersion; wdio src/test/wdio.conf.js --suite regression",
+    "test": "yarn setChromeDriverVersion; DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --suite regression",
     "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
     "pretest": "yarn lint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
-    "release": "standard-version"
+    "release": "standard-version",
+    "report" : "allure generate && allure open"
   },
   "dependencies": {
     "@wdio/allure-reporter": "^7.7.3",

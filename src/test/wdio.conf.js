@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const { Reporter } = require('../index');
 dotenv.config();
 
 const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
@@ -60,6 +61,16 @@ exports.config = {
       },
     ],
   ], // Framework you want to run your specs with.
+  reporters: [
+    [
+      'allure',
+      {
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
+        disableMochaHooks: true,
+      },
+    ],
+  ],
 
   // The following are supported: Mocha, Jasmine, and Cucumber
   // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -70,5 +81,22 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 300000,
+  },
+
+  /**
+   * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
+   */
+  afterTest: function (test, context, { error, result, duration, passed, retries }) {
+    /**
+     * no need to close skipped tests
+     */
+    if (test.pending) {
+      return;
+    }
+    /**
+     * Attach browser console logs and html source
+     * in case of test failure and close current step
+     */
+    Reporter.closeStep(!passed);
   },
 };
