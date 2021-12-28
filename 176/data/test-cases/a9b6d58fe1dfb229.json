@@ -1,0 +1,154 @@
+{
+  "uid" : "a9b6d58fe1dfb229",
+  "name" : "successfully start and read network audit",
+  "fullName" : "startNetworkAudit.successfully start and read network audit",
+  "historyId" : "27c5a33351a27b1a40f282efcc2a996c",
+  "time" : {
+    "start" : 1640694229756,
+    "stop" : 1640694230287,
+    "duration" : 531
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for startNetworkAudit",
+      "time" : {
+        "start" : 1640694229757,
+        "stop" : 1640694230109,
+        "duration" : 352
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640694230053,
+          "stop" : 1640694230055,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "694c54adc3f97ef",
+          "name" : "more info",
+          "source" : "694c54adc3f97ef.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640694230286,
+        "stop" : 1640694230287,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "956bcfc6e2b52e71",
+        "name" : "more info",
+        "source" : "956bcfc6e2b52e71.txt",
+        "type" : "text/plain",
+        "size" : 202
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-45"
+  }, {
+    "name" : "suite",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "testClass",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "testMethod",
+    "value" : "successfully start and read network audit"
+  }, {
+    "name" : "package",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "8150ef548d6ccee1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/175//#testresult/8150ef548d6ccee1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640691009718,
+          "stop" : 1640691010142,
+          "duration" : 424
+        }
+      }, {
+        "uid" : "c64fe38bdd5ac357",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/174//#testresult/c64fe38bdd5ac357",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690473594,
+          "stop" : 1640690474233,
+          "duration" : 639
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a9b6d58fe1dfb229.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}

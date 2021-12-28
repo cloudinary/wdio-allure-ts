@@ -1,0 +1,154 @@
+{
+  "uid" : "aa936d4f7087a283",
+  "name" : "RefreshTrue",
+  "fullName" : "RefreshSpec.RefreshTrue",
+  "historyId" : "724e4bcbd3a7e6ea72cfa8ac32f067bb",
+  "time" : {
+    "start" : 1640694205814,
+    "stop" : 1640694206473,
+    "duration" : 659
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for RefreshSpec",
+      "time" : {
+        "start" : 1640694205815,
+        "stop" : 1640694206064,
+        "duration" : 249
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640694206028,
+          "stop" : 1640694206030,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d3e9ea92299dccc2",
+          "name" : "more info",
+          "source" : "d3e9ea92299dccc2.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640694206472,
+        "stop" : 1640694206473,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4c4fc95341a231b2",
+        "name" : "more info",
+        "source" : "4c4fc95341a231b2.txt",
+        "type" : "text/plain",
+        "size" : 186
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-35"
+  }, {
+    "name" : "suite",
+    "value" : "RefreshSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "RefreshSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "RefreshTrue"
+  }, {
+    "name" : "package",
+    "value" : "RefreshSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "d5e4bca5a7b17888",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/175//#testresult/d5e4bca5a7b17888",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690990415,
+          "stop" : 1640690990977,
+          "duration" : 562
+        }
+      }, {
+        "uid" : "e07cc7adc7dfae07",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/174//#testresult/e07cc7adc7dfae07",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690454281,
+          "stop" : 1640690455211,
+          "duration" : 930
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "aa936d4f7087a283.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}
