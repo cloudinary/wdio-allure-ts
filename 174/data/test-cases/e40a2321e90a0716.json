@@ -1,0 +1,203 @@
+{
+  "uid" : "e40a2321e90a0716",
+  "name" : "expect empty cookie",
+  "fullName" : "DeleteCookieSpec.expect empty cookie",
+  "historyId" : "a7f3190c5010b7ac2f958d6346369b8e",
+  "time" : {
+    "start" : 1640690365537,
+    "stop" : 1640690367029,
+    "duration" : 1492
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for DeleteCookieSpec",
+      "time" : {
+        "start" : 1640690365541,
+        "stop" : 1640690366860,
+        "duration" : 1319
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640690366688,
+          "stop" : 1640690366690,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "de55bbff684ca79e",
+          "name" : "more info",
+          "source" : "de55bbff684ca79e.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "\"before each\" hook for DeleteCookieSpec",
+      "time" : {
+        "start" : 1640690366860,
+        "stop" : 1640690366886,
+        "duration" : 26
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1640690366861,
+          "stop" : 1640690366861,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a89cadfdf0e420b3",
+          "name" : "more info",
+          "source" : "a89cadfdf0e420b3.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Set cookie for tests",
+      "time" : {
+        "start" : 1640690366886,
+        "stop" : 1640690366887,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "583c45a85ae5db31",
+        "name" : "more info",
+        "source" : "583c45a85ae5db31.txt",
+        "type" : "text/plain",
+        "size" : 130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Delete cookies",
+      "time" : {
+        "start" : 1640690366923,
+        "stop" : 1640690366924,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f7c0ffc41e714aed",
+        "name" : "more info",
+        "source" : "f7c0ffc41e714aed.txt",
+        "type" : "text/plain",
+        "size" : 122
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate no cookies",
+      "time" : {
+        "start" : 1640690366995,
+        "stop" : 1640690367022,
+        "duration" : 27
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3de1eb0b3495d376",
+        "name" : "more info",
+        "source" : "3de1eb0b3495d376.txt",
+        "type" : "text/plain",
+        "size" : 122
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-5"
+  }, {
+    "name" : "suite",
+    "value" : "DeleteCookieSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "DeleteCookieSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "expect empty cookie"
+  }, {
+    "name" : "package",
+    "value" : "DeleteCookieSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e40a2321e90a0716.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}

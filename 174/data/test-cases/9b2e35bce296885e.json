@@ -1,0 +1,179 @@
+{
+  "uid" : "9b2e35bce296885e",
+  "name" : "double click not existing element",
+  "fullName" : "doubleClick.double click not existing element",
+  "historyId" : "94267180edae143672101e801917f77f",
+  "time" : {
+    "start" : 1640690368806,
+    "stop" : 1640690429709,
+    "duration" : 60903
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected 'Element not visible \\'//notARealSelector\\' \\n Error: element (\"//notARealSelector\") still not displayed after 60000ms' to include ' element (\"//notARealSelector\") still not existing'",
+  "statusTrace" : "AssertionError: expected 'Element not visible \\'//notARealSelector\\' \\n Error: element (\"//notARealSelector\") still not displayed after 60000ms' to include ' element (\"//notARealSelector\") still not existing'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DoubleClickSpec.ts:23:8)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected 'Element not visible \\'//notARealSelector\\' \\n Error: element (\"//notARealSelector\") still not displayed after 60000ms' to include ' element (\"//notARealSelector\") still not existing'",
+    "statusTrace" : "AssertionError: expected 'Element not visible \\'//notARealSelector\\' \\n Error: element (\"//notARealSelector\") still not displayed after 60000ms' to include ' element (\"//notARealSelector\") still not existing'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DoubleClickSpec.ts:23:8)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for doubleClick",
+      "time" : {
+        "start" : 1640690368806,
+        "stop" : 1640690369410,
+        "duration" : 604
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640690369332,
+          "stop" : 1640690369333,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7a0d9abd05101386",
+          "name" : "more info",
+          "source" : "7a0d9abd05101386.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640690369410,
+        "stop" : 1640690369411,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e62d7c26baabe34c",
+        "name" : "more info",
+        "source" : "e62d7c26baabe34c.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Double click not existing element",
+      "time" : {
+        "start" : 1640690429707,
+        "stop" : 1640690429707,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected 'Element not visible \\'//notARealSelector\\' \\n Error: element (\"//notARealSelector\") still not displayed after 60000ms' to include ' element (\"//notARealSelector\") still not existing'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DoubleClickSpec.ts:23:8)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9af804bb6d6ca41",
+        "name" : "more info",
+        "source" : "9af804bb6d6ca41.txt",
+        "type" : "text/plain",
+        "size" : 304
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "6fc727c00208fc3c",
+      "name" : "Screenshot",
+      "source" : "6fc727c00208fc3c.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "e31f5c50ae4eb325",
+      "name" : "Browser console logs",
+      "source" : "e31f5c50ae4eb325.txt",
+      "type" : "text/plain",
+      "size" : 2
+    }, {
+      "uid" : "30d7e859b5a20029",
+      "name" : "Network Logs",
+      "source" : "30d7e859b5a20029.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "adff0d888f256aac",
+      "name" : "Page HTML source",
+      "source" : "adff0d888f256aac.html",
+      "type" : "text/html",
+      "size" : 21966
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-7"
+  }, {
+    "name" : "suite",
+    "value" : "doubleClick"
+  }, {
+    "name" : "testClass",
+    "value" : "doubleClick"
+  }, {
+    "name" : "testMethod",
+    "value" : "double click not existing element"
+  }, {
+    "name" : "package",
+    "value" : "doubleClick"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "9b2e35bce296885e.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}

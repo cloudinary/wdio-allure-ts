@@ -1,0 +1,110 @@
+{
+  "uid" : "488b4096735c8b00",
+  "name" : "change window size",
+  "fullName" : "setWindowSize.change window size",
+  "historyId" : "10b6bb78390ff519d9b6dea163d08349",
+  "time" : {
+    "start" : 1640690508354,
+    "stop" : 1640690508472,
+    "duration" : 118
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "[DEBUG] - Set window size to '800X600'",
+      "time" : {
+        "start" : 1640690508356,
+        "stop" : 1640690508357,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "afc6242501e7024",
+        "name" : "more info",
+        "source" : "afc6242501e7024.txt",
+        "type" : "text/plain",
+        "size" : 56
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get window size",
+      "time" : {
+        "start" : 1640690508466,
+        "stop" : 1640690508467,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f7987bb1d9928ac0",
+        "name" : "more info",
+        "source" : "f7987bb1d9928ac0.txt",
+        "type" : "text/plain",
+        "size" : 43
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-54"
+  }, {
+    "name" : "suite",
+    "value" : "setWindowSize"
+  }, {
+    "name" : "testClass",
+    "value" : "setWindowSize"
+  }, {
+    "name" : "testMethod",
+    "value" : "change window size"
+  }, {
+    "name" : "package",
+    "value" : "setWindowSize"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "488b4096735c8b00.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}

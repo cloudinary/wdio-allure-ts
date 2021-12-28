@@ -1,0 +1,146 @@
+{
+  "uid" : "2aa151d461920065",
+  "name" : "get url",
+  "fullName" : "GetUrlSpec.get url",
+  "historyId" : "422bce1b6a140fe8b02aca14f0a5fbae",
+  "time" : {
+    "start" : 1640690402826,
+    "stop" : 1640690403098,
+    "duration" : 272
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetUrlSpec",
+      "time" : {
+        "start" : 1640690402827,
+        "stop" : 1640690403083,
+        "duration" : 256
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640690403034,
+          "stop" : 1640690403035,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1da148147da0bdf3",
+          "name" : "more info",
+          "source" : "1da148147da0bdf3.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640690403083,
+        "stop" : 1640690403083,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "bb27247d1c1a6dc9",
+        "name" : "more info",
+        "source" : "bb27247d1c1a6dc9.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate getUrl return value",
+      "time" : {
+        "start" : 1640690403098,
+        "stop" : 1640690403098,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "81f67766c035a0a1",
+        "name" : "more info",
+        "source" : "81f67766c035a0a1.txt",
+        "type" : "text/plain",
+        "size" : 128
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-25"
+  }, {
+    "name" : "suite",
+    "value" : "GetUrlSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetUrlSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "get url"
+  }, {
+    "name" : "package",
+    "value" : "GetUrlSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2aa151d461920065.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}
