@@ -63,8 +63,8 @@ jobs:
         uses: Sibz/github-status-action@v1
         with:
           authToken: ${{secrets.WDIO_TOKEN}}
-          context: 'e2e test report'
-          state: ${{ job.status }}
+          context: 'Test report'
+          state: 'success'
           sha: ${{ github.event.pull_request.head.sha }}
           target_url: https://cloudinary.github.io/wdio-allure-ts/github-allure-history/${{ github.run_number }}
 
