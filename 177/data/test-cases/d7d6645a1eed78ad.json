@@ -1,0 +1,184 @@
+{
+  "uid" : "d7d6645a1eed78ad",
+  "name" : "add value to not existing input",
+  "fullName" : "addValue.add value to not existing input",
+  "historyId" : "a8b50c14ae1bc8608b8390deca8d359c",
+  "time" : {
+    "start" : 1640695319925,
+    "stop" : 1640695380150,
+    "duration" : 60225
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for addValue",
+      "time" : {
+        "start" : 1640695319925,
+        "stop" : 1640695320124,
+        "duration" : 199
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640695320098,
+          "stop" : 1640695320099,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "755e11cfa0655eb5",
+          "name" : "more info",
+          "source" : "755e11cfa0655eb5.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640695320124,
+        "stop" : 1640695320125,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "55de3df07e87e00b",
+        "name" : "more info",
+        "source" : "55de3df07e87e00b.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Add value to not existing input should throw an error",
+      "time" : {
+        "start" : 1640695380150,
+        "stop" : 1640695380150,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "df4678c705c4e18c",
+        "name" : "more info",
+        "source" : "df4678c705c4e18c.txt",
+        "type" : "text/plain",
+        "size" : 328
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "addValue"
+  }, {
+    "name" : "testClass",
+    "value" : "addValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "add value to not existing input"
+  }, {
+    "name" : "package",
+    "value" : "addValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "e03b6a2dad439eb8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/176//#testresult/e03b6a2dad439eb8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640694177144,
+          "stop" : 1640694237313,
+          "duration" : 60169
+        }
+      }, {
+        "uid" : "290721983ecad925",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/175//#testresult/290721983ecad925",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690966904,
+          "stop" : 1640691027071,
+          "duration" : 60167
+        }
+      }, {
+        "uid" : "7582599adf2d9e68",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/174//#testresult/7582599adf2d9e68",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690430231,
+          "stop" : 1640690490359,
+          "duration" : 60128
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d7d6645a1eed78ad.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}

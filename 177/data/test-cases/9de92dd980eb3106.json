@@ -1,0 +1,184 @@
+{
+  "uid" : "9de92dd980eb3106",
+  "name" : "incorrect zip link",
+  "fullName" : "verifyFilesInZip.incorrect zip link",
+  "historyId" : "a8ec11a7adb8a2b21224251f72122128",
+  "time" : {
+    "start" : 1640695370448,
+    "stop" : 1640695370716,
+    "duration" : 268
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for verifyFilesInZip",
+      "time" : {
+        "start" : 1640695370448,
+        "stop" : 1640695370679,
+        "duration" : 231
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1640695370647,
+          "stop" : 1640695370647,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1c3240b276728098",
+          "name" : "more info",
+          "source" : "1c3240b276728098.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1640695370680,
+        "stop" : 1640695370680,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a682b4a80c56840a",
+        "name" : "more info",
+        "source" : "a682b4a80c56840a.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Incorrect zip link throws an error",
+      "time" : {
+        "start" : 1640695370716,
+        "stop" : 1640695370716,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "228fa255027f72b7",
+        "name" : "more info",
+        "source" : "228fa255027f72b7.txt",
+        "type" : "text/plain",
+        "size" : 185
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-48"
+  }, {
+    "name" : "suite",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testClass",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testMethod",
+    "value" : "incorrect zip link"
+  }, {
+    "name" : "package",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-96.0.4664.110"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "46618a9b1bbcb04",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/176//#testresult/46618a9b1bbcb04",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640694241505,
+          "stop" : 1640694241921,
+          "duration" : 416
+        }
+      }, {
+        "uid" : "e6d3599f16b0eee0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/175//#testresult/e6d3599f16b0eee0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640691018478,
+          "stop" : 1640691018720,
+          "duration" : 242
+        }
+      }, {
+        "uid" : "6c030727699d3a67",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/174//#testresult/6c030727699d3a67",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640690482284,
+          "stop" : 1640690482537,
+          "duration" : 253
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "9de92dd980eb3106.json",
+  "parameterValues" : [ "chrome-96.0.4664.110" ]
+}
