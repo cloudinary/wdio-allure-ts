@@ -20,7 +20,7 @@ describeCommon('doubleClick', () => {
     expect(() => BrowserUtils.doubleClick(notExistingElementSelector))
       .to.throw(Error)
       .with.property('message')
-      .contains(` element ("${notExistingElementSelector}") still not existing`);
+      .contains(` element ("${notExistingElementSelector}") still not displayed`);
   });
 
   it('double click hidden element', () => {

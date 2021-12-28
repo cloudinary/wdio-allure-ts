@@ -1,5 +1,5 @@
 import { describeCommon, sampleAppUrl } from '../TestHelper';
-import { BrowserUtils } from '../..';
+import { BrowserUtils, Reporter } from '../..';
 
 interface NetworkLog {
   url: string;
@@ -14,6 +14,7 @@ describeCommon('startNetworkAudit', () => {
     const expectedLog: NetworkLog = { url: 'http://placekitten.com/480/480', status: 200 };
     const networkLogs: Array<NetworkLog> = [];
 
+    Reporter.step('Start network log');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     browser.on('Network.responseReceived', (params: any) => {
       networkLogs.push({
@@ -22,14 +23,15 @@ describeCommon('startNetworkAudit', () => {
       });
     });
 
+    Reporter.step('navigate to sample app');
     BrowserUtils.url(sampleAppUrl);
 
+    Reporter.step('Wait for new logs');
     BrowserUtils.waitUntil(
       () => {
         return networkLogs.some((log) => log.url === expectedLog.url && Number(log.status) === expectedLog.status);
       },
-      `Expected log [${JSON.stringify(expectedLog)}] was not found`,
-      5000
+      { timeoutMsg: `Expected log [${JSON.stringify(expectedLog)}] was not found`, timeout: 5000 }
     );
   });
 });
