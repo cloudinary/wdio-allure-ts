@@ -66,7 +66,7 @@ jobs:
           context: 'Test report'
           state: 'success'
           sha: ${{ github.event.pull_request.head.sha }}
-          target_url: https://cloudinary.github.io/wdio-allure-ts/${{ github.run_number }}
+          target_url: https://cloudinary.github.io/wdio-allure-ts/${{ github.run_number }}/index.html
 
       - uses: sonots/slack-notice-action@v3
         with:
