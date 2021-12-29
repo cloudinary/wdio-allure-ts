@@ -3,6 +3,7 @@ import { AllureReporter } from './AllureReport';
 import { ConsoleReport } from './ConsoleReport';
 import { ReportPortal } from './ReportPortal';
 import { TestUtils } from '../index';
+import fs from 'fs';
 
 /**
  * Log to standard system out and allure report
@@ -66,9 +67,11 @@ export namespace Reporter {
    */
   // eslint-disable-next-line
   export function closeStep(isFailed: boolean, test?: any): void {
-    const screenshotFilePath = path.join(__dirname, `${TestUtils.randomString(10)}.png`);
-    browser.saveScreenshot(screenshotFilePath);
-
+    let screenshotFilePath;
+    if (isFailed) {
+      screenshotFilePath = path.join(__dirname, `${TestUtils.randomString(10)}.png`);
+      browser.saveScreenshot(screenshotFilePath);
+    }
     const pageSource = browser.getPageSource();
 
     const browserLogs = browser.getLogs('browser');
@@ -76,6 +79,9 @@ export namespace Reporter {
 
     if (test) {
       ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
+    }
+    if (isFailed) {
+      fs.unlinkSync(screenshotFilePath);
     }
   }
 
