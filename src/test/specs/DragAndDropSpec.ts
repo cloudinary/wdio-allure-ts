@@ -49,8 +49,8 @@ describeCommon('dragAndDrop', () => {
       .with.property('message')
       .contains(`Failed to drag and drop ${ELEMENT} to`);
   });
-  Reporter.step('Drag and drop to non existing element should throw error');
   it('drag and drop to non existing element', () => {
+    Reporter.step('Drag and drop to non existing element should throw error');
     expect(() => BrowserUtils.dragAndDrop(ELEMENT, NOT_EXISTING_ELEMENT)).to.throw(Error);
   });
 });
