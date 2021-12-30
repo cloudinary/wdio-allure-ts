@@ -12,7 +12,12 @@ export namespace GitUtils {
   export function getMergedTestsIdsSinceDay(sinceDay: number): Set<string> {
     console.log(`Getting tests id's since ${sinceDay} days ago`);
     const params: string = `diff $(git rev-list -n1  --before={@{${sinceDay}.days.ago} origin/master) --name-only`;
-    const filesSinceDay = executeGitScript(params).split(/[\r\n]+/);
+    const scriptRes = executeGitScript(params);
+    if (!scriptRes) {
+      console.log(`No changed files found since ${sinceDay} days ago`);
+      return undefined;
+    }
+    const filesSinceDay = scriptRes.split(/[\r\n]+/);
     const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(new Set<string>(filesSinceDay));
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
