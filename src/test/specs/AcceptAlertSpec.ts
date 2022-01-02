@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { BrowserUtils } from '../..';
+import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
 const TEST_FIELD_SELECTOR: string = "//*[@id='AcceptAlert']";
@@ -7,11 +7,15 @@ const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@i
 
 describeCommon('acceptAlert', () => {
   it('accept existing alert', () => {
+    Reporter.step(`Click on trigger alert button`);
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
+
+    Reporter.step('Accept Alert');
     BrowserUtils.acceptAlert();
   });
 
   it('no alert', () => {
+    Reporter.step('Validate failure to accept not existing alert');
     expect(() => BrowserUtils.acceptAlert())
       .to.throw(Error)
       .with.property('message')

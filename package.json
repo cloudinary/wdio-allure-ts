@@ -1,10 +1,10 @@
 {
   "name": "wdio-allure-ts",
-  "version": "5.0.1",
+  "version": "5.1.4",
   "description": "UI E2E testing util",
   "license": "MIT",
   "author": "Cloudinary <info@cloudinary.com>",
-  "homepage": "http://cloudinary.com",
+  "homepage": "https://cloudinary.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/cloudinary/wdio-allure-ts"
@@ -32,11 +32,12 @@
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
-    "test": "DEFAULT_TIME_OUT=3000 yarn setChromeDriverVersion; wdio src/test/wdio.conf.js --suite regression",
+    "test": "yarn setChromeDriverVersion; DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --suite regression",
     "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
     "pretest": "yarn lint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
-    "release": "standard-version"
+    "release": "standard-version",
+    "report": "allure generate --clean && allure open"
   },
   "dependencies": {
     "@wdio/allure-reporter": "^7.7.3",
@@ -59,6 +60,8 @@
     "wdio-docker-service": "^3.1.2",
     "wdio-image-comparison-service": "^2.3.0",
     "webdriverio": "7.7.4",
+    "wdio-reportportal-reporter": "^7.2.1",
+    "wdio-reportportal-service": "^7.3.1",
     "yargs": "15.4.1"
   },
   "devDependencies": {

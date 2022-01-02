@@ -1,39 +1,9 @@
-import allureReporter, { Status } from '@wdio/allure-reporter';
-import chalk from 'chalk';
-
-/**
- * Print to standard output
- */
-const printToConsole: boolean = process.env.PRINT_LOGS_TO_CONSOLE === 'true' || false;
-/**
- * Current executed test name for report logs
- */
-let currentTestName: string = '';
-const DEBUG: string = '[DEBUG]';
-const DEBUG_COLOR: chalk.Chalk = chalk.gray;
-const STEP: string = '[STEP]';
-const STEP_COLOR: chalk.Chalk = chalk.green;
-const WARNING: string = '[WARNING]';
-const WARNING_COLOR: chalk.Chalk = chalk.yellow;
-const ERROR: string = '[ERROR]';
-const ERROR_COLOR: chalk.Chalk = chalk.red;
-
-/**
- * Custom command for use with wdio-allure-reporter
- */
-class CustomCommand {
-  public title: string;
-  public bodyLabel: string;
-  public body: string;
-  constructor(title: string, bodyLabel: string, body: string) {
-    this.title = title;
-    this.body = `${body}`;
-    this.bodyLabel = bodyLabel;
-  }
-  public appendToBody(msg: string): void {
-    this.body += `${msg} \n`;
-  }
-}
+import path from 'path';
+import { AllureReporter } from './AllureReport';
+import { ConsoleReport } from './ConsoleReport';
+import { ReportPortal } from './ReportPortal';
+import { TestUtils } from '../index';
+import fs from 'fs';
 
 /**
  * Log to standard system out and allure report
@@ -42,9 +12,6 @@ class CustomCommand {
  * until new 'Step' log arrived
  */
 export namespace Reporter {
-  let isStepClosed: boolean = true;
-  let currentStepTitle: string;
-  let customCommand: CustomCommand;
   let networkActivity: Array<{ url: string; status: string; headers: object }> = [];
 
   /**
@@ -55,6 +22,8 @@ export namespace Reporter {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     browser.cdp('Network', 'disable');
+
+    networkActivity = [];
   }
 
   /**
@@ -94,55 +63,25 @@ export namespace Reporter {
   }
 
   /**
-   * Add logs to report and clean the data
-   */
-  function attachAndCleanNetworkLogs(): void {
-    /**
-     * Log only error request for cleaner report
-     */
-    const errorRequests = networkActivity.filter((logEntry) => {
-      return Number(logEntry.status) >= 400;
-    });
-
-    allureReporter.addAttachment('Network Logs', errorRequests, 'application/json');
-
-    networkActivity = [];
-  }
-
-  function addConsoleLogs(): void {
-    const browserLogs = browser.getLogs('browser');
-    /**
-     * Log only error logs - level == SEVERE
-     */
-    const filteredBrowserLogs = browserLogs.filter((logEntry) => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return logEntry.level == 'SEVERE';
-    });
-
-    allureReporter.addAttachment(
-      'Browser console logs',
-      `${JSON.stringify(filteredBrowserLogs, undefined, 2)}`,
-      'text/plain'
-    );
-  }
-
-  /**
    * Close step in report
    */
-  export function closeStep(isFailed?: boolean): void {
+  // eslint-disable-next-line
+  export function closeStep(isFailed: boolean, test?: any): void {
+    let screenshotFilePath;
     if (isFailed) {
-      browser.takeScreenshot();
-
-      addConsoleLogs();
-
-      attachAndCleanNetworkLogs();
-
-      allureReporter.addAttachment('Page HTML source', `${browser.getPageSource()}`, 'text/html');
+      screenshotFilePath = path.join(__dirname, `${TestUtils.randomString(10)}.png`);
+      browser.saveScreenshot(screenshotFilePath);
     }
-    if (!isStepClosed) {
-      sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
-      isStepClosed = true;
+    const pageSource = browser.getPageSource();
+
+    const browserLogs = browser.getLogs('browser');
+    AllureReporter.closeStep(isFailed, browserLogs, pageSource, networkActivity);
+
+    if (test) {
+      ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
+    }
+    if (isFailed) {
+      fs.unlinkSync(screenshotFilePath);
     }
   }
 
@@ -154,7 +93,7 @@ export namespace Reporter {
    * },
    */
   export function setCurrentTestName(testName: string): void {
-    currentTestName = testName;
+    ConsoleReport.setCurrentTestName(testName);
   }
 
   /**
@@ -163,16 +102,9 @@ export namespace Reporter {
    * @param msg text to log
    */
   export function step(msg: string): void {
-    toConsole(msg, STEP, STEP_COLOR);
-
-    closeStep();
-
-    currentStepTitle = `${STEP} - ${msg}`;
-    isStepClosed = false;
-
-    customCommand = new CustomCommand(currentStepTitle, 'more info', '');
-
-    customCommand.appendToBody(prettyMessage(STEP, msg));
+    ConsoleReport.step(msg);
+    AllureReporter.step(msg);
+    ReportPortal.step(msg);
   }
 
   /**
@@ -181,8 +113,9 @@ export namespace Reporter {
    * @param msg text to log
    */
   export function debug(msg: string): void {
-    toConsole(msg, DEBUG, DEBUG_COLOR);
-    addLogEntry(DEBUG, msg);
+    ConsoleReport.debug(msg);
+    AllureReporter.addLogEntry('[DEBUG]', msg);
+    ReportPortal.debug(msg);
   }
 
   /**
@@ -191,8 +124,9 @@ export namespace Reporter {
    * @param msg text to log
    */
   export function warning(msg: string): void {
-    toConsole(msg, WARNING, WARNING_COLOR);
-    addLogEntry(WARNING, msg);
+    ConsoleReport.warning(msg);
+    AllureReporter.addLogEntry('[WARNING]', msg);
+    ReportPortal.warning(msg);
   }
 
   /**
@@ -201,107 +135,17 @@ export namespace Reporter {
    * @param msg text to log
    */
   export function error(msg: string): void {
-    toConsole(msg, ERROR, ERROR_COLOR);
-    addLogEntry(ERROR, msg);
+    ConsoleReport.error(msg);
+    AllureReporter.addLogEntry('[ERROR]', msg);
+    ReportPortal.error(msg);
   }
 
   /**
-   * Adding a custom label to test
-   * @param name name of the label
-   * @param value value of the label
+   * Adding screenshot for report
+   * Currently only implemented for allure reporter
+   * @param name of the screenshot, that will appear in the report
    */
-  export function addLabel(name: string, value: string): void {
-    allureReporter.addLabel(name, value);
-  }
-
-  /**
-   * Adding Environment to allure report
-   * @param name name of the env
-   * @param value string
-   */
-  export function addEnvironment(name: string, value?: string): void {
-    allureReporter.addEnvironment(name, value);
-  }
-
-  /**
-   * Adding issue name
-   * @param value name of the feature
-   */
-  export function addTestId(value: string): void {
-    allureReporter.addTestId(value);
-  }
-
-  /**
-   * Adding description name
-   * @param description of the test
-   * @param descriptionType type (String, optional) – description type, text by default. Values ['text', 'html','markdown']
-   */
-  export function addDescription(description: string, descriptionType?: string): void {
-    allureReporter.addDescription(description, descriptionType);
-  }
-
-  /**
-   * Add log entry for allure reporter
-   * @param logType logType
-   * @param msg message
-   */
-  function addLogEntry(logType: string, msg: string): void {
-    if (!isStepClosed) {
-      customCommand.appendToBody(prettyMessage(logType, msg));
-    } else {
-      customCommand = new CustomCommand(`${logType} - ${msg}`, 'more info', prettyMessage(logType, msg));
-      sendCustomCommand(customCommand);
-    }
-  }
-
-  /**
-   * Adding custom command to allure reporter
-   * @param command command to add
-   * @param stepStatus status of steps
-   */
-  function sendCustomCommand(command: CustomCommand, stepStatus?: Status): void {
-    let status: Status = 'passed';
-    if (stepStatus !== undefined) {
-      status = stepStatus;
-    }
-    const stepContent: object = {
-      content: command.body,
-      name: command.bodyLabel,
-    };
-    allureReporter.addStep(command.title, stepContent, status);
-  }
-}
-
-/**
- * Message with type stamp, log type and test name
- * @param logLevel message level info/error/warning/debug
- * @param msg text to log
- */
-function prettyMessage(logLevel: string, msg: string): string {
-  const dateString: string = getDate();
-
-  return `${dateString}${currentTestName !== '' ? ` ${currentTestName} ` : ' '}${logLevel} ${msg}`;
-}
-
-/**
- * Date for log message
- */
-function getDate(): string {
-  return new Date()
-    .toISOString() // will return like '2012-11-04T14:51:06.157Z'
-    .replace(/T/, ' ') // replace T with a space
-    .replace(/\..+/, ''); // delete the dot and everything after
-}
-
-/**
- * Print message to console`
- * @param msg message to log
- * @param level message level
- * @param color message color
- */
-function toConsole(msg: string, level: string, color: chalk.Chalk): void {
-  if (printToConsole) {
-    const messageToLog: string = prettyMessage(level, msg);
-    console.log(color(messageToLog));
+  export function addScreenshot(name: string = 'screenshot'): void {
+    AllureReporter.addScreenshot(name);
   }
 }
