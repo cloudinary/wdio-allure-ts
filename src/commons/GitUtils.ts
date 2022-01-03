@@ -15,7 +15,7 @@ export namespace GitUtils {
     const scriptRes = executeGitScript(params);
     if (!scriptRes) {
       console.log(`No changed files found since ${sinceDay} days ago`);
-      return undefined;
+      return null;
     }
     const filesSinceDay = scriptRes.split(/[\r\n]+/);
     const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(new Set<string>(filesSinceDay));
