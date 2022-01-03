@@ -14,9 +14,13 @@ const DAYS_TO_COUNT_BACK = Number(process.env.DAYS_TO_COUNT_BACK) || 1;
  */
 (() => {
   const testsToUpdate = GitUtils.getMergedTestsIdsSinceDay(DAYS_TO_COUNT_BACK);
-  console.log(`Updating ${testsToUpdate.size} tests...`);
-  console.log(testsToUpdate);
+  if (!testsToUpdate || testsToUpdate.size === 0) {
+    console.log(`No tests to update since last ${DAYS_TO_COUNT_BACK} day's`);
+  } else {
+    console.log(`Updating ${testsToUpdate.size} tests...`);
+    console.log(testsToUpdate);
 
-  TestRailUtil.setTestsAsAutomatedInTestrail(testsToUpdate);
-  console.log('Update tests finished successfully!!!');
+    TestRailUtil.setTestsAsAutomatedInTestrail(testsToUpdate);
+    console.log('Update tests finished successfully!!!');
+  }
 })();
