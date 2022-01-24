@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 5.1.6 (2022-01-24)
+
+
+### Bug Fixes
+
+* fix-browser-logs-allure ([#275](https://github.com/cloudinary/wdio-allure-ts/issues/275)) ([a1caead](https://github.com/cloudinary/wdio-allure-ts/commit/a1caead5d37835e298fba5bde5cd8ac0ce04c282))
+
 ### 5.1.5 (2022-01-03)
 
 ### 5.1.4 (2021-12-29)
