@@ -55,11 +55,7 @@ export namespace AllureReporter {
     networkActivity: Array<object>
   ): void {
     if (isFailed) {
-      allureReporter.addAttachment(
-        'Browser console logs',
-        JSON.stringify(browserLogs, undefined, 2),
-        'application/json'
-      );
+      allureReporter.addAttachment('Browser console logs', browserLogs, 'application/json');
 
       allureReporter.addAttachment('Page HTML source', pageSource, 'html');
 
