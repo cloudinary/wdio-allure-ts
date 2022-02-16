@@ -6,7 +6,7 @@ const TEST_FIELD_SELECTOR: string = "//*[@id='DismissAlert']";
 const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='DismissAlertTriggerAlert']`;
 
 describeCommon('dismissAlert', () => {
-  it('dismiss existing alert', () => {
+  it.skip('dismiss existing alert', () => {
     Reporter.step('Click button to trigger alert');
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
 
@@ -14,7 +14,7 @@ describeCommon('dismissAlert', () => {
     BrowserUtils.dismissAlert();
   });
 
-  it('no alert', () => {
+  it.skip('no alert', () => {
     Reporter.step('Dismiss not existing alert');
     expect(() => BrowserUtils.dismissAlert())
       .to.throw(Error)
