@@ -36,14 +36,14 @@ exports.config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'error',
+  logLevel: 'debug',
   // Default timeout for all waitFor* commands.
   waitforTimeout: waitForTimeouts,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
   connectionRetryCount: 3,
-  connectionRetryTimeout: 10000,
+  connectionRetryTimeout: 30000,
 
   configDataFilePath: 'src/test/resources/example.json',
   //
