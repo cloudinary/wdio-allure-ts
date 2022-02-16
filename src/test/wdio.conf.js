@@ -42,8 +42,7 @@ exports.config = {
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
-  connectionRetryCount: 3,
-  connectionRetryTimeout: 30000,
+  connectionRetryTimeout: 10000,
 
   configDataFilePath: 'src/test/resources/example.json',
   //
