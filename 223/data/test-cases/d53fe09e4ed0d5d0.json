@@ -1,0 +1,184 @@
+{
+  "uid" : "d53fe09e4ed0d5d0",
+  "name" : "double click hidden element",
+  "fullName" : "doubleClick.double click hidden element",
+  "historyId" : "1234fc0bfdc40c0c4f959ff0c3f7b6a0",
+  "time" : {
+    "start" : 1645014697093,
+    "stop" : 1645014700358,
+    "duration" : 3265
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for doubleClick",
+      "time" : {
+        "start" : 1645014697093,
+        "stop" : 1645014697287,
+        "duration" : 194
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645014697236,
+          "stop" : 1645014697237,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "b5b0045938371cb2",
+          "name" : "more info",
+          "source" : "b5b0045938371cb2.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645014697287,
+        "stop" : 1645014697287,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3c7c009564600723",
+        "name" : "more info",
+        "source" : "3c7c009564600723.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Double click hidden element",
+      "time" : {
+        "start" : 1645014700358,
+        "stop" : 1645014700358,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "75f280b5ae67376b",
+        "name" : "more info",
+        "source" : "75f280b5ae67376b.txt",
+        "type" : "text/plain",
+        "size" : 343
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-7"
+  }, {
+    "name" : "suite",
+    "value" : "doubleClick"
+  }, {
+    "name" : "testClass",
+    "value" : "doubleClick"
+  }, {
+    "name" : "testMethod",
+    "value" : "double click hidden element"
+  }, {
+    "name" : "package",
+    "value" : "doubleClick"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "c9ff2faab7b967f1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/218//#testresult/c9ff2faab7b967f1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645011644866,
+          "stop" : 1645011648225,
+          "duration" : 3359
+        }
+      }, {
+        "uid" : "9c96c8c4738ec05d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/9c96c8c4738ec05d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007239834,
+          "stop" : 1645007243155,
+          "duration" : 3321
+        }
+      }, {
+        "uid" : "8826490010fafca7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/214//#testresult/8826490010fafca7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007011594,
+          "stop" : 1645007014767,
+          "duration" : 3173
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d53fe09e4ed0d5d0.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
