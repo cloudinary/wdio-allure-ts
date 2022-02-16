@@ -1,0 +1,175 @@
+{
+  "uid" : "adbb4088bb3ee4bc",
+  "name" : "Check get test data from env file",
+  "fullName" : "GetTestDataFileSpec.Check get test data from env file",
+  "historyId" : "777474196f3d9b25253ed43aff49db60",
+  "time" : {
+    "start" : 1644999197889,
+    "stop" : 1644999198562,
+    "duration" : 673
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetTestDataFileSpec",
+      "time" : {
+        "start" : 1644999197891,
+        "stop" : 1644999198511,
+        "duration" : 620
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999198363,
+          "stop" : 1644999198365,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "4d38a48283aa09ec",
+          "name" : "more info",
+          "source" : "4d38a48283aa09ec.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1644999198511,
+        "stop" : 1644999198512,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ef97b363d27bd323",
+        "name" : "more info",
+        "source" : "ef97b363d27bd323.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - getData reads from file",
+      "time" : {
+        "start" : 1644999198561,
+        "stop" : 1644999198561,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2fe039b4f012e8ea",
+        "name" : "more info",
+        "source" : "2fe039b4f012e8ea.txt",
+        "type" : "text/plain",
+        "size" : 335
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-23"
+  }, {
+    "name" : "suite",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check get test data from env file"
+  }, {
+    "name" : "package",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "c1ca443daab5857b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/193//#testresult/c1ca443daab5857b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644999188323,
+          "stop" : 1644999189091,
+          "duration" : 768
+        }
+      }, {
+        "uid" : "98cccb2dcb42352a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/196//#testresult/98cccb2dcb42352a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644999085805,
+          "stop" : 1644999086744,
+          "duration" : 939
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "adbb4088bb3ee4bc.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

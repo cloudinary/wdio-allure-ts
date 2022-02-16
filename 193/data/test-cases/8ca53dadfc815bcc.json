@@ -1,0 +1,166 @@
+{
+  "uid" : "8ca53dadfc815bcc",
+  "name" : "switch to incorrect window id",
+  "fullName" : "tab actions.switch to incorrect window id",
+  "historyId" : "ca646d131971bed2c883d2aaaaf09e5",
+  "time" : {
+    "start" : 1644999230532,
+    "stop" : 1644999231074,
+    "duration" : 542
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for tab actions",
+      "time" : {
+        "start" : 1644999230532,
+        "stop" : 1644999230800,
+        "duration" : 268
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999230741,
+          "stop" : 1644999230741,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "2dcff1fffd274900",
+          "name" : "more info",
+          "source" : "2dcff1fffd274900.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1644999230801,
+        "stop" : 1644999230801,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5b98ba649c5fdde",
+        "name" : "more info",
+        "source" : "5b98ba649c5fdde.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - switch to incorrect window id throws an error",
+      "time" : {
+        "start" : 1644999231073,
+        "stop" : 1644999231074,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a40929f19123ec3c",
+        "name" : "more info",
+        "source" : "a40929f19123ec3c.txt",
+        "type" : "text/plain",
+        "size" : 146
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-46"
+  }, {
+    "name" : "suite",
+    "value" : "tab actions"
+  }, {
+    "name" : "testClass",
+    "value" : "tab actions"
+  }, {
+    "name" : "testMethod",
+    "value" : "switch to incorrect window id"
+  }, {
+    "name" : "package",
+    "value" : "tab actions"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "4735b7a3682e4b95",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/196//#testresult/4735b7a3682e4b95",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644999131022,
+          "stop" : 1644999131702,
+          "duration" : 680
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "8ca53dadfc815bcc.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

@@ -1,0 +1,238 @@
+{
+  "uid" : "c2d324807749d965",
+  "name" : "get cookie by name",
+  "fullName" : "GetCookieSpec.get cookie by name",
+  "historyId" : "e540d16838972bd2fb4d5b9c0b292f38",
+  "time" : {
+    "start" : 1644999173070,
+    "stop" : 1644999173361,
+    "duration" : 291
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetCookieSpec",
+      "time" : {
+        "start" : 1644999173070,
+        "stop" : 1644999173329,
+        "duration" : 259
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Delete cookie",
+        "time" : {
+          "start" : 1644999173070,
+          "stop" : 1644999173071,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "dc1069a71b0790a5",
+          "name" : "more info",
+          "source" : "dc1069a71b0790a5.txt",
+          "type" : "text/plain",
+          "size" : 121
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999173305,
+          "stop" : 1644999173305,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "39cb835ff39fe088",
+          "name" : "more info",
+          "source" : "39cb835ff39fe088.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "\"before each\" hook for GetCookieSpec",
+      "time" : {
+        "start" : 1644999173329,
+        "stop" : 1644999173338,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1644999173329,
+          "stop" : 1644999173330,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1662f9e93225ad7a",
+          "name" : "more info",
+          "source" : "1662f9e93225ad7a.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Set cookie",
+      "time" : {
+        "start" : 1644999173338,
+        "stop" : 1644999173338,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "cb3a01cc7eefaa93",
+        "name" : "more info",
+        "source" : "cb3a01cc7eefaa93.txt",
+        "type" : "text/plain",
+        "size" : 120
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Get cookies name",
+      "time" : {
+        "start" : 1644999173360,
+        "stop" : 1644999173361,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "af7175fdc9807c2a",
+        "name" : "more info",
+        "source" : "af7175fdc9807c2a.txt",
+        "type" : "text/plain",
+        "size" : 215
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "\"after each\" hook for GetCookieSpec",
+      "time" : {
+        "start" : 1644999173361,
+        "stop" : 1644999173375,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-18"
+  }, {
+    "name" : "suite",
+    "value" : "GetCookieSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetCookieSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "get cookie by name"
+  }, {
+    "name" : "package",
+    "value" : "GetCookieSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "41b04d97bc4b70d7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/196//#testresult/41b04d97bc4b70d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644999070729,
+          "stop" : 1644999070950,
+          "duration" : 221
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "c2d324807749d965.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

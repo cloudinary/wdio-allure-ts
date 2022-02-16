@@ -1,0 +1,166 @@
+{
+  "uid" : "5f1f22901eb3ad3f",
+  "name" : "fail on case sensitive",
+  "fullName" : "waitForText.fail on case sensitive",
+  "historyId" : "86ca9c0a6efce1a83927a6a037aee732",
+  "time" : {
+    "start" : 1644999172759,
+    "stop" : 1644999176253,
+    "duration" : 3494
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForText",
+      "time" : {
+        "start" : 1644999172760,
+        "stop" : 1644999173183,
+        "duration" : 423
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999173070,
+          "stop" : 1644999173070,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "b3207c3d36f0432e",
+          "name" : "more info",
+          "source" : "b3207c3d36f0432e.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1644999173183,
+        "stop" : 1644999173183,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a14ca643562eb881",
+        "name" : "more info",
+        "source" : "a14ca643562eb881.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Check case sensitive text",
+      "time" : {
+        "start" : 1644999176252,
+        "stop" : 1644999176253,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9c58168fbc0c0cd8",
+        "name" : "more info",
+        "source" : "9c58168fbc0c0cd8.txt",
+        "type" : "text/plain",
+        "size" : 295
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-15"
+  }, {
+    "name" : "suite",
+    "value" : "waitForText"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForText"
+  }, {
+    "name" : "testMethod",
+    "value" : "fail on case sensitive"
+  }, {
+    "name" : "package",
+    "value" : "waitForText"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "7654b08a6e34a7c6",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/196//#testresult/7654b08a6e34a7c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644999069313,
+          "stop" : 1644999072873,
+          "duration" : 3560
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "5f1f22901eb3ad3f.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
