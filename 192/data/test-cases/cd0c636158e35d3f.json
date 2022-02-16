@@ -1,0 +1,166 @@
+{
+  "uid" : "cd0c636158e35d3f",
+  "name" : "Check get test data from env file",
+  "fullName" : "GetTestDataFileSpec.Check get test data from env file",
+  "historyId" : "777474196f3d9b25253ed43aff49db60",
+  "time" : {
+    "start" : 1644999190793,
+    "stop" : 1644999191663,
+    "duration" : 870
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetTestDataFileSpec",
+      "time" : {
+        "start" : 1644999190793,
+        "stop" : 1644999191576,
+        "duration" : 783
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999191460,
+          "stop" : 1644999191462,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "4aae1c23adedfb04",
+          "name" : "more info",
+          "source" : "4aae1c23adedfb04.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1644999191577,
+        "stop" : 1644999191577,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b06591698867f881",
+        "name" : "more info",
+        "source" : "b06591698867f881.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - getData reads from file",
+      "time" : {
+        "start" : 1644999191659,
+        "stop" : 1644999191659,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4e059e0dd06660a5",
+        "name" : "more info",
+        "source" : "4e059e0dd06660a5.txt",
+        "type" : "text/plain",
+        "size" : 335
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-23"
+  }, {
+    "name" : "suite",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check get test data from env file"
+  }, {
+    "name" : "package",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "98cccb2dcb42352a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/196//#testresult/98cccb2dcb42352a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644999085805,
+          "stop" : 1644999086744,
+          "duration" : 939
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "cd0c636158e35d3f.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
