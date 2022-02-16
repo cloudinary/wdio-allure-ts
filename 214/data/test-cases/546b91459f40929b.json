@@ -1,0 +1,146 @@
+{
+  "uid" : "546b91459f40929b",
+  "name" : "add value to not existing input",
+  "fullName" : "addValue.add value to not existing input",
+  "historyId" : "d961ef7478e61cd494553507c26ea91e",
+  "time" : {
+    "start" : 1645007010937,
+    "stop" : 1645007014129,
+    "duration" : 3192
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for addValue",
+      "time" : {
+        "start" : 1645007010937,
+        "stop" : 1645007011082,
+        "duration" : 145
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645007011035,
+          "stop" : 1645007011036,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "59e335ebe75a0e52",
+          "name" : "more info",
+          "source" : "59e335ebe75a0e52.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645007011082,
+        "stop" : 1645007011083,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f29442cfd9fdc02a",
+        "name" : "more info",
+        "source" : "f29442cfd9fdc02a.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Add value to not existing input should throw an error",
+      "time" : {
+        "start" : 1645007014128,
+        "stop" : 1645007014129,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "68545977548617ad",
+        "name" : "more info",
+        "source" : "68545977548617ad.txt",
+        "type" : "text/plain",
+        "size" : 328
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "addValue"
+  }, {
+    "name" : "testClass",
+    "value" : "addValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "add value to not existing input"
+  }, {
+    "name" : "package",
+    "value" : "addValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "546b91459f40929b.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

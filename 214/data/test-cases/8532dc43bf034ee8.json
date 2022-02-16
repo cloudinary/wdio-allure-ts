@@ -1,0 +1,146 @@
+{
+  "uid" : "8532dc43bf034ee8",
+  "name" : "incorrect url",
+  "fullName" : "waitForUrl.incorrect url",
+  "historyId" : "d831416170d5153efbcf2ca6b3d4ad3b",
+  "time" : {
+    "start" : 1645007021874,
+    "stop" : 1645007025058,
+    "duration" : 3184
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForUrl",
+      "time" : {
+        "start" : 1645007021874,
+        "stop" : 1645007022004,
+        "duration" : 130
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645007021961,
+          "stop" : 1645007021961,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "8e693369db847b0b",
+          "name" : "more info",
+          "source" : "8e693369db847b0b.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645007022005,
+        "stop" : 1645007022005,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "da0450d15123c8fb",
+        "name" : "more info",
+        "source" : "da0450d15123c8fb.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for incorrect url throws an error",
+      "time" : {
+        "start" : 1645007025058,
+        "stop" : 1645007025058,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "de3749d6ab726622",
+        "name" : "more info",
+        "source" : "de3749d6ab726622.txt",
+        "type" : "text/plain",
+        "size" : 568
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-12"
+  }, {
+    "name" : "suite",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "testMethod",
+    "value" : "incorrect url"
+  }, {
+    "name" : "package",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8532dc43bf034ee8.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
