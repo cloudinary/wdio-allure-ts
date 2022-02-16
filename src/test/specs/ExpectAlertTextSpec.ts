@@ -10,14 +10,14 @@ describeCommon('waitForAlertText', () => {
     Reporter.step('Refresh browser');
     browser.refresh();
   });
-  it.skip('correct text', () => {
+  it('correct text', () => {
     Reporter.step('Click to trigger alert');
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
 
     Reporter.step('Validate alert text');
     expect(() => BrowserUtils.waitForAlertText('Hello! I am an alert box!')).to.not.throw();
   });
-  it.skip('incorrect text', () => {
+  it('incorrect text', () => {
     Reporter.step('Click to trigger alert');
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
 
@@ -28,7 +28,7 @@ describeCommon('waitForAlertText', () => {
       .contains("Incorrect alert's text or alert not found.");
   });
 
-  it.skip('no alert', () => {
+  it('no alert', () => {
     expect(() => BrowserUtils.waitForAlertText('Hello! I am an alert box!'))
       .to.throw(Error)
       .with.property('message')
