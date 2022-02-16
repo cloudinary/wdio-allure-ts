@@ -1,0 +1,166 @@
+{
+  "uid" : "59eb41bc5ab7ddbc",
+  "name" : "incorrect value",
+  "fullName" : "waitForAttributeValue.incorrect value",
+  "historyId" : "5082850fe8cfa6ea2f6216aea7cc45fd",
+  "time" : {
+    "start" : 1645011658438,
+    "stop" : 1645011662225,
+    "duration" : 3787
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForAttributeValue",
+      "time" : {
+        "start" : 1645011658438,
+        "stop" : 1645011659095,
+        "duration" : 657
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645011659036,
+          "stop" : 1645011659036,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "8708357bcbc3d99b",
+          "name" : "more info",
+          "source" : "8708357bcbc3d99b.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645011659095,
+        "stop" : 1645011659096,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3f8b1adb55569dc4",
+        "name" : "more info",
+        "source" : "3f8b1adb55569dc4.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for Incorrect attribute value throws an error",
+      "time" : {
+        "start" : 1645011662225,
+        "stop" : 1645011662225,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9d60a6db272aca34",
+        "name" : "more info",
+        "source" : "9d60a6db272aca34.txt",
+        "type" : "text/plain",
+        "size" : 821
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-11"
+  }, {
+    "name" : "suite",
+    "value" : "waitForAttributeValue"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForAttributeValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "incorrect value"
+  }, {
+    "name" : "package",
+    "value" : "waitForAttributeValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "74bc00dc61ac52bb",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/74bc00dc61ac52bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007254929,
+          "stop" : 1645007258195,
+          "duration" : 3266
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "59eb41bc5ab7ddbc.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

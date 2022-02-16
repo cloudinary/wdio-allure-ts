@@ -1,0 +1,166 @@
+{
+  "uid" : "b9c2c780ed27aa6e",
+  "name" : "incorrect css property",
+  "fullName" : "getCssProperty.incorrect css property",
+  "historyId" : "6b64c6fad9e9219db681d4350f69944f",
+  "time" : {
+    "start" : 1645011672532,
+    "stop" : 1645011672997,
+    "duration" : 465
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getCssProperty",
+      "time" : {
+        "start" : 1645011672532,
+        "stop" : 1645011672929,
+        "duration" : 397
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645011672857,
+          "stop" : 1645011672857,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "e55fe560414c8278",
+          "name" : "more info",
+          "source" : "e55fe560414c8278.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645011672929,
+        "stop" : 1645011672929,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "edb4e0cda43b3d1c",
+        "name" : "more info",
+        "source" : "edb4e0cda43b3d1c.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - get css property returns null if property incorrect",
+      "time" : {
+        "start" : 1645011672997,
+        "stop" : 1645011672997,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "472a3580d611caa3",
+        "name" : "more info",
+        "source" : "472a3580d611caa3.txt",
+        "type" : "text/plain",
+        "size" : 185
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-19"
+  }, {
+    "name" : "suite",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testClass",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testMethod",
+    "value" : "incorrect css property"
+  }, {
+    "name" : "package",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "5422c5fe1a0efbd1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/5422c5fe1a0efbd1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007303505,
+          "stop" : 1645007303651,
+          "duration" : 146
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "b9c2c780ed27aa6e.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

@@ -1,0 +1,175 @@
+{
+  "uid" : "eff19cf016565e74",
+  "name" : "incorrect url",
+  "fullName" : "waitForUrl.incorrect url",
+  "historyId" : "d831416170d5153efbcf2ca6b3d4ad3b",
+  "time" : {
+    "start" : 1645011657972,
+    "stop" : 1645011661672,
+    "duration" : 3700
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForUrl",
+      "time" : {
+        "start" : 1645011657972,
+        "stop" : 1645011658537,
+        "duration" : 565
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645011658407,
+          "stop" : 1645011658407,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d199901378c619d5",
+          "name" : "more info",
+          "source" : "d199901378c619d5.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645011658537,
+        "stop" : 1645011658537,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a671211302add8d9",
+        "name" : "more info",
+        "source" : "a671211302add8d9.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for incorrect url throws an error",
+      "time" : {
+        "start" : 1645011661671,
+        "stop" : 1645011661672,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "578d79c65b38d942",
+        "name" : "more info",
+        "source" : "578d79c65b38d942.txt",
+        "type" : "text/plain",
+        "size" : 568
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-12"
+  }, {
+    "name" : "suite",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "testMethod",
+    "value" : "incorrect url"
+  }, {
+    "name" : "package",
+    "value" : "waitForUrl"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "e740243c2c915e3d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/e740243c2c915e3d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007264884,
+          "stop" : 1645007268104,
+          "duration" : 3220
+        }
+      }, {
+        "uid" : "8532dc43bf034ee8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/214//#testresult/8532dc43bf034ee8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007021874,
+          "stop" : 1645007025058,
+          "duration" : 3184
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "eff19cf016565e74.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
