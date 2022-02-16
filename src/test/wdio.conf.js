@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const { Reporter } = require('../index');
 dotenv.config();
 
-const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
+const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 2;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 /**
  * Default configurations for wdio-allure-ts based projects
