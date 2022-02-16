@@ -1,0 +1,208 @@
+{
+  "uid" : "a34b955c5dc81bfb",
+  "name" : "back browser",
+  "fullName" : "BackSpec.back browser",
+  "historyId" : "93b9e57ff17382ed19ae8edba075c682",
+  "time" : {
+    "start" : 1645007626838,
+    "stop" : 1645007631882,
+    "duration" : 5044
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for BackSpec",
+      "time" : {
+        "start" : 1645007626839,
+        "stop" : 1645007627446,
+        "duration" : 607
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645007627348,
+          "stop" : 1645007627352,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c2a9c0926aa38137",
+          "name" : "more info",
+          "source" : "c2a9c0926aa38137.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true,
+        "stepsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 1
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645007627446,
+        "stop" : 1645007627447,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "70eddfaa710f4efd",
+        "name" : "more info",
+        "source" : "70eddfaa710f4efd.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "[STEP] - Click navigation button",
+      "time" : {
+        "start" : 1645007631306,
+        "stop" : 1645007631306,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "13145831c2e2ec30",
+        "name" : "more info",
+        "source" : "13145831c2e2ec30.txt",
+        "type" : "text/plain",
+        "size" : 52
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "[STEP] - Click back button",
+      "time" : {
+        "start" : 1645007631838,
+        "stop" : 1645007631838,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "28ed138afb89c79a",
+        "name" : "more info",
+        "source" : "28ed138afb89c79a.txt",
+        "type" : "text/plain",
+        "size" : 101
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "[STEP] - Validate url is http://127.0.0.1:8000/",
+      "time" : {
+        "start" : 1645007631881,
+        "stop" : 1645007631882,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c66bb5b1233ff217",
+        "name" : "more info",
+        "source" : "c66bb5b1233ff217.txt",
+        "type" : "text/plain",
+        "size" : 67
+      } ],
+      "parameters" : [ ],
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 6
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-2"
+  }, {
+    "name" : "suite",
+    "value" : "BackSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "BackSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "back browser"
+  }, {
+    "name" : "package",
+    "value" : "BackSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "c6b24fbacbd5d574",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/c6b24fbacbd5d574",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007219702,
+          "stop" : 1645007221866,
+          "duration" : 2164
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a34b955c5dc81bfb.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
