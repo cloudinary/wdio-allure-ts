@@ -27,7 +27,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-      - run: java -cp java HelloWorldApp
+      - run: java --version
 
       - name: Install packages
         run: yarn install
