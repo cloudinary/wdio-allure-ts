@@ -1,0 +1,184 @@
+{
+  "uid" : "e42aa512c6620807",
+  "name" : "add value to disabled input",
+  "fullName" : "addValue.add value to disabled input",
+  "historyId" : "f434a3291707e0898157ff37762d9ed3",
+  "time" : {
+    "start" : 1644999149550,
+    "stop" : 1644999153601,
+    "duration" : 4051
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for addValue",
+      "time" : {
+        "start" : 1644999149550,
+        "stop" : 1644999150302,
+        "duration" : 752
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999150235,
+          "stop" : 1644999150235,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "9d9e31ca84449652",
+          "name" : "more info",
+          "source" : "9d9e31ca84449652.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1644999150302,
+        "stop" : 1644999150303,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "509778d1832a24ab",
+        "name" : "more info",
+        "source" : "509778d1832a24ab.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Add value to disable input should throw an error",
+      "time" : {
+        "start" : 1644999153601,
+        "stop" : 1644999153601,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e5f9378e0455af89",
+        "name" : "more info",
+        "source" : "e5f9378e0455af89.txt",
+        "type" : "text/plain",
+        "size" : 365
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "addValue"
+  }, {
+    "name" : "testClass",
+    "value" : "addValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "add value to disabled input"
+  }, {
+    "name" : "package",
+    "value" : "addValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "9c44e0bdffce2ed5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/196//#testresult/9c44e0bdffce2ed5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644999047007,
+          "stop" : 1644999051107,
+          "duration" : 4100
+        }
+      }, {
+        "uid" : "f73b509d681d3c99",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/198//#testresult/f73b509d681d3c99",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644996288835,
+          "stop" : 1644996292247,
+          "duration" : 3412
+        }
+      }, {
+        "uid" : "a58bc66e258fdfc6",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/197//#testresult/a58bc66e258fdfc6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644932115449,
+          "stop" : 1644932118804,
+          "duration" : 3355
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "e42aa512c6620807.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
