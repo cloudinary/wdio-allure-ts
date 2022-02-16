@@ -1,0 +1,226 @@
+{
+  "uid" : "ad6e122df08c844e",
+  "name" : "Switch to iframe, header text at iFrame 2",
+  "fullName" : "switchToIframe.Switch to iframe, header text at iFrame 2",
+  "historyId" : "13d5ae9dfbd1fae719fa55e820db01c0",
+  "time" : {
+    "start" : 1645016010612,
+    "stop" : 1645016011760,
+    "duration" : 1148
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for switchToIframe",
+      "time" : {
+        "start" : 1645016010622,
+        "stop" : 1645016011254,
+        "duration" : 632
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645016011157,
+          "stop" : 1645016011158,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "fb8df5d9346239c0",
+          "name" : "more info",
+          "source" : "fb8df5d9346239c0.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645016011254,
+        "stop" : 1645016011279,
+        "duration" : 25
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2cfdd8876425f286",
+        "name" : "more info",
+        "source" : "2cfdd8876425f286.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate frame 2 not displayed",
+      "time" : {
+        "start" : 1645016011370,
+        "stop" : 1645016011370,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "248b4ad5f168392f",
+        "name" : "more info",
+        "source" : "248b4ad5f168392f.txt",
+        "type" : "text/plain",
+        "size" : 149
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - switch to frame 2",
+      "time" : {
+        "start" : 1645016011601,
+        "stop" : 1645016011601,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "37f788a0114e510",
+        "name" : "more info",
+        "source" : "37f788a0114e510.txt",
+        "type" : "text/plain",
+        "size" : 289
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate frame 2 displayed",
+      "time" : {
+        "start" : 1645016011759,
+        "stop" : 1645016011760,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "eb157b66e8734b1a",
+        "name" : "more info",
+        "source" : "eb157b66e8734b1a.txt",
+        "type" : "text/plain",
+        "size" : 55
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-45"
+  }, {
+    "name" : "suite",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "testClass",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "testMethod",
+    "value" : "Switch to iframe, header text at iFrame 2"
+  }, {
+    "name" : "package",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "4c2edc4390e98588",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/225//#testresult/4c2edc4390e98588",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645015764546,
+          "stop" : 1645015765512,
+          "duration" : 966
+        }
+      }, {
+        "uid" : "7a58910614b71ac7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/218//#testresult/7a58910614b71ac7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645011721832,
+          "stop" : 1645011722948,
+          "duration" : 1116
+        }
+      }, {
+        "uid" : "6b616b89f08df5c5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/6b616b89f08df5c5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007389714,
+          "stop" : 1645007390188,
+          "duration" : 474
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "ad6e122df08c844e.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

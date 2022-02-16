@@ -1,0 +1,226 @@
+{
+  "uid" : "1893a3f70db099c1",
+  "name" : "Outside iframe context not accessible after switch",
+  "fullName" : "switchToIframe.Outside iframe context not accessible after switch",
+  "historyId" : "a9fc5ceb1ccd7f60a01dc4593671ee1",
+  "time" : {
+    "start" : 1645016015640,
+    "stop" : 1645016019268,
+    "duration" : 3628
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for switchToIframe",
+      "time" : {
+        "start" : 1645016015640,
+        "stop" : 1645016016031,
+        "duration" : 391
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645016015983,
+          "stop" : 1645016015984,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "dbbd44873e738377",
+          "name" : "more info",
+          "source" : "dbbd44873e738377.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645016016031,
+        "stop" : 1645016016031,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d875144cb3789287",
+        "name" : "more info",
+        "source" : "d875144cb3789287.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate element not in frames displayed",
+      "time" : {
+        "start" : 1645016016099,
+        "stop" : 1645016016099,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "750e2f62eb2085b2",
+        "name" : "more info",
+        "source" : "750e2f62eb2085b2.txt",
+        "type" : "text/plain",
+        "size" : 165
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Switch to frame 1",
+      "time" : {
+        "start" : 1645016016221,
+        "stop" : 1645016016221,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a5e441d720df84b9",
+        "name" : "more info",
+        "source" : "a5e441d720df84b9.txt",
+        "type" : "text/plain",
+        "size" : 289
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate switched to frame 1",
+      "time" : {
+        "start" : 1645016019268,
+        "stop" : 1645016019268,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b39936158b73be03",
+        "name" : "more info",
+        "source" : "b39936158b73be03.txt",
+        "type" : "text/plain",
+        "size" : 57
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-45"
+  }, {
+    "name" : "suite",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "testClass",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "testMethod",
+    "value" : "Outside iframe context not accessible after switch"
+  }, {
+    "name" : "package",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "f06c905ddc421444",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/225//#testresult/f06c905ddc421444",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645015769321,
+          "stop" : 1645015773110,
+          "duration" : 3789
+        }
+      }, {
+        "uid" : "3af02bc28fd06d51",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/218//#testresult/3af02bc28fd06d51",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645011726669,
+          "stop" : 1645011730095,
+          "duration" : 3426
+        }
+      }, {
+        "uid" : "2c1a58eac1dad788",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/2c1a58eac1dad788",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007393632,
+          "stop" : 1645007396845,
+          "duration" : 3213
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1893a3f70db099c1.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
