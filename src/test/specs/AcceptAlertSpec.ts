@@ -6,7 +6,7 @@ const TEST_FIELD_SELECTOR: string = "//*[@id='AcceptAlert']";
 const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='trigger-alert']`;
 
 describeCommon('acceptAlert', () => {
-  it('accept existing alert', () => {
+  it.skip('accept existing alert', () => {
     Reporter.step(`Click on trigger alert button`);
     $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
 
@@ -14,7 +14,7 @@ describeCommon('acceptAlert', () => {
     BrowserUtils.acceptAlert();
   });
 
-  it('no alert', () => {
+  it.skip('no alert', () => {
     Reporter.step('Validate failure to accept not existing alert');
     expect(() => BrowserUtils.acceptAlert())
       .to.throw(Error)
