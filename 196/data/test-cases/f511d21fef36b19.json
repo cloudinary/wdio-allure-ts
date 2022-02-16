@@ -1,0 +1,187 @@
+{
+  "uid" : "f511d21fef36b19",
+  "name" : "successful execution",
+  "fullName" : "execute.successful execution",
+  "historyId" : "cf541aa73428b6e4d196dc755057e5c7",
+  "time" : {
+    "start" : 1644999042964,
+    "stop" : 1644999044815,
+    "duration" : 1851
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for execute",
+      "time" : {
+        "start" : 1644999042978,
+        "stop" : 1644999044454,
+        "duration" : 1476
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999044177,
+          "stop" : 1644999044179,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "cf2f6005e2b3c4bc",
+          "name" : "more info",
+          "source" : "cf2f6005e2b3c4bc.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1644999044454,
+        "stop" : 1644999044455,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d91d64f2bb413675",
+        "name" : "more info",
+        "source" : "d91d64f2bb413675.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Execute a script",
+      "time" : {
+        "start" : 1644999044506,
+        "stop" : 1644999044506,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2a7b8bf5ead926e4",
+        "name" : "more info",
+        "source" : "2a7b8bf5ead926e4.txt",
+        "type" : "text/plain",
+        "size" : 152
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate script execution",
+      "time" : {
+        "start" : 1644999044814,
+        "stop" : 1644999044815,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "afd60f60f9837950",
+        "name" : "more info",
+        "source" : "afd60f60f9837950.txt",
+        "type" : "text/plain",
+        "size" : 54
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-9"
+  }, {
+    "name" : "suite",
+    "value" : "execute"
+  }, {
+    "name" : "testClass",
+    "value" : "execute"
+  }, {
+    "name" : "testMethod",
+    "value" : "successful execution"
+  }, {
+    "name" : "package",
+    "value" : "execute"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "579d7e8dbccf1d67",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/198//#testresult/579d7e8dbccf1d67",
+        "status" : "passed",
+        "time" : {
+          "start" : 1644996291432,
+          "stop" : 1644996291783,
+          "duration" : 351
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "f511d21fef36b19.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}

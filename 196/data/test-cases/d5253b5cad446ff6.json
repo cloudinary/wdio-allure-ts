@@ -1,0 +1,146 @@
+{
+  "uid" : "d5253b5cad446ff6",
+  "name" : "fail on wrong text",
+  "fullName" : "waitForText.fail on wrong text",
+  "historyId" : "657d3edc1d844aa55793f7e0bd36c2d8",
+  "time" : {
+    "start" : 1644999072873,
+    "stop" : 1644999076304,
+    "duration" : 3431
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForText",
+      "time" : {
+        "start" : 1644999072873,
+        "stop" : 1644999073226,
+        "duration" : 353
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1644999073175,
+          "stop" : 1644999073175,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "323f0b0afc70158e",
+          "name" : "more info",
+          "source" : "323f0b0afc70158e.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1644999073226,
+        "stop" : 1644999073227,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a95d522e79c16e66",
+        "name" : "more info",
+        "source" : "a95d522e79c16e66.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - wait for incorrect text throw an error",
+      "time" : {
+        "start" : 1644999076304,
+        "stop" : 1644999076304,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9e17bc388f361120",
+        "name" : "more info",
+        "source" : "9e17bc388f361120.txt",
+        "type" : "text/plain",
+        "size" : 312
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-15"
+  }, {
+    "name" : "suite",
+    "value" : "waitForText"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForText"
+  }, {
+    "name" : "testMethod",
+    "value" : "fail on wrong text"
+  }, {
+    "name" : "package",
+    "value" : "waitForText"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d5253b5cad446ff6.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
