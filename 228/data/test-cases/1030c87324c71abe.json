@@ -1,0 +1,232 @@
+{
+  "uid" : "1030c87324c71abe",
+  "name" : "fail to scroll",
+  "fullName" : "scrollTo.fail to scroll",
+  "historyId" : "ce933e3709f1ce9ed8bae76a0d767fe4",
+  "time" : {
+    "start" : 1645105372106,
+    "stop" : 1645105376502,
+    "duration" : 4396
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for scrollTo",
+      "time" : {
+        "start" : 1645105372106,
+        "stop" : 1645105372857,
+        "duration" : 751
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645105372773,
+          "stop" : 1645105372773,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c3b4222c4baa2e6c",
+          "name" : "more info",
+          "source" : "c3b4222c4baa2e6c.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645105372857,
+        "stop" : 1645105372858,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f64f5abaa0670840",
+        "name" : "more info",
+        "source" : "f64f5abaa0670840.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - validate element not displayed",
+      "time" : {
+        "start" : 1645105372986,
+        "stop" : 1645105372986,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e37e857fb08d5a76",
+        "name" : "more info",
+        "source" : "e37e857fb08d5a76.txt",
+        "type" : "text/plain",
+        "size" : 59
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - scroll to not existing element throws an error",
+      "time" : {
+        "start" : 1645105376502,
+        "stop" : 1645105376502,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4e2a22e6c5f15fd",
+        "name" : "more info",
+        "source" : "4e2a22e6c5f15fd.txt",
+        "type" : "text/plain",
+        "size" : 3105
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-38"
+  }, {
+    "name" : "suite",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testClass",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testMethod",
+    "value" : "fail to scroll"
+  }, {
+    "name" : "package",
+    "value" : "scrollTo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.80"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "1927d89a241f9762",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/227//#testresult/1927d89a241f9762",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645104278710,
+          "stop" : 1645104282825,
+          "duration" : 4115
+        }
+      }, {
+        "uid" : "d391df160b55a744",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/226//#testresult/d391df160b55a744",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645097119968,
+          "stop" : 1645097124019,
+          "duration" : 4051
+        }
+      }, {
+        "uid" : "dced06a658d4a2ae",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/225//#testresult/dced06a658d4a2ae",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645015998582,
+          "stop" : 1645016002442,
+          "duration" : 3860
+        }
+      }, {
+        "uid" : "222cbc302d6c20bb",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/225//#testresult/222cbc302d6c20bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645015751792,
+          "stop" : 1645015755663,
+          "duration" : 3871
+        }
+      }, {
+        "uid" : "2cd7dfa9673aa77c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/218//#testresult/2cd7dfa9673aa77c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645011711846,
+          "stop" : 1645011715856,
+          "duration" : 4010
+        }
+      }, {
+        "uid" : "a810da8575e278df",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/215//#testresult/a810da8575e278df",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645007365755,
+          "stop" : 1645007369078,
+          "duration" : 3323
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1030c87324c71abe.json",
+  "parameterValues" : [ "chrome-98.0.4758.80" ]
+}
