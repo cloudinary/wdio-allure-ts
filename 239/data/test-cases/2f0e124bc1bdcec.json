@@ -1,0 +1,167 @@
+{
+  "uid" : "2f0e124bc1bdcec",
+  "name" : "fail to scroll",
+  "fullName" : "scrollTo.fail to scroll",
+  "historyId" : "46f0ce7f198de913a74a437b18b79326",
+  "time" : {
+    "start" : 1645528252994,
+    "stop" : 1645528257127,
+    "duration" : 4133
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for scrollTo",
+      "time" : {
+        "start" : 1645528252994,
+        "stop" : 1645528253532,
+        "duration" : 538
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645528253455,
+          "stop" : 1645528253455,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "9fd503522faf3f21",
+          "name" : "more info",
+          "source" : "9fd503522faf3f21.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645528253533,
+        "stop" : 1645528253533,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "dce82fcaeaea343f",
+        "name" : "more info",
+        "source" : "dce82fcaeaea343f.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - validate element not displayed",
+      "time" : {
+        "start" : 1645528253632,
+        "stop" : 1645528253632,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d48a6b7a04b9377a",
+        "name" : "more info",
+        "source" : "d48a6b7a04b9377a.txt",
+        "type" : "text/plain",
+        "size" : 59
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - scroll to not existing element throws an error",
+      "time" : {
+        "start" : 1645528257127,
+        "stop" : 1645528257127,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c9029510066985e3",
+        "name" : "more info",
+        "source" : "c9029510066985e3.txt",
+        "type" : "text/plain",
+        "size" : 2867
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-38"
+  }, {
+    "name" : "suite",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testClass",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testMethod",
+    "value" : "fail to scroll"
+  }, {
+    "name" : "package",
+    "value" : "scrollTo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2f0e124bc1bdcec.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
