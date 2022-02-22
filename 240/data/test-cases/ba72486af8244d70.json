@@ -1,0 +1,166 @@
+{
+  "uid" : "ba72486af8244d70",
+  "name" : "add value to not existing input",
+  "fullName" : "addValue.add value to not existing input",
+  "historyId" : "ec4a8f4f0539cdaa8a90dae994d63be5",
+  "time" : {
+    "start" : 1645534789227,
+    "stop" : 1645534792607,
+    "duration" : 3380
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for addValue",
+      "time" : {
+        "start" : 1645534789227,
+        "stop" : 1645534789528,
+        "duration" : 301
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645534789487,
+          "stop" : 1645534789487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "afe1d26ea1e4c271",
+          "name" : "more info",
+          "source" : "afe1d26ea1e4c271.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645534789528,
+        "stop" : 1645534789528,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "942f5c824d709a7e",
+        "name" : "more info",
+        "source" : "942f5c824d709a7e.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Add value to not existing input should throw an error",
+      "time" : {
+        "start" : 1645534792606,
+        "stop" : 1645534792607,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f22ac2e92e6e1550",
+        "name" : "more info",
+        "source" : "f22ac2e92e6e1550.txt",
+        "type" : "text/plain",
+        "size" : 328
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "addValue"
+  }, {
+    "name" : "testClass",
+    "value" : "addValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "add value to not existing input"
+  }, {
+    "name" : "package",
+    "value" : "addValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "f84a36574663523e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/f84a36574663523e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528196468,
+          "stop" : 1645528199825,
+          "duration" : 3357
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "ba72486af8244d70.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

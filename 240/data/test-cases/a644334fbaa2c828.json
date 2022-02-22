@@ -1,0 +1,166 @@
+{
+  "uid" : "a644334fbaa2c828",
+  "name" : "get number of not existing elements",
+  "fullName" : "getNumberOfElements.get number of not existing elements",
+  "historyId" : "906ef74ed991cea45594ca7b5009c1ea",
+  "time" : {
+    "start" : 1645534819082,
+    "stop" : 1645534819480,
+    "duration" : 398
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getNumberOfElements",
+      "time" : {
+        "start" : 1645534819083,
+        "stop" : 1645534819408,
+        "duration" : 325
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645534819370,
+          "stop" : 1645534819370,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "3caa3f4a7917bffe",
+          "name" : "more info",
+          "source" : "3caa3f4a7917bffe.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645534819408,
+        "stop" : 1645534819409,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c9e544c6bc99309d",
+        "name" : "more info",
+        "source" : "c9e544c6bc99309d.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate return value of getNumberOfElements when elements not exists",
+      "time" : {
+        "start" : 1645534819480,
+        "stop" : 1645534819480,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "13b72d5d7e91d1dd",
+        "name" : "more info",
+        "source" : "13b72d5d7e91d1dd.txt",
+        "type" : "text/plain",
+        "size" : 234
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-22"
+  }, {
+    "name" : "suite",
+    "value" : "getNumberOfElements"
+  }, {
+    "name" : "testClass",
+    "value" : "getNumberOfElements"
+  }, {
+    "name" : "testMethod",
+    "value" : "get number of not existing elements"
+  }, {
+    "name" : "package",
+    "value" : "getNumberOfElements"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "b577c8f6736e4707",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/b577c8f6736e4707",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528222710,
+          "stop" : 1645528223032,
+          "duration" : 322
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a644334fbaa2c828.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
