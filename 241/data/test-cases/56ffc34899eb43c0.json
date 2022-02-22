@@ -1,0 +1,217 @@
+{
+  "uid" : "56ffc34899eb43c0",
+  "name" : "fail to scroll",
+  "fullName" : "scrollTo.fail to scroll",
+  "historyId" : "46f0ce7f198de913a74a437b18b79326",
+  "time" : {
+    "start" : 1645552602728,
+    "stop" : 1645552606639,
+    "duration" : 3911
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for scrollTo",
+      "time" : {
+        "start" : 1645552602728,
+        "stop" : 1645552603128,
+        "duration" : 400
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1645552603096,
+          "stop" : 1645552603096,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1a45356485545949",
+          "name" : "more info",
+          "source" : "1a45356485545949.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1645552603128,
+        "stop" : 1645552603128,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "840754f641026e35",
+        "name" : "more info",
+        "source" : "840754f641026e35.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - validate element not displayed",
+      "time" : {
+        "start" : 1645552603215,
+        "stop" : 1645552603215,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4a00d3dabf1180eb",
+        "name" : "more info",
+        "source" : "4a00d3dabf1180eb.txt",
+        "type" : "text/plain",
+        "size" : 59
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - scroll to not existing element throws an error",
+      "time" : {
+        "start" : 1645552606638,
+        "stop" : 1645552606638,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5dd725b37cae435f",
+        "name" : "more info",
+        "source" : "5dd725b37cae435f.txt",
+        "type" : "text/plain",
+        "size" : 3105
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get number of elements by selector '//*[@id='ScrollToElement']//*[@id='scroll-content']//*[@id='div-item']'",
+      "time" : {
+        "start" : 1645552606650,
+        "stop" : 1645552606650,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d96a39f2755c09e0",
+        "name" : "more info",
+        "source" : "d96a39f2755c09e0.txt",
+        "type" : "text/plain",
+        "size" : 135
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-38"
+  }, {
+    "name" : "suite",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testClass",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testMethod",
+    "value" : "fail to scroll"
+  }, {
+    "name" : "package",
+    "value" : "scrollTo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "8db42ea68dbcd739",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/8db42ea68dbcd739",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534848698,
+          "stop" : 1645534852870,
+          "duration" : 4172
+        }
+      }, {
+        "uid" : "2f0e124bc1bdcec",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/2f0e124bc1bdcec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528252994,
+          "stop" : 1645528257127,
+          "duration" : 4133
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "56ffc34899eb43c0.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
