@@ -24,8 +24,8 @@ jobs:
           node-version: 14.15.1
 
       - name: install chrome
-      - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
+        uses: browser-actions/setup-chrome@latest
+        run: chrome --version
 
       - name: Install packages
         run: yarn install
