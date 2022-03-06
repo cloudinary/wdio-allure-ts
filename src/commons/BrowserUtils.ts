@@ -286,10 +286,10 @@ export namespace BrowserUtils {
    * Return true if the selected DOM-element is displayed
    * @param selector - element selector
    */
-  export function isDisplayed(selector: string): boolean {
+  export async function isDisplayed(selector: string): Promise<boolean> {
     Reporter.debug(`Is element visible by '${selector}'`);
 
-    return $(selector).isDisplayed();
+    return await $(selector).isDisplayed();
   }
 
   /**
