@@ -1,0 +1,209 @@
+{
+  "uid" : "1b17c28537702938",
+  "name" : "Incorrect iframe selector",
+  "fullName" : "switchToIframe.Incorrect iframe selector",
+  "historyId" : "5f66e846c9de28e962d917ec492048cd",
+  "time" : {
+    "start" : 1646659265680,
+    "stop" : 1646659269160,
+    "duration" : 3480
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for switchToIframe",
+      "time" : {
+        "start" : 1646659265692,
+        "stop" : 1646659265949,
+        "duration" : 257
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646659265918,
+          "stop" : 1646659265919,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "2668626a2dbc01bb",
+          "name" : "more info",
+          "source" : "2668626a2dbc01bb.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646659269160,
+        "stop" : 1646659269160,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a4a8e0234b30af7b",
+        "name" : "more info",
+        "source" : "a4a8e0234b30af7b.txt",
+        "type" : "text/plain",
+        "size" : 312
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-45"
+  }, {
+    "name" : "suite",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "testClass",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "testMethod",
+    "value" : "Incorrect iframe selector"
+  }, {
+    "name" : "package",
+    "value" : "switchToIframe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 8,
+        "unknown" : 0,
+        "total" : 9
+      },
+      "items" : [ {
+        "uid" : "271d06d610218d17",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/271d06d610218d17",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646658929053,
+          "stop" : 1646658929144,
+          "duration" : 91
+        }
+      }, {
+        "uid" : "73d622f124e2a670",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/73d622f124e2a670",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658691166,
+          "stop" : 1646658694712,
+          "duration" : 3546
+        }
+      }, {
+        "uid" : "240188c47104dfcf",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/240188c47104dfcf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658615572,
+          "stop" : 1646658619080,
+          "duration" : 3508
+        }
+      }, {
+        "uid" : "554feb0ac44fd182",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/554feb0ac44fd182",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658257375,
+          "stop" : 1646658260988,
+          "duration" : 3613
+        }
+      }, {
+        "uid" : "19646cd9e6e18346",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/19646cd9e6e18346",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657852376,
+          "stop" : 1646657856053,
+          "duration" : 3677
+        }
+      }, {
+        "uid" : "874b5fc50dfef756",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/874b5fc50dfef756",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552622288,
+          "stop" : 1645552625668,
+          "duration" : 3380
+        }
+      }, {
+        "uid" : "bfb9727b386142d3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/bfb9727b386142d3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534867090,
+          "stop" : 1645534870351,
+          "duration" : 3261
+        }
+      }, {
+        "uid" : "e37c7fd8b24d8e3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/e37c7fd8b24d8e3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528269495,
+          "stop" : 1645528272993,
+          "duration" : 3498
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1b17c28537702938.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
