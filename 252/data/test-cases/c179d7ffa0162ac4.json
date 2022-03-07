@@ -1,0 +1,202 @@
+{
+  "uid" : "c179d7ffa0162ac4",
+  "name" : "select by none existing value",
+  "fullName" : "selectByValue.select by none existing value",
+  "historyId" : "ab401437477c137a018b1ba9d18f7d0e",
+  "time" : {
+    "start" : 1646658599734,
+    "stop" : 1646658600703,
+    "duration" : 969
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for selectByValue",
+      "time" : {
+        "start" : 1646658599735,
+        "stop" : 1646658600249,
+        "duration" : 514
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646658600204,
+          "stop" : 1646658600205,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "73a46789f3d2dff1",
+          "name" : "more info",
+          "source" : "73a46789f3d2dff1.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646658600264,
+        "stop" : 1646658600264,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "fffbda93ff183640",
+        "name" : "more info",
+        "source" : "fffbda93ff183640.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Select by not existing attribute value throws an error",
+      "time" : {
+        "start" : 1646658600703,
+        "stop" : 1646658600703,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3d26f87fd7deba96",
+        "name" : "more info",
+        "source" : "3d26f87fd7deba96.txt",
+        "type" : "text/plain",
+        "size" : 400
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-40"
+  }, {
+    "name" : "suite",
+    "value" : "selectByValue"
+  }, {
+    "name" : "testClass",
+    "value" : "selectByValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "select by none existing value"
+  }, {
+    "name" : "package",
+    "value" : "selectByValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "75d69e1cb4454c05",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/75d69e1cb4454c05",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658236826,
+          "stop" : 1646658237961,
+          "duration" : 1135
+        }
+      }, {
+        "uid" : "a7b46c114a5c9aa1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/a7b46c114a5c9aa1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657835852,
+          "stop" : 1646657837009,
+          "duration" : 1157
+        }
+      }, {
+        "uid" : "fa8bb7f79c3b2603",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/fa8bb7f79c3b2603",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552604798,
+          "stop" : 1645552605718,
+          "duration" : 920
+        }
+      }, {
+        "uid" : "94906825b87041c7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/94906825b87041c7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534850696,
+          "stop" : 1645534851581,
+          "duration" : 885
+        }
+      }, {
+        "uid" : "9ce56e6c1d04f5e1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/9ce56e6c1d04f5e1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528253180,
+          "stop" : 1645528254402,
+          "duration" : 1222
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "c179d7ffa0162ac4.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

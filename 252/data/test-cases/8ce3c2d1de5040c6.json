@@ -1,0 +1,223 @@
+{
+  "uid" : "8ce3c2d1de5040c6",
+  "name" : "dismiss existing alert",
+  "fullName" : "dismissAlert.dismiss existing alert",
+  "historyId" : "5e5f0daf77d7ae191bfaa657384bc5e8",
+  "time" : {
+    "start" : 1646658533428,
+    "stop" : 1646658535163,
+    "duration" : 1735
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for dismissAlert",
+      "time" : {
+        "start" : 1646658533429,
+        "stop" : 1646658534684,
+        "duration" : 1255
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646658534377,
+          "stop" : 1646658534379,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "63bf0b4212c788de",
+          "name" : "more info",
+          "source" : "63bf0b4212c788de.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646658534684,
+        "stop" : 1646658534684,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8b6b35f6c973767d",
+        "name" : "more info",
+        "source" : "8b6b35f6c973767d.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Click button to trigger alert",
+      "time" : {
+        "start" : 1646658535015,
+        "stop" : 1646658535015,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5bdc8ca3d9846565",
+        "name" : "more info",
+        "source" : "5bdc8ca3d9846565.txt",
+        "type" : "text/plain",
+        "size" : 58
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Dismiss alert",
+      "time" : {
+        "start" : 1646658535163,
+        "stop" : 1646658535163,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2bfd9a9a47f8ea64",
+        "name" : "more info",
+        "source" : "2bfd9a9a47f8ea64.txt",
+        "type" : "text/plain",
+        "size" : 85
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-6"
+  }, {
+    "name" : "suite",
+    "value" : "dismissAlert"
+  }, {
+    "name" : "testClass",
+    "value" : "dismissAlert"
+  }, {
+    "name" : "testMethod",
+    "value" : "dismiss existing alert"
+  }, {
+    "name" : "package",
+    "value" : "dismissAlert"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "3af8abf6953f04bd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/3af8abf6953f04bd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658147092,
+          "stop" : 1646658149570,
+          "duration" : 2478
+        }
+      }, {
+        "uid" : "4a8fa90b8a6b4273",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/4a8fa90b8a6b4273",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657763108,
+          "stop" : 1646657765114,
+          "duration" : 2006
+        }
+      }, {
+        "uid" : "f22fe18fd204f9c1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/f22fe18fd204f9c1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552537960,
+          "stop" : 1645552539758,
+          "duration" : 1798
+        }
+      }, {
+        "uid" : "678ab4c1ba954cb7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/678ab4c1ba954cb7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534780996,
+          "stop" : 1645534782991,
+          "duration" : 1995
+        }
+      }, {
+        "uid" : "bfc67973801eb88b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/bfc67973801eb88b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528188753,
+          "stop" : 1645528190529,
+          "duration" : 1776
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "8ce3c2d1de5040c6.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
