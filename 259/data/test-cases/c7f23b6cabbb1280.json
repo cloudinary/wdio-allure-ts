@@ -1,0 +1,261 @@
+{
+  "uid" : "c7f23b6cabbb1280",
+  "name" : "get element size",
+  "fullName" : "getSizeSpec.get element size",
+  "historyId" : "36f43e943611c9a3e2ffd243005ccd86",
+  "time" : {
+    "start" : 1646683778122,
+    "stop" : 1646683779020,
+    "duration" : 898
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "window width: expected undefined to equal 250      \n                      actual expected\n                      \n                      undefined250\n                      ",
+  "statusTrace" : "AssertionError: window width: expected undefined to equal 250\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetElementSizeSpec.ts:19:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "window width: expected undefined to equal 250      \n                      actual expected\n                      \n                      undefined250\n                      ",
+    "statusTrace" : "AssertionError: window width: expected undefined to equal 250\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetElementSizeSpec.ts:19:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getSizeSpec",
+      "time" : {
+        "start" : 1646683778122,
+        "stop" : 1646683778788,
+        "duration" : 666
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646683778636,
+          "stop" : 1646683778638,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "8970ee91deedb55",
+          "name" : "more info",
+          "source" : "8970ee91deedb55.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646683778789,
+        "stop" : 1646683778793,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "aafde1f361386526",
+        "name" : "more info",
+        "source" : "aafde1f361386526.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "42d6574203eb7c21",
+      "name" : "Browser console logs",
+      "source" : "42d6574203eb7c21.json",
+      "type" : "application/json",
+      "size" : 2
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-21"
+  }, {
+    "name" : "suite",
+    "value" : "getSizeSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "getSizeSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "get element size"
+  }, {
+    "name" : "package",
+    "value" : "getSizeSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "7409ee4e657faa78",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/7409ee4e657faa78",
+        "status" : "failed",
+        "statusDetails" : "window width: expected undefined to equal 250      \n                      actual expected\n                      \n                      undefined250\n                      ",
+        "time" : {
+          "start" : 1646681385745,
+          "stop" : 1646681386778,
+          "duration" : 1033
+        }
+      }, {
+        "uid" : "bab9acca7ff85105",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/bab9acca7ff85105",
+        "status" : "failed",
+        "statusDetails" : "window width: expected undefined to equal 250      \n                      actual expected\n                      \n                      undefined250\n                      ",
+        "time" : {
+          "start" : 1646681343476,
+          "stop" : 1646681344567,
+          "duration" : 1091
+        }
+      }, {
+        "uid" : "8d861a499000d991",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/8d861a499000d991",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659229122,
+          "stop" : 1646659230114,
+          "duration" : 992
+        }
+      }, {
+        "uid" : "40bce5215e655c2c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/40bce5215e655c2c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659204845,
+          "stop" : 1646659205752,
+          "duration" : 907
+        }
+      }, {
+        "uid" : "52aeca6b0dca47f7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/52aeca6b0dca47f7",
+        "status" : "failed",
+        "statusDetails" : "window width: expected undefined to equal 250      \n                      actual expected\n                      \n                      undefined250\n                      ",
+        "time" : {
+          "start" : 1646658885748,
+          "stop" : 1646658886139,
+          "duration" : 391
+        }
+      }, {
+        "uid" : "4506175b1aeb3df6",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/4506175b1aeb3df6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658631130,
+          "stop" : 1646658632178,
+          "duration" : 1048
+        }
+      }, {
+        "uid" : "ab59330a81bf7d02",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/ab59330a81bf7d02",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658567129,
+          "stop" : 1646658567947,
+          "duration" : 818
+        }
+      }, {
+        "uid" : "97fb6ee114fd663c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/97fb6ee114fd663c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658193336,
+          "stop" : 1646658194369,
+          "duration" : 1033
+        }
+      }, {
+        "uid" : "56bda3eef759da85",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/56bda3eef759da85",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657801706,
+          "stop" : 1646657802683,
+          "duration" : 977
+        }
+      }, {
+        "uid" : "1a8744fce24c9faa",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/1a8744fce24c9faa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552572963,
+          "stop" : 1645552573685,
+          "duration" : 722
+        }
+      }, {
+        "uid" : "8a158ea1ba3880d2",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/8a158ea1ba3880d2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534817851,
+          "stop" : 1645534818461,
+          "duration" : 610
+        }
+      }, {
+        "uid" : "b919c70a01ab9855",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/b919c70a01ab9855",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528221857,
+          "stop" : 1645528222618,
+          "duration" : 761
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "c7f23b6cabbb1280.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

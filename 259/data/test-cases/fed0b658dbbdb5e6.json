@@ -1,0 +1,261 @@
+{
+  "uid" : "fed0b658dbbdb5e6",
+  "name" : "Validate single result ",
+  "fullName" : "GetText of BrowserUtils Tests.Validate single result ",
+  "historyId" : "85f33cf251664106c0d8e111a4e8b69b",
+  "time" : {
+    "start" : 1646683780059,
+    "stop" : 1646683781337,
+    "duration" : 1278
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected {} to equal 'Open tab'      \n                      actual expected\n                      \n                      Promise'Open [Promise] {}tab'\n                      ",
+  "statusTrace" : "AssertionError: expected {} to equal 'Open tab'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetTextSpec.ts:11:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected {} to equal 'Open tab'      \n                      actual expected\n                      \n                      Promise'Open [Promise] {}tab'\n                      ",
+    "statusTrace" : "AssertionError: expected {} to equal 'Open tab'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetTextSpec.ts:11:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetText of BrowserUtils Tests",
+      "time" : {
+        "start" : 1646683780060,
+        "stop" : 1646683781034,
+        "duration" : 974
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646683780879,
+          "stop" : 1646683780883,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ecf1183309636f11",
+          "name" : "more info",
+          "source" : "ecf1183309636f11.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646683781035,
+        "stop" : 1646683781035,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "bbdc208503278c82",
+        "name" : "more info",
+        "source" : "bbdc208503278c82.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "c302f84b66921b2b",
+      "name" : "Browser console logs",
+      "source" : "c302f84b66921b2b.json",
+      "type" : "application/json",
+      "size" : 2
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-24"
+  }, {
+    "name" : "suite",
+    "value" : "GetText of BrowserUtils Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "GetText of BrowserUtils Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Validate single result "
+  }, {
+    "name" : "package",
+    "value" : "GetText of BrowserUtils Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "c691939a6e0f968c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/c691939a6e0f968c",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Open tab'      \n                      actual expected\n                      \n                      Promise'Open [Promise] {}tab'\n                      ",
+        "time" : {
+          "start" : 1646681388672,
+          "stop" : 1646681390367,
+          "duration" : 1695
+        }
+      }, {
+        "uid" : "e667e4a560bea00",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/e667e4a560bea00",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Open tab'      \n                      actual expected\n                      \n                      Promise'Open [Promise] {}tab'\n                      ",
+        "time" : {
+          "start" : 1646681348266,
+          "stop" : 1646681349484,
+          "duration" : 1218
+        }
+      }, {
+        "uid" : "57c98bc2e52acb73",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/57c98bc2e52acb73",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659234104,
+          "stop" : 1646659235186,
+          "duration" : 1082
+        }
+      }, {
+        "uid" : "c4f716fb2504a0a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/c4f716fb2504a0a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659208757,
+          "stop" : 1646659209836,
+          "duration" : 1079
+        }
+      }, {
+        "uid" : "f5836dfe5378f89d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/f5836dfe5378f89d",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Open tab'      \n                      actual expected\n                      \n                      Promise'Open [Promise] {}tab'\n                      ",
+        "time" : {
+          "start" : 1646658886968,
+          "stop" : 1646658887338,
+          "duration" : 370
+        }
+      }, {
+        "uid" : "f79f4215a5fcf87f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/f79f4215a5fcf87f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658635037,
+          "stop" : 1646658636296,
+          "duration" : 1259
+        }
+      }, {
+        "uid" : "39dc24c123f8543f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/39dc24c123f8543f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658570971,
+          "stop" : 1646658571740,
+          "duration" : 769
+        }
+      }, {
+        "uid" : "4eaa61a74474f1a8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/4eaa61a74474f1a8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658199949,
+          "stop" : 1646658200951,
+          "duration" : 1002
+        }
+      }, {
+        "uid" : "4c5502fd39c3a73a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/4c5502fd39c3a73a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657806769,
+          "stop" : 1646657807702,
+          "duration" : 933
+        }
+      }, {
+        "uid" : "8118479b12b38a4b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/8118479b12b38a4b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552579786,
+          "stop" : 1645552580593,
+          "duration" : 807
+        }
+      }, {
+        "uid" : "3fa32c028583bf24",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/3fa32c028583bf24",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534820062,
+          "stop" : 1645534820997,
+          "duration" : 935
+        }
+      }, {
+        "uid" : "f942048169e58aad",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/f942048169e58aad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528226895,
+          "stop" : 1645528227559,
+          "duration" : 664
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "fed0b658dbbdb5e6.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
