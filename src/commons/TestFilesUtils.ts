@@ -16,7 +16,9 @@ export namespace TestFilesUtils {
     const idsSet: Set<string> = new Set<string>();
 
     for (const file of files) {
-      idsSet.add(TestUtils.extractNumbersFromString(file));
+      const fileName = file.substr(0, file.indexOf('.'));
+      console.log(`Extracting tests id from file ${fileName}`);
+      idsSet.add(TestUtils.extractNumbersFromString(fileName));
     }
     console.log(`Found ${idsSet.size} tests ${idsSet.size === 0 ? '' : Array.from(idsSet.values())}`);
     return idsSet;
@@ -87,6 +89,10 @@ function isTestFile(fileName) {
   console.log(`Checking if ${fileName} is a test file`);
   const shouldStartWithRegex = /^C\d+/g;
   const shouldEndWith = 'Test.ts';
+  const shouldEndWithMonoRepo = '.spec.e2e.js';
 
-  return fileName.endsWith(shouldEndWith) && new RegExp(shouldStartWithRegex).test(fileName);
+  return (
+    (fileName.endsWith(shouldEndWith) || fileName.endsWith(shouldEndWithMonoRepo)) &&
+    new RegExp(shouldStartWithRegex).test(fileName)
+  );
 }
