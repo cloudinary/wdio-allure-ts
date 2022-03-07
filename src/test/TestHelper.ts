@@ -11,15 +11,15 @@ export const sampleAppUrl: string = 'http://127.0.0.1:8000/';
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function describeCommon(name: string, body: () => any): void {
-  describe(`${name}`, () => {
+  describe(`${name}`, async () => {
     /**
      * Navigate to sampleApp and wait for it to load
      */
-    beforeEach(() => {
+    beforeEach(async () => {
       Reporter.step('Navigate to sample app');
-      BrowserUtils.url(sampleAppUrl);
+      await BrowserUtils.url(sampleAppUrl);
       Reporter.step('Wait for sample app to load');
-      BrowserUtils.waitForDisplayed("//*[@id='top']");
+      await BrowserUtils.waitForDisplayed("//*[@id='top']");
     });
 
     /**

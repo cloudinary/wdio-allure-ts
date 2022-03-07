@@ -168,9 +168,9 @@ export namespace BrowserUtils {
    * to insure the navigation actually happened
    * @param url url for navigation
    */
-  export function url(url: string): void {
+  export async function url(url: string): Promise<void> {
     Reporter.debug(`Navigate to '${url}'`);
-    tryBlock(() => browser.url(url), `Failed to navigate to '${url}'`);
+    await tryBlock(async () => await browser.url(url), `Failed to navigate to '${url}'`);
   }
 
   /**
@@ -297,10 +297,10 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param options WaitForOptions options (optional) { timeout, reverse, timeoutMsg, interval }
    */
-  export function waitForDisplayed(selector: string, options?: WaitForOptions): void {
+  export async function waitForDisplayed(selector: string, options?: WaitForOptions): Promise<void> {
     Reporter.debug(`Wait for an element to be visible '${selector}'`);
-    tryBlock(
-      () => $(selector).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+    await tryBlock(
+      async () => await $(selector).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Element not visible '${selector}'`
     );
   }
@@ -692,9 +692,9 @@ export namespace BrowserUtils {
   /**
    * Accept Alert popup
    */
-  export function acceptAlert(): void {
+  export async function acceptAlert(): Promise<void> {
     Reporter.debug('Accept alert');
-    tryBlock(() => browser.acceptAlert(), 'Failed to accept alert');
+    await tryBlock(async () => await browser.acceptAlert(), 'Failed to accept alert');
   }
 
   /**
@@ -920,9 +920,9 @@ export namespace BrowserUtils {
    */
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function tryBlock(action: () => any, errorMessage: string): any {
+  async function tryBlock(action: () => any, errorMessage: string): Promise<any> {
     try {
-      return action();
+      return await action();
     } catch (e) {
       handleError(errorMessage, e);
     }
