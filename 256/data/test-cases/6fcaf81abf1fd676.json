@@ -1,0 +1,296 @@
+{
+  "uid" : "6fcaf81abf1fd676",
+  "name" : "expect empty cookie",
+  "fullName" : "DeleteCookieSpec.expect empty cookie",
+  "historyId" : "45098b870d9cc2449ab6e08588b32f53",
+  "time" : {
+    "start" : 1646659186387,
+    "stop" : 1646659188524,
+    "duration" : 2137
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for DeleteCookieSpec",
+      "time" : {
+        "start" : 1646659186387,
+        "stop" : 1646659188226,
+        "duration" : 1839
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646659187957,
+          "stop" : 1646659187960,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "aba4a84f098e11f4",
+          "name" : "more info",
+          "source" : "aba4a84f098e11f4.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "\"before each\" hook for DeleteCookieSpec",
+      "time" : {
+        "start" : 1646659188226,
+        "stop" : 1646659188293,
+        "duration" : 67
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646659188246,
+          "stop" : 1646659188251,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "98b04777b453db6b",
+          "name" : "more info",
+          "source" : "98b04777b453db6b.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Set cookie for tests",
+      "time" : {
+        "start" : 1646659188293,
+        "stop" : 1646659188294,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4569f316760f5cd4",
+        "name" : "more info",
+        "source" : "4569f316760f5cd4.txt",
+        "type" : "text/plain",
+        "size" : 130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Delete cookies",
+      "time" : {
+        "start" : 1646659188425,
+        "stop" : 1646659188425,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4e2697c81c30f997",
+        "name" : "more info",
+        "source" : "4e2697c81c30f997.txt",
+        "type" : "text/plain",
+        "size" : 122
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate no cookies",
+      "time" : {
+        "start" : 1646659188523,
+        "stop" : 1646659188524,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2004afc2170e6dbe",
+        "name" : "more info",
+        "source" : "2004afc2170e6dbe.txt",
+        "type" : "text/plain",
+        "size" : 122
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-5"
+  }, {
+    "name" : "suite",
+    "value" : "DeleteCookieSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "DeleteCookieSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "expect empty cookie"
+  }, {
+    "name" : "package",
+    "value" : "DeleteCookieSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 10
+      },
+      "items" : [ {
+        "uid" : "2a527f5b5bdac478",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/2a527f5b5bdac478",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659161885,
+          "stop" : 1646659164187,
+          "duration" : 2302
+        }
+      }, {
+        "uid" : "fb50aa932bf169d1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/fb50aa932bf169d1",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of retrieved cookies: expected undefined to equal 0",
+        "time" : {
+          "start" : 1646658840952,
+          "stop" : 1646658841379,
+          "duration" : 427
+        }
+      }, {
+        "uid" : "1df69b6ec04e1e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/1df69b6ec04e1e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658585629,
+          "stop" : 1646658587733,
+          "duration" : 2104
+        }
+      }, {
+        "uid" : "e2f733337a9a99e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/e2f733337a9a99e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658533420,
+          "stop" : 1646658535343,
+          "duration" : 1923
+        }
+      }, {
+        "uid" : "f056556580d55274",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/f056556580d55274",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658147157,
+          "stop" : 1646658149392,
+          "duration" : 2235
+        }
+      }, {
+        "uid" : "14b85dc9283eaf64",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/14b85dc9283eaf64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657763105,
+          "stop" : 1646657765170,
+          "duration" : 2065
+        }
+      }, {
+        "uid" : "98a56fb319d665f8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/98a56fb319d665f8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552537387,
+          "stop" : 1645552539101,
+          "duration" : 1714
+        }
+      }, {
+        "uid" : "f8c9712833656cc8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/f8c9712833656cc8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534781059,
+          "stop" : 1645534783434,
+          "duration" : 2375
+        }
+      }, {
+        "uid" : "a8e286fc335de155",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/a8e286fc335de155",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528188884,
+          "stop" : 1645528190502,
+          "duration" : 1618
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "6fcaf81abf1fd676.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
