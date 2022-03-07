@@ -1,0 +1,367 @@
+{
+  "uid" : "498340385b3bf0ea",
+  "name" : "send string twice",
+  "fullName" : "SendKeysSpec.send string twice",
+  "historyId" : "7f1fc7c103cbeacabe6c70036adaeba5",
+  "time" : {
+    "start" : 1646681395783,
+    "stop" : 1646681398048,
+    "duration" : 2265
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected {} to equal 'CloudinaryCloudinary'      \n                      actual expected\n                      \n                      Promise [Promise] {}'CloudinaryCloudinary'\n                      ",
+  "statusTrace" : "AssertionError: expected {} to equal 'CloudinaryCloudinary'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/SendKeysSpec.ts:46:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected {} to equal 'CloudinaryCloudinary'      \n                      actual expected\n                      \n                      Promise [Promise] {}'CloudinaryCloudinary'\n                      ",
+    "statusTrace" : "AssertionError: expected {} to equal 'CloudinaryCloudinary'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/SendKeysSpec.ts:46:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for SendKeysSpec",
+      "time" : {
+        "start" : 1646681395905,
+        "stop" : 1646681397934,
+        "duration" : 2029
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Validate text value",
+        "time" : {
+          "start" : 1646681395905,
+          "stop" : 1646681395906,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d5843b7d4edc5fa7",
+          "name" : "more info",
+          "source" : "d5843b7d4edc5fa7.txt",
+          "type" : "text/plain",
+          "size" : 48
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646681397683,
+          "stop" : 1646681397683,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "8a9731043dfb7f9b",
+          "name" : "more info",
+          "source" : "8a9731043dfb7f9b.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "3a570b9c970db9b",
+        "name" : "Screenshot",
+        "source" : "3a570b9c970db9b.png",
+        "type" : "image/png",
+        "size" : 103546
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "\"before each\" hook for SendKeysSpec",
+      "time" : {
+        "start" : 1646681397934,
+        "stop" : 1646681397974,
+        "duration" : 40
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646681397953,
+          "stop" : 1646681397953,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1e98a8577b6f72d1",
+          "name" : "more info",
+          "source" : "1e98a8577b6f72d1.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - clear text input",
+        "time" : {
+          "start" : 1646681397953,
+          "stop" : 1646681397953,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "386457c50231f4a6",
+          "name" : "more info",
+          "source" : "386457c50231f4a6.txt",
+          "type" : "text/plain",
+          "size" : 45
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - click text input",
+      "time" : {
+        "start" : 1646681397975,
+        "stop" : 1646681397975,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "16cbed7a7a7a22fb",
+        "name" : "more info",
+        "source" : "16cbed7a7a7a22fb.txt",
+        "type" : "text/plain",
+        "size" : 45
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - send keys - string",
+      "time" : {
+        "start" : 1646681397976,
+        "stop" : 1646681397976,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6f9020bbb39830b2",
+        "name" : "more info",
+        "source" : "6f9020bbb39830b2.txt",
+        "type" : "text/plain",
+        "size" : 100
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - send keys - string",
+      "time" : {
+        "start" : 1646681397977,
+        "stop" : 1646681397977,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c629b1c96dbc7fe8",
+        "name" : "more info",
+        "source" : "c629b1c96dbc7fe8.txt",
+        "type" : "text/plain",
+        "size" : 100
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b959f655ecbd35b0",
+      "name" : "Browser console logs",
+      "source" : "b959f655ecbd35b0.json",
+      "type" : "application/json",
+      "size" : 2
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "attachmentsCount" : 9,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-41"
+  }, {
+    "name" : "suite",
+    "value" : "SendKeysSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "SendKeysSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "send string twice"
+  }, {
+    "name" : "package",
+    "value" : "SendKeysSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 11
+      },
+      "items" : [ {
+        "uid" : "df66db8e3cd8a2a7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/df66db8e3cd8a2a7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659270171,
+          "stop" : 1646659271315,
+          "duration" : 1144
+        }
+      }, {
+        "uid" : "350e9f4b57e742e2",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/350e9f4b57e742e2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659247220,
+          "stop" : 1646659248205,
+          "duration" : 985
+        }
+      }, {
+        "uid" : "f5f35847267fdbca",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/f5f35847267fdbca",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'CloudinaryCloudinary'      \n                      actual expected\n                      \n                      Promise [Promise] {}'CloudinaryCloudinary'\n                      ",
+        "time" : {
+          "start" : 1646658924232,
+          "stop" : 1646658924376,
+          "duration" : 144
+        }
+      }, {
+        "uid" : "30900f4f68909541",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/30900f4f68909541",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658676240,
+          "stop" : 1646658677389,
+          "duration" : 1149
+        }
+      }, {
+        "uid" : "b2bdb33e5d1250ad",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/b2bdb33e5d1250ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658600032,
+          "stop" : 1646658600953,
+          "duration" : 921
+        }
+      }, {
+        "uid" : "1115a443e1544f61",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/1115a443e1544f61",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658240193,
+          "stop" : 1646658241378,
+          "duration" : 1185
+        }
+      }, {
+        "uid" : "220bf530f6afee65",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/220bf530f6afee65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657838209,
+          "stop" : 1646657839094,
+          "duration" : 885
+        }
+      }, {
+        "uid" : "a8432ac4865a4a5d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/a8432ac4865a4a5d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552606800,
+          "stop" : 1645552607506,
+          "duration" : 706
+        }
+      }, {
+        "uid" : "5fc82e33a8cb666e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/5fc82e33a8cb666e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534852271,
+          "stop" : 1645534853221,
+          "duration" : 950
+        }
+      }, {
+        "uid" : "36429e8c09fcd299",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/36429e8c09fcd299",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528254643,
+          "stop" : 1645528255522,
+          "duration" : 879
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "498340385b3bf0ea.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

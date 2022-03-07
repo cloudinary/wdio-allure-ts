@@ -1,0 +1,268 @@
+{
+  "uid" : "155263c6152147c",
+  "name" : "accept existing alert",
+  "fullName" : "acceptAlert.accept existing alert",
+  "historyId" : "57b7eaeab9605e709323159c5256d058",
+  "time" : {
+    "start" : 1646681285929,
+    "stop" : 1646681288375,
+    "duration" : 2446
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for acceptAlert",
+      "time" : {
+        "start" : 1646681285930,
+        "stop" : 1646681287994,
+        "duration" : 2064
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646681287667,
+          "stop" : 1646681287669,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "925ad2bcf3f3c8fc",
+          "name" : "more info",
+          "source" : "925ad2bcf3f3c8fc.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646681287994,
+        "stop" : 1646681287996,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7fb4b00ce1ee86ca",
+        "name" : "more info",
+        "source" : "7fb4b00ce1ee86ca.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Click on trigger alert button",
+      "time" : {
+        "start" : 1646681288331,
+        "stop" : 1646681288331,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9b6e0b0dd366ac8e",
+        "name" : "more info",
+        "source" : "9b6e0b0dd366ac8e.txt",
+        "type" : "text/plain",
+        "size" : 58
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Accept Alert",
+      "time" : {
+        "start" : 1646681288372,
+        "stop" : 1646681288373,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "60d7ec7f4dc42d9f",
+        "name" : "more info",
+        "source" : "60d7ec7f4dc42d9f.txt",
+        "type" : "text/plain",
+        "size" : 83
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "acceptAlert"
+  }, {
+    "name" : "testClass",
+    "value" : "acceptAlert"
+  }, {
+    "name" : "testMethod",
+    "value" : "accept existing alert"
+  }, {
+    "name" : "package",
+    "value" : "acceptAlert"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 11,
+        "unknown" : 0,
+        "total" : 11
+      },
+      "items" : [ {
+        "uid" : "e3a82fe4ebeec9f9",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/e3a82fe4ebeec9f9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659186362,
+          "stop" : 1646659188722,
+          "duration" : 2360
+        }
+      }, {
+        "uid" : "b2e37e0bf4da065f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/b2e37e0bf4da065f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659161896,
+          "stop" : 1646659164544,
+          "duration" : 2648
+        }
+      }, {
+        "uid" : "a2c9a22e2a15eddd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/a2c9a22e2a15eddd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658840974,
+          "stop" : 1646658841091,
+          "duration" : 117
+        }
+      }, {
+        "uid" : "5ffadb727cf7d40b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/5ffadb727cf7d40b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658585476,
+          "stop" : 1646658587896,
+          "duration" : 2420
+        }
+      }, {
+        "uid" : "3acf6e25da04d0be",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/3acf6e25da04d0be",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658533428,
+          "stop" : 1646658535212,
+          "duration" : 1784
+        }
+      }, {
+        "uid" : "98ceb906e17c93c6",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/98ceb906e17c93c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658147155,
+          "stop" : 1646658149723,
+          "duration" : 2568
+        }
+      }, {
+        "uid" : "7bc1a463df24f0ea",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/7bc1a463df24f0ea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657763099,
+          "stop" : 1646657765116,
+          "duration" : 2017
+        }
+      }, {
+        "uid" : "65aef60e91c54e90",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/65aef60e91c54e90",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552536000,
+          "stop" : 1645552537922,
+          "duration" : 1922
+        }
+      }, {
+        "uid" : "4495863181f93f6c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/4495863181f93f6c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534781086,
+          "stop" : 1645534783110,
+          "duration" : 2024
+        }
+      }, {
+        "uid" : "70e679c11a9d8fda",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/70e679c11a9d8fda",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528188879,
+          "stop" : 1645528190741,
+          "duration" : 1862
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "155263c6152147c.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
