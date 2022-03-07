@@ -1,0 +1,226 @@
+{
+  "uid" : "a6abaf22a2b8f302",
+  "name" : "successfully start and read network audit",
+  "fullName" : "startNetworkAudit.successfully start and read network audit",
+  "historyId" : "7af480a38501f2c9c27c9615bd90ed87",
+  "time" : {
+    "start" : 1646657845504,
+    "stop" : 1646657846563,
+    "duration" : 1059
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for startNetworkAudit",
+      "time" : {
+        "start" : 1646657845507,
+        "stop" : 1646657846215,
+        "duration" : 708
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646657846139,
+          "stop" : 1646657846140,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c0cf99416f3169",
+          "name" : "more info",
+          "source" : "c0cf99416f3169.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646657846216,
+        "stop" : 1646657846216,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "fa08a422f70edace",
+        "name" : "more info",
+        "source" : "fa08a422f70edace.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Start network log",
+      "time" : {
+        "start" : 1646657846232,
+        "stop" : 1646657846233,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "21368c167050e3e",
+        "name" : "more info",
+        "source" : "21368c167050e3e.txt",
+        "type" : "text/plain",
+        "size" : 46
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - navigate to sample app",
+      "time" : {
+        "start" : 1646657846514,
+        "stop" : 1646657846515,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3f5667f520e1777",
+        "name" : "more info",
+        "source" : "3f5667f520e1777.txt",
+        "type" : "text/plain",
+        "size" : 117
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for new logs",
+      "time" : {
+        "start" : 1646657846563,
+        "stop" : 1646657846563,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "871915032177ffeb",
+        "name" : "more info",
+        "source" : "871915032177ffeb.txt",
+        "type" : "text/plain",
+        "size" : 46
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-44"
+  }, {
+    "name" : "suite",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "testClass",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "testMethod",
+    "value" : "successfully start and read network audit"
+  }, {
+    "name" : "package",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "7b4d564124d01856",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/7b4d564124d01856",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552614002,
+          "stop" : 1645552614899,
+          "duration" : 897
+        }
+      }, {
+        "uid" : "9571758716ed4128",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/9571758716ed4128",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534857307,
+          "stop" : 1645534858488,
+          "duration" : 1181
+        }
+      }, {
+        "uid" : "1118ffa5ff02f7ad",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/1118ffa5ff02f7ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528259914,
+          "stop" : 1645528260770,
+          "duration" : 856
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a6abaf22a2b8f302.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

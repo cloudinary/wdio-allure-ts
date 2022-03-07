@@ -1,0 +1,184 @@
+{
+  "uid" : "29cceb9eb28056cd",
+  "name" : "Check incorrect user",
+  "fullName" : "GetTestDataFileSpec.Check incorrect user",
+  "historyId" : "ab80a09522380d84b676df2af726db05",
+  "time" : {
+    "start" : 1646657805342,
+    "stop" : 1646657805749,
+    "duration" : 407
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetTestDataFileSpec",
+      "time" : {
+        "start" : 1646657805342,
+        "stop" : 1646657805726,
+        "duration" : 384
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646657805679,
+          "stop" : 1646657805679,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a44e5cafd7161cf9",
+          "name" : "more info",
+          "source" : "a44e5cafd7161cf9.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646657805726,
+        "stop" : 1646657805727,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "df0b83f7b02177ff",
+        "name" : "more info",
+        "source" : "df0b83f7b02177ff.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - undefined returned in case of incorrect data tag",
+      "time" : {
+        "start" : 1646657805749,
+        "stop" : 1646657805749,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ce5aafcfb997313b",
+        "name" : "more info",
+        "source" : "ce5aafcfb997313b.txt",
+        "type" : "text/plain",
+        "size" : 337
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-23"
+  }, {
+    "name" : "suite",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check incorrect user"
+  }, {
+    "name" : "package",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "dd4daa170aad0997",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/dd4daa170aad0997",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552578035,
+          "stop" : 1645552578392,
+          "duration" : 357
+        }
+      }, {
+        "uid" : "86a80bd5524a992",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/86a80bd5524a992",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534821294,
+          "stop" : 1645534821869,
+          "duration" : 575
+        }
+      }, {
+        "uid" : "af820c0ecd962fea",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/af820c0ecd962fea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528225145,
+          "stop" : 1645528225462,
+          "duration" : 317
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "29cceb9eb28056cd.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
