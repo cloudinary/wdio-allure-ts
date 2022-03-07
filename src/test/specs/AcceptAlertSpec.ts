@@ -8,7 +8,7 @@ const TEST_FIELD_SELECTOR: string = "//*[@id='AcceptAlert']";
 const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id='trigger-alert']`;
 
 describeCommon('acceptAlert', () => {
-  it.only('accept existing alert', async () => {
+  it('accept existing alert', async () => {
     Reporter.step(`Click on trigger alert button`);
     await $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
 
