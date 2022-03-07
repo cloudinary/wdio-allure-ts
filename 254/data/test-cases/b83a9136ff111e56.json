@@ -1,0 +1,255 @@
+{
+  "uid" : "b83a9136ff111e56",
+  "name" : "hoverTrue",
+  "fullName" : "moveToSpec.hoverTrue",
+  "historyId" : "ddd917fb78b41d43970a4f744f6148a8",
+  "time" : {
+    "start" : 1646658887959,
+    "stop" : 1646658888375,
+    "duration" : 416
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "Cannot read property 'hex' of undefined",
+  "statusTrace" : "TypeError: Cannot read property 'hex' of undefined\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/HoverSpec.ts:18:75)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "Cannot read property 'hex' of undefined",
+    "statusTrace" : "TypeError: Cannot read property 'hex' of undefined\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/HoverSpec.ts:18:75)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for moveToSpec",
+      "time" : {
+        "start" : 1646658887959,
+        "stop" : 1646658888088,
+        "duration" : 129
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646658888002,
+          "stop" : 1646658888003,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f616ef89a09f8d8",
+          "name" : "more info",
+          "source" : "f616ef89a09f8d8.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for sample app to load",
+      "time" : {
+        "start" : 1646658888088,
+        "stop" : 1646658888088,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3771f9faa4d1c79",
+        "name" : "more info",
+        "source" : "3771f9faa4d1c79.txt",
+        "type" : "text/plain",
+        "size" : 136
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - scroll to hover button",
+      "time" : {
+        "start" : 1646658888089,
+        "stop" : 1646658888089,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9c8c8a3b190ec765",
+        "name" : "more info",
+        "source" : "9c8c8a3b190ec765.txt",
+        "type" : "text/plain",
+        "size" : 51
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - move to hover button",
+      "time" : {
+        "start" : 1646658888089,
+        "stop" : 1646658888089,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b8ed6ee4eabc7d91",
+        "name" : "more info",
+        "source" : "b8ed6ee4eabc7d91.txt",
+        "type" : "text/plain",
+        "size" : 275
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "3e1b735795f9b632",
+      "name" : "Browser console logs",
+      "source" : "3e1b735795f9b632.json",
+      "type" : "application/json",
+      "size" : 2
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-27"
+  }, {
+    "name" : "suite",
+    "value" : "moveToSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "moveToSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "hoverTrue"
+  }, {
+    "name" : "package",
+    "value" : "moveToSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 1,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "a7c2aaaa48fa157c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/a7c2aaaa48fa157c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658640125,
+          "stop" : 1646658641302,
+          "duration" : 1177
+        }
+      }, {
+        "uid" : "7ca950f84f59df94",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/7ca950f84f59df94",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658577651,
+          "stop" : 1646658578724,
+          "duration" : 1073
+        }
+      }, {
+        "uid" : "fb73d6f4b36ef127",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/fb73d6f4b36ef127",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658204963,
+          "stop" : 1646658206513,
+          "duration" : 1550
+        }
+      }, {
+        "uid" : "9453c011fed3a136",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/9453c011fed3a136",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657812022,
+          "stop" : 1646657813332,
+          "duration" : 1310
+        }
+      }, {
+        "uid" : "84c803a1d1d9d6b8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/84c803a1d1d9d6b8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552582877,
+          "stop" : 1645552583812,
+          "duration" : 935
+        }
+      }, {
+        "uid" : "74d3b83f9452b568",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/74d3b83f9452b568",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534828572,
+          "stop" : 1645534829768,
+          "duration" : 1196
+        }
+      }, {
+        "uid" : "4868523d7dd288bd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/4868523d7dd288bd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528233077,
+          "stop" : 1645528234222,
+          "duration" : 1145
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "b83a9136ff111e56.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
