@@ -1,0 +1,384 @@
+{
+  "uid" : "a83bccd9981717b9",
+  "name" : "drag and drop to coordinate",
+  "fullName" : "dragAndDrop.drag and drop to coordinate",
+  "historyId" : "5ad13839d000fe89d8c04b84a0eaa3a5",
+  "time" : {
+    "start" : 1646745927063,
+    "stop" : 1646745930627,
+    "duration" : 3564
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+  "statusTrace" : "AssertionError: Element position was not changed: expected false to be true\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DragAndDropSpec.ts:22:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+    "statusTrace" : "AssertionError: Element position was not changed: expected false to be true\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DragAndDropSpec.ts:22:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for dragAndDrop",
+      "time" : {
+        "start" : 1646745927064,
+        "stop" : 1646745928855,
+        "duration" : 1791
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646745928558,
+          "stop" : 1646745928560,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d552b80c24604665",
+          "name" : "more info",
+          "source" : "d552b80c24604665.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646745928855,
+          "stop" : 1646745928855,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f98080b66bda024d",
+          "name" : "more info",
+          "source" : "f98080b66bda024d.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get element's location '#draggedSlider'",
+      "time" : {
+        "start" : 1646745928862,
+        "stop" : 1646745928862,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b8572c0efdcf8884",
+        "name" : "more info",
+        "source" : "b8572c0efdcf8884.txt",
+        "type" : "text/plain",
+        "size" : 67
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Drag and drop element '#draggedSlider' to { x: 5, y: 0 }.",
+      "time" : {
+        "start" : 1646745928862,
+        "stop" : 1646745928862,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6005f319a72044b7",
+        "name" : "more info",
+        "source" : "6005f319a72044b7.txt",
+        "type" : "text/plain",
+        "size" : 85
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get element's location '#draggedSlider'",
+      "time" : {
+        "start" : 1646745928862,
+        "stop" : 1646745928862,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "88fb5d5fee4a347e",
+        "name" : "more info",
+        "source" : "88fb5d5fee4a347e.txt",
+        "type" : "text/plain",
+        "size" : 67
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate elements position changed",
+      "time" : {
+        "start" : 1646745930445,
+        "stop" : 1646745930445,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Element position was not changed: expected false to be true\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DragAndDropSpec.ts:22:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ef26114cf0a27181",
+        "name" : "more info",
+        "source" : "ef26114cf0a27181.txt",
+        "type" : "text/plain",
+        "size" : 143
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "3077dae222c6585c",
+      "name" : "Screenshot",
+      "source" : "3077dae222c6585c.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "5679fb672617add5",
+      "name" : "Browser console logs",
+      "source" : "5679fb672617add5.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "3b10eefc2af555e8",
+      "name" : "Page HTML source",
+      "source" : "3b10eefc2af555e8.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "19e8ff383e605606",
+      "name" : "Network Logs",
+      "source" : "19e8ff383e605606.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-8"
+  }, {
+    "name" : "suite",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testClass",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testMethod",
+    "value" : "drag and drop to coordinate"
+  }, {
+    "name" : "package",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 6,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 15
+      },
+      "items" : [ {
+        "uid" : "937bb2a83c18f3c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/937bb2a83c18f3c",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646738997070,
+          "stop" : 1646739000925,
+          "duration" : 3855
+        }
+      }, {
+        "uid" : "d8e14685a8f77785",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/d8e14685a8f77785",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646683724870,
+          "stop" : 1646683726877,
+          "duration" : 2007
+        }
+      }, {
+        "uid" : "8ab7d94976800701",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/8ab7d94976800701",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646681331517,
+          "stop" : 1646681333776,
+          "duration" : 2259
+        }
+      }, {
+        "uid" : "493adbc73ece075a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/493adbc73ece075a",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646681286145,
+          "stop" : 1646681288535,
+          "duration" : 2390
+        }
+      }, {
+        "uid" : "95586ccf932ca97",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/95586ccf932ca97",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659186484,
+          "stop" : 1646659189125,
+          "duration" : 2641
+        }
+      }, {
+        "uid" : "b0d8130cabed7d28",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/b0d8130cabed7d28",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659161894,
+          "stop" : 1646659164877,
+          "duration" : 2983
+        }
+      }, {
+        "uid" : "c281667119ee024c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/c281667119ee024c",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646658840954,
+          "stop" : 1646658841515,
+          "duration" : 561
+        }
+      }, {
+        "uid" : "b2591b33e692bada",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/b2591b33e692bada",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658585465,
+          "stop" : 1646658588361,
+          "duration" : 2896
+        }
+      }, {
+        "uid" : "65336938f2f6fb88",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/65336938f2f6fb88",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658533530,
+          "stop" : 1646658535337,
+          "duration" : 1807
+        }
+      }, {
+        "uid" : "f4c27ef8f5d09a4f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/f4c27ef8f5d09a4f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658147090,
+          "stop" : 1646658150100,
+          "duration" : 3010
+        }
+      }, {
+        "uid" : "c5e4156883597ce5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/c5e4156883597ce5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657762996,
+          "stop" : 1646657765677,
+          "duration" : 2681
+        }
+      }, {
+        "uid" : "cdb5014256c2597a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/cdb5014256c2597a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552537588,
+          "stop" : 1645552539471,
+          "duration" : 1883
+        }
+      }, {
+        "uid" : "fd3768ab114cbaf1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/fd3768ab114cbaf1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534781004,
+          "stop" : 1645534783407,
+          "duration" : 2403
+        }
+      }, {
+        "uid" : "c9234e094cef1387",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/c9234e094cef1387",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528188883,
+          "stop" : 1645528190753,
+          "duration" : 1870
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a83bccd9981717b9.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

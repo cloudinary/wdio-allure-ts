@@ -1,0 +1,384 @@
+{
+  "uid" : "47a0d6ed979cc36a",
+  "name" : "doubleClick",
+  "fullName" : "click.doubleClick",
+  "historyId" : "fc01638fb75458bb0a5b346f2556ea39",
+  "time" : {
+    "start" : 1646745931244,
+    "stop" : 1646745934419,
+    "duration" : 3175
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected {} to equal 'Double click'      \n                      actual expected\n                      \n                      Promise'Double [Promise] {}click'\n                      ",
+  "statusTrace" : "AssertionError: expected {} to equal 'Double click'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/ClickActionsSpec.ts:31:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected {} to equal 'Double click'      \n                      actual expected\n                      \n                      Promise'Double [Promise] {}click'\n                      ",
+    "statusTrace" : "AssertionError: expected {} to equal 'Double click'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/ClickActionsSpec.ts:31:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "[DEBUG] - Wait for the element '//*[@id='clickActionSpec']//*[@id='click-button-1']' to be clickable",
+      "time" : {
+        "start" : 1646745931245,
+        "stop" : 1646745931245,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9c3815fb11e0a708",
+        "name" : "more info",
+        "source" : "9c3815fb11e0a708.txt",
+        "type" : "text/plain",
+        "size" : 118
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "\"before each\" hook for click",
+      "time" : {
+        "start" : 1646745931302,
+        "stop" : 1646745932131,
+        "duration" : 829
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646745931918,
+          "stop" : 1646745931918,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "e23738b77ad7258f",
+          "name" : "more info",
+          "source" : "e23738b77ad7258f.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646745932130,
+          "stop" : 1646745932130,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "dbbc4f16089fd059",
+          "name" : "more info",
+          "source" : "dbbc4f16089fd059.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Navigate to 'http://127.0.0.1:8000/'",
+      "time" : {
+        "start" : 1646745932131,
+        "stop" : 1646745932132,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "64dfa70cfe2ff910",
+        "name" : "more info",
+        "source" : "64dfa70cfe2ff910.txt",
+        "type" : "text/plain",
+        "size" : 64
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Double click an element '//*[@id='clickActionSpec']//*[@id='div-double-click']'",
+      "time" : {
+        "start" : 1646745932132,
+        "stop" : 1646745932132,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "795cbb088b093b73",
+        "name" : "more info",
+        "source" : "795cbb088b093b73.txt",
+        "type" : "text/plain",
+        "size" : 107
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate double click worked",
+      "time" : {
+        "start" : 1646745934417,
+        "stop" : 1646745934418,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected {} to equal 'Double click'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/ClickActionsSpec.ts:31:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "19d380b48a83ffe7",
+        "name" : "more info",
+        "source" : "19d380b48a83ffe7.txt",
+        "type" : "text/plain",
+        "size" : 295
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "be8b858d2ffe8c23",
+      "name" : "Screenshot",
+      "source" : "be8b858d2ffe8c23.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "919f600a27fbfb58",
+      "name" : "Browser console logs",
+      "source" : "919f600a27fbfb58.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "5602be4f9fe4e751",
+      "name" : "Page HTML source",
+      "source" : "5602be4f9fe4e751.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "f8e13350463f2078",
+      "name" : "Network Logs",
+      "source" : "f8e13350463f2078.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 10,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-4"
+  }, {
+    "name" : "suite",
+    "value" : "click"
+  }, {
+    "name" : "testClass",
+    "value" : "click"
+  }, {
+    "name" : "testMethod",
+    "value" : "doubleClick"
+  }, {
+    "name" : "package",
+    "value" : "click"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 6,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 15
+      },
+      "items" : [ {
+        "uid" : "d5ddd530b8b393d5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/d5ddd530b8b393d5",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Double click'      \n                      actual expected\n                      \n                      Promise'Double [Promise] {}click'\n                      ",
+        "time" : {
+          "start" : 1646739001650,
+          "stop" : 1646739005087,
+          "duration" : 3437
+        }
+      }, {
+        "uid" : "709246f391ffa663",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/709246f391ffa663",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Double click'      \n                      actual expected\n                      \n                      Promise'Double [Promise] {}click'\n                      ",
+        "time" : {
+          "start" : 1646683727148,
+          "stop" : 1646683730695,
+          "duration" : 3547
+        }
+      }, {
+        "uid" : "62bd72dd11b0e571",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/62bd72dd11b0e571",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Double click'      \n                      actual expected\n                      \n                      Promise'Double [Promise] {}click'\n                      ",
+        "time" : {
+          "start" : 1646681333919,
+          "stop" : 1646681337714,
+          "duration" : 3795
+        }
+      }, {
+        "uid" : "93b29c54599aa071",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/93b29c54599aa071",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Double click'      \n                      actual expected\n                      \n                      Promise'Double [Promise] {}click'\n                      ",
+        "time" : {
+          "start" : 1646681288611,
+          "stop" : 1646681292304,
+          "duration" : 3693
+        }
+      }, {
+        "uid" : "822fababa9d4da3e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/822fababa9d4da3e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659189619,
+          "stop" : 1646659191920,
+          "duration" : 2301
+        }
+      }, {
+        "uid" : "3d75e1b928d33ba",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/3d75e1b928d33ba",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659165667,
+          "stop" : 1646659167659,
+          "duration" : 1992
+        }
+      }, {
+        "uid" : "83a3c8764ab0852b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/83a3c8764ab0852b",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'Double click'      \n                      actual expected\n                      \n                      Promise'Double [Promise] {}click'\n                      ",
+        "time" : {
+          "start" : 1646658841404,
+          "stop" : 1646658841659,
+          "duration" : 255
+        }
+      }, {
+        "uid" : "af07da89787d83d2",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/af07da89787d83d2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658589257,
+          "stop" : 1646658591672,
+          "duration" : 2415
+        }
+      }, {
+        "uid" : "386fa1d756c222b1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/386fa1d756c222b1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658535828,
+          "stop" : 1646658537592,
+          "duration" : 1764
+        }
+      }, {
+        "uid" : "404c24cb66ed2d86",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/404c24cb66ed2d86",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658150620,
+          "stop" : 1646658153161,
+          "duration" : 2541
+        }
+      }, {
+        "uid" : "d82f5b7c5a1ac4ae",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/d82f5b7c5a1ac4ae",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657766274,
+          "stop" : 1646657768432,
+          "duration" : 2158
+        }
+      }, {
+        "uid" : "7cab7f9b3459229f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/7cab7f9b3459229f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552538984,
+          "stop" : 1645552541010,
+          "duration" : 2026
+        }
+      }, {
+        "uid" : "ed0b612c03727b31",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/ed0b612c03727b31",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534784115,
+          "stop" : 1645534786027,
+          "duration" : 1912
+        }
+      }, {
+        "uid" : "abcf5411cca5c10a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/abcf5411cca5c10a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528191171,
+          "stop" : 1645528192626,
+          "duration" : 1455
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "47a0d6ed979cc36a.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
