@@ -1,0 +1,395 @@
+{
+  "uid" : "bf36e358552f4441",
+  "name" : "switch to tab",
+  "fullName" : "tab actions.switch to tab",
+  "historyId" : "bb5066b03a9a665011113d14d3a00f91",
+  "time" : {
+    "start" : 1646739105861,
+    "stop" : 1646739108267,
+    "duration" : 2406
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Failed to switch tabs: expected undefined to equal {}      \n                      actual expected\n                      \n                      undefinedPromise [Promise] {}\n                      ",
+  "statusTrace" : "AssertionError: Failed to switch tabs: expected undefined to equal {}\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/TabsSpec.ts:41:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Failed to switch tabs: expected undefined to equal {}      \n                      actual expected\n                      \n                      undefinedPromise [Promise] {}\n                      ",
+    "statusTrace" : "AssertionError: Failed to switch tabs: expected undefined to equal {}\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/TabsSpec.ts:41:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for tab actions",
+      "time" : {
+        "start" : 1646739105861,
+        "stop" : 1646739106496,
+        "duration" : 635
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646739106364,
+          "stop" : 1646739106364,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d013bc5554554828",
+          "name" : "more info",
+          "source" : "d013bc5554554828.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646739106495,
+          "stop" : 1646739106496,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "afdcd2d90d8a3394",
+          "name" : "more info",
+          "source" : "afdcd2d90d8a3394.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Navigate to 'http://127.0.0.1:8000/'",
+      "time" : {
+        "start" : 1646739106497,
+        "stop" : 1646739106497,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e51957e0a8e4a81f",
+        "name" : "more info",
+        "source" : "e51957e0a8e4a81f.txt",
+        "type" : "text/plain",
+        "size" : 64
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Click an element '//button[@data-test='open-tab-btn']'",
+      "time" : {
+        "start" : 1646739106497,
+        "stop" : 1646739106497,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b200509f3f45aaba",
+        "name" : "more info",
+        "source" : "b200509f3f45aaba.txt",
+        "type" : "text/plain",
+        "size" : 82
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get all ids of all open tabs",
+      "time" : {
+        "start" : 1646739106497,
+        "stop" : 1646739106498,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "444776ab269e380b",
+        "name" : "more info",
+        "source" : "444776ab269e380b.txt",
+        "type" : "text/plain",
+        "size" : 56
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Switching window by id: 'undefined'",
+      "time" : {
+        "start" : 1646739106498,
+        "stop" : 1646739106498,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "53ba52e11cc1be23",
+        "name" : "more info",
+        "source" : "53ba52e11cc1be23.txt",
+        "type" : "text/plain",
+        "size" : 63
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate tab change",
+      "time" : {
+        "start" : 1646739108255,
+        "stop" : 1646739108255,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Failed to switch tabs: expected undefined to equal {}\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/TabsSpec.ts:41:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "1190a41aaf4d7a3",
+        "name" : "more info",
+        "source" : "1190a41aaf4d7a3.txt",
+        "type" : "text/plain",
+        "size" : 250
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "686290d7e8870e6d",
+      "name" : "Screenshot",
+      "source" : "686290d7e8870e6d.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "b60e852e2c6671d3",
+      "name" : "Browser console logs",
+      "source" : "b60e852e2c6671d3.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "9659afc0b8a5ac7f",
+      "name" : "Page HTML source",
+      "source" : "9659afc0b8a5ac7f.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "86eb8c934b722e47",
+      "name" : "Network Logs",
+      "source" : "86eb8c934b722e47.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 11,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-47"
+  }, {
+    "name" : "suite",
+    "value" : "tab actions"
+  }, {
+    "name" : "testClass",
+    "value" : "tab actions"
+  }, {
+    "name" : "testMethod",
+    "value" : "switch to tab"
+  }, {
+    "name" : "package",
+    "value" : "tab actions"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 5,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 14
+      },
+      "items" : [ {
+        "uid" : "8873fc37525ee109",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/8873fc37525ee109",
+        "status" : "failed",
+        "statusDetails" : "Failed to switch tabs: expected undefined to equal {}      \n                      actual expected\n                      \n                      undefinedPromise [Promise] {}\n                      ",
+        "time" : {
+          "start" : 1646683831758,
+          "stop" : 1646683833752,
+          "duration" : 1994
+        }
+      }, {
+        "uid" : "f6e7d5626011c65",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/f6e7d5626011c65",
+        "status" : "failed",
+        "statusDetails" : "Failed to switch tabs: expected undefined to equal {}      \n                      actual expected\n                      \n                      undefinedPromise [Promise] {}\n                      ",
+        "time" : {
+          "start" : 1646681444202,
+          "stop" : 1646681445945,
+          "duration" : 1743
+        }
+      }, {
+        "uid" : "988d8020c281bcc8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/988d8020c281bcc8",
+        "status" : "failed",
+        "statusDetails" : "Failed to switch tabs: expected undefined to equal {}      \n                      actual expected\n                      \n                      undefinedPromise [Promise] {}\n                      ",
+        "time" : {
+          "start" : 1646681406319,
+          "stop" : 1646681408096,
+          "duration" : 1777
+        }
+      }, {
+        "uid" : "66b7b818cd85a630",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/66b7b818cd85a630",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659284094,
+          "stop" : 1646659285144,
+          "duration" : 1050
+        }
+      }, {
+        "uid" : "4e50b99f88df7ba3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/4e50b99f88df7ba3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659260775,
+          "stop" : 1646659262075,
+          "duration" : 1300
+        }
+      }, {
+        "uid" : "244edd8b3eb98b42",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/244edd8b3eb98b42",
+        "status" : "failed",
+        "statusDetails" : "Failed to switch tabs: expected undefined to equal {}      \n                      actual expected\n                      \n                      undefinedPromise [Promise] {}\n                      ",
+        "time" : {
+          "start" : 1646658931312,
+          "stop" : 1646658931503,
+          "duration" : 191
+        }
+      }, {
+        "uid" : "b012dfb8d3f3a0a0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/b012dfb8d3f3a0a0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658686890,
+          "stop" : 1646658688342,
+          "duration" : 1452
+        }
+      }, {
+        "uid" : "dcfe393db147c5ec",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/dcfe393db147c5ec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658611925,
+          "stop" : 1646658612867,
+          "duration" : 942
+        }
+      }, {
+        "uid" : "a5bb56b894bb61bb",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/a5bb56b894bb61bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658251502,
+          "stop" : 1646658252905,
+          "duration" : 1403
+        }
+      }, {
+        "uid" : "380fda931759f03d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/380fda931759f03d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657850236,
+          "stop" : 1646657851379,
+          "duration" : 1143
+        }
+      }, {
+        "uid" : "b21ba7104da27c4e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/b21ba7104da27c4e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552618663,
+          "stop" : 1645552619732,
+          "duration" : 1069
+        }
+      }, {
+        "uid" : "1a1105418bad2479",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/1a1105418bad2479",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534860698,
+          "stop" : 1645534861620,
+          "duration" : 922
+        }
+      }, {
+        "uid" : "88bdef74a7372ddd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/88bdef74a7372ddd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528265779,
+          "stop" : 1645528266750,
+          "duration" : 971
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "bf36e358552f4441.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
