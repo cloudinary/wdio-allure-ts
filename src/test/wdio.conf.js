@@ -86,7 +86,7 @@ exports.config = {
   /**
    * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
    */
-  afterTest: function (test, context, { error, result, duration, passed, retries }) {
+  afterTest: async function (test, context, { error, result, duration, passed, retries }) {
     /**
      * no need to close skipped tests
      */
@@ -97,6 +97,6 @@ exports.config = {
      * Attach browser console logs and html source
      * in case of test failure and close current step
      */
-    Reporter.closeStep(!passed);
+    await Reporter.closeStep(!passed);
   },
 };

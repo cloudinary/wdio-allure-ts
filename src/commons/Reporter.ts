@@ -18,10 +18,8 @@ export namespace Reporter {
    * Stop network audit by sending disable options to cdp method
    * ts-ignore used since it missing types support
    */
-  export function stopNetworkAudit(): void {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    browser.cdp('Network', 'disable');
+  export async function stopNetworkAudit(): Promise<void> {
+    await browser.cdp('Network', 'disable');
 
     networkActivity = [];
   }
@@ -45,12 +43,12 @@ export namespace Reporter {
    *      Reporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
    *    already integrated in Reporter.closeStep method in case of test failure
    */
-  export function startNetworkAudit(): void {
+  export async function startNetworkAudit(): Promise<void> {
     if (browser.capabilities['browserName'] === 'chrome') {
-      browser.cdp('Network', 'enable');
+      await browser.cdp('Network', 'enable');
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      browser.on('Network.responseReceived', (params: any) => {
+      await browser.on('Network.responseReceived', (params: any) => {
         if (params.type.toLowerCase() === 'xhr' || params.type.toLowerCase() === 'fetch') {
           networkActivity.push({
             url: params.response.url,
@@ -66,19 +64,19 @@ export namespace Reporter {
    * Close step in report
    */
   // eslint-disable-next-line
-  export function closeStep(isFailed: boolean, test?: any): void {
+  export async function closeStep(isFailed: boolean, test?: any): Promise<void> {
     let screenshotFilePath;
     if (isFailed) {
       screenshotFilePath = path.join(__dirname, `${TestUtils.randomString(10)}.png`);
-      browser.saveScreenshot(screenshotFilePath);
+      await browser.saveScreenshot(screenshotFilePath);
     }
-    const pageSource = browser.getPageSource();
+    const pageSource = await browser.getPageSource();
 
-    const browserLogs = browser.getLogs('browser');
-    AllureReporter.closeStep(isFailed, browserLogs, pageSource, networkActivity);
+    const browserLogs = await browser.getLogs('browser');
+    await AllureReporter.closeStep(isFailed, browserLogs, pageSource, networkActivity);
 
     if (test) {
-      ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
+      await ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
     }
     if (isFailed) {
       fs.unlinkSync(screenshotFilePath);
@@ -101,10 +99,10 @@ export namespace Reporter {
    * console log with green color text
    * @param msg text to log
    */
-  export function step(msg: string): void {
-    ConsoleReport.step(msg);
-    AllureReporter.step(msg);
-    ReportPortal.step(msg);
+  export async function step(msg: string): Promise<void> {
+    await ConsoleReport.step(msg);
+    await AllureReporter.step(msg);
+    await ReportPortal.step(msg);
   }
 
   /**
@@ -112,10 +110,10 @@ export namespace Reporter {
    * console log with grey color text
    * @param msg text to log
    */
-  export function debug(msg: string): void {
-    ConsoleReport.debug(msg);
-    AllureReporter.addLogEntry('[DEBUG]', msg);
-    ReportPortal.debug(msg);
+  export async function debug(msg: string): Promise<void> {
+    await ConsoleReport.debug(msg);
+    await AllureReporter.addLogEntry('[DEBUG]', msg);
+    await ReportPortal.debug(msg);
   }
 
   /**
@@ -123,10 +121,10 @@ export namespace Reporter {
    * console log with yellow color text
    * @param msg text to log
    */
-  export function warning(msg: string): void {
-    ConsoleReport.warning(msg);
-    AllureReporter.addLogEntry('[WARNING]', msg);
-    ReportPortal.warning(msg);
+  export async function warning(msg: string): Promise<void> {
+    await ConsoleReport.warning(msg);
+    await AllureReporter.addLogEntry('[WARNING]', msg);
+    await ReportPortal.warning(msg);
   }
 
   /**
@@ -134,10 +132,10 @@ export namespace Reporter {
    * console log with red color text
    * @param msg text to log
    */
-  export function error(msg: string): void {
-    ConsoleReport.error(msg);
-    AllureReporter.addLogEntry('[ERROR]', msg);
-    ReportPortal.error(msg);
+  export async function error(msg: string): Promise<void> {
+    await ConsoleReport.error(msg);
+    await AllureReporter.addLogEntry('[ERROR]', msg);
+    await ReportPortal.error(msg);
   }
 
   /**
@@ -145,7 +143,7 @@ export namespace Reporter {
    * Currently only implemented for allure reporter
    * @param name of the screenshot, that will appear in the report
    */
-  export function addScreenshot(name: string = 'screenshot'): void {
-    AllureReporter.addScreenshot(name);
+  export async function addScreenshot(name: string = 'screenshot'): Promise<void> {
+    await AllureReporter.addScreenshot(name);
   }
 }

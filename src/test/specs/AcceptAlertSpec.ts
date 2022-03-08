@@ -9,15 +9,15 @@ const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@i
 
 describeCommon('acceptAlert', () => {
   it('accept existing alert', async () => {
-    Reporter.step(`Click on trigger alert button`);
+    await Reporter.step(`Click on trigger alert button`);
     await $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
 
-    Reporter.step('Accept Alert');
+    await Reporter.step('Accept Alert');
     await BrowserUtils.acceptAlert();
   });
 
   it('no alert', async () => {
-    Reporter.step('Validate failure to accept not existing alert');
+    await Reporter.step('Validate failure to accept not existing alert');
     await chai.expect(await BrowserUtils.acceptAlert()).to.rejectedWith(Error, 'no such alert: no such alert');
   });
 });

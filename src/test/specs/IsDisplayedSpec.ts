@@ -6,18 +6,18 @@ import { describeCommon } from '../TestHelper';
 
 describeCommon('IsDisplayed', () => {
   it('displayed true', async () => {
-    Reporter.step('isDisplayed of displayed element');
+    await Reporter.step('isDisplayed of displayed element');
     chai.expect(await BrowserUtils.isDisplayed("//*[@id='IsDisplayed']//button[@id='displayed_button']")).to.be.true;
   });
 
   it('displayed false', async () => {
-    Reporter.step('isDisplayed of hidden element');
+    await Reporter.step('isDisplayed of hidden element');
     chai.expect(await BrowserUtils.isDisplayed("//*[@id='IsDisplayed']//button[@id='not_displayed_button']")).to.be
       .false;
   });
 
   it('not exist element', async () => {
-    Reporter.step('isDisplayed element not exist');
+    await Reporter.step('isDisplayed element not exist');
     chai.expect(await BrowserUtils.isDisplayed("//*[@id='IsDisplayed']//button[@id='not_such_button']")).to.be.false;
   });
 });
