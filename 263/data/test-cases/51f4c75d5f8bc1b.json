@@ -1,0 +1,362 @@
+{
+  "uid" : "51f4c75d5f8bc1b",
+  "name" : "correct list with incorrect size",
+  "fullName" : "verifyFilesInZip.correct list with incorrect size",
+  "historyId" : "6a6e51d0fb6a2ba7ae66750f82a25885",
+  "time" : {
+    "start" : 1646748222528,
+    "stop" : 1646748223451,
+    "duration" : 923
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+  "statusTrace" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/VerifyFilesInZipSpec.ts:18:16)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+    "statusTrace" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/VerifyFilesInZipSpec.ts:18:16)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for verifyFilesInZip",
+      "time" : {
+        "start" : 1646748222529,
+        "stop" : 1646748222862,
+        "duration" : 333
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646748222817,
+          "stop" : 1646748222817,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d2f67029783ca3a3",
+          "name" : "more info",
+          "source" : "d2f67029783ca3a3.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646748222862,
+          "stop" : 1646748222862,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "fe298b47f6a85231",
+          "name" : "more info",
+          "source" : "fe298b47f6a85231.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - ===Verify zip content===",
+      "time" : {
+        "start" : 1646748222871,
+        "stop" : 1646748222871,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "fcc5be70c7cd5eca",
+        "name" : "more info",
+        "source" : "fcc5be70c7cd5eca.txt",
+        "type" : "text/plain",
+        "size" : 52
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Verify correct list name and number of files in zip",
+      "time" : {
+        "start" : 1646748223430,
+        "stop" : 1646748223430,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/VerifyFilesInZipSpec.ts:18:16)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "beb59d3b7976fcd9",
+        "name" : "more info",
+        "source" : "beb59d3b7976fcd9.txt",
+        "type" : "text/plain",
+        "size" : 161
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "817556d89c8e71e4",
+      "name" : "Screenshot",
+      "source" : "817556d89c8e71e4.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "c57e0e1ca5ad58cf",
+      "name" : "Browser console logs",
+      "source" : "c57e0e1ca5ad58cf.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "6be56f0c5ca24a24",
+      "name" : "Page HTML source",
+      "source" : "6be56f0c5ca24a24.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "4846781d5de1cc76",
+      "name" : "Network Logs",
+      "source" : "4846781d5de1cc76.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-49"
+  }, {
+    "name" : "suite",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testClass",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testMethod",
+    "value" : "correct list with incorrect size"
+  }, {
+    "name" : "package",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 8,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 17
+      },
+      "items" : [ {
+        "uid" : "cf797cb9228f5239",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/cf797cb9228f5239",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646747046392,
+          "stop" : 1646747047299,
+          "duration" : 907
+        }
+      }, {
+        "uid" : "18e558818d782e64",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/18e558818d782e64",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646746030820,
+          "stop" : 1646746032089,
+          "duration" : 1269
+        }
+      }, {
+        "uid" : "7bc619020ce01ee",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/7bc619020ce01ee",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646739107823,
+          "stop" : 1646739109202,
+          "duration" : 1379
+        }
+      }, {
+        "uid" : "4f8727526f69c65e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/4f8727526f69c65e",
+        "status" : "failed",
+        "statusDetails" : "expected 'Incorrect number of files. Expected \\'5\\', actual \\'0\\'' to include 'Incorrect number of files. Expected \\'5\\', actual \\'3\\''      \n                      actual expected\n                      \n                      'Incorrect number of files. Expected \\'5\\', actual \\'0\\''undefined\n                      ",
+        "time" : {
+          "start" : 1646683837907,
+          "stop" : 1646683839114,
+          "duration" : 1207
+        }
+      }, {
+        "uid" : "a0e87cb54e178e9f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/a0e87cb54e178e9f",
+        "status" : "failed",
+        "statusDetails" : "expected 'Incorrect number of files. Expected \\'5\\', actual \\'0\\'' to include 'Incorrect number of files. Expected \\'5\\', actual \\'3\\''      \n                      actual expected\n                      \n                      'Incorrect number of files. Expected \\'5\\', actual \\'0\\''undefined\n                      ",
+        "time" : {
+          "start" : 1646681448369,
+          "stop" : 1646681449543,
+          "duration" : 1174
+        }
+      }, {
+        "uid" : "b875fbb8ccd591b9",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/b875fbb8ccd591b9",
+        "status" : "failed",
+        "statusDetails" : "expected 'Incorrect number of files. Expected \\'5\\', actual \\'0\\'' to include 'Incorrect number of files. Expected \\'5\\', actual \\'3\\''      \n                      actual expected\n                      \n                      'Incorrect number of files. Expected \\'5\\', actual \\'0\\''undefined\n                      ",
+        "time" : {
+          "start" : 1646681410591,
+          "stop" : 1646681411817,
+          "duration" : 1226
+        }
+      }, {
+        "uid" : "7d9689e5c6a2306b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/7d9689e5c6a2306b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659288413,
+          "stop" : 1646659288796,
+          "duration" : 383
+        }
+      }, {
+        "uid" : "f8086aec9b44659e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/f8086aec9b44659e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659264357,
+          "stop" : 1646659264724,
+          "duration" : 367
+        }
+      }, {
+        "uid" : "838c5529d3bf9f8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/838c5529d3bf9f8",
+        "status" : "failed",
+        "statusDetails" : "expected 'Incorrect number of files. Expected \\'5\\', actual \\'0\\'' to include 'Incorrect number of files. Expected \\'5\\', actual \\'3\\''      \n                      actual expected\n                      \n                      'Incorrect number of files. Expected \\'5\\', actual \\'0\\''undefined\n                      ",
+        "time" : {
+          "start" : 1646658934693,
+          "stop" : 1646658934784,
+          "duration" : 91
+        }
+      }, {
+        "uid" : "4c35ad2cb2e0c4a3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/4c35ad2cb2e0c4a3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658690193,
+          "stop" : 1646658690591,
+          "duration" : 398
+        }
+      }, {
+        "uid" : "ab7f76ff80e00e95",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/ab7f76ff80e00e95",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658616128,
+          "stop" : 1646658616407,
+          "duration" : 279
+        }
+      }, {
+        "uid" : "b2cfc1dbad17430b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/b2cfc1dbad17430b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658257333,
+          "stop" : 1646658257699,
+          "duration" : 366
+        }
+      }, {
+        "uid" : "b6feada11521a30d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/b6feada11521a30d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657853796,
+          "stop" : 1646657854209,
+          "duration" : 413
+        }
+      }, {
+        "uid" : "eddfdb4ca41bf62c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/eddfdb4ca41bf62c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552621830,
+          "stop" : 1645552622034,
+          "duration" : 204
+        }
+      }, {
+        "uid" : "ec022bd59e6ec1ce",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/ec022bd59e6ec1ce",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534864550,
+          "stop" : 1645534864848,
+          "duration" : 298
+        }
+      }, {
+        "uid" : "6ba878dcf0267b2c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/6ba878dcf0267b2c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528270188,
+          "stop" : 1645528270544,
+          "duration" : 356
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "51f4c75d5f8bc1b.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

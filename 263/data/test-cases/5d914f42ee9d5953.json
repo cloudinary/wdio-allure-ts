@@ -1,0 +1,362 @@
+{
+  "uid" : "5d914f42ee9d5953",
+  "name" : "drag and drop to non existing element",
+  "fullName" : "dragAndDrop.drag and drop to non existing element",
+  "historyId" : "38c2caa56d1626b01cb85a6166d0cccc",
+  "time" : {
+    "start" : 1646748125736,
+    "stop" : 1646748127412,
+    "duration" : 1676
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+  "statusTrace" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DragAndDropSpec.ts:54:83)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+    "statusTrace" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DragAndDropSpec.ts:54:83)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for dragAndDrop",
+      "time" : {
+        "start" : 1646748125736,
+        "stop" : 1646748126327,
+        "duration" : 591
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646748126219,
+          "stop" : 1646748126219,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "8497e57714fa4897",
+          "name" : "more info",
+          "source" : "8497e57714fa4897.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646748126326,
+          "stop" : 1646748126327,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a0a898cc4b5a8946",
+          "name" : "more info",
+          "source" : "a0a898cc4b5a8946.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Drag and drop element '#draggedSlider' to '//*[@id=\"NotExistingElement_qweqwe\"]'.",
+      "time" : {
+        "start" : 1646748126327,
+        "stop" : 1646748126328,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "94352f7c30bc1c34",
+        "name" : "more info",
+        "source" : "94352f7c30bc1c34.txt",
+        "type" : "text/plain",
+        "size" : 109
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Drag and drop to non existing element should throw error",
+      "time" : {
+        "start" : 1646748127410,
+        "stop" : 1646748127410,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/DragAndDropSpec.ts:54:83)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6345ddafbb1ca56",
+        "name" : "more info",
+        "source" : "6345ddafbb1ca56.txt",
+        "type" : "text/plain",
+        "size" : 257
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "2984898fcaa9d020",
+      "name" : "Screenshot",
+      "source" : "2984898fcaa9d020.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "c9a1db905d25ce11",
+      "name" : "Browser console logs",
+      "source" : "c9a1db905d25ce11.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "43a1abeb21ab5495",
+      "name" : "Page HTML source",
+      "source" : "43a1abeb21ab5495.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "5b66a0029dfbcebc",
+      "name" : "Network Logs",
+      "source" : "5b66a0029dfbcebc.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-8"
+  }, {
+    "name" : "suite",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testClass",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testMethod",
+    "value" : "drag and drop to non existing element"
+  }, {
+    "name" : "package",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 8,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 17
+      },
+      "items" : [ {
+        "uid" : "96dd59e5355f9b3d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/96dd59e5355f9b3d",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646746957843,
+          "stop" : 1646746959430,
+          "duration" : 1587
+        }
+      }, {
+        "uid" : "f7b2588e43185870",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/f7b2588e43185870",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646745937079,
+          "stop" : 1646745938531,
+          "duration" : 1452
+        }
+      }, {
+        "uid" : "9f9045fafa47739",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/9f9045fafa47739",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646739007707,
+          "stop" : 1646739009207,
+          "duration" : 1500
+        }
+      }, {
+        "uid" : "6e7580a0302ac2e8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/6e7580a0302ac2e8",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646683734504,
+          "stop" : 1646683736129,
+          "duration" : 1625
+        }
+      }, {
+        "uid" : "e30d6700a4382262",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/e30d6700a4382262",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646681342111,
+          "stop" : 1646681343798,
+          "duration" : 1687
+        }
+      }, {
+        "uid" : "e052788779002282",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/e052788779002282",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646681297331,
+          "stop" : 1646681299127,
+          "duration" : 1796
+        }
+      }, {
+        "uid" : "961bc2cded27c886",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/961bc2cded27c886",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659192816,
+          "stop" : 1646659196355,
+          "duration" : 3539
+        }
+      }, {
+        "uid" : "8b19f35b53f298ec",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/8b19f35b53f298ec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659168784,
+          "stop" : 1646659172274,
+          "duration" : 3490
+        }
+      }, {
+        "uid" : "e2f56b665eecc844",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/e2f56b665eecc844",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646658842501,
+          "stop" : 1646658842578,
+          "duration" : 77
+        }
+      }, {
+        "uid" : "51037f1fc42e74bf",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/51037f1fc42e74bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658592038,
+          "stop" : 1646658595502,
+          "duration" : 3464
+        }
+      }, {
+        "uid" : "833bfd02fae61192",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/833bfd02fae61192",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658538309,
+          "stop" : 1646658541723,
+          "duration" : 3414
+        }
+      }, {
+        "uid" : "53e710bee68ed345",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/53e710bee68ed345",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658154049,
+          "stop" : 1646658157760,
+          "duration" : 3711
+        }
+      }, {
+        "uid" : "bc85766dc4936480",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/bc85766dc4936480",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657768952,
+          "stop" : 1646657772446,
+          "duration" : 3494
+        }
+      }, {
+        "uid" : "5e61d6f57f5d1af9",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/5e61d6f57f5d1af9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552542446,
+          "stop" : 1645552545790,
+          "duration" : 3344
+        }
+      }, {
+        "uid" : "e6ddc2f29e9bb9b1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/e6ddc2f29e9bb9b1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534786695,
+          "stop" : 1645534790176,
+          "duration" : 3481
+        }
+      }, {
+        "uid" : "a61f2809c9bb09",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/a61f2809c9bb09",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528193749,
+          "stop" : 1645528197123,
+          "duration" : 3374
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "5d914f42ee9d5953.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
