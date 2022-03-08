@@ -18,6 +18,6 @@ describeCommon('acceptAlert', () => {
 
   it('no alert', async () => {
     await Reporter.step('Validate failure to accept not existing alert');
-    await chai.expect(await BrowserUtils.acceptAlert()).to.rejectedWith(Error, 'no such alert: no such alert');
+    await chai.expect(BrowserUtils.acceptAlert()).to.rejectedWith(Error, 'Failed to accept alert');
   });
 });
