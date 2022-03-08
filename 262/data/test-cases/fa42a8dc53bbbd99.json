@@ -1,0 +1,351 @@
+{
+  "uid" : "fa42a8dc53bbbd99",
+  "name" : "retrieve css property",
+  "fullName" : "getCssProperty.retrieve css property",
+  "historyId" : "4200996aeb3769496deeb202fd8280d8",
+  "time" : {
+    "start" : 1646746980127,
+    "stop" : 1646746982206,
+    "duration" : 2079
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+  "statusTrace" : "AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetCssPropertySpec.ts:13:75)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+    "statusTrace" : "AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetCssPropertySpec.ts:13:75)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getCssProperty",
+      "time" : {
+        "start" : 1646746980127,
+        "stop" : 1646746981153,
+        "duration" : 1026
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646746980994,
+          "stop" : 1646746980996,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "dfdc5ac6cc0368c2",
+          "name" : "more info",
+          "source" : "dfdc5ac6cc0368c2.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646746981153,
+          "stop" : 1646746981153,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1259cdb04c4b62d4",
+          "name" : "more info",
+          "source" : "1259cdb04c4b62d4.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get css property 'background-color' from element by '//*[@id=\"headerSection-1\"]/h1'",
+      "time" : {
+        "start" : 1646746981178,
+        "stop" : 1646746981180,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b74321450c0c1c10",
+        "name" : "more info",
+        "source" : "b74321450c0c1c10.txt",
+        "type" : "text/plain",
+        "size" : 111
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Get css property",
+      "time" : {
+        "start" : 1646746982142,
+        "stop" : 1646746982143,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ad2fbabb42d995c7",
+        "name" : "more info",
+        "source" : "ad2fbabb42d995c7.txt",
+        "type" : "text/plain",
+        "size" : 45
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "f62c60a4939b7b1a",
+      "name" : "Screenshot",
+      "source" : "f62c60a4939b7b1a.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "125a2b1b7fe67e22",
+      "name" : "Browser console logs",
+      "source" : "125a2b1b7fe67e22.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "c6625ad309e4d6d4",
+      "name" : "Page HTML source",
+      "source" : "c6625ad309e4d6d4.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "2d46d8db29622803",
+      "name" : "Network Logs",
+      "source" : "2d46d8db29622803.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-19"
+  }, {
+    "name" : "suite",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testClass",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testMethod",
+    "value" : "retrieve css property"
+  }, {
+    "name" : "package",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 7,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 16
+      },
+      "items" : [ {
+        "uid" : "ef800bc77dbb8315",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/ef800bc77dbb8315",
+        "status" : "broken",
+        "statusDetails" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "time" : {
+          "start" : 1646745960038,
+          "stop" : 1646745962686,
+          "duration" : 2648
+        }
+      }, {
+        "uid" : "8c0e394daa64038f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/8c0e394daa64038f",
+        "status" : "broken",
+        "statusDetails" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "time" : {
+          "start" : 1646739029814,
+          "stop" : 1646739032634,
+          "duration" : 2820
+        }
+      }, {
+        "uid" : "2d2a9086e4e8bc4c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/2d2a9086e4e8bc4c",
+        "status" : "broken",
+        "statusDetails" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "time" : {
+          "start" : 1646683758570,
+          "stop" : 1646683760238,
+          "duration" : 1668
+        }
+      }, {
+        "uid" : "5c3a1f00cb57adc5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/5c3a1f00cb57adc5",
+        "status" : "broken",
+        "statusDetails" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "time" : {
+          "start" : 1646681366497,
+          "stop" : 1646681367918,
+          "duration" : 1421
+        }
+      }, {
+        "uid" : "44c980e27907361e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/44c980e27907361e",
+        "status" : "broken",
+        "statusDetails" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "time" : {
+          "start" : 1646681326512,
+          "stop" : 1646681327897,
+          "duration" : 1385
+        }
+      }, {
+        "uid" : "deccda9ce5aad212",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/deccda9ce5aad212",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659218423,
+          "stop" : 1646659219104,
+          "duration" : 681
+        }
+      }, {
+        "uid" : "1c59f6ee12382388",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/1c59f6ee12382388",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659194934,
+          "stop" : 1646659195550,
+          "duration" : 616
+        }
+      }, {
+        "uid" : "b97a8a2d393c7570",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/b97a8a2d393c7570",
+        "status" : "broken",
+        "statusDetails" : "the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string",
+        "time" : {
+          "start" : 1646658867430,
+          "stop" : 1646658867859,
+          "duration" : 429
+        }
+      }, {
+        "uid" : "1ddbcc03e1c83bab",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/1ddbcc03e1c83bab",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658618398,
+          "stop" : 1646658619350,
+          "duration" : 952
+        }
+      }, {
+        "uid" : "3776f9a2074382c6",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/3776f9a2074382c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658558448,
+          "stop" : 1646658558904,
+          "duration" : 456
+        }
+      }, {
+        "uid" : "57f84fff8e17de3f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/57f84fff8e17de3f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658180225,
+          "stop" : 1646658181022,
+          "duration" : 797
+        }
+      }, {
+        "uid" : "ee1e1553a2c87454",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/ee1e1553a2c87454",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657792017,
+          "stop" : 1646657792677,
+          "duration" : 660
+        }
+      }, {
+        "uid" : "65f07de29af7981f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/65f07de29af7981f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552565276,
+          "stop" : 1645552565807,
+          "duration" : 531
+        }
+      }, {
+        "uid" : "e5cda00cf04d1c8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/e5cda00cf04d1c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534808590,
+          "stop" : 1645534809181,
+          "duration" : 591
+        }
+      }, {
+        "uid" : "a74feaaa56dbfe8d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/a74feaaa56dbfe8d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528214404,
+          "stop" : 1645528214887,
+          "duration" : 483
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "fa42a8dc53bbbd99.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
