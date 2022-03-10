@@ -7,7 +7,7 @@ const navigationButton: string = "//button[@data-test='navigate-to-cloudinary']"
 describeCommon('BackSpec', () => {
   it('back browser', async () => {
     await Reporter.step('Click navigation button');
-    await $(navigationButton).click();
+    await BrowserUtils.click(navigationButton);
 
     await Reporter.step('Click back button');
     await BrowserUtils.back();
