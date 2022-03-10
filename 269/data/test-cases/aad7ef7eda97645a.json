@@ -1,0 +1,383 @@
+{
+  "uid" : "aad7ef7eda97645a",
+  "name" : "get url",
+  "fullName" : "GetUrlSpec.get url",
+  "historyId" : "463bef0fcfbe243c8bdab067c6d6192d",
+  "time" : {
+    "start" : 1646910972055,
+    "stop" : 1646910974339,
+    "duration" : 2284
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+  "statusTrace" : "AssertionError: expected {} to equal 'http://127.0.0.1:8000/'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetUrlSpec.ts:8:38)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+    "statusTrace" : "AssertionError: expected {} to equal 'http://127.0.0.1:8000/'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetUrlSpec.ts:8:38)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetUrlSpec",
+      "time" : {
+        "start" : 1646910972079,
+        "stop" : 1646910973202,
+        "duration" : 1123
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646910972950,
+          "stop" : 1646910972952,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "50416b31fa845792",
+          "name" : "more info",
+          "source" : "50416b31fa845792.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646910973202,
+          "stop" : 1646910973202,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c0547565d5ebd89b",
+          "name" : "more info",
+          "source" : "c0547565d5ebd89b.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate getUrl return value",
+      "time" : {
+        "start" : 1646910974265,
+        "stop" : 1646910974265,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected {} to equal 'http://127.0.0.1:8000/'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetUrlSpec.ts:8:38)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a4149789a56c484f",
+        "name" : "more info",
+        "source" : "a4149789a56c484f.txt",
+        "type" : "text/plain",
+        "size" : 128
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "a09f66746eb0b50c",
+      "name" : "Screenshot",
+      "source" : "a09f66746eb0b50c.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "7ef0137eea30b832",
+      "name" : "Browser console logs",
+      "source" : "7ef0137eea30b832.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "1036e56e02ad876c",
+      "name" : "Page HTML source",
+      "source" : "1036e56e02ad876c.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "160e32c59e014f0d",
+      "name" : "Network Logs",
+      "source" : "160e32c59e014f0d.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 7,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-25"
+  }, {
+    "name" : "suite",
+    "value" : "GetUrlSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetUrlSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "get url"
+  }, {
+    "name" : "package",
+    "value" : "GetUrlSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 14,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 23
+      },
+      "items" : [ {
+        "uid" : "6df7ced919a4d623",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/268//#testresult/6df7ced919a4d623",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646909780046,
+          "stop" : 1646909782358,
+          "duration" : 2312
+        }
+      }, {
+        "uid" : "5d484d4f4121221",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/267//#testresult/5d484d4f4121221",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646908203144,
+          "stop" : 1646908205561,
+          "duration" : 2417
+        }
+      }, {
+        "uid" : "f90242adcb030166",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/266//#testresult/f90242adcb030166",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646907869769,
+          "stop" : 1646907872030,
+          "duration" : 2261
+        }
+      }, {
+        "uid" : "1e9d5bb13b6ab981",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/265//#testresult/1e9d5bb13b6ab981",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646907473373,
+          "stop" : 1646907476321,
+          "duration" : 2948
+        }
+      }, {
+        "uid" : "4db93aa617bd3555",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/264//#testresult/4db93aa617bd3555",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646907170869,
+          "stop" : 1646907173161,
+          "duration" : 2292
+        }
+      }, {
+        "uid" : "9c2d137fa9c78b24",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/263//#testresult/9c2d137fa9c78b24",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646748168453,
+          "stop" : 1646748170711,
+          "duration" : 2258
+        }
+      }, {
+        "uid" : "26e25c7d368a359c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/26e25c7d368a359c",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646746998077,
+          "stop" : 1646747000021,
+          "duration" : 1944
+        }
+      }, {
+        "uid" : "92ca39c8b97b7ac9",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/92ca39c8b97b7ac9",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646745980508,
+          "stop" : 1646745982136,
+          "duration" : 1628
+        }
+      }, {
+        "uid" : "df52736745673ee2",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/df52736745673ee2",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646739052034,
+          "stop" : 1646739054692,
+          "duration" : 2658
+        }
+      }, {
+        "uid" : "72b770ab3b6c2ccf",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/72b770ab3b6c2ccf",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646683781780,
+          "stop" : 1646683782853,
+          "duration" : 1073
+        }
+      }, {
+        "uid" : "1b277fa279b61649",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/1b277fa279b61649",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646681390699,
+          "stop" : 1646681392072,
+          "duration" : 1373
+        }
+      }, {
+        "uid" : "33d3d890caab1d09",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/33d3d890caab1d09",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646681348594,
+          "stop" : 1646681350043,
+          "duration" : 1449
+        }
+      }, {
+        "uid" : "286369470557545f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/286369470557545f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659236961,
+          "stop" : 1646659237744,
+          "duration" : 783
+        }
+      }, {
+        "uid" : "cd330a5a8087570e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/cd330a5a8087570e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659213358,
+          "stop" : 1646659214113,
+          "duration" : 755
+        }
+      }, {
+        "uid" : "592a469be8597038",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/592a469be8597038",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'http://127.0.0.1:8000/'      \n                      actual expected\n                      \n                      Promise [Promise] {}'http://127.0.0.1:8000/'\n                      ",
+        "time" : {
+          "start" : 1646658887445,
+          "stop" : 1646658887787,
+          "duration" : 342
+        }
+      }, {
+        "uid" : "73e67a23fd9073d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/73e67a23fd9073d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658636914,
+          "stop" : 1646658637855,
+          "duration" : 941
+        }
+      }, {
+        "uid" : "2ce92779f02da162",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/2ce92779f02da162",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658574565,
+          "stop" : 1646658575180,
+          "duration" : 615
+        }
+      }, {
+        "uid" : "c3c92eda955495dd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/c3c92eda955495dd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658199379,
+          "stop" : 1646658200395,
+          "duration" : 1016
+        }
+      }, {
+        "uid" : "a660ffe4e066b91a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/a660ffe4e066b91a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657808902,
+          "stop" : 1646657809628,
+          "duration" : 726
+        }
+      }, {
+        "uid" : "67f2ee28240c72b0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/67f2ee28240c72b0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552580190,
+          "stop" : 1645552580841,
+          "duration" : 651
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "aad7ef7eda97645a.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
