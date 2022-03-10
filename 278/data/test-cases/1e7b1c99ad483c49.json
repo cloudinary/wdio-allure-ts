@@ -1,0 +1,235 @@
+{
+  "uid" : "1e7b1c99ad483c49",
+  "name" : "drag and drop to coordinate",
+  "fullName" : "dragAndDrop.drag and drop to coordinate",
+  "historyId" : "f6179f07c486bb7cd50ecf1353d96d43",
+  "time" : {
+    "start" : 1646933623777,
+    "stop" : 1646933626461,
+    "duration" : 2684
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for dragAndDrop",
+      "time" : {
+        "start" : 1646933623784,
+        "stop" : 1646933625625,
+        "duration" : 1841
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646933625349,
+          "stop" : 1646933625351,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "cf655bd9894c3d9b",
+          "name" : "more info",
+          "source" : "cf655bd9894c3d9b.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646933625624,
+          "stop" : 1646933625625,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d7aed7e1ae18787c",
+          "name" : "more info",
+          "source" : "d7aed7e1ae18787c.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get element's location '#draggedSlider'",
+      "time" : {
+        "start" : 1646933625626,
+        "stop" : 1646933625626,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "621b38af75b3e36",
+        "name" : "more info",
+        "source" : "621b38af75b3e36.txt",
+        "type" : "text/plain",
+        "size" : 67
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Drag and drop an element by coordinate",
+      "time" : {
+        "start" : 1646933626297,
+        "stop" : 1646933626298,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "961c1336c5a7ddb",
+        "name" : "more info",
+        "source" : "961c1336c5a7ddb.txt",
+        "type" : "text/plain",
+        "size" : 303
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate elements position changed",
+      "time" : {
+        "start" : 1646933626460,
+        "stop" : 1646933626461,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9d7cdb09330dc9f9",
+        "name" : "more info",
+        "source" : "9d7cdb09330dc9f9.txt",
+        "type" : "text/plain",
+        "size" : 63
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-8"
+  }, {
+    "name" : "suite",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testClass",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testMethod",
+    "value" : "drag and drop to coordinate"
+  }, {
+    "name" : "package",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 5,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "168aab5865109d5d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/277//#testresult/168aab5865109d5d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646932760347,
+          "stop" : 1646932763438,
+          "duration" : 3091
+        }
+      }, {
+        "uid" : "256dfef8f8888808",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/276//#testresult/256dfef8f8888808",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930381460,
+          "stop" : 1646930384173,
+          "duration" : 2713
+        }
+      }, {
+        "uid" : "5262d9ee29c3aa12",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/5262d9ee29c3aa12",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930044929,
+          "stop" : 1646930048047,
+          "duration" : 3118
+        }
+      }, {
+        "uid" : "70efcf3d5817a67f",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/70efcf3d5817a67f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927449514,
+          "stop" : 1646927453102,
+          "duration" : 3588
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1e7b1c99ad483c49.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

@@ -1,0 +1,214 @@
+{
+  "uid" : "2ea955cd72083af7",
+  "name" : "successfully start and read network audit",
+  "fullName" : "startNetworkAudit.successfully start and read network audit",
+  "historyId" : "c8317af4b69c4d6627906dce5a1dfa3e",
+  "time" : {
+    "start" : 1646933727486,
+    "stop" : 1646933728574,
+    "duration" : 1088
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for startNetworkAudit",
+      "time" : {
+        "start" : 1646933727487,
+        "stop" : 1646933728521,
+        "duration" : 1034
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646933728392,
+          "stop" : 1646933728394,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "8c0159d4dfa442a6",
+          "name" : "more info",
+          "source" : "8c0159d4dfa442a6.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646933728521,
+          "stop" : 1646933728521,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "5928cd4eda713ec6",
+          "name" : "more info",
+          "source" : "5928cd4eda713ec6.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Navigate to 'http://127.0.0.1:8000/'",
+      "time" : {
+        "start" : 1646933728522,
+        "stop" : 1646933728522,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d4ffde39c178ade6",
+        "name" : "more info",
+        "source" : "d4ffde39c178ade6.txt",
+        "type" : "text/plain",
+        "size" : 64
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for new logs",
+      "time" : {
+        "start" : 1646933728569,
+        "stop" : 1646933728569,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6205e3f4f1c373d6",
+        "name" : "more info",
+        "source" : "6205e3f4f1c373d6.txt",
+        "type" : "text/plain",
+        "size" : 46
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-44"
+  }, {
+    "name" : "suite",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "testClass",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "testMethod",
+    "value" : "successfully start and read network audit"
+  }, {
+    "name" : "package",
+    "value" : "startNetworkAudit"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 5,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "1279dbccb11d4a47",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/277//#testresult/1279dbccb11d4a47",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646932872605,
+          "stop" : 1646932873930,
+          "duration" : 1325
+        }
+      }, {
+        "uid" : "bf731b55ee3bb53",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/276//#testresult/bf731b55ee3bb53",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930465538,
+          "stop" : 1646930466525,
+          "duration" : 987
+        }
+      }, {
+        "uid" : "57a278977ab9d738",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/57a278977ab9d738",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930150374,
+          "stop" : 1646930151567,
+          "duration" : 1193
+        }
+      }, {
+        "uid" : "4e6f1fa363ba06d6",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/4e6f1fa363ba06d6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927567191,
+          "stop" : 1646927568454,
+          "duration" : 1263
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "2ea955cd72083af7.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}
