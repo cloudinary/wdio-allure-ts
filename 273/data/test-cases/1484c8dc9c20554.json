@@ -1,0 +1,408 @@
+{
+  "uid" : "1484c8dc9c20554",
+  "name" : "get tab ids",
+  "fullName" : "tab actions.get tab ids",
+  "historyId" : "74f2b85040bc9364a61aafef107e2df0",
+  "time" : {
+    "start" : 1646923983529,
+    "stop" : 1646923985525,
+    "duration" : 1996
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+  "statusTrace" : "AssertionError: Incorrect number of tab ids: expected undefined to equal 1\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/TabsSpec.ts:15:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+    "statusTrace" : "AssertionError: Incorrect number of tab ids: expected undefined to equal 1\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/TabsSpec.ts:15:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for tab actions",
+      "time" : {
+        "start" : 1646923983529,
+        "stop" : 1646923984564,
+        "duration" : 1035
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646923984396,
+          "stop" : 1646923984397,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d6447163c46eda29",
+          "name" : "more info",
+          "source" : "d6447163c46eda29.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646923984564,
+          "stop" : 1646923984564,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ff2d64615d20a708",
+          "name" : "more info",
+          "source" : "ff2d64615d20a708.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get all ids of all open tabs",
+      "time" : {
+        "start" : 1646923984566,
+        "stop" : 1646923984566,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3da402f1e7286f62",
+        "name" : "more info",
+        "source" : "3da402f1e7286f62.txt",
+        "type" : "text/plain",
+        "size" : 56
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - validate number of tabs",
+      "time" : {
+        "start" : 1646923985453,
+        "stop" : 1646923985453,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect number of tab ids: expected undefined to equal 1\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/TabsSpec.ts:15:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5e360b039fbdb7a4",
+        "name" : "more info",
+        "source" : "5e360b039fbdb7a4.txt",
+        "type" : "text/plain",
+        "size" : 52
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b6d7e485b4a0d9ec",
+      "name" : "Screenshot",
+      "source" : "b6d7e485b4a0d9ec.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "2eef607a8799891",
+      "name" : "Browser console logs",
+      "source" : "2eef607a8799891.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "efd1cc5063fa747d",
+      "name" : "Page HTML source",
+      "source" : "efd1cc5063fa747d.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "d6fad579fcca27a",
+      "name" : "Network Logs",
+      "source" : "d6fad579fcca27a.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-47"
+  }, {
+    "name" : "suite",
+    "value" : "tab actions"
+  }, {
+    "name" : "testClass",
+    "value" : "tab actions"
+  }, {
+    "name" : "testMethod",
+    "value" : "get tab ids"
+  }, {
+    "name" : "package",
+    "value" : "tab actions"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 18,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 27
+      },
+      "items" : [ {
+        "uid" : "8b13c904670e195b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/272//#testresult/8b13c904670e195b",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646923669135,
+          "stop" : 1646923671534,
+          "duration" : 2399
+        }
+      }, {
+        "uid" : "22a6de9bc82c920d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/271//#testresult/22a6de9bc82c920d",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646917912737,
+          "stop" : 1646917914687,
+          "duration" : 1950
+        }
+      }, {
+        "uid" : "67e34d516728fda8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/270//#testresult/67e34d516728fda8",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646911858863,
+          "stop" : 1646911861173,
+          "duration" : 2310
+        }
+      }, {
+        "uid" : "c443a407bc44cc3d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/269//#testresult/c443a407bc44cc3d",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646911017071,
+          "stop" : 1646911019138,
+          "duration" : 2067
+        }
+      }, {
+        "uid" : "9b848d5ed980c75a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/268//#testresult/9b848d5ed980c75a",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646909822929,
+          "stop" : 1646909824892,
+          "duration" : 1963
+        }
+      }, {
+        "uid" : "e2ab08ea37260190",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/267//#testresult/e2ab08ea37260190",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646908252372,
+          "stop" : 1646908254728,
+          "duration" : 2356
+        }
+      }, {
+        "uid" : "f6d38e8852ba5705",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/266//#testresult/f6d38e8852ba5705",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646907913385,
+          "stop" : 1646907915203,
+          "duration" : 1818
+        }
+      }, {
+        "uid" : "2ace1d1a5a47a310",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/265//#testresult/2ace1d1a5a47a310",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646907521688,
+          "stop" : 1646907523736,
+          "duration" : 2048
+        }
+      }, {
+        "uid" : "1b7a82e98a0cdbf1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/264//#testresult/1b7a82e98a0cdbf1",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646907216581,
+          "stop" : 1646907218600,
+          "duration" : 2019
+        }
+      }, {
+        "uid" : "cdf61d8c8dff1a63",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/263//#testresult/cdf61d8c8dff1a63",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646748217236,
+          "stop" : 1646748219290,
+          "duration" : 2054
+        }
+      }, {
+        "uid" : "6d0ef159c769ac0d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/6d0ef159c769ac0d",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646747040579,
+          "stop" : 1646747042650,
+          "duration" : 2071
+        }
+      }, {
+        "uid" : "f2d92a20dac0b363",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/f2d92a20dac0b363",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646746025944,
+          "stop" : 1646746027792,
+          "duration" : 1848
+        }
+      }, {
+        "uid" : "42d4eeb607b3d170",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/42d4eeb607b3d170",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646739103435,
+          "stop" : 1646739105861,
+          "duration" : 2426
+        }
+      }, {
+        "uid" : "2c7c436089591c6a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/2c7c436089591c6a",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646683830481,
+          "stop" : 1646683831734,
+          "duration" : 1253
+        }
+      }, {
+        "uid" : "5119279acace551c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/5119279acace551c",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646681442797,
+          "stop" : 1646681444164,
+          "duration" : 1367
+        }
+      }, {
+        "uid" : "b48819d78a5cee3d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/b48819d78a5cee3d",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646681404849,
+          "stop" : 1646681406302,
+          "duration" : 1453
+        }
+      }, {
+        "uid" : "ab9771847a2579d0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/ab9771847a2579d0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659282608,
+          "stop" : 1646659284094,
+          "duration" : 1486
+        }
+      }, {
+        "uid" : "f6f96b919c506841",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/f6f96b919c506841",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659259661,
+          "stop" : 1646659260775,
+          "duration" : 1114
+        }
+      }, {
+        "uid" : "edae93a112dda6dc",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/edae93a112dda6dc",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of tab ids: expected undefined to equal 1      \n                      actual expected\n                      \n                      undefined1\n                      ",
+        "time" : {
+          "start" : 1646658930987,
+          "stop" : 1646658931256,
+          "duration" : 269
+        }
+      }, {
+        "uid" : "85bc269d87dee7f3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/85bc269d87dee7f3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658685818,
+          "stop" : 1646658686890,
+          "duration" : 1072
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "1484c8dc9c20554.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}

@@ -1,0 +1,394 @@
+{
+  "uid" : "be4d1b8e58a4aa2b",
+  "name" : "drag and drop to coordinate",
+  "fullName" : "dragAndDrop.drag and drop to coordinate",
+  "historyId" : "5ad13839d000fe89d8c04b84a0eaa3a5",
+  "time" : {
+    "start" : 1646923898109,
+    "stop" : 1646923900253,
+    "duration" : 2144
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for dragAndDrop",
+      "time" : {
+        "start" : 1646923898110,
+        "stop" : 1646923899585,
+        "duration" : 1475
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646923899287,
+          "stop" : 1646923899289,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "cb229489f9cff6f6",
+          "name" : "more info",
+          "source" : "cb229489f9cff6f6.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646923899585,
+          "stop" : 1646923899585,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "62677311997f4a3a",
+          "name" : "more info",
+          "source" : "62677311997f4a3a.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get element's location '#draggedSlider'",
+      "time" : {
+        "start" : 1646923899592,
+        "stop" : 1646923899624,
+        "duration" : 32
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c8ad5a84541d3bc",
+        "name" : "more info",
+        "source" : "c8ad5a84541d3bc.txt",
+        "type" : "text/plain",
+        "size" : 67
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Drag and drop an element by coordinate",
+      "time" : {
+        "start" : 1646923900148,
+        "stop" : 1646923900149,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ac7c69e7dae2a8a7",
+        "name" : "more info",
+        "source" : "ac7c69e7dae2a8a7.txt",
+        "type" : "text/plain",
+        "size" : 303
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate elements position changed",
+      "time" : {
+        "start" : 1646923900252,
+        "stop" : 1646923900252,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4785fe553dc24411",
+        "name" : "more info",
+        "source" : "4785fe553dc24411.txt",
+        "type" : "text/plain",
+        "size" : 63
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-8"
+  }, {
+    "name" : "suite",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testClass",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "testMethod",
+    "value" : "drag and drop to coordinate"
+  }, {
+    "name" : "package",
+    "value" : "dragAndDrop"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 15,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 12,
+        "unknown" : 0,
+        "total" : 27
+      },
+      "items" : [ {
+        "uid" : "a7418b987cc8138",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/272//#testresult/a7418b987cc8138",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646923557083,
+          "stop" : 1646923560124,
+          "duration" : 3041
+        }
+      }, {
+        "uid" : "88aa61e0df2bcddd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/271//#testresult/88aa61e0df2bcddd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646917805302,
+          "stop" : 1646917808035,
+          "duration" : 2733
+        }
+      }, {
+        "uid" : "5c9689b708224a25",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/270//#testresult/5c9689b708224a25",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646911761858,
+          "stop" : 1646911765835,
+          "duration" : 3977
+        }
+      }, {
+        "uid" : "c24faa1905023fdb",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/269//#testresult/c24faa1905023fdb",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646910923118,
+          "stop" : 1646910926949,
+          "duration" : 3831
+        }
+      }, {
+        "uid" : "82b297d5ce5e7c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/268//#testresult/82b297d5ce5e7c",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646909732037,
+          "stop" : 1646909736305,
+          "duration" : 4268
+        }
+      }, {
+        "uid" : "c458048698ee1173",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/267//#testresult/c458048698ee1173",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646908146856,
+          "stop" : 1646908150654,
+          "duration" : 3798
+        }
+      }, {
+        "uid" : "abaf37fad40378ba",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/266//#testresult/abaf37fad40378ba",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646907826622,
+          "stop" : 1646907830102,
+          "duration" : 3480
+        }
+      }, {
+        "uid" : "c95364076ca9ff44",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/265//#testresult/c95364076ca9ff44",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646907421287,
+          "stop" : 1646907425154,
+          "duration" : 3867
+        }
+      }, {
+        "uid" : "3225af383d6f00cc",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/264//#testresult/3225af383d6f00cc",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646907121488,
+          "stop" : 1646907125749,
+          "duration" : 4261
+        }
+      }, {
+        "uid" : "3e4eec7c69aa6ec8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/263//#testresult/3e4eec7c69aa6ec8",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646748115300,
+          "stop" : 1646748119619,
+          "duration" : 4319
+        }
+      }, {
+        "uid" : "1c36f1c4ee85a94d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/1c36f1c4ee85a94d",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646746948175,
+          "stop" : 1646746952346,
+          "duration" : 4171
+        }
+      }, {
+        "uid" : "a83bccd9981717b9",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/a83bccd9981717b9",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646745927063,
+          "stop" : 1646745930627,
+          "duration" : 3564
+        }
+      }, {
+        "uid" : "937bb2a83c18f3c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/937bb2a83c18f3c",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646738997070,
+          "stop" : 1646739000925,
+          "duration" : 3855
+        }
+      }, {
+        "uid" : "d8e14685a8f77785",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/d8e14685a8f77785",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646683724870,
+          "stop" : 1646683726877,
+          "duration" : 2007
+        }
+      }, {
+        "uid" : "8ab7d94976800701",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/8ab7d94976800701",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646681331517,
+          "stop" : 1646681333776,
+          "duration" : 2259
+        }
+      }, {
+        "uid" : "493adbc73ece075a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/493adbc73ece075a",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646681286145,
+          "stop" : 1646681288535,
+          "duration" : 2390
+        }
+      }, {
+        "uid" : "95586ccf932ca97",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/95586ccf932ca97",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659186484,
+          "stop" : 1646659189125,
+          "duration" : 2641
+        }
+      }, {
+        "uid" : "b0d8130cabed7d28",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/b0d8130cabed7d28",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659161894,
+          "stop" : 1646659164877,
+          "duration" : 2983
+        }
+      }, {
+        "uid" : "c281667119ee024c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/c281667119ee024c",
+        "status" : "failed",
+        "statusDetails" : "Element position was not changed: expected false to be true      \n                      actual expected\n                      \n                      falsetrue\n                      ",
+        "time" : {
+          "start" : 1646658840954,
+          "stop" : 1646658841515,
+          "duration" : 561
+        }
+      }, {
+        "uid" : "b2591b33e692bada",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/b2591b33e692bada",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658585465,
+          "stop" : 1646658588361,
+          "duration" : 2896
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "be4d1b8e58a4aa2b.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
