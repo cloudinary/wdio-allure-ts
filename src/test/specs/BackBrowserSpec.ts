@@ -5,14 +5,14 @@ import { describeCommon, sampleAppUrl } from '../TestHelper';
 const navigationButton: string = "//button[@data-test='navigate-to-cloudinary']";
 
 describeCommon('BackSpec', () => {
-  it('back browser', () => {
-    Reporter.step('Click navigation button');
-    $(navigationButton).click();
+  it('back browser', async () => {
+    await Reporter.step('Click navigation button');
+    await $(navigationButton).click();
 
-    Reporter.step('Click back button');
-    BrowserUtils.back();
+    await Reporter.step('Click back button');
+    await BrowserUtils.back();
 
-    Reporter.step(`Validate url is ${sampleAppUrl}`);
-    expect(browser.getUrl()).to.equal(sampleAppUrl);
+    await Reporter.step(`Validate url is ${sampleAppUrl}`);
+    expect(await browser.getUrl()).to.equal(sampleAppUrl);
   });
 });
