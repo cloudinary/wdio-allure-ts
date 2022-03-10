@@ -886,7 +886,7 @@ export namespace BrowserUtils {
       async () =>
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        await $(selector).dragAndDrop(isTargetSelector ? $(target as string) : (target as DragAndDropCoordinate)),
+        await $(selector).dragAndDrop(isTargetSelector ? await $(target as string) : (target as DragAndDropCoordinate)),
       `Failed to drag and drop ${selector} to '${inspect(target)}'`
     );
   }
