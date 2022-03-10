@@ -1,4 +1,6 @@
-import { expect } from 'chai';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+chai.use(chaiAsPromised);
 import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
@@ -11,43 +13,40 @@ const CHANGE_TEXT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@id=
  * wdio-allure-ts waitForText tests
  */
 describeCommon('waitForText', () => {
-  it('correct text', () => {
-    Reporter.step('wait for correct text');
-    expect(() => BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'Cloudinary rules!')).to.not.throw();
+  it('correct text', async () => {
+    await Reporter.step('wait for correct text');
+    await BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'Cloudinary rules!');
   });
 
-  it('hidden text', () => {
-    Reporter.step('Wait for text of hidden element throws error');
-    expect(() => BrowserUtils.waitForText(HIDDEN_TEXT_SELECTOR, 'Cloudinary rules!'))
-      .to.throw()
-      .with.property('message')
-      .contains('Element not visible');
+  it('hidden text', async () => {
+    await Reporter.step('Wait for text of hidden element throws error');
+    await chai
+      .expect(BrowserUtils.waitForText(HIDDEN_TEXT_SELECTOR, 'Cloudinary rules!'))
+      .to.rejectedWith(Error, 'Element not visible');
   });
 
-  it('dynamic text', () => {
-    Reporter.step('Wait for button to be displayed');
-    $(CHANGE_TEXT_BUTTON_SELECTOR).waitForDisplayed();
+  it('dynamic text', async () => {
+    await Reporter.step('Wait for button to be displayed');
+    await $(CHANGE_TEXT_BUTTON_SELECTOR).waitForDisplayed();
 
-    Reporter.step('Click button');
-    $(CHANGE_TEXT_BUTTON_SELECTOR).click();
+    await Reporter.step('Click button');
+    await $(CHANGE_TEXT_BUTTON_SELECTOR).click();
 
-    Reporter.step('Wait for text change');
-    BrowserUtils.waitForText(DYNAMIC_TEXT_SELECTOR, 'Cloudinary still rules!');
+    await Reporter.step('Wait for text change');
+    await BrowserUtils.waitForText(DYNAMIC_TEXT_SELECTOR, 'Cloudinary still rules!');
   });
 
-  it('fail on case sensitive', () => {
-    Reporter.step('Check case sensitive text');
-    expect(() => BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'cloudinary rules!'))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('waitUntil condition timed out');
+  it('fail on case sensitive', async () => {
+    await Reporter.step('Check case sensitive text');
+    await chai
+      .expect(BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'cloudinary rules!'))
+      .to.rejectedWith(Error, 'waitUntil condition timed out');
   });
 
-  it('fail on wrong text', () => {
-    Reporter.step('wait for incorrect text throw an error');
-    expect(() => BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'Cloudinary not rules!'))
-      .to.throw(Error)
-      .with.property('message')
-      .contains('waitUntil condition timed out');
+  it('fail on wrong text', async () => {
+    await Reporter.step('wait for incorrect text throw an error');
+    await chai
+      .expect(BrowserUtils.waitForText(STATIC_TEXT_SELECTOR, 'Cloudinary not rules!'))
+      .to.rejectedWith(Error, 'waitUntil condition timed out');
   });
 });
