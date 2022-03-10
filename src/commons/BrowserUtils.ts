@@ -335,7 +335,7 @@ export namespace BrowserUtils {
     await waitForExist(selector);
 
     await Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-    await tryBlock(async () => await browser.switchToFrame($(selector)), 'Failed to switch frame');
+    await tryBlock(async () => await browser.switchToFrame(await $(selector)), 'Failed to switch frame');
   }
 
   /**

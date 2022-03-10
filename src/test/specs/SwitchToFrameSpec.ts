@@ -1,4 +1,6 @@
-import { assert, expect } from 'chai';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+chai.use(chaiAsPromised);
 import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
@@ -11,40 +13,40 @@ const FRAME_DONT_EXISTS: string = "//*[@id='iframeDontExists']";
  * wdio-allure-ts Switch to iFrame actions
  */
 describeCommon('switchToIframe', () => {
-  it('Switch to iframe, header text at iFrame 2', () => {
-    Reporter.step('Validate frame 2 not displayed');
-    BrowserUtils.waitForDisplayed(FRAME_2_HEADER_1, { reverse: true });
+  it('Switch to iframe, header text at iFrame 2', async () => {
+    await Reporter.step('Validate frame 2 not displayed');
+    await BrowserUtils.waitForDisplayed(FRAME_2_HEADER_1, { reverse: true });
 
-    Reporter.step('switch to frame 2');
-    BrowserUtils.switchToFrame(FRAME_TWO);
+    await Reporter.step('switch to frame 2');
+    await BrowserUtils.switchToFrame(FRAME_TWO);
 
-    Reporter.step('Validate frame 2 displayed');
-    assert.equal($(FRAME_2_HEADER_1).getText(), 'Frame 2 Heading 1');
+    await Reporter.step('Validate frame 2 displayed');
+    chai.assert.equal(await $(FRAME_2_HEADER_1).getText(), 'Frame 2 Heading 1');
   });
 
-  it('iframe 2 not available after switch to iframe 1', () => {
-    Reporter.step('Validate frame 2 not displayed');
-    BrowserUtils.waitForDisplayed(FRAME_2_HEADER_1, { reverse: true });
+  it('iframe 2 not available after switch to iframe 1', async () => {
+    await Reporter.step('Validate frame 2 not displayed');
+    await BrowserUtils.waitForDisplayed(FRAME_2_HEADER_1, { reverse: true });
 
-    Reporter.step('switch to frame 1');
-    BrowserUtils.switchToFrame(FRAME_ONE);
+    await Reporter.step('switch to frame 1');
+    await BrowserUtils.switchToFrame(FRAME_ONE);
 
-    Reporter.step('Validate frame 2 not displayed');
-    expect(() => $(FRAME_2_HEADER_1).getText()).to.throw(Error);
+    await Reporter.step('Validate frame 2 not displayed');
+    await chai.expect($(FRAME_2_HEADER_1).getText()).to.rejectedWith(Error);
   });
 
-  it('Outside iframe context not accessible after switch', () => {
-    Reporter.step('Validate element not in frames displayed');
-    BrowserUtils.waitForDisplayed(TEXT_OUTSIDE_OF_FRAMES);
+  it('Outside iframe context not accessible after switch', async () => {
+    await Reporter.step('Validate element not in frames displayed');
+    await BrowserUtils.waitForDisplayed(TEXT_OUTSIDE_OF_FRAMES);
 
-    Reporter.step('Switch to frame 1');
-    BrowserUtils.switchToFrame(FRAME_ONE);
+    await Reporter.step('Switch to frame 1');
+    await BrowserUtils.switchToFrame(FRAME_ONE);
 
-    Reporter.step('Validate switched to frame 1');
-    expect(() => $(TEXT_OUTSIDE_OF_FRAMES).getText()).to.throw(Error);
+    await Reporter.step('Validate switched to frame 1');
+    await chai.expect($(TEXT_OUTSIDE_OF_FRAMES).getText()).to.rejectedWith(Error);
   });
 
-  it('Incorrect iframe selector', () => {
-    expect(() => BrowserUtils.switchToFrame(FRAME_DONT_EXISTS)).to.throw(Error);
+  it('Incorrect iframe selector', async () => {
+    await chai.expect(BrowserUtils.switchToFrame(FRAME_DONT_EXISTS)).to.rejectedWith(Error);
   });
 });
