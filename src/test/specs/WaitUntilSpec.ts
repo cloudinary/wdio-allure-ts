@@ -1,4 +1,6 @@
-import { assert, expect } from 'chai';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+chai.use(chaiAsPromised);
 import { BrowserUtils, Reporter } from '../..';
 
 import { describeCommon } from '../TestHelper';
@@ -13,52 +15,59 @@ const INCORRECT_TEXT_ELEMENT_VALUE: string = 'Not Cloudinary';
  * wdio-allure-ts WaitUntil test
  */
 describeCommon('WaitUntilSpec of BrowserUtils Tests', () => {
-  it('Validate text found within given timeout ', () => {
-    Reporter.step('Validate element displayed');
-    BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
+  it('Validate text found within given timeout ', async () => {
+    await Reporter.step('Validate element displayed');
+    await BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
 
-    Reporter.step('Validate success within given timeout');
-    assert.isTrue(
-      BrowserUtils.waitUntil(() => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE, {
+    await Reporter.step('Validate success within given timeout');
+    await BrowserUtils.waitUntil(
+      async () => (await BrowserUtils.getText(TEXT_ELEMENT_SELECTOR)) === TEXT_ELEMENT_VALUE,
+      {
         timeout: TIMEOUT,
         timeoutMsg: 'Some Error',
-      })
+      }
     );
   });
 
-  it('Validate text not found withing timeout and error message shown ', () => {
-    Reporter.step('scroll to element');
-    BrowserUtils.scrollIntoView(HEADER_TEXT_H1);
+  it('Validate text not found withing timeout and error message shown ', async () => {
+    await Reporter.step('scroll to element');
+    await BrowserUtils.scrollIntoView(HEADER_TEXT_H1);
 
-    Reporter.step('Validate failure within given timeout');
-    expect(() =>
-      BrowserUtils.waitUntil(() => BrowserUtils.getText(HEADER_TEXT_H1) === INCORRECT_TEXT_ELEMENT_VALUE, {
-        timeoutMsg: `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
-        timeout: TIMEOUT,
-      })
-    )
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`);
+    await Reporter.step('Validate failure within given timeout');
+    await chai
+      .expect(
+        BrowserUtils.waitUntil(
+          async () => (await BrowserUtils.getText(HEADER_TEXT_H1)) === INCORRECT_TEXT_ELEMENT_VALUE,
+          {
+            timeoutMsg: `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`,
+            timeout: TIMEOUT,
+          }
+        )
+      )
+      .to.rejectedWith(Error, `Didn't find '${INCORRECT_TEXT_ELEMENT_VALUE}' text in given timeout`);
   });
 
-  it('Validate text found within default timeout ', () => {
-    Reporter.step('Validate element displayed');
-    BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
+  it('Validate text found within default timeout ', async () => {
+    await Reporter.step('Validate element displayed');
+    await BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
 
-    Reporter.step('Validate success within default timeout');
-    assert.isTrue(BrowserUtils.waitUntil(() => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === TEXT_ELEMENT_VALUE));
+    await Reporter.step('Validate success within default timeout');
+    await BrowserUtils.waitUntil(
+      async () => (await BrowserUtils.getText(TEXT_ELEMENT_SELECTOR)) === TEXT_ELEMENT_VALUE
+    );
   });
 
-  it('Validate text not found within default timeout and default error message shown', () => {
-    Reporter.step('Validate element displayed');
-    BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
+  it('Validate text not found within default timeout and default error message shown', async () => {
+    await Reporter.step('Validate element displayed');
+    await BrowserUtils.waitForDisplayed(TEXT_ELEMENT_SELECTOR);
 
-    Reporter.step('Validate success within default timeout and default error message');
-    expect(() =>
-      BrowserUtils.waitUntil(() => BrowserUtils.getText(TEXT_ELEMENT_SELECTOR) === INCORRECT_TEXT_ELEMENT_VALUE)
-    )
-      .to.throw(Error)
-      .with.property('message');
+    await Reporter.step('Validate success within default timeout and default error message');
+    await chai
+      .expect(
+        BrowserUtils.waitUntil(
+          async () => (await BrowserUtils.getText(TEXT_ELEMENT_SELECTOR)) === INCORRECT_TEXT_ELEMENT_VALUE
+        )
+      )
+      .to.rejectedWith(Error);
   });
 });

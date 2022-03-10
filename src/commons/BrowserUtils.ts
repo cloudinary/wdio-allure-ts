@@ -241,7 +241,7 @@ export namespace BrowserUtils {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   export async function waitUntil(condition: () => any, options?: WaitUntilOptions): Promise<any> {
-    return await browser.waitUntil(() => condition(), { ...{ timeout: DEFAULT_TIME_OUT }, ...options });
+    return await browser.waitUntil(async () => await condition(), { ...{ timeout: DEFAULT_TIME_OUT }, ...options });
   }
 
   /**
