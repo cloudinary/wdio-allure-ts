@@ -10,22 +10,22 @@ const IFRAME_HEADER: string = "//*[@id='textOutsideOfFrames']";
  * switch to parent frame
  */
 describeCommon('SwitchToParentIframe', () => {
-  it('Switch from iframe to Iframe parent', () => {
-    Reporter.step('Switch to iframe1');
-    BrowserUtils.switchToFrame(IFRAME_ELEMNT1);
+  it('Switch from iframe to Iframe parent', async () => {
+    await Reporter.step('Switch to iframe1');
+    await BrowserUtils.switchToFrame(IFRAME_ELEMNT1);
 
-    Reporter.step('Switch to parent iframe');
-    BrowserUtils.switchToParentFrame();
+    await Reporter.step('Switch to parent iframe');
+    await BrowserUtils.switchToParentFrame();
 
-    Reporter.step('Check parent iframe header text');
-    assert.equal($(IFRAME_HEADER).getText(), 'OutSide frame text');
+    await Reporter.step('Check parent iframe header text');
+    assert.equal(await $(IFRAME_HEADER).getText(), 'OutSide frame text');
   });
 
-  it('Check to parent iframe without error', () => {
-    Reporter.step('Change to parent iframe');
-    BrowserUtils.switchToParentFrame();
+  it('Check to parent iframe without error', async () => {
+    await Reporter.step('Change to parent iframe');
+    await BrowserUtils.switchToParentFrame();
 
-    Reporter.step('Check parent iframe header');
-    assert.equal($(IFRAME_HEADER).getText(), 'OutSide frame text');
+    await Reporter.step('Check parent iframe header');
+    assert.equal(await $(IFRAME_HEADER).getText(), 'OutSide frame text');
   });
 });
