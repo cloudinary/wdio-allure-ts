@@ -1,0 +1,372 @@
+{
+  "uid" : "a2a799fe02d61165",
+  "name" : "successful execution",
+  "fullName" : "execute.successful execution",
+  "historyId" : "b31fb5e86ce4bfe42cce534283b2e2ae",
+  "time" : {
+    "start" : 1646907121398,
+    "stop" : 1646907125737,
+    "duration" : 4339
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+  "statusTrace" : "AssertionError: script execution failed: expected {} to deeply equal 'Cloudinary still rules!'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/ExecuteScriptSpec.ts:17:48)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+    "statusTrace" : "AssertionError: script execution failed: expected {} to deeply equal 'Cloudinary still rules!'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/ExecuteScriptSpec.ts:17:48)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for execute",
+      "time" : {
+        "start" : 1646907121399,
+        "stop" : 1646907123886,
+        "duration" : 2487
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646907123456,
+          "stop" : 1646907123462,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "646f184b1f3aa124",
+          "name" : "more info",
+          "source" : "646f184b1f3aa124.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646907123885,
+          "stop" : 1646907123886,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f22aa8fe0cb9c3f9",
+          "name" : "more info",
+          "source" : "f22aa8fe0cb9c3f9.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Executing script: ' document.getElementById('executeScriptButtonId').click()'",
+      "time" : {
+        "start" : 1646907123888,
+        "stop" : 1646907123889,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5a729b03915a6aba",
+        "name" : "more info",
+        "source" : "5a729b03915a6aba.txt",
+        "type" : "text/plain",
+        "size" : 105
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate script execution",
+      "time" : {
+        "start" : 1646907125645,
+        "stop" : 1646907125645,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: script execution failed: expected {} to deeply equal 'Cloudinary still rules!'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/ExecuteScriptSpec.ts:17:48)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6df7cca3c053df85",
+        "name" : "more info",
+        "source" : "6df7cca3c053df85.txt",
+        "type" : "text/plain",
+        "size" : 54
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "1b5925562e50ad82",
+      "name" : "Screenshot",
+      "source" : "1b5925562e50ad82.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "89e182fc2535f9a2",
+      "name" : "Browser console logs",
+      "source" : "89e182fc2535f9a2.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "6fbb5c02659d8578",
+      "name" : "Page HTML source",
+      "source" : "6fbb5c02659d8578.null",
+      "type" : "html",
+      "size" : 21972
+    }, {
+      "uid" : "c93fb7818e13692e",
+      "name" : "Network Logs",
+      "source" : "c93fb7818e13692e.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-9"
+  }, {
+    "name" : "suite",
+    "value" : "execute"
+  }, {
+    "name" : "testClass",
+    "value" : "execute"
+  }, {
+    "name" : "testMethod",
+    "value" : "successful execution"
+  }, {
+    "name" : "package",
+    "value" : "execute"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 9,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 18
+      },
+      "items" : [ {
+        "uid" : "fe26e6aa9379844b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/263//#testresult/fe26e6aa9379844b",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646748115324,
+          "stop" : 1646748118882,
+          "duration" : 3558
+        }
+      }, {
+        "uid" : "8e2150e6ebdcbb16",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/8e2150e6ebdcbb16",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646746948234,
+          "stop" : 1646746952309,
+          "duration" : 4075
+        }
+      }, {
+        "uid" : "af1abc6f2e5fd4c3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/af1abc6f2e5fd4c3",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646745926985,
+          "stop" : 1646745930734,
+          "duration" : 3749
+        }
+      }, {
+        "uid" : "73b7fff48694c4ee",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/73b7fff48694c4ee",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646738997059,
+          "stop" : 1646738999900,
+          "duration" : 2841
+        }
+      }, {
+        "uid" : "585d260064f59520",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/585d260064f59520",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646683724777,
+          "stop" : 1646683727172,
+          "duration" : 2395
+        }
+      }, {
+        "uid" : "339ad51734986526",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/339ad51734986526",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646681331368,
+          "stop" : 1646681333779,
+          "duration" : 2411
+        }
+      }, {
+        "uid" : "5048b4806b182e40",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/5048b4806b182e40",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646681285948,
+          "stop" : 1646681288494,
+          "duration" : 2546
+        }
+      }, {
+        "uid" : "dac34f263fe73868",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/dac34f263fe73868",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659186390,
+          "stop" : 1646659188664,
+          "duration" : 2274
+        }
+      }, {
+        "uid" : "a4eb6f8ffbd33e81",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/a4eb6f8ffbd33e81",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659161960,
+          "stop" : 1646659164543,
+          "duration" : 2583
+        }
+      }, {
+        "uid" : "9f0d2bb9672f9246",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/9f0d2bb9672f9246",
+        "status" : "failed",
+        "statusDetails" : "script execution failed: expected {} to deeply equal 'Cloudinary still rules!'      \n                      actual expected\n                      \n                      Promise'Cloudinary [Promise]still {}rules!'\n                      ",
+        "time" : {
+          "start" : 1646658840818,
+          "stop" : 1646658841132,
+          "duration" : 314
+        }
+      }, {
+        "uid" : "c96d948324751dd1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/c96d948324751dd1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658585553,
+          "stop" : 1646658587885,
+          "duration" : 2332
+        }
+      }, {
+        "uid" : "4c644d43a68f3343",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/4c644d43a68f3343",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658533473,
+          "stop" : 1646658535419,
+          "duration" : 1946
+        }
+      }, {
+        "uid" : "694076abace091e2",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/694076abace091e2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658147181,
+          "stop" : 1646658149473,
+          "duration" : 2292
+        }
+      }, {
+        "uid" : "4aac746b7b4acd15",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/4aac746b7b4acd15",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657762982,
+          "stop" : 1646657765039,
+          "duration" : 2057
+        }
+      }, {
+        "uid" : "7c08ef6327f453f3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/7c08ef6327f453f3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552537600,
+          "stop" : 1645552539388,
+          "duration" : 1788
+        }
+      }, {
+        "uid" : "275a4db1172b6154",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/275a4db1172b6154",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534780994,
+          "stop" : 1645534782988,
+          "duration" : 1994
+        }
+      }, {
+        "uid" : "68ff926cb206a6ef",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/68ff926cb206a6ef",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528188873,
+          "stop" : 1645528190490,
+          "duration" : 1617
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "a2a799fe02d61165.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
