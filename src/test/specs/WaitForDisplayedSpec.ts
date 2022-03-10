@@ -1,4 +1,6 @@
-import { expect } from 'chai';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+chai.use(chaiAsPromised);
 import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
@@ -11,21 +13,21 @@ const HIDDEN_ELEMENT_SELECTOR: string = `${PARENT_SELECTOR}//*[@id='hidden_eleme
  * waitForDisplayed spec
  */
 describeCommon('waitForDisplayed', () => {
-  it('wait for visible element', () => {
-    Reporter.step('click button');
-    BrowserUtils.click(ADD_MORE_BUTTON);
+  it('wait for visible element', async () => {
+    await Reporter.step('click button');
+    await BrowserUtils.click(ADD_MORE_BUTTON);
 
-    Reporter.step('wait for displayed');
-    BrowserUtils.waitForDisplayed(DISPLAYED_ELEMENT_SELECTOR);
+    await Reporter.step('wait for displayed');
+    await BrowserUtils.waitForDisplayed(DISPLAYED_ELEMENT_SELECTOR);
   });
 
-  it('not existing element', () => {
-    Reporter.step('not existing element throws an error');
-    expect(() => BrowserUtils.waitForDisplayed(NOT_EXISTING_ELEMENT_SELECTOR)).to.throw(Error);
+  it('not existing element', async () => {
+    await Reporter.step('not existing element throws an error');
+    await chai.expect(BrowserUtils.waitForDisplayed(NOT_EXISTING_ELEMENT_SELECTOR)).to.rejectedWith(Error);
   });
 
-  it('hidden element', () => {
-    Reporter.step('hidden element throws an error');
-    expect(() => BrowserUtils.waitForDisplayed(HIDDEN_ELEMENT_SELECTOR)).to.throw(Error);
+  it('hidden element', async () => {
+    await Reporter.step('hidden element throws an error');
+    await chai.expect(BrowserUtils.waitForDisplayed(HIDDEN_ELEMENT_SELECTOR)).to.rejectedWith(Error);
   });
 });
