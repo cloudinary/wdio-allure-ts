@@ -1,0 +1,402 @@
+{
+  "uid" : "ef00eb8e52797442",
+  "name" : "get number of existing elements",
+  "fullName" : "getNumberOfElements.get number of existing elements",
+  "historyId" : "aec9491407344dc15710493c26b37c4",
+  "time" : {
+    "start" : 1646908198751,
+    "stop" : 1646908200676,
+    "duration" : 1925
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+  "statusTrace" : "AssertionError: Incorrect number of elements: expected {} to equal 2\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetNumberOfElementsSpec.ts:13:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+    "statusTrace" : "AssertionError: Incorrect number of elements: expected {} to equal 2\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetNumberOfElementsSpec.ts:13:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getNumberOfElements",
+      "time" : {
+        "start" : 1646908198752,
+        "stop" : 1646908199447,
+        "duration" : 695
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646908199288,
+          "stop" : 1646908199289,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "b97c33ea636d01a6",
+          "name" : "more info",
+          "source" : "b97c33ea636d01a6.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646908199446,
+          "stop" : 1646908199447,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f77713f66d88e729",
+          "name" : "more info",
+          "source" : "f77713f66d88e729.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Get number of elements by selector '//*[@id='GetNumberOfElements']//*[@data-test='element-to-count']'",
+      "time" : {
+        "start" : 1646908199455,
+        "stop" : 1646908199455,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b1b8d94e409968db",
+        "name" : "more info",
+        "source" : "b1b8d94e409968db.txt",
+        "type" : "text/plain",
+        "size" : 129
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate return value of getNumberOfElements",
+      "time" : {
+        "start" : 1646908200585,
+        "stop" : 1646908200601,
+        "duration" : 16
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Incorrect number of elements: expected {} to equal 2\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/GetNumberOfElementsSpec.ts:13:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a0a7a82c50cdf935",
+        "name" : "more info",
+        "source" : "a0a7a82c50cdf935.txt",
+        "type" : "text/plain",
+        "size" : 73
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "8e891aca5365c1b0",
+      "name" : "Screenshot",
+      "source" : "8e891aca5365c1b0.png",
+      "type" : "image/png",
+      "size" : 80654
+    }, {
+      "uid" : "f8b2ae1ae05d29c6",
+      "name" : "Browser console logs",
+      "source" : "f8b2ae1ae05d29c6.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "2ea48d95ea65282a",
+      "name" : "Page HTML source",
+      "source" : "2ea48d95ea65282a.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "d2218ae7279e8e0",
+      "name" : "Network Logs",
+      "source" : "d2218ae7279e8e0.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-22"
+  }, {
+    "name" : "suite",
+    "value" : "getNumberOfElements"
+  }, {
+    "name" : "testClass",
+    "value" : "getNumberOfElements"
+  }, {
+    "name" : "testMethod",
+    "value" : "get number of existing elements"
+  }, {
+    "name" : "package",
+    "value" : "getNumberOfElements"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 12,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 21
+      },
+      "items" : [ {
+        "uid" : "a7fd26e8ce1373f0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/266//#testresult/a7fd26e8ce1373f0",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+        "time" : {
+          "start" : 1646907868998,
+          "stop" : 1646907871337,
+          "duration" : 2339
+        }
+      }, {
+        "uid" : "164ddc7fb9540daa",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/265//#testresult/164ddc7fb9540daa",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+        "time" : {
+          "start" : 1646907470869,
+          "stop" : 1646907472952,
+          "duration" : 2083
+        }
+      }, {
+        "uid" : "e1a038d1ac86a574",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/264//#testresult/e1a038d1ac86a574",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+        "time" : {
+          "start" : 1646907169409,
+          "stop" : 1646907172067,
+          "duration" : 2658
+        }
+      }, {
+        "uid" : "e332a8556ce48e13",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/263//#testresult/e332a8556ce48e13",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+        "time" : {
+          "start" : 1646748165566,
+          "stop" : 1646748167409,
+          "duration" : 1843
+        }
+      }, {
+        "uid" : "7032f53817f8052e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/7032f53817f8052e",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+        "time" : {
+          "start" : 1646746995399,
+          "stop" : 1646746997425,
+          "duration" : 2026
+        }
+      }, {
+        "uid" : "e36fe34abcec85a5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/e36fe34abcec85a5",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+        "time" : {
+          "start" : 1646745977711,
+          "stop" : 1646745979725,
+          "duration" : 2014
+        }
+      }, {
+        "uid" : "35fdc3e8969276db",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/35fdc3e8969276db",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected {} to equal 2      \n                      actual expected\n                      \n                      Promise [Promise] {}2\n                      ",
+        "time" : {
+          "start" : 1646739049199,
+          "stop" : 1646739051299,
+          "duration" : 2100
+        }
+      }, {
+        "uid" : "5a4f6853d39686f3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/5a4f6853d39686f3",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected undefined to equal 2      \n                      actual expected\n                      \n                      undefined2\n                      ",
+        "time" : {
+          "start" : 1646683779794,
+          "stop" : 1646683781325,
+          "duration" : 1531
+        }
+      }, {
+        "uid" : "16384c3329d06d0a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/16384c3329d06d0a",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected undefined to equal 2      \n                      actual expected\n                      \n                      undefined2\n                      ",
+        "time" : {
+          "start" : 1646681388175,
+          "stop" : 1646681389697,
+          "duration" : 1522
+        }
+      }, {
+        "uid" : "5f4a9cd6495cd8f4",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/5f4a9cd6495cd8f4",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected undefined to equal 2      \n                      actual expected\n                      \n                      undefined2\n                      ",
+        "time" : {
+          "start" : 1646681346061,
+          "stop" : 1646681347194,
+          "duration" : 1133
+        }
+      }, {
+        "uid" : "8ccc7e86ad7c96b0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/8ccc7e86ad7c96b0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659229509,
+          "stop" : 1646659230432,
+          "duration" : 923
+        }
+      }, {
+        "uid" : "506a28a9b71e6d9b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/506a28a9b71e6d9b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659205320,
+          "stop" : 1646659206195,
+          "duration" : 875
+        }
+      }, {
+        "uid" : "fe419cac5c51f48a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/fe419cac5c51f48a",
+        "status" : "failed",
+        "statusDetails" : "Incorrect number of elements: expected undefined to equal 2      \n                      actual expected\n                      \n                      undefined2\n                      ",
+        "time" : {
+          "start" : 1646658885554,
+          "stop" : 1646658885865,
+          "duration" : 311
+        }
+      }, {
+        "uid" : "3c2c12d7b5f72202",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/253//#testresult/3c2c12d7b5f72202",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658631283,
+          "stop" : 1646658632310,
+          "duration" : 1027
+        }
+      }, {
+        "uid" : "4f340163adb4d8bb",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/252//#testresult/4f340163adb4d8bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658567210,
+          "stop" : 1646658567915,
+          "duration" : 705
+        }
+      }, {
+        "uid" : "a209d2ac14f3e39c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/251//#testresult/a209d2ac14f3e39c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646658197353,
+          "stop" : 1646658198552,
+          "duration" : 1199
+        }
+      }, {
+        "uid" : "12a301a58675e0dd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/250//#testresult/12a301a58675e0dd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646657801734,
+          "stop" : 1646657802574,
+          "duration" : 840
+        }
+      }, {
+        "uid" : "d6c0f63d9acf7f04",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/241//#testresult/d6c0f63d9acf7f04",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645552573992,
+          "stop" : 1645552574690,
+          "duration" : 698
+        }
+      }, {
+        "uid" : "9964867ccea0aaff",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/240//#testresult/9964867ccea0aaff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645534818324,
+          "stop" : 1645534819082,
+          "duration" : 758
+        }
+      }, {
+        "uid" : "d3c2d6135d38f00c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/239//#testresult/d3c2d6135d38f00c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1645528222062,
+          "stop" : 1645528222710,
+          "duration" : 648
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "ef00eb8e52797442.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
