@@ -1,4 +1,6 @@
-import { assert, expect } from 'chai';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+chai.use(chaiAsPromised);
 import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
@@ -10,47 +12,49 @@ const NOT_EXISTING_ELEMENT: string = '//*[@id="NotExistingElement_qweqwe"]';
  * wdio-allure-ts drag and drop element
  */
 describeCommon('dragAndDrop', () => {
-  it('drag and drop to coordinate', () => {
-    const beforeDragLocation = BrowserUtils.getLocation(ELEMENT);
+  it('drag and drop to coordinate', async () => {
+    const beforeDragLocation = await BrowserUtils.getLocation(ELEMENT);
 
-    Reporter.step('Drag and drop an element by coordinate');
-    BrowserUtils.dragAndDrop(ELEMENT, { x: 5, y: 0 });
+    await Reporter.step('Drag and drop an element by coordinate');
+    await BrowserUtils.dragAndDrop(ELEMENT, { x: 5, y: 0 });
 
-    const afterDragLocation = BrowserUtils.getLocation(ELEMENT);
+    const afterDragLocation = await BrowserUtils.getLocation(ELEMENT);
 
-    Reporter.step('Validate elements position changed');
-    assert.isTrue(afterDragLocation.x > beforeDragLocation.x, 'Element position was not changed');
+    await Reporter.step('Validate elements position changed');
+    chai.assert.isTrue(afterDragLocation.x > beforeDragLocation.x, 'Element position was not changed');
   });
-  it('drag and drop to element', () => {
+
+  it('drag and drop to element', async () => {
     const delta: number = 10;
-    const beforeDragLocation = BrowserUtils.getLocation(TARGET);
+    const beforeDragLocation = await BrowserUtils.getLocation(TARGET);
 
-    Reporter.step('Drag and drop an element to target element');
-    BrowserUtils.dragAndDrop(ELEMENT, TARGET);
-    const afterDragLocation = BrowserUtils.getLocation(ELEMENT);
+    await Reporter.step('Drag and drop an element to target element');
+    await BrowserUtils.dragAndDrop(ELEMENT, TARGET);
+    const afterDragLocation = await BrowserUtils.getLocation(ELEMENT);
 
-    Reporter.step('Validate elements position changed');
-    assert.isTrue(
+    await Reporter.step('Validate elements position changed');
+    chai.assert.isTrue(
       Math.abs(beforeDragLocation.x - afterDragLocation.x) < delta,
-      'Element was not dragged toward the target element'
+      `Element was not dragged toward the target element ${beforeDragLocation.x} - ${afterDragLocation.x}`
     );
   });
-  it('drag and drop to undefined element', () => {
-    Reporter.step('Drag and drop to undefined element should throw error');
-    expect(() => BrowserUtils.dragAndDrop(ELEMENT, undefined))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Failed to drag and drop ${ELEMENT} to`);
+
+  it('drag and drop to undefined element', async () => {
+    await Reporter.step('Drag and drop to undefined element should throw error');
+    await chai
+      .expect(BrowserUtils.dragAndDrop(ELEMENT, undefined))
+      .to.rejectedWith(Error, `Failed to drag and drop ${ELEMENT} to`);
   });
-  it('drag and drop to non integer coordinate', () => {
-    Reporter.step('Drag and drop to non integer coordinate should throw error');
-    expect(() => BrowserUtils.dragAndDrop(ELEMENT, { x: 1.5, y: 1.5 }))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Failed to drag and drop ${ELEMENT} to`);
+
+  it('drag and drop to non integer coordinate', async () => {
+    await Reporter.step('Drag and drop to non integer coordinate should throw error');
+    await chai
+      .expect(BrowserUtils.dragAndDrop(ELEMENT, { x: 1.5, y: 1.5 }))
+      .to.rejectedWith(Error, `Failed to drag and drop ${ELEMENT} to`);
   });
-  it('drag and drop to non existing element', () => {
-    Reporter.step('Drag and drop to non existing element should throw error');
-    expect(() => BrowserUtils.dragAndDrop(ELEMENT, NOT_EXISTING_ELEMENT)).to.throw(Error);
+
+  it('drag and drop to non existing element', async () => {
+    await Reporter.step('Drag and drop to non existing element should throw error');
+    await chai.expect(BrowserUtils.dragAndDrop(ELEMENT, NOT_EXISTING_ELEMENT)).to.rejectedWith(Error);
   });
 });
