@@ -114,7 +114,7 @@ export namespace BrowserUtils {
    */
   export async function setValue(selector: string, value: string | number): Promise<void> {
     await Reporter.debug(`Set element '${selector} with value: '${value}'`);
-    waitForEnabled(selector);
+    await waitForEnabled(selector);
     await tryBlock(async () => await $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
