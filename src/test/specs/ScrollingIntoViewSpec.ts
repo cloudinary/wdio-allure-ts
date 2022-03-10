@@ -9,26 +9,28 @@ const LAST_TOP_LINK: string = "//*[@id='scrollingIntoView']//*[@id='scrollToElem
  * wdio-allure-ts Scrolling Into View test
  */
 describeCommon('ScrollingIntoViewSpec', () => {
-  it('scrollIntoView to element outside of viewport', () => {
-    Reporter.step('wait for page to load');
-    BrowserUtils.waitForDisplayed(HEADER);
+  it('scrollIntoView to element outside of viewport', async () => {
+    await Reporter.step('wait for page to load');
+    await BrowserUtils.waitForDisplayed(HEADER);
 
-    Reporter.step('validate element not in view port');
-    assert.isFalse($(LAST_TOP_LINK).isDisplayedInViewport());
+    await Reporter.step('validate element not in view port');
+    assert.isFalse(await $(LAST_TOP_LINK).isDisplayedInViewport());
 
-    Reporter.step('scroll into view');
-    BrowserUtils.scrollIntoView(LAST_TOP_LINK);
+    await Reporter.step('scroll into view');
+    await BrowserUtils.scrollIntoView(LAST_TOP_LINK);
 
-    Reporter.step('validate element is in view port');
-    assert.isTrue($(LAST_TOP_LINK).isDisplayedInViewport());
+    await Reporter.step('validate element is in view port');
+    assert.isTrue(await $(LAST_TOP_LINK).isDisplayedInViewport());
   });
 
-  it('scrollIntoView to element in viewport', () => {
-    Reporter.step('Validate element displayed');
-    BrowserUtils.waitForDisplayed(HEADER);
-    Reporter.step('scroll into view');
-    BrowserUtils.scrollIntoView(HEADER);
-    Reporter.step('validate element in view port');
-    assert.isTrue($(HEADER).isDisplayedInViewport());
+  it('scrollIntoView to element in viewport', async () => {
+    await Reporter.step('Validate element displayed');
+    await BrowserUtils.waitForDisplayed(HEADER);
+
+    await Reporter.step('scroll into view');
+    await BrowserUtils.scrollIntoView(HEADER);
+
+    await Reporter.step('validate element in view port');
+    assert.isTrue(await $(HEADER).isDisplayedInViewport());
   });
 });
