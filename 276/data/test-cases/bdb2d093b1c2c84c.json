@@ -1,0 +1,217 @@
+{
+  "uid" : "bdb2d093b1c2c84c",
+  "name" : "Check get test data from env file",
+  "fullName" : "GetTestDataFileSpec.Check get test data from env file",
+  "historyId" : "b8700415627f116d9cb80ea6b7b5472e",
+  "time" : {
+    "start" : 1646930427097,
+    "stop" : 1646930428068,
+    "duration" : 971
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetTestDataFileSpec",
+      "time" : {
+        "start" : 1646930427097,
+        "stop" : 1646930427960,
+        "duration" : 863
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646930427750,
+          "stop" : 1646930427752,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "fbb53e5655321423",
+          "name" : "more info",
+          "source" : "fbb53e5655321423.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646930427960,
+          "stop" : 1646930427960,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a04994a984613c8d",
+          "name" : "more info",
+          "source" : "a04994a984613c8d.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Getting data from file /home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/resources/example.json",
+      "time" : {
+        "start" : 1646930428011,
+        "stop" : 1646930428012,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "599ae195382218d5",
+        "name" : "more info",
+        "source" : "599ae195382218d5.txt",
+        "type" : "text/plain",
+        "size" : 130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Received a data {\"test-user\":{\"fileName\":\"example\",\"count\":1}} from file by provided tag {\"fileName\":\"example\",\"count\":1}",
+      "time" : {
+        "start" : 1646930428012,
+        "stop" : 1646930428012,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "81801e75279b3c89",
+        "name" : "more info",
+        "source" : "81801e75279b3c89.txt",
+        "type" : "text/plain",
+        "size" : 149
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - getData reads from file",
+      "time" : {
+        "start" : 1646930428068,
+        "stop" : 1646930428068,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7a9fded826d5b193",
+        "name" : "more info",
+        "source" : "7a9fded826d5b193.txt",
+        "type" : "text/plain",
+        "size" : 52
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-23"
+  }, {
+    "name" : "suite",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check get test data from env file"
+  }, {
+    "name" : "package",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "99f3e73e81143171",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/99f3e73e81143171",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930102732,
+          "stop" : 1646930104026,
+          "duration" : 1294
+        }
+      }, {
+        "uid" : "f20c530310656b65",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/f20c530310656b65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927510527,
+          "stop" : 1646927511998,
+          "duration" : 1471
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "bdb2d093b1c2c84c.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

@@ -1,0 +1,217 @@
+{
+  "uid" : "2e0543bae2d5beea",
+  "name" : "scroll to element with lazy load",
+  "fullName" : "scrollTo.scroll to element with lazy load",
+  "historyId" : "3ddfa862b76a82c9aeae3e20a3f210d3",
+  "time" : {
+    "start" : 1646930454927,
+    "stop" : 1646930456181,
+    "duration" : 1254
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for scrollTo",
+      "time" : {
+        "start" : 1646930454928,
+        "stop" : 1646930455648,
+        "duration" : 720
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646930455496,
+          "stop" : 1646930455497,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "473e5b71cc39e9e9",
+          "name" : "more info",
+          "source" : "473e5b71cc39e9e9.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646930455648,
+          "stop" : 1646930455648,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "3c09c856e6e58732",
+          "name" : "more info",
+          "source" : "3c09c856e6e58732.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - validate element not displayed",
+      "time" : {
+        "start" : 1646930455734,
+        "stop" : 1646930455735,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "78f43a5112e95ab0",
+        "name" : "more info",
+        "source" : "78f43a5112e95ab0.txt",
+        "type" : "text/plain",
+        "size" : 59
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - scroll to element",
+      "time" : {
+        "start" : 1646930456066,
+        "stop" : 1646930456067,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5a1c52cf9a947c21",
+        "name" : "more info",
+        "source" : "5a1c52cf9a947c21.txt",
+        "type" : "text/plain",
+        "size" : 959
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - validate element is displayed",
+      "time" : {
+        "start" : 1646930456180,
+        "stop" : 1646930456180,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5affce41fb6b9b47",
+        "name" : "more info",
+        "source" : "5affce41fb6b9b47.txt",
+        "type" : "text/plain",
+        "size" : 58
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-38"
+  }, {
+    "name" : "suite",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testClass",
+    "value" : "scrollTo"
+  }, {
+    "name" : "testMethod",
+    "value" : "scroll to element with lazy load"
+  }, {
+    "name" : "package",
+    "value" : "scrollTo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "d0623e8a56c8713d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/d0623e8a56c8713d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930133198,
+          "stop" : 1646930134650,
+          "duration" : 1452
+        }
+      }, {
+        "uid" : "fdb3d92bd42cc3c8",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/fdb3d92bd42cc3c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927546657,
+          "stop" : 1646927548614,
+          "duration" : 1957
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "2e0543bae2d5beea.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

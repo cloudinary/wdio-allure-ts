@@ -1,0 +1,231 @@
+{
+  "uid" : "24c7832d6281147",
+  "name" : "Validate text found within given timeout ",
+  "fullName" : "WaitUntilSpec of BrowserUtils Tests.Validate text found within given timeout ",
+  "historyId" : "c706e13592baa2c88a4a66c09827e3c3",
+  "time" : {
+    "start" : 1646930481003,
+    "stop" : 1646930481989,
+    "duration" : 986
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected {} to be true      \n                      actual expected\n                      \n                      Promise [Promise] {}true\n                      ",
+  "statusTrace" : "AssertionError: expected {} to be true\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/WaitUntilSpec.ts:21:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected {} to be true      \n                      actual expected\n                      \n                      Promise [Promise] {}true\n                      ",
+    "statusTrace" : "AssertionError: expected {} to be true\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/WaitUntilSpec.ts:21:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for WaitUntilSpec of BrowserUtils Tests",
+      "time" : {
+        "start" : 1646930481018,
+        "stop" : 1646930481640,
+        "duration" : 622
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646930481478,
+          "stop" : 1646930481502,
+          "duration" : 24
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "5066bba5d31cc9b9",
+          "name" : "more info",
+          "source" : "5066bba5d31cc9b9.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646930481640,
+          "stop" : 1646930481640,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "e011b495ed60ade2",
+          "name" : "more info",
+          "source" : "e011b495ed60ade2.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Wait for an element to be visible '//*[@data-test='text-field-wu']'",
+      "time" : {
+        "start" : 1646930481643,
+        "stop" : 1646930481643,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "cd43d66ffdf10072",
+        "name" : "more info",
+        "source" : "cd43d66ffdf10072.txt",
+        "type" : "text/plain",
+        "size" : 95
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate success within given timeout",
+      "time" : {
+        "start" : 1646930481942,
+        "stop" : 1646930481943,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected {} to be true\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/WaitUntilSpec.ts:21:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f00625c2d5929aea",
+        "name" : "more info",
+        "source" : "f00625c2d5929aea.txt",
+        "type" : "text/plain",
+        "size" : 257
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "9f21c0434e28726e",
+      "name" : "Screenshot",
+      "source" : "9f21c0434e28726e.png",
+      "type" : "image/png",
+      "size" : 80615
+    }, {
+      "uid" : "38cb3935acffe202",
+      "name" : "Browser console logs",
+      "source" : "38cb3935acffe202.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "f59350f819aaebd8",
+      "name" : "Page HTML source",
+      "source" : "f59350f819aaebd8.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "e30cac9c6f71e607",
+      "name" : "Network Logs",
+      "source" : "e30cac9c6f71e607.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-53"
+  }, {
+    "name" : "suite",
+    "value" : "WaitUntilSpec of BrowserUtils Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "WaitUntilSpec of BrowserUtils Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Validate text found within given timeout "
+  }, {
+    "name" : "package",
+    "value" : "WaitUntilSpec of BrowserUtils Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "3d9d4740f1b0f487",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/3d9d4740f1b0f487",
+        "status" : "failed",
+        "statusDetails" : "expected {} to be true      \n                      actual expected\n                      \n                      Promise [Promise] {}true\n                      ",
+        "time" : {
+          "start" : 1646930169850,
+          "stop" : 1646930171365,
+          "duration" : 1515
+        }
+      }, {
+        "uid" : "ca9a69b36e0f5e94",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/ca9a69b36e0f5e94",
+        "status" : "failed",
+        "statusDetails" : "expected {} to be true      \n                      actual expected\n                      \n                      Promise [Promise] {}true\n                      ",
+        "time" : {
+          "start" : 1646927588881,
+          "stop" : 1646927591428,
+          "duration" : 2547
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "24c7832d6281147.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

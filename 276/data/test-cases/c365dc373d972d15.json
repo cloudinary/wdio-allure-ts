@@ -1,0 +1,196 @@
+{
+  "uid" : "c365dc373d972d15",
+  "name" : "dynamic text",
+  "fullName" : "waitForText.dynamic text",
+  "historyId" : "5e67b69b0bf23fcd4a1d655c201bf214",
+  "time" : {
+    "start" : 1646930406056,
+    "stop" : 1646930406634,
+    "duration" : 578
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForText",
+      "time" : {
+        "start" : 1646930406056,
+        "stop" : 1646930406400,
+        "duration" : 344
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646930406328,
+          "stop" : 1646930406329,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c96fcdd2d65bee3e",
+          "name" : "more info",
+          "source" : "c96fcdd2d65bee3e.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646930406400,
+          "stop" : 1646930406400,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d9e94b97eae220d6",
+          "name" : "more info",
+          "source" : "d9e94b97eae220d6.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Wait for text 'Cloudinary still rules!' of element by selector '//*[@id='ExpectText']//*[@id='dynamic_text']'",
+      "time" : {
+        "start" : 1646930406401,
+        "stop" : 1646930406401,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "18a273aaeccee9ea",
+        "name" : "more info",
+        "source" : "18a273aaeccee9ea.txt",
+        "type" : "text/plain",
+        "size" : 137
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Wait for text change",
+      "time" : {
+        "start" : 1646930406633,
+        "stop" : 1646930406634,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "afb8fd0dfded8773",
+        "name" : "more info",
+        "source" : "afb8fd0dfded8773.txt",
+        "type" : "text/plain",
+        "size" : 159
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-15"
+  }, {
+    "name" : "suite",
+    "value" : "waitForText"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForText"
+  }, {
+    "name" : "testMethod",
+    "value" : "dynamic text"
+  }, {
+    "name" : "package",
+    "value" : "waitForText"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "566f5fc381aa2570",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/566f5fc381aa2570",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930076407,
+          "stop" : 1646930077431,
+          "duration" : 1024
+        }
+      }, {
+        "uid" : "3587881d290dbbd0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/3587881d290dbbd0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927483892,
+          "stop" : 1646927484970,
+          "duration" : 1078
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "c365dc373d972d15.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}
