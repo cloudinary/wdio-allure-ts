@@ -1,0 +1,167 @@
+{
+  "uid" : "ad8e35a2759852a4",
+  "name" : "reverse: true",
+  "fullName" : "waitForClickable.reverse: true",
+  "historyId" : "24884ccdc2682403cd18c9c353011fed",
+  "time" : {
+    "start" : 1646927588772,
+    "stop" : 1646927589485,
+    "duration" : 713
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForClickable",
+      "time" : {
+        "start" : 1646927588773,
+        "stop" : 1646927589380,
+        "duration" : 607
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646927589209,
+          "stop" : 1646927589209,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "cf31fa22aad40343",
+          "name" : "more info",
+          "source" : "cf31fa22aad40343.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646927589364,
+          "stop" : 1646927589379,
+          "duration" : 15
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "2b15aa08e9d633",
+          "name" : "more info",
+          "source" : "2b15aa08e9d633.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Wait for the element '//*[@id='waitForClickable']//button[@id='not_clickable_button']' to be clickable",
+      "time" : {
+        "start" : 1646927589380,
+        "stop" : 1646927589380,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4ddba8cb3eb243c3",
+        "name" : "more info",
+        "source" : "4ddba8cb3eb243c3.txt",
+        "type" : "text/plain",
+        "size" : 130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] -  clickable element - revers true",
+      "time" : {
+        "start" : 1646927589485,
+        "stop" : 1646927589485,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "49ea47eccbcae9c9",
+        "name" : "more info",
+        "source" : "49ea47eccbcae9c9.txt",
+        "type" : "text/plain",
+        "size" : 61
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-50"
+  }, {
+    "name" : "suite",
+    "value" : "waitForClickable"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForClickable"
+  }, {
+    "name" : "testMethod",
+    "value" : "reverse: true"
+  }, {
+    "name" : "package",
+    "value" : "waitForClickable"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ad8e35a2759852a4.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

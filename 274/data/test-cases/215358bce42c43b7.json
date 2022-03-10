@@ -1,0 +1,188 @@
+{
+  "uid" : "215358bce42c43b7",
+  "name" : "disappearing element",
+  "fullName" : "waitForDisplayed - reverse: true.disappearing element",
+  "historyId" : "64bd4a9769964220ec5a8a7a89884999",
+  "time" : {
+    "start" : 1646927540812,
+    "stop" : 1646927541852,
+    "duration" : 1040
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForDisplayed - reverse: true",
+      "time" : {
+        "start" : 1646927540812,
+        "stop" : 1646927541717,
+        "duration" : 905
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646927541482,
+          "stop" : 1646927541483,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "67bf8516cc3d6130",
+          "name" : "more info",
+          "source" : "67bf8516cc3d6130.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646927541717,
+          "stop" : 1646927541717,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "9cc10d40128c1b77",
+          "name" : "more info",
+          "source" : "9cc10d40128c1b77.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Wait for an element to be visible '//*[@data-test='disappearing-btn']'",
+      "time" : {
+        "start" : 1646927541718,
+        "stop" : 1646927541718,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "44022f47048c3e12",
+        "name" : "more info",
+        "source" : "44022f47048c3e12.txt",
+        "type" : "text/plain",
+        "size" : 98
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Wait for an element to be visible '//*[@data-test='disappearing-btn']'",
+      "time" : {
+        "start" : 1646927541718,
+        "stop" : 1646927541718,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "85ddb85a845fb5ca",
+        "name" : "more info",
+        "source" : "85ddb85a845fb5ca.txt",
+        "type" : "text/plain",
+        "size" : 98
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate element not displayed",
+      "time" : {
+        "start" : 1646927541851,
+        "stop" : 1646927541851,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "97adf70826561033",
+        "name" : "more info",
+        "source" : "97adf70826561033.txt",
+        "type" : "text/plain",
+        "size" : 59
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-34"
+  }, {
+    "name" : "suite",
+    "value" : "waitForDisplayed - reverse: true"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForDisplayed - reverse: true"
+  }, {
+    "name" : "testMethod",
+    "value" : "disappearing element"
+  }, {
+    "name" : "package",
+    "value" : "waitForDisplayed - reverse: true"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "215358bce42c43b7.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

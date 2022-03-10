@@ -1,0 +1,221 @@
+{
+  "uid" : "4760f2e8870194d7",
+  "name" : "Switch from iframe to Iframe parent",
+  "fullName" : "SwitchToParentIframe.Switch from iframe to Iframe parent",
+  "historyId" : "39bf8e109fa0b1ca6c269d70ba8e9e5f",
+  "time" : {
+    "start" : 1646927567911,
+    "stop" : 1646927570807,
+    "duration" : 2896
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+  "statusTrace" : "AssertionError: expected {} to equal 'OutSide frame text'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/SwitchToParentFrameSpec.ts:21:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+    "statusTrace" : "AssertionError: expected {} to equal 'OutSide frame text'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/SwitchToParentFrameSpec.ts:21:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for SwitchToParentIframe",
+      "time" : {
+        "start" : 1646927567932,
+        "stop" : 1646927569140,
+        "duration" : 1208
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646927568873,
+          "stop" : 1646927568875,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c15d06394e07c735",
+          "name" : "more info",
+          "source" : "c15d06394e07c735.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646927569140,
+          "stop" : 1646927569140,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a1a242d6da8ea76",
+          "name" : "more info",
+          "source" : "a1a242d6da8ea76.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Validate iframe with selector //*[@id='iframe1'] exist",
+      "time" : {
+        "start" : 1646927569143,
+        "stop" : 1646927569143,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ad900740f51b6810",
+        "name" : "more info",
+        "source" : "ad900740f51b6810.txt",
+        "type" : "text/plain",
+        "size" : 82
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Switching to parent frame",
+      "time" : {
+        "start" : 1646927569143,
+        "stop" : 1646927569144,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f36c654fe06649c7",
+        "name" : "more info",
+        "source" : "f36c654fe06649c7.txt",
+        "type" : "text/plain",
+        "size" : 53
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Check parent iframe header text",
+      "time" : {
+        "start" : 1646927570749,
+        "stop" : 1646927570749,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected {} to equal 'OutSide frame text'\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/SwitchToParentFrameSpec.ts:21:12)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "18d17e5d493d8481",
+        "name" : "more info",
+        "source" : "18d17e5d493d8481.txt",
+        "type" : "text/plain",
+        "size" : 219
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "2ba07d725d93f477",
+      "name" : "Screenshot",
+      "source" : "2ba07d725d93f477.png",
+      "type" : "image/png",
+      "size" : 80615
+    }, {
+      "uid" : "9e6d6331ead5ffa5",
+      "name" : "Browser console logs",
+      "source" : "9e6d6331ead5ffa5.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "a4b155ac1dbef775",
+      "name" : "Page HTML source",
+      "source" : "a4b155ac1dbef775.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "d8a3debd294fac42",
+      "name" : "Network Logs",
+      "source" : "d8a3debd294fac42.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 9,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-46"
+  }, {
+    "name" : "suite",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "testClass",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "testMethod",
+    "value" : "Switch from iframe to Iframe parent"
+  }, {
+    "name" : "package",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "4760f2e8870194d7.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

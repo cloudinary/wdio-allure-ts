@@ -1,0 +1,188 @@
+{
+  "uid" : "8ca75d68f81638d5",
+  "name" : "Check incorrect user",
+  "fullName" : "GetTestDataFileSpec.Check incorrect user",
+  "historyId" : "2a3d57481722c6a68dbcc262e9b77a31",
+  "time" : {
+    "start" : 1646927511998,
+    "stop" : 1646927512838,
+    "duration" : 840
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetTestDataFileSpec",
+      "time" : {
+        "start" : 1646927511999,
+        "stop" : 1646927512761,
+        "duration" : 762
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646927512614,
+          "stop" : 1646927512614,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "73ac6c522f5b650a",
+          "name" : "more info",
+          "source" : "73ac6c522f5b650a.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646927512761,
+          "stop" : 1646927512761,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "b1cb50a519e0c890",
+          "name" : "more info",
+          "source" : "b1cb50a519e0c890.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Getting data from file /home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/resources/example.json",
+      "time" : {
+        "start" : 1646927512762,
+        "stop" : 1646927512762,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ef3df5edc1856d73",
+        "name" : "more info",
+        "source" : "ef3df5edc1856d73.txt",
+        "type" : "text/plain",
+        "size" : 130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Received a data {\"test-user\":{\"fileName\":\"example\",\"count\":1}} from file by provided tag undefined",
+      "time" : {
+        "start" : 1646927512762,
+        "stop" : 1646927512762,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "84c3142fdee1bd8c",
+        "name" : "more info",
+        "source" : "84c3142fdee1bd8c.txt",
+        "type" : "text/plain",
+        "size" : 126
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - undefined returned in case of incorrect data tag",
+      "time" : {
+        "start" : 1646927512838,
+        "stop" : 1646927512838,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b7f65e882d133f3c",
+        "name" : "more info",
+        "source" : "b7f65e882d133f3c.txt",
+        "type" : "text/plain",
+        "size" : 77
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-23"
+  }, {
+    "name" : "suite",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check incorrect user"
+  }, {
+    "name" : "package",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8ca75d68f81638d5.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

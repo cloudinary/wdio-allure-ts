@@ -1,0 +1,200 @@
+{
+  "uid" : "9f83635e1bfd40d5",
+  "name" : "correct list with incorrect size",
+  "fullName" : "verifyFilesInZip.correct list with incorrect size",
+  "historyId" : "1db58241d4078fadea1d8b8579707ad2",
+  "time" : {
+    "start" : 1646927583302,
+    "stop" : 1646927584598,
+    "duration" : 1296
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+  "statusTrace" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/VerifyFilesInZipSpec.ts:18:16)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+    "statusTrace" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/VerifyFilesInZipSpec.ts:18:16)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+    "steps" : [ {
+      "name" : "\"before each\" hook for verifyFilesInZip",
+      "time" : {
+        "start" : 1646927583302,
+        "stop" : 1646927583760,
+        "duration" : 458
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646927583668,
+          "stop" : 1646927583668,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "2130a9576e99b2d2",
+          "name" : "more info",
+          "source" : "2130a9576e99b2d2.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646927583759,
+          "stop" : 1646927583760,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "62ca2828d3a4c078",
+          "name" : "more info",
+          "source" : "62ca2828d3a4c078.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - ===Verify zip content===",
+      "time" : {
+        "start" : 1646927583762,
+        "stop" : 1646927583762,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7dc91f58979c9117",
+        "name" : "more info",
+        "source" : "7dc91f58979c9117.txt",
+        "type" : "text/plain",
+        "size" : 52
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Verify correct list name and number of files in zip",
+      "time" : {
+        "start" : 1646927584547,
+        "stop" : 1646927584547,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: expected [Function] to throw Error\n                    at Context.<anonymous> (/home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/specs/VerifyFilesInZipSpec.ts:18:16)\n                    at Context.executeAsync (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/shim.js:331:27)\n                    at Context.testFrameworkFnWrapper (/home/runner/work/wdio-allure-ts/wdio-allure-ts/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:45:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "908f5c7d7e825e9",
+        "name" : "more info",
+        "source" : "908f5c7d7e825e9.txt",
+        "type" : "text/plain",
+        "size" : 161
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "2630fc766c19a136",
+      "name" : "Screenshot",
+      "source" : "2630fc766c19a136.png",
+      "type" : "image/png",
+      "size" : 80615
+    }, {
+      "uid" : "3ba694e9c2166c62",
+      "name" : "Browser console logs",
+      "source" : "3ba694e9c2166c62.json",
+      "type" : "application/json",
+      "size" : 2
+    }, {
+      "uid" : "2dce8eb7bb8a5252",
+      "name" : "Page HTML source",
+      "source" : "2dce8eb7bb8a5252.null",
+      "type" : "html",
+      "size" : 21966
+    }, {
+      "uid" : "e824152388c80aad",
+      "name" : "Network Logs",
+      "source" : "e824152388c80aad.json",
+      "type" : "application/json",
+      "size" : 17
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 8,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-49"
+  }, {
+    "name" : "suite",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testClass",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testMethod",
+    "value" : "correct list with incorrect size"
+  }, {
+    "name" : "package",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "9f83635e1bfd40d5.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

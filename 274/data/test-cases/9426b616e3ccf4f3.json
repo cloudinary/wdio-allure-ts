@@ -1,0 +1,167 @@
+{
+  "uid" : "9426b616e3ccf4f3",
+  "name" : "correct list with size",
+  "fullName" : "verifyFilesInZip.correct list with size",
+  "historyId" : "9d18a2999c4a90165626d683c214273",
+  "time" : {
+    "start" : 1646927584630,
+    "stop" : 1646927585069,
+    "duration" : 439
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for verifyFilesInZip",
+      "time" : {
+        "start" : 1646927584630,
+        "stop" : 1646927585053,
+        "duration" : 423
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646927584992,
+          "stop" : 1646927584992,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "6db62768839dd25",
+          "name" : "more info",
+          "source" : "6db62768839dd25.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646927585053,
+          "stop" : 1646927585053,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "922e5646e94ab128",
+          "name" : "more info",
+          "source" : "922e5646e94ab128.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - ===Verify zip content===",
+      "time" : {
+        "start" : 1646927585053,
+        "stop" : 1646927585054,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2388b8e3bd0acdac",
+        "name" : "more info",
+        "source" : "2388b8e3bd0acdac.txt",
+        "type" : "text/plain",
+        "size" : 52
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Verify correct number of files in zip",
+      "time" : {
+        "start" : 1646927585069,
+        "stop" : 1646927585069,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "10ba150d3bc522b1",
+        "name" : "more info",
+        "source" : "10ba150d3bc522b1.txt",
+        "type" : "text/plain",
+        "size" : 66
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-49"
+  }, {
+    "name" : "suite",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testClass",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "testMethod",
+    "value" : "correct list with size"
+  }, {
+    "name" : "package",
+    "value" : "verifyFilesInZip"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9426b616e3ccf4f3.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}
