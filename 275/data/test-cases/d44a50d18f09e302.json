@@ -1,0 +1,187 @@
+{
+  "uid" : "d44a50d18f09e302",
+  "name" : "reverse: true",
+  "fullName" : "waitForClickable.reverse: true",
+  "historyId" : "24884ccdc2682403cd18c9c353011fed",
+  "time" : {
+    "start" : 1646930168522,
+    "stop" : 1646930169114,
+    "duration" : 592
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForClickable",
+      "time" : {
+        "start" : 1646930168522,
+        "stop" : 1646930169014,
+        "duration" : 492
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646930168888,
+          "stop" : 1646930168888,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "4474aa8ed83c3c6b",
+          "name" : "more info",
+          "source" : "4474aa8ed83c3c6b.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646930169013,
+          "stop" : 1646930169013,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "62e6473a1ffcbd83",
+          "name" : "more info",
+          "source" : "62e6473a1ffcbd83.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Wait for the element '//*[@id='waitForClickable']//button[@id='not_clickable_button']' to be clickable",
+      "time" : {
+        "start" : 1646930169014,
+        "stop" : 1646930169014,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "91023a480ae40dcc",
+        "name" : "more info",
+        "source" : "91023a480ae40dcc.txt",
+        "type" : "text/plain",
+        "size" : 130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] -  clickable element - revers true",
+      "time" : {
+        "start" : 1646930169113,
+        "stop" : 1646930169114,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "cf6d2cf2d4397fa7",
+        "name" : "more info",
+        "source" : "cf6d2cf2d4397fa7.txt",
+        "type" : "text/plain",
+        "size" : 61
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-50"
+  }, {
+    "name" : "suite",
+    "value" : "waitForClickable"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForClickable"
+  }, {
+    "name" : "testMethod",
+    "value" : "reverse: true"
+  }, {
+    "name" : "package",
+    "value" : "waitForClickable"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "ad8e35a2759852a4",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/ad8e35a2759852a4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927588772,
+          "stop" : 1646927589485,
+          "duration" : 713
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d44a50d18f09e302.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}
