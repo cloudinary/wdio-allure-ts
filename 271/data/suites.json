@@ -1,0 +1,2274 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "click",
+    "children" : [ {
+      "name" : "singleClick ",
+      "uid" : "755d698a15af79b2",
+      "parentUid" : "97b2fe892a8e657f88a245342d7dcef8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805250,
+        "stop" : 1646917808464,
+        "duration" : 3214
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "doubleClick",
+      "uid" : "693e8fd129ffd7dc",
+      "parentUid" : "97b2fe892a8e657f88a245342d7dcef8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917808485,
+        "stop" : 1646917810988,
+        "duration" : 2503
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "97b2fe892a8e657f88a245342d7dcef8"
+  }, {
+    "name" : "execute",
+    "children" : [ {
+      "name" : "successful execution",
+      "uid" : "b9b45a17c823357",
+      "parentUid" : "621a9ed569bacf8d6b1867ad7aac9063",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917805256,
+        "stop" : 1646917809814,
+        "duration" : 4558
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "get string result",
+      "uid" : "974d84d07ab736b6",
+      "parentUid" : "621a9ed569bacf8d6b1867ad7aac9063",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917809815,
+        "stop" : 1646917811989,
+        "duration" : 2174
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "failing execution",
+      "uid" : "f3a3022502de3c46",
+      "parentUid" : "621a9ed569bacf8d6b1867ad7aac9063",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917811989,
+        "stop" : 1646917813154,
+        "duration" : 1165
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "621a9ed569bacf8d6b1867ad7aac9063"
+  }, {
+    "name" : "dismissAlert",
+    "children" : [ {
+      "name" : "dismiss existing alert",
+      "uid" : "e5ad3cb326278148",
+      "parentUid" : "27f8aeb196c5deb037deae6f7a244b22",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805256,
+        "stop" : 1646917807543,
+        "duration" : 2287
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "no alert",
+      "uid" : "ded4e613c7aef5e2",
+      "parentUid" : "27f8aeb196c5deb037deae6f7a244b22",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917807543,
+        "stop" : 1646917808866,
+        "duration" : 1323
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "27f8aeb196c5deb037deae6f7a244b22"
+  }, {
+    "name" : "clearValue",
+    "children" : [ {
+      "name" : "clear value of text",
+      "uid" : "761a6e001718933",
+      "parentUid" : "5bcc748510a0e26c66fe01a9c555d16d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805259,
+        "stop" : 1646917807768,
+        "duration" : 2509
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "clear value of text area",
+      "uid" : "38bb4ee8c108af10",
+      "parentUid" : "5bcc748510a0e26c66fe01a9c555d16d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917807768,
+        "stop" : 1646917809375,
+        "duration" : 1607
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "clear value of disable input selector",
+      "uid" : "116724e3e49468be",
+      "parentUid" : "5bcc748510a0e26c66fe01a9c555d16d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917809375,
+        "stop" : 1646917811159,
+        "duration" : 1784
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "5bcc748510a0e26c66fe01a9c555d16d"
+  }, {
+    "name" : "BackSpec",
+    "children" : [ {
+      "name" : "back browser",
+      "uid" : "394108a71300d902",
+      "parentUid" : "7cd84f58888458889a78460baa238528",
+      "status" : "broken",
+      "time" : {
+        "start" : 1646917805266,
+        "stop" : 1646917823851,
+        "duration" : 18585
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "7cd84f58888458889a78460baa238528"
+  }, {
+    "name" : "acceptAlert",
+    "children" : [ {
+      "name" : "accept existing alert",
+      "uid" : "c8bea5e04ff61f01",
+      "parentUid" : "92c31a6783628758cab993ba8c7bdbd4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805276,
+        "stop" : 1646917807759,
+        "duration" : 2483
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "no alert",
+      "uid" : "d24a93c3c248681a",
+      "parentUid" : "92c31a6783628758cab993ba8c7bdbd4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917807759,
+        "stop" : 1646917809034,
+        "duration" : 1275
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "92c31a6783628758cab993ba8c7bdbd4"
+  }, {
+    "name" : "doubleClick",
+    "children" : [ {
+      "name" : "successful double click",
+      "uid" : "abd8b3188d7e0933",
+      "parentUid" : "3af9f2048834de90867ffb63f9a1f88f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805290,
+        "stop" : 1646917809354,
+        "duration" : 4064
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "double click not existing element",
+      "uid" : "b3fbf239a6aa83a6",
+      "parentUid" : "3af9f2048834de90867ffb63f9a1f88f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917809355,
+        "stop" : 1646917813326,
+        "duration" : 3971
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "double click hidden element",
+      "uid" : "8f6c2502eacbe028",
+      "parentUid" : "3af9f2048834de90867ffb63f9a1f88f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917813326,
+        "stop" : 1646917816726,
+        "duration" : 3400
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "double click disabled element",
+      "uid" : "efd251757ea83783",
+      "parentUid" : "3af9f2048834de90867ffb63f9a1f88f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917816726,
+        "stop" : 1646917820318,
+        "duration" : 3592
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "3af9f2048834de90867ffb63f9a1f88f"
+  }, {
+    "name" : "DeleteCookieSpec",
+    "children" : [ {
+      "name" : "expect empty cookie",
+      "uid" : "d4911125014f93c4",
+      "parentUid" : "04fd250403f7044b15b44b8bae449cd1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805298,
+        "stop" : 1646917807307,
+        "duration" : 2009
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "04fd250403f7044b15b44b8bae449cd1"
+  }, {
+    "name" : "dragAndDrop",
+    "children" : [ {
+      "name" : "drag and drop to coordinate",
+      "uid" : "88aa61e0df2bcddd",
+      "parentUid" : "55fbbd1a2764e802c50172ab9ff0f2b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805302,
+        "stop" : 1646917808035,
+        "duration" : 2733
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "drag and drop to element",
+      "uid" : "5a034abf225a1f67",
+      "parentUid" : "55fbbd1a2764e802c50172ab9ff0f2b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917808035,
+        "stop" : 1646917809686,
+        "duration" : 1651
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "drag and drop to undefined element",
+      "uid" : "d2e0b81b350ff52e",
+      "parentUid" : "55fbbd1a2764e802c50172ab9ff0f2b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917809686,
+        "stop" : 1646917810722,
+        "duration" : 1036
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "drag and drop to non integer coordinate",
+      "uid" : "ebf66b033df7a89d",
+      "parentUid" : "55fbbd1a2764e802c50172ab9ff0f2b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917810777,
+        "stop" : 1646917811529,
+        "duration" : 752
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "drag and drop to non existing element",
+      "uid" : "b8c79bbf34354776",
+      "parentUid" : "55fbbd1a2764e802c50172ab9ff0f2b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917811529,
+        "stop" : 1646917815007,
+        "duration" : 3478
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "55fbbd1a2764e802c50172ab9ff0f2b8"
+  }, {
+    "name" : "addValue",
+    "children" : [ {
+      "name" : "add value to empty input",
+      "uid" : "c13f8fc5a0950b3b",
+      "parentUid" : "4feaa34e836cb8a16f0fe40997c79be4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917805432,
+        "stop" : 1646917808309,
+        "duration" : 2877
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "add value to existing input",
+      "uid" : "e7c063b4b9ebf9a6",
+      "parentUid" : "4feaa34e836cb8a16f0fe40997c79be4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917808310,
+        "stop" : 1646917810123,
+        "duration" : 1813
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "add value to disabled input",
+      "uid" : "cd69ca82afcf778b",
+      "parentUid" : "4feaa34e836cb8a16f0fe40997c79be4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917810123,
+        "stop" : 1646917814137,
+        "duration" : 4014
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "add value to not existing input",
+      "uid" : "7457b3fe31b9a3b6",
+      "parentUid" : "4feaa34e836cb8a16f0fe40997c79be4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917814137,
+        "stop" : 1646917817596,
+        "duration" : 3459
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "4feaa34e836cb8a16f0fe40997c79be4"
+  }, {
+    "name" : "waitForAlertText",
+    "children" : [ {
+      "name" : "correct text",
+      "uid" : "4225f27dbe78ec19",
+      "parentUid" : "9ed24d68e01241005c4309ce93f4c1bd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917826768,
+        "stop" : 1646917828738,
+        "duration" : 1970
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect text",
+      "uid" : "75b3e2335914bdbe",
+      "parentUid" : "9ed24d68e01241005c4309ce93f4c1bd",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917828802,
+        "stop" : 1646917832015,
+        "duration" : 3213
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "no alert",
+      "uid" : "42f7a2248965c30a",
+      "parentUid" : "9ed24d68e01241005c4309ce93f4c1bd",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917832060,
+        "stop" : 1646917834858,
+        "duration" : 2798
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "9ed24d68e01241005c4309ce93f4c1bd"
+  }, {
+    "name" : "waitForAttributeValue",
+    "children" : [ {
+      "name" : "correct value",
+      "uid" : "ee7d2d9ddc9e5ba6",
+      "parentUid" : "03f963970b5e885578e0005b89d59eb8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917827556,
+        "stop" : 1646917828786,
+        "duration" : 1230
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect value",
+      "uid" : "8c97c527b8c4e0eb",
+      "parentUid" : "03f963970b5e885578e0005b89d59eb8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917828860,
+        "stop" : 1646917831329,
+        "duration" : 2469
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect selector",
+      "uid" : "944806e8c951f86f",
+      "parentUid" : "03f963970b5e885578e0005b89d59eb8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917831383,
+        "stop" : 1646917833684,
+        "duration" : 2301
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect attribute",
+      "uid" : "1a0a99027c553bb4",
+      "parentUid" : "03f963970b5e885578e0005b89d59eb8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917833684,
+        "stop" : 1646917835693,
+        "duration" : 2009
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "03f963970b5e885578e0005b89d59eb8"
+  }, {
+    "name" : "waitForUrl",
+    "children" : [ {
+      "name" : "correct url",
+      "uid" : "fcce8ecead61a326",
+      "parentUid" : "2a3cdbf112ab754620c1552c4913d898",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917827650,
+        "stop" : 1646917828913,
+        "duration" : 1263
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect url",
+      "uid" : "b963cc1f62700525",
+      "parentUid" : "2a3cdbf112ab754620c1552c4913d898",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917828931,
+        "stop" : 1646917831180,
+        "duration" : 2249
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "2a3cdbf112ab754620c1552c4913d898"
+  }, {
+    "name" : "expectNoAttributeValue",
+    "children" : [ {
+      "name" : "Doesn't contains value",
+      "uid" : "702c53d0be63e0a6",
+      "parentUid" : "573932d22ffde98fa166ba232bc1fc82",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917828306,
+        "stop" : 1646917829584,
+        "duration" : 1278
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Contains word substring",
+      "uid" : "86a9f0e787cab8dd",
+      "parentUid" : "573932d22ffde98fa166ba232bc1fc82",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917829618,
+        "stop" : 1646917830750,
+        "duration" : 1132
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Exact match error thrown",
+      "uid" : "db317e298682030f",
+      "parentUid" : "573932d22ffde98fa166ba232bc1fc82",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917830805,
+        "stop" : 1646917832962,
+        "duration" : 2157
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Element not exists",
+      "uid" : "4d96ea93b99683e4",
+      "parentUid" : "573932d22ffde98fa166ba232bc1fc82",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917832963,
+        "stop" : 1646917836060,
+        "duration" : 3097
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Attribute not exists",
+      "uid" : "d555f93cd60fac1e",
+      "parentUid" : "573932d22ffde98fa166ba232bc1fc82",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917836069,
+        "stop" : 1646917838448,
+        "duration" : 2379
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "573932d22ffde98fa166ba232bc1fc82"
+  }, {
+    "name" : "waitForNumberOfElements",
+    "children" : [ {
+      "name" : "Expect number of elements equals",
+      "uid" : "885615abb676a4bb",
+      "parentUid" : "c62f3c11ac61ba0ff0a38ec0140ed469",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917828962,
+        "stop" : 1646917830022,
+        "duration" : 1060
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Expect number of elements not equals",
+      "uid" : "62a09c0ad8b288b8",
+      "parentUid" : "c62f3c11ac61ba0ff0a38ec0140ed469",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917830022,
+        "stop" : 1646917832060,
+        "duration" : 2038
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Expect 0 elements equals",
+      "uid" : "3e953cc242513e0",
+      "parentUid" : "c62f3c11ac61ba0ff0a38ec0140ed469",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917832093,
+        "stop" : 1646917832732,
+        "duration" : 639
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Expect 0 elements not equals",
+      "uid" : "4612e537cddb9d69",
+      "parentUid" : "c62f3c11ac61ba0ff0a38ec0140ed469",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917832734,
+        "stop" : 1646917834841,
+        "duration" : 2107
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Expect number of elements, element doesn't exists",
+      "uid" : "137c71598c5f93f8",
+      "parentUid" : "c62f3c11ac61ba0ff0a38ec0140ed469",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917834842,
+        "stop" : 1646917836649,
+        "duration" : 1807
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "c62f3c11ac61ba0ff0a38ec0140ed469"
+  }, {
+    "name" : "waitForText",
+    "children" : [ {
+      "name" : "correct text",
+      "uid" : "b886c3de82ddb4e9",
+      "parentUid" : "7b12ac05e11ed637d3c0c7d8d560bc62",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917833235,
+        "stop" : 1646917834336,
+        "duration" : 1101
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "hidden text",
+      "uid" : "1fa3351aa320392c",
+      "parentUid" : "7b12ac05e11ed637d3c0c7d8d560bc62",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917834336,
+        "stop" : 1646917836626,
+        "duration" : 2290
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "dynamic text",
+      "uid" : "f59a33184794344",
+      "parentUid" : "7b12ac05e11ed637d3c0c7d8d560bc62",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917836626,
+        "stop" : 1646917837309,
+        "duration" : 683
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "fail on case sensitive",
+      "uid" : "8570854b023e1764",
+      "parentUid" : "7b12ac05e11ed637d3c0c7d8d560bc62",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917837320,
+        "stop" : 1646917839674,
+        "duration" : 2354
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "fail on wrong text",
+      "uid" : "e80922a0c33dcc50",
+      "parentUid" : "7b12ac05e11ed637d3c0c7d8d560bc62",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917839674,
+        "stop" : 1646917841539,
+        "duration" : 1865
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "7b12ac05e11ed637d3c0c7d8d560bc62"
+  }, {
+    "name" : "findElement of BrowserUtils Tests",
+    "children" : [ {
+      "name" : "Check Result contains element key (object)",
+      "uid" : "e15c8d2e4ef7ef4",
+      "parentUid" : "6b10fededfa24f03685f87f399d05c2c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917836147,
+        "stop" : 1646917838485,
+        "duration" : 2338
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Fail to obtain element due to wrong path",
+      "uid" : "8e5d7bc9d0408267",
+      "parentUid" : "6b10fededfa24f03685f87f399d05c2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917838485,
+        "stop" : 1646917839067,
+        "duration" : 582
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "First Element Returned",
+      "uid" : "fd4a275a4377d557",
+      "parentUid" : "6b10fededfa24f03685f87f399d05c2c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917839067,
+        "stop" : 1646917840722,
+        "duration" : 1655
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "6b10fededfa24f03685f87f399d05c2c"
+  }, {
+    "name" : "GetAttributeSpec of BrowserUtils Tests",
+    "children" : [ {
+      "name" : "Validate positive result ",
+      "uid" : "7f87d4fcf576fb26",
+      "parentUid" : "d1ecb97536a6de593233c9e645721498",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917839737,
+        "stop" : 1646917841680,
+        "duration" : 1943
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "should return null on not existing attribute",
+      "uid" : "69691efd9b80c39",
+      "parentUid" : "d1ecb97536a6de593233c9e645721498",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917841787,
+        "stop" : 1646917843273,
+        "duration" : 1486
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "d1ecb97536a6de593233c9e645721498"
+  }, {
+    "name" : "GetCookieSpec",
+    "children" : [ {
+      "name" : "expect unique cookie",
+      "uid" : "83568cc6fa79ea1b",
+      "parentUid" : "8b1786902700fabbfc1e3fa033298118",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917843005,
+        "stop" : 1646917844005,
+        "duration" : 1000
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "get cookie by name",
+      "uid" : "802705f0dc7c1421",
+      "parentUid" : "8b1786902700fabbfc1e3fa033298118",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917844029,
+        "stop" : 1646917844598,
+        "duration" : 569
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "get cookie by value",
+      "uid" : "73f2f15614979a97",
+      "parentUid" : "8b1786902700fabbfc1e3fa033298118",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917844625,
+        "stop" : 1646917845175,
+        "duration" : 550
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "8b1786902700fabbfc1e3fa033298118"
+  }, {
+    "name" : "getCssProperty",
+    "children" : [ {
+      "name" : "retrieve css property",
+      "uid" : "410dde4d94ea4373",
+      "parentUid" : "ac6962ef6a3d58b03f8c507dc008823b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917845868,
+        "stop" : 1646917846863,
+        "duration" : 995
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect selector of an element",
+      "uid" : "a226465d28654e1d",
+      "parentUid" : "ac6962ef6a3d58b03f8c507dc008823b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917846863,
+        "stop" : 1646917850416,
+        "duration" : 3553
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "null params",
+      "uid" : "27095d82a069f9f5",
+      "parentUid" : "ac6962ef6a3d58b03f8c507dc008823b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917850416,
+        "stop" : 1646917850980,
+        "duration" : 564
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect css property",
+      "uid" : "56597071de181e65",
+      "parentUid" : "ac6962ef6a3d58b03f8c507dc008823b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917850980,
+        "stop" : 1646917851533,
+        "duration" : 553
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "ac6962ef6a3d58b03f8c507dc008823b"
+  }, {
+    "name" : "getLocation",
+    "children" : [ {
+      "name" : "get element Location",
+      "uid" : "cd045dd47bf0dce4",
+      "parentUid" : "5f4cdbc8176e860afdf620f619582242",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917851030,
+        "stop" : 1646917853086,
+        "duration" : 2056
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "5f4cdbc8176e860afdf620f619582242"
+  }, {
+    "name" : "getSizeSpec",
+    "children" : [ {
+      "name" : "get element size",
+      "uid" : "91322e93b35e6562",
+      "parentUid" : "326609c1c194653aea5733388314f920",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917853549,
+        "stop" : 1646917855414,
+        "duration" : 1865
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "326609c1c194653aea5733388314f920"
+  }, {
+    "name" : "GetTestDataFileSpec",
+    "children" : [ {
+      "name" : "Check get test data from env file",
+      "uid" : "42d7560c0d99de25",
+      "parentUid" : "f31215298a19edff2f84c650ec19674f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917855924,
+        "stop" : 1646917856714,
+        "duration" : 790
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Check incorrect user",
+      "uid" : "835544327d0f7fdf",
+      "parentUid" : "f31215298a19edff2f84c650ec19674f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917856714,
+        "stop" : 1646917857364,
+        "duration" : 650
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "f31215298a19edff2f84c650ec19674f"
+  }, {
+    "name" : "getNumberOfElements",
+    "children" : [ {
+      "name" : "get number of existing elements",
+      "uid" : "9c754dc28c33f2db",
+      "parentUid" : "66ee7dc32b0eafd6b37609d84fdffaf7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917856384,
+        "stop" : 1646917858590,
+        "duration" : 2206
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "get number of not existing elements",
+      "uid" : "7bf96dd36f993bd",
+      "parentUid" : "66ee7dc32b0eafd6b37609d84fdffaf7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917858591,
+        "stop" : 1646917860428,
+        "duration" : 1837
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "undefined selector value",
+      "uid" : "471a95907c255f3e",
+      "parentUid" : "66ee7dc32b0eafd6b37609d84fdffaf7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917860428,
+        "stop" : 1646917862141,
+        "duration" : 1713
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "66ee7dc32b0eafd6b37609d84fdffaf7"
+  }, {
+    "name" : "GetText of BrowserUtils Tests",
+    "children" : [ {
+      "name" : "Validate single result ",
+      "uid" : "317e2d887bc77f79",
+      "parentUid" : "12de0fb176b066f07261944671bb6f42",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917857329,
+        "stop" : 1646917859410,
+        "duration" : 2081
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Validate multiple result select first one ",
+      "uid" : "ed3c1f0977ee97f9",
+      "parentUid" : "12de0fb176b066f07261944671bb6f42",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917859411,
+        "stop" : 1646917861245,
+        "duration" : 1834
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Validate element not exist error thrown",
+      "uid" : "a7b9c2ab76d2d90e",
+      "parentUid" : "12de0fb176b066f07261944671bb6f42",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917861245,
+        "stop" : 1646917862841,
+        "duration" : 1596
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "12de0fb176b066f07261944671bb6f42"
+  }, {
+    "name" : "GetUrlSpec",
+    "children" : [ {
+      "name" : "get url",
+      "uid" : "ace0b88b20dbb193",
+      "parentUid" : "86961a842ebc83db7eb67edbe39fda7c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917860496,
+        "stop" : 1646917862643,
+        "duration" : 2147
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "86961a842ebc83db7eb67edbe39fda7c"
+  }, {
+    "name" : "getValue",
+    "children" : [ {
+      "name" : "get value of input element",
+      "uid" : "631697535bb5c053",
+      "parentUid" : "f0a259e30ba1e8e690aafb451283283d",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917860886,
+        "stop" : 1646917863182,
+        "duration" : 2296
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "get value of text area",
+      "uid" : "3b28912fc5e91d65",
+      "parentUid" : "f0a259e30ba1e8e690aafb451283283d",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917863193,
+        "stop" : 1646917865059,
+        "duration" : 1866
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "f0a259e30ba1e8e690aafb451283283d"
+  }, {
+    "name" : "moveToSpec",
+    "children" : [ {
+      "name" : "hoverTrue",
+      "uid" : "ff6df6f3ec810127",
+      "parentUid" : "63dfe900fb9576c8d9a54bf22745b483",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917864224,
+        "stop" : 1646917865796,
+        "duration" : 1572
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "hoverFalse",
+      "uid" : "d3640ae1e0f103f2",
+      "parentUid" : "63dfe900fb9576c8d9a54bf22745b483",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917865796,
+        "stop" : 1646917869345,
+        "duration" : 3549
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "63dfe900fb9576c8d9a54bf22745b483"
+  }, {
+    "name" : "IsDisplayed",
+    "children" : [ {
+      "name" : "displayed true",
+      "uid" : "6f9a7ab5b8fd6922",
+      "parentUid" : "d4ba1fdb425d15daf1373dbc08b53d1c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917866365,
+        "stop" : 1646917867151,
+        "duration" : 786
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "displayed false",
+      "uid" : "6f5fc895ebd4cc8f",
+      "parentUid" : "d4ba1fdb425d15daf1373dbc08b53d1c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917867151,
+        "stop" : 1646917867644,
+        "duration" : 493
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "not exist element",
+      "uid" : "48729a44e7057c45",
+      "parentUid" : "d4ba1fdb425d15daf1373dbc08b53d1c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917867644,
+        "stop" : 1646917868118,
+        "duration" : 474
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "d4ba1fdb425d15daf1373dbc08b53d1c"
+  }, {
+    "name" : "isEnabled",
+    "children" : [ {
+      "name" : "check enabled element",
+      "uid" : "136fb6120a819eb6",
+      "parentUid" : "7e133b136d6b63a5d15bd69f19d6a1d1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917871773,
+        "stop" : 1646917873996,
+        "duration" : 2223
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "check disabled element",
+      "uid" : "65edc2a7dd802b88",
+      "parentUid" : "7e133b136d6b63a5d15bd69f19d6a1d1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917873997,
+        "stop" : 1646917875806,
+        "duration" : 1809
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "check not existing element",
+      "uid" : "5e38f04aa12a5a04",
+      "parentUid" : "7e133b136d6b63a5d15bd69f19d6a1d1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917875806,
+        "stop" : 1646917877427,
+        "duration" : 1621
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "7e133b136d6b63a5d15bd69f19d6a1d1"
+  }, {
+    "name" : "waitForExist",
+    "children" : [ {
+      "name" : "existing element",
+      "uid" : "cf663ece8ffcbd78",
+      "parentUid" : "c18b6284b0e1374ad537231ea0773865",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917872367,
+        "stop" : 1646917873183,
+        "duration" : 816
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "not existing element",
+      "uid" : "dd04ac5e02dc8b13",
+      "parentUid" : "c18b6284b0e1374ad537231ea0773865",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917873205,
+        "stop" : 1646917874864,
+        "duration" : 1659
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "c18b6284b0e1374ad537231ea0773865"
+  }, {
+    "name" : "url",
+    "children" : [ {
+      "name" : "navigate successfully",
+      "uid" : "ed1f26f6e560dd54",
+      "parentUid" : "167f122a998d1153a415d43193f11261",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917875032,
+        "stop" : 1646917875838,
+        "duration" : 806
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "167f122a998d1153a415d43193f11261"
+  }, {
+    "name" : "NormalizeUrl",
+    "children" : [ {
+      "name" : "throw if url is null",
+      "uid" : "a262a2fe80a0c8c2",
+      "parentUid" : "564f82b6859e7f590f4f1d479e9b16f6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917877894,
+        "stop" : 1646917877986,
+        "duration" : 92
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "throw if url is undefined",
+      "uid" : "e61aad9c64425edd",
+      "parentUid" : "564f82b6859e7f590f4f1d479e9b16f6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917877986,
+        "stop" : 1646917878030,
+        "duration" : 44
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "expect / removed",
+      "uid" : "a5a21d94451cc53e",
+      "parentUid" : "564f82b6859e7f590f4f1d479e9b16f6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917878030,
+        "stop" : 1646917878070,
+        "duration" : 40
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "expect // removed",
+      "uid" : "2cee67d5e690decb",
+      "parentUid" : "564f82b6859e7f590f4f1d479e9b16f6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917878070,
+        "stop" : 1646917878112,
+        "duration" : 42
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "empty string",
+      "uid" : "425711be4fa73159",
+      "parentUid" : "564f82b6859e7f590f4f1d479e9b16f6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917878113,
+        "stop" : 1646917878158,
+        "duration" : 45
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "//// to be empty",
+      "uid" : "5b22c36514348a87",
+      "parentUid" : "564f82b6859e7f590f4f1d479e9b16f6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917878158,
+        "stop" : 1646917878185,
+        "duration" : 27
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "564f82b6859e7f590f4f1d479e9b16f6"
+  }, {
+    "name" : "waitForExist reverse:true",
+    "children" : [ {
+      "name" : "disappearing element",
+      "uid" : "663e5293494da345",
+      "parentUid" : "fdcf13a01b5240ae79bb1cee7d1c7510",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917881455,
+        "stop" : 1646917882390,
+        "duration" : 935
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "fail on existing element",
+      "uid" : "4c7a9b67ad520c3f",
+      "parentUid" : "fdcf13a01b5240ae79bb1cee7d1c7510",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917882391,
+        "stop" : 1646917884595,
+        "duration" : 2204
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "fdcf13a01b5240ae79bb1cee7d1c7510"
+  }, {
+    "name" : "waitForDisplayed - reverse: true",
+    "children" : [ {
+      "name" : "displayed element",
+      "uid" : "b9a80fd0f78dc06e",
+      "parentUid" : "ed4de6d9c6fb7e5c6ac10c92e0d23218",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917881818,
+        "stop" : 1646917884089,
+        "duration" : 2271
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "notDisplayed but exist element ",
+      "uid" : "d1ec9f5d59df7888",
+      "parentUid" : "ed4de6d9c6fb7e5c6ac10c92e0d23218",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917884090,
+        "stop" : 1646917884945,
+        "duration" : 855
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "not exist element ",
+      "uid" : "4008a4ec72e423e7",
+      "parentUid" : "ed4de6d9c6fb7e5c6ac10c92e0d23218",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917884945,
+        "stop" : 1646917885666,
+        "duration" : 721
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "disappearing element",
+      "uid" : "97d4676e6341587a",
+      "parentUid" : "ed4de6d9c6fb7e5c6ac10c92e0d23218",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917885666,
+        "stop" : 1646917886297,
+        "duration" : 631
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "ed4de6d9c6fb7e5c6ac10c92e0d23218"
+  }, {
+    "name" : "RefreshSpec",
+    "children" : [ {
+      "name" : "RefreshTrue",
+      "uid" : "ee5e38d932383960",
+      "parentUid" : "65a8fca581b69cf6712387265574257a",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917882063,
+        "stop" : 1646917885046,
+        "duration" : 2983
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "65a8fca581b69cf6712387265574257a"
+  }, {
+    "name" : "RightClickSpec",
+    "children" : [ {
+      "name" : "RightClick ",
+      "uid" : "26f336769c11ae0f",
+      "parentUid" : "b5a05e820d508828f80ffbb3fe208845",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917884788,
+        "stop" : 1646917887015,
+        "duration" : 2227
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "b5a05e820d508828f80ffbb3fe208845"
+  }, {
+    "name" : "ScrollingIntoViewSpec",
+    "children" : [ {
+      "name" : "scrollIntoView to element outside of viewport",
+      "uid" : "113305e7a83d03b5",
+      "parentUid" : "f89cdf940b02634d73add8ed4c2d5ea9",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917888546,
+        "stop" : 1646917890429,
+        "duration" : 1883
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "scrollIntoView to element in viewport",
+      "uid" : "347d10e3fc75434f",
+      "parentUid" : "f89cdf940b02634d73add8ed4c2d5ea9",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917890430,
+        "stop" : 1646917891957,
+        "duration" : 1527
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "f89cdf940b02634d73add8ed4c2d5ea9"
+  }, {
+    "name" : "scrollTo",
+    "children" : [ {
+      "name" : "scroll to element with lazy load",
+      "uid" : "9f79a94b144bcac2",
+      "parentUid" : "8c6fa683daf307aabbd3b98b682a0dea",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917888955,
+        "stop" : 1646917890885,
+        "duration" : 1930
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "scroll to already loaded element",
+      "uid" : "f5f5be84da01b915",
+      "parentUid" : "8c6fa683daf307aabbd3b98b682a0dea",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917890896,
+        "stop" : 1646917892260,
+        "duration" : 1364
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "fail to scroll",
+      "uid" : "21c3186aaf6372f2",
+      "parentUid" : "8c6fa683daf307aabbd3b98b682a0dea",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917892260,
+        "stop" : 1646917893689,
+        "duration" : 1429
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "8c6fa683daf307aabbd3b98b682a0dea"
+  }, {
+    "name" : "ScrollTo",
+    "children" : [ {
+      "name" : "scroll to y value",
+      "uid" : "682aa2465c35294e",
+      "parentUid" : "f37b1c245b0c301a52945ffe75f7be8f",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917894644,
+        "stop" : 1646917896782,
+        "duration" : 2138
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "scroll to x value",
+      "uid" : "cc9a732fb6ba988a",
+      "parentUid" : "f37b1c245b0c301a52945ffe75f7be8f",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917896783,
+        "stop" : 1646917898653,
+        "duration" : 1870
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "f37b1c245b0c301a52945ffe75f7be8f"
+  }, {
+    "name" : "selectByValue",
+    "children" : [ {
+      "name" : "select by existing value",
+      "uid" : "52ef8a766ba337fd",
+      "parentUid" : "cfbd2f87ff758219886f47c69d8cf516",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917895751,
+        "stop" : 1646917896636,
+        "duration" : 885
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "select by none existing value",
+      "uid" : "cb59498711180225",
+      "parentUid" : "cfbd2f87ff758219886f47c69d8cf516",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917896661,
+        "stop" : 1646917899098,
+        "duration" : 2437
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "select hidden element by value",
+      "uid" : "ee8c521272d8de1c",
+      "parentUid" : "cfbd2f87ff758219886f47c69d8cf516",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917899148,
+        "stop" : 1646917900826,
+        "duration" : 1678
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "cfbd2f87ff758219886f47c69d8cf516"
+  }, {
+    "name" : "SendKeysSpec",
+    "children" : [ {
+      "name" : "send string",
+      "uid" : "6da889d477e86529",
+      "parentUid" : "591ff526a38ce66bd11ed82ccb90b4e2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917897661,
+        "stop" : 1646917900460,
+        "duration" : 2799
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "send an array of strings",
+      "uid" : "d9d435b71935470a",
+      "parentUid" : "591ff526a38ce66bd11ed82ccb90b4e2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917900461,
+        "stop" : 1646917902375,
+        "duration" : 1914
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "send string twice",
+      "uid" : "f732d5a267d46169",
+      "parentUid" : "591ff526a38ce66bd11ed82ccb90b4e2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917902375,
+        "stop" : 1646917904029,
+        "duration" : 1654
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Add text after sending enter for new line",
+      "uid" : "8044c6b65b3a4973",
+      "parentUid" : "591ff526a38ce66bd11ed82ccb90b4e2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917904029,
+        "stop" : 1646917906442,
+        "duration" : 2413
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Array of Special Keys",
+      "uid" : "d8eb63ecb4d81b87",
+      "parentUid" : "591ff526a38ce66bd11ed82ccb90b4e2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917906442,
+        "stop" : 1646917909043,
+        "duration" : 2601
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Special Key Emoji",
+      "uid" : "973b83055e8d6218",
+      "parentUid" : "591ff526a38ce66bd11ed82ccb90b4e2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917909043,
+        "stop" : 1646917911145,
+        "duration" : 2102
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "591ff526a38ce66bd11ed82ccb90b4e2"
+  }, {
+    "name" : "setCookies",
+    "children" : [ {
+      "name" : "expect unique cookie",
+      "uid" : "acbe75ab2a0947a4",
+      "parentUid" : "e142688f15a570c34fd71bd2503a8bb4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917898344,
+        "stop" : 1646917899419,
+        "duration" : 1075
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "validate cookie name",
+      "uid" : "51fbf67dbe771183",
+      "parentUid" : "e142688f15a570c34fd71bd2503a8bb4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917899420,
+        "stop" : 1646917899947,
+        "duration" : 527
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "validate cookie value",
+      "uid" : "eb0f00af851ff69b",
+      "parentUid" : "e142688f15a570c34fd71bd2503a8bb4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917899947,
+        "stop" : 1646917900490,
+        "duration" : 543
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "e142688f15a570c34fd71bd2503a8bb4"
+  }, {
+    "name" : "startNetworkAudit",
+    "children" : [ {
+      "name" : "successfully start and read network audit",
+      "uid" : "92a269ab9f5f744f",
+      "parentUid" : "140dc2b501ef99d65ca17309a87aac8e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917905072,
+        "stop" : 1646917906363,
+        "duration" : 1291
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "140dc2b501ef99d65ca17309a87aac8e"
+  }, {
+    "name" : "SetValue",
+    "children" : [ {
+      "name" : "setValue",
+      "uid" : "e6c05a1564179c22",
+      "parentUid" : "8622b73859f326b25ee0984d35a134d3",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917905081,
+        "stop" : 1646917908072,
+        "duration" : 2991
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "8622b73859f326b25ee0984d35a134d3"
+  }, {
+    "name" : "SwitchToParentIframe",
+    "children" : [ {
+      "name" : "Switch from iframe to Iframe parent",
+      "uid" : "3417eee22db931ef",
+      "parentUid" : "9ab5cb982903ed4a1f6b76250e283368",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917907179,
+        "stop" : 1646917909770,
+        "duration" : 2591
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Check to parent iframe without error",
+      "uid" : "398813e4b3f74cc8",
+      "parentUid" : "9ab5cb982903ed4a1f6b76250e283368",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917909826,
+        "stop" : 1646917911547,
+        "duration" : 1721
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "9ab5cb982903ed4a1f6b76250e283368"
+  }, {
+    "name" : "switchToIframe",
+    "children" : [ {
+      "name" : "Switch to iframe, header text at iFrame 2",
+      "uid" : "b69f36910ef6b1da",
+      "parentUid" : "c7fe768235029a4dd89e95ee88965f24",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917907207,
+        "stop" : 1646917909712,
+        "duration" : 2505
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "iframe 2 not available after switch to iframe 1",
+      "uid" : "f3d527e6c5ac90f9",
+      "parentUid" : "c7fe768235029a4dd89e95ee88965f24",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917909735,
+        "stop" : 1646917911744,
+        "duration" : 2009
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Outside iframe context not accessible after switch",
+      "uid" : "15d15d7de649c8c4",
+      "parentUid" : "c7fe768235029a4dd89e95ee88965f24",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917911748,
+        "stop" : 1646917913600,
+        "duration" : 1852
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Incorrect iframe selector",
+      "uid" : "2e0232f3b343b098",
+      "parentUid" : "c7fe768235029a4dd89e95ee88965f24",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917913601,
+        "stop" : 1646917915249,
+        "duration" : 1648
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "c7fe768235029a4dd89e95ee88965f24"
+  }, {
+    "name" : "tab actions",
+    "children" : [ {
+      "name" : "get tab ids",
+      "uid" : "22a6de9bc82c920d",
+      "parentUid" : "6a2ad9ec686327be8a2a2e8c12718434",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917912737,
+        "stop" : 1646917914687,
+        "duration" : 1950
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "switch to tab",
+      "uid" : "d95bb6ba7a2db178",
+      "parentUid" : "6a2ad9ec686327be8a2a2e8c12718434",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917914687,
+        "stop" : 1646917916281,
+        "duration" : 1594
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "switch to incorrect window id",
+      "uid" : "5b60be03bbce2d6d",
+      "parentUid" : "6a2ad9ec686327be8a2a2e8c12718434",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917916281,
+        "stop" : 1646917917628,
+        "duration" : 1347
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "6a2ad9ec686327be8a2a2e8c12718434"
+  }, {
+    "name" : "TestUtilsSpec: randomStringTest",
+    "children" : [ {
+      "name" : "default random string length",
+      "uid" : "92e01204f18f0d15",
+      "parentUid" : "af923f9f65e6a7c0327ea9babb9bed08",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917914642,
+        "stop" : 1646917914701,
+        "duration" : 59
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "random string of provided length",
+      "uid" : "4e69a48c418ad05c",
+      "parentUid" : "af923f9f65e6a7c0327ea9babb9bed08",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917914717,
+        "stop" : 1646917914752,
+        "duration" : 35
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "strings are randoms",
+      "uid" : "183dbe1290c5c8d8",
+      "parentUid" : "af923f9f65e6a7c0327ea9babb9bed08",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917914753,
+        "stop" : 1646917914791,
+        "duration" : 38
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "letters only",
+      "uid" : "fe02c9dc95347a53",
+      "parentUid" : "af923f9f65e6a7c0327ea9babb9bed08",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917914791,
+        "stop" : 1646917914824,
+        "duration" : 33
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "af923f9f65e6a7c0327ea9babb9bed08"
+  }, {
+    "name" : "TestUtilsSpec: extractNumbersFromString",
+    "children" : [ {
+      "name" : "string contains letters and numbers",
+      "uid" : "ab5e94ed96e992cc",
+      "parentUid" : "52b59be5b76e74d9ba9ad41b9eb1966c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917914890,
+        "stop" : 1646917914931,
+        "duration" : 41
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "52b59be5b76e74d9ba9ad41b9eb1966c"
+  }, {
+    "name" : "TestUtilsSpec: isTimePassed",
+    "children" : [ {
+      "name" : "expect to return true",
+      "uid" : "f1afb63b6c85b0c3",
+      "parentUid" : "c214453fcd805f382da71b72c1cf8629",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917914933,
+        "stop" : 1646917914976,
+        "duration" : 43
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "expect to return false",
+      "uid" : "9cc169435e02f331",
+      "parentUid" : "c214453fcd805f382da71b72c1cf8629",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917914976,
+        "stop" : 1646917915010,
+        "duration" : 34
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "c214453fcd805f382da71b72c1cf8629"
+  }, {
+    "name" : "verifyFilesInZip",
+    "children" : [ {
+      "name" : "correct list without size",
+      "uid" : "b2a90f70c9301301",
+      "parentUid" : "488455b1c96bcef99c52bc3b6a69fba2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917917958,
+        "stop" : 1646917918442,
+        "duration" : 484
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "correct list with incorrect size",
+      "uid" : "2441b457b0745251",
+      "parentUid" : "488455b1c96bcef99c52bc3b6a69fba2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917918456,
+        "stop" : 1646917919812,
+        "duration" : 1356
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "correct list with size",
+      "uid" : "d5bd9ff8854129e1",
+      "parentUid" : "488455b1c96bcef99c52bc3b6a69fba2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917919841,
+        "stop" : 1646917920201,
+        "duration" : 360
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "incorrect zip link",
+      "uid" : "1fdd1049e412eb23",
+      "parentUid" : "488455b1c96bcef99c52bc3b6a69fba2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917920201,
+        "stop" : 1646917921362,
+        "duration" : 1161
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "488455b1c96bcef99c52bc3b6a69fba2"
+  }, {
+    "name" : "waitForClickable",
+    "children" : [ {
+      "name" : "not clickable element",
+      "uid" : "254bf18bb13154e4",
+      "parentUid" : "24eea784ea08c5730eec8f57faec75c4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917919067,
+        "stop" : 1646917920729,
+        "duration" : 1662
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "clickable element",
+      "uid" : "d946ecbcbce92716",
+      "parentUid" : "24eea784ea08c5730eec8f57faec75c4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917920732,
+        "stop" : 1646917921142,
+        "duration" : 410
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "reverse: true",
+      "uid" : "8e950320db8c43a2",
+      "parentUid" : "24eea784ea08c5730eec8f57faec75c4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917921143,
+        "stop" : 1646917921588,
+        "duration" : 445
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "custom options",
+      "uid" : "7fb27c8485931fcf",
+      "parentUid" : "24eea784ea08c5730eec8f57faec75c4",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917921620,
+        "stop" : 1646917922885,
+        "duration" : 1265
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "24eea784ea08c5730eec8f57faec75c4"
+  }, {
+    "name" : "waitForDisplayed",
+    "children" : [ {
+      "name" : "wait for visible element",
+      "uid" : "c76659e8dcc2cd9a",
+      "parentUid" : "5faa218d4adc03c47cbeaba9fa1dfd0c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917919808,
+        "stop" : 1646917920422,
+        "duration" : 614
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "not existing element",
+      "uid" : "44bf828344bdb7a0",
+      "parentUid" : "5faa218d4adc03c47cbeaba9fa1dfd0c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917920439,
+        "stop" : 1646917922036,
+        "duration" : 1597
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "hidden element",
+      "uid" : "fa98ea6e3f4c0204",
+      "parentUid" : "5faa218d4adc03c47cbeaba9fa1dfd0c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917922062,
+        "stop" : 1646917923507,
+        "duration" : 1445
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "5faa218d4adc03c47cbeaba9fa1dfd0c"
+  }, {
+    "name" : "waitForEnabled",
+    "children" : [ {
+      "name" : "element enabled",
+      "uid" : "a7369bb3668f4339",
+      "parentUid" : "5e7aa826339c169bb208b9b7cb1a825c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646917923053,
+        "stop" : 1646917923682,
+        "duration" : 629
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "element disabled",
+      "uid" : "2a432e9816fd54d",
+      "parentUid" : "5e7aa826339c169bb208b9b7cb1a825c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917923682,
+        "stop" : 1646917924481,
+        "duration" : 799
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "element not exists",
+      "uid" : "e94b9683d1866085",
+      "parentUid" : "5e7aa826339c169bb208b9b7cb1a825c",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917924554,
+        "stop" : 1646917925321,
+        "duration" : 767
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "5e7aa826339c169bb208b9b7cb1a825c"
+  }, {
+    "name" : "WaitUntilSpec of BrowserUtils Tests",
+    "children" : [ {
+      "name" : "Validate text found within given timeout ",
+      "uid" : "153e354cf9a04b02",
+      "parentUid" : "1f994bfd153caa296a6d337f1a51a6d8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917923812,
+        "stop" : 1646917924563,
+        "duration" : 751
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Validate text not found withing timeout and error message shown ",
+      "uid" : "351eebb99824daad",
+      "parentUid" : "1f994bfd153caa296a6d337f1a51a6d8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917924588,
+        "stop" : 1646917925509,
+        "duration" : 921
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Validate text found within default timeout ",
+      "uid" : "727173d059f53e4b",
+      "parentUid" : "1f994bfd153caa296a6d337f1a51a6d8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917925526,
+        "stop" : 1646917926162,
+        "duration" : 636
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    }, {
+      "name" : "Validate text not found within default timeout and default error message shown",
+      "uid" : "372f65eee0440435",
+      "parentUid" : "1f994bfd153caa296a6d337f1a51a6d8",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917926166,
+        "stop" : 1646917926656,
+        "duration" : 490
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "1f994bfd153caa296a6d337f1a51a6d8"
+  }, {
+    "name" : "setWindowSize",
+    "children" : [ {
+      "name" : "change window size",
+      "uid" : "54a9c520e64bae33",
+      "parentUid" : "ad3fab1bc0c79b0eff6d7be3312d5649",
+      "status" : "failed",
+      "time" : {
+        "start" : 1646917925172,
+        "stop" : 1646917925742,
+        "duration" : 570
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ "chrome-98.0.4758.102" ]
+    } ],
+    "uid" : "ad3fab1bc0c79b0eff6d7be3312d5649"
+  } ],
+  "name" : "suites"
+}
