@@ -1,0 +1,226 @@
+{
+  "uid" : "340389b27245a1dc",
+  "name" : "Check incorrect user",
+  "fullName" : "GetTestDataFileSpec.Check incorrect user",
+  "historyId" : "2a3d57481722c6a68dbcc262e9b77a31",
+  "time" : {
+    "start" : 1646932822553,
+    "stop" : 1646932823308,
+    "duration" : 755
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetTestDataFileSpec",
+      "time" : {
+        "start" : 1646932822553,
+        "stop" : 1646932823257,
+        "duration" : 704
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646932823098,
+          "stop" : 1646932823098,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "a1c724915e0b1a40",
+          "name" : "more info",
+          "source" : "a1c724915e0b1a40.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646932823256,
+          "stop" : 1646932823257,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f2c974414682ed7d",
+          "name" : "more info",
+          "source" : "f2c974414682ed7d.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Getting data from file /home/runner/work/wdio-allure-ts/wdio-allure-ts/src/test/resources/example.json",
+      "time" : {
+        "start" : 1646932823257,
+        "stop" : 1646932823258,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "1df6c1e563c3d9f2",
+        "name" : "more info",
+        "source" : "1df6c1e563c3d9f2.txt",
+        "type" : "text/plain",
+        "size" : 130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Received a data {\"test-user\":{\"fileName\":\"example\",\"count\":1}} from file by provided tag undefined",
+      "time" : {
+        "start" : 1646932823258,
+        "stop" : 1646932823258,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a257e1d053fb617f",
+        "name" : "more info",
+        "source" : "a257e1d053fb617f.txt",
+        "type" : "text/plain",
+        "size" : 126
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - undefined returned in case of incorrect data tag",
+      "time" : {
+        "start" : 1646932823307,
+        "stop" : 1646932823308,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4a7a8e713ec06cd5",
+        "name" : "more info",
+        "source" : "4a7a8e713ec06cd5.txt",
+        "type" : "text/plain",
+        "size" : 77
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-23"
+  }, {
+    "name" : "suite",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "Check incorrect user"
+  }, {
+    "name" : "package",
+    "value" : "GetTestDataFileSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "6e3846b029d2d3c5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/276//#testresult/6e3846b029d2d3c5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930428069,
+          "stop" : 1646930428727,
+          "duration" : 658
+        }
+      }, {
+        "uid" : "9f83541101fb60c6",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/9f83541101fb60c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930104026,
+          "stop" : 1646930104630,
+          "duration" : 604
+        }
+      }, {
+        "uid" : "8ca75d68f81638d5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/8ca75d68f81638d5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927511998,
+          "stop" : 1646927512838,
+          "duration" : 840
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "340389b27245a1dc.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

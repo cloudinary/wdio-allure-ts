@@ -1,0 +1,208 @@
+{
+  "uid" : "58994901020b471e",
+  "name" : "Validate text not found within default timeout and default error message shown",
+  "fullName" : "WaitUntilSpec of BrowserUtils Tests.Validate text not found within default timeout and default error message shown",
+  "historyId" : "c31364b76c782392b8c3e7a4be1381eb",
+  "time" : {
+    "start" : 1646932897922,
+    "stop" : 1646932901226,
+    "duration" : 3304
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for WaitUntilSpec of BrowserUtils Tests",
+      "time" : {
+        "start" : 1646932897922,
+        "stop" : 1646932898180,
+        "duration" : 258
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646932898117,
+          "stop" : 1646932898118,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "9ac2113995a8f1be",
+          "name" : "more info",
+          "source" : "9ac2113995a8f1be.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646932898180,
+          "stop" : 1646932898180,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "41495be7639a0e7d",
+          "name" : "more info",
+          "source" : "41495be7639a0e7d.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate element displayed",
+      "time" : {
+        "start" : 1646932898210,
+        "stop" : 1646932898211,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "35c59f5db302f97f",
+        "name" : "more info",
+        "source" : "35c59f5db302f97f.txt",
+        "type" : "text/plain",
+        "size" : 152
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate success within default timeout and default error message",
+      "time" : {
+        "start" : 1646932901225,
+        "stop" : 1646932901226,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "aba5ce5eb69660d8",
+        "name" : "more info",
+        "source" : "aba5ce5eb69660d8.txt",
+        "type" : "text/plain",
+        "size" : 1240
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-53"
+  }, {
+    "name" : "suite",
+    "value" : "WaitUntilSpec of BrowserUtils Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "WaitUntilSpec of BrowserUtils Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Validate text not found within default timeout and default error message shown"
+  }, {
+    "name" : "package",
+    "value" : "WaitUntilSpec of BrowserUtils Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "dc4070d5322b0597",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/276//#testresult/dc4070d5322b0597",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646930483308,
+          "stop" : 1646930483821,
+          "duration" : 513
+        }
+      }, {
+        "uid" : "138af54f098da612",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/138af54f098da612",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646930172824,
+          "stop" : 1646930173357,
+          "duration" : 533
+        }
+      }, {
+        "uid" : "54a8be1176319781",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/54a8be1176319781",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646927593349,
+          "stop" : 1646927594207,
+          "duration" : 858
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "58994901020b471e.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

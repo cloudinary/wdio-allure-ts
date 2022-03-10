@@ -1,0 +1,229 @@
+{
+  "uid" : "9b4ac2df75c4db56",
+  "name" : "back browser",
+  "fullName" : "BackSpec.back browser",
+  "historyId" : "f8b6c536a134008d79716ac6b5079be9",
+  "time" : {
+    "start" : 1646932759863,
+    "stop" : 1646932773933,
+    "duration" : 14070
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for BackSpec",
+      "time" : {
+        "start" : 1646932759864,
+        "stop" : 1646932762833,
+        "duration" : 2969
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646932762259,
+          "stop" : 1646932762263,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "5e4a284eef9b0fc6",
+          "name" : "more info",
+          "source" : "5e4a284eef9b0fc6.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646932762831,
+          "stop" : 1646932762832,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "80f98566a0a0b0e",
+          "name" : "more info",
+          "source" : "80f98566a0a0b0e.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Click navigation button",
+      "time" : {
+        "start" : 1646932773008,
+        "stop" : 1646932773008,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9fae115143b8a058",
+        "name" : "more info",
+        "source" : "9fae115143b8a058.txt",
+        "type" : "text/plain",
+        "size" : 482
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Click back button",
+      "time" : {
+        "start" : 1646932773886,
+        "stop" : 1646932773886,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2ec999e22793c663",
+        "name" : "more info",
+        "source" : "2ec999e22793c663.txt",
+        "type" : "text/plain",
+        "size" : 101
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate url is http://127.0.0.1:8000/",
+      "time" : {
+        "start" : 1646932773932,
+        "stop" : 1646932773932,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9ed24972cb9063aa",
+        "name" : "more info",
+        "source" : "9ed24972cb9063aa.txt",
+        "type" : "text/plain",
+        "size" : 67
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-2"
+  }, {
+    "name" : "suite",
+    "value" : "BackSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "BackSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "back browser"
+  }, {
+    "name" : "package",
+    "value" : "BackSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "fff0a1089af91a8c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/276//#testresult/fff0a1089af91a8c",
+        "status" : "broken",
+        "statusDetails" : "Failed to click on '//button[@data-test='navigate-to-cloudinary']' \n                 Error: Can't call elementClick on element with selector \"//button[@data-test='navigate-to-cloudinary']\" because element wasn't found",
+        "time" : {
+          "start" : 1646930380334,
+          "stop" : 1646930398661,
+          "duration" : 18327
+        }
+      }, {
+        "uid" : "78b9e434a0e40538",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/78b9e434a0e40538",
+        "status" : "broken",
+        "statusDetails" : "Failed to click on '//button[@data-test='navigate-to-cloudinary']' \n                 Error: Can't call elementClick on element with selector \"//button[@data-test='navigate-to-cloudinary']\" because element wasn't found",
+        "time" : {
+          "start" : 1646930044908,
+          "stop" : 1646930065357,
+          "duration" : 20449
+        }
+      }, {
+        "uid" : "91a73e143a6f10d3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/91a73e143a6f10d3",
+        "status" : "broken",
+        "statusDetails" : "Failed to click on '//button[@data-test='navigate-to-cloudinary']' \n                 Error: Can't call elementClick on element with selector \"//button[@data-test='navigate-to-cloudinary']\" because element wasn't found",
+        "time" : {
+          "start" : 1646927449562,
+          "stop" : 1646927472971,
+          "duration" : 23409
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "9b4ac2df75c4db56.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

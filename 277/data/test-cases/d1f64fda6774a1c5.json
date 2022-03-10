@@ -1,0 +1,205 @@
+{
+  "uid" : "d1f64fda6774a1c5",
+  "name" : "disappearing element",
+  "fullName" : "waitForExist reverse:true.disappearing element",
+  "historyId" : "2ff199b9969d46dc454af1e85bb34626",
+  "time" : {
+    "start" : 1646932845654,
+    "stop" : 1646932847040,
+    "duration" : 1386
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForExist reverse:true",
+      "time" : {
+        "start" : 1646932845655,
+        "stop" : 1646932846834,
+        "duration" : 1179
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646932846560,
+          "stop" : 1646932846562,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ffaf0accddd381ab",
+          "name" : "more info",
+          "source" : "ffaf0accddd381ab.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646932846833,
+          "stop" : 1646932846833,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ec9b1c6f0f917ac8",
+          "name" : "more info",
+          "source" : "ec9b1c6f0f917ac8.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[DEBUG] - Expect an element exist '//button[@id='not-existing-button']'",
+      "time" : {
+        "start" : 1646932846860,
+        "stop" : 1646932846861,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "592bd5f679e23029",
+        "name" : "more info",
+        "source" : "592bd5f679e23029.txt",
+        "type" : "text/plain",
+        "size" : 89
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate element does not exist",
+      "time" : {
+        "start" : 1646932847003,
+        "stop" : 1646932847006,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f18ecb6a1fd3f170",
+        "name" : "more info",
+        "source" : "f18ecb6a1fd3f170.txt",
+        "type" : "text/plain",
+        "size" : 60
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-33"
+  }, {
+    "name" : "suite",
+    "value" : "waitForExist reverse:true"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForExist reverse:true"
+  }, {
+    "name" : "testMethod",
+    "value" : "disappearing element"
+  }, {
+    "name" : "package",
+    "value" : "waitForExist reverse:true"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "f62a4d066ecf0da3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/276//#testresult/f62a4d066ecf0da3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930445415,
+          "stop" : 1646930446253,
+          "duration" : 838
+        }
+      }, {
+        "uid" : "6b9161214ddc43ff",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/6b9161214ddc43ff",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646930124175,
+          "stop" : 1646930125171,
+          "duration" : 996
+        }
+      }, {
+        "uid" : "2afcf801f0aa4372",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/2afcf801f0aa4372",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646927536286,
+          "stop" : 1646927537388,
+          "duration" : 1102
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d1f64fda6774a1c5.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}

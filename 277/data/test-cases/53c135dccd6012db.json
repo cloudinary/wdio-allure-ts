@@ -1,0 +1,187 @@
+{
+  "uid" : "53c135dccd6012db",
+  "name" : "Expect number of elements not equals",
+  "fullName" : "waitForNumberOfElements.Expect number of elements not equals",
+  "historyId" : "8987e62af6c338fe795c2ecb950108cd",
+  "time" : {
+    "start" : 1646932790993,
+    "stop" : 1646932794831,
+    "duration" : 3838
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for waitForNumberOfElements",
+      "time" : {
+        "start" : 1646932790993,
+        "stop" : 1646932791702,
+        "duration" : 709
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1646932791555,
+          "stop" : 1646932791556,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "55cf1fca0f400278",
+          "name" : "more info",
+          "source" : "55cf1fca0f400278.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1646932791702,
+          "stop" : 1646932791702,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ecf31dbc360b8cec",
+          "name" : "more info",
+          "source" : "ecf31dbc360b8cec.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Incorrect number of elements throws an error",
+      "time" : {
+        "start" : 1646932794831,
+        "stop" : 1646932794831,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "49ec11d571a8ca50",
+        "name" : "more info",
+        "source" : "49ec11d571a8ca50.txt",
+        "type" : "text/plain",
+        "size" : 182
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-14"
+  }, {
+    "name" : "suite",
+    "value" : "waitForNumberOfElements"
+  }, {
+    "name" : "testClass",
+    "value" : "waitForNumberOfElements"
+  }, {
+    "name" : "testMethod",
+    "value" : "Expect number of elements not equals"
+  }, {
+    "name" : "package",
+    "value" : "waitForNumberOfElements"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-99.0.4844.51"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "f48835e32d0747ea",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/276//#testresult/f48835e32d0747ea",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646930403542,
+          "stop" : 1646930405379,
+          "duration" : 1837
+        }
+      }, {
+        "uid" : "a6fae0bd9c11627d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/275//#testresult/a6fae0bd9c11627d",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646930073498,
+          "stop" : 1646930075537,
+          "duration" : 2039
+        }
+      }, {
+        "uid" : "382f57c942a4f700",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/274//#testresult/382f57c942a4f700",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646927479667,
+          "stop" : 1646927482200,
+          "duration" : 2533
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "53c135dccd6012db.json",
+  "parameterValues" : [ "chrome-99.0.4844.51" ]
+}
