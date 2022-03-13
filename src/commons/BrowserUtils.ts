@@ -183,7 +183,7 @@ export namespace BrowserUtils {
   export async function refresh(): Promise<void> {
     await Reporter.debug('Refresh browser page');
     await tryBlock(
-      async () => await browser.refresh(),
+      () => browser.refresh(),
 
       'Failed to refresh the page'
     );
@@ -238,8 +238,8 @@ export namespace BrowserUtils {
    * @param options WaitForOptions options (optional) { timeout, timeoutMsg, interval }
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export async function waitUntil(condition: () => any, options?: WaitUntilOptions): Promise<any> {
-    return await browser.waitUntil(async () => await condition(), { ...{ timeout: DEFAULT_TIME_OUT }, ...options });
+  export async function waitUntil(condition: () => Promise<any>, options?: WaitUntilOptions): Promise<any> {
+    return browser.waitUntil(() => condition(), { ...{ timeout: DEFAULT_TIME_OUT }, ...options });
   }
 
   /**
@@ -333,7 +333,7 @@ export namespace BrowserUtils {
     await waitForExist(selector);
 
     await Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-    await tryBlock(async () => await browser.switchToFrame(await $(selector)), 'Failed to switch frame');
+    await tryBlock(async () => browser.switchToFrame(await $(selector)), 'Failed to switch frame');
   }
 
   /**
@@ -345,7 +345,7 @@ export namespace BrowserUtils {
   export async function switchToWindow(handle: string): Promise<void> {
     await Reporter.debug(`Switching window by id: '${handle}'`);
 
-    await tryBlock(async () => await browser.switchToWindow(handle), `Failed switch to window by id: '${handle}'`);
+    await tryBlock(() => browser.switchToWindow(handle), `Failed switch to window by id: '${handle}'`);
   }
 
   /**
@@ -365,7 +365,7 @@ export namespace BrowserUtils {
   export async function switchToParentFrame(): Promise<void> {
     await Reporter.debug(`Switching to parent frame`);
 
-    await tryBlock(async () => await browser.switchToParentFrame(), 'Failed to switch to parent frame');
+    await tryBlock(() => browser.switchToParentFrame(), 'Failed to switch to parent frame');
   }
 
   /**
@@ -474,7 +474,7 @@ export namespace BrowserUtils {
     let last: number = await $$(listSelector).length;
     await Reporter.debug(`Last element index: [${last}].`);
     await tryBlock(async () => {
-      return await browser.waitUntil(async () => {
+      return browser.waitUntil(async () => {
         /**
          * Since FireFox does not support moveToObject
          * we use JS instead of browser.moveToObject(`(${listSelector})[${last}]`);
@@ -552,7 +552,7 @@ export namespace BrowserUtils {
     let currValue: string;
 
     await tryBlock(async () => {
-      return await browser.waitUntil(async () => {
+      return browser.waitUntil(async () => {
         currValue = await getValue(selector);
 
         return currValue.trim() === value;
@@ -697,7 +697,7 @@ export namespace BrowserUtils {
    */
   export async function acceptAlert(): Promise<void> {
     await Reporter.debug('Accept alert');
-    await tryBlock(async () => await browser.acceptAlert(), 'Failed to accept alert');
+    await tryBlock(() => browser.acceptAlert(), 'Failed to accept alert');
   }
 
   /**
@@ -706,7 +706,7 @@ export namespace BrowserUtils {
   export async function dismissAlert(): Promise<void> {
     await Reporter.debug('Dismiss alert');
 
-    await tryBlock(async () => await browser.dismissAlert(), 'Failed to dismiss alert');
+    await tryBlock(() => browser.dismissAlert(), 'Failed to dismiss alert');
   }
 
   /**
@@ -930,7 +930,7 @@ export namespace BrowserUtils {
    */
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  async function tryBlock(action: () => any, errorMessage: string): Promise<any> {
+  async function tryBlock(action: () => Promise<any>, errorMessage: string): Promise<any> {
     try {
       return await action();
     } catch (e) {
