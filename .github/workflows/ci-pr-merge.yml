@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install latest chrome
+        uses: browser-actions/setup-chrome@latest
+
       - uses: actions/checkout@v1
       - name: Use Node.js v14.15.1
         uses: actions/setup-node@v1
