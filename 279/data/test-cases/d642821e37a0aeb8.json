@@ -1,0 +1,355 @@
+{
+  "uid" : "d642821e37a0aeb8",
+  "name" : "Validate element not exist error thrown",
+  "fullName" : "GetText of BrowserUtils Tests.Validate element not exist error thrown",
+  "historyId" : "c7ac2c40d1d597c36fdc5468ba761811",
+  "time" : {
+    "start" : 1647167041327,
+    "stop" : 1647167044852,
+    "duration" : 3525
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for GetText of BrowserUtils Tests",
+      "time" : {
+        "start" : 1647167041327,
+        "stop" : 1647167041789,
+        "duration" : 462
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1647167041718,
+          "stop" : 1647167041718,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ec63d0d7bbb41531",
+          "name" : "more info",
+          "source" : "ec63d0d7bbb41531.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1647167041789,
+          "stop" : 1647167041789,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "15e338ba796f82a9",
+          "name" : "more info",
+          "source" : "15e338ba796f82a9.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - GetText throws an error if element not exists",
+      "time" : {
+        "start" : 1647167044852,
+        "stop" : 1647167044852,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "b7451b514941d02f",
+        "name" : "more info",
+        "source" : "b7451b514941d02f.txt",
+        "type" : "text/plain",
+        "size" : 245
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-24"
+  }, {
+    "name" : "suite",
+    "value" : "GetText of BrowserUtils Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "GetText of BrowserUtils Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Validate element not exist error thrown"
+  }, {
+    "name" : "package",
+    "value" : "GetText of BrowserUtils Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 18,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 10,
+        "unknown" : 0,
+        "total" : 28
+      },
+      "items" : [ {
+        "uid" : "8737262cbd1f4491",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/273//#testresult/8737262cbd1f4491",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646923941911,
+          "stop" : 1646923943286,
+          "duration" : 1375
+        }
+      }, {
+        "uid" : "8f610e3614d6a10",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/272//#testresult/8f610e3614d6a10",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646923617726,
+          "stop" : 1646923619826,
+          "duration" : 2100
+        }
+      }, {
+        "uid" : "a7b9c2ab76d2d90e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/271//#testresult/a7b9c2ab76d2d90e",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646917861245,
+          "stop" : 1646917862841,
+          "duration" : 1596
+        }
+      }, {
+        "uid" : "17a0a337c9f02a27",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/270//#testresult/17a0a337c9f02a27",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646911815609,
+          "stop" : 1646911817388,
+          "duration" : 1779
+        }
+      }, {
+        "uid" : "3476bdbb9df48977",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/269//#testresult/3476bdbb9df48977",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646910975677,
+          "stop" : 1646910977313,
+          "duration" : 1636
+        }
+      }, {
+        "uid" : "f9e741befed8e400",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/268//#testresult/f9e741befed8e400",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646909783669,
+          "stop" : 1646909784999,
+          "duration" : 1330
+        }
+      }, {
+        "uid" : "f57aada6683c5867",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/267//#testresult/f57aada6683c5867",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646908205867,
+          "stop" : 1646908207746,
+          "duration" : 1879
+        }
+      }, {
+        "uid" : "c2128d1bbbb9a88a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/266//#testresult/c2128d1bbbb9a88a",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646907874569,
+          "stop" : 1646907875826,
+          "duration" : 1257
+        }
+      }, {
+        "uid" : "cf2752582e5e996",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/265//#testresult/cf2752582e5e996",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646907477542,
+          "stop" : 1646907479393,
+          "duration" : 1851
+        }
+      }, {
+        "uid" : "7f55757439d9df91",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/264//#testresult/7f55757439d9df91",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646907174953,
+          "stop" : 1646907176422,
+          "duration" : 1469
+        }
+      }, {
+        "uid" : "c7065bea597ec5d3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/263//#testresult/c7065bea597ec5d3",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646748173672,
+          "stop" : 1646748175535,
+          "duration" : 1863
+        }
+      }, {
+        "uid" : "a8d5e084e6c4dc73",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/a8d5e084e6c4dc73",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646747000249,
+          "stop" : 1646747001906,
+          "duration" : 1657
+        }
+      }, {
+        "uid" : "fe4e70168c533938",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/fe4e70168c533938",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646745984094,
+          "stop" : 1646745985892,
+          "duration" : 1798
+        }
+      }, {
+        "uid" : "64910f402f30786",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/260//#testresult/64910f402f30786",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646739056501,
+          "stop" : 1646739058493,
+          "duration" : 1992
+        }
+      }, {
+        "uid" : "33abb7d9b63a6e8a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/259//#testresult/33abb7d9b63a6e8a",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646683783641,
+          "stop" : 1646683785792,
+          "duration" : 2151
+        }
+      }, {
+        "uid" : "7edf77de6942e5a7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/258//#testresult/7edf77de6942e5a7",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646681393154,
+          "stop" : 1646681395337,
+          "duration" : 2183
+        }
+      }, {
+        "uid" : "8f6b499e63796f6a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/257//#testresult/8f6b499e63796f6a",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646681352019,
+          "stop" : 1646681354514,
+          "duration" : 2495
+        }
+      }, {
+        "uid" : "44e45dfc36427ab3",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/256//#testresult/44e45dfc36427ab3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659236011,
+          "stop" : 1646659239953,
+          "duration" : 3942
+        }
+      }, {
+        "uid" : "c212cd4363941e6a",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/255//#testresult/c212cd4363941e6a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1646659210505,
+          "stop" : 1646659214230,
+          "duration" : 3725
+        }
+      }, {
+        "uid" : "3ce067949f6bd899",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/254//#testresult/3ce067949f6bd899",
+        "status" : "failed",
+        "statusDetails" : "expected [Function] to throw Error      \n                      actual expected\n                      \n                      undefined'function Error() { [native code] }'\n                      ",
+        "time" : {
+          "start" : 1646658887590,
+          "stop" : 1646658887672,
+          "duration" : 82
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d642821e37a0aeb8.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
