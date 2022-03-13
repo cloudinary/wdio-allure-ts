@@ -1,7 +1,7 @@
 const { executeShellScript } = require("./ExecuteShellScript");
 
 /**
- * Detection chrome version on Mac
+ * Detection Chrome version on Mac
  */
 async function detectChromeOnMac() {
   const chromeVersion = await executeShellScript(
