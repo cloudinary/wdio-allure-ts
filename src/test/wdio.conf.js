@@ -6,9 +6,7 @@ const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 const seleniumStandaloneArgs = {
   drivers: {
-    chrome: {
-      version: '98.0.4758.102',
-    },
+    chrome: true,
   },
 };
 /**
