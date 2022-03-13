@@ -6,7 +6,9 @@ const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 const seleniumStandaloneArgs = {
   drivers: {
-    chrome: true,
+    chrome: {
+      version: '98.0.4758.102',
+    },
   },
 };
 /**
@@ -40,7 +42,7 @@ exports.config = {
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
-  connectionRetryTimeout: 10000,
+  connectionRetryTimeout: 60000,
 
   configDataFilePath: 'src/test/resources/example.json',
   //
