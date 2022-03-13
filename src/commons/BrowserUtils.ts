@@ -54,9 +54,7 @@ export namespace BrowserUtils {
     await Reporter.debug(
       `Compare element '${imageFileName}' with selector '${elementSelector}' and options ${options}`
     );
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const compareResult: number = await browser.checkElement(await $(elementSelector), imageFileName, options);
+    const compareResult: Result = await browser.checkElement(await $(elementSelector), imageFileName, options);
 
     if (compareResult !== 0) {
       throw new Error(`Found ${compareResult}% difference. See attached images`);
