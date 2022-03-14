@@ -1,0 +1,392 @@
+{
+  "uid" : "ba5c6c38286bf45f",
+  "name" : "Switch from iframe to Iframe parent",
+  "fullName" : "SwitchToParentIframe.Switch from iframe to Iframe parent",
+  "historyId" : "adcfb0a5848fb11a31c703f4c14a6004",
+  "time" : {
+    "start" : 1647292010681,
+    "stop" : 1647292012144,
+    "duration" : 1463
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for SwitchToParentIframe",
+      "time" : {
+        "start" : 1647292010682,
+        "stop" : 1647292011670,
+        "duration" : 988
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1647292011494,
+          "stop" : 1647292011496,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "3031cbfeef412e50",
+          "name" : "more info",
+          "source" : "3031cbfeef412e50.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1647292011670,
+          "stop" : 1647292011670,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "c9a1ddc501c3ee03",
+          "name" : "more info",
+          "source" : "c9a1ddc501c3ee03.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Switch to iframe1",
+      "time" : {
+        "start" : 1647292011892,
+        "stop" : 1647292011892,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "241832dd607baa3d",
+        "name" : "more info",
+        "source" : "241832dd607baa3d.txt",
+        "type" : "text/plain",
+        "size" : 289
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Switch to parent iframe",
+      "time" : {
+        "start" : 1647292011932,
+        "stop" : 1647292011932,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3c49de3da1f75dfb",
+        "name" : "more info",
+        "source" : "3c49de3da1f75dfb.txt",
+        "type" : "text/plain",
+        "size" : 107
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Check parent iframe header text",
+      "time" : {
+        "start" : 1647292012143,
+        "stop" : 1647292012144,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7efa2c0793f1a8ed",
+        "name" : "more info",
+        "source" : "7efa2c0793f1a8ed.txt",
+        "type" : "text/plain",
+        "size" : 60
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-46"
+  }, {
+    "name" : "suite",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "testClass",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "testMethod",
+    "value" : "Switch from iframe to Iframe parent"
+  }, {
+    "name" : "package",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-98.0.4758.102"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 18,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 15,
+        "unknown" : 0,
+        "total" : 33
+      },
+      "items" : [ {
+        "uid" : "536cb849712fb7fd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/292//#testresult/536cb849712fb7fd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1647275505216,
+          "stop" : 1647275506377,
+          "duration" : 1161
+        }
+      }, {
+        "uid" : "155b06f4b0730515",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/291//#testresult/155b06f4b0730515",
+        "status" : "passed",
+        "time" : {
+          "start" : 1647179903661,
+          "stop" : 1647179904551,
+          "duration" : 890
+        }
+      }, {
+        "uid" : "6d7e0c51697e0658",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/290//#testresult/6d7e0c51697e0658",
+        "status" : "passed",
+        "time" : {
+          "start" : 1647179393317,
+          "stop" : 1647179394353,
+          "duration" : 1036
+        }
+      }, {
+        "uid" : "f140ceba90eab90c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/289//#testresult/f140ceba90eab90c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1647178799646,
+          "stop" : 1647178800022,
+          "duration" : 376
+        }
+      }, {
+        "uid" : "40f4520afe2ec0a4",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/286//#testresult/40f4520afe2ec0a4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1647176415660,
+          "stop" : 1647176416645,
+          "duration" : 985
+        }
+      }, {
+        "uid" : "f6a338cd309c1fe7",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/280//#testresult/f6a338cd309c1fe7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1647168005596,
+          "stop" : 1647168006885,
+          "duration" : 1289
+        }
+      }, {
+        "uid" : "3476ae04e55809ea",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/279//#testresult/3476ae04e55809ea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1647167081051,
+          "stop" : 1647167082073,
+          "duration" : 1022
+        }
+      }, {
+        "uid" : "3b462854e8beb10b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/273//#testresult/3b462854e8beb10b",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646923982808,
+          "stop" : 1646923984664,
+          "duration" : 1856
+        }
+      }, {
+        "uid" : "d5b1bcf1df5ea1a0",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/272//#testresult/d5b1bcf1df5ea1a0",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646923665586,
+          "stop" : 1646923668169,
+          "duration" : 2583
+        }
+      }, {
+        "uid" : "3417eee22db931ef",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/271//#testresult/3417eee22db931ef",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646917907179,
+          "stop" : 1646917909770,
+          "duration" : 2591
+        }
+      }, {
+        "uid" : "ab140e9802bf768c",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/270//#testresult/ab140e9802bf768c",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646911859934,
+          "stop" : 1646911862311,
+          "duration" : 2377
+        }
+      }, {
+        "uid" : "fb9601c6e4bd3820",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/269//#testresult/fb9601c6e4bd3820",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646911014483,
+          "stop" : 1646911016953,
+          "duration" : 2470
+        }
+      }, {
+        "uid" : "b6742bea76ab450",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/268//#testresult/b6742bea76ab450",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646909822084,
+          "stop" : 1646909824116,
+          "duration" : 2032
+        }
+      }, {
+        "uid" : "84937aef6cb963a1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/267//#testresult/84937aef6cb963a1",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646908250788,
+          "stop" : 1646908253748,
+          "duration" : 2960
+        }
+      }, {
+        "uid" : "a8f18cb819d31fec",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/266//#testresult/a8f18cb819d31fec",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646907912563,
+          "stop" : 1646907914505,
+          "duration" : 1942
+        }
+      }, {
+        "uid" : "ac0a1bf519455b1e",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/265//#testresult/ac0a1bf519455b1e",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646907519777,
+          "stop" : 1646907522354,
+          "duration" : 2577
+        }
+      }, {
+        "uid" : "99313e0751200a6d",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/264//#testresult/99313e0751200a6d",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646907214694,
+          "stop" : 1646907217239,
+          "duration" : 2545
+        }
+      }, {
+        "uid" : "79f90124e88bb6da",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/263//#testresult/79f90124e88bb6da",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646748213404,
+          "stop" : 1646748216064,
+          "duration" : 2660
+        }
+      }, {
+        "uid" : "5b54dd13d547c3bd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/262//#testresult/5b54dd13d547c3bd",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646747037483,
+          "stop" : 1646747039974,
+          "duration" : 2491
+        }
+      }, {
+        "uid" : "161d616b1853b6c5",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/261//#testresult/161d616b1853b6c5",
+        "status" : "failed",
+        "statusDetails" : "expected {} to equal 'OutSide frame text'      \n                      actual expected\n                      \n                      Promise'OutSide [Promise]frame {}text'\n                      ",
+        "time" : {
+          "start" : 1646746024753,
+          "stop" : 1646746027256,
+          "duration" : 2503
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "ba5c6c38286bf45f.json",
+  "parameterValues" : [ "chrome-98.0.4758.102" ]
+}
