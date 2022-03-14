@@ -92,7 +92,7 @@ export namespace BrowserUtils {
   export async function addValue(selector: string, value: string | number): Promise<void> {
     await Reporter.debug(`Add value: '${value}' to '${selector}'`);
     await waitForEnabled(selector);
-    await tryBlock(async () => await $(selector).addValue(value), `Failed to add value: '${value}' to '${selector}'`);
+    await tryBlock(() => $(selector).addValue(value), `Failed to add value: '${value}' to '${selector}'`);
   }
 
   /**
@@ -102,7 +102,7 @@ export namespace BrowserUtils {
   export async function clearValue(selector: string): Promise<void> {
     await Reporter.debug(`Clear text in '${selector}'`);
     await waitForDisplayed(selector);
-    await tryBlock(async () => await $(selector).clearValue(), `Failed to clear value in '${selector}'`);
+    await tryBlock(() => $(selector).clearValue(), `Failed to clear value in '${selector}'`);
   }
 
   /**
@@ -113,7 +113,7 @@ export namespace BrowserUtils {
   export async function setValue(selector: string, value: string | number): Promise<void> {
     await Reporter.debug(`Set element '${selector} with value: '${value}'`);
     await waitForEnabled(selector);
-    await tryBlock(async () => await $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
+    await tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
   /**
@@ -125,7 +125,7 @@ export namespace BrowserUtils {
   export async function setHiddenElementValue(selector: string, value: string | number): Promise<void> {
     await Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
     await waitForExist(selector);
-    await tryBlock(async () => await $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
+    await tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
   }
 
   /**
@@ -148,7 +148,7 @@ export namespace BrowserUtils {
 
     await waitForClickable(selector);
     await tryBlock(
-      async () => await $(selector).click(options),
+      () => $(selector).click(options),
 
       `Failed to click on '${selector}'`
     );
@@ -164,7 +164,7 @@ export namespace BrowserUtils {
     await Reporter.debug(`Double click an element '${selector}'`);
     await waitForEnabled(selector);
     await waitForClickable(selector);
-    await tryBlock(async () => await $(selector).doubleClick(), `Failed to doubleClick in '${selector}'`);
+    await tryBlock(() => $(selector).doubleClick(), `Failed to doubleClick in '${selector}'`);
   }
 
   /**
@@ -174,7 +174,7 @@ export namespace BrowserUtils {
    */
   export async function url(url: string): Promise<void> {
     await Reporter.debug(`Navigate to '${url}'`);
-    await tryBlock(async () => await browser.url(url), `Failed to navigate to '${url}'`);
+    await tryBlock(() => browser.url(url), `Failed to navigate to '${url}'`);
   }
 
   /**
@@ -194,7 +194,7 @@ export namespace BrowserUtils {
    */
   export async function back(): Promise<void> {
     await Reporter.debug('Click browser back button');
-    await tryBlock(async () => await browser.back(), 'Failed to click browser back button');
+    await tryBlock(() => browser.back(), 'Failed to click browser back button');
   }
 
   /**
@@ -254,7 +254,7 @@ export namespace BrowserUtils {
     await waitForExist(selector);
 
     await tryBlock(
-      async () => await $(selector).selectByAttribute(attribute, value),
+      () => $(selector).selectByAttribute(attribute, value),
       `Failed to select value ${value} of attribute ${attribute} from ${selector}`
     );
   }
@@ -281,7 +281,7 @@ export namespace BrowserUtils {
      * If no options passed or options does not include timout, default timeout will be used
      */
     await tryBlock(
-      async () => await $(selector).waitForEnabled({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+      () => $(selector).waitForEnabled({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Element not enabled '${selector}'`
     );
   }
@@ -304,7 +304,7 @@ export namespace BrowserUtils {
   export async function waitForDisplayed(selector: string, options?: WaitForOptions): Promise<void> {
     await Reporter.debug(`Wait for an element to be visible '${selector}'`);
     await tryBlock(
-      async () => await $(selector).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+      () => $(selector).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Element not visible '${selector}'`
     );
   }
@@ -317,7 +317,7 @@ export namespace BrowserUtils {
   export async function waitForExist(selector: string, options?: WaitForOptions): Promise<void> {
     await Reporter.debug(`Expect an element exist '${selector}'`);
     await tryBlock(
-      async () => await $(selector).waitForExist({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+      () => $(selector).waitForExist({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Wait for exist '${selector}' with options ${JSON.stringify(options)} failed`
     );
   }
@@ -355,7 +355,7 @@ export namespace BrowserUtils {
   export async function getWindowHandles(): Promise<Array<string>> {
     await Reporter.debug('Get all ids of all open tabs');
 
-    return tryBlock(async () => await browser.getWindowHandles(), 'Failed to get window handles');
+    return tryBlock(() => browser.getWindowHandles(), 'Failed to get window handles');
   }
 
   /**
@@ -376,7 +376,7 @@ export namespace BrowserUtils {
   export async function findElement(selectorType: SelectorType, selector: string): Promise<string> {
     await Reporter.debug(`Find element '${selector}' of type '${selectorType}'`);
 
-    return tryBlock(async () => await browser.findElement(selectorType, selector), 'Failed to find element');
+    return tryBlock(() => browser.findElement(selectorType, selector), 'Failed to find element');
   }
 
   /**
@@ -385,7 +385,7 @@ export namespace BrowserUtils {
    * @param selector - element locator
    */
   export async function findElements(selectorType: SelectorType, selector: string): Promise<Array<string>> {
-    return tryBlock(async () => await browser.findElements(selectorType, selector), 'Failed to find elements');
+    return tryBlock(() => browser.findElements(selectorType, selector), 'Failed to find elements');
   }
 
   /**
@@ -418,7 +418,7 @@ export namespace BrowserUtils {
     await Reporter.debug(`Get element's value by selector '${selector}'`);
     await waitForDisplayed(selector);
 
-    return tryBlock(async () => await $(selector).getValue(), `Failed to get value from element '${selector}'`);
+    return tryBlock(() => $(selector).getValue(), `Failed to get value from element '${selector}'`);
   }
 
   /**
@@ -431,7 +431,7 @@ export namespace BrowserUtils {
     await Reporter.debug(`Get element's text by selector '${selector}'`);
     await waitForDisplayed(selector);
 
-    return tryBlock(async () => await $(selector).getText(), `Failed to get text from element '${selector}'`);
+    return tryBlock(() => $(selector).getText(), `Failed to get text from element '${selector}'`);
   }
 
   /**
@@ -516,7 +516,7 @@ export namespace BrowserUtils {
 
     const cssDisplayProperty: string = 'display';
     const iframeDisplayProperty: ParsedCSSValue = await tryBlock(
-      async () => await $(iframeSelector).getCSSProperty(cssDisplayProperty), // iframe css
+      () => $(iframeSelector).getCSSProperty(cssDisplayProperty), // iframe css
       `Failed to get '${cssDisplayProperty}' css property from '${iframeSelector}'`
     );
 
@@ -537,7 +537,7 @@ export namespace BrowserUtils {
   export async function getAttribute(selector: string, attributeName: string): Promise<string> {
     await waitForExist(selector);
     return tryBlock(
-      async () => await $(selector).getAttribute(attributeName),
+      () => $(selector).getAttribute(attributeName),
       `Failed to get '${attributeName}' attribute from '${selector}'`
     );
   }
@@ -635,7 +635,7 @@ export namespace BrowserUtils {
     await Reporter.debug(`Get css property '${cssPropertyName}' from element by '${selector}'`);
 
     return tryBlock(
-      async () => await $(selector).getCSSProperty(cssPropertyName),
+      () => $(selector).getCSSProperty(cssPropertyName),
       `Failed to get css Property '${cssPropertyName}' from '${selector}'`
     );
   }
@@ -662,7 +662,7 @@ export namespace BrowserUtils {
    */
   export async function getCookies(names?: Array<string> | string): Promise<Array<Cookie>> {
     await Reporter.debug('Get cookies:');
-    const cookies: Array<Cookie> = await tryBlock(async () => await browser.getCookies(names), 'Failed to get cookies');
+    const cookies: Array<Cookie> = await tryBlock(() => browser.getCookies(names), 'Failed to get cookies');
     await Reporter.debug(JSON.stringify(cookies));
 
     return cookies;
@@ -675,10 +675,7 @@ export namespace BrowserUtils {
    */
   export async function deleteCookies(names?: Array<string> | string): Promise<void> {
     await Reporter.debug('Delete cookies:');
-    const cookie: Array<Cookie> = await tryBlock(
-      async () => await browser.deleteCookies(names),
-      'Failed to get cookie'
-    );
+    const cookie: Array<Cookie> = await tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
     await Reporter.debug(JSON.stringify(cookie));
   }
 
@@ -686,7 +683,7 @@ export namespace BrowserUtils {
    * The Get Current URL command returns the URL of the current top-level browsing context.
    */
   export async function getUrl(): Promise<string> {
-    const currentUrl: string = await tryBlock(async () => await browser.getUrl(), 'Failed to get current url');
+    const currentUrl: string = await tryBlock(() => browser.getUrl(), 'Failed to get current url');
     await Reporter.debug(`Get current URL: '${currentUrl}'`);
 
     return currentUrl;
@@ -749,7 +746,7 @@ export namespace BrowserUtils {
    */
   export async function setWindowSize(width: number, height: number): Promise<void> {
     await Reporter.debug(`Set window size to '${width}X${height}'`);
-    await tryBlock(async () => await browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
+    await tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
   }
 
   /**
@@ -758,7 +755,7 @@ export namespace BrowserUtils {
    */
   export async function getWindowSize(): Promise<object> {
     await Reporter.debug('Get window size');
-    return tryBlock(async () => await browser.getWindowSize(), 'Failed to get window size');
+    return tryBlock(() => browser.getWindowSize(), 'Failed to get window size');
   }
 
   /**
@@ -948,7 +945,7 @@ export namespace BrowserUtils {
   export async function waitForClickable(selector: string, options?: WaitForOptions): Promise<void> {
     await Reporter.debug(`Wait for the element '${selector}' to be clickable`);
     await tryBlock(
-      async () => await $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
+      () => $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
       `Timeout waiting for element '${selector}' to be clickable`
     );
   }
