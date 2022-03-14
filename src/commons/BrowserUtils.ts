@@ -400,8 +400,8 @@ export namespace BrowserUtils {
     await waitForDisplayed(selector);
     const elementWithText: WebdriverIO.Element = await $(selector);
     await tryBlock(
-      async () =>
-        await browser.waitUntil(async () => {
+      () =>
+        browser.waitUntil(async () => {
           return (await elementWithText.getText()) === expectedText;
         }),
       `Expected text in element by selector '${selector}' not found.`
@@ -448,8 +448,8 @@ export namespace BrowserUtils {
     }
 
     await tryBlock(
-      async () =>
-        await browser.waitUntil(async () => {
+      () =>
+        browser.waitUntil(async () => {
           return (await findElements(SelectorType.XPATH, selector)).length === expectedNumber;
         }),
       `Found number of elements by '${selector}' not equal '${expectedNumber}'`
@@ -473,7 +473,7 @@ export namespace BrowserUtils {
     }
     let last: number = await $$(listSelector).length;
     await Reporter.debug(`Last element index: [${last}].`);
-    await tryBlock(async () => {
+    await tryBlock(() => {
       return browser.waitUntil(async () => {
         /**
          * Since FireFox does not support moveToObject
@@ -551,13 +551,15 @@ export namespace BrowserUtils {
     await Reporter.debug(`Validate element '${selector}' has value of '${value}'`);
     let currValue: string;
 
-    await tryBlock(async () => {
-      return browser.waitUntil(async () => {
-        currValue = await getValue(selector);
+    await tryBlock(
+      () =>
+        browser.waitUntil(async () => {
+          currValue = await getValue(selector);
 
-        return currValue.trim() === value;
-      });
-    }, `Incorrect value '${currValue}' from '${selector}' ${EOL}Expected: value '${value}' not found`);
+          return currValue.trim() === value;
+        }),
+      `Incorrect value '${currValue}' from '${selector}' ${EOL}Expected: value '${value}' not found`
+    );
   }
 
   /**
@@ -579,8 +581,8 @@ export namespace BrowserUtils {
     let attributeValue: string;
 
     await tryBlock(
-      async () =>
-        await browser.waitUntil(async () => {
+      () =>
+        browser.waitUntil(async () => {
           attributeValue = await getAttribute(selector, attributeName);
 
           return revert != isContainWord(attributeValue, value);
@@ -714,8 +716,8 @@ export namespace BrowserUtils {
     await Reporter.debug(`Validate alert's text is '${expectedText}'`);
 
     await tryBlock(
-      async () =>
-        await browser.waitUntil(async () => {
+      () =>
+        browser.waitUntil(async () => {
           try {
             return expectedText === (await browser.getAlertText());
           } catch (e) {
@@ -881,7 +883,7 @@ export namespace BrowserUtils {
       async () =>
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
-        await $(selector).dragAndDrop(isTargetSelector ? await $(target as string) : (target as DragAndDropCoordinate)),
+        $(selector).dragAndDrop(isTargetSelector ? await $(target as string) : (target as DragAndDropCoordinate)),
       `Failed to drag and drop ${selector} to '${inspect(target)}'`
     );
   }
