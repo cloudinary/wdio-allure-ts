@@ -266,7 +266,7 @@ export namespace BrowserUtils {
   export async function isEnabled(selector: string): Promise<boolean> {
     await Reporter.debug(`Is element enabled '${selector}'`);
 
-    return await $(selector).isEnabled();
+    return $(selector).isEnabled();
   }
 
   /**
@@ -293,7 +293,7 @@ export namespace BrowserUtils {
   export async function isDisplayed(selector: string): Promise<boolean> {
     await Reporter.debug(`Is element visible by '${selector}'`);
 
-    return await $(selector).isDisplayed();
+    return $(selector).isDisplayed();
   }
 
   /**
@@ -355,7 +355,7 @@ export namespace BrowserUtils {
   export async function getWindowHandles(): Promise<Array<string>> {
     await Reporter.debug('Get all ids of all open tabs');
 
-    return await tryBlock(async () => await browser.getWindowHandles(), 'Failed to get window handles');
+    return tryBlock(async () => await browser.getWindowHandles(), 'Failed to get window handles');
   }
 
   /**
@@ -376,7 +376,7 @@ export namespace BrowserUtils {
   export async function findElement(selectorType: SelectorType, selector: string): Promise<string> {
     await Reporter.debug(`Find element '${selector}' of type '${selectorType}'`);
 
-    return await tryBlock(async () => await browser.findElement(selectorType, selector), 'Failed to find element');
+    return tryBlock(async () => await browser.findElement(selectorType, selector), 'Failed to find element');
   }
 
   /**
@@ -385,7 +385,7 @@ export namespace BrowserUtils {
    * @param selector - element locator
    */
   export async function findElements(selectorType: SelectorType, selector: string): Promise<Array<string>> {
-    return await tryBlock(async () => await browser.findElements(selectorType, selector), 'Failed to find elements');
+    return tryBlock(async () => await browser.findElements(selectorType, selector), 'Failed to find elements');
   }
 
   /**
@@ -418,7 +418,7 @@ export namespace BrowserUtils {
     await Reporter.debug(`Get element's value by selector '${selector}'`);
     await waitForDisplayed(selector);
 
-    return await tryBlock(async () => await $(selector).getValue(), `Failed to get value from element '${selector}'`);
+    return tryBlock(async () => await $(selector).getValue(), `Failed to get value from element '${selector}'`);
   }
 
   /**
@@ -431,7 +431,7 @@ export namespace BrowserUtils {
     await Reporter.debug(`Get element's text by selector '${selector}'`);
     await waitForDisplayed(selector);
 
-    return await tryBlock(async () => await $(selector).getText(), `Failed to get text from element '${selector}'`);
+    return tryBlock(async () => await $(selector).getText(), `Failed to get text from element '${selector}'`);
   }
 
   /**
@@ -485,7 +485,7 @@ export namespace BrowserUtils {
 
         last = await getNumberOfElements(listSelector);
 
-        return await $(selector).isDisplayed();
+        return $(selector).isDisplayed();
       });
     }, `Failed to scroll to ${selector} in ${listSelector}`);
   }
@@ -536,7 +536,7 @@ export namespace BrowserUtils {
    */
   export async function getAttribute(selector: string, attributeName: string): Promise<string> {
     await waitForExist(selector);
-    return await tryBlock(
+    return tryBlock(
       async () => await $(selector).getAttribute(attributeName),
       `Failed to get '${attributeName}' attribute from '${selector}'`
     );
@@ -634,7 +634,7 @@ export namespace BrowserUtils {
   export async function getCssProperty(selector: string, cssPropertyName: string): Promise<ParsedCSSValue> {
     await Reporter.debug(`Get css property '${cssPropertyName}' from element by '${selector}'`);
 
-    return await tryBlock(
+    return tryBlock(
       async () => await $(selector).getCSSProperty(cssPropertyName),
       `Failed to get css Property '${cssPropertyName}' from '${selector}'`
     );
@@ -739,7 +739,7 @@ export namespace BrowserUtils {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    return await $(selector).getSize();
+    return $(selector).getSize();
   }
 
   /**
@@ -758,7 +758,7 @@ export namespace BrowserUtils {
    */
   export async function getWindowSize(): Promise<object> {
     await Reporter.debug('Get window size');
-    return await tryBlock(async () => await browser.getWindowSize(), 'Failed to get window size');
+    return tryBlock(async () => await browser.getWindowSize(), 'Failed to get window size');
   }
 
   /**
@@ -807,7 +807,7 @@ export namespace BrowserUtils {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    return await $(selector).getLocation();
+    return $(selector).getLocation();
   }
 
   /**
@@ -896,7 +896,7 @@ export namespace BrowserUtils {
    */
   async function zipToFileNames(linkToZipFile: string): Promise<Array<string>> {
     const zipBuffer: Buffer = <Buffer>await browser.call(async () => {
-      return await axios
+      return axios
         .get(linkToZipFile, { responseType: 'arraybuffer' })
         .then((response: AxiosResponse) => {
           return response.data;
