@@ -237,8 +237,11 @@ export namespace BrowserUtils {
    * @param condition condition to wait on
    * @param options WaitForOptions options (optional) { timeout, timeoutMsg, interval }
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export async function waitUntil(condition: () => Promise<any>, options?: WaitUntilOptions): Promise<any> {
+  export async function waitUntil(
+    condition: () => boolean | Promise<boolean>,
+    options?: WaitUntilOptions
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ): Promise<any> {
     return browser.waitUntil(() => condition(), { ...{ timeout: DEFAULT_TIME_OUT }, ...options });
   }
 
