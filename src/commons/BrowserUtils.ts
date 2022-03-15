@@ -205,8 +205,8 @@ export namespace BrowserUtils {
   export async function waitForUrl(url: string): Promise<void> {
     const expectedUrl: string = normalizeUrl(url);
     await Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
-    await browser.waitUntil(
-      async (): Promise<boolean> => {
+    await waitUntil(
+      async () => {
         return expectedUrl === normalizeUrl(await getUrl());
       },
       {
@@ -404,7 +404,7 @@ export namespace BrowserUtils {
     const elementWithText: WebdriverIO.Element = await $(selector);
     await tryBlock(
       () =>
-        browser.waitUntil(async () => {
+        waitUntil(async () => {
           return (await elementWithText.getText()) === expectedText;
         }),
       `Expected text in element by selector '${selector}' not found.`
@@ -452,7 +452,7 @@ export namespace BrowserUtils {
 
     await tryBlock(
       () =>
-        browser.waitUntil(async () => {
+        waitUntil(async () => {
           return (await findElements(SelectorType.XPATH, selector)).length === expectedNumber;
         }),
       `Found number of elements by '${selector}' not equal '${expectedNumber}'`
@@ -477,7 +477,7 @@ export namespace BrowserUtils {
     let last: number = await $$(listSelector).length;
     await Reporter.debug(`Last element index: [${last}].`);
     await tryBlock(() => {
-      return browser.waitUntil(async () => {
+      return waitUntil(async () => {
         /**
          * Since FireFox does not support moveToObject
          * we use JS instead of browser.moveToObject(`(${listSelector})[${last}]`);
@@ -556,7 +556,7 @@ export namespace BrowserUtils {
 
     await tryBlock(
       () =>
-        browser.waitUntil(async () => {
+        waitUntil(async () => {
           currValue = await getValue(selector);
 
           return currValue.trim() === value;
@@ -585,7 +585,7 @@ export namespace BrowserUtils {
 
     await tryBlock(
       () =>
-        browser.waitUntil(async () => {
+        waitUntil(async () => {
           attributeValue = await getAttribute(selector, attributeName);
 
           return revert != isContainWord(attributeValue, value);
@@ -603,7 +603,7 @@ export namespace BrowserUtils {
    */
   export async function waitForPageToLoad(additionalWaitAfterLoad: number = 1000): Promise<void> {
     await Reporter.debug("Wait for document.readyState === 'complete'");
-    await browser.waitUntil(async () => await browser.execute("return document.readyState === 'complete'"), {
+    await waitUntil(() => browser.execute("return document.readyState === 'complete'"), {
       timeout: DEFAULT_TIME_OUT,
       timeoutMsg: "document.readyState !== 'complete'",
     });
@@ -720,7 +720,7 @@ export namespace BrowserUtils {
 
     await tryBlock(
       () =>
-        browser.waitUntil(async () => {
+        waitUntil(async () => {
           try {
             return expectedText === (await browser.getAlertText());
           } catch (e) {
