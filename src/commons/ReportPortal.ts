@@ -11,17 +11,17 @@ enum LEVEL {
 }
 export namespace ReportPortal {
   export async function step(message: string): Promise<void> {
-    await sendLog(LEVEL.INFO, message);
+    return sendLog(LEVEL.INFO, message);
   }
 
   export async function debug(message: string): Promise<void> {
-    await sendLog(LEVEL.DEBUG, message);
+    return sendLog(LEVEL.DEBUG, message);
   }
   export async function warning(message: string): Promise<void> {
-    await sendLog(LEVEL.WARN, message);
+    return sendLog(LEVEL.WARN, message);
   }
   export async function error(message: string): Promise<void> {
-    await sendLog(LEVEL.ERROR, message);
+    return sendLog(LEVEL.ERROR, message);
   }
 
   export async function finalizeTest(

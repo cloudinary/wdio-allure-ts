@@ -39,8 +39,8 @@ export namespace AllureReporter {
    * Stop network audit by sending disable options to cdp method
    * ts-ignore used since it missing types support
    */
-  export async function stopNetworkAudit(): Promise<void> {
-    await browser.cdp('Network', 'disable');
+  export function stopNetworkAudit(): Promise<void> {
+    return browser.cdp('Network', 'disable');
   }
 
   /**
@@ -86,8 +86,8 @@ export namespace AllureReporter {
    * console log with grey color text
    * @param msg text to log
    */
-  export async function debug(msg: string): Promise<void> {
-    await addLogEntry('[DEBUG]', msg);
+  export function debug(msg: string): Promise<void> {
+    return addLogEntry('[DEBUG]', msg);
   }
 
   /**
@@ -96,7 +96,7 @@ export namespace AllureReporter {
    * @param msg text to log
    */
   export async function warning(msg: string): Promise<void> {
-    await addLogEntry('[WARNING]', msg);
+    return addLogEntry('[WARNING]', msg);
   }
 
   /**
@@ -105,7 +105,7 @@ export namespace AllureReporter {
    * @param msg text to log
    */
   export async function error(msg: string): Promise<void> {
-    await addLogEntry('[ERROR]', msg);
+    return addLogEntry('[ERROR]', msg);
   }
 
   /**
@@ -114,7 +114,7 @@ export namespace AllureReporter {
    * @param descriptionType type (String, optional) – description type, text by default. Values ['text', 'html','markdown']
    */
   export async function addDescription(description: string, descriptionType?: string): Promise<void> {
-    await allureReporter.addDescription(description, descriptionType);
+    return allureReporter.addDescription(description, descriptionType);
   }
 
   /**
@@ -145,7 +145,7 @@ export namespace AllureReporter {
       content: command.body,
       name: command.bodyLabel,
     };
-    await allureReporter.addStep(command.title, stepContent, status);
+    return allureReporter.addStep(command.title, stepContent, status);
   }
 
   /**
