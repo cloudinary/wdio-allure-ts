@@ -76,16 +76,16 @@ const config = {
    * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
    * @param {Object} test test details
    */
-  afterTest: function(test) {
+  afterTest: async function(test) {
     /**
      * Attach browser console logs and html source
      * in case of test failure and close current step
      */
     if (test.passed) {
-      Reporter.closeStep();
+      await Reporter.closeStep();
       return;
     }
-    Reporter.closeStep(true);
+    await Reporter.closeStep(true);
   },
 };
 module.exports = config;
