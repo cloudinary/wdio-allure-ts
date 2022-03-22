@@ -483,7 +483,7 @@ export namespace BrowserUtils {
     if (await isDisplayed(selector)) {
       return;
     }
-    let last: number = await $$(listSelector).length;
+    let last: number = (await $$(listSelector)).length;
     await Reporter.debug(`Last element index: [${last}].`);
     await tryBlock(async () => {
       await waitUntil(async () => {
