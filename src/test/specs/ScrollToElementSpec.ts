@@ -12,19 +12,19 @@ describeCommon('scrollTo', () => {
   it('scroll to element with lazy load', async () => {
     const elementToScrollSelector: string = `${TEST_FIELD_SELECTOR}//*[@id='div-item' and text()='my awesome new div 4']`;
     await Reporter.step('validate element not displayed');
-    chai.assert.isFalse(await $(elementToScrollSelector).isDisplayed());
+    chai.assert.isFalse(await (await $(elementToScrollSelector)).isDisplayed());
 
     await Reporter.step('scroll to element');
     await BrowserUtils.scrollToItemInList(elementToScrollSelector, LIST_SELECTOR);
 
     await Reporter.step('validate element is displayed');
-    chai.assert.isTrue(await $(elementToScrollSelector).isDisplayed());
+    chai.assert.isTrue(await (await $(elementToScrollSelector)).isDisplayed());
   });
 
   it('scroll to already loaded element', async () => {
     const elementToScrollSelector: string = `${TEST_FIELD_SELECTOR}//*[@id='div-item' and text()='my awesome new div 1']`;
     await Reporter.step('validate element is displayed');
-    chai.assert.isTrue(await $(elementToScrollSelector).isDisplayed());
+    chai.assert.isTrue(await (await $(elementToScrollSelector)).isDisplayed());
 
     await Reporter.step('scroll to element');
     await BrowserUtils.scrollToItemInList(elementToScrollSelector, LIST_SELECTOR);
@@ -34,7 +34,7 @@ describeCommon('scrollTo', () => {
     const elementToScrollSelector: string = `${TEST_FIELD_SELECTOR}//*[@id='div-item' and text()='my awesome new div 100']`;
 
     await Reporter.step('validate element not displayed');
-    chai.assert.isFalse(await $(elementToScrollSelector).isDisplayed());
+    chai.assert.isFalse(await (await $(elementToScrollSelector)).isDisplayed());
 
     await Reporter.step('scroll to not existing element throws an error');
     await chai

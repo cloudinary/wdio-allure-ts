@@ -7,21 +7,21 @@ const REFRESH_BROWSER_FIELD: string = "//*[@id='RefreshBrowserSpec']//*[@id='Ref
 describeCommon('RefreshSpec', () => {
   it('RefreshTrue', async () => {
     await Reporter.step('scroll to refresh field');
-    await $(REFRESH_BROWSER_FIELD).scrollIntoView();
+    await (await $(REFRESH_BROWSER_FIELD)).scrollIntoView();
 
     await Reporter.step('set text value');
-    await $(REFRESH_BROWSER_FIELD).setValue('TestText');
+    await (await $(REFRESH_BROWSER_FIELD)).setValue('TestText');
 
     await Reporter.step('refresh browser');
     await BrowserUtils.refresh();
 
     await Reporter.step('scroll into view');
-    await $(REFRESH_BROWSER_FIELD).scrollIntoView();
+    await (await $(REFRESH_BROWSER_FIELD)).scrollIntoView();
 
     await Reporter.step('wait for field to be displayed');
-    await $(REFRESH_BROWSER_FIELD).waitForDisplayed();
+    await (await $(REFRESH_BROWSER_FIELD)).waitForDisplayed();
 
     await Reporter.step('validate field text');
-    expect(await $(REFRESH_BROWSER_FIELD).getValue()).to.be.eq('');
+    expect(await (await $(REFRESH_BROWSER_FIELD)).getValue()).to.be.eq('');
   });
 });

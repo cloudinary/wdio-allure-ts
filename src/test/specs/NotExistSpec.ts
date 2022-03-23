@@ -11,7 +11,7 @@ describeCommon('waitForExist reverse:true', () => {
   it('disappearing element', async () => {
     const DISAPPEARING_BUTTON_SELECTOR: string = "//button[@id='not-existing-button']";
     await Reporter.step('Click on disappearing button');
-    await $(DISAPPEARING_BUTTON_SELECTOR).click();
+    await (await $(DISAPPEARING_BUTTON_SELECTOR)).click();
 
     await Reporter.step('Validate element does not exist');
     await BrowserUtils.waitForExist(DISAPPEARING_BUTTON_SELECTOR, { reverse: true });

@@ -21,7 +21,7 @@ describeCommon('switchToIframe', () => {
     await BrowserUtils.switchToFrame(FRAME_TWO);
 
     await Reporter.step('Validate frame 2 displayed');
-    chai.assert.equal(await $(FRAME_2_HEADER_1).getText(), 'Frame 2 Heading 1');
+    chai.assert.equal(await (await $(FRAME_2_HEADER_1)).getText(), 'Frame 2 Heading 1');
   });
 
   it('iframe 2 not available after switch to iframe 1', async () => {
@@ -32,7 +32,7 @@ describeCommon('switchToIframe', () => {
     await BrowserUtils.switchToFrame(FRAME_ONE);
 
     await Reporter.step('Validate frame 2 not displayed');
-    await chai.expect($(FRAME_2_HEADER_1).getText()).to.rejectedWith(Error);
+    await chai.expect((await $(FRAME_2_HEADER_1)).getText()).to.rejectedWith(Error);
   });
 
   it('Outside iframe context not accessible after switch', async () => {
@@ -43,7 +43,7 @@ describeCommon('switchToIframe', () => {
     await BrowserUtils.switchToFrame(FRAME_ONE);
 
     await Reporter.step('Validate switched to frame 1');
-    await chai.expect($(TEXT_OUTSIDE_OF_FRAMES).getText()).to.rejectedWith(Error);
+    await chai.expect((await $(TEXT_OUTSIDE_OF_FRAMES)).getText()).to.rejectedWith(Error);
   });
 
   it('Incorrect iframe selector', async () => {

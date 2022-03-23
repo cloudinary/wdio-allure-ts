@@ -18,7 +18,7 @@ describeCommon('SwitchToParentIframe', () => {
     await BrowserUtils.switchToParentFrame();
 
     await Reporter.step('Check parent iframe header text');
-    assert.equal(await $(IFRAME_HEADER).getText(), 'OutSide frame text');
+    assert.equal(await (await $(IFRAME_HEADER)).getText(), 'OutSide frame text');
   });
 
   it('Check to parent iframe without error', async () => {
@@ -26,6 +26,6 @@ describeCommon('SwitchToParentIframe', () => {
     await BrowserUtils.switchToParentFrame();
 
     await Reporter.step('Check parent iframe header');
-    assert.equal(await $(IFRAME_HEADER).getText(), 'OutSide frame text');
+    assert.equal(await (await $(IFRAME_HEADER)).getText(), 'OutSide frame text');
   });
 });

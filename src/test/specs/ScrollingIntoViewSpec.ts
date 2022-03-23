@@ -14,13 +14,13 @@ describeCommon('ScrollingIntoViewSpec', () => {
     await BrowserUtils.waitForDisplayed(HEADER);
 
     await Reporter.step('validate element not in view port');
-    assert.isFalse(await $(LAST_TOP_LINK).isDisplayedInViewport());
+    assert.isFalse(await (await $(LAST_TOP_LINK)).isDisplayedInViewport());
 
     await Reporter.step('scroll into view');
     await BrowserUtils.scrollIntoView(LAST_TOP_LINK);
 
     await Reporter.step('validate element is in view port');
-    assert.isTrue(await $(LAST_TOP_LINK).isDisplayedInViewport());
+    assert.isTrue(await (await $(LAST_TOP_LINK)).isDisplayedInViewport());
   });
 
   it('scrollIntoView to element in viewport', async () => {
@@ -31,6 +31,6 @@ describeCommon('ScrollingIntoViewSpec', () => {
     await BrowserUtils.scrollIntoView(HEADER);
 
     await Reporter.step('validate element in view port');
-    assert.isTrue(await $(HEADER).isDisplayedInViewport());
+    assert.isTrue(await (await $(HEADER)).isDisplayedInViewport());
   });
 });

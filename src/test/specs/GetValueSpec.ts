@@ -15,6 +15,6 @@ describeCommon('getValue', () => {
   it('get value of text area', async () => {
     const expectedTextAreaValue = 'get value text area';
     await Reporter.step('Validate getValue returned value text area');
-    expect(await $(TEXTAREA_ELEMENT_SELECTOR).getValue()).to.be.eq(expectedTextAreaValue);
+    expect(await (await $(TEXTAREA_ELEMENT_SELECTOR)).getValue()).to.be.eq(expectedTextAreaValue);
   });
 });

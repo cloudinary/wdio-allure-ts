@@ -25,9 +25,9 @@ describeCommon('click', () => {
     await BrowserUtils.doubleClick(DOUBLE_CLICK_DIV);
 
     await Reporter.step('Wait for div to be displayed');
-    await $(DOUBLE_CLICK_DIV).waitForDisplayed();
+    await (await $(DOUBLE_CLICK_DIV)).waitForDisplayed();
 
     await Reporter.step('Validate double click worked');
-    assert.equal(await $(DOUBLE_CLICK_DIV).getText(), 'Double click');
+    assert.equal(await (await $(DOUBLE_CLICK_DIV)).getText(), 'Double click');
   });
 });

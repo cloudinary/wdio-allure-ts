@@ -10,7 +10,7 @@ const TRIGGER_ALERT_BUTTON_SELECTOR: string = `${TEST_FIELD_SELECTOR}//button[@i
 describeCommon('dismissAlert', () => {
   it('dismiss existing alert', async () => {
     await Reporter.step('Click button to trigger alert');
-    await $(TRIGGER_ALERT_BUTTON_SELECTOR).click();
+    await (await $(TRIGGER_ALERT_BUTTON_SELECTOR)).click();
 
     await Reporter.step('Dismiss alert');
     await BrowserUtils.dismissAlert();

@@ -11,12 +11,12 @@ const TEXT_INPUT: string = "//*[@id='input__text']";
 describeCommon('SetValue', () => {
   it('setValue', async () => {
     await Reporter.step('clear input value');
-    await $(TEXT_INPUT).clearValue();
+    await (await $(TEXT_INPUT)).clearValue();
 
     await Reporter.step('set input value');
     await BrowserUtils.setValue(TEXT_INPUT, 'Cloudinary');
 
     await Reporter.step('Validate value');
-    assert.equal(await $(TEXT_INPUT).getValue(), 'Cloudinary');
+    assert.equal(await (await $(TEXT_INPUT)).getValue(), 'Cloudinary');
   });
 });

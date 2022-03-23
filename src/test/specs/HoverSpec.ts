@@ -13,13 +13,13 @@ const NOT_EXISTING_ELEMENT_SELECTOR: string = "//*[@class='AndrzejTheKing']";
 describeCommon('moveToSpec', () => {
   it('hoverTrue', async () => {
     await Reporter.step('scroll to hover button');
-    await $(HOVER_BUTTON).scrollIntoView();
+    await (await $(HOVER_BUTTON)).scrollIntoView();
 
     await Reporter.step('move to hover button');
     await BrowserUtils.moveTo(HOVER_BUTTON);
 
     await Reporter.step('Validate button hovered');
-    await chai.assert.equal((await $(HOVER_BUTTON).getCSSProperty('background-color')).parsed.hex, '#4caf50');
+    await chai.assert.equal((await (await $(HOVER_BUTTON)).getCSSProperty('background-color')).parsed.hex, '#4caf50');
   });
 
   it('hoverFalse', async () => {

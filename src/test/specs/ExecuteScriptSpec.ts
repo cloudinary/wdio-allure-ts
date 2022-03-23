@@ -16,7 +16,9 @@ describeCommon('execute', () => {
     const textDivSelector: string = "//*[@id='ExecuteScript']//*[@id='executeScriptDynamicText']";
 
     await Reporter.step('Validate script execution');
-    chai.expect(await $(textDivSelector).getText()).to.be.eqls('Cloudinary still rules!', 'script execution failed');
+    chai
+      .expect(await (await $(textDivSelector)).getText())
+      .to.be.eqls('Cloudinary still rules!', 'script execution failed');
   });
 
   it('get string result', async () => {

@@ -278,7 +278,7 @@ export namespace BrowserUtils {
   export async function isEnabled(selector: string): Promise<boolean> {
     await Reporter.debug(`Is element enabled '${selector}'`);
 
-    return await $(selector).isEnabled();
+    return (await $(selector)).isEnabled();
   }
 
   /**

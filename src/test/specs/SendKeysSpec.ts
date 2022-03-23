@@ -12,10 +12,10 @@ const text: string = 'Cloudinary';
 describeCommon('SendKeysSpec', () => {
   beforeEach(async () => {
     await Reporter.step('clear text input');
-    await $(TEXT_INPUT).clearValue();
+    await (await $(TEXT_INPUT)).clearValue();
 
     await Reporter.step('click text input');
-    await $(TEXT_INPUT).click();
+    await (await $(TEXT_INPUT)).click();
   });
 
   it('send string', async () => {
@@ -23,7 +23,7 @@ describeCommon('SendKeysSpec', () => {
     await BrowserUtils.keys(text);
 
     await Reporter.step('Validate text value');
-    assert.equal(await $(TEXT_INPUT).getValue(), text);
+    assert.equal(await (await $(TEXT_INPUT)).getValue(), text);
   });
 
   it('send an array of strings', async () => {
@@ -32,7 +32,7 @@ describeCommon('SendKeysSpec', () => {
     await BrowserUtils.keys(strArray);
 
     await Reporter.step('Validate text value');
-    assert.equal(await $(TEXT_INPUT).getValue(), strArray.join(''));
+    assert.equal(await (await $(TEXT_INPUT)).getValue(), strArray.join(''));
   });
 
   it('send string twice', async () => {
@@ -43,7 +43,7 @@ describeCommon('SendKeysSpec', () => {
     await BrowserUtils.keys(text);
 
     await Reporter.step('Validate text value');
-    assert.equal(await $(TEXT_INPUT).getValue(), `${text}${text}`);
+    assert.equal(await (await $(TEXT_INPUT)).getValue(), `${text}${text}`);
   });
 
   it('Add text after sending enter for new line', async () => {
@@ -57,7 +57,7 @@ describeCommon('SendKeysSpec', () => {
     await BrowserUtils.keys(text);
 
     await Reporter.step('Validate text value');
-    assert.equal(await $(TEXT_INPUT).getValue(), `${text}\n${text}`);
+    assert.equal(await (await $(TEXT_INPUT)).getValue(), `${text}\n${text}`);
   });
 
   it('Array of Special Keys', async () => {
@@ -66,7 +66,7 @@ describeCommon('SendKeysSpec', () => {
     await BrowserUtils.keys(specialKeysArray);
 
     await Reporter.step('Validate text value');
-    assert.equal(await $(TEXT_INPUT).getValue(), '\n\n\n');
+    assert.equal(await (await $(TEXT_INPUT)).getValue(), '\n\n\n');
   });
 
   it('Special Key Emoji', async () => {
@@ -74,6 +74,6 @@ describeCommon('SendKeysSpec', () => {
     await BrowserUtils.keys(SpecialKeys.EMOJI_HEART);
 
     await Reporter.step('Validate text value');
-    assert.equal(await $(TEXT_INPUT).getValue(), SpecialKeys.EMOJI_HEART);
+    assert.equal(await (await $(TEXT_INPUT)).getValue(), SpecialKeys.EMOJI_HEART);
   });
 });

@@ -33,7 +33,7 @@ describeCommon('waitForDisplayed - reverse: true', () => {
     await Reporter.step('Validate element displayed');
     await BrowserUtils.waitForDisplayed(DISAPPEARING_ELEMENT_SELECTOR);
     await Reporter.step('Click on element to disappear');
-    await $(DISAPPEARING_ELEMENT_SELECTOR).click();
+    await (await $(DISAPPEARING_ELEMENT_SELECTOR)).click();
 
     await Reporter.step('Validate element not displayed');
     await BrowserUtils.waitForDisplayed(DISAPPEARING_ELEMENT_SELECTOR, { reverse: true });

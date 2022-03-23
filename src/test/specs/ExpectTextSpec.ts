@@ -27,10 +27,10 @@ describeCommon('waitForText', () => {
 
   it('dynamic text', async () => {
     await Reporter.step('Wait for button to be displayed');
-    await $(CHANGE_TEXT_BUTTON_SELECTOR).waitForDisplayed();
+    await (await $(CHANGE_TEXT_BUTTON_SELECTOR)).waitForDisplayed();
 
     await Reporter.step('Click button');
-    await $(CHANGE_TEXT_BUTTON_SELECTOR).click();
+    await (await $(CHANGE_TEXT_BUTTON_SELECTOR)).click();
 
     await Reporter.step('Wait for text change');
     await BrowserUtils.waitForText(DYNAMIC_TEXT_SELECTOR, 'Cloudinary still rules!');

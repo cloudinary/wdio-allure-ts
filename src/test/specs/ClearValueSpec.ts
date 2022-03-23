@@ -14,7 +14,7 @@ describeCommon('clearValue', () => {
     await BrowserUtils.clearValue(INPUT_TEXT_SELECTOR);
 
     await Reporter.step('Validate input is empty');
-    await chai.expect(await $(INPUT_TEXT_SELECTOR).getValue()).to.be.eq('');
+    await chai.expect(await (await $(INPUT_TEXT_SELECTOR)).getValue()).to.be.eq('');
   });
 
   it('clear value of text area', async () => {
@@ -22,7 +22,7 @@ describeCommon('clearValue', () => {
     await BrowserUtils.clearValue(TEXT_AREA_SELECTOR);
 
     await Reporter.step('Validate text area is empty');
-    await chai.expect(await $(TEXT_AREA_SELECTOR).getValue()).to.be.eq('');
+    await chai.expect(await (await $(TEXT_AREA_SELECTOR)).getValue()).to.be.eq('');
   });
 
   it('clear value of disable input selector', async () => {

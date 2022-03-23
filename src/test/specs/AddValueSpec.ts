@@ -16,7 +16,7 @@ describeCommon('addValue', () => {
     await BrowserUtils.addValue(EMPTY_INPUT_SELECTOR, randomText);
 
     await Reporter.step(`Validate value is ${randomText}`);
-    chai.expect(await $(EMPTY_INPUT_SELECTOR).getValue()).to.be.eq(randomText);
+    chai.expect(await (await $(EMPTY_INPUT_SELECTOR)).getValue()).to.be.eq(randomText);
   });
   it('add value to existing input', async () => {
     const randomText: string = TestUtils.randomString(5);
@@ -25,7 +25,7 @@ describeCommon('addValue', () => {
     await BrowserUtils.addValue(NOT_EMPTY_INPUT_SELECTOR, randomText);
 
     await Reporter.step(`Validate value is Cloudinary${randomText}`);
-    chai.expect(await $(NOT_EMPTY_INPUT_SELECTOR).getValue()).to.be.eq(`Cloudinary${randomText}`);
+    chai.expect(await (await $(NOT_EMPTY_INPUT_SELECTOR)).getValue()).to.be.eq(`Cloudinary${randomText}`);
   });
   it('add value to disabled input', async () => {
     await Reporter.step('Add value to disable input should throw an error');
