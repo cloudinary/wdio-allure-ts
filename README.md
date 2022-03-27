@@ -54,19 +54,19 @@ const { click, getAttribute, isDisplayed, waitForDisplayed, waitUntil } = Browse
 const getImgSrc = () => getAttribute('#myimage', 'src');
 
 describeCommon('Test Example', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     // runs before each test in the block
-    click('#displayImage'); //for example
-    waitForDisplayed('#myimage'); //for example
+    await click('#displayImage'); //for example
+    await waitForDisplayed('#myimage'); //for example
   });
 
-  it('Should display the image', () => {
-    expect(isDisplayed('#myimage')).to.equal(true);
+  it('Should display the image', async () => {
+    expect(await isDisplayed('#myimage')).to.equal(true);
   });
 
-  it('Image should have some src eventually', () => {
+  it('Image should have some src eventually', async () => {
     const testImgSrc = () => getImgSrc() === 'https://res.cloudinary.com/demo/image/upload/sample';
-    waitUntil(testImgSrc, 'Error message for failing test', 2000);
+    await waitUntil(testImgSrc, 'Error message for failing test', 2000);
   });
 });
 ```
@@ -149,17 +149,17 @@ Now take a look at an example of an action that, after validating that a particu
 
 ```javascript
 const selector: string = 'someSelector';
-logger(`Click an element with selector: ${selector}`);
+await logger(`Click an element with selector: ${selector}`);
 try {
-  logger(`Validate element with selector ${selector} is displayed`);
-  browser.isDisplayed(selector);
+  await logger(`Validate element with selector ${selector} is displayed`);
+  await browser.isDisplayed(selector);
 } catch (error) {
   throw new Error(`Tried to click not visible element, ${error}`);
 }
 
 try {
-  logger('Perform click action');
-  browser.click(selector);
+  await logger('Perform click action');
+  await browser.click(selector);
 } catch (error) {
   throw new Error(`Failed to click an element by given selector ${selector}. ${error}`);
 }
@@ -169,7 +169,7 @@ Example with `wdio-allure-ts`:
 
 ```javascript
 const selector: string = 'someSelector';
-BrowserUtils.click(selector);
+await BrowserUtils.click(selector);
 ```
 
 You can see that wdio-allure-ts offers the same capabilities with much cleaner code. Because it automatically handles logging and error reporting, developers can focus on testing the business logic.
@@ -178,8 +178,8 @@ Example:
 
 ```javascript
 import { Reporter } from 'wdio-allure-ts';
-Reporter.step('Step log entry');
-Reporter.error('Error log entry');
+await Reporter.step('Step log entry');
+await Reporter.error('Error log entry');
 ```
 
 **Terminal Output**
