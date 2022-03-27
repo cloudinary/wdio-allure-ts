@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 6.0.0 (2022-03-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* move from sync to async mode
+
+### Features
+
+* sync to async ([#294](https://github.com/cloudinary/wdio-allure-ts/issues/294)) ([881af3a](https://github.com/cloudinary/wdio-allure-ts/commit/881af3ad6ba3b0adb4a9babbc04e6a84e5525253))
+
 ### 5.1.13 (2022-03-27)
 
 ### 5.1.12 (2022-03-07)
