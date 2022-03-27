@@ -1,34 +1,35 @@
 import { assert } from 'chai';
 import { BrowserUtils, Reporter, TestUtils } from '../..';
 import { describeCommon } from '../TestHelper';
+import { Cookie } from '@wdio/protocols/build/types';
 
 /**
  * wdio-allure-ts getCookie tests
  */
-let cookie: WebDriver.Cookie;
+let cookie: Cookie;
 
 describeCommon('GetCookieSpec', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     cookie = { name: TestUtils.randomString(), value: TestUtils.randomString() };
-    Reporter.step('Set cookie');
-    BrowserUtils.setCookies(cookie);
+    await Reporter.step('Set cookie');
+    await BrowserUtils.setCookies(cookie);
   });
-  it('expect unique cookie', () => {
-    Reporter.step('Validate number of cookies');
-    assert.equal(BrowserUtils.getCookies().length, 1, 'Incorrect number of retrieved cookies');
-  });
-
-  it('get cookie by name', () => {
-    Reporter.step('Get cookies name');
-    assert.equal(BrowserUtils.getCookies()[0].name, cookie.name, 'Incorrect cookie name');
+  it('expect unique cookie', async () => {
+    await Reporter.step('Validate number of cookies');
+    assert.equal((await BrowserUtils.getCookies()).length, 1, 'Incorrect number of retrieved cookies');
   });
 
-  it('get cookie by value', () => {
-    Reporter.step('Get cookies value');
-    assert.equal(BrowserUtils.getCookies()[0].value, cookie.value, 'Incorrect cookie value');
+  it('get cookie by name', async () => {
+    await Reporter.step('Get cookies name');
+    assert.equal((await BrowserUtils.getCookies())[0].name, cookie.name, 'Incorrect cookie name');
   });
-  afterEach(() => {
-    Reporter.step('Delete cookie');
-    BrowserUtils.deleteCookies();
+
+  it('get cookie by value', async () => {
+    await Reporter.step('Get cookies value');
+    assert.equal((await BrowserUtils.getCookies())[0].value, cookie.value, 'Incorrect cookie value');
+  });
+  afterEach(async () => {
+    await Reporter.step('Delete cookie');
+    await BrowserUtils.deleteCookies();
   });
 });

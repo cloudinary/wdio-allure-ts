@@ -1,4 +1,3 @@
-import allureReporter from '@wdio/allure-reporter';
 import { Cookie } from '@wdio/protocols/build/types';
 import admZip, { IZipEntry } from 'adm-zip';
 import axios, { AxiosResponse } from 'axios';
@@ -22,6 +21,7 @@ import { SpecialKeys } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
+import allureReporter from '@wdio/allure-reporter';
 
 const DEFAULT_TIME_OUT: number =
   process.env.DEFAULT_TIME_OUT === undefined ? 60000 : Number(process.env.DEFAULT_TIME_OUT);
@@ -43,14 +43,18 @@ export namespace BrowserUtils {
    * @param imageFileName file name to compare with
    * @param options additional options for checker
    */
-  export function checkElement(elementSelector: string, imageFileName: string, options: object = {}): void {
-    Reporter.step('Compare');
-    waitForDisplayed(elementSelector);
+  export async function checkElement(
+    elementSelector: string,
+    imageFileName: string,
+    options: object = {}
+  ): Promise<void> {
+    await Reporter.step('Compare');
+    await waitForDisplayed(elementSelector);
 
-    Reporter.debug(`Compare element '${imageFileName}' with selector '${elementSelector}' and options ${options}`);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const compareResult: number = browser.checkElement($(elementSelector), imageFileName, options);
+    await Reporter.debug(
+      `Compare element '${imageFileName}' with selector '${elementSelector}' and options ${options}`
+    );
+    const compareResult: Result = await browser.checkElement(await $(elementSelector), imageFileName, options);
 
     if (compareResult !== 0) {
       throw new Error(`Found ${compareResult}% difference. See attached images`);
@@ -62,21 +66,21 @@ export namespace BrowserUtils {
    * for execution in the context of the currently selected frame
    * @param script - js script to execute in string format
    */
-  export function execute(script: string): string {
-    Reporter.debug(`Executing script: '${script}'`);
-    return tryBlock(() => browser.execute(script), `Failed to execute script: ${script}`);
+  export async function execute(script: string): Promise<string> {
+    await Reporter.debug(`Executing script: '${script}'`);
+    return tryBlock(async () => await browser.execute(script), `Failed to execute script: ${script}`);
   }
 
   /**
    *  This Method will scroll to element into view
    * @param selector - element locator
    */
-  export function scrollIntoView(selector: string): void {
-    Reporter.debug(`Scroll to: '${selector}'`);
+  export async function scrollIntoView(selector: string): Promise<void> {
+    await Reporter.debug(`Scroll to: '${selector}'`);
 
-    tryBlock(() => {
+    await tryBlock(async () => {
       const scrollToJS: string = `document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
-      execute(scrollToJS);
+      await execute(scrollToJS);
     }, `Failed to scroll to element: [${selector}]`);
   }
 
@@ -85,20 +89,23 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param  value value to add
    */
-  export function addValue(selector: string, value: string | number): void {
-    Reporter.debug(`Add value: '${value}' to '${selector}'`);
-    waitForEnabled(selector);
-    tryBlock(() => $(selector).addValue(value), `Failed to add value: '${value}' to '${selector}'`);
+  export async function addValue(selector: string, value: string | number): Promise<void> {
+    await Reporter.debug(`Add value: '${value}' to '${selector}'`);
+    await waitForEnabled(selector);
+    await tryBlock(
+      async () => await (await $(selector)).addValue(value),
+      `Failed to add value: '${value}' to '${selector}'`
+    );
   }
 
   /**
    * Clear a <textarea> or text <input> element’s value
    * @param selector element selector
    */
-  export function clearValue(selector: string): void {
-    Reporter.debug(`Clear text in '${selector}'`);
-    waitForDisplayed(selector);
-    tryBlock(() => $(selector).clearValue(), `Failed to clear value in '${selector}'`);
+  export async function clearValue(selector: string): Promise<void> {
+    await Reporter.debug(`Clear text in '${selector}'`);
+    await waitForDisplayed(selector);
+    await tryBlock(async () => await (await $(selector)).clearValue(), `Failed to clear value in '${selector}'`);
   }
 
   /**
@@ -106,10 +113,13 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param value - value to add
    */
-  export function setValue(selector: string, value: string | number): void {
-    Reporter.debug(`Set element '${selector} with value: '${value}'`);
-    waitForEnabled(selector);
-    tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
+  export async function setValue(selector: string, value: string | number): Promise<void> {
+    await Reporter.debug(`Set element '${selector} with value: '${value}'`);
+    await waitForEnabled(selector);
+    await tryBlock(
+      async () => await (await $(selector)).setValue(value),
+      `Failed to set value: '${value}' to '${selector}'`
+    );
   }
 
   /**
@@ -118,10 +128,13 @@ export namespace BrowserUtils {
    * @param selector elements selector
    * @param value text value to set or numeric value
    */
-  export function setHiddenElementValue(selector: string, value: string | number): void {
-    Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
-    waitForExist(selector);
-    tryBlock(() => $(selector).setValue(value), `Failed to set value: '${value}' to '${selector}'`);
+  export async function setHiddenElementValue(selector: string, value: string | number): Promise<void> {
+    await Reporter.debug(`Set hidden element '${selector} with value: '${value}'`);
+    await waitForExist(selector);
+    await tryBlock(
+      async () => await (await $(selector)).setValue(value),
+      `Failed to set value: '${value}' to '${selector}'`
+    );
   }
 
   /**
@@ -138,13 +151,13 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param options { button, x, y } are optional. button can be one of [0, "left", 1, "middle", 2, "right"]
    */
-  export function click(selector: string, options?: ClickOptions): void {
-    Reporter.debug(`Click an element '${selector}'`);
-    waitForEnabled(selector);
+  export async function click(selector: string, options?: ClickOptions): Promise<void> {
+    await Reporter.debug(`Click an element '${selector}'`);
+    await waitForEnabled(selector);
 
-    waitForClickable(selector);
-    tryBlock(
-      () => $(selector).click(options),
+    await waitForClickable(selector);
+    await tryBlock(
+      async () => await (await $(selector)).click(options),
 
       `Failed to click on '${selector}'`
     );
@@ -156,11 +169,11 @@ export namespace BrowserUtils {
    * Validate element is visible before clicking on it
    * @param selector element selector
    */
-  export function doubleClick(selector: string): void {
-    Reporter.debug(`Double click an element '${selector}'`);
-    waitForEnabled(selector);
-    waitForClickable(selector);
-    tryBlock(() => $(selector).doubleClick(), `Failed to doubleClick in '${selector}'`);
+  export async function doubleClick(selector: string): Promise<void> {
+    await Reporter.debug(`Double click an element '${selector}'`);
+    await waitForEnabled(selector);
+    await waitForClickable(selector);
+    await tryBlock(async () => await (await $(selector)).doubleClick(), `Failed to doubleClick in '${selector}'`);
   }
 
   /**
@@ -168,18 +181,18 @@ export namespace BrowserUtils {
    * to insure the navigation actually happened
    * @param url url for navigation
    */
-  export function url(url: string): void {
-    Reporter.debug(`Navigate to '${url}'`);
-    tryBlock(() => browser.url(url), `Failed to navigate to '${url}'`);
+  export async function url(url: string): Promise<void> {
+    await Reporter.debug(`Navigate to '${url}'`);
+    await tryBlock(async () => await browser.url(url), `Failed to navigate to '${url}'`);
   }
 
   /**
    * Refresh browser's page
    */
-  export function refresh(): void {
-    Reporter.debug('Refresh browser page');
-    tryBlock(
-      () => browser.refresh(),
+  export async function refresh(): Promise<void> {
+    await Reporter.debug('Refresh browser page');
+    await tryBlock(
+      async () => await browser.refresh(),
 
       'Failed to refresh the page'
     );
@@ -188,9 +201,9 @@ export namespace BrowserUtils {
   /**
    * Click browser's back button
    */
-  export function back(): void {
-    Reporter.debug('Click browser back button');
-    tryBlock(() => browser.back(), 'Failed to click browser back button');
+  export async function back(): Promise<void> {
+    await Reporter.debug('Click browser back button');
+    await tryBlock(async () => await browser.back(), 'Failed to click browser back button');
   }
 
   /**
@@ -198,12 +211,12 @@ export namespace BrowserUtils {
    * Mainly useful for navigation validation
    * @param url expected current url
    */
-  export function waitForUrl(url: string): void {
+  export async function waitForUrl(url: string): Promise<void> {
     const expectedUrl: string = normalizeUrl(url);
-    Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
-    browser.waitUntil(
-      (): boolean => {
-        return expectedUrl === normalizeUrl(getUrl());
+    await Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
+    await waitUntil(
+      async () => {
+        return expectedUrl === normalizeUrl(await getUrl());
       },
       {
         timeout: DEFAULT_TIME_OUT,
@@ -233,8 +246,11 @@ export namespace BrowserUtils {
    * @param condition condition to wait on
    * @param options WaitForOptions options (optional) { timeout, timeoutMsg, interval }
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export function waitUntil(condition: () => any, options?: WaitUntilOptions): any {
+  export async function waitUntil(
+    condition: () => boolean | Promise<boolean>,
+    options?: WaitUntilOptions
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ): Promise<any> {
     return browser.waitUntil(() => condition(), { ...{ timeout: DEFAULT_TIME_OUT }, ...options });
   }
 
@@ -244,13 +260,13 @@ export namespace BrowserUtils {
    * @param attribute attribute of option element to get selected
    * @param value value of option element to get selected
    */
-  export function selectByAttribute(selector: string, attribute: string, value: string | number): void {
-    Reporter.debug(`Select by value '${value}' of attribute '${attribute}'
+  export async function selectByAttribute(selector: string, attribute: string, value: string | number): Promise<void> {
+    await Reporter.debug(`Select by value '${value}' of attribute '${attribute}'
                     from '${selector}'`);
-    waitForExist(selector);
+    await waitForExist(selector);
 
-    tryBlock(
-      () => $(selector).selectByAttribute(attribute, value),
+    await tryBlock(
+      async () => await (await $(selector)).selectByAttribute(attribute, value),
       `Failed to select value ${value} of attribute ${attribute} from ${selector}`
     );
   }
@@ -259,10 +275,10 @@ export namespace BrowserUtils {
    * Return true or false if the selected DOM-element is enabled
    * @param selector - element selector
    */
-  export function isEnabled(selector: string): boolean {
-    Reporter.debug(`Is element enabled '${selector}'`);
+  export async function isEnabled(selector: string): Promise<boolean> {
+    await Reporter.debug(`Is element enabled '${selector}'`);
 
-    return $(selector).isEnabled();
+    return (await $(selector)).isEnabled();
   }
 
   /**
@@ -270,14 +286,14 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param options WaitForOptions options (optional) { timeout, reverse, timeoutMsg, interval }
    */
-  export function waitForEnabled(selector: string, options?: WaitForOptions): void {
-    Reporter.debug(`Wait for an element to be enabled '${selector}'`);
-    waitForDisplayed(selector, options);
+  export async function waitForEnabled(selector: string, options?: WaitForOptions): Promise<void> {
+    await Reporter.debug(`Wait for an element to be enabled '${selector}'`);
+    await waitForDisplayed(selector, options);
     /**
      * If no options passed or options does not include timout, default timeout will be used
      */
-    tryBlock(
-      () => $(selector).waitForEnabled({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+    await tryBlock(
+      async () => await (await $(selector)).waitForEnabled({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Element not enabled '${selector}'`
     );
   }
@@ -286,10 +302,10 @@ export namespace BrowserUtils {
    * Return true if the selected DOM-element is displayed
    * @param selector - element selector
    */
-  export function isDisplayed(selector: string): boolean {
-    Reporter.debug(`Is element visible by '${selector}'`);
+  export async function isDisplayed(selector: string): Promise<boolean> {
+    await Reporter.debug(`Is element visible by '${selector}'`);
 
-    return $(selector).isDisplayed();
+    return (await $(selector)).isDisplayed();
   }
 
   /**
@@ -297,10 +313,10 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param options WaitForOptions options (optional) { timeout, reverse, timeoutMsg, interval }
    */
-  export function waitForDisplayed(selector: string, options?: WaitForOptions): void {
-    Reporter.debug(`Wait for an element to be visible '${selector}'`);
-    tryBlock(
-      () => $(selector).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+  export async function waitForDisplayed(selector: string, options?: WaitForOptions): Promise<void> {
+    await Reporter.debug(`Wait for an element to be visible '${selector}'`);
+    await tryBlock(
+      async () => await (await $(selector)).waitForDisplayed({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Element not visible '${selector}'`
     );
   }
@@ -310,10 +326,10 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param options WaitForOptions options (optional) { timeout, reverse, timeoutMsg, interval }
    */
-  export function waitForExist(selector: string, options?: WaitForOptions): void {
-    Reporter.debug(`Expect an element exist '${selector}'`);
-    tryBlock(
-      () => $(selector).waitForExist({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
+  export async function waitForExist(selector: string, options?: WaitForOptions): Promise<void> {
+    await Reporter.debug(`Expect an element exist '${selector}'`);
+    await tryBlock(
+      async () => await (await $(selector)).waitForExist({ ...{ timeout: DEFAULT_TIME_OUT }, ...options }),
       `Wait for exist '${selector}' with options ${JSON.stringify(options)} failed`
     );
   }
@@ -324,12 +340,12 @@ export namespace BrowserUtils {
    *
    * @param selector selector of frame to switch to
    */
-  export function switchToFrame(selector: string): void {
-    Reporter.debug(`Validate iframe with selector ${selector} exist`);
-    waitForExist(selector);
+  export async function switchToFrame(selector: string): Promise<void> {
+    await Reporter.debug(`Validate iframe with selector ${selector} exist`);
+    await waitForExist(selector);
 
-    Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
-    tryBlock(() => browser.switchToFrame($(selector)), 'Failed to switch frame');
+    await Reporter.debug(`Switching to an Iframe by selector '${selector}'`);
+    await tryBlock(async () => await browser.switchToFrame(await $(selector)), 'Failed to switch frame');
   }
 
   /**
@@ -338,30 +354,30 @@ export namespace BrowserUtils {
    *
    * @param handle a string representing a window handle, should be one of the strings that was returned in a call to getWindowHandles
    */
-  export function switchToWindow(handle: string): void {
-    Reporter.debug(`Switching window by id: '${handle}'`);
+  export async function switchToWindow(handle: string): Promise<void> {
+    await Reporter.debug(`Switching window by id: '${handle}'`);
 
-    tryBlock(() => browser.switchToWindow(handle), `Failed switch to window by id: '${handle}'`);
+    await tryBlock(async () => await browser.switchToWindow(handle), `Failed switch to window by id: '${handle}'`);
   }
 
   /**
    * The Get Window Handles command returns a list of window handles for every open top-level browsing context.
    * The order in which the window handles are returned is arbitrary.
    */
-  export function getWindowHandles(): Array<string> {
-    Reporter.debug('Get all ids of all open tabs');
+  export async function getWindowHandles(): Promise<Array<string>> {
+    await Reporter.debug('Get all ids of all open tabs');
 
-    return tryBlock(() => browser.getWindowHandles(), 'Failed to get window handles');
+    return await tryBlock(async () => await browser.getWindowHandles(), 'Failed to get window handles');
   }
 
   /**
    * Change focus to the parent context.
    * If the current context is the top level browsing context, the context remains unchanged.
    */
-  export function switchToParentFrame(): void {
-    Reporter.debug(`Switching to parent frame`);
+  export async function switchToParentFrame(): Promise<void> {
+    await Reporter.debug(`Switching to parent frame`);
 
-    tryBlock(() => browser.switchToParentFrame(), 'Failed to switch to parent frame');
+    await tryBlock(async () => await browser.switchToParentFrame(), 'Failed to switch to parent frame');
   }
 
   /**
@@ -369,10 +385,10 @@ export namespace BrowserUtils {
    * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
-  export function findElement(selectorType: SelectorType, selector: string): string {
-    Reporter.debug(`Find element '${selector}' of type '${selectorType}'`);
+  export async function findElement(selectorType: SelectorType, selector: string): Promise<string> {
+    await Reporter.debug(`Find element '${selector}' of type '${selectorType}'`);
 
-    return tryBlock(() => browser.findElement(selectorType, selector), 'Failed to find element');
+    return tryBlock(async () => await browser.findElement(selectorType, selector), 'Failed to find element');
   }
 
   /**
@@ -380,8 +396,8 @@ export namespace BrowserUtils {
    * @param selectorType - enum type of selector (XPATH, ID, etc')
    * @param selector - element locator
    */
-  export function findElements(selectorType: SelectorType, selector: string): Array<string> {
-    return tryBlock(() => browser.findElements(selectorType, selector), 'Failed to find elements');
+  export async function findElements(selectorType: SelectorType, selector: string): Promise<Array<string>> {
+    return tryBlock(async () => await browser.findElements(selectorType, selector), 'Failed to find elements');
   }
 
   /**
@@ -391,14 +407,14 @@ export namespace BrowserUtils {
    * @param selector element selector with text
    * @param expectedText expected text
    */
-  export function waitForText(selector: string, expectedText: string): void {
-    Reporter.debug(`Wait for text '${expectedText}' of element by selector '${selector}'`);
-    waitForDisplayed(selector);
-    const elementWithText: WebdriverIO.Element = $(selector);
-    tryBlock(
-      () =>
-        browser.waitUntil(() => {
-          return elementWithText.getText() === expectedText;
+  export async function waitForText(selector: string, expectedText: string): Promise<void> {
+    await Reporter.debug(`Wait for text '${expectedText}' of element by selector '${selector}'`);
+    await waitForDisplayed(selector);
+    const elementWithText: WebdriverIO.Element = await $(selector);
+    await tryBlock(
+      async () =>
+        await waitUntil(async () => {
+          return (await elementWithText.getText()) === expectedText;
         }),
       `Expected text in element by selector '${selector}' not found.`
     );
@@ -410,11 +426,11 @@ export namespace BrowserUtils {
    * an array of values is returned instead. For input with checkbox or radio type use isSelected.
    * @param selector element's selector
    */
-  export function getValue(selector: string): string {
-    Reporter.debug(`Get element's value by selector '${selector}'`);
-    waitForDisplayed(selector);
+  export async function getValue(selector: string): Promise<string> {
+    await Reporter.debug(`Get element's value by selector '${selector}'`);
+    await waitForDisplayed(selector);
 
-    return tryBlock(() => $(selector).getValue(), `Failed to get value from element '${selector}'`);
+    return tryBlock(async () => await (await $(selector)).getValue(), `Failed to get value from element '${selector}'`);
   }
 
   /**
@@ -423,11 +439,11 @@ export namespace BrowserUtils {
    * otherwise you will get an empty string as return value.
    * @param selector element's selector
    */
-  export function getText(selector: string): string {
-    Reporter.debug(`Get element's text by selector '${selector}'`);
-    waitForDisplayed(selector);
+  export async function getText(selector: string): Promise<string> {
+    await Reporter.debug(`Get element's text by selector '${selector}'`);
+    await waitForDisplayed(selector);
 
-    return tryBlock(() => $(selector).getText(), `Failed to get text from element '${selector}'`);
+    return tryBlock(async () => await (await $(selector)).getText(), `Failed to get text from element '${selector}'`);
   }
 
   /**
@@ -437,16 +453,16 @@ export namespace BrowserUtils {
    * @param selector selector of items to count
    * @param expectedNumber expected number of items
    */
-  export function waitForNumberOfElements(selector: string, expectedNumber: number): void {
-    Reporter.debug(`Wait for number '${expectedNumber}' of elements by selector '${selector}'`);
+  export async function waitForNumberOfElements(selector: string, expectedNumber: number): Promise<void> {
+    await Reporter.debug(`Wait for number '${expectedNumber}' of elements by selector '${selector}'`);
     if (expectedNumber === 0) {
-      waitForDisplayed(selector, { reverse: true });
+      await waitForDisplayed(selector, { reverse: true });
     }
 
-    tryBlock(
-      () =>
-        browser.waitUntil(() => {
-          return findElements(SelectorType.XPATH, selector).length === expectedNumber;
+    await tryBlock(
+      async () =>
+        await waitUntil(async () => {
+          return (await findElements(SelectorType.XPATH, selector)).length === expectedNumber;
         }),
       `Found number of elements by '${selector}' not equal '${expectedNumber}'`
     );
@@ -460,32 +476,30 @@ export namespace BrowserUtils {
    * @param selector selector of an element to scroll to
    * @param listSelector selector of list to scroll
    */
-  export function scrollToItemInList(selector: string, listSelector: string): void {
-    Reporter.debug(`Scroll in list '${listSelector}' until element '${selector}' is visible.`);
+  export async function scrollToItemInList(selector: string, listSelector: string): Promise<void> {
+    await Reporter.debug(`Scroll in list '${listSelector}' until element '${selector}' is visible.`);
 
-    waitForExist(listSelector); // need to verify list is loaded
-    if (isDisplayed(selector)) {
+    await waitForExist(listSelector); // need to verify list is loaded
+    if (await isDisplayed(selector)) {
       return;
     }
-    let last: number = $$(listSelector).length;
-    Reporter.debug(`Last element index: [${last}].`);
-    tryBlock(
-      () =>
-        browser.waitUntil(() => {
-          /**
-           * Since FireFox does not support moveToObject
-           * we use JS instead of browser.moveToObject(`(${listSelector})[${last}]`);
-           */
-          const xpath: string = `(${listSelector})[${last}]`;
-          const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
-          execute(scrollToJS);
+    let last: number = (await $$(listSelector)).length;
+    await Reporter.debug(`Last element index: [${last}].`);
+    await tryBlock(async () => {
+      await waitUntil(async () => {
+        /**
+         * Since FireFox does not support moveToObject
+         * we use JS instead of browser.moveToObject(`(${listSelector})[${last}]`);
+         */
+        const xpath: string = `(${listSelector})[${last}]`;
+        const scrollToJS: string = `document.evaluate("${xpath}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView()`;
+        await execute(scrollToJS);
 
-          last = getNumberOfElements(listSelector);
+        last = await getNumberOfElements(listSelector);
 
-          return $(selector).isDisplayed();
-        }),
-      `Failed to scroll to ${selector} in ${listSelector}`
-    );
+        return (await $(selector)).isDisplayed();
+      });
+    }, `Failed to scroll to ${selector} in ${listSelector}`);
   }
 
   /**
@@ -495,10 +509,10 @@ export namespace BrowserUtils {
    * @param y is the pixel along the vertical axis of the element.
    * @private
    */
-  export function scrollTo(selector: string, x: number, y: number): void {
-    waitForDisplayed(selector);
+  export async function scrollTo(selector: string, x: number, y: number): Promise<void> {
+    await waitForDisplayed(selector);
     const script: string = `(document.evaluate("${selector}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).scroll(${x}, ${y})`;
-    execute(script);
+    await execute(script);
   }
 
   /**
@@ -506,15 +520,15 @@ export namespace BrowserUtils {
    * @param iframeSelector iFrame selector
    * @param expectedVisibility expected visibility status
    */
-  export function isIframeVisible(iframeSelector: string, expectedVisibility: boolean): void {
-    Reporter.debug(`Check iframe visibility is '${expectedVisibility}'`);
+  export async function isIframeVisible(iframeSelector: string, expectedVisibility: boolean): Promise<void> {
+    await Reporter.debug(`Check iframe visibility is '${expectedVisibility}'`);
 
-    switchToParentFrame(); // if iframe already focused, isExist will fail
-    waitForExist(iframeSelector);
+    await switchToParentFrame(); // if iframe already focused, isExist will fail
+    await waitForExist(iframeSelector);
 
     const cssDisplayProperty: string = 'display';
-    const iframeDisplayProperty: ParsedCSSValue = tryBlock(
-      () => $(iframeSelector).getCSSProperty(cssDisplayProperty), // iframe css
+    const iframeDisplayProperty: ParsedCSSValue = await tryBlock(
+      async () => await (await $(iframeSelector)).getCSSProperty(cssDisplayProperty), // iframe css
       `Failed to get '${cssDisplayProperty}' css property from '${iframeSelector}'`
     );
 
@@ -532,10 +546,10 @@ export namespace BrowserUtils {
    * @param selector element's selector to search for attribute
    * @param attributeName requested attribute name
    */
-  export function getAttribute(selector: string, attributeName: string): string {
-    waitForExist(selector);
+  export async function getAttribute(selector: string, attributeName: string): Promise<string> {
+    await waitForExist(selector);
     return tryBlock(
-      () => $(selector).getAttribute(attributeName),
+      async () => await (await $(selector)).getAttribute(attributeName),
       `Failed to get '${attributeName}' attribute from '${selector}'`
     );
   }
@@ -545,14 +559,14 @@ export namespace BrowserUtils {
    * @param selector element's selector to check the value
    * @param value expected value
    */
-  export function waitForValue(selector: string, value: string): void {
-    Reporter.debug(`Validate element '${selector}' has value of '${value}'`);
+  export async function waitForValue(selector: string, value: string): Promise<void> {
+    await Reporter.debug(`Validate element '${selector}' has value of '${value}'`);
     let currValue: string;
 
-    tryBlock(
-      () =>
-        browser.waitUntil(() => {
-          currValue = getValue(selector);
+    await tryBlock(
+      async () =>
+        await waitUntil(async () => {
+          currValue = await getValue(selector);
 
           return currValue.trim() === value;
         }),
@@ -567,21 +581,21 @@ export namespace BrowserUtils {
    * @param value value in attribute
    * @param revert indicate either the requested value should or should not be contained
    */
-  export function waitForAttributeValue(
+  export async function waitForAttributeValue(
     selector: string,
     attributeName: string,
     value: string,
     revert: boolean = false
-  ): void {
-    Reporter.debug(
+  ): Promise<void> {
+    await Reporter.debug(
       `Validate element '${selector}' has ${revert ? 'not ' : ''}attribute '${attributeName}' that contains '${value}'`
     );
     let attributeValue: string;
 
-    tryBlock(
-      () =>
-        browser.waitUntil(() => {
-          attributeValue = getAttribute(selector, attributeName);
+    await tryBlock(
+      async () =>
+        await waitUntil(async () => {
+          attributeValue = await getAttribute(selector, attributeName);
 
           return revert != isContainWord(attributeValue, value);
         }),
@@ -596,15 +610,15 @@ export namespace BrowserUtils {
    * @param additionalWaitAfterLoad - Since this will be used mostly for image comparison, additional timeout
    * added with default value of 1000 milliseconds
    */
-  export function waitForPageToLoad(additionalWaitAfterLoad: number = 1000): void {
-    Reporter.debug("Wait for document.readyState === 'complete'");
-    browser.waitUntil(() => browser.execute("return document.readyState === 'complete'"), {
+  export async function waitForPageToLoad(additionalWaitAfterLoad: number = 1000): Promise<void> {
+    await Reporter.debug("Wait for document.readyState === 'complete'");
+    await waitUntil(async () => await browser.execute("return document.readyState === 'complete'"), {
       timeout: DEFAULT_TIME_OUT,
       timeoutMsg: "document.readyState !== 'complete'",
     });
 
-    Reporter.debug(`Pause for ${additionalWaitAfterLoad} milliseconds`);
-    browser.pause(additionalWaitAfterLoad);
+    await Reporter.debug(`Pause for ${additionalWaitAfterLoad} milliseconds`);
+    await browser.pause(additionalWaitAfterLoad);
   }
 
   /**
@@ -631,11 +645,11 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param cssPropertyName  css property name
    */
-  export function getCssProperty(selector: string, cssPropertyName: string): ParsedCSSValue {
-    Reporter.debug(`Get css property '${cssPropertyName}' from element by '${selector}'`);
+  export async function getCssProperty(selector: string, cssPropertyName: string): Promise<ParsedCSSValue> {
+    await Reporter.debug(`Get css property '${cssPropertyName}' from element by '${selector}'`);
 
     return tryBlock(
-      () => $(selector).getCSSProperty(cssPropertyName),
+      async () => await (await $(selector)).getCSSProperty(cssPropertyName),
       `Failed to get css Property '${cssPropertyName}' from '${selector}'`
     );
   }
@@ -650,9 +664,9 @@ export namespace BrowserUtils {
    *  set the cookie and navigate back to page it started from
    * @param cookie cookie to set
    */
-  export function setCookies(cookie: Cookie | Array<Cookie>): void {
-    Reporter.debug(`Setting cookies: '${JSON.stringify(cookie)}'`);
-    browser.setCookies(cookie);
+  export async function setCookies(cookie: Cookie | Array<Cookie>): Promise<void> {
+    await Reporter.debug(`Setting cookies: '${JSON.stringify(cookie)}'`);
+    await browser.setCookies(cookie);
   }
 
   /**
@@ -660,10 +674,10 @@ export namespace BrowserUtils {
    * You can query a specific cookie by providing the cookie name or
    * retrieve all.
    */
-  export function getCookies(names?: Array<string> | string): Array<Cookie> {
-    Reporter.debug('Get cookies:');
-    const cookies: Array<Cookie> = tryBlock(() => browser.getCookies(names), 'Failed to get cookies');
-    Reporter.debug(JSON.stringify(cookies));
+  export async function getCookies(names?: Array<string> | string): Promise<Array<Cookie>> {
+    await Reporter.debug('Get cookies:');
+    const cookies: Array<Cookie> = await tryBlock(async () => await browser.getCookies(names), 'Failed to get cookies');
+    await Reporter.debug(JSON.stringify(cookies));
 
     return cookies;
   }
@@ -673,18 +687,21 @@ export namespace BrowserUtils {
    * By providing a cookie name it just removes the single cookie or more when multiple names are passed
    * @param names names of cookies to be deleted (optional)
    */
-  export function deleteCookies(names?: Array<string> | string): void {
-    Reporter.debug('Delete cookies:');
-    const cookie: Array<Cookie> = tryBlock(() => browser.deleteCookies(names), 'Failed to get cookie');
-    Reporter.debug(JSON.stringify(cookie));
+  export async function deleteCookies(names?: Array<string> | string): Promise<void> {
+    await Reporter.debug('Delete cookies:');
+    const cookie: Array<Cookie> = await tryBlock(
+      async () => await browser.deleteCookies(names),
+      'Failed to get cookie'
+    );
+    await Reporter.debug(JSON.stringify(cookie));
   }
 
   /**
    * The Get Current URL command returns the URL of the current top-level browsing context.
    */
-  export function getUrl(): string {
-    const currentUrl: string = tryBlock(() => browser.getUrl(), 'Failed to get current url');
-    Reporter.debug(`Get current URL: '${currentUrl}'`);
+  export async function getUrl(): Promise<string> {
+    const currentUrl: string = await tryBlock(async () => await browser.getUrl(), 'Failed to get current url');
+    await Reporter.debug(`Get current URL: '${currentUrl}'`);
 
     return currentUrl;
   }
@@ -692,32 +709,32 @@ export namespace BrowserUtils {
   /**
    * Accept Alert popup
    */
-  export function acceptAlert(): void {
-    Reporter.debug('Accept alert');
-    tryBlock(() => browser.acceptAlert(), 'Failed to accept alert');
+  export async function acceptAlert(): Promise<void> {
+    await Reporter.debug('Accept alert');
+    await tryBlock(async () => await browser.acceptAlert(), 'Failed to accept alert');
   }
 
   /**
    * Dismiss Alert popup
    */
-  export function dismissAlert(): void {
-    Reporter.debug('Dismiss alert');
+  export async function dismissAlert(): Promise<void> {
+    await Reporter.debug('Dismiss alert');
 
-    tryBlock(() => browser.dismissAlert(), 'Failed to dismiss alert');
+    await tryBlock(async () => await browser.dismissAlert(), 'Failed to dismiss alert');
   }
 
   /**
    * Wait for alert's text to equal requested text
    * @param expectedText requested alert's text
    */
-  export function waitForAlertText(expectedText: string): void {
-    Reporter.debug(`Validate alert's text is '${expectedText}'`);
+  export async function waitForAlertText(expectedText: string): Promise<void> {
+    await Reporter.debug(`Validate alert's text is '${expectedText}'`);
 
-    tryBlock(
-      () =>
-        browser.waitUntil(() => {
+    await tryBlock(
+      async () =>
+        await waitUntil(async () => {
           try {
-            return expectedText === browser.getAlertText();
+            return expectedText === (await browser.getAlertText());
           } catch (e) {
             return false;
           }
@@ -730,11 +747,13 @@ export namespace BrowserUtils {
    * Get the width and height for an DOM-element.
    * @param selector requested element selector
    */
-  export function getSize(selector: string): Size {
-    Reporter.debug(`Get Element: '${selector}' size`);
-    waitForDisplayed(selector);
+  export async function getSize(selector: string): Promise<Size> {
+    await Reporter.debug(`Get Element: '${selector}' size`);
+    await waitForDisplayed(selector);
 
-    return $(selector).getSize();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return (await $(selector)).getSize();
   }
 
   /**
@@ -742,18 +761,18 @@ export namespace BrowserUtils {
    * @param width - Width (px)
    * @param height - Height (px)
    */
-  export function setWindowSize(width: number, height: number): void {
-    Reporter.debug(`Set window size to '${width}X${height}'`);
-    tryBlock(() => browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
+  export async function setWindowSize(width: number, height: number): Promise<void> {
+    await Reporter.debug(`Set window size to '${width}X${height}'`);
+    await tryBlock(async () => await browser.setWindowSize(width, height), 'Chrome: Failed to resize window');
   }
 
   /**
    * Returns browser window size.
    * output example `{ width: 1280, height: 767 }`
    */
-  export function getWindowSize(): object {
-    Reporter.debug('Get window size');
-    return tryBlock(() => browser.getWindowSize(), 'Failed to get window size');
+  export async function getWindowSize(): Promise<object> {
+    await Reporter.debug('Get window size');
+    return tryBlock(async () => await browser.getWindowSize(), 'Failed to get window size');
   }
 
   /**
@@ -762,9 +781,9 @@ export namespace BrowserUtils {
    * Any other mouse command (such as click or another call to buttondown) will yield undefined behaviour
    * @param mouseButton -  which button, enum: LEFT = 0, MIDDLE = 1 , RIGHT = 2, defaults to the left mouse button if not specified
    */
-  export function buttonDown(mouseButton?: MouseButton): void {
-    Reporter.step(`Click mouse button down '${mouseButton ? MouseButton.LEFT : mouseButton}'`);
-    browser.buttonDown(mouseButton);
+  export async function buttonDown(mouseButton?: MouseButton): Promise<void> {
+    await Reporter.step(`Click mouse button down '${mouseButton ? MouseButton.LEFT : mouseButton}'`);
+    await browser.buttonDown(mouseButton);
   }
 
   /**
@@ -775,11 +794,11 @@ export namespace BrowserUtils {
    * @param selector element to move to, If not specified or is null, the offset is relative to current position of the mouse.
    * @param options moveTo command options. options example {xOffset: 5, yOffset: 6}
    */
-  export function moveTo(selector: string, options?: MoveToOptions): void {
-    Reporter.debug(`Move mouse cursor to element: '${selector}' with offset '${JSON.stringify(options)}'`);
+  export async function moveTo(selector: string, options?: MoveToOptions): Promise<void> {
+    await Reporter.debug(`Move mouse cursor to element: '${selector}' with offset '${JSON.stringify(options)}'`);
 
-    waitForExist(selector);
-    $(selector).moveTo(options);
+    await waitForExist(selector);
+    await (await $(selector)).moveTo(options);
   }
 
   /**
@@ -788,19 +807,21 @@ export namespace BrowserUtils {
    * See the note in click and buttondown about implications of out-of-order commands.
    * @param mouseButton enum: LEFT = 0, MIDDLE = 1, RIGHT = 2, defaults to the left mouse button if not specified
    */
-  export function buttonUp(mouseButton: number): void {
-    Reporter.step(`Release mouse button '${mouseButton ? MouseButton.LEFT : mouseButton}'`);
-    browser.buttonUp(mouseButton);
+  export async function buttonUp(mouseButton: number): Promise<void> {
+    await Reporter.step(`Release mouse button '${mouseButton ? MouseButton.LEFT : mouseButton}'`);
+    await browser.buttonUp(mouseButton);
   }
 
   /**
    * Determine an element’s location on the page. The point (0pix, 0pix) refers to the upper-left corner of the page.
    * @param selector element with requested position offset
    */
-  export function getLocation(selector: string): Location {
-    Reporter.debug(`Get element's location '${selector}'`);
+  export async function getLocation(selector: string): Promise<Location> {
+    await Reporter.debug(`Get element's location '${selector}'`);
 
-    return $(selector).getLocation();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return (await $(selector)).getLocation();
   }
 
   /**
@@ -808,10 +829,10 @@ export namespace BrowserUtils {
    *
    * @param selector - selector of elements to count
    */
-  export function getNumberOfElements(selector: string): number {
-    Reporter.debug(`Get number of elements by selector '${selector}'`);
+  export async function getNumberOfElements(selector: string): Promise<number> {
+    await Reporter.debug(`Get number of elements by selector '${selector}'`);
 
-    return findElements(SelectorType.XPATH, selector).length;
+    return (await findElements(SelectorType.XPATH, selector)).length;
   }
 
   /**
@@ -821,10 +842,10 @@ export namespace BrowserUtils {
    * it can be single key or an array of keys
    * @param keysToSend key, array of keys or string array (chars) to send
    */
-  export function keys(keysToSend: SpecialKeys | Array<SpecialKeys> | string | Array<string>): void {
-    Reporter.debug(`Sending Keys ${keysToSend}`);
+  export async function keys(keysToSend: SpecialKeys | Array<SpecialKeys> | string | Array<string>): Promise<void> {
+    await Reporter.debug(`Sending Keys ${keysToSend}`);
 
-    browser.keys(keysToSend);
+    await browser.keys(keysToSend);
   }
 
   /**
@@ -836,24 +857,24 @@ export namespace BrowserUtils {
    * @param listOfFileNames list of files names expected in zip
    * @param expectedNumOfFiles (optional) expected number of files in zip
    */
-  export function verifyFilesInZip(
+  export async function verifyFilesInZip(
     linkToZipFile: string,
     listOfFileNames: Array<string>,
     expectedNumOfFiles?: number
-  ): void {
-    Reporter.debug('===Verify zip content===');
+  ): Promise<void> {
+    await Reporter.debug('===Verify zip content===');
 
-    const zipFileNames: Array<string> = zipToFileNames(linkToZipFile);
+    const zipFileNames: Array<string> = await zipToFileNames(linkToZipFile);
 
     if (expectedNumOfFiles !== undefined && expectedNumOfFiles !== zipFileNames.length) {
       const incorrectLengthErrorMessage: string = `Incorrect number of files. Expected '${expectedNumOfFiles}', actual '${zipFileNames.length}'`;
-      Reporter.error(incorrectLengthErrorMessage);
+      await Reporter.error(incorrectLengthErrorMessage);
       assert.fail(incorrectLengthErrorMessage);
     }
 
     if (!listOfFileNames.every((fileName: string) => zipFileNames.includes(fileName))) {
       const incorrectListErrorMessage: string = `Zip content not as expected. Expected [${listOfFileNames.toString()}], actual [${zipFileNames.toString()}]`;
-      Reporter.error(incorrectListErrorMessage);
+      await Reporter.error(incorrectListErrorMessage);
       assert.fail(incorrectListErrorMessage);
     }
   }
@@ -865,16 +886,21 @@ export namespace BrowserUtils {
    * @param selector element selector
    * @param target destination element selector or object with x and y properties
    */
-  export function dragAndDrop(selector: string, target: string | DragAndDropCoordinate): void {
-    Reporter.debug(`Drag and drop element '${selector}' to ${inspect(target)}.`);
+  export async function dragAndDrop(selector: string, target: string | DragAndDropCoordinate): Promise<void> {
+    await Reporter.debug(`Drag and drop element '${selector}' to ${inspect(target)}.`);
     const isTargetSelector: boolean = typeof target === 'string';
 
-    waitForDisplayed(selector);
+    await waitForDisplayed(selector);
     if (isTargetSelector) {
-      waitForExist(target as string);
+      await waitForExist(target as string);
     }
-    tryBlock(
-      () => $(selector).dragAndDrop(isTargetSelector ? $(target as string) : (target as DragAndDropCoordinate)),
+    await tryBlock(
+      async () =>
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        await (await $(selector)).dragAndDrop(
+          isTargetSelector ? await $(target as string) : (target as DragAndDropCoordinate)
+        ),
       `Failed to drag and drop ${selector} to '${inspect(target)}'`
     );
   }
@@ -884,16 +910,16 @@ export namespace BrowserUtils {
    * Parse the response body with zip
    * and return an array with file names from the zip file
    */
-  function zipToFileNames(linkToZipFile: string): Array<string> {
-    const zipBuffer: Buffer = <Buffer>browser.call(async () => {
-      return await axios
+  async function zipToFileNames(linkToZipFile: string): Promise<Array<string>> {
+    const zipBuffer: Buffer = <Buffer>await browser.call(async () => {
+      return axios
         .get(linkToZipFile, { responseType: 'arraybuffer' })
         .then((response: AxiosResponse) => {
           return response.data;
         })
-        .catch(() => {
+        .catch(async () => {
           const errorMessage: string = `Failed to get zip file from '${linkToZipFile}'`;
-          Reporter.error(errorMessage);
+          await Reporter.error(errorMessage);
           throw new Error(errorMessage);
         });
     });
@@ -920,9 +946,9 @@ export namespace BrowserUtils {
    */
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function tryBlock(action: () => any, errorMessage: string): any {
+  async function tryBlock(action: () => Promise<any>, errorMessage: string): Promise<any> {
     try {
-      return action();
+      return await action();
     } catch (e) {
       handleError(errorMessage, e);
     }
@@ -935,10 +961,11 @@ export namespace BrowserUtils {
    * @param selector - selector of the element to validate
    * @param options - WaitForOptions that can be overridden
    */
-  export function waitForClickable(selector: string, options?: WaitForOptions): void {
-    Reporter.debug(`Wait for the element '${selector}' to be clickable`);
-    tryBlock(
-      () => $(selector).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
+  export async function waitForClickable(selector: string, options?: WaitForOptions): Promise<void> {
+    await Reporter.debug(`Wait for the element '${selector}' to be clickable`);
+    await tryBlock(
+      async () =>
+        await (await $(selector)).waitForClickable(options === undefined ? { timeout: DEFAULT_TIME_OUT } : options),
       `Timeout waiting for element '${selector}' to be clickable`
     );
   }
@@ -969,30 +996,33 @@ export namespace BrowserUtils {
    * @param selector selector for an element
    * @param options https://github.com/wswebcreation/wdio-image-comparison-service/blob/main/docs/OPTIONS.md#plugin-options
    */
-  export function compareWithSnapshot(
+  export async function compareWithSnapshot(
     filename: string,
     selector: string,
     options?: WdioCheckElementMethodOptions
-  ): void {
-    this.waitForDisplayed(selector);
-    const compareResult: Result = browser.checkElement($(selector), filename, options);
+  ): Promise<void> {
+    await waitForDisplayed(selector);
+    const compareResult: Result = await browser.checkElement(await $(selector), filename, options);
 
     if (compareResult !== 0) {
       const { diffPath, actualPath, baselinePath }: IComparisonPath = getSnapshotsConfig();
-      allureReporter.addAttachment(
+      await allureReporter.addAttachment(
         'Base line',
         fs.readFileSync(path.join(baselinePath, filename + '.png')),
         'image/png'
       );
-      allureReporter.addAttachment(
+      await allureReporter.addAttachment(
         'Actual image',
         fs.readFileSync(path.join(actualPath, filename + '.png')),
         'image/png'
       );
-      allureReporter.addAttachment('Diff image', fs.readFileSync(path.join(diffPath, filename + '.png')), 'image/png');
+      await allureReporter.addAttachment(
+        'Diff image',
+        fs.readFileSync(path.join(diffPath, filename + '.png')),
+        'image/png'
+      );
 
       throw new Error(`Found ${compareResult}% difference. See attached images`);
     }
-    return;
   }
 }

@@ -1,4 +1,6 @@
-import { expect } from 'chai';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+chai.use(chaiAsPromised);
 import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
@@ -11,13 +13,13 @@ const NOT_EXISTING_ELEMENT_SELECTOR: string = `${PARENT_SELECTOR}//*[@id='not-ex
  */
 
 describeCommon('waitForExist', () => {
-  it('existing element', () => {
-    Reporter.step('Wait for exist of existing element');
-    BrowserUtils.waitForExist(EXISTING_ELEMENT_SELECTOR);
+  it('existing element', async () => {
+    await Reporter.step('Wait for exist of existing element');
+    await BrowserUtils.waitForExist(EXISTING_ELEMENT_SELECTOR);
   });
 
-  it('not existing element', () => {
-    Reporter.step('Wait for exist of not existing element');
-    expect(() => BrowserUtils.waitForExist(NOT_EXISTING_ELEMENT_SELECTOR)).to.throw(Error);
+  it('not existing element', async () => {
+    await Reporter.step('Wait for exist of not existing element');
+    await chai.expect(BrowserUtils.waitForExist(NOT_EXISTING_ELEMENT_SELECTOR)).to.rejectedWith(Error);
   });
 });

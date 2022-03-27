@@ -10,21 +10,21 @@ enum LEVEL {
   EMPTY = '',
 }
 export namespace ReportPortal {
-  export function step(message: string): void {
-    sendLog(LEVEL.INFO, message);
+  export async function step(message: string): Promise<void> {
+    await sendLog(LEVEL.INFO, message);
   }
 
-  export function debug(message: string): void {
-    sendLog(LEVEL.DEBUG, message);
+  export async function debug(message: string): Promise<void> {
+    await sendLog(LEVEL.DEBUG, message);
   }
-  export function warning(message: string): void {
-    sendLog(LEVEL.WARN, message);
+  export async function warning(message: string): Promise<void> {
+    await sendLog(LEVEL.WARN, message);
   }
-  export function error(message: string): void {
-    sendLog(LEVEL.ERROR, message);
+  export async function error(message: string): Promise<void> {
+    await sendLog(LEVEL.ERROR, message);
   }
 
-  export function finalizeTest(
+  export async function finalizeTest(
     isFailed: boolean,
     // eslint-disable-next-line
     test: any,
@@ -32,9 +32,9 @@ export namespace ReportPortal {
     browserLogs: Array<object>,
     pageSource: string,
     networkActivity: Array<object>
-  ): void {
+  ): Promise<void> {
     if (isFailed) {
-      ReportPortalReporter.sendFileToTest(
+      await ReportPortalReporter.sendFileToTest(
         test,
         LEVEL.ERROR,
         'screenshot',
@@ -43,7 +43,7 @@ export namespace ReportPortal {
         'Screenshot'
       );
 
-      ReportPortalReporter.sendFileToTest(
+      await ReportPortalReporter.sendFileToTest(
         test,
         LEVEL.ERROR,
         'browser logs',
@@ -52,7 +52,7 @@ export namespace ReportPortal {
         'Browser console logs'
       );
 
-      ReportPortalReporter.sendFileToTest(
+      await ReportPortalReporter.sendFileToTest(
         test,
         LEVEL.ERROR,
         'Page source',
@@ -61,7 +61,7 @@ export namespace ReportPortal {
         'HTML page source'
       );
 
-      ReportPortalReporter.sendFileToTest(
+      await ReportPortalReporter.sendFileToTest(
         test,
         LEVEL.ERROR,
         'Network Logs',
@@ -72,9 +72,9 @@ export namespace ReportPortal {
     }
   }
 
-  function sendLog(level: LEVEL, message: string): void {
+  async function sendLog(level: LEVEL, message: string): Promise<void> {
     //pause for 2 ms to insure log order
-    browser.pause(1);
-    ReportPortalReporter.sendLog(level, ` [${level}] - ${message}`);
+    await browser.pause(1);
+    await ReportPortalReporter.sendLog(level, ` [${level}] - ${message}`);
   }
 }

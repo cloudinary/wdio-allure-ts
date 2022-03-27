@@ -1,4 +1,6 @@
-import { expect } from 'chai';
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+chai.use(chaiAsPromised);
 import { BrowserUtils, Reporter } from '../..';
 import { describeCommon } from '../TestHelper';
 
@@ -6,38 +8,35 @@ import { describeCommon } from '../TestHelper';
  * doubleClick
  */
 describeCommon('doubleClick', () => {
-  it('successful double click', () => {
-    Reporter.step('Double click on button');
-    expect(() => BrowserUtils.doubleClick("//button[@id='doubleClickToEnable']")).to.not.throw(Error);
+  it('successful double click', async () => {
+    await Reporter.step('Double click on button');
+    await BrowserUtils.doubleClick("//button[@id='doubleClickToEnable']");
 
-    Reporter.step('Validate double click worked');
-    BrowserUtils.waitForEnabled("//button[@id='doubleClickWillBeEnabledButton']");
+    await Reporter.step('Validate double click worked');
+    await BrowserUtils.waitForEnabled("//button[@id='doubleClickWillBeEnabledButton']");
   });
 
-  it('double click not existing element', () => {
+  it('double click not existing element', async () => {
     const notExistingElementSelector: string = '//notARealSelector';
-    Reporter.step('Double click not existing element');
-    expect(() => BrowserUtils.doubleClick(notExistingElementSelector))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(` element ("${notExistingElementSelector}") still not displayed`);
+    await Reporter.step('Double click not existing element');
+    await chai
+      .expect(BrowserUtils.doubleClick(notExistingElementSelector))
+      .to.rejectedWith(Error, ` element ("${notExistingElementSelector}") still not displayed`);
   });
 
-  it('double click hidden element', () => {
+  it('double click hidden element', async () => {
     const hiddenElementSelector: string = "//button[@id='doubleClickHidden']";
-    Reporter.step('Double click hidden element');
-    expect(() => BrowserUtils.doubleClick(hiddenElementSelector))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Element not visible '${hiddenElementSelector}'`);
+    await Reporter.step('Double click hidden element');
+    await chai
+      .expect(BrowserUtils.doubleClick(hiddenElementSelector))
+      .to.rejectedWith(Error, `Element not visible '${hiddenElementSelector}'`);
   });
 
-  it('double click disabled element', () => {
+  it('double click disabled element', async () => {
     const disableElementSelector: string = "//button[@id='doubleClickDisabledButton']";
-    Reporter.step('Double click disabled element');
-    expect(() => BrowserUtils.doubleClick(disableElementSelector))
-      .to.throw(Error)
-      .with.property('message')
-      .contains(`Element not enabled '${disableElementSelector}'`);
+    await Reporter.step('Double click disabled element');
+    await chai
+      .expect(BrowserUtils.doubleClick(disableElementSelector))
+      .to.rejectedWith(Error, `Element not enabled '${disableElementSelector}'`);
   });
 });

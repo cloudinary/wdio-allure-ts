@@ -6,19 +6,19 @@ let size: { width?: number; height?: number } = {};
  * wdio-allure-ts Change window size and get window size
  */
 describe('setWindowSize', () => {
-  it('change window size', () => {
+  it('change window size', async () => {
     const width: number = 800;
     const height: number = 600;
-    Reporter.step('set window size');
-    BrowserUtils.setWindowSize(width, height);
+    await Reporter.step('set window size');
+    await BrowserUtils.setWindowSize(width, height);
 
-    Reporter.step('get window size');
-    size = BrowserUtils.getWindowSize();
+    await Reporter.step('get window size');
+    size = await BrowserUtils.getWindowSize();
 
-    Reporter.step('validate width');
+    await Reporter.step('validate width');
     assert.equal(size.width, width, 'window width');
 
-    Reporter.step('validate height');
+    await Reporter.step('validate height');
     assert.equal(size.height, height, 'window height');
   });
 });

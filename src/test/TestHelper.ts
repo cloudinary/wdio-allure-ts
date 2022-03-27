@@ -1,4 +1,5 @@
 import { BrowserUtils, Reporter } from '..';
+import { assert } from 'chai';
 
 /**
  * Holds common methods for tests
@@ -15,11 +16,19 @@ export function describeCommon(name: string, body: () => any): void {
     /**
      * Navigate to sampleApp and wait for it to load
      */
-    beforeEach(() => {
-      Reporter.step('Navigate to sample app');
-      BrowserUtils.url(sampleAppUrl);
-      Reporter.step('Wait for sample app to load');
-      BrowserUtils.waitForDisplayed("//*[@id='top']");
+    beforeEach(async () => {
+      try {
+        await Reporter.step('Navigate to sample app');
+        await BrowserUtils.url(sampleAppUrl);
+        await Reporter.step('Wait for sample app to load');
+        await BrowserUtils.waitForDisplayed("//*[@id='top']");
+        await Reporter.closeStep(false);
+      } catch (e) {
+        const errorStr: string = e.toString();
+        await Reporter.error(errorStr);
+        await Reporter.closeStep(true);
+        assert.fail(errorStr);
+      }
     });
 
     /**

@@ -39,30 +39,28 @@ export namespace AllureReporter {
    * Stop network audit by sending disable options to cdp method
    * ts-ignore used since it missing types support
    */
-  export function stopNetworkAudit(): void {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    browser.cdp('Network', 'disable');
+  export async function stopNetworkAudit(): Promise<void> {
+    await browser.cdp('Network', 'disable');
   }
 
   /**
    * Close step in report
    */
-  export function closeStep(
+  export async function closeStep(
     isFailed: boolean,
     browserLogs: Array<object>,
     pageSource: string,
     networkActivity: Array<object>
-  ): void {
+  ): Promise<void> {
     if (isFailed) {
-      allureReporter.addAttachment('Browser console logs', browserLogs, 'application/json');
+      await allureReporter.addAttachment('Browser console logs', browserLogs, 'application/json');
 
-      allureReporter.addAttachment('Page HTML source', pageSource, 'html');
+      await allureReporter.addAttachment('Page HTML source', pageSource, 'html');
 
-      allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
+      await allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
     }
     if (!isStepClosed) {
-      sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
+      await sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
       isStepClosed = true;
     }
   }
@@ -72,15 +70,15 @@ export namespace AllureReporter {
    * console log with green color text
    * @param msg text to log
    */
-  export function step(msg: string): void {
-    closeStep(false, undefined, undefined, undefined);
+  export async function step(msg: string): Promise<void> {
+    await closeStep(false, undefined, undefined, undefined);
 
     currentStepTitle = `[STEP] - ${msg}`;
     isStepClosed = false;
 
     customCommand = new CustomCommand(currentStepTitle, 'more info', '');
 
-    customCommand.appendToBody(prettyMessage('[STEP]', msg));
+    await customCommand.appendToBody(prettyMessage('[STEP]', msg));
   }
 
   /**
@@ -88,8 +86,8 @@ export namespace AllureReporter {
    * console log with grey color text
    * @param msg text to log
    */
-  export function debug(msg: string): void {
-    addLogEntry('[DEBUG]', msg);
+  export async function debug(msg: string): Promise<void> {
+    await addLogEntry('[DEBUG]', msg);
   }
 
   /**
@@ -97,8 +95,8 @@ export namespace AllureReporter {
    * console log with yellow color text
    * @param msg text to log
    */
-  export function warning(msg: string): void {
-    addLogEntry('[WARNING]', msg);
+  export async function warning(msg: string): Promise<void> {
+    await addLogEntry('[WARNING]', msg);
   }
 
   /**
@@ -106,8 +104,8 @@ export namespace AllureReporter {
    * console log with red color text
    * @param msg text to log
    */
-  export function error(msg: string): void {
-    addLogEntry('[ERROR]', msg);
+  export async function error(msg: string): Promise<void> {
+    await addLogEntry('[ERROR]', msg);
   }
 
   /**
@@ -115,8 +113,8 @@ export namespace AllureReporter {
    * @param description of the test
    * @param descriptionType type (String, optional) – description type, text by default. Values ['text', 'html','markdown']
    */
-  export function addDescription(description: string, descriptionType?: string): void {
-    allureReporter.addDescription(description, descriptionType);
+  export async function addDescription(description: string, descriptionType?: string): Promise<void> {
+    await allureReporter.addDescription(description, descriptionType);
   }
 
   /**
@@ -124,12 +122,12 @@ export namespace AllureReporter {
    * @param logType logType
    * @param msg message
    */
-  export function addLogEntry(logType: string, msg: string): void {
+  export async function addLogEntry(logType: string, msg: string): Promise<void> {
     if (!isStepClosed) {
       customCommand.appendToBody(prettyMessage(logType, msg));
     } else {
       customCommand = new CustomCommand(`${logType} - ${msg}`, 'more info', prettyMessage(logType, msg));
-      sendCustomCommand(customCommand);
+      await sendCustomCommand(customCommand);
     }
   }
 
@@ -138,7 +136,7 @@ export namespace AllureReporter {
    * @param command command to add
    * @param stepStatus status of steps
    */
-  function sendCustomCommand(command: CustomCommand, stepStatus?: Status): void {
+  async function sendCustomCommand(command: CustomCommand, stepStatus?: Status): Promise<void> {
     let status: Status = 'passed';
     if (stepStatus !== undefined) {
       status = stepStatus;
@@ -147,7 +145,7 @@ export namespace AllureReporter {
       content: command.body,
       name: command.bodyLabel,
     };
-    allureReporter.addStep(command.title, stepContent, status);
+    await allureReporter.addStep(command.title, stepContent, status);
   }
 
   /**
@@ -186,7 +184,7 @@ export namespace AllureReporter {
    * Adding screenshot to report
    * @param name of the screenshot, that will appear in the report
    */
-  export function addScreenshot(name: string = 'screenshot'): void {
-    allureReporter.addAttachment(name, browser.saveScreenshot(path.join(__dirname, `${name}.png`)), 'image/png');
+  export async function addScreenshot(name: string = 'screenshot'): Promise<void> {
+    await allureReporter.addAttachment(name, browser.saveScreenshot(path.join(__dirname, `${name}.png`)), 'image/png');
   }
 }
