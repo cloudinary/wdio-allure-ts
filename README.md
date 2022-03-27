@@ -264,7 +264,7 @@ BREAKING CHANGE: bumping new WDIO version to 7
 or Commit message with ! to draw attention to breaking change
 `feat!: bump WDIO version`
 
-Note: A BREAKING CHANGE can be part of commits of any type.
+Note: A BREAKING CHANGE can be part of commits of any type
 
 ## Ready to Try?
 
