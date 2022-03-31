@@ -10,12 +10,10 @@ export namespace TestRailUtil {
    * Update an array of tests automation field on testrail to automated
    * @param testIDs array of tests Ids
    */
-  export function setTestsAsAutomatedInTestrail(testIDs: Set<string>): void {
+  export async function setTestsAsAutomatedInTestrail(testIDs: Set<string>): Promise<void> {
     console.log(`About to update ${Array.from(testIDs.values())} on testrail`);
     for (const testId of testIDs) {
-      changeTestField(testId, TestFields.Automation, TestFields.Automation.fieldOptions.automated).then((res) => {
-        console.log(`Finished update test C${testId} with status code: ${res.status}`);
-      });
+      await changeTestField(testId, TestFields.Automation, TestFields.Automation.fieldOptions.automated);
     }
   }
 
@@ -23,10 +21,10 @@ export namespace TestRailUtil {
    * Update an array of tests automation field on testrail from specific folder
    * @param folderPath path of tests files to update
    */
-  export function setTestsAsAutomatedInTestrailFromPath(folderPath?: string): void {
+  export async function setTestsAsAutomatedInTestrailFromPath(folderPath?: string): Promise<void> {
     console.log(`Setting tests as 'Automated' from path ${folderPath}`);
     const testIDs = TestFilesUtils.getTestIdsFromFolder(folderPath);
-    setTestsAsAutomatedInTestrail(testIDs);
+    await setTestsAsAutomatedInTestrail(testIDs);
   }
 
   /**

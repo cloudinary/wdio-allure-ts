@@ -1,5 +1,4 @@
 import path from 'path';
-import { Reporter } from '../index';
 
 /**
  * General utils useful for test
@@ -61,12 +60,9 @@ export namespace TestUtils {
     if (dataFilePath === undefined) {
       throw new Error('Path to data file is incorrect');
     }
-    Reporter.debug(`Getting data from file ${dataFilePath}`);
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const data: T = require(dataFilePath);
-    Reporter.debug(
-      `Received a data ${JSON.stringify(data)} from file by provided tag ${JSON.stringify(data[dataTag])}`
-    );
+
     return data && data[dataTag];
   }
 }
