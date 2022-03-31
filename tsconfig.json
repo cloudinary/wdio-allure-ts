@@ -3,15 +3,21 @@
     "types": ["node", "webdriverio/async", "mocha", "@wdio/mocha-framework", "@wdio/devtools-service"],
     "target": "es6",
     "module": "commonjs",
-    "declaration": true,
-    "outDir": "lib/",
-    "rootDir": "src/",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "outDir": "lib/",
+    "rootDir": "src/",
+    "declaration": true,
     "esModuleInterop": true,
-    "skipLibCheck": true //todo temporary solution since there is type missmatch in the reportportal package
+    "skipLibCheck": true
   },
-  "exclude": ["node_modules", "lib", "src/test"],
+
   "compileOnSave": false
 }
