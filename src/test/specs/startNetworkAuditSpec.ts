@@ -10,11 +10,11 @@ interface NetworkLog {
  * DevTools - Start network audit
  */
 describeCommon('startNetworkAudit', () => {
-  it('successfully start and read network audit', () => {
+  it('successfully start and read network audit', async () => {
     const expectedLog: NetworkLog = { url: 'http://placekitten.com/480/480', status: 200 };
     const networkLogs: Array<NetworkLog> = [];
 
-    Reporter.step('Start network log');
+    await Reporter.step('Start network log');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     browser.on('Network.responseReceived', (params: any) => {
       networkLogs.push({
@@ -23,11 +23,11 @@ describeCommon('startNetworkAudit', () => {
       });
     });
 
-    Reporter.step('navigate to sample app');
-    BrowserUtils.url(sampleAppUrl);
+    await Reporter.step('navigate to sample app');
+    await BrowserUtils.url(sampleAppUrl);
 
-    Reporter.step('Wait for new logs');
-    BrowserUtils.waitUntil(
+    await Reporter.step('Wait for new logs');
+    await BrowserUtils.waitUntil(
       () => {
         return networkLogs.some((log) => log.url === expectedLog.url && Number(log.status) === expectedLog.status);
       },

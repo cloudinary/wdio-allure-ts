@@ -12,17 +12,17 @@ interface ITestData {
 }
 
 describeCommon('GetTestDataFileSpec', () => {
-  it('Check get test data from env file', () => {
+  it('Check get test data from env file', async () => {
     process.env.TEST_DATA_TAG = 'test-user';
-    Reporter.step('getData reads from file');
-    const data: ITestData = TestUtils.getData();
+    await Reporter.step('getData reads from file');
+    const data: ITestData = await TestUtils.getData();
     assert.equal(data.fileName, 'example');
   });
 
-  it('Check incorrect user', () => {
+  it('Check incorrect user', async () => {
     process.env.TEST_DATA_TAG = 'incorrect-user';
-    Reporter.step('undefined returned in case of incorrect data tag');
-    const data: ITestData = TestUtils.getData();
+    await Reporter.step('undefined returned in case of incorrect data tag');
+    const data: ITestData = await TestUtils.getData();
     assert.equal(data, undefined);
   });
 });

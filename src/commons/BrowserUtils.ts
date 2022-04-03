@@ -181,9 +181,9 @@ export namespace BrowserUtils {
    * to insure the navigation actually happened
    * @param url url for navigation
    */
-  export async function url(url: string): Promise<void> {
-    await Reporter.debug(`Navigate to '${url}'`);
-    await tryBlock(async () => await browser.url(url), `Failed to navigate to '${url}'`);
+  export async function url(urlToNavigate: string): Promise<void> {
+    await Reporter.debug(`Navigate to '${urlToNavigate}'`);
+    await tryBlock(async () => await browser.url(urlToNavigate), `Failed to navigate to '${urlToNavigate}'`);
   }
 
   /**
@@ -211,8 +211,8 @@ export namespace BrowserUtils {
    * Mainly useful for navigation validation
    * @param url expected current url
    */
-  export async function waitForUrl(url: string): Promise<void> {
-    const expectedUrl: string = normalizeUrl(url);
+  export async function waitForUrl(urlToNavigate: string): Promise<void> {
+    const expectedUrl: string = normalizeUrl(urlToNavigate);
     await Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
     await waitUntil(
       async () => {
@@ -231,14 +231,14 @@ export namespace BrowserUtils {
    * WDIO return url with backslash at the end of url,
    * while user mainly passes without the backslash
    * Removing the last backslash will solve error on url comparison
-   * @param url url to remove backslash from
+   * @param urlToNormalize url to remove backslash from
    */
-  export function normalizeUrl(url: string): string {
-    if (url === null || url === undefined) {
-      throw new Error(`Illegal URL: '${url}'`);
+  export function normalizeUrl(urlToNormalize: string): string {
+    if (urlToNormalize === null || urlToNormalize === undefined) {
+      throw new Error(`Illegal URL: '${urlToNormalize}'`);
     }
 
-    return url.replace(/\/+$/, '');
+    return urlToNormalize.replace(/\/+$/, '');
   }
 
   /**
