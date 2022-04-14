@@ -23,7 +23,7 @@ export namespace GitUtils {
   }
 
   /**
-   * Return list of all tests ids that was last merged to master.
+   * Return list of all tests ids that was last merged into the current branch.
    */
   export function getMergedTestsIdsSinceLastMerge(): Set<string> {
     console.log(`Getting tests id's since last merge`);
