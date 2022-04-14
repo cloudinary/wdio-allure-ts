@@ -21,6 +21,21 @@ export namespace GitUtils {
     const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(new Set<string>(filesSinceDay));
     return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
   }
+
+  /**
+   * Return list of all tests ids that was last merged into the current branch.
+   */
+  export function getMergedTestsIdsSinceLastMerge(): Set<string> {
+    console.log(`Getting tests id's since last merge`);
+    const params: string = 'diff --name-only $(git rev-parse --abbrev-ref HEAD)^ $(git rev-parse --abbrev-ref HEAD)';
+    const scriptRes = executeGitScript(params);
+    if (!scriptRes) {
+      return null;
+    }
+    const filesSinceLastMerge = scriptRes.split(/[\r\n]+/);
+    const mergedTestsFiles: Set<string> = TestFilesUtils.getTestsFiles(new Set<string>(filesSinceLastMerge));
+    return TestFilesUtils.extractTestIdFromFiles(mergedTestsFiles);
+  }
 }
 
 /**

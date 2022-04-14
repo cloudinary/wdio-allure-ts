@@ -83,16 +83,11 @@ function getListOfFilesRecursively(folderPath: string, fileList?: Set<string>): 
 
 /**
  * Check if file is a test file.
- * @return {boolean} true if file name start with C{NUMBER} and ends with Test.ts.
+ * @return {boolean} true if file name start with C{NUMBER} and ends with (Test.ts || spec.e2e.js || spec.e2e.ts)
  */
 function isTestFile(fileName) {
   console.log(`Checking if ${fileName} is a test file`);
-  const shouldStartWithRegex = /^C\d+/g;
-  const shouldEndWith = 'Test.ts';
-  const shouldEndWithMonoRepo = '.spec.e2e.js';
+  const shouldStartWithRegex = /^C\d+.*(Test\.ts|\.spec\.e2e\.([tj])s)$/g;
 
-  return (
-    (fileName.endsWith(shouldEndWith) || fileName.endsWith(shouldEndWithMonoRepo)) &&
-    new RegExp(shouldStartWithRegex).test(fileName)
-  );
+  return new RegExp(shouldStartWithRegex).test(fileName);
 }
