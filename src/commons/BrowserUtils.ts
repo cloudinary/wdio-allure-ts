@@ -32,6 +32,34 @@ export interface IComparisonPath {
   diffPath: string;
 }
 
+const sanitizeString = (str = '') =>
+  str
+    .trim()
+    .replace(/[^a-z0-9]/gi, '_')
+    .toLowerCase();
+
+//this is working because we are setting those values in a beforeTest hook in wdio config
+const getFilename = (filenameSuffix) => {
+  const testcaseNameSanitized = sanitizeString(global?.currentTest?.title);
+  const filenameSanitized = sanitizeString(path.basename(global?.currentTest?.file || ''));
+
+  if (!testcaseNameSanitized || !filenameSanitized) {
+    console.warn(
+      'cannot read current test title or filename, make sure you set the "currentTest" as a global variable'
+    );
+
+    return filenameSuffix || '';
+  }
+
+  let filename = `${filenameSanitized}-${testcaseNameSanitized}`;
+
+  if (filenameSuffix) {
+    filename += '-' + filenameSuffix;
+  }
+
+  return filename;
+};
+
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
@@ -992,15 +1020,20 @@ export namespace BrowserUtils {
 
   /**
    * Comparing image by providing selector of element
-   * @param filename filename of image
+   * @param filenameSuffix suffix for filename
    * @param selector selector for an element
    * @param options https://github.com/wswebcreation/wdio-image-comparison-service/blob/main/docs/OPTIONS.md#plugin-options
    */
   export async function compareWithSnapshot(
-    filename: string,
+    filenameSuffix: string,
     selector: string,
     options?: WdioCheckElementMethodOptions
   ): Promise<void> {
+    const filename = getFilename(filenameSuffix);
+
+    if (!filename) {
+      throw new Error('filename cannot be empty');
+    }
     await waitForDisplayed(selector);
     const compareResult: Result = await browser.checkElement(await $(selector), filename, options);
 
