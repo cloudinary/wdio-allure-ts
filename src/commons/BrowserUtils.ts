@@ -17,7 +17,7 @@ import {
 } from 'webdriverio';
 import { Location } from 'webdriverio/build/commands/element/getLocation';
 import { Size } from 'webdriverio/build/commands/element/getSize';
-import { SpecialKeys } from '..';
+import { SpecialKeys, TestUtils } from '..';
 import { MouseButton } from '../enums/MouseButton';
 import { SelectorType } from '../enums/SelectorType';
 import { Reporter } from './Reporter';
@@ -32,38 +32,12 @@ export interface IComparisonPath {
   diffPath: string;
 }
 
-const sanitizeString = (str = '') =>
-  str
-    .trim()
-    .replace(/[^a-z0-9]/gi, '_')
-    .toLowerCase();
-
-//this is working because we are setting those values in a beforeTest hook in wdio config
-const getFilename = (filenameSuffix) => {
-  const testcaseNameSanitized = sanitizeString(global?.currentTest?.title);
-  const filenameSanitized = sanitizeString(path.basename(global?.currentTest?.file || ''));
-
-  if (!testcaseNameSanitized || !filenameSanitized) {
-    console.warn(
-      'cannot read current test title or filename, make sure you set the "currentTest" as a global variable'
-    );
-
-    return filenameSuffix || '';
-  }
-
-  let filename = `${filenameSanitized}-${testcaseNameSanitized}`;
-
-  if (filenameSuffix) {
-    filename += '-' + filenameSuffix;
-  }
-
-  return filename;
-};
-
 /**
  * BrowserUtils wraps wdio browser functionality for cleaner test
  */
 export namespace BrowserUtils {
+  import getFilename = TestUtils.getFilename;
+
   /**
    * Check element's visualisation
    * For more information see https://github.com/wswebcreation/wdio-image-comparison-service

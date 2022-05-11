@@ -69,4 +69,40 @@ export namespace TestUtils {
     );
     return data && data[dataTag];
   }
+
+  const sanitizeString = (str = '') =>
+    str
+      .trim()
+      .replace(/[^a-z0-9]/gi, '_')
+      .toLowerCase();
+
+  /**
+   * Get file name from
+   * @param filenameSuffix
+   * example of wfio.config
+   * beforeTest: function (test, context) {
+   *     global.currentTest = test;
+   *     global.currentContext = context;
+   *   },
+   */
+  export const getFilename = (filenameSuffix: string): string => {
+    const testcaseNameSanitized = sanitizeString(global?.currentTest?.title);
+    const filenameSanitized = sanitizeString(path.basename(global?.currentTest?.file || ''));
+
+    if (!testcaseNameSanitized || !filenameSanitized) {
+      console.warn(
+        'cannot read current test title or filename, make sure you set the "currentTest" as a global variable'
+      );
+
+      return filenameSuffix || '';
+    }
+
+    let filename = `${filenameSanitized}-${testcaseNameSanitized}`;
+
+    if (filenameSuffix) {
+      filename += '-' + filenameSuffix;
+    }
+
+    return filename;
+  };
 }
