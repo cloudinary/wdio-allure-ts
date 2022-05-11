@@ -86,8 +86,8 @@ export namespace TestUtils {
    *   },
    */
   export const getFilename = (filenameSuffix: string): string => {
-    const testcaseNameSanitized = sanitizeString(global?.currentTest?.title);
-    const filenameSanitized = sanitizeString(path.basename(global?.currentTest?.file || ''));
+    const testcaseNameSanitized: string = sanitizeString(global?.currentTest?.title);
+    const filenameSanitized: string = sanitizeString(path.basename(global?.currentTest?.file || ''));
 
     if (!testcaseNameSanitized || !filenameSanitized) {
       console.warn(
@@ -97,7 +97,7 @@ export namespace TestUtils {
       return filenameSuffix || '';
     }
 
-    let filename = `${filenameSanitized}-${testcaseNameSanitized}`;
+    let filename: string = `${filenameSanitized}-${testcaseNameSanitized}`;
 
     if (filenameSuffix) {
       filename += '-' + filenameSuffix;
