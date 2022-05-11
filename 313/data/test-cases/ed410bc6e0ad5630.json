@@ -1,0 +1,167 @@
+{
+  "uid" : "ed410bc6e0ad5630",
+  "name" : "add value to existing input",
+  "fullName" : "addValue.add value to existing input",
+  "historyId" : "d7c06387dc57b5440fbf7a05e77f077d",
+  "time" : {
+    "start" : 1652273066978,
+    "stop" : 1652273069071,
+    "duration" : 2093
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for addValue",
+      "time" : {
+        "start" : 1652273066982,
+        "stop" : 1652273068176,
+        "duration" : 1194
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273067918,
+          "stop" : 1652273067918,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1a983ffae5708b8f",
+          "name" : "more info",
+          "source" : "1a983ffae5708b8f.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273068175,
+          "stop" : 1652273068175,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "9c9b156630385f48",
+          "name" : "more info",
+          "source" : "9c9b156630385f48.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Add value to not empty input",
+      "time" : {
+        "start" : 1652273068977,
+        "stop" : 1652273068978,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8e81636380fc6a01",
+        "name" : "more info",
+        "source" : "8e81636380fc6a01.txt",
+        "type" : "text/plain",
+        "size" : 390
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate value is Cloudinary0xDJ9",
+      "time" : {
+        "start" : 1652273069071,
+        "stop" : 1652273069071,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "db48da8f362817e4",
+        "name" : "more info",
+        "source" : "db48da8f362817e4.txt",
+        "type" : "text/plain",
+        "size" : 62
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-1"
+  }, {
+    "name" : "suite",
+    "value" : "addValue"
+  }, {
+    "name" : "testClass",
+    "value" : "addValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "add value to existing input"
+  }, {
+    "name" : "package",
+    "value" : "addValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ed410bc6e0ad5630.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}

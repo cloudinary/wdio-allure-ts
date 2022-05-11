@@ -1,0 +1,167 @@
+{
+  "uid" : "c3587d5b0ed3245a",
+  "name" : "successful execution",
+  "fullName" : "execute.successful execution",
+  "historyId" : "a4fd5f83450d4b7e6319667e31250f3d",
+  "time" : {
+    "start" : 1652273063149,
+    "stop" : 1652273066368,
+    "duration" : 3219
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for execute",
+      "time" : {
+        "start" : 1652273063150,
+        "stop" : 1652273065893,
+        "duration" : 2743
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273065476,
+          "stop" : 1652273065478,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7c84a4bb5d06851e",
+          "name" : "more info",
+          "source" : "7c84a4bb5d06851e.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273065893,
+          "stop" : 1652273065893,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7d7252f86dc0d52b",
+          "name" : "more info",
+          "source" : "7d7252f86dc0d52b.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Execute a script",
+      "time" : {
+        "start" : 1652273065975,
+        "stop" : 1652273065976,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e2793c03fad4f722",
+        "name" : "more info",
+        "source" : "e2793c03fad4f722.txt",
+        "type" : "text/plain",
+        "size" : 152
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate script execution",
+      "time" : {
+        "start" : 1652273066367,
+        "stop" : 1652273066367,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "f973f63ff5d503f0",
+        "name" : "more info",
+        "source" : "f973f63ff5d503f0.txt",
+        "type" : "text/plain",
+        "size" : 54
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-9"
+  }, {
+    "name" : "suite",
+    "value" : "execute"
+  }, {
+    "name" : "testClass",
+    "value" : "execute"
+  }, {
+    "name" : "testMethod",
+    "value" : "successful execution"
+  }, {
+    "name" : "package",
+    "value" : "execute"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c3587d5b0ed3245a.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}

@@ -1,0 +1,188 @@
+{
+  "uid" : "f50b233b487c2d4b",
+  "name" : "Switch from iframe to Iframe parent",
+  "fullName" : "SwitchToParentIframe.Switch from iframe to Iframe parent",
+  "historyId" : "972fc119c56dd2488b57790002f2c048",
+  "time" : {
+    "start" : 1652273168673,
+    "stop" : 1652273170069,
+    "duration" : 1396
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for SwitchToParentIframe",
+      "time" : {
+        "start" : 1652273168673,
+        "stop" : 1652273169604,
+        "duration" : 931
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273169408,
+          "stop" : 1652273169410,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "47c39ff24bd761a",
+          "name" : "more info",
+          "source" : "47c39ff24bd761a.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273169603,
+          "stop" : 1652273169604,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "b021ce8d8e11b3d0",
+          "name" : "more info",
+          "source" : "b021ce8d8e11b3d0.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Switch to iframe1",
+      "time" : {
+        "start" : 1652273169819,
+        "stop" : 1652273169820,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "31ed085eb30ce2f4",
+        "name" : "more info",
+        "source" : "31ed085eb30ce2f4.txt",
+        "type" : "text/plain",
+        "size" : 289
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Switch to parent iframe",
+      "time" : {
+        "start" : 1652273169831,
+        "stop" : 1652273169831,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "71f219cb45645260",
+        "name" : "more info",
+        "source" : "71f219cb45645260.txt",
+        "type" : "text/plain",
+        "size" : 107
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Check parent iframe header text",
+      "time" : {
+        "start" : 1652273170068,
+        "stop" : 1652273170069,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ec8c26ffb48a2f9f",
+        "name" : "more info",
+        "source" : "ec8c26ffb48a2f9f.txt",
+        "type" : "text/plain",
+        "size" : 60
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-46"
+  }, {
+    "name" : "suite",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "testClass",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "testMethod",
+    "value" : "Switch from iframe to Iframe parent"
+  }, {
+    "name" : "package",
+    "value" : "SwitchToParentIframe"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f50b233b487c2d4b.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}

@@ -1,0 +1,167 @@
+{
+  "uid" : "40d698936d1b9e25",
+  "name" : "clear value of text area",
+  "fullName" : "clearValue.clear value of text area",
+  "historyId" : "663dca118ecc8f1a6ed2dbacd760d050",
+  "time" : {
+    "start" : 1652273066957,
+    "stop" : 1652273068617,
+    "duration" : 1660
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for clearValue",
+      "time" : {
+        "start" : 1652273066957,
+        "stop" : 1652273068197,
+        "duration" : 1240
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273067965,
+          "stop" : 1652273067965,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "833306281c8638c7",
+          "name" : "more info",
+          "source" : "833306281c8638c7.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273068197,
+          "stop" : 1652273068197,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "5d5c4c8de144cdf0",
+          "name" : "more info",
+          "source" : "5d5c4c8de144cdf0.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate text area value",
+      "time" : {
+        "start" : 1652273068503,
+        "stop" : 1652273068504,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d0754de0f1c46517",
+        "name" : "more info",
+        "source" : "d0754de0f1c46517.txt",
+        "type" : "text/plain",
+        "size" : 281
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate text area is empty",
+      "time" : {
+        "start" : 1652273068617,
+        "stop" : 1652273068617,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6838f353f74ed771",
+        "name" : "more info",
+        "source" : "6838f353f74ed771.txt",
+        "type" : "text/plain",
+        "size" : 56
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-3"
+  }, {
+    "name" : "suite",
+    "value" : "clearValue"
+  }, {
+    "name" : "testClass",
+    "value" : "clearValue"
+  }, {
+    "name" : "testMethod",
+    "value" : "clear value of text area"
+  }, {
+    "name" : "package",
+    "value" : "clearValue"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "40d698936d1b9e25.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}

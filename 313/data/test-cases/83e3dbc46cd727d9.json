@@ -1,0 +1,146 @@
+{
+  "uid" : "83e3dbc46cd727d9",
+  "name" : "null params",
+  "fullName" : "getCssProperty.null params",
+  "historyId" : "4a3c45b505ab826fbe6c89bd36cbeb18",
+  "time" : {
+    "start" : 1652273106907,
+    "stop" : 1652273107515,
+    "duration" : 608
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getCssProperty",
+      "time" : {
+        "start" : 1652273106908,
+        "stop" : 1652273107464,
+        "duration" : 556
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273107407,
+          "stop" : 1652273107408,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "af2249ddf80d558f",
+          "name" : "more info",
+          "source" : "af2249ddf80d558f.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273107463,
+          "stop" : 1652273107464,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "720f48deb4125211",
+          "name" : "more info",
+          "source" : "720f48deb4125211.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - get css property with null param throws an error",
+      "time" : {
+        "start" : 1652273107515,
+        "stop" : 1652273107515,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "4c1debfaf3892e8b",
+        "name" : "more info",
+        "source" : "4c1debfaf3892e8b.txt",
+        "type" : "text/plain",
+        "size" : 153
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-19"
+  }, {
+    "name" : "suite",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testClass",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testMethod",
+    "value" : "null params"
+  }, {
+    "name" : "package",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "83e3dbc46cd727d9.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}

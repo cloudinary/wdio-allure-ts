@@ -1,0 +1,167 @@
+{
+  "uid" : "fba73ef8d2a855ac",
+  "name" : "successful double click",
+  "fullName" : "doubleClick.successful double click",
+  "historyId" : "6a96e44f7f38cd3a8f9fd0d27fefad2c",
+  "time" : {
+    "start" : 1652273062904,
+    "stop" : 1652273067726,
+    "duration" : 4822
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for doubleClick",
+      "time" : {
+        "start" : 1652273062905,
+        "stop" : 1652273065792,
+        "duration" : 2887
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273065451,
+          "stop" : 1652273065454,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1518fd7ca740e519",
+          "name" : "more info",
+          "source" : "1518fd7ca740e519.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273065791,
+          "stop" : 1652273065791,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ca1821414e3c732b",
+          "name" : "more info",
+          "source" : "ca1821414e3c732b.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Double click on button",
+      "time" : {
+        "start" : 1652273066515,
+        "stop" : 1652273066516,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7c51e7d38ea3e676",
+        "name" : "more info",
+        "source" : "7c51e7d38ea3e676.txt",
+        "type" : "text/plain",
+        "size" : 448
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate double click worked",
+      "time" : {
+        "start" : 1652273067725,
+        "stop" : 1652273067725,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "261633bb2341130f",
+        "name" : "more info",
+        "source" : "261633bb2341130f.txt",
+        "type" : "text/plain",
+        "size" : 281
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-7"
+  }, {
+    "name" : "suite",
+    "value" : "doubleClick"
+  }, {
+    "name" : "testClass",
+    "value" : "doubleClick"
+  }, {
+    "name" : "testMethod",
+    "value" : "successful double click"
+  }, {
+    "name" : "package",
+    "value" : "doubleClick"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fba73ef8d2a855ac.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}
