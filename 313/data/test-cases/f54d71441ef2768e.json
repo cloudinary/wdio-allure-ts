@@ -1,0 +1,166 @@
+{
+  "uid" : "f54d71441ef2768e",
+  "name" : "displayed false",
+  "fullName" : "IsDisplayed.displayed false",
+  "historyId" : "7da89fb61a3f855c0a0789e3bb0cb5a4",
+  "time" : {
+    "start" : 1652273529100,
+    "stop" : 1652273529980,
+    "duration" : 880
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for IsDisplayed",
+      "time" : {
+        "start" : 1652273529100,
+        "stop" : 1652273529836,
+        "duration" : 736
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273529742,
+          "stop" : 1652273529742,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "ab12c78c335f9ee3",
+          "name" : "more info",
+          "source" : "ab12c78c335f9ee3.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273529835,
+          "stop" : 1652273529836,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "5f891fd81c52c0d0",
+          "name" : "more info",
+          "source" : "5f891fd81c52c0d0.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - isDisplayed of hidden element",
+      "time" : {
+        "start" : 1652273529979,
+        "stop" : 1652273529979,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3c59ae01d2e0d8be",
+        "name" : "more info",
+        "source" : "3c59ae01d2e0d8be.txt",
+        "type" : "text/plain",
+        "size" : 170
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-28"
+  }, {
+    "name" : "suite",
+    "value" : "IsDisplayed"
+  }, {
+    "name" : "testClass",
+    "value" : "IsDisplayed"
+  }, {
+    "name" : "testMethod",
+    "value" : "displayed false"
+  }, {
+    "name" : "package",
+    "value" : "IsDisplayed"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "1cd42cdc715b65dd",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/313//#testresult/1cd42cdc715b65dd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1652273125283,
+          "stop" : 1652273125852,
+          "duration" : 569
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "f54d71441ef2768e.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}

@@ -1,0 +1,166 @@
+{
+  "uid" : "3cb4a3fda02c0e1c",
+  "name" : "incorrect selector of an element",
+  "fullName" : "getCssProperty.incorrect selector of an element",
+  "historyId" : "dd56b7c26779e9f2776abf0414c0726d",
+  "time" : {
+    "start" : 1652273507702,
+    "stop" : 1652273511388,
+    "duration" : 3686
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for getCssProperty",
+      "time" : {
+        "start" : 1652273507702,
+        "stop" : 1652273508337,
+        "duration" : 635
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273508271,
+          "stop" : 1652273508271,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "79e88c5d84287e0a",
+          "name" : "more info",
+          "source" : "79e88c5d84287e0a.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273508336,
+          "stop" : 1652273508336,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "f8aac7a1ecf8fd78",
+          "name" : "more info",
+          "source" : "f8aac7a1ecf8fd78.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - get ccs property with incorrect selector throws an error",
+      "time" : {
+        "start" : 1652273511388,
+        "stop" : 1652273511388,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "85c03807afd168b9",
+        "name" : "more info",
+        "source" : "85c03807afd168b9.txt",
+        "type" : "text/plain",
+        "size" : 189
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-19"
+  }, {
+    "name" : "suite",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testClass",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "testMethod",
+    "value" : "incorrect selector of an element"
+  }, {
+    "name" : "package",
+    "value" : "getCssProperty"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "885cfa4eb481d13b",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/313//#testresult/885cfa4eb481d13b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1652273103366,
+          "stop" : 1652273106907,
+          "duration" : 3541
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "3cb4a3fda02c0e1c.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}

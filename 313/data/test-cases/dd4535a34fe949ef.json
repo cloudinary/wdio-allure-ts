@@ -1,0 +1,187 @@
+{
+  "uid" : "dd4535a34fe949ef",
+  "name" : "RightClick ",
+  "fullName" : "RightClickSpec.RightClick ",
+  "historyId" : "ece4e7788570aea5caef070f2bc6c51e",
+  "time" : {
+    "start" : 1652273544832,
+    "stop" : 1652273546233,
+    "duration" : 1401
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "\"before each\" hook for RightClickSpec",
+      "time" : {
+        "start" : 1652273544832,
+        "stop" : 1652273545726,
+        "duration" : 894
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "[STEP] - Navigate to sample app",
+        "time" : {
+          "start" : 1652273545566,
+          "stop" : 1652273545567,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "62e4c577ee35601c",
+          "name" : "more info",
+          "source" : "62e4c577ee35601c.txt",
+          "type" : "text/plain",
+          "size" : 117
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "[STEP] - Wait for sample app to load",
+        "time" : {
+          "start" : 1652273545725,
+          "stop" : 1652273545726,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "65e169eb585dee9",
+          "name" : "more info",
+          "source" : "65e169eb585dee9.txt",
+          "type" : "text/plain",
+          "size" : 136
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Right click on button",
+      "time" : {
+        "start" : 1652273546060,
+        "stop" : 1652273546060,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a8ec2c7f2d6abf61",
+        "name" : "more info",
+        "source" : "a8ec2c7f2d6abf61.txt",
+        "type" : "text/plain",
+        "size" : 428
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "[STEP] - Validate right click execution",
+      "time" : {
+        "start" : 1652273546232,
+        "stop" : 1652273546232,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8f33e05418e0a2a7",
+        "name" : "more info",
+        "source" : "8f33e05418e0a2a7.txt",
+        "type" : "text/plain",
+        "size" : 252
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-36"
+  }, {
+    "name" : "suite",
+    "value" : "RightClickSpec"
+  }, {
+    "name" : "testClass",
+    "value" : "RightClickSpec"
+  }, {
+    "name" : "testMethod",
+    "value" : "RightClick "
+  }, {
+    "name" : "package",
+    "value" : "RightClickSpec"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome-101.0.4951.54"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "40143168a113ebe1",
+        "reportUrl" : "https://cloudinary.github.io/wdio-allure-ts/313//#testresult/40143168a113ebe1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1652273144407,
+          "stop" : 1652273146506,
+          "duration" : 2099
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "dd4535a34fe949ef.json",
+  "parameterValues" : [ "chrome-101.0.4951.54" ]
+}
