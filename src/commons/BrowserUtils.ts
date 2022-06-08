@@ -138,6 +138,16 @@ export namespace BrowserUtils {
   }
 
   /**
+   * Will return true or false whether or not an <option> or <input> element
+   * of type checkbox or radio is currently selected.
+   * @param selector element selector
+   */
+  export async function isSelected(selector: string): Promise<boolean> {
+    await Reporter.debug(`Check if element with selector '${selector}'  is selected`);
+    return (await $(selector)).isSelected();
+  }
+
+  /**
    * Click on an element.
    *
    * Note: This issues a WebDriver click command for the selected element, which generally scrolls to and then clicks the selected element.
