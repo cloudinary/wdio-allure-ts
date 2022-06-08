@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 6.2.0 (2022-06-08)
+
+
+### Features
+
+* add isSelected function ([#301](https://github.com/cloudinary/wdio-allure-ts/issues/301)) ([fe6fac8](https://github.com/cloudinary/wdio-allure-ts/commit/fe6fac8180d18d6765b9eb84777afd524d4a49aa))
+
 ### 6.1.2 (2022-04-14)
 
 ### 6.1.1 (2022-04-03)
