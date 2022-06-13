@@ -55,7 +55,7 @@ export namespace AllureReporter {
     if (isFailed) {
       await allureReporter.addAttachment('Browser console logs', browserLogs, 'application/json');
 
-      await allureReporter.addAttachment('Page HTML source', pageSource, 'html');
+      await allureReporter.addAttachment('Page HTML source', pageSource, 'text/html');
 
       await allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
     }
