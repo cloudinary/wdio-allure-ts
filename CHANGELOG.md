@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 6.2.1 (2022-06-13)
+
+
+### Bug Fixes
+
+* use correct type for html attachment ([#302](https://github.com/cloudinary/wdio-allure-ts/issues/302)) ([b9f7b10](https://github.com/cloudinary/wdio-allure-ts/commit/b9f7b10ff74c02438a60b0f5dae32add22a56e67))
+
 ## 6.2.0 (2022-06-08)
 
 
