@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 6.3.0 (2022-07-06)
+
+
+### Features
+
+* wdio_dependencies_update ([#304](https://github.com/cloudinary/wdio-allure-ts/issues/304)) ([5f30bc4](https://github.com/cloudinary/wdio-allure-ts/commit/5f30bc4d9baee768b67ab58e60ca6dedf0df52de))
+
 ### 6.2.1 (2022-06-13)
 
 
