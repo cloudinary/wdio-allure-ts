@@ -22,13 +22,13 @@ jobs:
           node-version: 14.15.1
 
       - name: Install packages
-        run: yarn install
+        run: pnpm install
 
       - name: Run server
-        run: yarn start:sampleApp &
+        run: pnpm start:sampleApp &
 
       - name: Run tests
-        run: yarn test
+        run: pnpm test
 
       - uses: sonots/slack-notice-action@v3
         with:
@@ -50,13 +50,13 @@ jobs:
           token: ${{ secrets.WDIO_TOKEN }}
 
       - name: Install packages
-        run: yarn install
+        run: pnpm install
 
       - name: run standart version
         run: |
           git config user.name ${{ secrets.USERNAME }}
           git config user.email "${{ secrets.MAIL }}"
-          yarn release
+          pnpm release
 
       - name: push changes
         run: git push --follow-tags origin master

@@ -24,13 +24,13 @@ jobs:
           node-version: 14.15.1
 
       - name: Install packages
-        run: yarn install
+        run: pnpm install
 
       - name: Run server
-        run: yarn start:sampleApp &
+        run: pnpm start:sampleApp &
 
       - name: Run tests
-        run: yarn test
+        run: pnpm test
 
       - name: Get Allure history
         uses: actions/checkout@v2

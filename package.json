@@ -30,11 +30,11 @@
   "scripts": {
     "lint": "eslint './src/**/*.ts'",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
-    "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
+    "prepack": "pnpm lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
-    "test": "yarn setChromeDriverVersion; DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --suite regression",
+    "test": "pnpm setChromeDriverVersion; DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --suite regression",
     "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
-    "pretest": "yarn lint",
+    "pretest": "pnpm lint",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
     "release": "standard-version",
     "report": "allure generate --clean && allure open"

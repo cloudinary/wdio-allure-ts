@@ -36,7 +36,7 @@ npm i -D wdio-allure-ts typescript start-server-and-test chai http-server
 ### Setting last Chromedriver version to .env file
 
 ```
-yarn setChromeDriverVersion
+pnpm setChromeDriverVersion
 ```
 
 ### Add example test
@@ -83,13 +83,13 @@ describeCommon('Test Example', () => {
 
 #### Install and run tests
 
-`yarn` install all dependencies
+`pnpm` install all dependencies
 
-`yarn start:sampleApp` spin up the sample app page for testing
+`pnpm start:sampleApp` spin up the sample app page for testing
 
-`yarn test` executes all tests
+`pnpm test` executes all tests
 
-`yarn spec <spec name>`  executes specific spec file
+`pnpm spec <spec name>`  executes specific spec file
 
 ### Environment variables
 
