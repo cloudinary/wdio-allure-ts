@@ -21,9 +21,10 @@ jobs:
       - name: Use Node.js v14.15.1
         uses: actions/setup-node@v1
         with:
-            node-version: 14.15.1
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
+          node-version: 14.15.1
+      -name: Install pnpm
+       uses: pnpm/action-setup@v2.0.1
+
         id: pnpm-install
         with:
             version: 7
