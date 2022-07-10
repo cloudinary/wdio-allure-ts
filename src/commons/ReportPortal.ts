@@ -74,7 +74,7 @@ export namespace ReportPortal {
 
   async function sendLog(level: LEVEL, message: string): Promise<void> {
     //pause for 2 ms to insure log order
-    await browser.pause(1);
+    await new Promise((resolve) => setTimeout(resolve, 2));
     await ReportPortalReporter.sendLog(level, ` [${level}] - ${message}`);
   }
 }
