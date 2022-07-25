@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 6.4.1 (2022-07-25)
+
+
+### Bug Fixes
+
+* CONTRIBUTING.md ([#309](https://github.com/cloudinary/wdio-allure-ts/issues/309)) ([c4e7d14](https://github.com/cloudinary/wdio-allure-ts/commit/c4e7d14b54ce753a2d9225aa7bdd787de9f7cc4e))
+
 ## 6.4.0 (2022-07-20)
 
 
