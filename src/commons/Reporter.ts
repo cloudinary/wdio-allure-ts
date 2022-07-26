@@ -1,7 +1,6 @@
 import path from 'path';
 import { AllureReporter } from './AllureReport';
 import { ConsoleReport } from './ConsoleReport';
-import { ReportPortal } from './ReportPortal';
 import { TestUtils } from '../index';
 import fs from 'fs';
 
@@ -64,7 +63,7 @@ export namespace Reporter {
    * Close step in report
    */
   // eslint-disable-next-line
-  export async function closeStep(isFailed: boolean, test?: any): Promise<void> {
+  export async function closeStep(isFailed: boolean): Promise<void> {
     let screenshotFilePath;
     if (isFailed) {
       screenshotFilePath = path.join(__dirname, `${TestUtils.randomString(10)}.png`);
@@ -75,9 +74,6 @@ export namespace Reporter {
     const browserLogs = await browser.getLogs('browser');
     await AllureReporter.closeStep(isFailed, browserLogs, pageSource, networkActivity);
 
-    if (test) {
-      await ReportPortal.finalizeTest(isFailed, test, screenshotFilePath, browserLogs, pageSource, networkActivity);
-    }
     if (isFailed) {
       fs.unlinkSync(screenshotFilePath);
     }
@@ -102,7 +98,6 @@ export namespace Reporter {
   export async function step(msg: string): Promise<void> {
     await ConsoleReport.step(msg);
     await AllureReporter.step(msg);
-    await ReportPortal.step(msg);
   }
 
   /**
@@ -113,7 +108,6 @@ export namespace Reporter {
   export async function debug(msg: string): Promise<void> {
     await ConsoleReport.debug(msg);
     await AllureReporter.addLogEntry('[DEBUG]', msg);
-    await ReportPortal.debug(msg);
   }
 
   /**
@@ -124,7 +118,6 @@ export namespace Reporter {
   export async function warning(msg: string): Promise<void> {
     await ConsoleReport.warning(msg);
     await AllureReporter.addLogEntry('[WARNING]', msg);
-    await ReportPortal.warning(msg);
   }
 
   /**
@@ -135,7 +128,6 @@ export namespace Reporter {
   export async function error(msg: string): Promise<void> {
     await ConsoleReport.error(msg);
     await AllureReporter.addLogEntry('[ERROR]', msg);
-    await ReportPortal.error(msg);
   }
 
   /**
