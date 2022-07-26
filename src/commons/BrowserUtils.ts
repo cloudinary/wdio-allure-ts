@@ -381,6 +381,16 @@ export namespace BrowserUtils {
   }
 
   /**
+   * The Close Window command closes the current top-level browsing context.
+   * Once done, if there are no more top-level browsing contexts open, the WebDriver session itself is closed.
+   */
+  export async function closeWindow(): Promise<void> {
+    await Reporter.debug('Close current window');
+
+    return await tryBlock(async () => await browser.closeWindow(), 'Failed to close current window');
+  }
+
+  /**
    * Change focus to the parent context.
    * If the current context is the top level browsing context, the context remains unchanged.
    */
