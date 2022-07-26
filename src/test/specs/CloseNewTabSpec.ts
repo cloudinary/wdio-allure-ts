@@ -9,27 +9,14 @@ const OPEN_NEW_TAB: string = "//*[@data-test='open-new-tab']";
 /**
  * wdio-allure-ts close tab action
  */
-describeCommon('open new tab, and close it', () => {
-  it('click on `open new tab button` ', async () => {
-    await Reporter.debug('open new tab');
+describeCommon('CloseNewTabSpec', () => {
+  it('open new tab and then close it', async () => {
+    await Reporter.step('open new tab');
     await BrowserUtils.click(OPEN_NEW_TAB);
 
-    await Reporter.debug('get tabs ids');
-    const tabIds: Array<string> = await BrowserUtils.getWindowHandles();
-
-    await Reporter.debug('validate number of tabs');
-    chai.assert.equal(tabIds.length, 2, 'Incorrect number of tab ids');
-  });
-
-  it('close new tab', async () => {
-    await Reporter.step('get tabs ids');
-    let tabIds: Array<string> = await BrowserUtils.getWindowHandles();
-
     await Reporter.step('switch focus to new tab');
+    let tabIds: Array<string> = await BrowserUtils.getWindowHandles();
     await BrowserUtils.switchToWindow(tabIds[1]);
-
-    await Reporter.step('Validate tab change');
-    chai.assert.equal(tabIds[1], await browser.getWindowHandle(), 'Failed to switch tabs');
 
     await Reporter.step('close tab');
     await BrowserUtils.closeWindow();
@@ -37,8 +24,8 @@ describeCommon('open new tab, and close it', () => {
     await Reporter.step('switch focus current tab');
     await BrowserUtils.switchToWindow(tabIds[0]);
 
-    await Reporter.debug('validate number of tabs');
+    await Reporter.step('validate tab is closed (number of tabs is equal to 1)');
     tabIds = await BrowserUtils.getWindowHandles();
-    chai.assert.equal(tabIds.length, 1, 'Incorrect number of tab ids');
+    chai.assert.equal(tabIds.length, 1, `expected number of tabs to be 1, but got ${tabIds.length}`);
   });
 });
