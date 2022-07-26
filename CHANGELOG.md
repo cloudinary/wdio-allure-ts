@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 6.4.1 (2022-07-25)
+
+
+### Bug Fixes
+
+* CONTRIBUTING.md ([#309](https://github.com/cloudinary/wdio-allure-ts/issues/309)) ([c4e7d14](https://github.com/cloudinary/wdio-allure-ts/commit/c4e7d14b54ce753a2d9225aa7bdd787de9f7cc4e))
+
+## 6.4.0 (2022-07-20)
+
+
+### Features
+
+* remove report portal support ([#308](https://github.com/cloudinary/wdio-allure-ts/issues/308)) ([ebaabe8](https://github.com/cloudinary/wdio-allure-ts/commit/ebaabe8d3348894d80a03237fa8a497b5a708727))
+
 ### 6.3.1 (2022-07-06)
 
 ## 6.3.0 (2022-07-06)
