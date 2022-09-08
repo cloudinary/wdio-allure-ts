@@ -13,6 +13,7 @@ describeCommon('acceptAlert', () => {
     await (await $(TRIGGER_ALERT_BUTTON_SELECTOR)).click();
 
     await Reporter.step('Accept Alert');
+    await Reporter.step('Accept Alert');
     await BrowserUtils.acceptAlert();
   });
 
