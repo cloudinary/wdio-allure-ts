@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js v14.15.1
+      - name: Use Node.js v16.13.2
         uses: actions/setup-node@v1
         with:
-          node-version: 14.15.1
+          node-version: 16.13.2
 
       - name: Install packages
         run: yarn install
