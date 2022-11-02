@@ -1,5 +1,6 @@
 name: ci-pr-merge
 
+# Controls when the action will run.
 on:
   pull_request:
     branches: [master]
@@ -8,66 +9,66 @@ on:
 
 jobs:
   ci-pr-merge:
-    build:
-      runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v1
-        - name: Use Node.js v16.13.2
-          uses: actions/setup-node@v1
-          with:
-            node-version: 16.13.2
+    runs-on: ubuntu-22.04
 
-        - name: Install packages
-          run: yarn install
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js v14.15.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.15.1
 
-        - name: Run server
-          run: yarn start:sampleApp &
+      - name: Install packages
+        run: yarn install
 
-        - name: Run tests
-          run: yarn test
+      - name: Run server
+        run: yarn start:sampleApp &
 
-        - name: Get Allure history
-          uses: actions/checkout@v2
-          if: always()
-          continue-on-error: true
-          with:
-            ref: gh-pages
-            path: gh-pages
+      - name: Run tests
+        run: yarn test
 
-        - name: Generate allure report
-          uses: simple-elf/allure-report-action@master
-          if: always()
-          id: allure-report
-          with:
-            allure_results:   allure-results
-            gh_pages: gh-pages
-            allure_report: allure-report
-            allure_history: allure-history
-            keep_reports: 20
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
 
-        - name: Deploy report to Github Pages
-          if: always()
-          uses: peaceiris/actions-gh-pages@v2
-          env:
-            PERSONAL_TOKEN: ${{ secrets.WDIO_TOKEN }}
-            PUBLISH_BRANCH: gh-pages
-            PUBLISH_DIR: allure-history
+      - name: Generate allure report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results:   allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
+          keep_reports: 20
 
-        - name: Post the link to the report
-          if: always()
-          uses: Sibz/github-status-action@v1
-          with:
-            authToken: ${{secrets.WDIO_TOKEN}}
-            context: 'Test report'
-            state: 'success'
-            sha: ${{ github.event.pull_request.head.sha }}
-            target_url: https://cloudinary.github.io/wdio-allure-ts/${{ github.run_number }}/index.html
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.WDIO_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
 
-        - uses: sonots/slack-notice-action@v3
-          with:
-            status: ${{ job.status }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_NOTIFICATION }}
-          if: always()
+      - name: Post the link to the report
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with:
+          authToken: ${{secrets.WDIO_TOKEN}}
+          context: 'Test report'
+          state: 'success'
+          sha: ${{ github.event.pull_request.head.sha }}
+          target_url: https://cloudinary.github.io/wdio-allure-ts/${{ github.run_number }}/index.html
+
+      - uses: sonots/slack-notice-action@v3
+        with:
+          status: ${{ job.status }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_NOTIFICATION }}
+        if: always()
