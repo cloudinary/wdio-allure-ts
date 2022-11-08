@@ -55,7 +55,9 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
-          PERSONAL_TOKEN: ${{ secrets.WDIO_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
 
@@ -63,7 +65,9 @@ jobs:
         if: always()
         uses: Sibz/github-status-action@v1
         with:
-          authToken: ${{secrets.WDIO_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           context: 'Test report'
           state: 'success'
           sha: ${{ github.event.pull_request.head.sha }}
