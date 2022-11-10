@@ -1,15 +1,16 @@
 #!/usr/bin/env node
-const { join } = require("path");
-const fs = require("fs");
-const { getChromeDriverVersion } = require("./GetChromeDriverVersion");
+const { join } = require('path');
+const fs = require('fs');
+const { getChromeDriverVersion } = require('./GetChromeDriverVersion');
 
-const envPath = join(process.cwd(), ".env");
-const driverVersion = getChromeDriverVersion();
-const chromeDriverVersion = "CHROME_DRIVER_VERSION";
+const envPath = join(process.cwd(), '.env');
+const chromeDriverVersion = 'CHROME_DRIVER_VERSION';
 /**
  * Function updates env file with latest version of chromeDriver
  */
-(() => {
+void (async () => {
+  const driverVersion = await getChromeDriverVersion();
+
   if (!fs.existsSync(envPath)) {
     fs.writeFileSync(envPath, `${chromeDriverVersion}=${driverVersion}`);
     return;
