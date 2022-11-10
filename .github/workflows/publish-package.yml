@@ -52,7 +52,7 @@ jobs:
       - name: Install packages
         run: yarn install
 
-      - name: run standart version
+      - name: run standard version
         run: |
           git config user.name ${{ secrets.USERNAME }}
           git config user.email "${{ secrets.MAIL }}"
