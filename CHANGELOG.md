@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 6.5.0 (2022-11-10)
+
+
+### Features
+
+* replace-sync-request-with-axios ([#315](https://github.com/cloudinary/wdio-allure-ts/issues/315)) ([13ef507](https://github.com/cloudinary/wdio-allure-ts/commit/13ef5079958bdca34b076ff83856415f52414a92))
+
 ### 6.4.4 (2022-11-10)
 
 ### 6.4.3 (2022-11-09)
