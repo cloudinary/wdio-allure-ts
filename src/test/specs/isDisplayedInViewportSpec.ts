@@ -1,15 +1,16 @@
 import { BrowserUtils, Reporter } from '../..';
-import chai from 'chai';
 import { describeCommon } from '../TestHelper';
+
+const selector = '#DragAndDropSpec';
 
 describeCommon('isDisplayedInViewport', () => {
   it('element displayed in viewport', async () => {
     await Reporter.step('check if element is displayed in viewport');
-    chai.expect(await BrowserUtils.isDisplayedInViewport('#DragAndDropSpec')).to.be.true;
+    await BrowserUtils.isDisplayedInViewport(selector);
   });
 
   it('element is not displayed in viewport', async () => {
     await Reporter.step('check if element is displayed in viewport');
-    chai.expect(await BrowserUtils.isDisplayedInViewport('#DragAndDropSpec314')).to.be.false;
+    await BrowserUtils.isDisplayedInViewport(selector);
   });
 });

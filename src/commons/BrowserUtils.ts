@@ -219,9 +219,9 @@ export namespace BrowserUtils {
   /**
    * Return true if the selected DOM-element found by given selector is partially visible and within the viewport.
    */
-  export async function isDisplayedInViewport(selector: string): Promise<boolean> {
+  export async function isDisplayedInViewport(selector: string): Promise<void> {
     await Reporter.debug('Check if element displayed in viewport');
-    return await $(selector).isDisplayedInViewport();
+    await tryBlock(async () => $(selector).isDisplayedInViewport(), '${selector} not found in the viewport');
   }
 
   /**
