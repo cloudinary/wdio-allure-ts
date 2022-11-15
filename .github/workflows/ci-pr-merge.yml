@@ -49,7 +49,7 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.WDIO_TOKEN }}
           publish_dir: allure-history
 
       - name: Post the link to the report
