@@ -222,7 +222,6 @@ export namespace BrowserUtils {
   export async function isDisplayedInViewport(selector: string): Promise<boolean> {
     await Reporter.debug('Check if element displayed in viewport');
     return $(selector).isDisplayedInViewport();
-    // await tryBlock(async () => $(selector).isDisplayedInViewport(), '${selector} not found in the viewport');
   }
 
   /**
