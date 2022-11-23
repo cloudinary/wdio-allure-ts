@@ -18,7 +18,7 @@ const seleniumStandaloneArgs = {
  *
  */
 exports.config = {
-// ==================================
+  // ==================================
   // Where should your test be launched
   // ==================================
   //
