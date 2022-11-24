@@ -26,6 +26,9 @@ jobs:
       - name: Run server
         run: yarn start:sampleApp &
 
+      - name: Start selenoid container
+        run: yarn selenoid:start
+
       - name: Run tests
         run: yarn test
 
