@@ -10,3 +10,5 @@ services:
             - "$PWD/:$PWD"
         ports:
             - "4444:4444"
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
