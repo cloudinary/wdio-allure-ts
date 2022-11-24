@@ -6,6 +6,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  USE_SELENOID: true
+
 jobs:
   ci-pr-merge:
     runs-on: ubuntu-latest
