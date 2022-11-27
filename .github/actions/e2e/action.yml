@@ -1,0 +1,14 @@
+name: Execute e2e tests
+description: Installation env and execution e2e tests
+
+runs:
+  using: composite
+  steps:
+    - name: Install packages
+      run: yarn install
+
+    - name: Run server
+      run: yarn start:sampleApp &
+
+    - name: Run tests
+      run: yarn test
