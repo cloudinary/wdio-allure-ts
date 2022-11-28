@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const dotenv = require('dotenv');
 const { Reporter } = require('../index');
-
 dotenv.config();
 
 const USE_SELENOID = process.env.USE_SELENOID && Boolean(JSON.parse(process.env.USE_SELENOID.toLowerCase()));
@@ -54,10 +53,6 @@ exports.config = {
   // Default timeout for all waitFor* commands.
   waitforTimeout: waitForTimeouts,
   //
-  // Default timeout in milliseconds for request
-  // if Selenium Grid doesn't send response
-  connectionRetryTimeout: 10000,
-
   configDataFilePath: 'src/test/resources/example.json',
   //
   //
