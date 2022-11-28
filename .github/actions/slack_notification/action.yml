@@ -2,21 +2,21 @@ name: Slack notification
 description: Sending slack notification to any channel
 
 inputs:
-  slack_webhool_url:
+  slack_webhook_url:
     description: Web hook URL for the slack notification
+    required: true
+  when_send_a_message:
+    description: When slack will send a message (failure(),always(),success())
     required: true
 
 runs:
   using: composite
   steps:
     - name: Install packages
-      shell: bash
-      run: yarn install
-
-    - name: Run server
-      shell: bash
-      run: yarn start:sampleApp &
-
-    - name: Run tests
-      shell: bash
-      run: yarn test
+      uses: sonots/slack-notice-action@v3
+      with:
+          status: ${{ job.status }}
+          env:
+            GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
+            SLACK_WEBHOOK_URL: ${{ inputs.slack_webhool_url }}
+            if: ${{ when_send_a_message }}
