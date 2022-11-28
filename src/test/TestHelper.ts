@@ -8,7 +8,7 @@ dotenv.config();
 /**
  * Holds common methods for tests
  */
-export const sampleAppUrl: string = `http://${ip.address()}:8000`;
+export const sampleAppUrl: string = `http://${ip.address()}:8000/`;
 /**
  * common describe for specs
  * @param name spec name
