@@ -1,0 +1,22 @@
+name: Slack notification
+description: Sending slack notification to any channel
+
+inputs:
+  slack_webhool_url:
+    description: Web hook URL for the slack notification
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Install packages
+      shell: bash
+      run: yarn install
+
+    - name: Run server
+      shell: bash
+      run: yarn start:sampleApp &
+
+    - name: Run tests
+      shell: bash
+      run: yarn test
