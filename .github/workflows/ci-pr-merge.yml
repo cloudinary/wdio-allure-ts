@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js v14.15.1
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Use Node.js v16
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.15.1
+          node-version: 16
 
       - name: Install packages
         run: yarn install
@@ -27,7 +27,7 @@ jobs:
         run: yarn test
 
       - name: Get Allure history
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         if: always()
         continue-on-error: true
         with:

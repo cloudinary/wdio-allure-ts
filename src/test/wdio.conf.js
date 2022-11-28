@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 const { Reporter } = require('../index');
 dotenv.config();
 
-const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
+const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 5;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 const seleniumStandaloneArgs = {
   drivers: {
@@ -18,6 +18,25 @@ const seleniumStandaloneArgs = {
  *
  */
 exports.config = {
+  // ==================================
+  // Where should your test be launched
+  // ==================================
+  //
+  runner: 'local',
+  //
+  // =====================
+  // Server Configurations
+  // =====================
+  // Host address of the running Selenium server. This information is usually obsolete, as
+  // WebdriverIO automatically connects to localhost. Also if you are using one of the
+  // supported cloud services like Sauce Labs, Browserstack, Testing Bot or LambdaTest, you also don't
+  // need to define host and port information (because WebdriverIO can figure that out
+  // from your user and key information). However, if you are using a private Selenium
+  // backend, you should define the `hostname`, `port`, and `path` here.
+  //
+  hostname: 'localhost',
+  port: 4444,
+  path: '/',
   specs: ['./src/test/specs/**/*Spec.ts'],
   suites: { regression: ['./src/test/specs/**/*Spec.ts'] },
 
@@ -41,10 +60,6 @@ exports.config = {
   // Default timeout for all waitFor* commands.
   waitforTimeout: waitForTimeouts,
   //
-  // Default timeout in milliseconds for request
-  // if Selenium Grid doesn't send response
-  connectionRetryTimeout: 10000,
-
   configDataFilePath: 'src/test/resources/example.json',
   //
   //
