@@ -1,15 +1,14 @@
 import { BrowserUtils, Reporter } from '..';
 import { assert } from 'chai';
 import dotenv from 'dotenv';
+import ip from 'ip';
 
 dotenv.config();
-
-const USE_SELENOID = process.env.USE_SELENOID && Boolean(JSON.parse(process.env.USE_SELENOID.toLowerCase()));
 
 /**
  * Holds common methods for tests
  */
-export const sampleAppUrl: string = USE_SELENOID ? 'http://host.docker.internal:8000/' : 'http://127.0.0.1:8000/';
+export const sampleAppUrl: string = `http://${ip.address()}:8000`;
 /**
  * common describe for specs
  * @param name spec name
