@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Execute e2e tests
-        uses: ./.github/actions/e2e
+#      - name: Execute e2e tests
+#        uses: ./.github/actions/e2e
 
       - name: Get Allure history
         uses: actions/checkout@v3
