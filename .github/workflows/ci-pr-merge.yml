@@ -60,7 +60,7 @@ jobs:
         with:
           status: custom
           fields: workflow,job,commit,repo,ref,author,took
-          custom_payload: |
+          payload: |
               {
                 attachments: [{
                   color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
