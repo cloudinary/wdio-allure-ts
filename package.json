@@ -32,9 +32,11 @@
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
-    "test": "yarn setChromeDriverVersion; DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --suite regression",
-    "spec": "DEFAULT_TIME_OUT=3000 wdio src/test/wdio.conf.js --spec",
+    "test": "wdio src/test/wdio.conf.js --suite regression",
+    "spec": "wdio src/test/wdio.conf.js --spec",
     "pretest": "yarn lint",
+    "selenoid:start": "docker pull selenoid/chrome && docker-compose build && docker-compose up -d",
+    "selenoid:down": "docker-compose down",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
     "release": "standard-version",
     "report": "allure generate --clean && allure open"
@@ -69,7 +71,8 @@
     "wdio-docker-service": "^3.2.0",
     "wdio-image-comparison-service": "^3.1.0",
     "webdriverio": "^7.20.5",
-    "yargs": "^17.4.0"
+    "yargs": "^17.4.0",
+    "ip": "^1.1.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
