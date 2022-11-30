@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 6.6.0 (2022-11-28)
+
+
+### Features
+
+* update selenium-standalone version ([#320](https://github.com/cloudinary/wdio-allure-ts/issues/320)) ([69ca2cd](https://github.com/cloudinary/wdio-allure-ts/commit/69ca2cd8ec3674c8f589834936365148f46545a0))
+
 ### 6.5.2 (2022-11-15)
 
 ### 6.5.1 (2022-11-15)
