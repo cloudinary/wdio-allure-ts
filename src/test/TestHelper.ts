@@ -1,10 +1,14 @@
 import { BrowserUtils, Reporter } from '..';
 import { assert } from 'chai';
+import dotenv from 'dotenv';
+import ip from 'ip';
+
+dotenv.config();
 
 /**
  * Holds common methods for tests
  */
-export const sampleAppUrl: string = 'http://127.0.0.1:8000/';
+export const sampleAppUrl: string = `http://${ip.address()}:8000/`;
 /**
  * common describe for specs
  * @param name spec name

@@ -6,6 +6,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  USE_SELENOID: true
+
 jobs:
   ci-pr-merge:
     runs-on: ubuntu-latest
@@ -17,8 +20,17 @@ jobs:
         with:
           node-version: 16
 
-#      - name: Execute e2e tests
-#        uses: ./.github/actions/e2e
+      - name: Install packages
+        run: yarn install
+
+      - name: Start selenoid container
+        run: yarn selenoid:start
+
+      - name: Run server
+        run: yarn start:sampleApp &
+
+      - name: Run tests
+        run: yarn test
 
       - name: Get Allure history
         uses: actions/checkout@v3
@@ -58,15 +70,7 @@ jobs:
 
       - uses: sonots/slack-notice-action@v3
         with:
-          status: custom
-          fields: workflow,job,commit,repo,ref,author,took
-          payload: |
-              {
-                attachments: [{
-                  color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                  text: `${process.env.AS_WORKFLOW}\n${process.env.AS_JOB} (${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@${process.env.AS_REF} by ${process.env.AS_AUTHOR} ${{ job.status }} in ${process.env.AS_TOOK}`,
-                }]
-              }
+          status: ${{ job.status }}
         env:
           GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_BOT_NOTIFICATION }}

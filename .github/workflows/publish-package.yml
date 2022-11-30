@@ -5,6 +5,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  USE_SELENOID: true
+
 jobs:
   master_tests:
     name: Run e2e tests
@@ -21,8 +24,17 @@ jobs:
         with:
           node-version: 16
 
-      - name: Execute e2e tests
-        uses: ./.github/actions/e2e
+      - name: Install packages
+        run: yarn install
+
+      - name: Run server
+        run: yarn start:sampleApp &
+
+      - name: Start selenoid container
+        run: yarn selenoid:start
+
+      - name: Run tests
+        run: yarn test
 
       - uses: sonots/slack-notice-action@v3
         with:
