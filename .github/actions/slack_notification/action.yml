@@ -19,4 +19,4 @@ runs:
           env:
             GITHUB_TOKEN: ${{ secrets.WDIO_TOKEN }}
             SLACK_WEBHOOK_URL: ${{ inputs.slack_webhook_url }}
-            if: ${{ when_send_a_message }}
+            if: ${{ inputs.when_send_a_message }}
