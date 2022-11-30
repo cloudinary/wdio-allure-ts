@@ -1,0 +1,13 @@
+version: '2'
+services:
+    selenoid:
+        network_mode: bridge
+        image: aerokube/selenoid
+        command: [ "-limit", "${MAX_CHROME_INSTANCES:-10}", "-timeout", "3m"]
+        volumes:
+            - "$PWD/:/etc/selenoid"
+            - "/var/run/docker.sock:/var/run/docker.sock"
+            - "$PWD/:$PWD"
+        ports:
+            - "4444:4444"
+

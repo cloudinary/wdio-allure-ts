@@ -31,7 +31,7 @@ describeCommon('scrollTo', () => {
   });
 
   it('fail to scroll', async () => {
-    const elementToScrollSelector: string = `${TEST_FIELD_SELECTOR}//*[@id='div-item' and text()='my awesome new div 100']`;
+    const elementToScrollSelector: string = `${TEST_FIELD_SELECTOR}//*[@id='div-item' and text()='my awesome new div 100000']`;
 
     await Reporter.step('validate element not displayed');
     chai.assert.isFalse(await (await $(elementToScrollSelector)).isDisplayed());

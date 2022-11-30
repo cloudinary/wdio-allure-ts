@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const { Reporter } = require('../index');
 dotenv.config();
 
+const USE_SELENOID = process.env.USE_SELENOID && Boolean(JSON.parse(process.env.USE_SELENOID.toLowerCase()));
 const maxChromeInstances = parseInt(process.env.MAX_CHROME_INSTANCES) || 10;
 const waitForTimeouts = parseInt(process.env.DEFAULT_TIME_OUT) || 3000;
 const seleniumStandaloneArgs = {
@@ -12,6 +13,22 @@ const seleniumStandaloneArgs = {
     },
   },
 };
+
+const seleniumBaseCapabilities = {
+  browserName: 'chrome',
+  maxInstances: maxChromeInstances,
+  acceptInsecureCerts: true,
+  'goog:chromeOptions': {
+    args: ['--window-size=1920,1080', '--headless', '--incognito', '-–ignore-certificate-errors'],
+  },
+};
+
+const selenoidCapabilities = {
+  'selenoid:options': {
+    enableVNC: true,
+  },
+};
+
 /**
  * Default configurations for wdio-allure-ts based projects
  * For more options see https://webdriver.io/docs/configurationfile.html
@@ -21,16 +38,11 @@ exports.config = {
   specs: ['./src/test/specs/**/*Spec.ts'],
   suites: { regression: ['./src/test/specs/**/*Spec.ts'] },
 
+  hostname: 'localhost',
+  port: 4444,
+  path: USE_SELENOID ? '/wd/hub' : '',
   // Browser capabilities
-  capabilities: [
-    {
-      browserName: 'chrome',
-      maxInstances: maxChromeInstances,
-      'goog:chromeOptions': {
-        args: ['--window-size=1920,1080', '--headless', '--incognito'],
-      },
-    },
-  ],
+  capabilities: USE_SELENOID ? [{ ...seleniumBaseCapabilities, ...selenoidCapabilities }] : [seleniumBaseCapabilities],
   // ===================
   // Test Configurations
   // ===================
@@ -41,10 +53,6 @@ exports.config = {
   // Default timeout for all waitFor* commands.
   waitforTimeout: waitForTimeouts,
   //
-  // Default timeout in milliseconds for request
-  // if Selenium Grid doesn't send response
-  connectionRetryTimeout: 10000,
-
   configDataFilePath: 'src/test/resources/example.json',
   //
   //
@@ -52,16 +60,18 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: [
-    ['devtools'],
-    [
-      'selenium-standalone',
-      {
-        installArgs: seleniumStandaloneArgs,
-        args: seleniumStandaloneArgs,
-      },
-    ],
-  ], // Framework you want to run your specs with.
+  services: USE_SELENOID
+    ? [['devtools']]
+    : [
+        ['devtools'],
+        [
+          'selenium-standalone',
+          {
+            installArgs: seleniumStandaloneArgs,
+            args: seleniumStandaloneArgs,
+          },
+        ],
+      ], // Framework you want to run your specs with.
   reporters: [
     [
       'allure',
