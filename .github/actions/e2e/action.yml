@@ -4,10 +4,6 @@ description: Installation env and execution e2e tests
 runs:
   using: composite
   steps:
-    - name: Install packages
-      shell: bash
-      run: yarn install
-
     - name: Run server
       shell: bash
       run: yarn start:sampleApp &
