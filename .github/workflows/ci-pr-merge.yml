@@ -17,14 +17,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install packages
-        run: yarn install
-
-      - name: Run server
-        run: yarn start:sampleApp &
-
-      - name: Run tests
-        run: yarn test
+      - name: Execute e2e tests
+        uses: ./.github/actions/e2e
 
       - name: Get Allure history
         uses: actions/checkout@v3
