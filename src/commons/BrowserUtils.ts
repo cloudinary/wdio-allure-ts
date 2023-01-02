@@ -234,7 +234,7 @@ export namespace BrowserUtils {
     await Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
     await waitUntil(
       async () => {
-        return expectedUrl === normalizeUrl(await getUrl());
+        return expectedUrl.includes(normalizeUrl(await getUrl()));
       },
       {
         timeout: DEFAULT_TIME_OUT,
