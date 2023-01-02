@@ -228,13 +228,16 @@ export namespace BrowserUtils {
    * Wait for url to be equal to given url
    * Mainly useful for navigation validation
    * @param url expected current url
+   * @param exactMatch boolean if you want to test the exact match URL or if it includes URL
    */
-  export async function waitForUrl(urlToNavigate: string): Promise<void> {
+  export async function waitForUrl(urlToNavigate: string, exactMatch: boolean = true): Promise<void> {
     const expectedUrl: string = normalizeUrl(urlToNavigate);
     await Reporter.debug(`Wait for URL to be , '${expectedUrl}'`);
     await waitUntil(
       async () => {
-        return expectedUrl === normalizeUrl(await getUrl());
+        return exactMatch
+          ? expectedUrl === normalizeUrl(await getUrl())
+          : expectedUrl.includes(normalizeUrl(await getUrl()));
       },
       {
         timeout: DEFAULT_TIME_OUT,
