@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 6.6.4 (2023-01-03)
+
+
+### Bug Fixes
+
+* remove-slack-from-release ([#326](https://github.com/cloudinary/wdio-allure-ts/issues/326)) ([7887789](https://github.com/cloudinary/wdio-allure-ts/commit/7887789f78cfdf1d112da3cd9b6d998b4ed0ba71))
+
 ### 6.6.3 (2022-12-01)
 
 ### 6.6.2 (2022-11-30)
