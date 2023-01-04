@@ -237,7 +237,7 @@ export namespace BrowserUtils {
       async () => {
         return exactMatch
           ? expectedUrl === normalizeUrl(await getUrl())
-          : expectedUrl.includes(normalizeUrl(await getUrl()));
+          : normalizeUrl(await getUrl()).includes(expectedUrl);
       },
       {
         timeout: DEFAULT_TIME_OUT,

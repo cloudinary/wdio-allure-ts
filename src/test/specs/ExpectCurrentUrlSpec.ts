@@ -20,4 +20,16 @@ describeCommon('waitForUrl', () => {
       .expect(BrowserUtils.waitForUrl(CLOUDINARY_URL))
       .to.rejectedWith(Error, `Url not as expected '${CLOUDINARY_URL}'`);
   });
+
+  it('correct url', async () => {
+    await Reporter.step('Wait for url');
+    await BrowserUtils.waitForUrl('http://', false);
+  });
+
+  it('incorrect url with exact match false', async () => {
+    await Reporter.step('Wait for incorrect url throws an error');
+    await chai
+      .expect(BrowserUtils.waitForUrl(CLOUDINARY_URL, false))
+      .to.rejectedWith(Error, `Url not as expected '${CLOUDINARY_URL}'`);
+  });
 });
