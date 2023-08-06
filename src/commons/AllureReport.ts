@@ -1,5 +1,4 @@
-import allureReporter from '@wdio/allure-reporter';
-import { Status } from '@wdio/allure-reporter/build/types';
+import allureReporter, { Status } from '@wdio/allure-reporter';
 import path from 'path';
 
 /**
@@ -145,7 +144,9 @@ export namespace AllureReporter {
       content: command.body,
       name: command.bodyLabel,
     };
-    await allureReporter.addStep(command.title, stepContent, status);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    await allureReporter.addStep(command.title, { content: stepContent }, status);
   }
 
   /**

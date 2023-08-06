@@ -39,7 +39,10 @@
     "selenoid:down": "docker-compose down",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
     "release": "standard-version",
-    "report": "allure generate --clean && allure open"
+    "report": "allure generate --clean && allure open",
+    "login-okta": "okta-awscli --profile default --okta-profile default",
+    "login-aws-codeartifact": "aws codeartifact login --tool npm --repository cld-npm-store --domain cloudinary --domain-owner 232482882421 --region us-east-1",
+    "login-pm": "yarn login-okta && yarn login-aws-codeartifact"
   },
   "resolutions": {
     "minimist": "^1.2.6",
@@ -54,12 +57,12 @@
     "follow-redirects": "^1.14.7"
   },
   "dependencies": {
-    "@wdio/allure-reporter": "^7.20.3",
-    "@wdio/cli": "^7.20.5",
-    "@wdio/devtools-service": "^7.20.5",
-    "@wdio/local-runner": "^7.20.5",
-    "@wdio/mocha-framework": "^7.20.3",
-    "@wdio/selenium-standalone-service": "^7.26.0",
+    "@wdio/allure-reporter": "8.14.0",
+    "@wdio/cli": "8.14.4",
+    "@wdio/devtools-service": "8.14.3",
+    "@wdio/local-runner": "8.14.3",
+    "@wdio/mocha-framework": "8.14.0",
+    "@wdio/selenium-standalone-service": "8.14.0",
     "adm-zip": "^0.5.9",
     "allure-commandline": "^2.17.2",
     "chai": "^4.3.6",
@@ -70,7 +73,7 @@
     "tsconfig-paths": "^3.14.1",
     "wdio-docker-service": "^3.2.0",
     "wdio-image-comparison-service": "^3.1.0",
-    "webdriverio": "^7.20.5",
+    "webdriverio": "8.14.3",
     "yargs": "^17.4.0",
     "ip": "^1.1.8"
   },

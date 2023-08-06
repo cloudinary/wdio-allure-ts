@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const dotenv = require('dotenv');
-const { Reporter } = require('../index');
+const { Reporter } = require('../../lib/commons/Reporter');
 dotenv.config();
 
 const USE_SELENOID = process.env.USE_SELENOID && Boolean(JSON.parse(process.env.USE_SELENOID.toLowerCase()));
@@ -35,8 +35,8 @@ const selenoidCapabilities = {
  *
  */
 exports.config = {
-  specs: ['./src/test/specs/**/*Spec.ts'],
-  suites: { regression: ['./src/test/specs/**/*Spec.ts'] },
+  specs: ['./specs/**/*Spec.ts'],
+  suites: { regression: ['./specs/*Spec.ts'] },
 
   hostname: 'localhost',
   port: 4444,
