@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const dotenv = require('dotenv');
-const { Reporter } = require('../../lib/commons/Reporter');
+import { Reporter } from '../commons/Reporter';
+import dotenv from 'dotenv';
+
 dotenv.config();
 
 const USE_SELENOID = process.env.USE_SELENOID && Boolean(JSON.parse(process.env.USE_SELENOID.toLowerCase()));
@@ -97,6 +97,8 @@ exports.config = {
   /**
    * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
    */
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   afterTest: async function (test, context, { error, result, duration, passed, retries }) {
     /**
      * no need to close skipped tests
