@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js v16
+      - name: Use Node.js v16.20.0
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16.20.0
 
       - name: Execute e2e with Selenoid
         uses: ./.github/actions/e2e
