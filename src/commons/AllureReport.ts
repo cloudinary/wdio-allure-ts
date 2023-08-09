@@ -1,7 +1,12 @@
 import allureReporter from '@wdio/allure-reporter';
-import { Status } from '@wdio/allure-reporter/build/types';
 import path from 'path';
 
+export enum Status {
+  FAILED = 'failed',
+  BROKEN = 'broken',
+  PASSED = 'passed',
+  SKIPPED = 'skipped',
+}
 /**
  * Custom command for use with wdio-allure-reporter
  */
@@ -60,7 +65,7 @@ export namespace AllureReporter {
       await allureReporter.addAttachment('Network Logs', { https: networkActivity }, 'application/json');
     }
     if (!isStepClosed) {
-      await sendCustomCommand(customCommand, isFailed ? 'failed' : 'passed');
+      await sendCustomCommand(customCommand, isFailed ? Status.FAILED : Status.PASSED);
       isStepClosed = true;
     }
   }
@@ -137,15 +142,13 @@ export namespace AllureReporter {
    * @param stepStatus status of steps
    */
   async function sendCustomCommand(command: CustomCommand, stepStatus?: Status): Promise<void> {
-    let status: Status = 'passed';
+    let status: Status = Status.PASSED;
+
     if (stepStatus !== undefined) {
       status = stepStatus;
     }
-    const stepContent: object = {
-      content: command.body,
-      name: command.bodyLabel,
-    };
-    await allureReporter.addStep(command.title, stepContent, status);
+
+    await allureReporter.addStep(command.title, { content: command.body }, status);
   }
 
   /**
