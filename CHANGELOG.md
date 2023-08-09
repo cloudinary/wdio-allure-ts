@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 7.0.0 (2023-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* bumping new WDIO version to 8
+
+### Features
+
+* bump WDIO version to 8 ([#334](https://github.com/cloudinary/wdio-allure-ts/issues/334)) ([846a302](https://github.com/cloudinary/wdio-allure-ts/commit/846a30242a67056dc37a1fa2e61c425582c508ae))
+
 ### 6.6.5 (2023-01-04)
 
 ### 6.6.4 (2023-01-03)
