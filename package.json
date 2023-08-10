@@ -30,11 +30,11 @@
   "scripts": {
     "lint": "eslint './src/**/*.ts'",
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
-    "prepack": "yarn lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
+    "prepack": "pnpm lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
     "test": "wdio src/test/wdio.conf.ts --suite regression",
     "spec": "wdio src/test/wdio.conf.ts --spec",
-    "pretest": "yarn lint",
+    "pretest": "pnpm lint",
     "selenoid:start": "docker pull selenoid/chrome && docker-compose build && docker-compose up -d",
     "selenoid:down": "docker-compose down",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
@@ -42,7 +42,7 @@
     "report": "allure generate --clean && allure open",
     "login-okta": "okta-awscli --profile default --okta-profile default",
     "login-aws-codeartifact": "aws codeartifact login --tool npm --repository cld-npm-store --domain cloudinary --domain-owner 232482882421 --region us-east-1",
-    "login-pm": "yarn login-okta && yarn login-aws-codeartifact"
+    "login-pm": "pnpm login-okta && pnpm login-aws-codeartifact"
   },
   "resolutions": {
     "minimist": "^1.2.6",
@@ -93,7 +93,6 @@
     "eslint-plugin-no-floating-promise": "^1.0.2",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-wdio": "^6.6.0",
-    "husky": "^4.2.3",
     "lint-staged": "^12.3.7",
     "local-web-server": "^5.2.0",
     "prettier": "2.0.5",

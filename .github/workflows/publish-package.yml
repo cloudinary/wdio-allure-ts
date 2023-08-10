@@ -47,13 +47,13 @@ jobs:
           token: ${{ secrets.WDIO_TOKEN }}
 
       - name: Install packages
-        run: yarn install
+        run: pnpm install
 
       - name: run standard version
         run: |
           git config user.name ${{ secrets.USERNAME }}
           git config user.email "${{ secrets.MAIL }}"
-          yarn release
+          pnpm release
 
       - name: push changes
         run: git push --follow-tags origin master
