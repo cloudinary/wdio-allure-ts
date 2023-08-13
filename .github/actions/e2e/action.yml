@@ -6,16 +6,16 @@ runs:
   steps:
     - name: Install packages
       shell: bash
-      run: yarn install
+      run: pnpm install
 
     - name: Start selenoid container
       shell: bash
-      run: yarn selenoid:start
+      run: pnpm selenoid:start
 
     - name: Run server
       shell: bash
-      run: yarn start:sampleApp &
+      run: pnpm start:sampleApp &
 
     - name: Run tests
       shell: bash
-      run: yarn test
+      run: pnpm test

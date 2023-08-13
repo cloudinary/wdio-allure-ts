@@ -24,6 +24,11 @@ jobs:
         with:
           node-version: 16
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.10
+
       - name: Execute e2e with Selenoid
         uses: ./.github/actions/e2e
 
@@ -47,13 +52,13 @@ jobs:
           token: ${{ secrets.WDIO_TOKEN }}
 
       - name: Install packages
-        run: yarn install
+        run: pnpm install
 
       - name: run standard version
         run: |
           git config user.name ${{ secrets.USERNAME }}
           git config user.email "${{ secrets.MAIL }}"
-          yarn release
+          pnpm release
 
       - name: push changes
         run: git push --follow-tags origin master
