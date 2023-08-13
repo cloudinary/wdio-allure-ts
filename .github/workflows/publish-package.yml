@@ -24,6 +24,11 @@ jobs:
         with:
           node-version: 16
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.10
+
       - name: Execute e2e with Selenoid
         uses: ./.github/actions/e2e
 
