@@ -38,7 +38,7 @@
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
     "test": "wdio src/test/wdio.conf.ts --suite regression",
     "spec": "wdio src/test/wdio.conf.ts --spec",
-    "pretest": "pnpm lint",
+    "pretest": "pnpm lint && tsc ",
     "selenoid:start": "docker pull selenoid/chrome && docker-compose build && docker-compose up -d",
     "selenoid:down": "docker-compose down",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
