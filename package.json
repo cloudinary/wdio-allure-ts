@@ -38,7 +38,7 @@
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "pnpm lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
-    "test": "wdio src/test/wdio.conf.ts --suite regression",
+    "test": "pnpm pretest && wdio src/test/wdio.conf.ts --suite regression",
     "spec": "wdio src/test/wdio.conf.ts --spec",
     "pretest": "pnpm lint && pnpm typeCheck ",
     "selenoid:start": "docker pull selenoid/chrome && docker-compose build && docker-compose up -d",
