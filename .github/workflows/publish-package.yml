@@ -67,9 +67,10 @@ jobs:
       - name: push changes
         run: git push --follow-tags origin master
 
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
+      - name: Publish Package
+        run: pnpm publish
+        env:
+          GH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 #      - uses: sonots/slack-notice-action@v3
 #        with:
