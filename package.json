@@ -33,12 +33,14 @@
   ],
   "scripts": {
     "lint": "eslint './src/**/*.ts'",
+    "typeCheck": "tsc --noEmit",
+
     "prettier": "prettier --write 'src/**/*.ts'; prettier --write 'src/test/**/*.ts'",
     "prepack": "pnpm lint && tsc && cp -R src/helpers/ lib/helpers && cp -R src/scripts/ lib/scripts",
     "setChromeDriverVersion": "node src/scripts/SetDriverVersionToDotEnv.js",
     "test": "wdio src/test/wdio.conf.ts --suite regression",
     "spec": "wdio src/test/wdio.conf.ts --spec",
-    "pretest": "pnpm lint && tsc ",
+    "pretest": "pnpm lint && pnpm typeCheck ",
     "selenoid:start": "docker pull selenoid/chrome && docker-compose build && docker-compose up -d",
     "selenoid:down": "docker-compose down",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
