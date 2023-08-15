@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 7.0.2 (2023-08-15)
+
+
+### Bug Fixes
+
+* publish with pnpm ([#337](https://github.com/cloudinary/wdio-allure-ts/issues/337)) ([88fcde3](https://github.com/cloudinary/wdio-allure-ts/commit/88fcde3af9ab5c59f63e7d0f353a17dbd08d1993))
+
 ### 7.0.1 (2023-08-13)
 
 
