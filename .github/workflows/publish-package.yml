@@ -70,7 +70,7 @@ jobs:
       - name: Publish Package
         run: pnpm publish
         env:
-          GH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 #      - uses: sonots/slack-notice-action@v3
 #        with:
