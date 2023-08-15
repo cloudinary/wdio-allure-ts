@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 7.0.4 (2023-08-15)
+
+
+### Bug Fixes
+
+* use NODE_AUTH_TOKEN ([#339](https://github.com/cloudinary/wdio-allure-ts/issues/339)) ([8a17c83](https://github.com/cloudinary/wdio-allure-ts/commit/8a17c83a0f9f33f0d8955c24b9565446a33e103f))
+
 ### 7.0.3 (2023-08-15)
 
 ### 7.0.2 (2023-08-15)
