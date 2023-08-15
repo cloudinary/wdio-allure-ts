@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 7.0.5 (2023-08-15)
+
+
+### Bug Fixes
+
+* register npmjs ([#340](https://github.com/cloudinary/wdio-allure-ts/issues/340)) ([a4431c1](https://github.com/cloudinary/wdio-allure-ts/commit/a4431c11cc88193efc02f438cb9b04f36082adb1))
+
 ### 7.0.4 (2023-08-15)
 
 
