@@ -67,10 +67,13 @@ jobs:
       - name: push changes
         run: git push --follow-tags origin master
 
+      - name: Set up npm authentication
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Publish Package
         run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 #      - uses: sonots/slack-notice-action@v3
 #        with:
