@@ -44,10 +44,7 @@
     "selenoid:down": "docker-compose down",
     "start:sampleApp": "ws --spa src/test/sampleApp/index.html",
     "release": "standard-version",
-    "report": "allure generate --clean && allure open",
-    "login-okta": "okta-awscli --profile default --okta-profile default",
-    "login-aws-codeartifact": "aws codeartifact login --tool npm --repository cld-npm-store --domain cloudinary --domain-owner 232482882421 --region us-east-1",
-    "login-pm": "pnpm login-okta && pnpm login-aws-codeartifact"
+    "report": "allure generate --clean && allure open"
   },
   "resolutions": {
     "minimist": "^1.2.6",
