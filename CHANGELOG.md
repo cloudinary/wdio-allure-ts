@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 7.0.6 (2023-08-17)
+
+
+### Bug Fixes
+
+* remove login pm ([#342](https://github.com/cloudinary/wdio-allure-ts/issues/342)) ([e48b23b](https://github.com/cloudinary/wdio-allure-ts/commit/e48b23b549a06a3589cb84ee372368ec00e4fcfb))
+
 ### 7.0.5 (2023-08-15)
 
 
