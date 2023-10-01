@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 8.0.0 (2023-10-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump compare image dependency version to 5
+
+### Features
+
+* bump compare image dependency version ([#343](https://github.com/cloudinary/wdio-allure-ts/issues/343)) ([c33f782](https://github.com/cloudinary/wdio-allure-ts/commit/c33f782ceef08b05e098266fe86d78752787dc02))
+
 ### 7.0.6 (2023-08-17)
 
 
