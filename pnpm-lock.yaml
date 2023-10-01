@@ -72,8 +72,8 @@ dependencies:
     specifier: ^3.2.0
     version: 3.2.0
   wdio-image-comparison-service:
-    specifier: ^3.1.0
-    version: 3.1.0
+    specifier: 5.0.3
+    version: 5.0.3
   webdriverio:
     specifier: 8.14.3
     version: 8.14.3(typescript@4.7.4)
@@ -7850,21 +7850,20 @@ packages:
       - encoding
     dev: false
 
-  /wdio-image-comparison-service@3.1.0:
-    resolution: {integrity: sha512-LghpI8bXdXxzU4ErRI/8nCKaoD15pmXoGY3FBloZ2PSj1UM63ojsDCJs1Aakk08epS5gTiBxNBlR4zt9GOZ0mA==}
+  /wdio-image-comparison-service@5.0.3:
+    resolution: {integrity: sha512-KCmuML6rFpFutRacxK4hX1JUK1JxRF1B3trJryWyhlY0A27EHiFlgoLcp8GBA9RGhQrkUDJKWKmLW37fQKbESw==}
     dependencies:
       '@wdio/logger': 7.26.0
-      webdriver-image-comparison: 0.20.2
+      webdriver-image-comparison: 1.0.3
     transitivePeerDependencies:
       - encoding
       - supports-color
     dev: false
 
-  /webdriver-image-comparison@0.20.2:
-    resolution: {integrity: sha512-vl/fOLIkaenecobKQx57wu3nbtyRJE/O11mwpXivuXEVzD3yP9eh3G8iYh4IEIreEMCXxYBC3q4wHw2zLaxbDA==}
+  /webdriver-image-comparison@1.0.3:
+    resolution: {integrity: sha512-R23Jj++AnXP57qU4Kly44ZC1r91JZhr78k0gEu1PLmRTTrzM4QV7QoXfOC+5zoFUal+XiqBAU+YPRGr7l/+kHA==}
     dependencies:
       canvas: 2.11.2
-      chalk: 4.1.2
       fs-extra: 10.1.0
     transitivePeerDependencies:
       - encoding
